@@ -5,11 +5,25 @@ import os
 basex_location = 'C:/Program Files (x86)/BaseX/data'
 session = BaseXClient.Session('localhost', 1984, 'admin', 'admin')
 
+def list_databases():
+    rows = session.execute('LIST').splitlines()
+    for row in rows[2:]:
+        if row:
+            yield row.split()[0]
+        else:
+            break
 
-def perform_xpath(xpath, database = basex_location):
-    xpath = xpath.split(' +|+ ')
-    xpath = ' '.join(['where $sent' + xpath_argument for xpath_argument in xpath])
-    if os.path.isfile(database):
+
+def perform_xpath(xpath, database = basex_location, from_files = True):
+    xpath = 'where $sent' + xpath
+    if not from_files:
+        Q = 'for $sent in db:open("{}")/treebank/alpino_ds '.format(database) \
+            + xpath + \
+            ' return $sent'
+        Q = session.query(Q)
+        for typecode, item in Q.iter():
+            yield item
+    elif os.path.isfile(database):
         Q = 'for $sent in doc("{}")/*/* '.format(database) \
             + xpath + \
             ' return $sent'

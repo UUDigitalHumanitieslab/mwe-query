@@ -1,0 +1,9 @@
+*.log
+*.pyc
+*.egg-info/*
+.mypy_cache/*
+*~
+tmp/*
+log/*
+.DS_Store
+dist/
