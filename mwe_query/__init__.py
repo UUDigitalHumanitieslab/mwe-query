@@ -5,7 +5,7 @@ from alpino_query import parse_sentence
 from copy import deepcopy
 from typing import Dict, List
 import time
-from basex_query import list_databases, perform_xpath
+from .basex_query import list_databases, perform_xpath
 import os
 import xml.etree.ElementTree as ET
 

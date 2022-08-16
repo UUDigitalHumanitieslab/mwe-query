@@ -39,5 +39,7 @@ print(superset.rank)
 ```bash
 pip install twine
 python setup.py sdist
+# this can be tested locally by creating a virtualenv and installing it:
+# pip install dist/mwe-query-x.x.x.tar.gz
 twine upload dist/*
 ```
