@@ -1,0 +1,1 @@
+/node[..//node[@lemma="goed" and @pt="adj"] and ..//node[@lemma="staan" and @pt="ww"]]
