@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/UUDigitalHumanitiesLab/mwe-query/workflows/Tests/badge.svg)](https://github.com/UUDigitalHumanitiesLab/mwe-query/actions)
+
 # MWE Query
 
 ## Run Locally
