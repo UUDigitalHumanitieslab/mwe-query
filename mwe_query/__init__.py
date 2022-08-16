@@ -41,7 +41,6 @@ class Mwe:
                       v in root.attrib.items() if k not in ['id', '__pronominal__']]
         children = []
         for elem in root:
-            # print(elem.attrib)
             alternatives = [elem]
             if elem.attrib.get('rel', None) == 'su' and include_passives:
                 by_subject = ET.Element('node', attrib={'id': elem.attrib.get('id', '')+'_pp',
@@ -161,7 +160,6 @@ class Mwe:
         xpath_1 = [self.__xml_to_xpath(child, number_of_child_nodes='strict')
                    for child in mwe]
         xpath_1 = '//node[' + ' and '.join(xpath_1) + ']'
-        print(xpath_1)
         generated.append(
             MweQuery(self, description='multi-word expression', xpath=xpath_1, rank=1))
 
@@ -175,7 +173,6 @@ class Mwe:
                 id = node.attrib['id']
                 self.__remove_node_from_tree(mwe, id)
         xpath_2 = '//' + self.__xml_to_xpath(mwe, include_passives=True)
-        print(xpath_2)
         generated.append(
             MweQuery(self, description='near miss', xpath=xpath_2, rank=2))
 
@@ -189,7 +186,6 @@ class Mwe:
         xpath_3 = ['..//' + self.__xml_to_xpath(node) for node in xpath_3]
         # this assumes a single top node
         xpath_3 = '/node[' + ' and '.join(xpath_3) + ']'
-        print(xpath_3)
         generated.append(
             MweQuery(self, description='superset', xpath=xpath_3, rank=3))
 
