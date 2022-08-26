@@ -32,21 +32,19 @@ def write(filename, content):
 
 def update(basename):
     lines = read(basename + ".txt").splitlines()
-    sentence = lines[0].strip()
-    pronominals = map(lambda line: line.strip(), lines[1:])
+    can_form = lines[0].strip()
+    sentence = lines[1].strip()
 
     alpino_xml_filename = basename + ".xml"
     if not path.exists(datapath(alpino_xml_filename)):
         print("parsing")
-        alpino_xml = parse_sentence(sentence)
+        alpino_xml = parse_sentence(can_form)
         write(alpino_xml_filename, alpino_xml)
     else:
         alpino_xml = read(alpino_xml_filename)
 
-    mwe = Mwe(sentence, alpino_xml)
-    for p in pronominals:
-        if p:
-            mwe.pronominals.append(p)  # mark additional pronominals
+    mwe = Mwe(sentence)
+    mwe.set_tree(alpino_xml)
 
     # This generates a list of MweQuery-objects
     queries = mwe.generate_queries()

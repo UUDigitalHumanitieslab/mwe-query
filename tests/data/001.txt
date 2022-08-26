@@ -1,2 +1,2 @@
 iemand zal er goed voor staan
-goed
+iemand zal er <goed> voor staan

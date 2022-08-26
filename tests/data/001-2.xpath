@@ -1,1 +1,1 @@
-//node[node[@lemma="goed" and @pt="adj" and @rel="predc"] and node[@cat="pp" and @rel="pc"] and node[@lemma="staan" and @pt="ww" and @rel="hd"]]
+//node[node[@rel="predc"] and node[@cat="pp" and @rel="pc"] and node[@lemma="staan" and @pt="ww" and @rel="hd"]]

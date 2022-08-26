@@ -11,10 +11,9 @@ import xml.etree.ElementTree as ET
 
 
 class Mwe:
-    def __init__(self, sentence: str, alpino_xml: str):
+    def __init__(self, sentence: str):
         self.sentence = sentence
         self.head = 'v'
-        self.parsed = ET.fromstring(alpino_xml)
         # prepare for parse: store and remove pronominals and variables
         # TODO: implement Jan's new annotation scheme
         self.can_form, self.pronominals = self.__preprocess()
@@ -28,12 +27,12 @@ class Mwe:
 
     def __preprocess(self):
         can_form = self.__tokenize(self.sentence)
-        pronominals = [str(i) for i, word in enumerate(can_form) if word in [
+        pronominals = [i for i, word in enumerate(can_form) if word in [
             'iemand', 'iets', 'iemand|iets', 'iets|iemand', 'zich', 'zijn'] or (word[0] == '<' and word[-1] == '>')]
         can_form = [word[1:-1] if word[0] == '<' and word[-1]
                     == '>' else word for word in can_form]
         can_form = ' '.join(can_form)
-        return (can_form, pronominals)
+        return can_form, pronominals
 
     def __xml_to_xpath(self, root: ET.Element, number_of_child_nodes='loose', include_passives=False) -> str:
         res = root.tag
@@ -101,6 +100,9 @@ class Mwe:
         if parent is not None:
             parent.remove(node)
 
+    def set_tree(self, alpino_xml: str) -> None:
+        self.parsed = ET.fromstring(alpino_xml)
+
     def generate_queries(self) -> List['MweQuery']:
         # expand index nodes in parse
         mwe = expand_index_nodes(self.parsed)
@@ -117,7 +119,9 @@ class Mwe:
 
         # deal with pronominals
         for node in list(mwe.iter()):
-            if node.attrib.get('begin', None) in self.pronominals and node.attrib.get('end', None) == str(int(node.attrib.get('begin', -1)) + 1):
+            begin = int(node.attrib.get('begin', -1))
+            end = int(node.attrib.get('end', -1))
+            if begin in self.pronominals and end == begin + 1:
                 # these were wrongfully flagged as pronominals before
                 if node.attrib.get('lemma', None) == 'zijn' and (node.attrib.get('pos', None) == 'verb' or node.attrib.get('pt', None) == 'ww'):
                     continue
@@ -335,12 +339,12 @@ def main():
     # MWE = 'iemand zal de schepen achter zich verbranden'
     # MWE = 'iemand zal de dans ontspringen'
     # MWE = 'het lachen zal iemand vergaan'
-    sentence = 'iemand zal er goed voor staan'
+    sentence = 'iemand zal er <goed> voor staan'
 
+    mwe = Mwe(sentence)
     # parse in Alpino
-    parsed = parse_sentence(sentence)
-    mwe = Mwe(sentence, parsed)
-    mwe.pronominals.append('goed')
+    tree = parse_sentence(mwe.can_form)
+    mwe.set_tree(tree)
     max_trees = 10
 
     # generate queries

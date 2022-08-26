@@ -15,11 +15,14 @@ python -m mwe_query
 
 ```python
 from mwe_query import Mwe
+from alpino_query import parse_sentence
 
-sentence = 'iemand zal er goed voor staan'
-parsed_xml = ... # parse this sentence using Alpino
-mwe = Mwe(sentence, parsed_xml)
-mwe.pronominals.append('goed') # mark additional pronominals
+# the pronominal is marked with <>
+sentence = 'iemand zal er <goed> voor staan'
+mwe = Mwe(sentence)
+# parse this sentence using Alpino
+tree = parse_sentence(mwe.can_form)
+mwe.set_tree(tree)
 
 # This generates a list of MweQuery-objects
 queries = mwe.generate_queries()

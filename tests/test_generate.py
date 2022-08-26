@@ -21,15 +21,12 @@ class TestConsole(unittest.TestCase):
 
     def assert_sentence(self, basename):
         lines = self.read(basename + ".txt").splitlines()
-        sentence = lines[0].strip()
-        pronominals = map(lambda line: line.strip(), lines[1:])
+        sentence = lines[1].strip()
 
         alpino_xml = self.read(basename + ".xml")
 
-        mwe = Mwe(sentence, alpino_xml)
-        for p in pronominals:
-            if p:
-                mwe.pronominals.append(p)  # mark additional pronominals
+        mwe = Mwe(sentence)
+        mwe.set_tree(alpino_xml)
 
         # This generates a list of MweQuery-objects
         queries = mwe.generate_queries()
