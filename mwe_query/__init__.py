@@ -332,7 +332,12 @@ def expand_index_nodes(sentence: ET.Element) -> ET.Element:
         visited.add(node)
 
         if node.attrib.get('word', None) is None and node.attrib.get('cat', None) is None:
-            expanded_index = index_dict[node.attrib['index']]
+            expanded_index = index_dict.get(node.attrib['index'])
+            if expanded_index is None:
+                # already expanded
+                continue
+
+            del index_dict[node.attrib['index']]
             for a in expanded_index.attrib:
                 if a not in node.attrib.keys():
                     node.attrib[a] = expanded_index.attrib[a]
