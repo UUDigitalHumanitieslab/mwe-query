@@ -323,14 +323,9 @@ def expand_index_nodes(sentence: ET.Element) -> ET.Element:
                         rel_pron.append(c)
                 index_dict[node_copy.attrib['index']] = node_copy
 
-    visited = set()
     for node in sentence.iter('node'):
         # TODO wat als één expanded index een andere index bevat? Twee keer over knopen gaan om te vervangen?
         # lijkt goed te gaan, maar onduidelijk of het voorkomt.
-        if node in visited:
-            raise RuntimeError('Found a cycle in element tree')
-        visited.add(node)
-
         if node.attrib.get('word', None) is None and node.attrib.get('cat', None) is None:
             expanded_index = index_dict.get(node.attrib['index'])
             if expanded_index is None:
