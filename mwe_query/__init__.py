@@ -3,7 +3,7 @@ __author__ = 'marti'
 import re
 from alpino_query import parse_sentence
 from copy import deepcopy
-from typing import Dict, List
+from typing import Dict, List, Optional
 import time
 from .basex_query import list_databases, perform_xpath
 import os
@@ -238,101 +238,84 @@ class MweQuery:
               ': Done! Took {:.2f}s'.format(end-start))
 
 
-def expand_index_nodes(sentence: ET.Element) -> ET.Element:
-    index_dict: Dict[str, ET.Element] = {}
-    for node in sentence.iter('node'):
-        if node.attrib.get('index', None) is not None and (node.attrib.get('word', None) is not None or node.attrib.get('cat', None) is not None):
-            id = node.attrib['id']
-            index_dict[node.attrib['index']] = node
-            if node.attrib['rel'] == 'rhd':
-                parent = sentence.find(f'.//node[@id="{id}"]...')
-                if parent is None:
-                    continue
-                elif parent.attrib.get('cat') != 'rel':
-                    continue
-                if node.attrib.get('word', None) == 'zoals':
-                    # TODO zoals als rhd
-                    print(
-                        "WARNING: encountered 'zoals' as relative head. Ignoring for now, not fully implemented. Filling in dummy 'zo'.")
-                    index_dict[node.attrib['index']] = ET.Element(attrib={'frame': 'adverb',
-                                                                          'id': id,
-                                                                          'lcat': 'advp',
-                                                                          'pos': 'adv',
-                                                                          'root': 'zo',
-                                                                          'sense': 'zo',
-                                                                          'word': 'zo',
-                                                                          'lemma': 'zo',
-                                                                          'pt': 'bw', })
-                antecedent = sentence.find(f'.//node[@id="{id}"]....')
-                if antecedent.attrib.get('cat', None) == 'conj':
-                    antecedent = sentence.find(
-                        f'.//node[@id="{id}"]......')
-                if antecedent.attrib.get('cat', None) in ['top', 'du']:
-                    continue
-                node_copy = deepcopy(node)
-                antecedent = deepcopy(antecedent)
-                if node_copy.attrib.get('frame', '').startswith('waar_adverb'):
-                    prep = node_copy.attrib['frame'].split('(')[-1][:-1]
-                    node_copy.attrib = {'id': node_copy.attrib['id'],
-                                        'cat': node_copy.attrib['lcat'],
-                                        'rel': 'rhd',
-                                        'index': node_copy.attrib['index']}
-                    node_copy.append(ET.Element('node', attrib={'id': node_copy.attrib['id']+'a',
-                                                                'lcat': 'pp',
-                                                                'pos': 'prep',
-                                                                'root': prep,
-                                                                'sense': prep,
-                                                                'vztype': 'init',
-                                                                'word': prep,
-                                                                'lemma': prep,
-                                                                'pt': 'vz',
-                                                                'rel': 'hd'}))
-                    node_copy.append(ET.Element('node', attrib={'case': 'obl',
-                                                                'gen': 'both',
-                                                                'getal': 'getal',
-                                                                'id': node_copy.attrib['id']+'b',
-                                                                'lcat': 'np',
-                                                                'naamval': 'stan',
-                                                                'pdtype': 'pron',
-                                                                'persoon': '3p',
-                                                                'pos': 'pron',
-                                                                'rnum': 'sg',
-                                                                'root': 'die',
-                                                                'sense': 'die',
-                                                                'status': 'vol',
-                                                                'vwtype': 'vb',
-                                                                'wh': 'rel',
-                                                                'word': 'waar',
-                                                                'lemma': 'die',
-                                                                'pt': 'vnw',
-                                                                'rel': 'obj1'}))
-                if node_copy.attrib.get('word', None) is None:
-                    rel_pron = list(node_copy.findall(
-                        './/node[@vwtype="vb"]') + node_copy.findall('.//node[@vwtype="betr"]'))[0]
-                else:
-                    rel_pron = node_copy
-                rel_pron.attrib = {k: v for k, v in rel_pron.attrib.items() if k in [
-                    'begin', 'end', 'id', 'index', 'rel']}
-                if rel_pron.attrib.get('rel', None) == 'det':
-                    rel_pron.attrib['cat'] = 'detp'
-                for a in antecedent.attrib.keys():
-                    if a not in rel_pron.keys():
-                        rel_pron.attrib[a] = antecedent.attrib[a]
-                for c in antecedent:
-                    if (c not in rel_pron) and (c.find(f'.//node[@id="{id}"]') is None):
-                        rel_pron.append(c)
-                index_dict[node_copy.attrib['index']] = node_copy
+def handle_rel_rhd(node: ET.Element, sentence: ET.Element) -> Optional[ET.Element]:
+    id_ = node.attrib['id']
+    parent = sentence.find(f'.//node[@id="{id_}"]...')
+    if parent is None:
+        return
+    elif parent.attrib.get('cat') != 'rel':
+        return
+    if node.attrib.get('word') == 'zoals':
+        # TODO zoals als rhd
+        print("WARNING: encountered 'zoals' as relative head. Ignoring for now, not fully implemented. Filling in dummy 'zo'.")
+        return ET.Element('node', attrib={'frame': 'adverb', 'id': id_, 'lcat': 'advp',
+                                          'pos': 'adv', 'root': 'zo', 'sense': 'zo',
+                                          'word': 'zo', 'lemma': 'zo', 'pt': 'bw', })
+    antecedent = sentence.find(f'.//node[@id="{id_}"]....')
+    if antecedent.attrib.get('cat') == 'conj':
+        antecedent = sentence.find(f'.//node[@id="{id_}"]......')
+    if antecedent.attrib.get('cat') in ['top', 'du']:
+        return
 
-    for node in sentence.iter('node'):
-        # TODO wat als één expanded index een andere index bevat? Twee keer over knopen gaan om te vervangen?
-        # lijkt goed te gaan, maar onduidelijk of het voorkomt.
-        if node.attrib.get('word', None) is None and node.attrib.get('cat', None) is None:
-            expanded_index = index_dict.get(node.attrib['index'])
-            if expanded_index is None:
-                # already expanded
-                continue
+    node_copy = deepcopy(node)
+    antecedent = deepcopy(antecedent)
+    if node_copy.attrib.get('frame', '').startswith('waar_adverb'):
+        prep = node_copy.attrib['frame'].split('(')[-1][:-1]
+        node_copy.attrib = {'id': node_copy.attrib['id'],
+                            'cat': node_copy.attrib['lcat'],
+                            'rel': 'rhd',
+                            'index': node_copy.attrib['index']}
+        node_copy.append(ET.Element('node', attrib={'id': node_copy.attrib['id'] + 'a',
+                                                    'lcat': 'pp', 'pos': 'prep', 'root': prep,
+                                                    'sense': prep, 'vztype': 'init', 'word': prep,
+                                                    'lemma': prep, 'pt': 'vz', 'rel': 'hd'}))
+        node_copy.append(ET.Element('node', attrib={'case': 'obl', 'gen': 'both', 'getal': 'getal',
+                                                    'id': node_copy.attrib['id'] + 'b',
+                                                    'lcat': 'np', 'naamval': 'stan', 'pdtype': 'pron',
+                                                    'persoon': '3p', 'pos': 'pron', 'rnum': 'sg',
+                                                    'root': 'die', 'sense': 'die', 'status': 'vol',
+                                                    'vwtype': 'vb', 'wh': 'rel', 'word': 'waar',
+                                                    'lemma': 'die', 'pt': 'vnw', 'rel': 'obj1'}))
+    if node_copy.attrib.get('word', None) is None:
+        rel_pron = list(node_copy.findall(
+            './/node[@vwtype="vb"]') + node_copy.findall('.//node[@vwtype="betr"]'))[0]
+    else:
+        rel_pron = node_copy
+    rel_pron.attrib = {k: v for k, v in rel_pron.attrib.items() if k in [
+        'begin', 'end', 'id', 'index', 'rel']}
+    if rel_pron.attrib.get('rel', None) == 'det':
+        rel_pron.attrib['cat'] = 'detp'
+    for a in antecedent.attrib.keys():
+        if a not in rel_pron.keys():
+            rel_pron.attrib[a] = antecedent.attrib[a]
+    for c in antecedent:
+        if (c not in rel_pron) and (c.find(f'.//node[@id="{id_}"]') is None):
+            rel_pron.append(c)
+    return node_copy
 
-            del index_dict[node.attrib['index']]
+
+def expand_index_nodes(sentence: ET.Element, index_dict: Optional[Dict[str, ET.Element]] = None) -> ET.Element:
+    if index_dict is None:
+        index_dict = {}
+        for node in sentence.iter('node'):
+            index = node.attrib.get('index')
+            if index is not None and (node.attrib.get('word') is not None or node.attrib.get('cat') is not None):
+                index_dict[index] = node
+                if node.attrib['rel'] == 'rhd':
+                    processed = handle_rel_rhd(node, sentence)
+                    if processed is not None:
+                        index_dict[index] = processed
+
+        # expand index nodes once for nodes in our expansion dictionary
+        for node in index_dict.values():
+            expand_index_nodes(node, index_dict)
+
+    # expand index nodes for the entire tree.
+    # it's important to wrap iter() in list() so that we don't iterate over the
+    # tree while we are also mutating it
+    for node in list(sentence.iter('node')):
+        if node.attrib.get('word') is None and node.attrib.get('cat') is None:
+            expanded_index = index_dict[node.attrib['index']]
             for a in expanded_index.attrib:
                 if a not in node.attrib.keys():
                     node.attrib[a] = expanded_index.attrib[a]
