@@ -1,0 +1,461 @@
+<treebank>
+  <mwe mwe="iemand zal er met de pet naar gooien">
+    <node id="4">
+      <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="6" nodecount="2">
+        <node lemma="met" rel="hd" pt="vz" vztype="init" id="7"/>
+        <node rel="obj1" cat="np" id="8" nodecount="2">
+          <node lemma="de" rel="det" pt="lid" lwtype="bep" id="9"/>
+          <node lemma="pet" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="10"/>
+        </node>
+      </node>
+      <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="11" nodecount="2">
+        <node lemma="er" rel="obj1" pt="vnw" vwtype="aanw" getal="getal" persoon="3" id="12"/>
+        <node lemma="naar" rel="hd" pt="vz" vztype="fin" id="13"/>
+      </node>
+      <node lemma="gooien" rel="hd" pt="ww" id="14"/>
+    </node>
+    <xpath>//
+     node[
+          node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+               node[@lemma="met" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+               node[@rel="obj1" and @cat="np" and count(node)=2 and 
+                    node[@lemma="de" and @rel="det" and @pt="lid" and @lwtype="bep"] and 
+                    node[@lemma="pet" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]]] and 
+          node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+               node[@lemma="er" and @rel="obj1" and @pt="vnw" and @vwtype="aanw" and @getal="getal" and @persoon="3"] and 
+               node[@lemma="naar" and @rel="hd" and @pt="vz" and @vztype="fin"]] and 
+          node[@lemma="gooien" and @rel="hd" and @pt="ww"]]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal de schuld op iemand schuiven">
+    <node id="4">
+      <node rel="obj1" cat="np" id="6" nodecount="2">
+        <node lemma="de" rel="det" pt="lid" lwtype="bep" id="7"/>
+        <node lemma="schuld" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="8"/>
+      </node>
+      <node lemma="schuiven" rel="hd" pt="ww" id="12"/>
+      <alternatives>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="9" nodecount="2">
+            <node lemma="op" rel="hd" pt="vz" vztype="init" id="10"/>
+            <node rel="obj1" id="11"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="9" nodecount="2">
+            <node rel="obj1" id="11" lemma="er|hier|daar|waar|ergens|nergens|overal"/>
+            <node lemma="op" rel="hd" pt="vz" vztype="fin" id="10"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="9" nodecount="2">
+            <node rel="obj1" id="11" cat="np">
+              <node rel="mod" pt="dummy" begin="0" end="0" word="dummy"/>
+            </node>
+            <node lemma="op" rel="hd" pt="vz" vztype="fin" id="10"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="9" nodecount="2">
+            <node lemma="op" rel="hd" pt="vz" vztype="init" id="10"/>
+            <node rel="pobj1"/>
+            <node rel="vc"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="9" nodecount="2">
+            <node lemma="erop" rel="hd"/>
+            <node rel="vc"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node lemma="waarop|daarop|hierop|erop" rel="pc|ld|mod|predc|svp|predm"/>
+        </alternative>
+      </alternatives>
+    </node>
+    <xpath>//
+     node[
+          node[@rel="obj1" and @cat="np" and count(node)=2 and 
+               node[@lemma="de" and @rel="det" and @pt="lid" and @lwtype="bep"] and 
+               node[@lemma="schuld" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]] and 
+          node[@lemma="schuiven" and @rel="hd" and @pt="ww"] and 
+          (
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="op" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                         node[@rel="obj1"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@rel="obj1" and (@lemma="er" or @lemma="hier" or @lemma="daar" or @lemma="waar" or @lemma="ergens" or @lemma="nergens" or @lemma="overal")] and 
+                         node[@lemma="op" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@rel="obj1" and @cat="np" and 
+                              node[@rel="mod" and @pt="dummy" and @begin="0" and @end="0" and @word="dummy"]] and 
+                         node[@lemma="op" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="op" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                         node[@rel="pobj1"] and 
+                         node[@rel="vc"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="erop" and @rel="hd"] and 
+                         node[@rel="vc"]]
+               ) or 
+               (
+                    node[(@lemma="waarop" or @lemma="daarop" or @lemma="hierop" or @lemma="erop") and (@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm")]
+               )
+          )]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal  goed aan iets doen ">
+    <node id="4">
+      <node lemma="goed" rel="mod" pt="adj" graad="basis" id="6"/>
+      <node lemma="doen" rel="hd" pt="ww" id="10"/>
+      <alternatives>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+            <node lemma="aan" rel="hd" pt="vz" vztype="init" id="8"/>
+            <node rel="obj1" id="9"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+            <node rel="obj1" id="9" lemma="er|hier|daar|waar|ergens|nergens|overal"/>
+            <node lemma="aan" rel="hd" pt="vz" vztype="fin" id="8"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+            <node rel="obj1" id="9" cat="np">
+              <node rel="mod" pt="dummy" begin="0" end="0" word="dummy"/>
+            </node>
+            <node lemma="aan" rel="hd" pt="vz" vztype="fin" id="8"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+            <node lemma="aan" rel="hd" pt="vz" vztype="init" id="8"/>
+            <node rel="pobj1"/>
+            <node rel="vc"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+            <node lemma="eraan" rel="hd"/>
+            <node rel="vc"/>
+          </node>
+        </alternative>
+        <alternative>
+          <node lemma="waaraan|daaraan|hieraan|eraan" rel="pc|ld|mod|predc|svp|predm"/>
+        </alternative>
+      </alternatives>
+    </node>
+    <xpath>//
+     node[
+          node[@lemma="goed" and @rel="mod" and @pt="adj" and @graad="basis"] and 
+          node[@lemma="doen" and @rel="hd" and @pt="ww"] and 
+          (
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                         node[@rel="obj1"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@rel="obj1" and (@lemma="er" or @lemma="hier" or @lemma="daar" or @lemma="waar" or @lemma="ergens" or @lemma="nergens" or @lemma="overal")] and 
+                         node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@rel="obj1" and @cat="np" and 
+                              node[@rel="mod" and @pt="dummy" and @begin="0" and @end="0" and @word="dummy"]] and 
+                         node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                         node[@rel="pobj1"] and 
+                         node[@rel="vc"]]
+               ) or 
+               (
+                    node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                         node[@lemma="eraan" and @rel="hd"] and 
+                         node[@rel="vc"]]
+               ) or 
+               (
+                    node[(@lemma="waaraan" or @lemma="daaraan" or @lemma="hieraan" or @lemma="eraan") and (@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm")]
+               )
+          )]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal  geen mouw aan iets weten te passen">
+    <node id="4">
+      <node lemma="weten" rel="hd" pt="ww" id="6"/>
+      <node rel="vc" cat="ti" id="7" nodecount="2">
+        <node lemma="te" rel="cmp" pt="vz" vztype="init" id="8"/>
+        <node rel="body" cat="inf" id="9" nodecount="4">
+          <node begin="0" end="1" id="10" rel="su"/>
+          <node rel="obj1" cat="np" id="11" nodecount="2">
+            <node lemma="geen" rel="det" pt="vnw" vwtype="onbep" id="12"/>
+            <node lemma="mouw" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="13"/>
+          </node>
+          <node lemma="passen" rel="hd" pt="ww" wvorm="inf" id="17"/>
+          <alternatives>
+            <alternative>
+              <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="14" nodecount="2">
+                <node lemma="aan" rel="hd" pt="vz" vztype="init" id="15"/>
+                <node rel="obj1" id="16"/>
+              </node>
+            </alternative>
+            <alternative>
+              <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="14" nodecount="2">
+                <node rel="obj1" id="16" lemma="er|hier|daar|waar|ergens|nergens|overal"/>
+                <node lemma="aan" rel="hd" pt="vz" vztype="fin" id="15"/>
+              </node>
+            </alternative>
+            <alternative>
+              <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="14" nodecount="2">
+                <node rel="obj1" id="16" cat="np">
+                  <node rel="mod" pt="dummy" begin="0" end="0" word="dummy"/>
+                </node>
+                <node lemma="aan" rel="hd" pt="vz" vztype="fin" id="15"/>
+              </node>
+            </alternative>
+            <alternative>
+              <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="14" nodecount="2">
+                <node lemma="aan" rel="hd" pt="vz" vztype="init" id="15"/>
+                <node rel="pobj1"/>
+                <node rel="vc"/>
+              </node>
+            </alternative>
+            <alternative>
+              <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="14" nodecount="2">
+                <node lemma="eraan" rel="hd"/>
+                <node rel="vc"/>
+              </node>
+            </alternative>
+            <alternative>
+              <node lemma="waaraan|daaraan|hieraan|eraan" rel="pc|ld|mod|predc|svp|predm"/>
+            </alternative>
+          </alternatives>
+        </node>
+      </node>
+    </node>
+    <xpath>//
+     node[
+          node[@lemma="weten" and @rel="hd" and @pt="ww"] and 
+          node[@rel="vc" and @cat="ti" and count(node)=2 and 
+               node[@lemma="te" and @rel="cmp" and @pt="vz" and @vztype="init"] and 
+               node[@rel="body" and @cat="inf" and count(node)=4 and 
+                    node[@begin="0" and @end="1" and @rel="su"] and 
+                    node[@rel="obj1" and @cat="np" and count(node)=2 and 
+                         node[@lemma="geen" and @rel="det" and @pt="vnw" and @vwtype="onbep"] and 
+                         node[@lemma="mouw" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]] and 
+                    node[@lemma="passen" and @rel="hd" and @pt="ww" and @wvorm="inf"] and 
+                    (
+                         (
+                              node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                                   node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                                   node[@rel="obj1"]]
+                         ) or 
+                         (
+                              node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                                   node[@rel="obj1" and (@lemma="er" or @lemma="hier" or @lemma="daar" or @lemma="waar" or @lemma="ergens" or @lemma="nergens" or @lemma="overal")] and 
+                                   node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+                         ) or 
+                         (
+                              node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                                   node[@rel="obj1" and @cat="np" and 
+                                        node[@rel="mod" and @pt="dummy" and @begin="0" and @end="0" and @word="dummy"]] and 
+                                   node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="fin"]]
+                         ) or 
+                         (
+                              node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                                   node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+                                   node[@rel="pobj1"] and 
+                                   node[@rel="vc"]]
+                         ) or 
+                         (
+                              node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+                                   node[@lemma="eraan" and @rel="hd"] and 
+                                   node[@rel="vc"]]
+                         ) or 
+                         (
+                              node[(@lemma="waaraan" or @lemma="daaraan" or @lemma="hieraan" or @lemma="eraan") and (@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm")]
+                         )
+                    )]]]</xpath>
+  </mwe>
+  <mwe mwe="al doende zal iemand leren">
+    <node id="7">
+      <node lemma="leren" rel="hd" pt="ww" id="9"/>
+      <node rel="pc|ld|mod|predc|svp|predm" cat="ppres" id="2" nodecount="2">
+        <node lemma="al" rel="mod" pt="bw" id="3"/>
+        <node lemma="doende" rel="hd" pt="ww" wvorm="od" id="4"/>
+      </node>
+    </node>
+    <xpath>//
+     node[
+          node[@lemma="leren" and @rel="hd" and @pt="ww"] and 
+          node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="ppres" and count(node)=2 and 
+               node[@lemma="al" and @rel="mod" and @pt="bw"] and 
+               node[@lemma="doende" and @rel="hd" and @pt="ww" and @wvorm="od"]]]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal iets door de vingers zien">
+    <node id="4">
+      <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="7" nodecount="2">
+        <node lemma="door" rel="hd" pt="vz" vztype="init" id="8"/>
+        <node rel="obj1" cat="np" id="9" nodecount="2">
+          <node lemma="de" rel="det" pt="lid" lwtype="bep" id="10"/>
+          <node lemma="vinger" rel="hd" pt="n" ntype="soort" getal="mv" graad="basis" id="11"/>
+        </node>
+      </node>
+      <node lemma="zien" rel="hd" pt="ww" id="12"/>
+      <alternatives>
+        <alternative>
+          <node rel="obj1" id="6"/>
+        </alternative>
+        <alternative>
+          <node rel="vc"/>
+        </alternative>
+        <alternative>
+          <node rel="pobj1"/>
+          <node rel="vc"/>
+        </alternative>
+      </alternatives>
+    </node>
+    <xpath>//
+     node[
+          node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+               node[@lemma="door" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+               node[@rel="obj1" and @cat="np" and count(node)=2 and 
+                    node[@lemma="de" and @rel="det" and @pt="lid" and @lwtype="bep"] and 
+                    node[@lemma="vinger" and @rel="hd" and @pt="n" and @ntype="soort" and @getal="mv" and @graad="basis"]]] and 
+          node[@lemma="zien" and @rel="hd" and @pt="ww"] and 
+          (
+               (
+                    node[@rel="obj1"]
+               ) or 
+               (
+                    node[@rel="vc"]
+               ) or 
+               (
+                    node[@rel="pobj1"] and 
+                    node[@rel="vc"]
+               )
+          )]</xpath>
+  </mwe>
+  <mwe mwe="zo doof als een kwartel">
+    <node>
+      <node cat="ap" id="1">
+        <node lemma="doof" rel="hd" pt="adj" id="2"/>
+        <node lemma="zo" rel="mod" pt="bw" id="4"/>
+      </node>
+      <node rel="predm|mod" cat="cp" id="5" nodecount="2">
+        <node lemma="als" rel="cmp" pt="vz" id="6" vztype="init"/>
+        <node rel="body" cat="np" id="7" nodecount="2">
+          <node lemma="een" rel="det" pt="lid" lwtype="onbep" id="8"/>
+          <node lemma="kwartel" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="9"/>
+        </node>
+      </node>
+    </node>
+    <node cat="ap" id="1">
+      <node lemma="doof" rel="hd" pt="adj" id="2"/>
+      <node rel="mod" cat="advp" id="3" nodecount="2">
+        <node lemma="zo" rel="hd" pt="bw" id="4"/>
+        <node rel="obcomp" cat="cp" id="5" nodecount="2">
+          <node lemma="als" rel="cmp" pt="vg" conjtype="onder" id="6"/>
+          <node rel="body" cat="np" id="7" nodecount="2">
+            <node lemma="een" rel="det" pt="lid" lwtype="onbep" id="8"/>
+            <node lemma="kwartel" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="9"/>
+          </node>
+        </node>
+      </node>
+    </node>
+    <xpath>
+//node[
+self::
+     node[
+          node[@cat="ap" and 
+               node[@lemma="doof" and @rel="hd" and @pt="adj"] and 
+               node[@lemma="zo" and @rel="mod" and @pt="bw"]] and 
+          node[(@rel="predm" or @rel="mod") and @cat="cp" and count(node)=2 and 
+               node[@lemma="als" and @rel="cmp" and @pt="vz" and @vztype="init"] and 
+               node[@rel="body" and @cat="np" and count(node)=2 and 
+                    node[@lemma="een" and @rel="det" and @pt="lid" and @lwtype="onbep"] and 
+                    node[@lemma="kwartel" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]]]]
+ | 
+self::
+     node[@cat="ap" and 
+          node[@lemma="doof" and @rel="hd" and @pt="adj"] and 
+          node[@rel="mod" and @cat="advp" and count(node)=2 and 
+               node[@lemma="zo" and @rel="hd" and @pt="bw"] and 
+               node[@rel="obcomp" and @cat="cp" and count(node)=2 and 
+                    node[@lemma="als" and @rel="cmp" and @pt="vg" and @conjtype="onder"] and 
+                    node[@rel="body" and @cat="np" and count(node)=2 and 
+                         node[@lemma="een" and @rel="det" and @pt="lid" and @lwtype="onbep"] and 
+                         node[@lemma="kwartel" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]]]]]
+]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal 0een *+poging doen">
+    <node id="4">
+      <node rel="obj1" cat="np" id="6">
+        <node lemma="poging" rel="hd" pt="n" ntype="soort" genus="zijd" id="8"/>
+      </node>
+      <node lemma="doen" rel="hd" pt="ww" id="9"/>
+    </node>
+    <xpath>//
+     node[
+          node[@rel="obj1" and @cat="np" and 
+               node[@lemma="poging" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv")]] and 
+          node[@lemma="doen" and @rel="hd" and @pt="ww"]]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal 0een *+poging wagen">
+    <node id="4">
+      <node rel="obj1" cat="np" id="6">
+        <node lemma="poging" rel="hd" pt="n" ntype="soort" genus="zijd" id="8"/>
+      </node>
+      <node lemma="wagen" rel="hd" pt="ww" id="9"/>
+    </node>
+    <xpath>//
+     node[
+          node[@rel="obj1" and @cat="np" and 
+               node[@lemma="poging" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv")]] and 
+          node[@lemma="wagen" and @rel="hd" and @pt="ww"]]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal aan 0de *+dans ontspringen">
+    <node id="4">
+      <node rel="pc|ld|mod|predc|svp|predm" cat="pp" id="6" nodecount="2">
+        <node lemma="aan" rel="hd" pt="vz" vztype="init" id="7"/>
+        <node rel="obj1" cat="np" id="8">
+          <node lemma="dans" rel="hd" pt="n" ntype="soort" genus="zijd" id="10"/>
+        </node>
+      </node>
+      <node lemma="ontspringen" rel="hd" pt="ww" id="11"/>
+    </node>
+    <xpath>//
+     node[
+          node[(@rel="pc" or @rel="ld" or @rel="mod" or @rel="predc" or @rel="svp" or @rel="predm") and @cat="pp" and count(node)=2 and 
+               node[@lemma="aan" and @rel="hd" and @pt="vz" and @vztype="init"] and 
+               node[@rel="obj1" and @cat="np" and 
+                    node[@lemma="dans" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv")]]] and 
+          node[@lemma="ontspringen" and @rel="hd" and @pt="ww"]]</xpath>
+  </mwe>
+  <mwe mwe="iemand zal de plaat poetsen">
+    <node id="4">
+      <node rel="obj1" cat="np" id="6" nodecount="2">
+        <node lemma="de" rel="det" pt="lid" lwtype="bep" id="7"/>
+        <node lemma="plaat" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" id="8"/>
+      </node>
+      <node lemma="poetsen" rel="hd" pt="ww" id="9"/>
+    </node>
+    <xpath>//
+     node[
+          node[@rel="obj1" and @cat="np" and count(node)=2 and 
+               node[@lemma="de" and @rel="det" and @pt="lid" and @lwtype="bep"] and 
+               node[@lemma="plaat" and @rel="hd" and @pt="n" and @ntype="soort" and (@genus="zijd" or @getal="mv") and @getal="ev" and @graad="basis"]] and 
+          node[@lemma="poetsen" and @rel="hd" and @pt="ww"]]</xpath>
+  </mwe>
+</treebank>

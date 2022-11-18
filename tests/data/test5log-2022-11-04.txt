@@ -1,0 +1,626 @@
+C:\Users\Odijk101\Anaconda3\envs\mwe-query\python.exe D:\Dropbox\jodijk\myprograms\python\mwe-query\preprocess_test.py 
+iemand zal ’m smeren iemand zal 'M smeren 1
+iemand zal aanhangen als een klis iemand zal aanhangen als een klis 0
+af en toe heel af en toe 1
+Aken en Keulen zullen niet op éen dag gebouwd zijn Keulen en Aken zullen niet op één dag gebouwd zijn 1
+al is de leugen nog zo snel de waarheid zal haar wel achterhalen al is de leugen nog zo snel de waarheid zal haar wel achterhalen 0
+als de katten muizen dan zullen ze niet mauwen als de katten muizen dan zullen ze niet mauwen 0
+iemand zal als de kippen er bij zijn iemand zal er als de kippen bij zijn 1
+als de maan vol is ' zal zij overal schijnen als de maan vol is ' zal zij overal schijnen 0
+als de nood op het hoogst is zal de redding nabij zijn als de nood op het hoogst is zal de redding nabij zijn 0
+iemand zal baad het niet dan schaad het niet iemand zal baad het niet dan schaadt het niet 1
+iemand zal baad het niet dan schaad het niet iemand zal baadt het niet dan schaad het niet 1
+iemand zal baad het niet dan schaad het niet iemand zal baadt het niet dan schaadt het niet 1
+iemand zal baad het niet dan schaadt het niet iemand zal baad het niet dan schaad het niet 1
+iemand zal baad het niet dan schaadt het niet iemand zal baadt het niet dan schaad het niet 1
+iemand zal baad het niet dan schaadt het niet iemand zal baadt het niet dan schaadt het niet 1
+iemand zal baadt het niet dan schaad het niet iemand zal baad het niet dan schaad het niet 1
+iemand zal baadt het niet dan schaad het niet iemand zal baad het niet dan schaadt het niet 1
+iemand zal baadt het niet dan schaad het niet iemand zal baadt het niet dan schaadt het niet 1
+iemand zal baadt het niet dan schaadt het niet iemand zal baad het niet dan schaad het niet 1
+iemand zal baadt het niet dan schaadt het niet iemand zal baad het niet dan schaadt het niet 1
+iemand zal baadt het niet dan schaadt het niet iemand zal baadt het niet dan schaad het niet 1
+iemand zal blauw aanlopen iemand zal blauw aanlopen 0
+blauwe scheen iemand zal een blauwe scheen krijgen 1
+blauwe scheen iemand zal een blauwe scheen lopen 1
+iemand zal boter op zijn hoofd hebben wie boter op zijn hoofd heeft zal uit de zon moeten blijven 3
+iemand zal boven iets staan iemand zal boven aarde staan 1
+iemand zal boven iets staan iemand zal boven de wet staan 1
+bruin zal iets niet kunnen trekken de bruin zal iets niet kunnen trekken 1
+500
+iemand zal de bloemetjes buitenzetten iemand zal de bloemetjes buiten zetten 1
+iemand zal de boer opgaan iemand zal de boer op gaan 1
+iemand zal de bovenhand krijgen - nemen - hebben iemand zal de bovenhand krijgen - nemen - hebben 0
+iemand zal de breeveertien opgaan iemand zal de breeveertien op gaan 1
+de bruin zal iets niet kunnen trekken de bruin zal iets niet kunnen trekken 0
+iemand zal de draak met iemand steken iemand zal de draak met iets steken 1
+iemand zal de draak met iets steken iemand zal de draak met iemand steken 1
+de geest zal gewillig zijn maar het vlees zal zwak zijn de geest zal gewillig zijn maar het vlees zal zwak zijn 0
+de haren zullen iemand te berge rijzen iemand zullen de haren te berge rijzen 1
+iemand zal de kluts kwijt zijn iemand zal even de kluts kwijt zijn 1
+iemand zal de kluts kwijtraken iemand zal de kluts kwijt raken 1
+de kruik zal zo lang te water gaan tot zij berst de kruik zal zo lang te water gaan tot zij berst 0
+iemand zal de lucht ingaan iemand zal de lucht in gaan 1
+iemand zal de lucht van iets krijgen iemand zal de lucht van iets in de neus krijgen 1
+de mantel zijns meesters zal op iemand gevallen zijn de mantel zijns meesters zal op iemand gevallen zijn 0
+de mens zal wikken en God beschikt de mens zal wikken en God beschikt 0
+de mens zal wikken maar God beschikt de mens zal wikken maar God beschikt 0
+iemand zal de mug uitzijgen en de kemel doorzwelgen iemand zal de mug uitzijgen en de kemel doorzwelgen 0
+iemand zal de pijp uitgaan iemand zal de pijp uit gaan 1
+iemand zal de plank miszijn iemand zal de plank miszijn 0
+iemand zal de schoot vieren iemand zal de schoot laten vieren 1
+iemand zal de snuf van iets hebben iemand zal de snuf van iets in de neus hebben 1
+iemand zal de snuf van iets krijgen iemand zal de snuf van iets in de neus krijgen 1
+iemand zal de sokken zetten iemand zal de sokken er in zetten 1
+iemand zal de spat zetten iemand zal de spat er in zetten 1
+iemand zal de splinter in iemand anders oog zien iemand zal de splinter in iemand anders oog zien 0
+iemand zal de spuigaten uitlopen iemand zal de spuigaten uit lopen 1
+iemand zal de was doen een kind zal de was kunnen doen 1
+de wind zal een andere hoek waaien de wind zal een andere hoek waaien 0
+de wind zal een verkeerde hoek waaien de wind zal een verkeerde hoek waaien 0
+iemand zal zich branden iemand zal bang zijn zich aan koud water te branden 1
+die aan de weg timmert zal veel berechts hebben die aan de weg timmert zal veel berechts hebben 0
+die de naam heeft van vroeg op te staan zal nooit te laat komen die de naam heeft van vroeg op te staan zal nooit te laat komen 0
+die een kuil graaft voor een ander zal er zelf in vallen die een kuil graaft voor een ander zal er zelf in vallen 0
+die eens steelt zal altijd een dief zijn die eens steelt zal altijd een dief zijn 0
+die eerst komt die zal eerst malen die eerst komt die zal eerst malen 0
+die eerst komt zal eerst malen die eerst komt zal eerst malen 0
+die geboren is om te hangen zal niet verdrinken die geboren is om te hangen zal niet verdrinken 0
+die het dichtst bij het vuur zit zal zich het best warmen die het dichtst bij het vuur zit zal zich het best warmen 0
+die het eerst komt , die zal het eerst malen die het eerst komt , die zal het eerst malen 0
+die het eerst komt zal het eerst malen die het eerst komt zal het eerst malen 0
+die het kleine niet eert zal het grote niet weerd zijn die het kleine niet eert zal het grote niet weerd zijn 0
+die het onderste uit de kan wil hebben zal het deksel op de neus krijgen die het onderste uit de kan wil hebben zal het deksel op de neus krijgen 0
+die het onderste uit de kan wil hebben zal het lid op de neus krijgen die het onderste uit de kan wil hebben zal het lid op de neus krijgen 0
+die in het veen zit zal op geen turfje zien die in het veen zit zal op geen turfje zien 0
+die kaatst zal de bal moeten verwachten die kaatst zal de bal moeten verwachten 0
+die me lief heeft zal me volgen die me lief heeft zal me volgen 0
+die mooi wil wezen zal pijn moeten lijden die mooi wil wezen zal pijn moeten lijden 0
+die niet horen wil zal moeten voelen die niet horen wil zal moeten voelen 0
+die niet waagt die zal niet winnen die niet waagt die zal niet winnen 0
+die niet werkt zal ook niet zullen eten die niet werkt zal ook niet zullen eten 0
+die waagt die zal niet winnen die waagt die zal niet winnen 0
+die wat spaart die zal wat hebben die wat spaart die zal wat hebben 0
+die wind zaait zal storm zullen oogsten die wind zaait zal storm zullen oogsten 0
+die zich aan een ander spiegelt zal zich zacht spiegelen die zich aan een ander spiegelt zal zich zacht spiegelen 0
+die zich zelf verhoogt zal vernederd zullen worden die zich zelf verhoogt zal vernederd zullen worden 0
+die zijn lichaam bewaart zal geen rotte appel bewaren die zijn lichaam bewaart zal geen rotte appel bewaren 0
+die zijn lijf bewaart zal geen rotte appel bewaren die zijn lijf bewaart zal geen rotte appel bewaren 0
+die zwijgt zal toestemmen die zwijgt zal toestemmen 0
+door de wol geverfd iemand zal door de wol geverfd zijn 1
+door dik en dun iemand zal voor iemand door dik en dun gaan 1
+door dik en dun iemand zal voor iemand door dik en dun gaan lopen 1
+iemand zal door het lint gaan iemand zal Voor iemand door het lint gaan 1
+iemand zal doppen iemand zal zijn eigen bonen moeten doppen 1
+iemand zal doppen iemand zal zijn eigen peultjes moeten doppen 1
+1000
+iemand zal een appeltje met iemand schillen iemand zal een appeltje met iemand te schillen hebben 1
+iemand zal een appeltje met iemand schillen iemand zal met iemand een appeltje te schillen hebben 1
+iemand zal een appeltje met iemand te schillen hebben iemand zal met iemand een appeltje te schillen hebben 1
+iemand zal een gegeven paard niet in de bek kijken iemand zal Een gegeven paard niet in de bek moeten kijken 1
+iemand zal een hekel aan iemand hebben iemand zal aan iemand een hekel hebben 1
+iemand zal een klap van de molen hebben iemand zal een klap van de molen gehad hebben 1
+iemand zal een klap van de molen hebben iemand zal een klap van de molen weg hebben 1
+iemand zal een lans voor iemand breken iemand zal een lans voor iets breken 1
+iemand zal een lans voor iets breken iemand zal een lans voor iemand breken 1
+iemand zal een steek onder water geven iemand zal iemand een steek onder water geven 1
+iemand zal een streepje voorhebben iemand zal een streepje voor hebben 1
+een vette gans zal = zichzelf bedruipen een vette gans zal = zichzelf bedruipen 0
+eerlijk zal het langst duren eerlijk zal het langst duren 0
+iemand zal er goed voor staan het zal er goed voor staan 1
+iemand zal er als de kippen bij zijn iemand zal als de kippen er bij zijn 1
+iemand zal er bij zijn iemand zal als de kippen er bij zijn 1
+iemand zal er bij zijn iemand zal er als de kippen bij zijn 1
+iemand zal er bij zijn iemand zal er gloeiend bij zijn 1
+iets zal er dik inzitten iets zal er dik in zitten 1
+er zal geen koe zo bont zijn of er zit wel een vlekje aan er zal geen koe zo bont zijn of er zit wel een vlekje aan 0
+er zal geen pot zo scheef zijn of er zal past wel een deksel op er zal geen pot zo scheef zijn of er zal past wel een deksel op 0
+er zal meer gelijk zijn dan eigen er zal iets aan de hand zijn 1
+er zal meer gelijk zijn dan eigen er zal iets aan het handje zijn 1
+er zal meer gelijk zijn dan eigen er zal een tijd van komen en een tijd van gaan zijn 1
+er zal meer gelijk zijn dan eigen er zal een steekje aan iemand los zijn 1
+er zal meer gelijk zijn dan eigen er zal een torntje aan iemand los zijn 1
+er zal meer gelijk zijn dan eigen er zal een vuiltje aan de knikker zijn 1
+er zal meer gelijk zijn dan eigen er zal geen koe zo bont zijn of er zit wel een vlekje aan 1
+er zal meer gelijk zijn dan eigen er zal geen koren zonder kaf zijn 1
+er zal meer gelijk zijn dan eigen er zal geen olie meer in de lamp zijn 1
+er zal meer gelijk zijn dan eigen er zal geen pot zo scheef zijn of er zal past wel een deksel op 1
+er zal meer gelijk zijn dan eigen er zal geen vuiltje aan de lucht zijn 1
+er zal meer gelijk zijn dan eigen er zal geen wolkje aan de lucht zijn 1
+er zal meer gelijk zijn dan eigen iemand zal er geweest zijn 1
+er zal meer gelijk zijn dan eigen er zal hommeles zijn 1
+er zal meer gelijk zijn dan eigen er zal iets aan de knikker zullen zijn 1
+er zal meer gelijk zijn dan eigen er zal dak op 't huis zijn 1
+er zal meer gelijk zijn dan eigen er zal te veel dak op 't huis zijn 1
+er zal meer gelijk zijn dan eigen er zullen kapers op de kust zijn 1
+er zal meer gelijk zijn dan eigen er zullen martelaars en apostelen zijn 1
+er zal meer gelijk zijn dan eigen er zullen martelaars en profeten zijn 1
+er zal meer gelijk zijn dan eigen er zal meer gelijk zijn als eigen 1
+er zal meer gelijk zijn dan eigen er zullen meer hondjes zijn die blom heten 1
+er zal meer gelijk zijn dan eigen iemand zal er mogen zijn 1
+er zal meer gelijk zijn dan eigen er zal niet goud zonder schuim zijn 1
+er zal meer gelijk zijn dan eigen iemand zal er om omkoud zijn 1
+er zal meer gelijk zijn dan eigen er zullen rovers op de kust zijn 1
+er zal meer gelijk zijn dan eigen er zal sprake van iets zijn 1
+er zal meer gelijk zijn dan eigen iemand zal er voor iemand zijn 1
+er zal meer gelijk zijn dan eigen er zal werk aan de winkel zijn 1
+er zal meer gelijk zijn dan eigen iemand zal er zijn 1
+er zal meer gelijk zijn dan eigen er zal zolang er leven is hoop zijn 2
+er zal meer gelijk zijn dan eigen er zal geen kunst aan iets zijn 1
+er zal meer gelijk zijn dan eigen het eindzal er van weg zijn 1
+er zullen meer hondjes zijn die blom heten er zal iets aan de hand zijn 1
+er zullen meer hondjes zijn die blom heten er zal iets aan het handje zijn 1
+er zullen meer hondjes zijn die blom heten er zal een tijd van komen en een tijd van gaan zijn 1
+er zullen meer hondjes zijn die blom heten er zal een steekje aan iemand los zijn 1
+er zullen meer hondjes zijn die blom heten er zal een torntje aan iemand los zijn 1
+er zullen meer hondjes zijn die blom heten er zal een vuiltje aan de knikker zijn 1
+er zullen meer hondjes zijn die blom heten er zal geen koe zo bont zijn of er zit wel een vlekje aan 1
+er zullen meer hondjes zijn die blom heten er zal geen koren zonder kaf zijn 1
+er zullen meer hondjes zijn die blom heten er zal geen olie meer in de lamp zijn 1
+er zullen meer hondjes zijn die blom heten er zal geen pot zo scheef zijn of er zal past wel een deksel op 1
+er zullen meer hondjes zijn die blom heten er zal geen vuiltje aan de lucht zijn 1
+er zullen meer hondjes zijn die blom heten er zal geen wolkje aan de lucht zijn 1
+er zullen meer hondjes zijn die blom heten iemand zal er geweest zijn 1
+er zullen meer hondjes zijn die blom heten er zal hommeles zijn 1
+er zullen meer hondjes zijn die blom heten er zal iets aan de knikker zullen zijn 1
+er zullen meer hondjes zijn die blom heten er zal dak op 't huis zijn 1
+er zullen meer hondjes zijn die blom heten er zal te veel dak op 't huis zijn 1
+er zullen meer hondjes zijn die blom heten er zullen kapers op de kust zijn 1
+er zullen meer hondjes zijn die blom heten er zullen martelaars en apostelen zijn 1
+er zullen meer hondjes zijn die blom heten er zullen martelaars en profeten zijn 1
+er zullen meer hondjes zijn die blom heten er zal meer gelijk zijn als eigen 1
+er zullen meer hondjes zijn die blom heten er zal meer gelijk zijn dan eigen 1
+er zullen meer hondjes zijn die blom heten iemand zal er mogen zijn 1
+er zullen meer hondjes zijn die blom heten er zal niet goud zonder schuim zijn 1
+er zullen meer hondjes zijn die blom heten iemand zal er om omkoud zijn 1
+er zullen meer hondjes zijn die blom heten er zullen rovers op de kust zijn 1
+er zullen meer hondjes zijn die blom heten er zal sprake van iets zijn 1
+er zullen meer hondjes zijn die blom heten iemand zal er voor iemand zijn 1
+er zullen meer hondjes zijn die blom heten er zal werk aan de winkel zijn 1
+er zullen meer hondjes zijn die blom heten iemand zal er zijn 1
+er zullen meer hondjes zijn die blom heten er zal zolang er leven is hoop zijn 2
+er zullen meer hondjes zijn die blom heten er zal geen kunst aan iets zijn 1
+er zullen meer hondjes zijn die blom heten het eindzal er van weg zijn 1
+iemand zal er zijn er zal iets aan de hand zijn 1
+iemand zal er zijn er zal iets aan het handje zijn 1
+iemand zal er zijn er zal een tijd van komen en een tijd van gaan zijn 1
+iemand zal er zijn er zal een steekje aan iemand los zijn 1
+iemand zal er zijn er zal een torntje aan iemand los zijn 1
+iemand zal er zijn er zal een vuiltje aan de knikker zijn 1
+iemand zal er zijn er zal geen koe zo bont zijn of er zit wel een vlekje aan 1
+iemand zal er zijn er zal geen koren zonder kaf zijn 1
+iemand zal er zijn er zal geen olie meer in de lamp zijn 1
+iemand zal er zijn er zal geen pot zo scheef zijn of er zal past wel een deksel op 1
+iemand zal er zijn er zal geen vuiltje aan de lucht zijn 1
+iemand zal er zijn er zal geen wolkje aan de lucht zijn 1
+iemand zal er zijn iemand zal er geweest zijn 1
+iemand zal er zijn er zal hommeles zijn 1
+iemand zal er zijn er zal iets aan de knikker zullen zijn 1
+iemand zal er zijn er zal dak op 't huis zijn 1
+iemand zal er zijn er zal te veel dak op 't huis zijn 1
+iemand zal er zijn er zullen kapers op de kust zijn 1
+iemand zal er zijn er zullen martelaars en apostelen zijn 1
+iemand zal er zijn er zullen martelaars en profeten zijn 1
+iemand zal er zijn er zal meer gelijk zijn als eigen 1
+iemand zal er zijn er zal meer gelijk zijn dan eigen 1
+iemand zal er zijn er zullen meer hondjes zijn die blom heten 1
+iemand zal er zijn iemand zal er mogen zijn 1
+iemand zal er zijn er zal niet goud zonder schuim zijn 1
+iemand zal er zijn iemand zal er om omkoud zijn 1
+iemand zal er zijn er zullen rovers op de kust zijn 1
+iemand zal er zijn er zal sprake van iets zijn 1
+iemand zal er zijn iemand zal er voor iemand zijn 1
+iemand zal er zijn er zal werk aan de winkel zijn 1
+iemand zal er zijn er zal zolang er leven is hoop zijn 2
+iemand zal er zijn er zal geen kunst aan iets zijn 1
+iemand zal er zijn het eindzal er van weg zijn 1
+iemand zal met iets weglopen iemand zal met iemand weglopen 1
+iemand zal gaar zijn de rapen zullen gaar zijn 1
+1500
+geen jota iemand zal geen jota van iets snappen 1
+geen rooie cent iemand zal geen rooie cent hebben 1
+iemand zal geintjes maken iemand zal gijntjes maken 1
+iemand zal gesjochten zitten iemand zal gesjochten zitten 0
+iemand zal gijntjes maken iemand zal geintjes maken 1
+goed van de tongriem gesneden iemand zal goed van de tongriem gesneden zijn 1
+groot licht iemand zal geen groot licht zijn 1
+iemand zal haarpijn hebben iemand zal pijn in het haarpijn hebben 1
+iemand zal hangen en verlangen iemand zal hangen en verlangen 0
+iemand zal heer en meester over iets zijn iemand zal heer en meester over iets zijn 0
+iemand zal heet gebakerd zijn iemand zal heet gebakerd zijn 0
+het zal goed riemen snijden zijn uit een andermans leer het zal goed riemen snijden zijn uit een andermans leer 0
+iemand zal het afleggen iemand zal het van iemand afleggen 1
+het zal altijd vet zijn in een andermans schotel het zal altijd vet zijn in een andermans schotel 0
+het boze oog iemand zal het boze oog hebben 1
+het geld zal iemand op de rug groeien het geld zal iemand op de rug groeien 0
+het hart zal iemand in de schoenen zinken het hart zal iemand in de schoenen zinken 0
+iemand zal het heen-en-weer krijgen iemand zal het heen-en-weer van iets krijgen 1
+iemand zal het hoekje om raken iemand zal het hoekje om raken 0
+iemand zal het hoekje omgaan iemand zal het hoekje om gaan 1
+iemand zal het iemand in drieën geven iets te doen iemand zal het iemand in drieën geven iets te doen 0
+iemand zal het iemand in drieën zetten iets te doen iemand zal het iemand in drieën zetten iets te doen 0
+iemand zal het ijzer smeden als het heet is iemand zal het ijzer moeten smeden als het heet is 1
+iemand zal het land hebben iemand zal het land aan iemand hebben 1
+het lot zal op Jonas vallen het lot zal altijd op Jonas vallen 1
+iemand zal het mier aan iemand hebben iemand zal het mier aan iemand hebben 0
+het zal niet allen koks zijn die lange messen dragen het zullen niet allen koks zijn die lange messen dragen 1
+het zal niet baten dan het niet schaden het zal niet baten dan het niet schaden 0
+iemand zal het op iemand verzien hebben iemand zal het op iemand verzien hebben 0
+iemand zal het smoor inhebben iemand zal het smoor inhebben 0
+iemand zal het varken wassen het varken zal op een oor na gewassen zijn 1
+iemand zal het volste recht hebben op iets | om iets te doen iemand zal het volste recht hebben op iets | om iets te doen 0
+iemand zal het zal wel loslopen iemand zal het zal wel loslopen 0
+het zal zaliger zijn te geven dan te ontvangen het zal zaliger zijn te geven dan te ontvangen 0
+het zullen niet allen koks zijn die lange messen dragen het zal niet allen koks zijn die lange messen dragen 1
+2000
+iemand zal hoe je het ook went of keert iemand zal hoe je het ook wendt of keert 1
+iemand zal hoe je het ook wendt of keert iemand zal hoe je het ook went of keert 1
+hoe zal je die peer smaken hoe zal je die peer smaken 0
+hoog en droog iemand zal hoog en droog zitten 1
+ieder vogel zal zingen zoals hij gebekt is ieder vogel zal zingen zoals hij gebekt is 0
+iemand zal iemand lusten iemand zal iemand rauw lusten 1
+iemand zal iemand lusten iemand zal lust je nog boontjes ? 1
+iemand zal iemand lusten iemand zal lust je nog peultjes ? 1
+iemand zal iemand lusten iemand zal zijn natje en zijn droogje lusten 1
+iemand zal iemand aan de kaak stellen iemand zal iets aan de kaak stellen 1
+iemand zal iemand in de gaten krijgen iemand zal iets in de gaten krijgen 1
+iemand zal iemand over het hoofd zien iemand zal iets over het hoofd zien 1
+iemand zal iemand aan de dijk zetten iets zal geen aarde aan de dijk zetten 1
+iemand zal iemand aan de tand voelen iemand zal iemand flink aan de tand voelen 1
+iemand zal iemand aan de tand voelen iemand zal iemand over iets aan de tand voelen 1
+iemand zal iemand aan het hoofd zeuren iemand zal iemand aan het hoofd zeuren 0
+iemand zal iemand beentje zetten iemand zal iemand beentje zetten 0
+iemand zal iemand beethebben iemand zal de aap beet hebben 1
+iemand zal iemand beethebben iemand zal De slag van iets beethebben 1
+iemand zal iemand beethebben iemand zal een klap van de molen beet hebben 1
+iemand zal iemand beethebben iemand zal een slag van de molen beet hebben 1
+iemand zal iemand beethebben iemand zal een tik van de molen beet hebben 1
+iemand zal iemand beethebben iemand zal slag van iets beethebben 1
+iemand zal iemand dank weten iemand zal iemand dank weten 0
+iemand zal iemand de broek opbinden iemand zal iemand de broek opbinden 0
+iemand zal iemand de gek aansteken iemand zal iemand de gek aansteken 0
+iemand zal iemand de hals uit hangen iemand zal iemand de hals uit hangen 0
+iemand zal iemand de huig lichten iemand zal iemand de huig lichten 0
+iemand zal iemand de mond stoppen iemand zal iemand de mond stoppen 0
+iemand zal iemand de nieren proeven iemand zal iemand de nieren proeven 0
+iemand zal iemand de oren van het hoofd eten iemand zal iemand de oren van het hoofd eten 0
+iemand zal iemand de pols voelen iemand zal iemand de pols voelen 0
+iemand zal iemand de tong afschrapen iemand zal iemand de tong afschrapen 0
+iemand zal iemand de tong schrapen iemand zal iemand de tong schrapen 0
+iemand zal iemand de voet lichten iemand zal iemand de voet lichten 0
+iemand zal iemand de voet zetten iemand zal iemand de voet zetten 0
+iemand zal iemand een beentje zetten iemand zal iemand een beentje zetten 0
+iemand zal iemand een kool stoven iemand zal iemand een kool stoven 0
+iemand zal iemand een poets spelen iemand zal iemand een poets spelen 0
+iemand zal iemand een trek spelen iemand zal iemand een trek spelen 0
+iemand zal iemand het gras onder de voeten wegmaaien iemand zal iemand het gras onder de voeten wegmaaien 0
+iemand zal iemand het gras voor de voeten wegmaaien iemand zal iemand het gras voor de voeten wegmaaien 0
+iemand zal iemand het licht betimmeren iemand zal iemand het licht betimmeren 0
+iemand zal iemand honing om de mond smeren iemand zal iemand honing om de mond smeren 0
+iemand zal iemand iets bakken iemand zal iemand een kool bakken 1
+iemand zal iemand iets bakken iemand zal iemand een poets bakken 1
+iemand zal iemand iets door de neus boren iemand zal iemand een gat door de neus boren 1
+iemand zal iemand iets door de neus boren iemand zal iemand een rietje door de neus boren 1
+iemand zal iemand iets laten zien iemand zal iemand de hakken laten zien 1
+iemand zal iemand iets laten zien iemand zal iemand de hielen laten zien 1
+iemand zal iemand iets te goede houden iemand zal iemand iets te goede houden 0
+iemand zal iemand in de zadel helpen iemand zal iemand weder in de zadel helpen 1
+iemand zal iemand in de zadel zetten iemand zal iemand weder in de zadel zetten 1
+iemand zal iemand in vertrouwen nemen iemand zal iemand over iets in vertrouwen nemen 1
+iemand zal iemand laten lopen iemand zal alles laten lopen 1
+iemand zal iemand nemen iemand zal aanstoot aan iemand nemen 1
+iemand zal iemand nemen iemand zal akte van iets nemen 1
+iemand zal iemand nemen iemand zal bezit van iets nemen 1
+iemand zal iemand nemen iemand zal de schuld op zich nemen 1
+iemand zal iemand nemen iemand zal een kijkje nemen 1
+iemand zal iemand nemen geeft men iemand de vinger dan neemt iemand de gehele hand 1
+iemand zal iemand nemen geeft men iemand de vinger dan neemt iemand de hele hand nemen 1
+iemand zal iemand nemen iemand zal geen blaadje voor de mond nemen 1
+iemand zal iemand nemen iemand zal geen blad voor de mond nemen 1
+iemand zal iemand nemen iemand zal het bit op de tanden nemen 1
+iemand zal iemand nemen iemand zal het gebit op de tanden nemen 1
+iemand zal iemand nemen iemand zal het heft in eigen handen nemen 1
+iemand zal iemand nemen iemand zal het heft in handen nemen 1
+iemand zal iemand nemen iemand zal iemand onder handen nemen 1
+iemand zal iemand nemen iemand zal iemand op de hak nemen 1
+iemand zal iemand nemen iemand zal iemand bij de neus nemen 1
+iemand zal iemand nemen iemand zal iemand de kroon van het hoofd nemen 1
+iemand zal iemand nemen iemand zal iemand er tussen nemen 1
+iemand zal iemand nemen iemand zal iemand flink te grazen nemen 1
+iemand zal iemand nemen iemand zal iemand in de arm nemen 1
+iemand zal iemand nemen iemand zal iemand in de maling nemen 1
+iemand zal iemand nemen iemand zal iemand in de veiling nemen 1
+iemand zal iemand nemen iemand zal iemand in de zeef nemen 1
+iemand zal iemand nemen iemand zal iemand in het ootje nemen 1
+iemand zal iemand nemen iemand zal iemand in vertrouwen nemen 1
+iemand zal iemand nemen iemand zal iemand onder zijn hoede nemen 1
+iemand zal iemand nemen iemand zal iemand op het sleeptouw nemen 1
+iemand zal iemand nemen iemand zal iemand op sleeptouw nemen 1
+iemand zal iemand nemen iemand zal iemand over iets in vertrouwen nemen 1
+iemand zal iemand nemen iemand zal iemand te grazen nemen 1
+iemand zal iemand nemen iemand zal iemand op de korrel nemen 1
+iemand zal iemand nemen iemand zal iets ter hand nemen 1
+iemand zal iemand nemen iemand zal maatregelen nemen 1
+iemand zal iemand nemen iemand zal polshoogte nemen 1
+iemand zal iemand nemen iemand zal te veel hooi op zijn vork nemen 1
+iemand zal iemand nemen iemand zal voorzorgsmaatregelen nemen 1
+iemand zal iemand nemen iemand zal zijn draai nemen 1
+iemand zal iemand nemen iemand zal zijn verantwoordelijkheid nemen 1
+iemand zal iemand om de vinger winden iemand zal iemand om de vinger kunnen winden 1
+iemand zal iemand op zijn zeer treden iemand zal iemand op zijn zeer treden 0
+iemand zal iemand over het paard tillen iemand zal over het paard getild zijn 1
+iemand zal iemand staan de haren zullen iemand te berge staan 1
+iemand zal iemand staan de muts zal iemand verkeerd staan 1
+iemand zal iemand staan het water zal iemand aan de lippen staan 1
+iemand zal iemand te grazen nemen iemand zal iemand flink te grazen nemen 1
+2500
+iemand zal iemand tot iets brengen iemand zal iemand met een zacht lijntje tot iets brengen 1
+iemand zal iemand tot iets brengen iemand zal iemand met een zoet lijntje tot iets brengen 1
+iemand zal iemand tot iets brengen iemand zal zichzelf tot iets brengen 1
+iemand zal iemand nodig hebben een goed verstaander zal maar een half woord nodig hebben 1
+iemand zal iets aan de balk schrijven iemand zal iets met een krijtje aan de balk schrijven 1
+iemand zal iets aan de kaak stellen iemand zal iemand aan de kaak stellen 1
+iemand zal iets aan de wilgen hangen iemand zal de lier aan de wilgen hangen 1
+iemand zal iets gestand doen iemand zal zijn woord gestand doen 1
+iemand zal iets in de gaten krijgen iemand zal iemand in de gaten krijgen 1
+iemand zal iets in de neus hebben iemand zal de snuf van iets in de neus hebben 1
+iemand zal iets in de neus krijgen iemand zal de lucht van iets in de neus krijgen 1
+iemand zal iets in de neus krijgen iemand zal de snuf van iets in de neus krijgen 1
+iemand zal iets in het midden laten iemand zal de kerk in het midden laten 1
+iemand zal iets in het riet sturen iemand zal iemand met een kluit in het riet sturen 1
+iemand zal iets in zijn zak steken iemand zal iets in zijn zak kunnen steken 1
+iemand zal iets op de kop tikken iemand zal de nagel op de kop tikken 1
+iemand zal iets op de kop tikken iemand zal de spijker op de kop tikken 1
+iemand zal iets op haren en snaren stellen iemand zal alles op haren en snaren stellen 1
+iemand zal iets op haren en snaren zetten iemand zal alles op haren en snaren zetten 1
+iemand zal iets over een andere boeg gooien iemand zal het over een andere boeg gooien 1
+iemand zal iets over het hoofd zien iemand zal iemand over het hoofd zien 1
+iemand zal iets van zich af zetten iemand zal iets niet van zich af kunnen zetten 1
+iemand zal iets van zich afzetten iemand zal iets niet van zich af kunnen zetten 1
+iemand zal iets van zich afzetten iemand zal iets van zich af zetten 1
+iemand zal iets verdraaien iemand zal geen hand voor iets verdraaien 1
+ik zal dood vallen als dat waar is Ik zal dood mogen vallen als dat waar is 1
+in alle hoeken en gaten van iets in alle hoeken en gaten van iets 0
+iemand zal in de bus blazen iemand zal flink in de bus blazen 1
+iemand zal in de haak zijn iemand zal niet in de haak zijn 1
+iemand zal in de kou staan iemand zal in de kou laten staan 1
+iemand zal in de soep lopen iemand zal in de soep laten lopen 1
+in gedachten iemand zal in gedachten verzonken zijn 1
+iemand zal in het krijt staan iemand zal bij iemand in het krijt staan 1
+iemand zal in hoger sferen zijn iemand zal in hogere sferen zijn 1
+iemand zal in hogere sferen zijn iemand zal in hoger sferen zijn 1
+iemand zal in Morpheus ' armen liggen iemand zal in Morpheus ' armen liggen 0
+iemand zal in tel zijn iemand zal niet in tel zijn 1
+iemand zal in touw zijn iemand zal de hele dag in touw zijn 1
+3000
+in zijn wiek geschoten iemand zal in zijn wiek geschoten zijn 1
+iemand zal invloed op iemand hebben iemand zal invloed op iets hebben 1
+iemand zal invloed op iets hebben iemand zal invloed op iemand hebben 1
+jan Rap jan Rap en zijn maat 1
+Keulen en Aken zullen niet op één dag gebouwd zijn Aken en Keulen zullen niet op éen dag gebouwd zijn 1
+iemand zal kiezen of kabelen iemand zal kiezen of kabelen 0
+kip kip ! 1
+kleuren en geuren iemand zal iets in geuren en kleuren vertellen 1
+koek en ei alles zal koek en ei zijn 1
+koek en ei iemand zal koek en ei zijn 1
+iemand zal koek en ei zijn alles zal koek en ei zijn 1
+iemand zal koffiedik kijken iemand zal koffiedik kijken zijn 1
+komt men over de hond dan zal men ook over de staart komen komt men over de hond dan zal men ook over de staart komen 0
+komt men over de hond dan zal men ook wel over de staart komen komt men over de hond dan zal men ook wel over de staart komen 0
+kop noch staart iemand zal kop noch staart hebben 1
+iemand zal korte metten met iemand maken iemand zal korte metten met iets maken 1
+iemand zal korte metten met iets maken iemand zal korte metten met iemand maken 1
+koste wat het kost het koste wat het kost 1
+iemand zal leven in de brouwerij brengen iemand zal leven in de brouwerij brengen 0
+iemand zal lont rieken iemand zal lont ruiken 1
+iemand zal lont ruiken iemand zal lont rieken 1
+lood om oud ijzer iets zal lood om oud ijzer zijn 1
+lood om oud ijzer iets zal oud lood om oud ijzer zijn 1
+lopend vuur lopend vuurtje 1
+lopend vuur iemand zal zich als een lopend vuurtje verspreiden 1
+lopend vuurtje iemand zal zich als een lopend vuurtje verspreiden 1
+iemand zal 'M smeren iemand zal ’m smeren 1
+man en muis iemand zal met man en muis vergaan 1
+iemand zal iets mee hebben iemand zal de wind mee hebben 1
+men zal geen koe bont noemen of er is een vlekje aan men zal geen koe bont noemen of er is een vlekje aan 0
+iemand zal Met gesloten beurzen betalen iemand zal iets Met gesloten beurzen betalen 1
+iemand zal met het mes in de buik zitten iemand zal met het mes in de buik blijven zitten 1
+iemand zal met iemand weglopen iemand zal met iets weglopen 1
+iemand zal met iets zitten iemand zal met de gebakken peren zitten 1
+iemand zal met iets zitten iemand zal met de mond vol tanden zitten 1
+met tijd en stro zullen de mispels rijpen met tijd en stro zullen de mispels rijpen 0
+3500
+iemand zullen de haren te berge rijzen de haren zullen iemand te berge rijzen 1
+iemand zal moeite doen iemand zal moeite voor iets doen 1
+iemand zal naar de barbiesjes gaan iemand zal naar de barrebiesjes gaan 1
+iemand zal naar de barrebiesjes gaan iemand zal naar de barbiesjes gaan 1
+iemand zal naar iets slaan iemand zal een slag slaan naar iets 1
+niet haan zal naar iets zullen kraaien niet haan zal naar iets zullen kraaien 0
+iemand zal niet pluis zijn het zal niet pluis zijn 1
+iemand zal niet thuis zijn iemand zal van iets niet thuis zijn 1
+iemand zal iets om het lijf hebben iemand zal niet veel om het lijf hebben 1
+iemand zal iets om het lijf hebben iemand zal weinig om het lijf hebben 1
+nogal wiedes iets zal nogal wiedes zijn 1
+om de dode dood niet om de dooie dood niet 1
+om de dooie dood niet om de dode dood niet 1
+om der wille van de smeer zal de kat de kandeleer likken om der wille van de smeer zal de kat de kandeleer likken 0
+iemand zal om iemand heen draaien iemand zal om de hete brij heen draaien 1
+iemand zal om iemand heen draaien iemand zal om iets heen draaien 1
+iemand zal om iets heen draaien iemand zal om de hete brij heen draaien 1
+iemand zal om iets heen draaien iemand zal om iemand heen draaien 1
+onbekend zal onbemind maken onbekend zal onbemind maken 0
+iemand zal onder de indruk van iets zijn iemand zal van iemand Onder de indruk zijn 1
+iemand zal onder iets zitten iemand zal onder de pantoffel zitten 1
+iemand zal onder iets zitten iemand zal onder de plak zitten 1
+iemand zal onder iets zitten iemand zal onder het mes zitten 1
+iemand zal onder vuur liggen iemand zal zwaar onder vuur liggen 1
+oostindisch doof iemand zal oostindisch doof zijn 1
+op bezoek iemand zal op bezoek gaan 1
+op bezoek iemand zal op bezoek komen 1
+op bezoek iemand zal op bezoek zijn 1
+op de bof iemand zal iets op de bof kopen 1
+iemand zal op de hielen zitten iemand zal iemand op de hielen zitten 1
+op de pof iemand zal iets op de pof kopen 1
+op de schop iemand zal op de schop gaan 1
+op de valreep glaasje op de valreep 1
+op het scherp van de snede iemand zal op het scherp van de snede zijn 1
+op heterdaad iemand zal iemand op heterdaad betrappen 1
+iemand zal op iets slaan iemand zal als een tang op een varken slaan 1
+iemand zal op iets slaan iemand zal altijd op hetzelfde aanbeeld slaan 1
+iemand zal op iets slaan iemand zal op iets geen acht slaan 1
+iemand zal op iets staan iemand zal al ga je op je kop staan 1
+iemand zal op iets staan het schuim zal op zijn mond staan 1
+iemand zal op iets staan iemand zal op de bres staan 1
+iemand zal op iets staan iemand zal op de rails staan 1
+iemand zal op iets staan iemand zal op de rol staan 1
+iemand zal op iets staan iemand zal op de sprong staan 1
+iemand zal op iets staan iemand zal op de tocht staan 1
+iemand zal op iets staan iemand zal op één been kan men niet staan 1
+iemand zal op iets staan iemand zal op een laag pitje staan 1
+iemand zal op iets staan iemand zal op eigen benen staan 1
+iemand zal op iets staan iemand zal op gloeiende kolen staan 1
+iemand zal op iets staan iemand zal op het punt staan 1
+iemand zal op iets staan iemand zal op het tipje staan 1
+iemand zal op iets staan iemand zal op hete kolen staan 1
+iemand zal op iets staan iemand zal op poten staan 1
+iemand zal op iets staan iets zal op schroeven staan 1
+iemand zal op iets staan iemand zal op sprong staan om iets te gaan doen 1
+iemand zal op iets staan iemand zal op stelten staan 1
+iemand zal op iets staan iemand zal op sterk water staan 1
+iemand zal op iets staan iemand zal op straat staan 1
+iemand zal op iets staan iemand zal op zijn achterste benen gaan staan 1
+iemand zal op iets staan iemand zal op zijn achterste poten gaan staan 1
+iemand zal op iets staan iemand zal op zijn kop staan 1
+iemand zal op iets staan iemand zal op zijn poten staan 1
+iemand zal op iets staan iemand zal op zijn strepen staan 1
+iemand zal op iets staan iemand zal op zijn stuk staan 1
+iemand zal op iets staan iemand zal wankel op zijn benen staan 1
+iemand zal op iets staan zijn hoed zal op drie haartjes staan 1
+op St-Jutmis op St-Jutmis als de kalveren op het ijs dansen 1
+op St-Juttemis op St-Juttemis als de kalveren op het ijs dansen 1
+op zijn best iemand zal op zijn best zijn 1
+iemand zal op zijn kop staan iemand zal al ga je op je kop staan 1
+iemand zal opscheppen iemand zal de boel opscheppen 1
+4000
+iemand zal oren naar iets hebben iemand zal wel oren naar iets hebben 1
+iemand zal over de smaak niet vallen te twisten iemand zal over de smaak niet vallen te twisten 0
+iemand zal over zijn nek gaan iemand zal over je nek gaan 1
+iemand zal overhoop lopen iemand zal iemand overhoop lopen 1
+iemand zal pal staan iemand zal voor iets pal staan 1
+iemand zal piepen zoals de ouden zongen zullen de jongen piepen 1
+iemand zal pijn doen iemand zal iemand pijn doen 1
+iemand zal roken als een ketter vloeken als een ketter iemand zal roken als een ketter vloeken als een ketter 0
+iemand zal sjivve zitten iemand zal sjivve zitten 0
+slag om de arm iemand zal een slag om de arm houden 1
+iemand zal smeren iemand zal ’m smeren 1
+iemand zal smeren iemand zal boter aan de galg smeren 1
+iemand zal smeren de kat zal om der wille van het smeer de kandeleer likken 1
+iemand zal smeren iemand zal iemand honig om de mond smeren 1
+iemand zal smeren iemand zal iemand honing om de mond smeren 1
+iemand zal smeren iemand zal iemand smeer geven 1
+iemand zal smeren iemand zal 'M smeren 1
+iemand zal smeren iemand zal op zijn smeer teren 1
+iemand zal spitsroeden lopen iemand zal door de spitsroeden lopen 1
+spreken zal zilver zijn maar zwijgen goud zijn spreken zal zilver zijn maar zwijgen goud zijn 0
+iemand zal steen en been over iets klagen iemand zal steen en been over iets klagen 0
+iemand zal te boek staan iemand zal als iets te boek staan 1
+iemand zal te hard van stapel lopen iemand zal niet Te hard van stapel lopen 1
+iemand zal te sappel maken iemand zal zich te sappel maken 1
+te vuur en te zwaard iemand zal te vuur en te zwaard verwoesten vervolgen 1
+iemand zal tegen de bierkaai vechten iemand zal vechten tegen de bierkaai 1
+iemand zal ten strijde trekken iemand zal ten strijde trekken tegen iemand 1
+iemand zal tot iets in staat zijn iemand zal tot alles in staat zijn 1
+tussen neus en lippen tussen neus en lippen door 1
+iemand zal twee handen op éen buik zijn iemand zal twee handen op één buik zijn 1
+iemand zal twee handen op één buik zijn iemand zal twee handen op éen buik zijn 1
+4500
+iemand zal uit de kleren gaan iemand zal vlot uit de kleren gaan 1
+iemand zal uit zijn dak gaan iemand zal uit je dak gaan 1
+uit zijn hoofd iemand zal iemand uit zijn hoofd krijgen 1
+van de koude grond psychologie van de koude grond 1
+iemand zal van de toren blazen iemand zal hoog van de toren blazen 1
+iemand zal van de wereld zijn iemand zal helemaal van de wereld zijn 1
+van heinde en ver van heinde en verre 1
+van heinde en verre van heinde en ver 1
+iemand zal van iemand Onder de indruk zijn iemand zal onder de indruk van iets zijn 1
+iemand zal van stapel lopen iemand zal hard van stapel lopen 1
+iemand zal van stapel lopen iemand zal niet Te hard van stapel lopen 1
+iemand zal van stapel lopen iemand zal te hard van stapel lopen 1
+iemand zal van stapel lopen iemand zal van stapel laten lopen 1
+iemand zal vechten tegen de bierkaai iemand zal tegen de bierkaai vechten 1
+veeg uit de pan iemand zal een veeg uit de pan krijgen 1
+iemand zal vegen iemand zal met de spons van Blanus vegen 1
+iemand zal vegen nieuwe bezems zullen schoon vegen 1
+velen zullen geroepen zijn maar weinigen uitverkoren velen zullen geroepen zijn maar weinigen uitverkoren 0
+iemand zal verhaal halen iemand zal bij iemand verhaal halen 1
+iemand zal vet zijn het zal altijd vet zijn in een andermans schotel 1
+iemand zal vet zijn iemand zal vet met iets zijn 1
+iemand zal vis noch vlees zijn iemand zal vlees noch vis zijn 1
+iemand zal vlees noch vis zijn iemand zal vis noch vlees zijn 1
+vleespotten van Egypte iemand zal naar de vleespotten van Egypte hunkeren 1
+vleespotten van Egypte iemand zal naar de vleespotten van Egypte verlangen 1
+iemand zal voor iemand instaan iemand zal niet voor zichzelf in kunnen staan 1
+iemand zal voor iets staan iemand zal voor piet snot staan 1
+iemand zal voor iets bloeden iemand zal voor iets moeten bloeden 1
+vrolijk Fransje leven van vrolijk Fransje 1
+wassen neus iets zal een wassen neus zijn 1
+wat het oog niet ziet zal het hart niet deren wat het oog niet ziet zal het hart niet deren 0
+wat het zwaarst is zal het zwaarst moeten wegen wat het zwaarst is zal het zwaarst moeten wegen 0
+wat in het vat is zal niet verzuren wat in het vat is zal niet verzuren 0
+wat men schrijft dat zal blijven wat men schrijft dat zal blijven 0
+wet van Meden en Perzen wet van Perzen en Meden 1
+wet van Perzen en Meden wet van Meden en Perzen 1
+iemand zal weten wat voor vlees iemand in de kuip heeft iemand zal weten wat voor vlees je in de kuip hebt 1
+wie het eerst komt die zal het eerst zulen malen wie het eerst komt die zal het eerst zulen malen 0
+wie het eerst komt zal het eerst zullen malen wie het eerst komt zal het eerst zullen malen 0
+wie het eerst komt zal het eerst zullen malen wie het eerst komt zal het eerst malen 1
+wie het eerst komt die zal het eerst zullen malen wie het eerst komt die zal het eerst zullen malen 0
+wie eerst komt die zal eerst zullen malen wie eerst komt die zal eerst zullen malen 0
+wie eerst komt zal eerst zullen malen wie eerst komt zal eerst zullen malen 0
+wie het eerst komt die zal het eerst zullen manen wie het eerst komt die zal het eerst zulen manen 1
+wie a zegt zal ook b moeten zeggen wie a zegt zal ook b moeten zeggen 0
+wie boter op zijn hoofd heeft zal uit de zon moeten blijven wie boter op zijn hoofd heeft zal uit de zon moeten blijven 0
+wie een hond wil slaan zal licht een stok vinden wie een hond wil slaan zal licht een stok vinden 0
+wie een kuil graaft voor een ander , zal er zelf in vallen wie een kuil graaft voor een ander , zal er zelf in vallen 0
+wie eens steelt zal altijd een dief zijn wie eens steelt zal altijd een dief zijn 0
+wie het eerst komt zal het eerst malen wie het eerst komt zal het eerst malen 0
+wie het kleine niet eert zal het groote niet weerd zijn wie het kleine niet eert zal het groote niet weerd zijn 0
+wie het laatst lacht zal het best lachen wie het laatst lacht zal het best lachen 0
+wie het onderste uit de kan wil hebben zal het deksel op de neus krijgen wie het onderste uit de kan wil hebben zal het deksel op de neus krijgen 0
+wie hoog klimt zal laag vallen wie hoog klimt zal laag vallen 0
+wie in een glazen huis woont zal niet met stenen moeten gooien wie in een glazen huis woont zal niet met stenen moeten gooien 0
+wie kaatst zal de bal moeten verwachten wie kaatst zal de bal moeten verwachten 0
+wie met pek omgaat zal er mee besmet worden wie met pek omgaat zal er mee besmet worden 0
+wie met pik omgaat zal er mee besmet worden wie met pik omgaat zal er mee besmet worden 0
+wie wat spaart die zal wat hebben wie wat spaart die zal wat hebben 0
+wie wind zaait zal storm zullen oogsten wie wind zaait zal storm zullen oogsten 0
+wie zich aan een ander spiegelt zal zich zacht spiegelen wie zich aan een ander spiegelt zal zich zacht spiegelen 0
+wie zijn neus schendt zal zijn aangezicht schenden wie zijn neus schendt zal zijn aangezicht schenden 0
+wier zwijgt zal toestemmen wier zwijgt zal toestemmen 0
+wolf in schaapsklederen wolf in schaapskleren 1
+wolf in schaapskleren wolf in schaapsklederen 1
+iemand zal woorden hebben iemand zal woorden met iemand hebben 1
+5000
+iemand zal zich iets laten gezeggen iemand zal zich iets laten gezeggen 0
+iemand zal zich niet laten lompen iemand zal zich niet laten lompen 0
+iemand zal zich zorgen maken iemand zal zich over iets zorgen maken 1
+iemand zal zichzelf zijn iemand zal niet zichzelf zijn 1
+iemand zal zijn benen onder een anderman's tafel steken iemand zal zijn benen onder een anderman's tafel moeten steken 1
+iemand zal zijn handen van iemand afwassen iemand zal zijn handen van iets afwassen 1
+iemand zal zijn handen van iets afwassen iemand zal zijn handen van iemand afwassen 1
+iemand zal zijn kop houden iemand zal zijn kop erbij houden 1
+zijn oren zullen kunnen schudden dat ze klappen zijn oren zullen kunnen schudden dat ze klappen 0
+zijn oren zullen mogen schudden dat ze klappen zijn oren zullen mogen schudden dat ze klappen 0
+iemand zal zijn spat er in zetten iemand zal zijn spat er in zetten 0
+iemand zal zijn tijd verspillen iemand zal zijn tijd aan iets verspillen 1
+iemand zal zijn voeten onder een andermans tafel steken iemand zal zijn voeten onder een andermans tafel moeten steken 1
+zijn waffel houden zijn waffel dicht houden 1
+iemand zal zijn weetje weten iemand zal zijn weetje wel weten 1
+zuinigheid met vlijt zal huizen bouwen als kastelen zuinigheid met vlijt zal huizen als kastelen bouwen 1
+zuinigheid met vlijt zal huizen als kastelen bouwen zuinigheid met vlijt zal huizen bouwen als kastelen 1
+iemand zal zuur zijn de druiven zullen zuur zijn 1
+iemand zal zwammen iemand zal zwammen in de ruimte 1
+zwanenzang zwanezang 1
+zwanezang zwanenzang 1
+
+Process finished with exit code 0
