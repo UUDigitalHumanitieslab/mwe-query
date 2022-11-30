@@ -3,6 +3,7 @@ from treebankfunctions import getattval as gav, terminal, allcats as validcats, 
 import copy
 import lxml.etree as ET
 
+
 def expandnonheadwords(stree: SynTree) -> SynTree:
     # it is presupposed that the input stree is not None
     newnode = copy.copy(stree)
@@ -12,7 +13,7 @@ def expandnonheadwords(stree: SynTree) -> SynTree:
         for child in stree:
             if terminal(child):
                 rel = gav(child, 'rel')
-                if rel not in  ['hd', 'mwp', 'svp', 'hdf', 'cmp']:
+                if rel not in ['hd', 'mwp', 'svp', 'hdf', 'cmp']:
                     newchild = mkphrase(child)
                 else:
                     newchild = copy.copy(child)
@@ -24,6 +25,7 @@ def expandnonheadwords(stree: SynTree) -> SynTree:
             newchild = expandnonheadwords(child)
             newnode.append(newchild)
     return newnode
+
 
 def getlcatatt(node: SynTree) -> str:
     pt = gav(node, 'pt')
@@ -62,9 +64,8 @@ def mkphrase(child: SynTree) -> SynTree:
     return newnode
 
 
-def getlcat(node: SynTree, prel=None) -> str:
+def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
     pt = gav(node, 'pt')
-    cat = gav(node, 'cat')
     rel = gav(node, 'rel') if prel is None else prel
     positie = gav(node, 'positie')
     wvorm = gav(node, 'wvorm')
@@ -119,7 +120,7 @@ def getlcat(node: SynTree, prel=None) -> str:
             result = 'ap'
         elif 'adverb' in frame:
             result = 'advp'
-        elif 'post_p' in frame or 'preposition' in frame :
+        elif 'post_p' in frame or 'preposition' in frame:
             result = 'pp'
         else:
             result = 'pp'
@@ -134,10 +135,10 @@ def getlcat(node: SynTree, prel=None) -> str:
             result = 'xp'
         elif wvorm == 'inf' and positie == 'nom':
             result = 'np'
-        elif wvorm == 'inf'and positie == 'vrij':
+        elif wvorm == 'inf' and positie == 'vrij':
             result = 'inf'
         elif wvorm == 'inf' and positie == 'prenom':
-            result = 'inf' #checked in Lassy-Small
+            result = 'inf'  # checked in Lassy-Small
         elif wvorm == 'pv':
             result = 'sv1'
         else:
@@ -158,7 +159,7 @@ def getlcat(node: SynTree, prel=None) -> str:
             result = 'np'
         elif positie == 'prenom' and 'determiner' in frame:
             result = 'detp'
-        elif 'positie' not in node.attrib and vwtype== 'aanw':
+        elif 'positie' not in node.attrib and vwtype == 'aanw':
             result = 'detp'
         elif rel == 'det' and vwtype == 'aanw':
             result = 'detp'
@@ -178,14 +179,4 @@ def getlcat(node: SynTree, prel=None) -> str:
         print('Unexpected att value  encountered in:')
         ET.dump(node)
 
-    return result
-
-
-
-
-
-
-
-
-    result = 'xp'
     return result
