@@ -185,11 +185,14 @@ class Mwe:
             for feat in list(node.attrib.keys()):
                 if feat not in ['lemma', 'pt']:
                     node.attrib.pop(feat, None)
-        xpath_3 = [node for node in mwe.iter() if set(
+        xpath_3_parts = [node for node in mwe.iter() if set(
             node.attrib.keys()) != set()]
-        xpath_3 = ['..//' + self.__xml_to_xpath(node) for node in xpath_3]
+        xpath_3 = '//' + self.__xml_to_xpath(xpath_3_parts[0]) + '/ancestor::alpino_ds'
+        if len(xpath_3_parts) > 1:
+            xpath_3 += '/node[' + \
+                ' and '.join(['..//' + self.__xml_to_xpath(node) for node in xpath_3_parts[1:]]) + \
+                ']'
         # this assumes a single top node
-        xpath_3 = '/node[' + ' and '.join(xpath_3) + ']'
         generated.append(
             MweQuery(self, description='superset', xpath=xpath_3, rank=3))
 
