@@ -187,9 +187,9 @@ class Mwe:
                     node.attrib.pop(feat, None)
         xpath_3_parts = [node for node in mwe.iter() if set(
             node.attrib.keys()) != set()]
-        xpath_3 = '//' + self.__xml_to_xpath(xpath_3_parts[0]) + '/ancestor::alpino_ds'
+        xpath_3 = '//' + self.__xml_to_xpath(xpath_3_parts[0]) + '/ancestor::alpino_ds/node'
         if len(xpath_3_parts) > 1:
-            xpath_3 += '/node[' + \
+            xpath_3 += '[' + \
                 ' and '.join(['..//' + self.__xml_to_xpath(node) for node in xpath_3_parts[1:]]) + \
                 ']'
         # this assumes a single top node
