@@ -1,0 +1,1 @@
+//node[node[@rel="predc"] and node[@cat="pp" and @rel="pc" and node[@getal="getal" and @lemma="er" and @pt="vnw" and @rel="obj1" and @vwtype="aanw" and @word="er" and count(child::*)=0] and node[@lemma="voor" and @pt="vz" and @rel="hd" and @word="voor" and count(child::*)=0] and count(child::*)=2] and node[@lemma="staan" and @pt="ww" and @rel="hd" and count(child::*)=0]]
