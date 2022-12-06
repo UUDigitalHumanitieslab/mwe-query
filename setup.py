@@ -18,7 +18,7 @@ setup(
     package_data={"mwe_query": ["py.typed"]},
     zip_safe=True,
     install_requires=[
-        'alpino-query>=2.1.8', 'requests', 'BaseXClient'
+        'alpino-query>=2.1.8', 'requests', 'BaseXClient', 'sastadev>=0.0.3'
     ],
     entry_points={
         'console_scripts': [
