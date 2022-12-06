@@ -7,13 +7,13 @@ nounmwusre = re.compile(nounmwuspattern)
 
 nounmwus = []
 with open(inputfilename, 'r', encoding='utf8') as infile:
-        text = infile.read()
-        matchiterator = nounmwusre.finditer(text)
-        for match in matchiterator:
-            rawmwu = match.group(2)
+    text = infile.read()
+    matchiterator = nounmwusre.finditer(text)
+    for match in matchiterator:
+        rawmwu = match.group(2)
 
-            mwu = rawmwu
-            nounmwus.append(mwu)
+        mwu = rawmwu
+        nounmwus.append(mwu)
 
 outfilename = './testdata/nounmwus.txt'
 with open(outfilename, 'w', encoding='utf8') as outfile:

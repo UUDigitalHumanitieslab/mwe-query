@@ -1,0 +1,7 @@
+iemand zal de dans ontspringen
+iemand zal de *dans ontspringen
+iemand zal de +dans ontspringen
+iemand zal 0de dans ontspringen
+iemand zal de +*dans ontspringen
+iemand zal de *+dans ontspringen
+iemand zal de =dans ontspringen
