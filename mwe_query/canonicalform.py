@@ -1,15 +1,15 @@
 from typing import List, Optional, Set
-from sastatypes import SynTree
+from sastadev.sastatypes import SynTree
 import re
 import sys
-from treebankfunctions import getattval as gav, terminal, getnodeyield, find1, bareindexnode, indextransform, \
+from sastadev.treebankfunctions import getattval as gav, terminal, getnodeyield, find1, bareindexnode, indextransform, \
     getindexednodesmap, getbasicindexednodesmap, clausebodycats
 
 import lxml.etree as ET
 import copy
-from adpositions import vzazindex
-from alpinoparsing import parse
-from lcat import expandnonheadwords
+from mwe_query.adpositions import vzazindex
+from sastadev.alpinoparsing import parse
+from mwe_query.lcat import expandnonheadwords
 
 Xpathexpression = str
 

@@ -1,0 +1,58 @@
+<alpino_ds version="1.6" id="MWE2022-04-29.txt/541-1.xml:1">
+  <parser cats="1" skips="0"/>
+  <node begin="0" cat="top" end="5" id="0" rel="top" highlight="yes">
+    <node begin="0" cat="smain" end="5" id="1" rel="--" highlight="yes">
+      <node begin="0" end="1" frame="noun(de,count,sg)" gen="de" getal="ev" his="normal" his_1="normal" id="2" index="1" lcat="np" lemma="iemand" naamval="stan" num="sg" pdtype="pron" persoon="3p" pos="noun" postag="VNW(onbep,pron,stan,vol,3p,ev)" pt="vnw" rel="su" rnum="sg" root="iemand" sense="iemand" status="vol" vwtype="onbep" word="iemand" highlight="yes"/>
+      <node begin="1" end="2" frame="verb(hebben,modal_not_u,aux(inf))" his="normal" his_1="normal" id="3" infl="modal_not_u" lcat="smain" lemma="zullen" pos="verb" postag="WW(pv,tgw,ev)" pt="ww" pvagr="ev" pvtijd="tgw" rel="hd" root="zal" sc="aux(inf)" sense="zal" stype="declarative" tense="present" word="zal" wvorm="pv" highlight="yes"/>
+      <node begin="0" cat="inf" end="5" id="4" rel="vc" highlight="yes">
+        <node begin="0" end="1" id="5" index="1" rel="su" highlight="yes"/>
+        <node begin="2" cat="np" end="4" id="6" rel="obj1" highlight="yes">
+          <node begin="2" end="3" frame="determiner(de)" his="normal" his_1="normal" id="7" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de" highlight="yes"/>
+          <node begin="3" end="4" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="8" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans" highlight="yes"/>
+        </node>
+        <node begin="4" buiging="zonder" end="5" frame="verb(unacc,inf,transitive)" his="normal" his_1="normal" id="9" infl="inf" lcat="inf" lemma="ontspringen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="ontspring" sc="transitive" sense="ontspring" word="ontspringen" wvorm="inf" highlight="yes"/>
+      </node>
+    </node>
+  </node>
+  <sentence sentid="0-0">iemand zal de dans ontspringen</sentence>
+  <metadata>
+    <meta type="text" name="ID" value="Stoet0407"/>
+    <meta type="text" name="OldID" value="407"/>
+    <meta type="text" name="Uitdrukking" value=" Den dans ontspringen,"/>
+    <meta type="text" name="Can_Form" value="de dans ontspringen"/>
+    <meta type="text" name="NewCanForm" value="iemand zal de dans ontspringen"/>
+    <meta type="text" name="newcandone" value="yes"/>
+    <meta type="text" name="can_done" value="yes"/>
+    <meta type="text" name="Known_by_me?" value="yes"/>
+    <meta type="text" name="Myversion" value=""/>
+    <meta type="text" name="Content_Words_sorted" value="dans;ontspringen"/>
+    <meta type="text" name="ToParse" value=""/>
+    <meta type="text" name="Pos" value=""/>
+    <meta type="text" name="binding" value="no"/>
+    <meta type="text" name="Related" value=""/>
+    <meta type="text" name="Source" value="http://www.dbnl.org/tekst/stoe002nede01_01/"/>
+    <meta type="text" name="head" value="v"/>
+    <meta type="text" name="fixed_subject" value=""/>
+    <meta type="text" name="npi" value=""/>
+    <meta type="text" name="inanimate_subject" value=""/>
+    <meta type="text" name="other" value=""/>
+    <meta type="text" name="headword" value="ontspringen"/>
+    <meta type="text" name="inalienable" value=""/>
+    <meta type="text" name="single_word" value=""/>
+    <meta type="text" name="Remarks" value=""/>
+    <meta type="text" name="obj1" value="yes"/>
+    <meta type="text" name="obj2:NP" value="no"/>
+    <meta type="text" name="pc:PP" value="no"/>
+    <meta type="text" name="ld:PP" value="no"/>
+    <meta type="text" name="obj2:PP" value="no"/>
+    <meta type="text" name="mod:PP" value="no"/>
+    <meta type="text" name="predc" value="no"/>
+    <meta type="text" name="su:NP" value="var"/>
+    <meta type="text" name="als_XP" value=""/>
+    <meta type="text" name="multV" value="no"/>
+    <meta type="text" name="status" value=""/>
+    <meta type="text" name="trimmed_can_form" value="=TRIM(D418)"/>
+    <meta type="text" name="alpino_version" value="Alpino-x86_64-linux-glibc2.5-21514-sicstus"/>
+    <meta type="date" name="alpino_version_date" value="2019-03-07"/>
+  </metadata>
+</alpino_ds>
