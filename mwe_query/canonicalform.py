@@ -1433,30 +1433,30 @@ def mknearmiss(mwetrees: List[SynTree]) -> Xpathexpression:
 
 
 def mksuperquery(mwetrees) -> Xpathexpression:
-    if mwetrees == []:
-        result = ''
-    else:
-        mwetree = mwetrees[0]   # we only have to look at the first tree
-        wordnodes = [node for node in mwetree.iter() if 'pt' in node.attrib]
-        contentwordnodes = [
-            node for node in mwetree.iter() if iscontentwordnode(node)]
-        contentwordnodes = contentwordnodes if len(
-            contentwordnodes) > 1 else wordnodes
+    if len(mwetrees) < 1:
+        raise RuntimeError('Cannot generate superset query for empty tree set')
 
-        newmwetree = ET.Element('node', attrib={'cat': 'top'})
-        for contentwordnode in contentwordnodes:
-            cwlemma = gav(contentwordnode, 'lemma')
-            cwpt = gav(contentwordnode, 'pt')
-            newcontentwordnode = ET.Element(
-                'node', attrib={'lemma': cwlemma, 'pt': cwpt, 'axis': 'descendant'})
-            newmwetree.append(newcontentwordnode)
-        result = tree2xpath(newmwetree)
+    mwetree = mwetrees[0]   # we only have to look at the first tree
+    wordnodes = [node for node in mwetree.iter() if 'pt' in node.attrib]
+    contentwordnodes = [node for node in mwetree.iter()
+                        if iscontentwordnode(node)]
+    search_for = contentwordnodes if len(contentwordnodes) > 1 else wordnodes
 
-        # lemmapts = [(gav(node, 'lemma'), gav(node, 'pt')) for node in contentwordnodes]
-        # lemmaptxpaths = [f'.//node[@lemma="{lemma}" and @pt="{pt}"]' for (lemma, pt) in lemmapts]
-        # lemmaptcondition = ' and '.join(lemmaptxpaths)
-        # result = f'//node[@cat="top" and {lemmaptcondition}]'
-    return result
+    target_node = ET.Element('node', attrib={'cat': 'top'})
+    children = []
+    for node in search_for:
+        cwlemma = gav(node, 'lemma')
+        cwpt = gav(node, 'pt')
+        n = ET.Element('node', attrib=dict(lemma=cwlemma, pt=cwpt, axis='descendant'))
+        children.append(n)
+
+    del children[0].attrib['axis']
+    for child in children[1:]:
+        target_node.append(child)
+
+    return '//{}/ancestor::alpino_ds/{}'.format(
+        tree2xpath(children[0]),
+        tree2xpath(target_node))
 
 
 def generatequeries(mwe: str, lcatexpansion=True) -> (Xpathexpression, Xpathexpression, Xpathexpression):
