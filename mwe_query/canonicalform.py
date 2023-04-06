@@ -4,17 +4,17 @@ to generate queries from them and to search using these queries.
 """
 
 from typing import Dict, List, Optional, Set, Tuple
-from sastatypes import SynTree
+from sastadev.sastatypes import SynTree
 import re
 import sys
-from treebankfunctions import getattval as gav, terminal, getnodeyield, find1, bareindexnode, indextransform, \
+from sastadev.treebankfunctions import getattval as gav, terminal, getnodeyield, find1, bareindexnode, indextransform, \
     getindexednodesmap, getbasicindexednodesmap, clausebodycats
 
 import lxml.etree as ET
 import copy
-from adpositions import vzazindex
-from alpinoparsing import parse
-from lcat import expandnonheadwords
+from mwe_query.adpositions import vzazindex
+from sastadev.alpinoparsing import parse
+from mwe_query.lcat import expandnonheadwords
 
 Xpathexpression = str
 
@@ -688,6 +688,16 @@ def expandsu(vc: SynTree, subject: SynTree) -> SynTree:
     return newvc
 
 
+def adaptvzlemma(lemma: str) -> str:
+    if lemma == 'met':
+        result = 'mee'
+    elif lemma == ' tot':
+        result = ' toe'
+    else:
+        result = lemma
+    return result
+
+
 def getpronadv(lemma, rel, rprons={}):
     newnode = mknode()
     newlemma = adaptvzlemma(lemma)
@@ -1329,7 +1339,7 @@ def mkpp(rel: str, vz: str,  obj1node: SynTree, begin, end, index, az=None,) -> 
     return ppnode
 
 
-def adaptvzlemma(inlemma: str) -> str:
+def adaptvzlemma_inv(inlemma: str) -> str:
     if inlemma == 'mee':
         result = 'met'
     elif inlemma == 'toe':
@@ -1370,7 +1380,7 @@ def relpronsubst(stree: SynTree) -> SynTree:
                     newstree, f'.//node[@pt="vz" and @rel="hd" and ../node[@index="{rhdindex}"]]')
                 if govprep is not None:
                     govprep.attrib['vztype'] = 'init'
-                    govprep.attrib['lemma'] = adaptvzlemma(
+                    govprep.attrib['lemma'] = adaptvzlemma_inv(
                         govprep.attrib['lemma'])
                 # ET.dump(newstree)
 
@@ -1454,31 +1464,30 @@ def mksuperquery(mwetrees) -> Xpathexpression:
     This uses the content words. If only one content word is in the expression, all the words are used.
     This way extensions for alternatives (such as the lemma "mijzelf|jezelf|zichzelf") are included.
     """
-    if mwetrees == []:
-        result = ''
-    else:
-        mwetree = mwetrees[0]   # we only have to look at the first tree
-        wordnodes = [node for node in mwetree.iter() if 'pt' in node.attrib]
-        contentwordnodes = [
-            node for node in mwetree.iter() if iscontentwordnode(node)]
-        contentwordnodes = contentwordnodes if len(
-            contentwordnodes) > 1 else wordnodes
+    if len(mwetrees) < 1:
+        raise RuntimeError('Cannot generate superset query for empty tree set')
 
-        newmwetree = ET.Element('node', attrib={'cat': 'top'})
-        for contentwordnode in contentwordnodes:
-            cwlemma = gav(contentwordnode, 'lemma')
-            cwpt = gav(contentwordnode, 'pt')
-            newcontentwordnode = ET.Element(
-                'node', attrib={'lemma': cwlemma, 'pt': cwpt, 'axis': 'descendant'})
-            newmwetree.append(newcontentwordnode)
-        result = tree2xpath(newmwetree)
+    mwetree = mwetrees[0]   # we only have to look at the first tree
+    wordnodes = [node for node in mwetree.iter() if 'pt' in node.attrib]
+    contentwordnodes = [node for node in mwetree.iter()
+                        if iscontentwordnode(node)]
+    search_for = contentwordnodes if len(contentwordnodes) > 1 else wordnodes
 
-        # lemmapts = [(gav(node, 'lemma'), gav(node, 'pt')) for node in contentwordnodes]
-        # lemmaptxpaths = [f'.//node[@lemma="{lemma}" and @pt="{pt}"]' for (lemma, pt) in lemmapts]
-        # lemmaptcondition = ' and '.join(lemmaptxpaths)
-        # result = f'//node[@cat="top" and {lemmaptcondition}]'
-    return result
+    target_node = ET.Element('node', attrib={'cat': 'top'})
+    children = []
+    for node in search_for:
+        cwlemma = gav(node, 'lemma')
+        cwpt = gav(node, 'pt')
+        n = ET.Element('node', attrib=dict(lemma=cwlemma, pt=cwpt, axis='descendant'))
+        children.append(n)
 
+    del children[0].attrib['axis']
+    for child in children[1:]:
+        target_node.append(child)
+
+    return '//{}/ancestor::alpino_ds/{}'.format(
+        tree2xpath(children[0]),
+        tree2xpath(target_node))
 
 def generatequeries(mwe: str, lcatexpansion=True) -> Tuple[Xpathexpression, Xpathexpression, Xpathexpression]:
     """

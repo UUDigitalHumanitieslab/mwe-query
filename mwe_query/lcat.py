@@ -185,6 +185,3 @@ def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
         ET.dump(node)
 
     return result
-
-    result = 'xp'
-    return result

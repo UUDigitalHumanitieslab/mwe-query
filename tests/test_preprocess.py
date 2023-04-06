@@ -1,16 +1,18 @@
-from canonicalform import preprocess_MWE, annotationstrings, transformtree, listofsets2setoflists, \
+import unittest
+from mwe_query.canonicalform import preprocess_MWE, annotationstrings, transformtree, listofsets2setoflists, \
     genvariants, trees2xpath, removesuperfluousindexes, newgenvariants, lowerpredm, relpronsubst, expandfull, \
-    generatequeries, applyqueries, selfapplyqueries
+    generatequeries, applyqueries, selfapplyqueries, variable, com, noann
 import os
 import sys
 import lxml.etree as ET
+from difflib import context_diff
 from treebankfunctions import getstree, getyield, indextransform, getyieldstr
 from alpinoparsing import parse
-from lcat import expandnonheadwords
+from mwe_query.lcat import expandnonheadwords
 
 
-##DONE
-##indextransform uitstellen
+# DONE
+# indextransform uitstellen
 # index meenemen
 # speciale behandeling voor bareindexnodes
 # varianten genereren
@@ -24,6 +26,7 @@ space = ' '
 comma = ','
 tab = '\t'
 
+
 def gettopnode(stree):
     for child in stree:
         if child.tag == 'node':
@@ -31,68 +34,88 @@ def gettopnode(stree):
     return None
 
 
-def main():
-    inputfilename = r'./testdata/all_mwes_2022-08-22.txt'
-    base, ext = os.path.splitext(inputfilename)
-    outfilename = base + '_annotated' + ext
-    with open(inputfilename, 'r', encoding='utf8') as infile:
-        with open(outfilename, 'w', encoding='utf8') as outfile:
-            linenr = 0
-            for idmwe in infile:
-                linenr += 1
-                # skip header
-                if linenr == 1:
-                    continue
-                idmwelist = idmwe.split(tab)
-                id = idmwelist[0]
-                mwe = idmwelist[1][:-1]
-                annotatedlist = preprocess_MWE(mwe)
-                wlist = [el[0] for el in annotatedlist]
-                annlist = [el[1] for el in annotatedlist]
-                wliststr = space.join(wlist)
-                annliststr = comma.join([str(i) for i in annlist])
-                print(f'{mwe};{wliststr};{annliststr}', file=outfile)
-                b, sym = containsillegalsymbols(wliststr)
-                if b:
-                    print(f'Illegal symbol {sym} in {wliststr}', file=sys.stderr)
+class TextIndexExpansion(unittest.TestCase):
+    def data_path(self, *paths):
+        return os.path.join(os.path.dirname(__file__), "data", *paths)
 
-def mktreebank(dict, outfilename):
-    treebank = ET.Element('treebank')
-    for mwe in dict:
-        tree = parse(mwe)
-        treebank.append(tree)
+    def main(self):
+        inputfilename = self.data_path('all_mwes_2022-08-22.txt')
+        base, ext = os.path.splitext(inputfilename)
+        outfilename = base + '_annotated' + ext
+        with open(inputfilename, 'r', encoding='utf8') as infile:
+            with open(outfilename, 'w', encoding='utf8') as outfile:
+                linenr = 0
+                for idmwe in infile:
+                    linenr += 1
+                    # skip header
+                    if linenr == 1:
+                        continue
+                    idmwelist = idmwe.split(tab)
+                    id = idmwelist[0]
+                    mwe = idmwelist[1][:-1]
+                    annotatedlist = preprocess_MWE(mwe)
+                    wlist = [el[0] for el in annotatedlist]
+                    annlist = [el[1] for el in annotatedlist]
+                    wliststr = space.join(wlist)
+                    annliststr = comma.join([str(i) for i in annlist])
+                    print(f'{mwe};{wliststr};{annliststr}', file=outfile)
+                    b, sym = self.containsillegalsymbols(wliststr)
+                    if b:
+                        print(
+                            f'Illegal symbol {sym} in {wliststr}', file=sys.stderr)
 
-    fulltreebank = ET.ElementTree(treebank)
-    fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
+    def mktreebank(self, dict, outfilename):
+        treebank = ET.Element('treebank')
+        for mwe in dict:
+            tree = parse(mwe)
+            treebank.append(tree)
 
+        fulltreebank = ET.ElementTree(treebank)
+        fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
 
-
-
-def test1():
-    mwe = 'iemand zal blikken com:[met iemand] wisselen'
-    annotatedlist = preprocess_MWE(mwe)
-    print(annotatedlist)
-
-
-def test2():
-    mwes = ['iemand zal de dans ontspringen', 'iemand zal de *dans ontspringen', 'iemand zal de +dans ontspringen']
-    mwes += ['iemand zal 0de dans ontspringen']
-    mwes += ['iemand zal de +*dans ontspringen', 'iemand zal de *+dans ontspringen']
-    mwes = ['iemand zal de =dans ontspringen']
-    for mwe in mwes:
+    def test_annotation(self):
+        mwe = 'iemand zal blikken com:[met iemand] wisselen'
         annotatedlist = preprocess_MWE(mwe)
-        annotations = [el[1] for el in annotatedlist]
-        cleanmwe = space.join([el[0] for el in annotatedlist])
-        fullmweparse = strees[1]
-        mweparse = gettopnode(fullmweparse)
-        newtrees = transformtree(mweparse, annotations)
-        print(f'{mwe}:')
-        for newtree in newtrees:
-            ET.dump(newtree)
+        assert annotatedlist == [
+            ('iemand', variable),
+            ('zal', noann),
+            ('blikken', noann),
+            ('met', com),
+            ('iemand', com),
+            ('wisselen', noann)]
 
+    def test_transform(self):
+        with open(self.data_path("transform", "mwes.txt"), encoding="utf-8", mode="r") as f:
+            mwes = f.readlines()
 
-streestrings = {}
-streestrings[1] = """
+        i = 0
+        for mwe in mwes:
+            if not mwe:
+                continue
+
+            annotatedlist = preprocess_MWE(mwe)
+            annotations = [el[1] for el in annotatedlist]
+            cleanmwe = space.join([el[0] for el in annotatedlist])
+            fullmweparse = self.strees[1]
+            mweparse = gettopnode(fullmweparse)
+            newtrees = transformtree(mweparse, annotations)
+            j = 0
+            for newtree in newtrees:
+                ET.indent(newtree)
+                actual = ET.tostring(newtree, encoding="unicode").splitlines(True)
+                with open(self.data_path("transform", f"{i}-{j}.xml"), encoding="utf-8", mode="r") as f:
+                    expected = f.readlines()
+                    diff = ''.join(context_diff(expected, actual))
+                    try:
+                        assert not diff
+                    except:
+                        print(diff)
+                        raise
+                j += 1
+            i += 1
+
+    streestrings = {}
+    streestrings[1] = """
 <alpino_ds version="1.6" id="MWE2022-04-29.txt/541-1.xml:1">
   <parser cats="1" skips="0"/>
   <node begin="0" cat="top" end="5" id="0" rel="top" highlight="yes">
@@ -154,7 +177,7 @@ streestrings[1] = """
 
 """
 
-streestrings[2] = """
+    streestrings[2] = """
 <alpino_ds version="1.6" id="MWE2022-04-29.txt/4939-1.xml:1">
   <parser cats="1" skips="0"/>
   <node begin="0" cat="top" end="10" id="0" rel="top">
@@ -228,7 +251,7 @@ streestrings[2] = """
 
 """
 
-streestrings[3] = """
+    streestrings[3] = """
 <alpino_ds version="1.6" id="MWE2022-04-29.txt/2-1.xml:1">
   <parser cats="1" skips="0"/>
   <node begin="0" cat="top" end="4" id="0" rel="top">
@@ -286,7 +309,7 @@ streestrings[3] = """
 </alpino_ds>
 """
 
-streestrings[4] = """
+    streestrings[4] = """
   <alpino_ds version="1.3">
   <metadata><meta name="uttid" value="1" type="text"/><meta name="xsid" value="1" type="text"/><meta name="origutt" value="de poging die hij wou doen werd afgeblazen" type="text"/><xmeta name="tokenisation" atype="list" annotationwordlist="['de', 'poging', 'die', 'hij', 'wou', 'doen', 'werd', 'afgeblazen']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'poging', 'die', 'hij', 'wou', 'doen', 'werd', 'afgeblazen']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenisation" atype="list" annotationwordlist="['de', 'poging', 'die', 'hij', 'wou', 'doen', 'werd', 'afgeblazen']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'poging', 'die', 'hij', 'wou', 'doen', 'werd', 'afgeblazen']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenpositions" atype="list" annotationwordlist="[10, 20, 30, 40, 50, 60, 70, 80]" annotationposlist="[10, 20, 30, 40, 50, 60, 70, 80]" annotatedwordlist="[]" annotatedposlist="[]" value="[10, 20, 30, 40, 50, 60, 70, 80]" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/></metadata><node begin="0" cat="top" end="8" id="0" rel="top">
     <node begin="0" cat="smain" end="8" id="1" rel="--">
@@ -321,7 +344,7 @@ streestrings[4] = """
 
 """
 
-streestrings[5] = """
+    streestrings[5] = """
   <alpino_ds version="1.3">
   <metadata><meta name="uttid" value="2" type="text"/><meta name="xsid" value="2" type="text"/><meta name="origutt" value="de flater die hij sloeg werd breed uitgemeten" type="text"/><xmeta name="tokenisation" atype="list" annotationwordlist="['de', 'flater', 'die', 'hij', 'sloeg', 'werd', 'breed', 'uitgemeten']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'flater', 'die', 'hij', 'sloeg', 'werd', 'breed', 'uitgemeten']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenisation" atype="list" annotationwordlist="['de', 'flater', 'die', 'hij', 'sloeg', 'werd', 'breed', 'uitgemeten']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'flater', 'die', 'hij', 'sloeg', 'werd', 'breed', 'uitgemeten']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenpositions" atype="list" annotationwordlist="[10, 20, 30, 40, 50, 60, 70, 80]" annotationposlist="[10, 20, 30, 40, 50, 60, 70, 80]" annotatedwordlist="[]" annotatedposlist="[]" value="[10, 20, 30, 40, 50, 60, 70, 80]" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/></metadata><node begin="0" cat="top" end="8" id="0" rel="top">
     <node begin="0" cat="smain" end="8" id="1" rel="--">
@@ -353,7 +376,7 @@ streestrings[5] = """
 
 """
 
-streestrings[6] = """
+    streestrings[6] = """
   <alpino_ds version="1.3">
   <metadata><meta name="uttid" value="1" type="text"/><meta name="xsid" value="1" type="text"/><meta name="origutt" value="de financiële dans waaraan hij is ontsprongen" type="text"/><xmeta name="tokenisation" atype="list" annotationwordlist="['de', 'financiële', 'dans', 'waaraan', 'hij', 'is', 'ontsprongen']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'financiële', 'dans', 'waaraan', 'hij', 'is', 'ontsprongen']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenisation" atype="list" annotationwordlist="['de', 'financiële', 'dans', 'waaraan', 'hij', 'is', 'ontsprongen']" annotationposlist="[]" annotatedwordlist="[]" annotatedposlist="[]" value="['de', 'financiële', 'dans', 'waaraan', 'hij', 'is', 'ontsprongen']" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/><xmeta name="cleanedtokenpositions" atype="list" annotationwordlist="[10, 20, 30, 40, 50, 60, 70]" annotationposlist="[10, 20, 30, 40, 50, 60, 70]" annotatedwordlist="[]" annotatedposlist="[]" value="[10, 20, 30, 40, 50, 60, 70]" cat="None" subcat="None" source="CHAT/Tokenisation" backplacement="0" penalty="10"/></metadata><node begin="0" cat="top" end="7" id="0" rel="top">
     <node begin="0" cat="np" end="7" id="1" rel="--">
@@ -382,400 +405,395 @@ streestrings[6] = """
 
 """
 
-strees = {i: ET.fromstring(streestrings[i]) for i in streestrings}
+    @property
+    def strees(self):
+        return {i: ET.fromstring(self.streestrings[i]) for i in self.streestrings}
 
+    def containsillegalsymbols(self, mwe):
+        for el in annotationstrings:
+            if el in mwe:
+                return True, el
+        return (False, None)
 
-def containsillegalsymbols(mwe):
-    for el in annotationstrings:
-        if el in mwe:
-            return True, el
-    return (False, None)
+    def test_lofs(self):
+        lofs = [[1, 2], [3, 4], [5, 6]]
+        results = listofsets2setoflists(lofs)
+        assert results == [
+            [1, 3, 5],
+            [1, 3, 6],
+            [1, 4, 5],
+            [1, 4, 6],
+            [2, 3, 5],
+            [2, 3, 6],
+            [2, 4, 5],
+            [2, 4, 6]]
 
+    def getmwedict(self, intbfilename):
+        mwedict = {}
+        fulltreebank = getstree(intbfilename)
+        treebank = fulltreebank.getroot()
+        for stree in treebank:
+            keylist = getyield(stree)
+            key = space.join(keylist)
+            richstree = stree
+            # richstree = indextransform(stree)  # put off because this should happen later
+            mwedict[key] = richstree
+        return mwedict
 
-def test3():
-    lofs = [[1, 2], [3, 4], [5, 6]]
-    results = listofsets2setoflists(lofs)
-    for result in results:
-        print(result)
+    def test_rel(self):
+        for i in {4, 5, 6}:
+            newstree = relpronsubst(self.strees[i])
+            ET.dump(newstree)
 
+    def test4(self):
+        intbfilename = self.data_path('MWE20220429_CORPUS2ALPINO_ID.xml')
+        mwedict = self.getmwedict(intbfilename)
+        mwes = ['iemand zal de dans ontspringen',
+                'iemand zal de *dans ontspringen', 'iemand zal de +dans ontspringen']
+        mwes += ['iemand zal 0de dans ontspringen']
+        mwes += ['iemand zal de +*dans ontspringen',
+                 'iemand zal de *+dans ontspringen']
+        mwes += ['iemand zal de =dans ontspringen']
+        mwes += ['dat mes zal aan twee kanten snijden']
+        mwes += ['0nu zal de aap uit de mouw komen']
+        mwes += ['iemand zal de schuld op zich nemen']
+        mwes += ['iemand zal buiten zichzelf zijn']
+        mwes += ['iemand zal veel in zijn mars hebben']
+        mwes += ['bij nacht en ontijd']
+        # still something wrong here
+        mwes += ['iemand zal blikken com:[met] iemand wisselen']
+        mwes += ['dd:[dat] mes zal aan twee kanten snijden']
+        mwes += ['iets zal er <dik> inzitten']
+        mwes += ['iemand zal <de hele dag> in touw zijn']
+        mwes += ['iemand zal aan iemand een *hekel hebben']
+        mwes += ['iemand zal 0geen gras over iets laten groeien']
+        #mwes = ['iemand zal iets | Iemand op zijn dak krijgen' ]
+        mwes += ['#door dik en dun']
+        mwes += ['#ad patres']
+        mwes += ['ad patres']
+        mwes += ['iemand zal aan de kant #gaan']
+        mwes += ['iemand zal aan de kant gaan']
 
-def getmwedict(intbfilename):
-    mwedict = {}
-    fulltreebank = getstree(intbfilename)
-    treebank = fulltreebank.getroot()
-    for stree in treebank:
-        keylist = getyield(stree)
-        key = space.join(keylist)
-        richstree = stree
-        #richstree = indextransform(stree)  # put off because this should happen later
-        mwedict[key] = richstree
-    return mwedict
+        for mwe in mwes:
+            annotatedlist = preprocess_MWE(mwe)
+            annotations = [el[1] for el in annotatedlist]
+            cleanmwe = space.join([el[0] for el in annotatedlist])
+            fullmweparse = None
+            if cleanmwe in mwedict:
+                fullmweparse = mwedict[cleanmwe]
+                # ET.dump(fullmweparse)
+            elif mwe in mwedict:
+                fullmweparse = mwedict[mwe]
+            if fullmweparse is not None:
+                mweparse = gettopnode(fullmweparse)
+                newtreesa = transformtree(mweparse, annotations)
+                newtrees = []
+                for newtreea in newtreesa:
+                    newtrees += genvariants(newtreea)
+                newtrees.extend(newtreesa)
+                print(f'{mwe}:')
+                for newtree in newtrees:
+                    # print(f'{i+1}:')
+                    print()
+                    ET.dump(newtree)
+            else:
+                print(f'MWE <{cleanmwe}> not found ', file=sys.stderr)
 
-def testrel():
-    for i in {4,5,6}:
-        newstree = relpronsubst(strees[i])
-        ET.dump(newstree)
+    def mkoutfilename(self, infilename: str, suffix: str, ext=None) -> str:
+        basefilename, inext = os.path.splitext(infilename)
+        if ext is None:
+            ext = inext
+        result = basefilename + suffix + ext
+        return result
 
-def test4():
-    intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID.xml'
-    mwedict = getmwedict(intbfilename)
-    mwes = ['iemand zal de dans ontspringen', 'iemand zal de *dans ontspringen', 'iemand zal de +dans ontspringen']
-    mwes += ['iemand zal 0de dans ontspringen']
-    mwes += ['iemand zal de +*dans ontspringen', 'iemand zal de *+dans ontspringen']
-    mwes += ['iemand zal de =dans ontspringen']
-    mwes += ['dat mes zal aan twee kanten snijden']
-    mwes += ['0nu zal de aap uit de mouw komen']
-    mwes += ['iemand zal de schuld op zich nemen']
-    mwes += ['iemand zal buiten zichzelf zijn']
-    mwes += ['iemand zal veel in zijn mars hebben']
-    mwes += ['bij nacht en ontijd']
-    mwes += ['iemand zal blikken com:[met] iemand wisselen'] # still something wrong here
-    mwes += ['dd:[dat] mes zal aan twee kanten snijden']
-    mwes += ['iets zal er <dik> inzitten']
-    mwes += ['iemand zal <de hele dag> in touw zijn']
-    mwes += ['iemand zal aan iemand een *hekel hebben']
-    mwes += ['iemand zal 0geen gras over iets laten groeien']
-    #mwes = ['iemand zal iets | Iemand op zijn dak krijgen' ]
-    mwes += ['#door dik en dun']
-    mwes += ['#ad patres']
-    mwes += ['ad patres']
-    mwes += ['iemand zal aan de kant #gaan']
-    mwes += ['iemand zal aan de kant gaan']
+    def base_testfind(self, basemwe, xpath, mwedict, all=False):
+        results = []
+        localxpath = "." + xpath
+        for mwe in mwedict:
+            origmwetree = mwedict[mwe]
+            mwetree = lowerpredm(origmwetree)
+            mweyield = getyield(mwetree)
+            mwestr = space.join(mweyield)
+            # ET.dump(mwetree)
+            # print(f'mwe={mwe}')
+            # print(f'xpath:\n{localxpath}\n')
+            mwehits = mwetree.xpath(localxpath)
+            newresult = (basemwe, mwe, len(mwehits))
+            results.append(newresult)
 
-    for mwe in mwes:
-        annotatedlist = preprocess_MWE(mwe)
-        annotations = [el[1] for el in annotatedlist]
-        cleanmwe = space.join([el[0] for el in annotatedlist])
-        fullmweparse = None
-        if cleanmwe in mwedict:
-            fullmweparse = mwedict[cleanmwe]
-            #ET.dump(fullmweparse)
-        elif mwe in mwedict:
+        for basemwe, mwe, count in results:
+            if all:
+                cond = True
+            else:
+                cond = (basemwe == mwe and count != 1) or (
+                    basemwe != mwe and count != 0)
+            if cond:
+                print(basemwe, mwe, count, file=sys.stderr)
+
+    @unittest.skip("slooooow")
+    def test5(self):
+        reportevery = 500
+        intbfilename = self.data_path('MWE20220429_CORPUS2ALPINO_ID.xml')
+        mwedict = self.getmwedict(intbfilename)
+        # next one is problematic, so we delete it
+        problemmwe = 'iemand zal iets | Iemand op zijn dak krijgen'
+        if problemmwe in mwedict:
+            del mwedict[problemmwe]
+        #mwedict = {}
+        #mwedict['wat het oog niet ziet zal het hart niet deren'] = strees[2]
+        #mwedict['iemand zal ’m smeren'] = strees[3]
+        # for ind, tree in expandedmwedict.items():
+        #    print(ind)
+        #    ET.dump(tree)
+        suffix = '_trees'
+        outfilename = self.mkoutfilename(intbfilename, suffix)
+    #    with open(outfilename, 'w', encoding='utf8') as outfile:
+        treebank = ET.Element('treebank')
+        inds = ['iemand zal uit iemands koker komen']
+        inds = ['iemand zal slechte invloed op iemand hebben']
+        inds = ['iemand zal met de pet naar iets gooien']
+        inds = ['de tale Kanaäns']
+        inds += ['heel af en toe']
+        inds += ['na verloop van tijd']
+        inds += ['al doende zal men leren']
+        inds = ['iemand zal de schuld van iets op iemand schuimwedicven']
+        inds += ['iemand zal iets door de vingers zien']
+        inds += ['iemand zal achter iets komen']
+        inds += ['iemand zal uit iemands koker komen']
+        inds += ['al doende zal men leren']
+        # inds = ['die wind zaait zal storm zullen oogsten'] we must not have zullen with these expressions
+        inds += ['te dom om voor de duivel te dansen']
+        inds += ['zo doof als een kwartel']
+        inds = ['iemand zal veel ellende over iemand uitstorten']
+        #mwedict = {ind: mwedict[ind] for ind in inds}
+        expandedmwedict = {mwe: indextransform(
+            tree) for mwe, tree in mwedict.items()}
+        counter = 0
+        for mwe in mwedict:
+            counter += 1
+            mwe_element = ET.Element('mwe', attrib={'mwe': mwe})
+            #print(mwe, file=sys.stderr)
+            if counter % reportevery == 0:
+                print(counter, file=sys.stderr)
+            annotatedlist = preprocess_MWE(mwe)
+            annotations = [el[1] for el in annotatedlist]
+            #cleanmwe = space.join([el[0] for el in annotatedlist])
             fullmweparse = mwedict[mwe]
-        if fullmweparse is not None:
             mweparse = gettopnode(fullmweparse)
+            # if mweparse is None:
+            #    #print(f'\n\n{mwe}:', file=outfile)
+            #    #print('None')
+            #    continue
+            treeyield = getyield(mweparse)
+            treeyieldstr = space.join(treeyield)
+            if treeyieldstr != mwe:
+                print(f'mismatch:\n{treeyieldstr}=/={mwe} ')
+                continue
             newtreesa = transformtree(mweparse, annotations)
             newtrees = []
             for newtreea in newtreesa:
-                newtrees += genvariants(newtreea)
-            newtrees.extend(newtreesa)
-            print(f'{mwe}:')
-            for newtree in newtrees:
-                #print(f'{i+1}:')
-                print()
-                ET.dump(newtree)
-        else:
-            print(f'MWE <{cleanmwe}> not found ', file=sys.stderr)
+                newtrees += newgenvariants(newtreea)
+            # newtrees.extend(newtreesa)
+            #print(f'\n\n{mwe}:', file=outfile)
+            cleantrees = [removesuperfluousindexes(
+                newtree) for newtree in newtrees]
+            #cleantrees = newtrees
+            # print('cleantrees:')
+            # for cleantree in cleantrees:
+            #    ET.dump(cleantree)
+            mwe_element.extend(cleantrees)
+            xpath = trees2xpath(cleantrees, expanded=True)
+            # print(xpath)
+            xpath_element = ET.Element('xpath')
+            xpath_element.text = xpath
+            mwe_element.append(xpath_element)
+            treebank.append(mwe_element)
+            self.base_testfind(mwe, xpath, expandedmwedict)
+            # ET.dump(treebank)
+            # for newtree in newtrees:
+            #     #print(f'{i+1}:')
+            #     print()
+            #     treebank.append(newtree)
+        fulltreebank = ET.ElementTree(treebank)
+        #ET.indent(newtree, space="    ")
+        #print(ET.tostring(newtree), file=outfile)
+        fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
 
-def mkoutfilename(infilename: str, suffix: str, ext=None) -> str:
-    basefilename, inext = os.path.splitext(infilename)
-    if ext is None:
-        ext = inext
-    result = basefilename + suffix + ext
-    return result
+    def check(self, treebankdict):
+        for utt, stree in treebankdict.items():
+            for node in stree.iter():
+                if 'pt' in node.attrib:
+                    for att in {'begin', 'end'}:
+                        if 'id' in node.attrib:
+                            id = node.attrib['id']
+                        else:
+                            id = 'None'
+                        if att not in node.attrib:
+                            print(
+                                f'missing {att} in node with id={id}, pt={node.attrib["pt" ]}.')
+                            ET.dump(stree)
 
-def testfind(basemwe, xpath, mwedict, all=False):
-    results = []
-    localxpath = "." + xpath
-    for mwe in mwedict:
-        origmwetree = mwedict[mwe]
-        mwetree = lowerpredm(origmwetree)
-        mweyield = getyield(mwetree)
-        mwestr = space.join(mweyield)
-        #ET.dump(mwetree)
-        #print(f'mwe={mwe}')
-        #print(f'xpath:\n{localxpath}\n')
-        mwehits = mwetree.xpath(localxpath)
-        newresult = (basemwe, mwe, len(mwehits))
-        results.append(newresult)
+    def getutts(self, infilename):
+        # each utterance on a separate line, discard the final \n and skip empty lines
+        with open(infilename, 'r', encoding='utf8') as infile:
+            rawutts = infile.readlines()
+        utts = [rawutt[:-1] for rawutt in rawutts if len(rawutt) > 1]
+        return utts
 
+    @unittest.skip("not deterministic")
+    def test_variatie(self):
+        mwetreebank = self.data_path('mwesvoorvariatie-noann_treebank.xml')
+        mwedict = self.getmwedict(mwetreebank)
+        #expandedmwedict = {mwe:indextransform(tree) for mwe, tree in mwedict.items()}
+        testtreebankfilename = self.data_path('testzinnen mwevarianten_treebank.xml')
+        fullvariationtreebank = getstree(testtreebankfilename)
+        variationtreebank = fullvariationtreebank.getroot()
+        variationtreebankdict = {getyieldstr(tree): expandfull(
+            tree) for tree in variationtreebank}
+        # check(variationtreebankdict)
+        annotatedmwefilename = self.data_path('mwesvoorvariatie-annotated.txt')
+        annotatedmwes = self.getutts(annotatedmwefilename)
+        suffix = '_derivedtrees'
+        outfilename = self.mkoutfilename(mwetreebank, suffix)
+        treebank = ET.Element('treebank')
+        counter = 0
+        reportevery = 500
 
-    for basemwe, mwe, count in results:
-        if all:
-            cond = True
-        else:
-            cond = (basemwe == mwe and count!=1) or (basemwe != mwe and count!=0)
-        if cond:
-            print(basemwe, mwe, count, file=sys.stderr )
-
-
-
-def test5():
-    reportevery = 500
-    intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID.xml'
-    mwedict = getmwedict(intbfilename)
-    # next one is problematic, so we delete it
-    problemmwe = 'iemand zal iets | Iemand op zijn dak krijgen'
-    if problemmwe in mwedict:
-        del mwedict[problemmwe]
-    #mwedict = {}
-    #mwedict['wat het oog niet ziet zal het hart niet deren'] = strees[2]
-    #mwedict['iemand zal ’m smeren'] = strees[3]
-    #for ind, tree in expandedmwedict.items():
-    #    print(ind)
-    #    ET.dump(tree)
-    suffix = '_trees'
-    outfilename = mkoutfilename(intbfilename, suffix)
-#    with open(outfilename, 'w', encoding='utf8') as outfile:
-    treebank = ET.Element('treebank')
-    inds = ['iemand zal uit iemands koker komen']
-    inds = ['iemand zal slechte invloed op iemand hebben']
-    inds = ['iemand zal met de pet naar iets gooien']
-    inds = ['de tale Kanaäns']
-    inds += ['heel af en toe']
-    inds += ['na verloop van tijd']
-    inds += ['al doende zal men leren']
-    inds = ['iemand zal de schuld van iets op iemand schuimwedicven']
-    inds += ['iemand zal iets door de vingers zien']
-    inds += ['iemand zal achter iets komen']
-    inds += ['iemand zal uit iemands koker komen']
-    inds += ['al doende zal men leren']
-    #inds = ['die wind zaait zal storm zullen oogsten'] we must not have zullen with these expressions
-    inds += ['te dom om voor de duivel te dansen']
-    inds += ['zo doof als een kwartel']
-    inds = ['iemand zal veel ellende over iemand uitstorten']
-    #mwedict = {ind: mwedict[ind] for ind in inds}
-    expandedmwedict = {mwe:indextransform(tree) for mwe, tree in mwedict.items()}
-    counter = 0
-    for mwe in mwedict:
-        counter += 1
-        mwe_element = ET.Element('mwe', attrib={'mwe': mwe})
-        #print(mwe, file=sys.stderr)
-        if counter % reportevery == 0:
-            print(counter, file=sys.stderr)
-        annotatedlist = preprocess_MWE(mwe)
-        annotations = [el[1] for el in annotatedlist]
-        #cleanmwe = space.join([el[0] for el in annotatedlist])
-        fullmweparse = mwedict[mwe]
-        mweparse = gettopnode(fullmweparse)
-        #if mweparse is None:
-        #    #print(f'\n\n{mwe}:', file=outfile)
-        #    #print('None')
-        #    continue
-        treeyield = getyield(mweparse)
-        treeyieldstr = space.join(treeyield)
-        if treeyieldstr != mwe:
-            print(f'mismatch:\n{treeyieldstr}=/={mwe} ' )
-            continue
-        newtreesa = transformtree(mweparse, annotations)
-        newtrees = []
-        for newtreea in newtreesa:
-            newtrees += newgenvariants(newtreea)
-        #newtrees.extend(newtreesa)
-        #print(f'\n\n{mwe}:', file=outfile)
-        cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
-        #cleantrees = newtrees
-        #print('cleantrees:')
-        #for cleantree in cleantrees:
-        #    ET.dump(cleantree)
-        mwe_element.extend(cleantrees)
-        xpath = trees2xpath(cleantrees, expanded=True)
-        #print(xpath)
-        xpath_element = ET.Element('xpath')
-        xpath_element.text = xpath
-        mwe_element.append(xpath_element)
-        treebank.append(mwe_element)
-        testfind(mwe, xpath, expandedmwedict)
-        #ET.dump(treebank)
-        # for newtree in newtrees:
-        #     #print(f'{i+1}:')
-        #     print()
-        #     treebank.append(newtree)
-    fulltreebank = ET.ElementTree(treebank)
-    #ET.indent(newtree, space="    ")
-    #print(ET.tostring(newtree), file=outfile)
-    fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
-
-def check(treebankdict):
-    for utt, stree in treebankdict.items():
-        for node in stree.iter():
-            if 'pt' in node.attrib:
-                for att in {'begin','end'}:
-                    if 'id' in node.attrib:
-                        id = node.attrib['id']
-                    else:
-                        id = 'None'
-                    if att not in node.attrib:
-                        print(f'missing {att} in node with id={id}, pt={node.attrib["pt" ]}.')
-                        ET.dump(stree)
-
-
-def getutts(infilename):
-    #each utterance on a separate line, discard the final \n and skip empty lines
-    infile = open(infilename, 'r', encoding='utf8')
-    rawutts = infile.readlines()
-    utts = [rawutt[:-1] for rawutt in rawutts if len(rawutt) > 1]
-    return utts
-
-
-def testvariatie():
-    mwetreebank = './testdata/mwesvoorvariatie-noann_treebank.xml'
-    mwedict = getmwedict(mwetreebank)
-    #expandedmwedict = {mwe:indextransform(tree) for mwe, tree in mwedict.items()}
-    testtreebankfilename = './testdata/testzinnen mwevarianten_treebank.xml'
-    fullvariationtreebank = getstree(testtreebankfilename)
-    variationtreebank = fullvariationtreebank.getroot()
-    variationtreebankdict= {getyieldstr(tree): expandfull(tree) for tree in variationtreebank}
-    #check(variationtreebankdict)
-    annotatedmwefilename = './testdata/mwesvoorvariatie-annotated.txt'
-    annotatedmwes = getutts(annotatedmwefilename)
-    suffix = '_derivedtrees'
-    outfilename = mkoutfilename(mwetreebank, suffix)
-    treebank = ET.Element('treebank')
-    counter = 0
-    reportevery = 500
-
-    #annotatedmwes = [amwe for amwe in annotatedmwes if amwe=='iemand zal aan 0de *+dans ontspringen']
-    #annotatedmwes = [amwe for amwe in annotatedmwes if amwe=='iemand zal de plaat poetsen']
-    for rawmwe in annotatedmwes:
-        counter += 1
-        mwe_element = ET.Element('mwe', attrib={'mwe': rawmwe})
-        #print(mwe, file=sys.stderr)
-        if counter % reportevery == 0:
-            print(counter, file=sys.stderr)
-        annotatedlist = preprocess_MWE(rawmwe)
-        annotations = [el[1] for el in annotatedlist]
-        mweparts = [el[0] for el in annotatedlist]
-        mwe = space.join(mweparts)
-        fullmweparse = mwedict[mwe]
-        mweparse = gettopnode(fullmweparse)
-        #if mweparse is None:
-        #    #print(f'\n\n{mwe}:', file=outfile)
-        #    #print('None')
-        #    continue
-        treeyield = getyield(mweparse)
-        treeyieldstr = space.join(treeyield)
-        if treeyieldstr != mwe:
-            print(f'mismatch:\n{treeyieldstr}=/={mwe} ' )
-            continue
-        newtreesa = transformtree(mweparse, annotations)
-        newtrees = []
-        for newtreea in newtreesa:
-            newtrees += newgenvariants(newtreea)
-        #newtrees.extend(newtreesa)
-        #print(f'\n\n{mwe}:', file=outfile)
-        cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
-        #cleantrees = newtrees
-        #print('cleantrees:')
-        #for cleantree in cleantrees:
-        #    ET.dump(cleantree)
-        mwe_element.extend(cleantrees)
-        xpath = trees2xpath(cleantrees, expanded=True)
-        #print(xpath)
-        xpath_element = ET.Element('xpath')
-        xpath_element.text = xpath
-        mwe_element.append(xpath_element)
-        treebank.append(mwe_element)
-        testfind(mwe, xpath, variationtreebankdict)
-        #ET.dump(treebank)
-        # for newtree in newtrees:
-        #     #print(f'{i+1}:')
-        #     print()
-        #     treebank.append(newtree)
-    fulltreebank = ET.ElementTree(treebank)
-    #ET.indent(newtree, space="    ")
-    #print(ET.tostring(newtree), file=outfile)
-    fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
-
-def gentreebank():
-    #generate a new treebank because a new parser is being used
-    intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID.xml'
-    suffix = '_parse2022-11-18'
-    outfilename = mkoutfilename(intbfilename, suffix)
-    mwedict = getmwedict(intbfilename)
-    mktreebank(mwedict, outfilename)
-
-
-
-def genqueries():
-    """
-    Generates queries in a file (with suffix _querytriples) in the
-    testdata folder for a mwe treebank in the same folder and applies
-    the queries on all the mwe tree in the treebank.
-
-    It will generate output on the console for every mwe and reports
-    differences from what was expected.
-    """
-
-    # if True it will only check whether the queries for an mwe find
-    # a match in the parsed tree of the canonical form of the mwe
-    # (that is a minimal requirement for an xpath query)
-    selftest = False
-
-    # test these specific MWEs
-    mwes =  [ 'iemand zal een poging doen', 'iemand zal 0een *+poging doen', 'iemand zal aan de bak komen']
-    mwes += ['iemand zal *honger hebben']
-    #mwes = ['iemand zal 0een *+poging doen']
-
-    # Jan Odijk: 
-    #   "Oorspronkelijk werkte ik met een bestand gedownload uit GreTEL 4 (MWE20220429_corpus2alpino),
-    #   maar de parse hiervan bleken anders te zijn dan in de huidige versie,
-    #   dus heb ik een nieuwe treebank gegenereerd: MWE20220429_CORPUS2ALPINO_ID_parse2022-11-18.xml."
-    #intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID.xml'
-    intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID_parse2022-11-18.xml'
-    suffix = '_querytriples'
-    outfilename = mkoutfilename(intbfilename, suffix)
-    mwedict = getmwedict(intbfilename)
-    #selectedmwe = 'af en toe'
-    mwes = [mwe for mwe, _ in mwedict.items() ]
-    # mwes = ['iemand zal 0een *+poging doen']
-    # mwes += ['iemand zal achterna zitten', 'iemand zal iemand achterna zitten']
-    # mwes += ['iemand zal beter ten halve gekeerd dan ten hele gedwaald']
-    # mwes += ['god betere het', 'harde dobbel', 'holland op zijn smalst', 'laatste der mohikanen', 'malle pietje', 'iemand zal zich op iets beslapen', 'iemand zal zich de tandjes werken']
-    # mwes += ['iemand zal zich het vuur uit se sloffen lopen', 'iemand zal zich jakes lopen', 'iemand zal zich katoen houden', 'imand zal zich koes houden']
-    # mwes += ['iemand doet 0een *+poging', 'iemand doet een poging']
-    # mwes += ['dd:[dat] zelfde liedje']
-    # mwes += ['iemand zal het dr:[er] 0niet bij laten zitten']
-    # mwes += ['iemand zal veel ellende over iemand uitstorten']
-    # mwes += ['iemand zal aanhangen als een klis']
-    # mwes += ['aanzien zal doen gedenken', 'al doende zal men leren',
-    #         'al is de leugen nog zo snel de waarheid zal haar wel achterhalen', 'Iets zal allemaal kool zijn',
-    #         'iets zal allemaal kool zijn', 'iemand zal als een tang op een varken slaan']
-    # mwes += ['iemand zal balen als een stekker', 'iemand zal blauw aanlopen', 'iemand zal buiten zichzelf zijn',
-    #         'iemand zal branden als een lier', 'daar gehakt wordt zullen spaanders vallen']
-    # mwes += ['iemand zal buiten zichzelf zijn']
-    # mwes = ['iemand zal steen en been over iets klagen', 'iemand zal heer en meester over iets zijn',
-    #         'een vette gans zal = zichzelf bedruipen', 'een vette gans zal =zichzelf bedruipen',
-    #         'het zal zaliger zijn te geven dan te ontvangen', 'iemand zal roken als een ketter vloeken als een ketter',
-    #         'wat het oog niet ziet zal het hart niet deren', 'iemand zal zeggen waar het op staat',
-    #         'waar het hart vol van is zal de mond van overvloeien', 'in alle hoeken en gaten van iets',
-    #         'wie een hond wil slaan zal licht een stok vinden',
-    #         'Wie het onderste uit de kan wil hebben zal het deksel op de neus krijgen']
-    #mwes = ['iemand zal ’m van jetje geven', 'iemand zal voor gek lopen']
-    #mwes += ['het zal zaliger zijn te geven dan te ontvangen']
-    with open(outfilename, 'w', encoding='utf8') as outfile:
-        for mwe in mwes:
-            print(mwe)
-            (mweq, nearmissq, supersetq) = generatequeries(mwe)
-            print(f'\n{mwe}:', file=outfile)
-            print(f'mweq:\n{mweq}', file=outfile)
-
-            print(f'nearmissq:\n{nearmissq}', file=outfile)
-
-            print(f'supersetq:\n{supersetq}', file= outfile)
-
-            annotatedlist = preprocess_MWE(mwe)
-            #annotations = [el[1] for el in annotatedlist]
+        #annotatedmwes = [amwe for amwe in annotatedmwes if amwe=='iemand zal aan 0de *+dans ontspringen']
+        #annotatedmwes = [amwe for amwe in annotatedmwes if amwe=='iemand zal de plaat poetsen']
+        for rawmwe in annotatedmwes:
+            counter += 1
+            mwe_element = ET.Element('mwe', attrib={'mwe': rawmwe})
+            #print(mwe, file=sys.stderr)
+            if counter % reportevery == 0:
+                print(counter, file=sys.stderr)
+            annotatedlist = preprocess_MWE(rawmwe)
+            annotations = [el[1] for el in annotatedlist]
             mweparts = [el[0] for el in annotatedlist]
-            utt = space.join(mweparts)
+            mwe = space.join(mweparts)
+            fullmweparse = mwedict[mwe]
+            mweparse = gettopnode(fullmweparse)
+            # if mweparse is None:
+            #    #print(f'\n\n{mwe}:', file=outfile)
+            #    #print('None')
+            #    continue
+            treeyield = getyield(mweparse)
+            treeyieldstr = space.join(treeyield)
+            if treeyieldstr != mwe:
+                print(f'mismatch:\n{treeyieldstr}=/={mwe} ')
+                continue
+            newtreesa = transformtree(mweparse, annotations)
+            newtrees = []
+            for newtreea in newtreesa:
+                newtrees += newgenvariants(newtreea)
+            # newtrees.extend(newtreesa)
+            #print(f'\n\n{mwe}:', file=outfile)
+            cleantrees = [removesuperfluousindexes(
+                newtree) for newtree in newtrees]
+            #cleantrees = newtrees
+            # print('cleantrees:')
+            # for cleantree in cleantrees:
+            #    ET.dump(cleantree)
+            mwe_element.extend(cleantrees)
+            xpath = trees2xpath(cleantrees, expanded=True)
+            # print(xpath)
+            xpath_element = ET.Element('xpath')
+            xpath_element.text = xpath
+            mwe_element.append(xpath_element)
+            treebank.append(mwe_element)
+            self.base_testfind(mwe, xpath, variationtreebankdict)
+            # ET.dump(treebank)
+            # for newtree in newtrees:
+            #     #print(f'{i+1}:')
+            #     print()
+            #     treebank.append(newtree)
+        fulltreebank = ET.ElementTree(treebank)
+        #ET.indent(newtree, space="    ")
+        #print(ET.tostring(newtree), file=outfile)
+        fulltreebank.write(outfilename, encoding='utf8', pretty_print=True)
 
-            if selftest:
-                # #self test
-                (mwenodes, nearmissnodes, supersetnodes) = selfapplyqueries(utt, mweq, nearmissq, supersetq)
-                if len(mwenodes) != 1 or len(nearmissnodes) != 1 or len(supersetnodes) != 1:
-                    print(f'mwe:{len(mwenodes)}; nearmiss: {len(nearmissnodes)}; superset:{len(supersetnodes)}')
-            else:
-                results = applyqueries(mwedict, mwe, mweq, nearmissq, supersetq)
+    def gentreebank(self):
+        # generate a new treebank because a new parser is being used
+        intbfilename = self.data_path('MWE20220429_CORPUS2ALPINO_ID.xml')
+        suffix = '_parse2022-11-18'
+        outfilename = self.mkoutfilename(intbfilename, suffix)
+        mwedict = self.getmwedict(intbfilename)
+        self.mktreebank(mwedict, outfilename)
+
+    def genqueries(self):
+        selftest = False
+        mwes = ['iemand zal een poging doen',
+                'iemand zal 0een *+poging doen', 'iemand zal aan de bak komen']
+        mwes += ['iemand zal *honger hebben']
+        #mwes = ['iemand zal 0een *+poging doen']
+        #intbfilename = self.data_path('MWE20220429_CORPUS2ALPINO_ID.xml')
+        intbfilename = self.data_path('MWE20220429_CORPUS2ALPINO_ID_parse2022-11-18.xml')
+        suffix = '_querytriples'
+        outfilename = self.mkoutfilename(intbfilename, suffix)
+        mwedict = self.getmwedict(intbfilename)
+        #selectedmwe = 'af en toe'
+        mwes = [mwe for mwe, _ in mwedict.items()]
+        # mwes = ['iemand zal 0een *+poging doen']
+        # mwes += ['iemand zal achterna zitten', 'iemand zal iemand achterna zitten']
+        # mwes += ['iemand zal beter ten halve gekeerd dan ten hele gedwaald']
+        # mwes += ['god betere het', 'harde dobbel', 'holland op zijn smalst', 'laatste der mohikanen', 'malle pietje', 'iemand zal zich op iets beslapen', 'iemand zal zich de tandjes werken']
+        # mwes += ['iemand zal zich het vuur uit se sloffen lopen', 'iemand zal zich jakes lopen', 'iemand zal zich katoen houden', 'imand zal zich koes houden']
+        # mwes += ['iemand doet 0een *+poging', 'iemand doet een poging']
+        # mwes += ['dd:[dat] zelfde liedje']
+        # mwes += ['iemand zal het dr:[er] 0niet bij laten zitten']
+        # mwes += ['iemand zal veel ellende over iemand uitstorten']
+        # mwes += ['iemand zal aanhangen als een klis']
+        # mwes += ['aanzien zal doen gedenken', 'al doende zal men leren',
+        #         'al is de leugen nog zo snel de waarheid zal haar wel achterhalen', 'Iets zal allemaal kool zijn',
+        #         'iets zal allemaal kool zijn', 'iemand zal als een tang op een varken slaan']
+        # mwes += ['iemand zal balen als een stekker', 'iemand zal blauw aanlopen', 'iemand zal buiten zichzelf zijn',
+        #         'iemand zal branden als een lier', 'daar gehakt wordt zullen spaanders vallen']
+        # mwes += ['iemand zal buiten zichzelf zijn']
+        # mwes = ['iemand zal steen en been over iets klagen', 'iemand zal heer en meester over iets zijn',
+        #         'een vette gans zal = zichzelf bedruipen', 'een vette gans zal =zichzelf bedruipen',
+        #         'het zal zaliger zijn te geven dan te ontvangen', 'iemand zal roken als een ketter vloeken als een ketter',
+        #         'wat het oog niet ziet zal het hart niet deren', 'iemand zal zeggen waar het op staat',
+        #         'waar het hart vol van is zal de mond van overvloeien', 'in alle hoeken en gaten van iets',
+        #         'wie een hond wil slaan zal licht een stok vinden',
+        #         'Wie het onderste uit de kan wil hebben zal het deksel op de neus krijgen']
+        #mwes = ['iemand zal ’m van jetje geven', 'iemand zal voor gek lopen']
+        #mwes += ['het zal zaliger zijn te geven dan te ontvangen']
+        with open(outfilename, 'w', encoding='utf8') as outfile:
+            for mwe in mwes:
+                print(mwe)
+                (mweq, nearmissq, supersetq) = generatequeries(mwe)
+                print(f'\n{mwe}:', file=outfile)
+                print(f'mweq:\n{mweq}', file=outfile)
+
+                print(f'nearmissq:\n{nearmissq}', file=outfile)
+
+                print(f'supersetq:\n{supersetq}', file=outfile)
+
+                annotatedlist = preprocess_MWE(mwe)
+                #annotations = [el[1] for el in annotatedlist]
+                mweparts = [el[0] for el in annotatedlist]
+                utt = space.join(mweparts)
+
+                if selftest:
+                    # #self test
+                    (mwenodes, nearmissnodes, supersetnodes) = selfapplyqueries(
+                        utt, mweq, nearmissq, supersetq)
+                    if len(mwenodes) != 1 or len(nearmissnodes) != 1 or len(supersetnodes) != 1:
+                        print(
+                            f'mwe:{len(mwenodes)}; nearmiss: {len(nearmissnodes)}; superset:{len(supersetnodes)}')
+                else:
+                    results = applyqueries(
+                        mwedict, mwe, mweq, nearmissq, supersetq)
 
 
-if __name__ == '__main__':
-    # main()
-    # test1()
-    #test2()
-    #test3()
-    #test4()
-    #test5()
-    #testrel()
-    #testvariatie()
-    #gentreebank()
-    genqueries()
+# if __name__ == '__main__':
+#     # main()
+#     # test1()
+#     #test2()
+#     #test3()
+#     #test4()
+#     #test5()
+#     #testrel()
+#     #testvariatie()
+#     #gentreebank()
+#     genqueries()
