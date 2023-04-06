@@ -1,3 +1,7 @@
+"""
+Helper module for extracting Multi Word Utterances from Alpino
+"""
+
 import re
 
 inputfilename = r"D:\Dropbox\jodijk\Utrecht\Projects\Datahub SSH UU\MWE Alpiono MWUs\inputdata\nouns.pl.txt"

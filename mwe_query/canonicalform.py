@@ -1,4 +1,9 @@
-from typing import List, Optional, Set
+"""
+Methods for parsing annotated canonical forms,
+to generate queries from them and to search using these queries.
+"""
+
+from typing import Dict, List, Optional, Set, Tuple
 from sastadev.sastatypes import SynTree
 import re
 import sys
@@ -18,7 +23,6 @@ DEBUG = False
 
 Annotation = int
 Condition = str
-
 
 altsym = '|'
 
@@ -86,6 +90,16 @@ dummymod = ET.Element('node', attrib={
 
 
 def orconds(att: str, vals: List[str]) -> str:
+    """Generates an OR xpath for this attribute and passed values
+
+    Args:
+        att (str): attribute key
+        vals (List[str]): values, when empty "true" is returned
+
+    Returns:
+        str: xpath attribute query
+    """
+
     condlist = [f'@{att}="{val}"' for val in vals]
     if len(condlist) > 1:
         result = ' or '.join(condlist)
@@ -145,10 +159,19 @@ def listofsets2setoflists(listofset):
     return resultset
 
 
-def preprocess_MWE(rawmwe):  # noqa: C901
+def preprocess_MWE(rawmwe: str) -> List[Tuple[str, int]]:  # noqa: C901
+    """
+    Splits the input MWE into a list of tokens and annotations
+
+    Args:
+        rawmwe (str): cannonical annotated MWE (might contain syntax)
+
+    Returns:
+        List[Tuple[int, str]]: annotated tokens
+    """
     mwe = mwenormalise(rawmwe)
     can_form = tokenize(mwe)
-    ann_list = []
+    ann_list: List[Tuple[str, int]] = []
     state = start_state
     for word in can_form:
         if state in mwstates:
@@ -239,14 +262,14 @@ def mwenormalise(rawmwe):
     return result
 
 
-stateprops = {}
+stateprops: Dict[int, Tuple[str, int]] = {}
 stateprops[dd_state] = (']', dd)
 stateprops[dr_state] = (']', dr)
 stateprops[com_state] = (']', com)
 stateprops[invbl_state] = ('>', invariable)
 
 
-def mwstate(word, instate):
+def mwstate(word: str, instate: int) -> Tuple[str, int, int]:
     if word == stateprops[instate][0]:
         newstate = start_state
         newann = noann
@@ -875,6 +898,9 @@ def makesubjectlessimperatives(stree, nodeid):
 
 
 def mkalternativesnode(altlists: List[List[SynTree]]) -> SynTree:
+    """
+    Creates alternatives nodes from the passed list
+    """
     altnodes = [mkalternativenode(altlist) for altlist in altlists]
     alternativesnode = ET.Element('alternatives')
     for altnode in altnodes:
@@ -1187,7 +1213,7 @@ def removesuperfluousindexes(stree: SynTree) -> SynTree:
     return newstree
 
 
-def tree2xpath(stree: SynTree, indent=0) -> str:
+def tree2xpath(stree: SynTree, indent=0) -> Xpathexpression:
     indentstr = indent * space
     childxpaths = [tree2xpath(child, indent+5) for child in stree]
     attconditions = []
@@ -1433,6 +1459,11 @@ def mknearmiss(mwetrees: List[SynTree]) -> Xpathexpression:
 
 
 def mksuperquery(mwetrees) -> Xpathexpression:
+    """
+    Generates the super query.
+    This uses the content words. If only one content word is in the expression, all the words are used.
+    This way extensions for alternatives (such as the lemma "mijzelf|jezelf|zichzelf") are included.
+    """
     if len(mwetrees) < 1:
         raise RuntimeError('Cannot generate superset query for empty tree set')
 
@@ -1458,8 +1489,18 @@ def mksuperquery(mwetrees) -> Xpathexpression:
         tree2xpath(children[0]),
         tree2xpath(target_node))
 
+def generatequeries(mwe: str, lcatexpansion=True) -> Tuple[Xpathexpression, Xpathexpression, Xpathexpression]:
+    """
+    Generates three MWE queries
 
-def generatequeries(mwe: str, lcatexpansion=True) -> (Xpathexpression, Xpathexpression, Xpathexpression):
+    Args:
+        mwe (str): (annotated) canonical form of a multi word expression
+        lcatexpansion (bool, optional): whether single word non heads should be placed below a phrasal node. Defaults to True.
+
+    Returns:
+        Tuple[Xpathexpression, Xpathexpression, Xpathexpression]: mwequery, nearmissquery, supersetquery
+    """
+
     annotatedlist = preprocess_MWE(mwe)
     annotations = [el[1] for el in annotatedlist]
     cleanmwe = space.join([el[0] for el in annotatedlist])
@@ -1472,8 +1513,11 @@ def generatequeries(mwe: str, lcatexpansion=True) -> (Xpathexpression, Xpathexpr
         fullmweparse = unexpandedfullmweparse
     # ET.dump(fullmweparse)
     mweparse = gettopnode(fullmweparse)
+
+    # transform the tree to a form from which queries can be derived
     newtreesa = transformtree(mweparse, annotations)
     newtrees = []
+    # alternative trees
     for newtreea in newtreesa:
         newtrees += newgenvariants(newtreea)
     cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
@@ -1532,18 +1576,32 @@ def mark(wrd: str) -> str:
     return f'*{wrd}*'
 
 
-def applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, lcatexpansion=True):
-    allresults = {}
+def applyqueries(treebank: Dict[str, SynTree], mwe: str, mwequery: Xpathexpression, nearmissquery: Xpathexpression, supersetquery: Xpathexpression, lcatexpansion=True) -> Dict[str, Tuple[List[SynTree], List[SynTree], List[SynTree]]]:
+    """
+    Applies three queries on a treebank and returns a dictionary with their hits.
+    Args:
+        treebank (Dict[str, SynTree]): syntactical trees with the ID of each tree used as key
+        mwe (str): only needed for print
+        mwequery (Xpathexpression): query for finding an MWE
+        nearmissquery (Xpathexpression): query for finding near misses of that MWE
+        supersetquery (Xpathexpression): super set query
+        lcatexpansion (bool, optional): this should have the same value as used when generating queries. Defaults to True.
+
+    Returns:
+        Dict[str, Tuple[List[SynTree], List[SynTree], List[SynTree]]]: tree id and the hits for each query
+    """
+    allresults: Dict[str, Tuple[List[SynTree],
+                                List[SynTree], List[SynTree]]] = {}
     for treeid, tree in treebank.items():
         allresults[treeid] = []
         unexpandedfullparse = lowerpredm(tree)
         # ET.dump(unexpandedfullparse)
 
         # in the real application this should be done on the treebank's index
-        supersetnodes = unexpandedfullparse.xpath(supersetquery)
+        supersetnodes: List[SynTree] = unexpandedfullparse.xpath(supersetquery)
 
-        nearmissnodes = []
-        mwenodes = []
+        nearmissnodes: List[SynTree] = []
+        mwenodes: List[SynTree] = []
         for supersetnode in supersetnodes:
             if lcatexpansion:
                 fullparse = expandnonheadwords(supersetnode)
