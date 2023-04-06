@@ -688,10 +688,29 @@ def gentreebank():
 
 
 def genqueries():
+    """
+    Generates queries in a file (with suffix _querytriples) in the
+    testdata folder for a mwe treebank in the same folder and applies
+    the queries on all the mwe tree in the treebank.
+
+    It will generate output on the console for every mwe and reports
+    differences from what was expected.
+    """
+
+    # if True it will only check whether the queries for an mwe find
+    # a match in the parsed tree of the canonical form of the mwe
+    # (that is a minimal requirement for an xpath query)
     selftest = False
+
+    # test these specific MWEs
     mwes =  [ 'iemand zal een poging doen', 'iemand zal 0een *+poging doen', 'iemand zal aan de bak komen']
     mwes += ['iemand zal *honger hebben']
     #mwes = ['iemand zal 0een *+poging doen']
+
+    # Jan Odijk: 
+    #   "Oorspronkelijk werkte ik met een bestand gedownload uit GreTEL 4 (MWE20220429_corpus2alpino),
+    #   maar de parse hiervan bleken anders te zijn dan in de huidige versie,
+    #   dus heb ik een nieuwe treebank gegenereerd: MWE20220429_CORPUS2ALPINO_ID_parse2022-11-18.xml."
     #intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID.xml'
     intbfilename = './testdata/MWE20220429_CORPUS2ALPINO_ID_parse2022-11-18.xml'
     suffix = '_querytriples'
