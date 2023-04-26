@@ -11,5 +11,6 @@ def mksummary(wlist, marklist, windowsize=2):
         if difflist[i+1] <= windowsize:
             rb = marklist[i+1]
         elif ind + windowsize <= len(wlist):
-
+            pass
         leftcontext = wlist[lb:]
+        #unfinished code#
