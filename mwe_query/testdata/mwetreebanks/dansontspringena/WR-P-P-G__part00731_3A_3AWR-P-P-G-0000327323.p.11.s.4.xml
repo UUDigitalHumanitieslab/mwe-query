@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="12" id="0" rel="top">
+    <node begin="3" end="4" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="4" form="," lemma="," upos="PUNCT" head="12" deprel="punct" deprel_main="punct">
+        <dep id="4" head="12" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="12" id="2" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" id="3" lcat="du" lemma="of" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="of" sc="root" sense="of" word="Of">
+        <ud id="1" form="Of" lemma="of" upos="CCONJ" head="3" deprel="mark" deprel_main="mark">
+          <dep id="1" head="3" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="conj" end="12" id="4" rel="nucl">
+        <node begin="1" cat="advp" end="3" id="5" rel="cnj">
+          <node begin="1" end="2" frame="adverb" id="6" lcat="advp" lemma="toch" pos="adv" postag="BW()" pt="bw" rel="mod" root="toch" sense="toch" word="toch">
+            <ud id="2" form="toch" lemma="toch" upos="ADV" head="3" deprel="advmod" deprel_main="advmod">
+              <dep id="2" head="3" deprel="advmod" deprel_main="advmod"/>
+            </ud>
+          </node>
+          <node begin="2" end="3" frame="adverb" id="7" lcat="advp" lemma="niet" pos="adv" postag="BW()" pt="bw" rel="hd" root="niet" sense="niet" word="niet">
+            <ud id="3" form="niet" lemma="niet" upos="ADV" head="0" deprel="root" deprel_main="root">
+              <dep id="3" head="0" deprel="root" deprel_main="root"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="4" conjtype="neven" end="5" frame="conj(want)" id="8" lcat="vg" lemma="want" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="want" sense="want" word="want">
+          <ud id="5" form="want" lemma="want" upos="CCONJ" head="12" deprel="cc" deprel_main="cc">
+            <dep id="5" head="12" deprel="cc" deprel_main="cc"/>
+          </ud>
+        </node>
+        <node begin="5" cat="smain" end="12" id="9" rel="cnj">
+          <node begin="6" end="7" frame="verb(hebben,modal_not_u,aux(inf))" id="10" infl="modal_not_u" lcat="smain" lemma="zullen" pos="verb" postag="WW(pv,tgw,ev)" pt="ww" pvagr="ev" pvtijd="tgw" rel="hd" root="zal" sc="aux(inf)" sense="zal" stype="declarative" tense="present" word="zal" wvorm="pv">
+            <ud id="7" form="zal" lemma="zullen" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="12" deprel="aux" deprel_main="aux">
+              <dep id="7" head="12" deprel="aux" deprel_main="aux"/>
+            </ud>
+          </node>
+          <node begin="7" case="both" def="def" end="8" frame="pronoun(nwh,je,sg,de,both,def,wkpro)" gen="de" getal="ev" id="11" index="1" lcat="np" lemma="je" naamval="nomin" num="sg" pdtype="pron" per="je" persoon="2v" pos="pron" postag="VNW(pers,pron,nomin,red,2v,ev)" pt="vnw" rel="su" rnum="sg" root="je" sense="je" special="wkpro" status="red" vwtype="pers" wh="nwh" word="je">
+            <ud id="8" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" deprel_main="nsubj">
+              <dep id="8" head="12" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+          <node begin="5" cat="inf" end="12" id="12" rel="vc">
+            <node begin="5" end="6" frame="sentence_adverb" id="13" lcat="advp" lemma="misschien" pos="adv" postag="BW()" pt="bw" rel="mod" root="misschien" sense="misschien" special="sentence" word="misschien">
+              <ud id="6" form="misschien" lemma="misschien" upos="ADV" head="12" deprel="advmod" deprel_main="advmod">
+                <dep id="6" head="12" deprel="advmod" deprel_main="advmod"/>
+              </ud>
+            </node>
+            <node begin="7" end="8" id="14" index="1" rel="su"/>
+            <node begin="8" cat="np" end="10" id="15" rel="obj1">
+              <node begin="8" end="9" frame="determiner(de)" id="16" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                <ud id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" deprel_main="det">
+                  <dep id="9" head="10" deprel="det" deprel_main="det"/>
+                </ud>
+              </node>
+              <node begin="9" end="10" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="17" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans">
+                <ud id="10" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="12" deprel="obj" deprel_main="obj">
+                  <dep id="10" head="12" deprel="obj" deprel_main="obj"/>
+                </ud>
+              </node>
+            </node>
+            <node begin="10" end="11" frame="adverb" id="18" lcat="advp" lemma="toch" pos="adv" postag="BW()" pt="bw" rel="mod" root="toch" sense="toch" word="toch">
+              <ud id="11" form="toch" lemma="toch" upos="ADV" head="12" deprel="advmod" deprel_main="advmod">
+                <dep id="11" head="12" deprel="advmod" deprel_main="advmod"/>
+              </ud>
+            </node>
+            <node begin="11" buiging="zonder" end="12" frame="verb(unacc,inf,transitive)" id="19" infl="inf" lcat="inf" lemma="ontspringen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="ontspring" sc="transitive" sense="ontspring" word="ontspringen?»" wvorm="inf">
+              <ud id="12" form="ontspringen?»" lemma="ontspringen" upos="VERB" VerbForm="Inf" head="3" deprel="conj" deprel_main="conj">
+                <dep id="12" head="3" deprel="conj:want" deprel_main="conj" deprel_aux="want"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000327323.p.11.s.4">Of toch niet , want misschien zal je de dans toch ontspringen?»</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000327323.p.11.s.4|Of toch niet , want misschien zal je de dans toch ontspringen?»|1|1|-4.045373699500001</comment>
+  </comments>
+  <root ud="basic" id="3" form="niet" lemma="niet" upos="ADV" head="0" deprel="root" pt="bw">
+    <mark ud="basic" id="1" form="Of" lemma="of" upos="CCONJ" head="3" deprel="mark" conjtype="neven" pt="vg"/>
+    <advmod ud="basic" id="2" form="toch" lemma="toch" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+    <conj ud="basic" id="12" form="ontspringen?»" lemma="ontspringen" upos="VERB" VerbForm="Inf" head="3" deprel="conj" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <punct ud="basic" id="4" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+      <cc ud="basic" id="5" form="want" lemma="want" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg"/>
+      <advmod ud="basic" id="6" form="misschien" lemma="misschien" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+      <aux ud="basic" id="7" form="zal" lemma="zullen" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="12" deprel="aux" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv"/>
+      <nsubj ud="basic" id="8" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="2v" pt="vnw" status="red" vwtype="pers"/>
+      <obj ud="basic" id="10" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="12" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      </obj>
+      <advmod ud="basic" id="11" form="toch" lemma="toch" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+    </conj>
+  </root>
+  <root ud="enhanced" id="3" form="niet" lemma="niet" upos="ADV" head="0" deprel="root" pt="bw">
+    <mark ud="enhanced" id="1" form="Of" lemma="of" upos="CCONJ" head="3" deprel="mark" conjtype="neven" pt="vg"/>
+    <advmod ud="enhanced" id="2" form="toch" lemma="toch" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+    <conj ud="enhanced" id="12" form="ontspringen?»" lemma="ontspringen" upos="VERB" VerbForm="Inf" head="3" deprel="conj:want" deprel_aux="want" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <punct ud="enhanced" id="4" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+      <cc ud="enhanced" id="5" form="want" lemma="want" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg"/>
+      <advmod ud="enhanced" id="6" form="misschien" lemma="misschien" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+      <aux ud="enhanced" id="7" form="zal" lemma="zullen" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="12" deprel="aux" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv"/>
+      <nsubj ud="enhanced" id="8" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="2v" pt="vnw" status="red" vwtype="pers"/>
+      <obj ud="enhanced" id="10" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="12" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      </obj>
+      <advmod ud="enhanced" id="11" form="toch" lemma="toch" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+    </conj>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Of	of	CCONJ	VG|neven	_	3	mark	3:mark	_
+2	toch	toch	ADV	BW	_	3	advmod	3:advmod	_
+3	niet	niet	ADV	BW	_	0	root	0:root	_
+4	,	,	PUNCT	LET	_	12	punct	12:punct	_
+5	want	want	CCONJ	VG|neven	_	12	cc	12:cc	_
+6	misschien	misschien	ADV	BW	_	12	advmod	12:advmod	_
+7	zal	zullen	AUX	WW|pv|tgw|ev	Number=Sing|Tense=Pres|VerbForm=Fin	12	aux	12:aux	_
+8	je	je	PRON	VNW|pers|pron|nomin|red|2v|ev	Case=Nom|Person=2|PronType=Prs	12	nsubj	12:nsubj	_
+9	de	de	DET	LID|bep|stan|rest	Definite=Def	10	det	10:det	_
+10	dans	dans	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	12	obj	12:obj	_
+11	toch	toch	ADV	BW	_	12	advmod	12:advmod	_
+12	ontspringen?»	ontspringen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	3	conj	3:conj:want	_
+]]></conllu>
+</alpino_ds>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="13" id="0" rel="top">
+    <node begin="0" cat="du" end="11" id="1" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" id="2" lcat="du" lemma="maar" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="maar" sc="root" sense="maar" word="Maar">
+        <ud id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" deprel_main="mark">
+          <dep id="1" head="4" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="smain" end="11" id="3" rel="nucl">
+        <node begin="1" cat="np" end="3" id="4" rel="su">
+          <node begin="1" buiging="zonder" end="2" frame="determiner(pron)" getal="ev" id="5" infl="pron" lcat="detp" lemma="mijn" naamval="stan" npagr="agr" pdtype="det" persoon="1" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,1,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="mijn" sense="mijn" status="vol" vwtype="bez" word="mijn">
+            <ud id="2" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="3" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+              <dep id="2" head="3" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+            </ud>
+          </node>
+          <node begin="2" end="3" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="6" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart">
+            <ud id="3" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" deprel_main="nsubj">
+              <dep id="3" head="4" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="3" end="4" frame="verb(zijn,sg3,intransitive)" id="7" infl="sg3" lcat="smain" lemma="breken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="breek" sc="intransitive" sense="breek" stype="declarative" tense="present" word="breekt" wvorm="pv">
+          <ud id="4" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+            <dep id="4" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="4" end="5" frame="adverb" id="8" lcat="advp" lemma="nog" pos="adv" postag="BW()" pt="bw" rel="mod" root="nog" sense="nog" word="nog">
+          <ud id="5" form="nog" lemma="nog" upos="ADV" head="4" deprel="advmod" deprel_main="advmod">
+            <dep id="5" head="4" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="5" cat="cp" end="11" id="9" rel="mod">
+          <node begin="5" conjtype="onder" end="6" frame="complementizer(als)" id="10" lcat="cp" lemma="als" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="als" sc="als" sense="als" word="als">
+            <ud id="6" form="als" lemma="als" upos="SCONJ" head="11" deprel="mark" deprel_main="mark">
+              <dep id="6" head="11" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="6" cat="ssub" end="11" id="11" rel="body">
+            <node begin="6" case="nom" def="def" end="7" frame="pronoun(nwh,fir,sg,de,nom,def)" gen="de" getal="ev" id="12" lcat="np" lemma="ik" naamval="nomin" num="sg" pdtype="pron" per="fir" persoon="1" pos="pron" postag="VNW(pers,pron,nomin,vol,1,ev)" pt="vnw" rel="su" rnum="sg" root="ik" sense="ik" status="vol" vwtype="pers" wh="nwh" word="ik">
+              <ud id="7" form="ik" lemma="ik" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="11" deprel="nsubj" deprel_main="nsubj">
+                <dep id="7" head="11" deprel="nsubj" deprel_main="nsubj"/>
+              </ud>
+            </node>
+            <node begin="8" end="9" frame="predm_adverb" id="13" lcat="advp" lemma="zelf" pos="adv" postag="BW()" pt="bw" rel="predm" root="zelf" sense="zelf" special="predm" word="zelf">
+              <ud id="9" form="zelf" lemma="zelf" upos="ADV" head="11" deprel="advmod" deprel_main="advmod">
+                <dep id="9" head="11" deprel="advmod" deprel_main="advmod"/>
+              </ud>
+            </node>
+            <node begin="7" cat="pp" end="10" id="14" rel="pc">
+              <node begin="7" end="8" frame="er_vp_adverb" getal="getal" id="15" lcat="advp" lemma="er" naamval="stan" pdtype="adv-pron" persoon="3" pos="adv" postag="VNW(aanw,adv-pron,stan,red,3,getal)" pt="vnw" rel="obj1" root="er" sense="er" special="er" status="red" vwtype="aanw" word="er">
+                <ud id="8" form="er" lemma="er" upos="ADV" head="11" deprel="obl" deprel_main="obl">
+                  <dep id="8" head="11" deprel="obl:naar" deprel_main="obl" deprel_aux="naar"/>
+                </ud>
+              </node>
+              <node begin="9" end="10" frame="preposition(naar,[toe])" id="16" lcat="pp" lemma="naar" pos="prep" postag="VZ(fin)" pt="vz" rel="hd" root="naar" sense="naar" vztype="fin" word="naar">
+                <ud id="10" form="naar" lemma="naar" upos="ADP" head="8" deprel="case" deprel_main="case">
+                  <dep id="10" head="8" deprel="case" deprel_main="case"/>
+                </ud>
+              </node>
+            </node>
+            <node begin="10" end="11" frame="verb(hebben,sg1,pc_pp(naar))" id="17" infl="sg1" lcat="ssub" lemma="luisteren" pos="verb" postag="WW(pv,tgw,ev)" pt="ww" pvagr="ev" pvtijd="tgw" rel="hd" root="luister" sc="pc_pp(naar)" sense="luister-naar" tense="present" word="luister" wvorm="pv">
+              <ud id="11" form="luister" lemma="luisteren" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="advcl" deprel_main="advcl">
+                <dep id="11" head="4" deprel="advcl:als" deprel_main="advcl" deprel_aux="als"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="11" end="12" frame="punct(punt)" id="18" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="12" form="." lemma="." upos="PUNCT" head="4" deprel="punct" deprel_main="punct">
+        <dep id="12" head="4" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="12" end="13" frame="punct(aanhaal_both)" id="19" lcat="--" lemma="&quot;" pos="punct" postag="LET()" pt="let" rel="--" root="&quot;" sense="&quot;" special="aanhaal_both" word="&quot;">
+      <ud id="13" form="&quot;" lemma="&quot;" upos="PUNCT" head="4" deprel="punct" deprel_main="punct">
+        <dep id="13" head="4" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000181487.p.21.s.6">Maar mijn hart breekt nog als ik er zelf naar luister . "</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000181487.p.21.s.6|Maar mijn hart breekt nog als ik er zelf naar luister . "|1|1|-5.344271815400003</comment>
+  </comments>
+  <root ud="basic" id="4" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <mark ud="basic" id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" conjtype="neven" pt="vg"/>
+    <nsubj ud="basic" id="3" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="basic" id="2" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="3" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+    <advmod ud="basic" id="5" form="nog" lemma="nog" upos="ADV" head="4" deprel="advmod" pt="bw"/>
+    <advcl ud="basic" id="11" form="luister" lemma="luisteren" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="advcl" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv">
+      <mark ud="basic" id="6" form="als" lemma="als" upos="SCONJ" head="11" deprel="mark" conjtype="onder" pt="vg"/>
+      <nsubj ud="basic" id="7" form="ik" lemma="ik" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="11" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="vol" vwtype="pers"/>
+      <obl ud="basic" id="8" form="er" lemma="er" upos="ADV" head="11" deprel="obl" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw">
+        <case ud="basic" id="10" form="naar" lemma="naar" upos="ADP" head="8" deprel="case" pt="vz" vztype="fin"/>
+      </obl>
+      <advmod ud="basic" id="9" form="zelf" lemma="zelf" upos="ADV" head="11" deprel="advmod" pt="bw"/>
+    </advcl>
+    <punct ud="basic" id="12" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+    <punct ud="basic" id="13" form="&quot;" lemma="&quot;" upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="4" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <mark ud="enhanced" id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" conjtype="neven" pt="vg"/>
+    <nsubj ud="enhanced" id="3" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="enhanced" id="2" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="3" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+    <advmod ud="enhanced" id="5" form="nog" lemma="nog" upos="ADV" head="4" deprel="advmod" pt="bw"/>
+    <advcl ud="enhanced" id="11" form="luister" lemma="luisteren" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="advcl:als" deprel_aux="als" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv">
+      <mark ud="enhanced" id="6" form="als" lemma="als" upos="SCONJ" head="11" deprel="mark" conjtype="onder" pt="vg"/>
+      <nsubj ud="enhanced" id="7" form="ik" lemma="ik" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="11" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="vol" vwtype="pers"/>
+      <obl ud="enhanced" id="8" form="er" lemma="er" upos="ADV" head="11" deprel="obl:naar" deprel_aux="naar" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw">
+        <case ud="enhanced" id="10" form="naar" lemma="naar" upos="ADP" head="8" deprel="case" pt="vz" vztype="fin"/>
+      </obl>
+      <advmod ud="enhanced" id="9" form="zelf" lemma="zelf" upos="ADV" head="11" deprel="advmod" pt="bw"/>
+    </advcl>
+    <punct ud="enhanced" id="12" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+    <punct ud="enhanced" id="13" form="&quot;" lemma="&quot;" upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Maar	maar	CCONJ	VG|neven	_	4	mark	4:mark	_
+2	mijn	mijn	PRON	VNW|bez|det|stan|vol|1|ev|prenom|zonder|agr	Person=1|Poss=Yes|PronType=Prs	3	nmod:poss	3:nmod:poss	_
+3	hart	hart	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	4	nsubj	4:nsubj	_
+4	breekt	breken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+5	nog	nog	ADV	BW	_	4	advmod	4:advmod	_
+6	als	als	SCONJ	VG|onder	_	11	mark	11:mark	_
+7	ik	ik	PRON	VNW|pers|pron|nomin|vol|1|ev	Case=Nom|Person=1|PronType=Prs	11	nsubj	11:nsubj	_
+8	er	er	ADV	VNW|aanw|adv-pron|stan|red|3|getal	_	11	obl	11:obl:naar	_
+9	zelf	zelf	ADV	BW	_	11	advmod	11:advmod	_
+10	naar	naar	ADP	VZ|fin	_	8	case	8:case	_
+11	luister	luisteren	VERB	WW|pv|tgw|ev	Number=Sing|Tense=Pres|VerbForm=Fin	4	advcl	4:advcl:als	_
+12	.	.	PUNCT	LET	_	4	punct	4:punct	_
+13	"	"	PUNCT	LET	_	4	punct	4:punct	_
+]]></conllu>
+</alpino_ds>

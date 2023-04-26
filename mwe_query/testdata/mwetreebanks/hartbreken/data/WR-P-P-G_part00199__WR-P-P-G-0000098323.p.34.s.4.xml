@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="9" id="0" rel="top">
+    <node begin="4" end="5" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="5" form="," lemma="," upos="PUNCT" head="8" deprel="punct" deprel_main="punct">
+        <dep id="5" head="8" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="8" id="2" rel="--">
+      <node begin="0" cat="smain" end="4" id="3" rel="dp">
+        <node begin="0" cat="np" end="3" id="4" rel="su">
+          <node begin="0" buiging="zonder" end="1" frame="determiner(pron)" getal="ev" id="5" infl="pron" lcat="detp" lemma="haar" naamval="stan" npagr="agr" pdtype="det" persoon="3" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,3,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="haar" sense="haar" status="vol" vwtype="bez" word="Haar">
+            <ud id="1" form="Haar" lemma="haar" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+              <dep id="1" head="3" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+            </ud>
+          </node>
+          <node aform="base" begin="1" buiging="met-e" end="2" frame="adjective(e)" graad="basis" id="6" infl="e" lcat="ap" lemma="donker" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="donker" sense="donker" vform="adj" word="donkere">
+            <ud id="2" form="donkere" lemma="donker" upos="ADJ" Degree="Pos" head="3" deprel="amod" deprel_main="amod">
+              <dep id="2" head="3" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="2" end="3" frame="noun(het,count,pl)" gen="het" getal="mv" graad="basis" id="7" lcat="np" lemma="oog" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="oog" sense="oog" word="ogen">
+            <ud id="3" form="ogen" lemma="oog" upos="NOUN" Number="Plur" head="4" deprel="nsubj" deprel_main="nsubj">
+              <dep id="3" head="4" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="3" end="4" frame="verb(hebben,pl,intransitive)" id="8" infl="pl" lcat="smain" lemma="glanzen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="glans" sc="intransitive" sense="glans" stype="declarative" tense="present" word="glanzen" wvorm="pv">
+          <ud id="4" form="glanzen" lemma="glanzen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+            <dep id="4" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="5" cat="smain" end="8" id="9" rel="dp">
+        <node begin="5" cat="np" end="7" id="10" rel="su">
+          <node begin="5" buiging="zonder" end="6" frame="determiner(pron)" getal="ev" id="11" infl="pron" lcat="detp" lemma="mijn" naamval="stan" npagr="agr" pdtype="det" persoon="1" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,1,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="mijn" sense="mijn" status="vol" vwtype="bez" word="mijn">
+            <ud id="6" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="7" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+              <dep id="6" head="7" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+            </ud>
+          </node>
+          <node begin="6" end="7" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="12" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart">
+            <ud id="7" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="8" deprel="nsubj" deprel_main="nsubj">
+              <dep id="7" head="8" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="7" end="8" frame="verb(zijn,sg3,intransitive)" id="13" infl="sg3" lcat="smain" lemma="breken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="breek" sc="intransitive" sense="breek" stype="declarative" tense="present" word="breekt" wvorm="pv">
+          <ud id="8" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="parataxis" deprel_main="parataxis">
+            <dep id="8" head="4" deprel="parataxis" deprel_main="parataxis"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="8" end="9" frame="punct(punt)" id="14" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="9" form="." lemma="." upos="PUNCT" head="4" deprel="punct" deprel_main="punct">
+        <dep id="9" head="4" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000098323.p.34.s.4">Haar donkere ogen glanzen , mijn hart breekt .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000098323.p.34.s.4|Haar donkere ogen glanzen , mijn hart breekt .|1|1|0.318118641399998</comment>
+  </comments>
+  <root ud="basic" id="4" form="glanzen" lemma="glanzen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="3" form="ogen" lemma="oog" upos="NOUN" Number="Plur" head="4" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nmod ud="basic" id="1" form="Haar" lemma="haar" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      <amod ud="basic" id="2" form="donkere" lemma="donker" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <parataxis ud="basic" id="8" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="parataxis" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <punct ud="basic" id="5" form="," lemma="," upos="PUNCT" head="8" deprel="punct" pt="let"/>
+      <nsubj ud="basic" id="7" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="8" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <nmod ud="basic" id="6" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="7" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      </nsubj>
+    </parataxis>
+    <punct ud="basic" id="9" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="4" form="glanzen" lemma="glanzen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="3" form="ogen" lemma="oog" upos="NOUN" Number="Plur" head="4" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nmod ud="enhanced" id="1" form="Haar" lemma="haar" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      <amod ud="enhanced" id="2" form="donkere" lemma="donker" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <parataxis ud="enhanced" id="8" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="4" deprel="parataxis" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <punct ud="enhanced" id="5" form="," lemma="," upos="PUNCT" head="8" deprel="punct" pt="let"/>
+      <nsubj ud="enhanced" id="7" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="8" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <nmod ud="enhanced" id="6" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="7" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      </nsubj>
+    </parataxis>
+    <punct ud="enhanced" id="9" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Haar	haar	PRON	VNW|bez|det|stan|vol|3|ev|prenom|zonder|agr	Person=3|Poss=Yes|PronType=Prs	3	nmod:poss	3:nmod:poss	_
+2	donkere	donker	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	3	amod	3:amod	_
+3	ogen	oog	NOUN	N|soort|mv|basis	Number=Plur	4	nsubj	4:nsubj	_
+4	glanzen	glanzen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+5	,	,	PUNCT	LET	_	8	punct	8:punct	_
+6	mijn	mijn	PRON	VNW|bez|det|stan|vol|1|ev|prenom|zonder|agr	Person=1|Poss=Yes|PronType=Prs	7	nmod:poss	7:nmod:poss	_
+7	hart	hart	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	8	nsubj	8:nsubj	_
+8	breekt	breken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	4	parataxis	4:parataxis	_
+9	.	.	PUNCT	LET	_	4	punct	4:punct	_
+]]></conllu>
+</alpino_ds>

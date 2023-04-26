@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="23" id="0" rel="top">
+    <node begin="6" end="7" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="7" form="," lemma="," upos="PUNCT" head="8" deprel="punct" deprel_main="punct">
+        <dep id="7" head="8" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="smain" end="22" id="2" rel="--">
+      <node begin="0" cat="np" end="18" id="3" rel="su">
+        <node begin="0" end="1" frame="noun(both,count,pl)" gen="both" getal="mv" graad="basis" id="4" lcat="np" lemma="volk_figuur" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="volk_figuur" sense="volk_figuur" word="Volksfiguren">
+          <ud id="1" form="Volksfiguren" lemma="volk_figuur" upos="NOUN" Number="Plur" head="19" deprel="nsubj" deprel_main="nsubj">
+            <dep id="1" head="19" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="1" cat="cp" end="18" id="5" rel="mod">
+          <node begin="1" conjtype="onder" end="2" frame="complementizer(zoals)" id="6" lcat="cp" lemma="zoals" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="zoals" sc="zoals" sense="zoals" word="zoals">
+            <ud id="2" form="zoals" lemma="zoals" upos="SCONJ" head="3" deprel="mark" deprel_main="mark">
+              <dep id="2" head="3" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="2" cat="conj" end="18" id="7" rel="body">
+            <node begin="2" cat="np" end="6" id="8" rel="cnj">
+              <node begin="2" cat="mwu" end="4" id="9" mwu_root="SK Grembergen_voorzitter" mwu_sense="SK Grembergen_voorzitter" rel="hd">
+                <node begin="2" end="3" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="10" lcat="np" lemma="SK" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="mwp" rnum="sg" root="SK" sense="SK" word="SK">
+                  <ud id="3" form="SK" lemma="SK" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod" deprel_main="nmod">
+                    <dep id="3" head="1" deprel="nmod" deprel_main="nmod"/>
+                  </ud>
+                </node>
+                <node begin="3" end="4" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="11" lcat="np" lemma="Grembergen_voorzitter" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="mwp" rnum="sg" root="Grembergen_voorzitter" sense="Grembergen_voorzitter" word="Grembergen-voorzitter">
+                  <ud id="4" form="Grembergen-voorzitter" lemma="Grembergen_voorzitter" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="fixed" deprel_main="fixed">
+                    <dep id="4" head="3" deprel="fixed" deprel_main="fixed"/>
+                  </ud>
+                </node>
+              </node>
+              <node begin="4" cat="mwu" end="6" id="12" mwu_root="Herman Burghgrave" mwu_sense="Herman Burghgrave" rel="app">
+                <node begin="4" end="5" frame="proper_name(sg,&apos;PER&apos;)" id="13" lcat="np" lemma="Herman" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Herman" sense="Herman" spectype="deeleigen" word="Herman">
+                  <ud id="5" form="Herman" lemma="Herman" upos="PROPN" head="3" deprel="appos" deprel_main="appos">
+                    <dep id="5" head="3" deprel="appos" deprel_main="appos"/>
+                  </ud>
+                </node>
+                <node begin="5" end="6" frame="proper_name(sg,&apos;PER&apos;)" id="14" lcat="np" lemma="Burghgrave" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Burghgrave" sense="Burghgrave" spectype="deeleigen" word="Burghgrave">
+                  <ud id="6" form="Burghgrave" lemma="Burghgrave" upos="PROPN" head="5" deprel="flat" deprel_main="flat">
+                    <dep id="6" head="5" deprel="flat" deprel_main="flat"/>
+                  </ud>
+                </node>
+              </node>
+            </node>
+            <node begin="7" cat="np" end="10" id="15" rel="cnj">
+              <node begin="7" end="8" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="16" lcat="np" lemma="schepen" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="schepen" sense="schepen" word="schepen">
+                <ud id="8" form="schepen" lemma="schepen" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj" deprel_main="conj">
+                  <dep id="8" head="1" deprel="nmod" deprel_main="nmod"/>
+                  <dep id="8" head="3" deprel="conj:en" deprel_main="conj" deprel_aux="en"/>
+                </ud>
+              </node>
+              <node begin="8" cat="mwu" end="10" id="17" mwu_root="Leen Dierick" mwu_sense="Leen Dierick" rel="app">
+                <node begin="8" end="9" frame="proper_name(sg,&apos;PER&apos;)" id="18" lcat="np" lemma="Leen" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Leen" sense="Leen" spectype="deeleigen" word="Leen">
+                  <ud id="9" form="Leen" lemma="Leen" upos="PROPN" head="8" deprel="appos" deprel_main="appos">
+                    <dep id="9" head="8" deprel="appos" deprel_main="appos"/>
+                  </ud>
+                </node>
+                <node begin="9" end="10" frame="proper_name(sg,&apos;PER&apos;)" id="19" lcat="np" lemma="Dierick" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Dierick" sense="Dierick" spectype="deeleigen" word="Dierick">
+                  <ud id="10" form="Dierick" lemma="Dierick" upos="PROPN" head="9" deprel="flat" deprel_main="flat">
+                    <dep id="10" head="9" deprel="flat" deprel_main="flat"/>
+                  </ud>
+                </node>
+              </node>
+            </node>
+            <node begin="10" conjtype="neven" end="11" frame="conj(en)" id="20" lcat="vg" lemma="en" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="en" sense="en" word="en">
+              <ud id="11" form="en" lemma="en" upos="CCONJ" head="12" deprel="cc" deprel_main="cc">
+                <dep id="11" head="12" deprel="cc" deprel_main="cc"/>
+              </ud>
+            </node>
+            <node begin="11" cat="np" end="18" id="21" rel="cnj">
+              <node begin="11" end="12" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="22" lcat="np" lemma="voorzitster" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="voorzitster" sense="voorzitster" word="voorzitster">
+                <ud id="12" form="voorzitster" lemma="voorzitster" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj" deprel_main="conj">
+                  <dep id="12" head="1" deprel="nmod" deprel_main="nmod"/>
+                  <dep id="12" head="3" deprel="conj:en" deprel_main="conj" deprel_aux="en"/>
+                </ud>
+              </node>
+              <node begin="12" cat="pp" end="18" id="23" rel="mod">
+                <node begin="12" end="13" frame="preposition(van,[af,uit,vandaan,[af,aan]])" id="24" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+                  <ud id="13" form="van" lemma="van" upos="ADP" head="15" deprel="case" deprel_main="case">
+                    <dep id="13" head="15" deprel="case" deprel_main="case"/>
+                  </ud>
+                </node>
+                <node begin="13" cat="np" end="18" id="25" rel="obj1">
+                  <node begin="13" end="14" frame="determiner(de)" id="26" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                    <ud id="14" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" deprel_main="det">
+                      <dep id="14" head="15" deprel="det" deprel_main="det"/>
+                    </ud>
+                  </node>
+                  <node begin="14" cat="mwu" end="18" id="27" mwu_root="Feestcommissie Gerarda Van Mele" mwu_sense="Feestcommissie Gerarda Van Mele" rel="hd">
+                    <node begin="14" end="15" frame="proper_name(both,&apos;ORG&apos;)" id="28" lcat="np" lemma="Feestcommissie" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Feestcommissie" sense="Feestcommissie" spectype="deeleigen" word="Feestcommissie">
+                      <ud id="15" form="Feestcommissie" lemma="Feestcommissie" upos="PROPN" head="12" deprel="nmod" deprel_main="nmod">
+                        <dep id="15" head="12" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                      </ud>
+                    </node>
+                    <node begin="15" end="16" frame="proper_name(both,&apos;ORG&apos;)" id="29" lcat="np" lemma="Gerarda" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Gerarda" sense="Gerarda" spectype="deeleigen" word="Gerarda">
+                      <ud id="16" form="Gerarda" lemma="Gerarda" upos="PROPN" head="15" deprel="flat" deprel_main="flat">
+                        <dep id="16" head="15" deprel="flat" deprel_main="flat"/>
+                      </ud>
+                    </node>
+                    <node begin="16" end="17" frame="proper_name(both,&apos;ORG&apos;)" id="30" lcat="np" lemma="Van" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Van" sense="Van" spectype="deeleigen" word="Van">
+                      <ud id="17" form="Van" lemma="Van" upos="PROPN" head="15" deprel="flat" deprel_main="flat">
+                        <dep id="17" head="15" deprel="flat" deprel_main="flat"/>
+                      </ud>
+                    </node>
+                    <node begin="17" end="18" frame="proper_name(both,&apos;ORG&apos;)" id="31" lcat="np" lemma="Mele" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Mele" sense="Mele" spectype="deeleigen" word="Mele">
+                      <ud id="18" form="Mele" lemma="Mele" upos="PROPN" head="15" deprel="flat" deprel_main="flat">
+                        <dep id="18" head="15" deprel="flat" deprel_main="flat"/>
+                      </ud>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node begin="18" end="19" frame="verb(unacc,past(pl),transitive)" id="32" infl="pl" lcat="smain" lemma="ontspringen" pos="verb" postag="WW(pv,verl,mv)" pt="ww" pvagr="mv" pvtijd="verl" rel="hd" root="ontspring" sc="transitive" sense="ontspring" stype="declarative" tense="past" word="ontsprongen" wvorm="pv">
+        <ud id="19" form="ontsprongen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="19" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="19" cat="np" end="21" id="33" rel="obj1">
+        <node begin="19" end="20" frame="determiner(de)" id="34" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+          <ud id="20" form="de" lemma="de" upos="DET" Definite="Def" head="21" deprel="det" deprel_main="det">
+            <dep id="20" head="21" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="20" end="21" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="35" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans">
+          <ud id="21" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" deprel_main="obj">
+            <dep id="21" head="19" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="21" end="22" frame="adverb" id="36" lcat="advp" lemma="niet" pos="adv" postag="BW()" pt="bw" rel="mod" root="niet" sense="niet" word="niet">
+        <ud id="22" form="niet" lemma="niet" upos="ADV" head="19" deprel="advmod" deprel_main="advmod">
+          <dep id="22" head="19" deprel="advmod" deprel_main="advmod"/>
+        </ud>
+      </node>
+    </node>
+    <node begin="22" end="23" frame="punct(punt)" id="37" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="23" form="." lemma="." upos="PUNCT" head="19" deprel="punct" deprel_main="punct">
+        <dep id="23" head="19" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000456214.p.3.s.3">Volksfiguren zoals SK Grembergen-voorzitter Herman Burghgrave , schepen Leen Dierick en voorzitster van de Feestcommissie Gerarda Van Mele ontsprongen de dans niet .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000456214.p.3.s.3|Volksfiguren zoals SK Grembergen-voorzitter Herman Burghgrave , schepen Leen Dierick en voorzitster van de Feestcommissie Gerarda Van Mele ontsprongen de dans niet .|1|1|-4.318282484400001</comment>
+  </comments>
+  <root ud="basic" id="19" form="ontsprongen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="verl" wvorm="pv">
+    <nsubj ud="basic" id="1" form="Volksfiguren" lemma="volk_figuur" upos="NOUN" Number="Plur" head="19" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nmod ud="basic" id="3" form="SK" lemma="SK" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <mark ud="basic" id="2" form="zoals" lemma="zoals" upos="SCONJ" head="3" deprel="mark" conjtype="onder" pt="vg"/>
+        <fixed ud="basic" id="4" form="Grembergen-voorzitter" lemma="Grembergen_voorzitter" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="fixed" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n"/>
+        <appos ud="basic" id="5" form="Herman" lemma="Herman" upos="PROPN" head="3" deprel="appos" pt="spec" spectype="deeleigen">
+          <flat ud="basic" id="6" form="Burghgrave" lemma="Burghgrave" upos="PROPN" head="5" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </appos>
+        <conj ud="basic" id="8" form="schepen" lemma="schepen" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <punct ud="basic" id="7" form="," lemma="," upos="PUNCT" head="8" deprel="punct" pt="let"/>
+          <appos ud="basic" id="9" form="Leen" lemma="Leen" upos="PROPN" head="8" deprel="appos" pt="spec" spectype="deeleigen">
+            <flat ud="basic" id="10" form="Dierick" lemma="Dierick" upos="PROPN" head="9" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </appos>
+        </conj>
+        <conj ud="basic" id="12" form="voorzitster" lemma="voorzitster" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <cc ud="basic" id="11" form="en" lemma="en" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg"/>
+          <nmod ud="basic" id="15" form="Feestcommissie" lemma="Feestcommissie" upos="PROPN" head="12" deprel="nmod" pt="spec" spectype="deeleigen">
+            <case ud="basic" id="13" form="van" lemma="van" upos="ADP" head="15" deprel="case" pt="vz" vztype="init"/>
+            <det ud="basic" id="14" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            <flat ud="basic" id="16" form="Gerarda" lemma="Gerarda" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+            <flat ud="basic" id="17" form="Van" lemma="Van" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+            <flat ud="basic" id="18" form="Mele" lemma="Mele" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </nmod>
+        </conj>
+      </nmod>
+    </nsubj>
+    <obj ud="basic" id="21" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="20" form="de" lemma="de" upos="DET" Definite="Def" head="21" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <advmod ud="basic" id="22" form="niet" lemma="niet" upos="ADV" head="19" deprel="advmod" pt="bw"/>
+    <punct ud="basic" id="23" form="." lemma="." upos="PUNCT" head="19" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="19" form="ontsprongen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="verl" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="Volksfiguren" lemma="volk_figuur" upos="NOUN" Number="Plur" head="19" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nmod ud="enhanced" id="3" form="SK" lemma="SK" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <mark ud="enhanced" id="2" form="zoals" lemma="zoals" upos="SCONJ" head="3" deprel="mark" conjtype="onder" pt="vg"/>
+        <fixed ud="enhanced" id="4" form="Grembergen-voorzitter" lemma="Grembergen_voorzitter" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="fixed" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n"/>
+        <appos ud="enhanced" id="5" form="Herman" lemma="Herman" upos="PROPN" head="3" deprel="appos" pt="spec" spectype="deeleigen">
+          <flat ud="enhanced" id="6" form="Burghgrave" lemma="Burghgrave" upos="PROPN" head="5" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </appos>
+        <conj ud="enhanced" id="8" form="schepen" lemma="schepen" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj:en" deprel_aux="en" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <punct ud="enhanced" id="7" form="," lemma="," upos="PUNCT" head="8" deprel="punct" pt="let"/>
+          <appos ud="enhanced" id="9" form="Leen" lemma="Leen" upos="PROPN" head="8" deprel="appos" pt="spec" spectype="deeleigen">
+            <flat ud="enhanced" id="10" form="Dierick" lemma="Dierick" upos="PROPN" head="9" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </appos>
+        </conj>
+        <conj ud="enhanced" id="12" form="voorzitster" lemma="voorzitster" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="conj:en" deprel_aux="en" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <cc ud="enhanced" id="11" form="en" lemma="en" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg"/>
+          <nmod ud="enhanced" id="15" form="Feestcommissie" lemma="Feestcommissie" upos="PROPN" head="12" deprel="nmod:van" deprel_aux="van" pt="spec" spectype="deeleigen">
+            <case ud="enhanced" id="13" form="van" lemma="van" upos="ADP" head="15" deprel="case" pt="vz" vztype="init"/>
+            <det ud="enhanced" id="14" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            <flat ud="enhanced" id="16" form="Gerarda" lemma="Gerarda" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+            <flat ud="enhanced" id="17" form="Van" lemma="Van" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+            <flat ud="enhanced" id="18" form="Mele" lemma="Mele" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </nmod>
+        </conj>
+      </nmod>
+      <nmod ud="enhanced" id="8" form="schepen" lemma="schepen" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <punct ud="enhanced" id="7" form="," lemma="," upos="PUNCT" head="8" deprel="punct" pt="let"/>
+        <appos ud="enhanced" id="9" form="Leen" lemma="Leen" upos="PROPN" head="8" deprel="appos" pt="spec" spectype="deeleigen">
+          <flat ud="enhanced" id="10" form="Dierick" lemma="Dierick" upos="PROPN" head="9" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </appos>
+      </nmod>
+      <nmod ud="enhanced" id="12" form="voorzitster" lemma="voorzitster" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <cc ud="enhanced" id="11" form="en" lemma="en" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg"/>
+        <nmod ud="enhanced" id="15" form="Feestcommissie" lemma="Feestcommissie" upos="PROPN" head="12" deprel="nmod:van" deprel_aux="van" pt="spec" spectype="deeleigen">
+          <case ud="enhanced" id="13" form="van" lemma="van" upos="ADP" head="15" deprel="case" pt="vz" vztype="init"/>
+          <det ud="enhanced" id="14" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          <flat ud="enhanced" id="16" form="Gerarda" lemma="Gerarda" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+          <flat ud="enhanced" id="17" form="Van" lemma="Van" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+          <flat ud="enhanced" id="18" form="Mele" lemma="Mele" upos="PROPN" head="15" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </nmod>
+      </nmod>
+    </nsubj>
+    <obj ud="enhanced" id="21" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="20" form="de" lemma="de" upos="DET" Definite="Def" head="21" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <advmod ud="enhanced" id="22" form="niet" lemma="niet" upos="ADV" head="19" deprel="advmod" pt="bw"/>
+    <punct ud="enhanced" id="23" form="." lemma="." upos="PUNCT" head="19" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Volksfiguren	volk_figuur	NOUN	N|soort|mv|basis	Number=Plur	19	nsubj	19:nsubj	_
+2	zoals	zoals	SCONJ	VG|onder	_	3	mark	3:mark	_
+3	SK	SK	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	1	nmod	1:nmod	_
+4	Grembergen-voorzitter	Grembergen_voorzitter	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	fixed	3:fixed	_
+5	Herman	Herman	PROPN	SPEC|deeleigen	_	3	appos	3:appos	_
+6	Burghgrave	Burghgrave	PROPN	SPEC|deeleigen	_	5	flat	5:flat	_
+7	,	,	PUNCT	LET	_	8	punct	8:punct	_
+8	schepen	schepen	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	conj	1:nmod|3:conj:en	_
+9	Leen	Leen	PROPN	SPEC|deeleigen	_	8	appos	8:appos	_
+10	Dierick	Dierick	PROPN	SPEC|deeleigen	_	9	flat	9:flat	_
+11	en	en	CCONJ	VG|neven	_	12	cc	12:cc	_
+12	voorzitster	voorzitster	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	conj	1:nmod|3:conj:en	_
+13	van	van	ADP	VZ|init	_	15	case	15:case	_
+14	de	de	DET	LID|bep|stan|rest	Definite=Def	15	det	15:det	_
+15	Feestcommissie	Feestcommissie	PROPN	SPEC|deeleigen	_	12	nmod	12:nmod:van	_
+16	Gerarda	Gerarda	PROPN	SPEC|deeleigen	_	15	flat	15:flat	_
+17	Van	Van	PROPN	SPEC|deeleigen	_	15	flat	15:flat	_
+18	Mele	Mele	PROPN	SPEC|deeleigen	_	15	flat	15:flat	_
+19	ontsprongen	ontspringen	VERB	WW|pv|verl|mv	Number=Plur|Tense=Past|VerbForm=Fin	0	root	0:root	_
+20	de	de	DET	LID|bep|stan|rest	Definite=Def	21	det	21:det	_
+21	dans	dans	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	19	obj	19:obj	_
+22	niet	niet	ADV	BW	_	19	advmod	19:advmod	_
+23	.	.	PUNCT	LET	_	19	punct	19:punct	_
+]]></conllu>
+</alpino_ds>

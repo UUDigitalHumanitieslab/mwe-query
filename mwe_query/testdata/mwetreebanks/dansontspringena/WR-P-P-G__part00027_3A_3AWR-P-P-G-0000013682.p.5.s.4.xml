@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="13" id="0" rel="top">
+    <node begin="7" end="8" frame="punct(dubb_punt)" id="1" lcat="punct" lemma=":" pos="punct" postag="LET()" pt="let" rel="--" root=":" sense=":" special="dubb_punt" word=":">
+      <ud id="8" form=":" lemma=":" upos="PUNCT" head="10" deprel="punct" deprel_main="punct">
+        <dep id="8" head="10" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="12" id="2" rel="--">
+      <node begin="0" cat="smain" end="7" id="3" rel="nucl">
+        <node begin="0" cat="np" end="4" id="4" rel="su">
+          <node begin="0" end="1" frame="modal_adverb" id="5" lcat="advp" lemma="ook" pos="adv" postag="BW()" pt="bw" rel="mod" root="ook" sc="modal" sense="ook" word="Ook">
+            <ud id="1" form="Ook" lemma="ook" upos="ADV" head="4" deprel="amod" deprel_main="amod">
+              <dep id="1" head="4" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="1" end="2" frame="determiner(een)" id="6" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+            <ud id="2" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" deprel_main="det">
+              <dep id="2" head="4" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node aform="base" begin="2" buiging="met-e" end="3" frame="adjective(e)" graad="basis" id="7" infl="e" lcat="ap" lemma="11_jarig" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="11_jarig" sense="11_jarig" vform="adj" word="11-jarige">
+            <ud id="3" form="11-jarige" lemma="11_jarig" upos="ADJ" Degree="Pos" head="4" deprel="amod" deprel_main="amod">
+              <dep id="3" head="4" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="3" end="4" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="8" lcat="np" lemma="dochter" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dochter" sense="dochter" word="dochter">
+            <ud id="4" form="dochter" lemma="dochter" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="nsubj" deprel_main="nsubj">
+              <dep id="4" head="5" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="4" end="5" frame="verb(unacc,past(sg),transitive)" id="9" infl="sg" lcat="smain" lemma="ontspringen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="ontspring" sc="transitive" sense="ontspring" stype="declarative" tense="past" word="ontsprong" wvorm="pv">
+          <ud id="5" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+            <dep id="5" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="5" cat="np" end="7" id="10" rel="obj1">
+          <node begin="5" end="6" frame="determiner(de)" id="11" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+            <ud id="6" form="de" lemma="de" upos="DET" Definite="Def" head="7" deprel="det" deprel_main="det">
+              <dep id="6" head="7" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="6" end="7" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="12" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans">
+            <ud id="7" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="obj" deprel_main="obj">
+              <dep id="7" head="5" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="8" cat="smain" end="12" id="13" rel="sat">
+        <node begin="8" case="nom" def="def" end="9" frame="pronoun(nwh,thi,both,de,nom,def)" gen="de" genus="fem" getal="ev" id="14" index="1" lcat="np" lemma="zij" naamval="nomin" num="both" pdtype="pron" per="thi" persoon="3v" pos="pron" postag="VNW(pers,pron,nomin,vol,3v,ev,fem)" pt="vnw" rel="su" rnum="sg" root="zij" sense="zij" status="vol" vwtype="pers" wh="nwh" word="zij">
+          <ud id="9" form="zij" lemma="zij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="10" deprel="nsubj" deprel_main="nsubj">
+            <dep id="9" head="10" deprel="nsubj" deprel_main="nsubj"/>
+            <dep id="9" head="12" deprel="nsubj:xsubj" deprel_main="nsubj" deprel_aux="xsubj"/>
+          </ud>
+        </node>
+        <node begin="9" end="10" frame="verb(hebben,past(sg),subj_control(wk_te))" id="15" infl="sg" lcat="smain" lemma="liggen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="lig" sc="subj_control(wk_te)" sense="lig" stype="declarative" tense="past" word="lag" wvorm="pv">
+          <ud id="10" form="lag" lemma="liggen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="5" deprel="parataxis" deprel_main="parataxis">
+            <dep id="10" head="5" deprel="parataxis" deprel_main="parataxis"/>
+          </ud>
+        </node>
+        <node begin="8" cat="ti" end="12" id="16" rel="vc">
+          <node begin="10" end="11" frame="complementizer(te)" id="17" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+            <ud id="11" form="te" lemma="te" upos="ADP" head="12" deprel="mark" deprel_main="mark">
+              <dep id="11" head="12" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="8" cat="inf" end="12" id="18" rel="body">
+            <node begin="8" end="9" id="19" index="1" rel="su"/>
+            <node begin="11" buiging="zonder" end="12" frame="verb(hebben,inf,intransitive)" id="20" infl="inf" lcat="inf" lemma="slapen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="slaap" sc="intransitive" sense="slaap" word="slapen" wvorm="inf">
+              <ud id="12" form="slapen" lemma="slapen" upos="VERB" VerbForm="Inf" head="10" deprel="xcomp" deprel_main="xcomp">
+                <dep id="12" head="10" deprel="xcomp" deprel_main="xcomp"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="12" end="13" frame="punct(punt)" id="21" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="13" form="." lemma="." upos="PUNCT" head="5" deprel="punct" deprel_main="punct">
+        <dep id="13" head="5" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000013682.p.5.s.4">Ook een 11-jarige dochter ontsprong de dans : zij lag te slapen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000013682.p.5.s.4|Ook een 11-jarige dochter ontsprong de dans : zij lag te slapen .|1|1|-4.7172289987000005</comment>
+  </comments>
+  <root ud="basic" id="5" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="basic" id="4" form="dochter" lemma="dochter" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="basic" id="1" form="Ook" lemma="ook" upos="ADV" head="4" deprel="amod" pt="bw"/>
+      <det ud="basic" id="2" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="basic" id="3" form="11-jarige" lemma="11_jarig" upos="ADJ" Degree="Pos" head="4" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <obj ud="basic" id="7" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="6" form="de" lemma="de" upos="DET" Definite="Def" head="7" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <parataxis ud="basic" id="10" form="lag" lemma="liggen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="5" deprel="parataxis" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+      <punct ud="basic" id="8" form=":" lemma=":" upos="PUNCT" head="10" deprel="punct" pt="let"/>
+      <nsubj ud="basic" id="9" form="zij" lemma="zij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="10" deprel="nsubj" genus="fem" getal="ev" naamval="nomin" pdtype="pron" persoon="3v" pt="vnw" status="vol" vwtype="pers"/>
+      <xcomp ud="basic" id="12" form="slapen" lemma="slapen" upos="VERB" VerbForm="Inf" head="10" deprel="xcomp" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <mark ud="basic" id="11" form="te" lemma="te" upos="ADP" head="12" deprel="mark" pt="vz" vztype="init"/>
+      </xcomp>
+    </parataxis>
+    <punct ud="basic" id="13" form="." lemma="." upos="PUNCT" head="5" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="5" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="enhanced" id="4" form="dochter" lemma="dochter" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="enhanced" id="1" form="Ook" lemma="ook" upos="ADV" head="4" deprel="amod" pt="bw"/>
+      <det ud="enhanced" id="2" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="enhanced" id="3" form="11-jarige" lemma="11_jarig" upos="ADJ" Degree="Pos" head="4" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <obj ud="enhanced" id="7" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="5" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="6" form="de" lemma="de" upos="DET" Definite="Def" head="7" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <parataxis ud="enhanced" id="10" form="lag" lemma="liggen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="5" deprel="parataxis" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+      <punct ud="enhanced" id="8" form=":" lemma=":" upos="PUNCT" head="10" deprel="punct" pt="let"/>
+      <nsubj ud="enhanced" id="9" form="zij" lemma="zij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="10" deprel="nsubj" genus="fem" getal="ev" naamval="nomin" pdtype="pron" persoon="3v" pt="vnw" status="vol" vwtype="pers"/>
+      <xcomp ud="enhanced" id="12" form="slapen" lemma="slapen" upos="VERB" VerbForm="Inf" head="10" deprel="xcomp" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <nsubj ud="enhanced" id="9" form="zij" lemma="zij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="12" deprel="nsubj:xsubj" deprel_aux="xsubj" genus="fem" getal="ev" naamval="nomin" pdtype="pron" persoon="3v" pt="vnw" status="vol" vwtype="pers"/>
+        <mark ud="enhanced" id="11" form="te" lemma="te" upos="ADP" head="12" deprel="mark" pt="vz" vztype="init"/>
+      </xcomp>
+    </parataxis>
+    <punct ud="enhanced" id="13" form="." lemma="." upos="PUNCT" head="5" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Ook	ook	ADV	BW	_	4	amod	4:amod	_
+2	een	een	DET	LID|onbep|stan|agr	Definite=Ind	4	det	4:det	_
+3	11-jarige	11_jarig	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	4	amod	4:amod	_
+4	dochter	dochter	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	5	nsubj	5:nsubj	_
+5	ontsprong	ontspringen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+6	de	de	DET	LID|bep|stan|rest	Definite=Def	7	det	7:det	_
+7	dans	dans	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	5	obj	5:obj	_
+8	:	:	PUNCT	LET	_	10	punct	10:punct	_
+9	zij	zij	PRON	VNW|pers|pron|nomin|vol|3v|ev|fem	Case=Nom|Person=3|PronType=Prs	10	nsubj	10:nsubj|12:nsubj:xsubj	_
+10	lag	liggen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	5	parataxis	5:parataxis	_
+11	te	te	ADP	VZ|init	_	12	mark	12:mark	_
+12	slapen	slapen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	10	xcomp	10:xcomp	_
+13	.	.	PUNCT	LET	_	5	punct	5:punct	_
+]]></conllu>
+</alpino_ds>

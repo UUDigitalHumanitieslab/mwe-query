@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="17" id="0" rel="top">
+    <node begin="7" end="8" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="8" form="," lemma="," upos="PUNCT" head="12" deprel="punct" deprel_main="punct">
+        <dep id="8" head="12" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="9" end="10" frame="punct(aanhaal_both)" id="2" lcat="--" lemma="&quot;" pos="punct" postag="LET()" pt="let" rel="--" root="&quot;" sense="&quot;" special="aanhaal_both" word="&quot;">
+      <ud id="10" form="&quot;" lemma="&quot;" upos="PUNCT" head="9" deprel="punct" deprel_main="punct">
+        <dep id="10" head="9" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="conj" end="16" id="3" rel="--">
+      <node begin="0" cat="smain" end="7" id="4" rel="cnj">
+        <node begin="0" buiging="zonder" end="1" frame="v_noun(intransitive)" getal-n="zonder-n" id="5" lcat="np" lemma="verhuizen" pos="verb" positie="nom" postag="WW(inf,nom,zonder,zonder-n)" pt="ww" rel="su" rnum="sg" root="verhuis" sc="intransitive" sense="verhuis" special="v_noun" word="Verhuizen" wvorm="inf">
+          <ud id="1" form="Verhuizen" lemma="verhuizen" upos="VERB" VerbForm="Inf" head="3" deprel="nsubj" deprel_main="nsubj">
+            <dep id="1" head="3" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="1" end="2" frame="verb(unacc,sg_heeft,copula)" id="6" infl="sg_heeft" lcat="smain" lemma="zijn" pos="verb" postag="WW(pv,tgw,ev)" pt="ww" pvagr="ev" pvtijd="tgw" rel="hd" root="ben" sc="copula" sense="ben" stype="declarative" tense="present" word="is" wvorm="pv">
+          <ud id="2" form="is" lemma="zijn" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="cop" deprel_main="cop">
+            <dep id="2" head="3" deprel="cop" deprel_main="cop"/>
+          </ud>
+        </node>
+        <node begin="2" cat="np" end="7" id="7" rel="predc">
+          <node begin="2" buiging="zonder" comparative="als" end="3" frame="comp_determiner(het,als)" graad="basis" id="8" infl="het" lcat="np" lemma="hetzelfde" pos="det" positie="prenom" postag="ADJ(prenom,basis,zonder)" pt="adj" rel="hd" rnum="sg" root="hetzelfde" sense="hetzelfde" special="comp" word="hetzelfde">
+            <ud id="3" form="hetzelfde" lemma="hetzelfde" upos="ADJ" Degree="Pos" head="0" deprel="root" deprel_main="root">
+              <dep id="3" head="0" deprel="root" deprel_main="root"/>
+            </ud>
+          </node>
+          <node begin="3" cat="cp" end="7" id="9" rel="obcomp">
+            <node begin="3" conjtype="onder" end="4" frame="comparative(als)" id="10" lcat="comparative" lemma="als" pos="comparative" postag="VG(onder)" pt="vg" rel="cmp" root="als" sense="als" word="als">
+              <ud id="4" form="als" lemma="als" upos="SCONJ" head="7" deprel="mark" deprel_main="mark">
+                <dep id="4" head="7" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="4" cat="inf" end="7" id="11" rel="body">
+              <node begin="4" cat="np" end="6" id="12" rel="obj1">
+                <node begin="4" end="5" frame="determiner(een)" id="13" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+                  <ud id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" deprel_main="det">
+                    <dep id="5" head="6" deprel="det" deprel_main="det"/>
+                  </ud>
+                </node>
+                <node begin="5" end="6" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="14" lcat="np" lemma="verhouding" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="verhouding" sense="verhouding" word="verhouding">
+                  <ud id="6" form="verhouding" lemma="verhouding" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" deprel_main="obj">
+                    <dep id="6" head="7" deprel="obj" deprel_main="obj"/>
+                  </ud>
+                </node>
+              </node>
+              <node begin="6" buiging="zonder" end="7" frame="verb(hebben,inf,transitive_ndev)" id="15" infl="inf" lcat="inf" lemma="hebben" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="heb" sc="transitive_ndev" sense="heb" word="hebben" wvorm="inf">
+                <ud id="7" form="hebben" lemma="hebben" upos="VERB" VerbForm="Inf" head="3" deprel="advcl" deprel_main="advcl">
+                  <dep id="7" head="3" deprel="advcl:als" deprel_main="advcl" deprel_aux="als"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node begin="8" conjtype="neven" end="9" frame="conj(maar)" id="16" lcat="vg" lemma="maar" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="maar" sense="maar" word="maar">
+        <ud id="9" form="maar" lemma="maar" upos="CCONJ" head="12" deprel="cc" deprel_main="cc">
+          <dep id="9" head="12" deprel="cc" deprel_main="cc"/>
+        </ud>
+      </node>
+      <node begin="10" cat="smain" end="16" id="17" rel="cnj">
+        <node begin="10" case="both" def="def" end="11" frame="pronoun(nwh,je,sg,de,both,def,wkpro)" gen="de" getal="ev" id="18" lcat="np" lemma="je" naamval="nomin" num="sg" pdtype="pron" per="je" persoon="2v" pos="pron" postag="VNW(pers,pron,nomin,red,2v,ev)" pt="vnw" rel="su" rnum="sg" root="je" sense="je" special="wkpro" status="red" vwtype="pers" wh="nwh" word="je">
+          <ud id="11" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" deprel_main="nsubj">
+            <dep id="11" head="12" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="11" end="12" frame="verb(hebben,sg3,transitive)" id="19" infl="sg3" lcat="smain" lemma="breken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="breek" sc="transitive" sense="breek" stype="declarative" tense="present" word="breekt" wvorm="pv">
+          <ud id="12" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="conj" deprel_main="conj">
+            <dep id="12" head="3" deprel="conj:maar" deprel_main="conj" deprel_aux="maar"/>
+          </ud>
+        </node>
+        <node begin="12" end="13" frame="er_vp_adverb" getal="getal" id="20" lcat="advp" lemma="er" naamval="stan" pdtype="adv-pron" persoon="3" pos="adv" postag="VNW(aanw,adv-pron,stan,red,3,getal)" pt="vnw" rel="mod" root="er" sense="er" special="er" status="red" vwtype="aanw" word="er">
+          <ud id="13" form="er" lemma="er" upos="ADV" head="12" deprel="advmod" deprel_main="advmod">
+            <dep id="13" head="12" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="13" cat="np" end="15" id="21" rel="obj1">
+          <node begin="13" end="14" frame="determiner(pron)" getal="ev" id="22" infl="pron" lcat="detp" lemma="niemand" naamval="stan" pdtype="pron" persoon="3p" pos="det" postag="VNW(onbep,pron,stan,vol,3p,ev)" pron="true" pt="vnw" rel="det" root="niemand" sense="niemand" status="vol" vwtype="onbep" word="niemands">
+            <ud id="14" form="niemands" lemma="niemand" upos="DET" head="15" deprel="det" deprel_main="det">
+              <dep id="14" head="15" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="14" end="15" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="23" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart">
+            <ud id="15" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="12" deprel="obj" deprel_main="obj">
+              <dep id="15" head="12" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="15" end="16" frame="loc_adverb" id="24" lcat="advp" lemma="mee" pos="adv" postag="BW()" pt="bw" rel="mod" root="mee" sense="mee" special="loc" word="mee">
+          <ud id="16" form="mee" lemma="mee" upos="ADV" head="12" deprel="advmod" deprel_main="advmod">
+            <dep id="16" head="12" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="16" end="17" frame="punct(punt)" id="25" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="17" form="." lemma="." upos="PUNCT" head="3" deprel="punct" deprel_main="punct">
+        <dep id="17" head="3" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000251946.p.11.s.15">Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart mee .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000251946.p.11.s.15|Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart mee .|1|1|-4.826454236800002</comment>
+  </comments>
+  <root ud="basic" id="3" form="hetzelfde" lemma="hetzelfde" upos="ADJ" Degree="Pos" head="0" deprel="root" buiging="zonder" graad="basis" positie="prenom" pt="adj">
+    <nsubj ud="basic" id="1" form="Verhuizen" lemma="verhuizen" upos="VERB" VerbForm="Inf" head="3" deprel="nsubj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf"/>
+    <cop ud="basic" id="2" form="is" lemma="zijn" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="cop" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv"/>
+    <advcl ud="basic" id="7" form="hebben" lemma="hebben" upos="VERB" VerbForm="Inf" head="3" deprel="advcl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <mark ud="basic" id="4" form="als" lemma="als" upos="SCONJ" head="7" deprel="mark" conjtype="onder" pt="vg"/>
+      <obj ud="basic" id="6" form="verhouding" lemma="verhouding" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      </obj>
+    </advcl>
+    <conj ud="basic" id="12" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="conj" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <punct ud="basic" id="8" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+      <cc ud="basic" id="9" form="maar" lemma="maar" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg">
+        <punct ud="basic" id="10" form="&quot;" lemma="&quot;" upos="PUNCT" head="9" deprel="punct" pt="let"/>
+      </cc>
+      <nsubj ud="basic" id="11" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="2v" pt="vnw" status="red" vwtype="pers"/>
+      <advmod ud="basic" id="13" form="er" lemma="er" upos="ADV" head="12" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+      <obj ud="basic" id="15" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="12" deprel="obj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="14" form="niemands" lemma="niemand" upos="DET" head="15" deprel="det" getal="ev" naamval="stan" pdtype="pron" persoon="3p" pt="vnw" status="vol" vwtype="onbep"/>
+      </obj>
+      <advmod ud="basic" id="16" form="mee" lemma="mee" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+    </conj>
+    <punct ud="basic" id="17" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="3" form="hetzelfde" lemma="hetzelfde" upos="ADJ" Degree="Pos" head="0" deprel="root" buiging="zonder" graad="basis" positie="prenom" pt="adj">
+    <nsubj ud="enhanced" id="1" form="Verhuizen" lemma="verhuizen" upos="VERB" VerbForm="Inf" head="3" deprel="nsubj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf"/>
+    <cop ud="enhanced" id="2" form="is" lemma="zijn" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="cop" pt="ww" pvagr="ev" pvtijd="tgw" wvorm="pv"/>
+    <advcl ud="enhanced" id="7" form="hebben" lemma="hebben" upos="VERB" VerbForm="Inf" head="3" deprel="advcl:als" deprel_aux="als" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <mark ud="enhanced" id="4" form="als" lemma="als" upos="SCONJ" head="7" deprel="mark" conjtype="onder" pt="vg"/>
+      <obj ud="enhanced" id="6" form="verhouding" lemma="verhouding" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      </obj>
+    </advcl>
+    <conj ud="enhanced" id="12" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="3" deprel="conj:maar" deprel_aux="maar" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <punct ud="enhanced" id="8" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+      <cc ud="enhanced" id="9" form="maar" lemma="maar" upos="CCONJ" head="12" deprel="cc" conjtype="neven" pt="vg">
+        <punct ud="enhanced" id="10" form="&quot;" lemma="&quot;" upos="PUNCT" head="9" deprel="punct" pt="let"/>
+      </cc>
+      <nsubj ud="enhanced" id="11" form="je" lemma="je" upos="PRON" Case="Nom" Person="2" PronType="Prs" head="12" deprel="nsubj" getal="ev" naamval="nomin" pdtype="pron" persoon="2v" pt="vnw" status="red" vwtype="pers"/>
+      <advmod ud="enhanced" id="13" form="er" lemma="er" upos="ADV" head="12" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+      <obj ud="enhanced" id="15" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="12" deprel="obj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="14" form="niemands" lemma="niemand" upos="DET" head="15" deprel="det" getal="ev" naamval="stan" pdtype="pron" persoon="3p" pt="vnw" status="vol" vwtype="onbep"/>
+      </obj>
+      <advmod ud="enhanced" id="16" form="mee" lemma="mee" upos="ADV" head="12" deprel="advmod" pt="bw"/>
+    </conj>
+    <punct ud="enhanced" id="17" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Verhuizen	verhuizen	VERB	WW|inf|nom|zonder|zonder-n	VerbForm=Inf	3	nsubj	3:nsubj	_
+2	is	zijn	AUX	WW|pv|tgw|ev	Number=Sing|Tense=Pres|VerbForm=Fin	3	cop	3:cop	_
+3	hetzelfde	hetzelfde	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	0	root	0:root	_
+4	als	als	SCONJ	VG|onder	_	7	mark	7:mark	_
+5	een	een	DET	LID|onbep|stan|agr	Definite=Ind	6	det	6:det	_
+6	verhouding	verhouding	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	7	obj	7:obj	_
+7	hebben	hebben	VERB	WW|inf|vrij|zonder	VerbForm=Inf	3	advcl	3:advcl:als	_
+8	,	,	PUNCT	LET	_	12	punct	12:punct	_
+9	maar	maar	CCONJ	VG|neven	_	12	cc	12:cc	_
+10	"	"	PUNCT	LET	_	9	punct	9:punct	_
+11	je	je	PRON	VNW|pers|pron|nomin|red|2v|ev	Case=Nom|Person=2|PronType=Prs	12	nsubj	12:nsubj	_
+12	breekt	breken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	3	conj	3:conj:maar	_
+13	er	er	ADV	VNW|aanw|adv-pron|stan|red|3|getal	_	12	advmod	12:advmod	_
+14	niemands	niemand	DET	VNW|onbep|pron|stan|vol|3p|ev	_	15	det	15:det	_
+15	hart	hart	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	12	obj	12:obj	_
+16	mee	mee	ADV	BW	_	12	advmod	12:advmod	_
+17	.	.	PUNCT	LET	_	3	punct	3:punct	_
+]]></conllu>
+</alpino_ds>
