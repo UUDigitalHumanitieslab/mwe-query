@@ -3,8 +3,9 @@ Methods for converting a standard treebank into a treebank where a
 phrasal node is generated for each (relevant) non-head single word.
 """
 
-from sastatypes import SynTree
-from treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
+from typing import Optional
+from sastadev.sastatypes import SynTree
+from sastadev.treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
 import copy
 import lxml.etree as ET
 
@@ -47,7 +48,7 @@ def getlcatatt(node: SynTree) -> str:
 
 def mkphrase(child: SynTree) -> SynTree:
     newnode = ET.Element('node')
-    newnode.attrib['id'] = child.attrib['id'] + 'a'
+    newnode.attrib['id'] = str(child.attrib['id']) + 'a'
     lcat = getlcatatt(child)
     if lcat in validcats:
         newnode.attrib['cat'] = lcat
@@ -69,7 +70,7 @@ def mkphrase(child: SynTree) -> SynTree:
     return newnode
 
 
-def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
+def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     pt = gav(node, 'pt')
     rel = gav(node, 'rel') if prel is None else prel
     positie = gav(node, 'positie')
@@ -77,7 +78,7 @@ def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
     frame = gav(node, 'frame')
     numtype = gav(node, 'numtype')
     vwtype = gav(node, 'vwtype')
-    result = 'xp'
+    result: Optional[str] = 'xp'
     if 'word' not in node.attrib or 'pt' not in node.attrib or pt in {'let', 'tsw', 'vg'} or rel in {'svp'}:
         result = None
     elif rel == 'mwp':

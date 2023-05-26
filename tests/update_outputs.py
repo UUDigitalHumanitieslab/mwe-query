@@ -3,7 +3,7 @@
 Run the commands and write their output
 """
 
-from alpino_query import parse_sentence
+from alpino_query import parse_sentence # type: ignore
 import sys
 from os import path
 import glob

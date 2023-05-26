@@ -1,5 +1,6 @@
 
 
+# flake8: noqa
 def mksummary(wlist, marklist, windowsize=2):
     difflist = [marklist[i+1] - marklist[i] for i in range(len(marklist)-1)]
     result = []

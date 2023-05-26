@@ -35,12 +35,11 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         # TODO: lower line length, lower complexity
         flake8 mwe_query --count --exit-zero --max-complexity=22 --max-line-length=261 --statistics
-    # TODO:
-    # - name: Check typing
-    #   run: |
-    #     pip install mypy
-    #     pip install lxml-stubs
-    #     mypy **/*.py
+    - name: Check typing
+      run: |
+        pip install mypy
+        pip install lxml-stubs
+        mypy **/*.py
     - name: Run unit tests
       run: |
         python -m unittest discover tests/

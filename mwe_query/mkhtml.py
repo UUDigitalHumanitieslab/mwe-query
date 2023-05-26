@@ -1,9 +1,9 @@
 from typing import List, Tuple
 import os
-from mwestats import getcompsxpaths, getargnodes, getheads, getposcat, showframe, sortframe, ismodnode, showrelcat, \
-    isdetnode, displaystats, displayfullstats, getstats, gettreebank, removeud
-from canonicalform import generatemwestructures, expandnonheadwords, generatequeries, applyqueries, listofsets2setoflists
-from treebankfunctions import getattval as gav
+from .mwestats import getcompsxpaths, showframe, showrelcat, \
+    getstats, gettreebank
+from .canonicalform import generatemwestructures, generatequeries, applyqueries
+from sastadev.treebankfunctions import getattval as gav
 
 
 dochtml = '''
@@ -43,7 +43,7 @@ collapsestyle = '''
   background-color: #f1f1f1;
 }'''
 
-tabstyle    = '''
+tabstyle = '''
 body {font-family: Arial;}
 
 /* Style the tab */
@@ -85,7 +85,7 @@ body {font-family: Arial;}
 
 '''
 
-stylehtml = '<style>\n' +  "\n\n".join([tabstyle, collapsestyle]) + '\n</style>\n'
+stylehtml = '<style>\n' + "\n\n".join([tabstyle, collapsestyle]) + '\n</style>\n'
 
 collapseablescript = '''
 var coll = document.getElementsByClassName("collapsible");
@@ -129,7 +129,7 @@ tabdiv = '''
   <h3>{header}</h3>
   {contents}
 </div>
-           
+
 '''
 
 collapsable = '''
@@ -150,6 +150,8 @@ bodyhtml = '''
 {script}
 </body>
 '''
+
+
 def mkcollapsable(sectiontitle, sectioncontent):
     result = collapsable.format(sectiontitle=sectiontitle, sectioncontent=sectioncontent)
     return result
@@ -184,6 +186,7 @@ def mkrelcatshtml(complemma, modstats):
         result = ''
     return result
 
+
 def mklemmashtml(complemma, dct):
     hdlemmaliststr = ''
     for hdlemma in dct:
@@ -196,6 +199,7 @@ def mklemmashtml(complemma, dct):
         hdlemmacollapsable = mkcollapsable(hdlemmastr, hdwordcollapsable)
         hdlemmaliststr += hdlemmacollapsable
     return hdlemmaliststr
+
 
 def mkhdwordhtml(dct):
     result = ''
@@ -219,14 +223,16 @@ Key = str
 Label = str
 Tab = Key, Label
 
+
 def mktabdiv(key, header, contents):
     result = tabdiv.format(key=key, header=header, contents=contents)
     return result
 
-#def mktabbedhtmlpage(tabtabdivlist: List[Tuple[Tab, str]], style) -> str:
+
+# def mktabbedhtmlpage(tabtabdivlist: List[Tuple[Tab, str]], style) -> str:
 def mktabbedhtmlpage(tabtabdivlist, style):
     tablist = [tab for tab, _ in tabtabdivlist]
-    tabdivlist = [ tabdiv for _, tabdiv in tabtabdivlist]
+    tabdivlist = [tabdiv for _, tabdiv in tabtabdivlist]
     tabhtmllist = []
     for key, label in tablist:
         tabbuttontext = mktabbuttontext(key, label)
@@ -245,6 +251,7 @@ def mktabbedhtmlpage(tabtabdivlist, style):
 def mkbodyhtml(tabs, tabdivs, script):
     result = bodyhtml.format(tabs=tabs, tabdivs=tabdivs, script=script)
     return result
+
 
 def mkdoc(body, style):
     result = dochtml.format(body=body, style=stylehtml)
@@ -275,11 +282,12 @@ def mkdoc(body, style):
 # </div>
 # """
 
+
 def getfullstatshtml(fullstats) -> str:
     mwestatshtml = getstatshtml(fullstats.mwestats)
     nearmissstatshtml = getstatshtml(fullstats.nearmissstats)
     diffstatshtml = getstatshtml(fullstats.diffstats)
-    #mlqhtml = mkhtmlgramconfigstats((fullstats.mlqstats)
+    # mlqhtml = mkhtmlgramconfigstats((fullstats.mlqstats)
 
     mwetabtabdivlist = [(('MWE', 'MWE'), ('MWE', 'MWE Statistics', mwestatshtml)),
                         (('NM', 'Near-Miss'), ('NM', 'Near-Miss Statistics', nearmissstatshtml)),
@@ -335,12 +343,11 @@ def getstatshtml(stats) -> str:
     fullcollaps += argcollaps
 
 
-
     argrelcatstats = stats.argrelcatstats
     argrelcatstr = ''
     # print('\nArguments by relation and category:')
     for (rel, cat) in argrelcatstats:
-         argrelcatstr += f'<p>{rel}/{cat}: {argrelcatstats[(rel, cat)]}</p>'
+        argrelcatstr += f'<p>{rel}/{cat}: {argrelcatstats[(rel, cat)]}</p>'
 
     argrelcatcollaps = mkcollapsable('<p>Arguments by relation and category:</p>', argrelcatstr)
     fullcollaps += argrelcatcollaps
@@ -367,7 +374,7 @@ def getstatshtml(stats) -> str:
 
 
 def mkhtmlgramconfigstats(gramconfigstats):
-    result  = ''
+    result = ''
     for ctuple in gramconfigstats:
         sortedctuple = sorted(ctuple)
         sortedlist = sumdictelems(gramconfigstats[ctuple])
@@ -381,6 +388,7 @@ def mkhtmlgramconfigstats(gramconfigstats):
         result += ctuplecollapsible
     return result
 
+
 def sumdictelems(dct) -> List[Tuple[str, int, List[str]]]:
     newlist = []
     for key in dct:
@@ -393,9 +401,10 @@ def sumdictelems(dct) -> List[Tuple[str, int, List[str]]]:
     sortednewlist = sorted(newlist, key=lambda x: (x[1], -len(x[0])), reverse=True)
     return sortednewlist
 
+
 def test():
-    #dotbfolder = r'.\testdata\mwetreebanks\dansontspringena'
-    dotbfolder = r'.\testdata\mwetreebanks\hartbreken\data'
+    dotbfolder = r'./mwe_query/testdata/mwetreebanks/dansontspringena'
+    #dotbfolder = r'./mwe_query/testdata/mwetreebanks/hartbreken/data'
     rawtreebankfilenames = os.listdir(dotbfolder)
     selcond = lambda _: True
     # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'
@@ -404,13 +413,14 @@ def test():
     treebankfilenames = [os.path.join(dotbfolder, fn) for fn in rawtreebankfilenames if
                          fn[-4:] == '.xml' and selcond(fn)]
     treebank = gettreebank(treebankfilenames)
-    mwes = ['iemand zal de dans ontspringen']
+    # mwes = ['iemand zal de dans ontspringen']
     mwes = ['iemand zal iemands hart breken']
     for mwe in mwes:
         mwestructures = generatemwestructures(mwe)
-        allcompnodes = []
+        # allcompnodes = []
+        # flake8: noqa
         for mweparse in mwestructures:
-            xpathexprs = getcompsxpaths(mweparse)
+            # xpathexprs = getcompsxpaths(mweparse)
             mwequery, nearmissquery, supersetquery = generatequeries(mwe)
             queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
@@ -420,6 +430,7 @@ def test():
             outfilename = '_html/statistics.html'
             with open(outfilename, 'w', encoding='utf8') as outfile:
                 print(result, file=outfile)
+
 
 if __name__ == '__main__':
     test()

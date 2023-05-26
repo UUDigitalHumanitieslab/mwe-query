@@ -1,7 +1,7 @@
 import os
 from collections import defaultdict
-from treebankfunctions import getstree, getattval as gav
-from lcat import getlcat
+from sastadev.treebankfunctions import getstree, getattval as gav
+from mwe_query.lcat import getlcat
 
 properties = ['pt',  'positie', 'wvorm', 'frame', 'numtype', 'vwtype']
 header = properties + ['parentrel', 'parentcat', 'predictedcat']
