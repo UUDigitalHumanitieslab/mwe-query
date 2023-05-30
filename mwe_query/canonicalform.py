@@ -1361,7 +1361,7 @@ def relpronsubst(stree: SynTree) -> SynTree:
     npwithrelnodeids: List[int] = list(
         int(n) for n in
         xpath_values(stree,
-                      './/node[@cat="np" and node[@rel="mod" and @cat="rel"]]/@id'))
+                     './/node[@cat="np" and node[@rel="mod" and @cat="rel"]]/@id'))
     for npwithrelnodeid in npwithrelnodeids:
         npnode = find1(newstree, f'.//node[@id="{npwithrelnodeid}"]')
         if npnode is not None:

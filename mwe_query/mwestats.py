@@ -339,32 +339,32 @@ def gettreebank(filenames: List[str]) -> Dict[str, SynTree]:
     return results
 
 
-def getstats(mwe: str, queryresults: Dict[str, Tuple[NodeSet, NodeSet, NodeSet]], treebank: Dict[str, SynTree]) -> FullMWEstats:
+def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, NodeSet]]], treebank: Dict[str, SynTree]) -> FullMWEstats:
     rawmwestructures = generatemwestructures(mwe)
     mwestructures = [newstree for stree in rawmwestructures for newstree in expandalternatives(stree)]
     # for mwestructure in mwestructures:
     #    etree.dump(mwestructure)
     # allcompnodes = []
     # mwestatslist = []
-    compliststats = {}
+    compliststats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         compliststats[qrt] = MWEcsv(componentsheader, [])
-    argrelcatstats = {}
+    argrelcatstats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         argrelcatstats[qrt] = MWEcsv(argrelcatheader, [])
-    argframestats = {}
+    argframestats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         argframestats[qrt] = MWEcsv(argframeheader, [])
-    argstats = {}
+    argstats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         argstats[qrt] = MWEcsv(argheader, [])
-    modstats = {}
+    modstats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         modstats[qrt] = MWEcsv(modheader, [])
-    detstats = {}
+    detstats: Dict[int, MWEcsv] = {}
     for qrt in queryresulttypes:
         detstats[qrt] = MWEcsv(detheader, [])
-    allcompnodes: Dict[int, List] = {}
+    allcompnodes: Dict[int, List[SynTree]] = {}
     for qrt in queryresulttypes:
         allcompnodes[qrt] = []
 
@@ -372,7 +372,7 @@ def getstats(mwe: str, queryresults: Dict[str, Tuple[NodeSet, NodeSet, NodeSet]]
         mwecompsxpathexprs = [getcompsxpaths(mweparse)]
         nearmissstructs = mknearmissstructs([mweparse])
         nearmisscompsxpathexprs = [getcompsxpaths(stree) for stree in nearmissstructs]
-        for i, resultlist in queryresults.items():
+        for id, resultlist in queryresults.items():
             resultcount = 0
             for (mwenodes, nearmissnodes, supersetnodes) in resultlist:
                 resultcount += 1
@@ -388,18 +388,18 @@ def getstats(mwe: str, queryresults: Dict[str, Tuple[NodeSet, NodeSet, NodeSet]]
                             # MWE Components
                             allcompnodes[qrt] = []
                             compliststats[qrt], allcompnodes[qrt] = \
-                                updatecomponents(compliststats[qrt], allcompnodes[qrt], mwenode, xpathexprs, treebank[i])
+                                updatecomponents(compliststats[qrt], allcompnodes[qrt], mwenode, xpathexprs, treebank[id])
 
                             # Arguments
                             argnodes = getargnodes(mwenode, allcompnodes[qrt])
                             argstats[qrt], argrelcatstats[qrt], argframestats[qrt] = \
-                                updateargs(argstats[qrt], argrelcatstats[qrt], argframestats[qrt], argnodes, treebank[i])
+                                updateargs(argstats[qrt], argrelcatstats[qrt], argframestats[qrt], argnodes, treebank[id])
 
                             # Modification
-                            modstats[qrt] = updatemodstats(modstats[qrt], allcompnodes[qrt], treebank[i])
+                            modstats[qrt] = updatemodstats(modstats[qrt], allcompnodes[qrt], treebank[id])
 
                             # Determination
-                            detstats[qrt] = updatedetstats(detstats[qrt], allcompnodes[qrt], treebank[i])
+                            detstats[qrt] = updatedetstats(detstats[qrt], allcompnodes[qrt], treebank[id])
 
     newstats: Dict[int, MWEstats] = {}
     for qrt in queryresulttypes:
@@ -454,13 +454,14 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     displaystats('Determination', detstats, allcompnodes, outfile)
 
 
-def updatedetstats(detstats, allcompnodes, tree):
+def updatedetstats(detstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree) -> MWEcsv:
     for compnode in allcompnodes:
         comprel = gav(compnode, 'rel')
         complemma = gav(compnode, 'lemma')
         if comprel == 'hd':
             compparent = compnode.getparent()
-            detnodes = [child for child in compparent if isdetnode(child, allcompnodes)]
+            detnodes = [child for child in compparent if isdetnode(child, allcompnodes)] \
+                if compparent is not None else []
             for detnode in detnodes:
                 detnodecat = getposcat(detnode)
                 detnoderel = gav(detnode, 'rel')
@@ -478,13 +479,14 @@ def updatedetstats(detstats, allcompnodes, tree):
     return detstats
 
 
-def updatemodstats(modstats: MWEcsv, allcompnodes, tree):
+def updatemodstats(modstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree) -> MWEcsv:
     for compnode in allcompnodes:
         comprel = gav(compnode, 'rel')
         complemma = gav(compnode, 'lemma')
         if comprel == 'hd':
             compparent = compnode.getparent()
-            modnodes = [child for child in compparent if ismodnode(child, allcompnodes)]
+            modnodes = [child for child in compparent if ismodnode(child, allcompnodes)] \
+                if compparent is not None else []
             for modnode in modnodes:
                 modnodecat = getposcat(modnode)
                 modnoderel = gav(modnode, 'rel')

@@ -3,9 +3,11 @@ import copy
 import unittest
 from zipfile import ZipFile
 from lxml import etree
+from typing import cast, Dict, List
 from mwe_query.mwestats import getcompsxpaths, getargnodes, getheads, getposcat, showframe, sortframe, ismodnode, showrelcat, \
     isdetnode, displaystats, displayfullstats, getstats, gettreebank, removeud, MWEcsv, outsep, getnodeyield
 from sastadev.treebankfunctions import getattval as gav, getyieldstr, getheadof, getstree
+from sastadev.sastatypes import SynTree
 from mwe_query.canonicalform import generatemwestructures, expandnonheadwords, generatequeries, applyqueries, listofsets2setoflists
 from collections import defaultdict
 from mwe_query.gramconfig import  getgramconfigstats, gramconfigheader
@@ -86,34 +88,36 @@ class TextMweState(unittest.TestCase):
         
         self.assertEqual(output, expected)
         
-    def test_1(self):
-        self.check_1('ontspringen', 1, 'iemand zal de dans ontspringen')
-        self.check_1('hartbreken', 2, 'iemand zal iemands hart breken')
+    def test_match_canonical(self):
+        """Tests whether the MWE will match the canonical form.
+        """
+        self.check_match_canonical('ontspringen', 1, 'iemand zal de dans ontspringen')
+        self.check_match_canonical('hartbreken', 2, 'iemand zal iemands hart breken')
 
-    def check_1(self, name: str, tree_index: int, mwe: str):
+    def check_match_canonical(self, name: str, tree_index: int, mwe: str):
         filename = f'test1_{name}.txt'
         test1_output = self.output_path(filename)
         with open(test1_output, 'w', encoding='utf-8') as outfile:            
             tree = etree.fromstring(streestrings[tree_index])
-            treebank = {tree.xpath(sentencexpath)[0]: tree}
+            treebank: Dict[str, SynTree] = {sentencexpath: tree}
             mwestructures = generatemwestructures(mwe)
-            allcompnodes = []
-            mweparse = mwestructures[0]      # ad hoc must be adpated later
+            mweparse = mwestructures[0]      # ad hoc must be adapted later
             xpathexprs = getcompsxpaths(mweparse)
             mwequery, nearmissquery, supersetquery = generatequeries(mwe)
             queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery)
-            for i, resultlist in queryresults.items():
+            for id, resultlist in queryresults.items():
                 resultcount = 0
                 for (mwenodes, nearmissnodes, supersetnodes) in resultlist:
                     resultcount += 1
                     for mwenode in mwenodes:
+                        allcompnodes: List[SynTree] = []
                         #etree.dump(mwenode)
                         for xpathexpr in xpathexprs:
                             compnodes = mwenode.xpath(xpathexpr)
-                            allcompnodes += compnodes
+                            allcompnodes += cast(List[SynTree], compnodes)
 
                         print(f'MWE={mwe}', file=outfile)
-                        sentence = treebank[i].xpath(sentencexpath)[0]
+                        sentence = cast(List[SynTree], treebank[id].xpath(sentencexpath))[0]
                         print(f'sentence={sentence}', file=outfile)
                         print(f'resultcount={resultcount}', file=outfile)
                         print('MWE components:', file=outfile)
@@ -196,7 +200,7 @@ class TextMweState(unittest.TestCase):
                             #print('Arguments:')
                             argframe = []
                             for rellist, argnode in argnodes:
-                                basicrel =  gav(argnode, 'rel')
+                                basicrel = gav(argnode, 'rel')
                                 rel = slash.join(rellist + [basicrel])
                                 poscat = getposcat(argnode)
                                 argframe.append((rel, poscat))
@@ -254,8 +258,6 @@ class TextMweState(unittest.TestCase):
                                             detheadposcat = getposcat(dethead)
                                             detstats[complemma][detnoderel][detnodecat][detheadlemma][detheadword][detfringe] += 1
 
-
-
             print('\nMWE Components:')
             for comp, count in compliststats.items():
                 print(f'{comp}: {count}')
@@ -285,7 +287,6 @@ class TextMweState(unittest.TestCase):
 
             displaystats('Determination', detstats, allcompnodes, None)
 
-
     def test_full_mwe_stats_dansontspringena(self):
         self.prepare_data()
         self.check_full_mwe_stats('dansontspringena', 'iemand zal de dans ontspringen')
@@ -295,13 +296,11 @@ class TextMweState(unittest.TestCase):
         dotbfolder = self.data_path('mwetreebanks', treebank_name)
         rawtreebankfilenames = os.listdir(dotbfolder)
         selcond = lambda _: True
-        treebankfilenames = [os.path.join(dotbfolder,fn) for fn in rawtreebankfilenames if fn[-4:] == '.xml' and selcond(fn)]
+        treebankfilenames = [os.path.join(dotbfolder, fn) for fn in rawtreebankfilenames if fn[-4:] == '.xml' and selcond(fn)]
         treebank = gettreebank(treebankfilenames)
-        
+
         mwestructures = generatemwestructures(mwe)
-        allcompnodes = []
         for i, mweparse in enumerate(mwestructures):
-            xpathexprs = getcompsxpaths(mweparse)
             mwequery, nearmissquery, supersetquery = generatequeries(mwe)
             queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
@@ -309,7 +308,7 @@ class TextMweState(unittest.TestCase):
 
             filename = f'full_mwe_stats_{treebank_name}_{i}.txt'
             outputfilename = self.output_path(filename)
-            
+
             with open(outputfilename, 'w', encoding='utf8') as outfile:
 
                 displayfullstats(fullmwestats.mwestats, outfile, header='*****MWE statistics*****')
@@ -318,12 +317,9 @@ class TextMweState(unittest.TestCase):
 
             self.check_output(filename)
 
-
-
     def test_gramchains(self):
         self.check_gramchains('dansontspringena')
         self.check_gramchains('hartbreken')
-
 
     def check_gramchains(self, treebank_name: str):
         self.prepare_data()
@@ -333,7 +329,7 @@ class TextMweState(unittest.TestCase):
         selcond = lambda _: True
 
         treebankfilenames = [os.path.join(dotbfolder, fn) for fn in rawtreebankfilenames if
-                            fn[-4:] == '.xml' and selcond(fn)]
+                             fn[-4:] == '.xml' and selcond(fn)]
         treebank = gettreebank(treebankfilenames)
 
         componentslist = [['hart', 'breken'], ['de', 'dans', 'ontspringen']]

@@ -12,7 +12,5 @@ resultcount=2
 MWE components:
 4: hart
 5: breken
-4: hart
-5: breken
 Arguments:
 su: head=iemand, phrase=iemand
