@@ -1,0 +1,18 @@
+MWE=iemand zal iemands hart breken
+sentence=iemand zal iemands hart breken
+resultcount=1
+MWE components:
+4: hart
+5: breken
+Arguments:
+su: head=iemand, phrase=iemand
+MWE=iemand zal iemands hart breken
+sentence=iemand zal iemands hart breken
+resultcount=2
+MWE components:
+4: hart
+5: breken
+4: hart
+5: breken
+Arguments:
+su: head=iemand, phrase=iemand

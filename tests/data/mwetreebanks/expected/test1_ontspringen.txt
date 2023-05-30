@@ -1,0 +1,21 @@
+MWE=iemand zal de dans ontspringen
+sentence=iemand zal de dans ontspringen
+resultcount=1
+MWE components:
+3: de
+4: dans
+5: ontspringen
+Arguments:
+su: head=iemand, phrase=iemand
+MWE=iemand zal de dans ontspringen
+sentence=iemand zal de dans ontspringen
+resultcount=2
+MWE components:
+3: de
+4: dans
+5: ontspringen
+3: de
+4: dans
+5: ontspringen
+Arguments:
+su: head=iemand, phrase=iemand

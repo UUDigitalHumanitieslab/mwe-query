@@ -38,8 +38,25 @@ streestrings[1] = """
 </alpino_ds>
 
 """
-
-strees = {i: etree.fromstring(streestrings[i]) for i in streestrings}
+streestrings[2] = """
+<alpino_ds version="1.3">
+  <node begin="0" cat="top" end="5" id="0" rel="top">
+    <node begin="0" cat="smain" end="5" id="1" rel="--">
+      <node begin="0" end="1" frame="noun(de,count,sg)" gen="de" getal="ev" id="2" index="1" lcat="np" lemma="iemand" naamval="stan" num="sg" pdtype="pron" persoon="3p" pos="noun" postag="VNW(onbep,pron,stan,vol,3p,ev)" pt="vnw" rel="su" rnum="sg" root="iemand" sense="iemand" status="vol" vwtype="onbep" word="iemand"/>
+      <node begin="1" end="2" frame="verb(hebben,modal_not_u,aux(inf))" id="3" infl="modal_not_u" lcat="smain" lemma="zullen" pos="verb" postag="WW(pv,tgw,ev)" pt="ww" pvagr="ev" pvtijd="tgw" rel="hd" root="zal" sc="aux(inf)" sense="zal" stype="declarative" tense="present" word="zal" wvorm="pv"/>
+      <node begin="0" cat="inf" end="5" id="4" rel="vc">
+        <node begin="0" end="1" id="5" index="1" rel="su"/>
+        <node begin="2" cat="np" end="4" id="6" rel="obj1">
+          <node begin="2" end="3" frame="determiner(pron)" getal="ev" id="7" infl="pron" lcat="detp" lemma="iemand" naamval="stan" pdtype="pron" persoon="3p" pos="det" postag="VNW(onbep,pron,stan,vol,3p,ev)" pron="true" pt="vnw" rel="det" root="iemand" sense="iemand" status="vol" vwtype="onbep" word="iemands"/>
+          <node begin="3" end="4" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="8" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart"/>
+        </node>
+        <node begin="4" buiging="zonder" end="5" frame="verb(hebben,inf,transitive)" id="9" infl="inf" lcat="inf" lemma="breken" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="breek" sc="transitive" sense="breek" word="breken" wvorm="inf"/>
+      </node>
+    </node>
+  </node>
+  <sentence sentid="zin">iemand zal iemands hart breken</sentence>
+</alpino_ds>
+"""
 
 
 
@@ -60,48 +77,62 @@ class TextMweState(unittest.TestCase):
         with ZipFile(self.data_path("mwetreebanks", "hartbreken.zip")) as hartbreken:
             hartbreken.extractall(path=self.data_path("mwetreebanks", "hartbreken"))
 
-    def test1(self):
-        test1_output = self.output_path('test1.txt')
-        with open(test1_output, 'w', encoding='utf-8') as outfile:
-            mwes = ['iemand zal de dans ontspringen']
-            treebank = {tree.xpath(sentencexpath)[0]: tree for _, tree in strees.items()}
-            for mwe in mwes:
-                mwestructures = generatemwestructures(mwe)
-                allcompnodes = []
-                mweparse = mwestructures[0]      # ad hoc must be adpated later
-                xpathexprs = getcompsxpaths(mweparse)
-                mwequery, nearmissquery, supersetquery = generatequeries(mwe)
-                queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery)
-                for i, resultlist in queryresults.items():
-                    resultcount = 0
-                    for (mwenodes, nearmissnodes, supersetnodes) in resultlist:
-                        resultcount += 1
-                        for mwenode in mwenodes:
-                            #etree.dump(mwenode)
-                            for xpathexpr in xpathexprs:
-                                compnodes = mwenode.xpath(xpathexpr)
-                                allcompnodes += compnodes
+    def check_output(self, filename: str):
+        with open(self.output_path(filename), encoding='utf-8') as f:
+            output = f.read()
 
-                            print(f'MWE={mwe}', file=outfile)
-                            sentence = treebank[i].xpath(sentencexpath)[0]
-                            print(f'sentence={sentence}', file=outfile)
-                            print(f'resultcount={resultcount}', file=outfile)
-                            print('MWE components:', file=outfile)
-                            for compnode in allcompnodes:
-                                word = gav(compnode, 'word')
-                                pos = gav(compnode, 'end')
-                                print(f'{pos}: {word}', file=outfile)
+        with open(self.expected_path(filename), encoding='utf-8') as f:
+            expected = f.read()
+        
+        self.assertEqual(output, expected)
+        
+    def test_1(self):
+        self.check_1('ontspringen', 1, 'iemand zal de dans ontspringen')
+        self.check_1('hartbreken', 2, 'iemand zal iemands hart breken')
 
-                            argnodes = getargnodes(mwenode, allcompnodes)
+    def check_1(self, name: str, tree_index: int, mwe: str):
+        filename = f'test1_{name}.txt'
+        test1_output = self.output_path(filename)
+        with open(test1_output, 'w', encoding='utf-8') as outfile:            
+            tree = etree.fromstring(streestrings[tree_index])
+            treebank = {tree.xpath(sentencexpath)[0]: tree}
+            mwestructures = generatemwestructures(mwe)
+            allcompnodes = []
+            mweparse = mwestructures[0]      # ad hoc must be adpated later
+            xpathexprs = getcompsxpaths(mweparse)
+            mwequery, nearmissquery, supersetquery = generatequeries(mwe)
+            queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery)
+            for i, resultlist in queryresults.items():
+                resultcount = 0
+                for (mwenodes, nearmissnodes, supersetnodes) in resultlist:
+                    resultcount += 1
+                    for mwenode in mwenodes:
+                        #etree.dump(mwenode)
+                        for xpathexpr in xpathexprs:
+                            compnodes = mwenode.xpath(xpathexpr)
+                            allcompnodes += compnodes
 
-                            print('Arguments:', file=outfile)
-                            for _, argnode in argnodes:
-                                rel = gav(argnode, 'rel')
-                                fringe = getyieldstr(argnode)
-                                hdnode = getheadof(argnode)
-                                hdword = gav(hdnode, 'word')
+                        print(f'MWE={mwe}', file=outfile)
+                        sentence = treebank[i].xpath(sentencexpath)[0]
+                        print(f'sentence={sentence}', file=outfile)
+                        print(f'resultcount={resultcount}', file=outfile)
+                        print('MWE components:', file=outfile)
+                        for compnode in allcompnodes:
+                            word = gav(compnode, 'word')
+                            pos = gav(compnode, 'end')
+                            print(f'{pos}: {word}', file=outfile)
 
-                                print(f'{rel}: head={hdword}, phrase={fringe}', file=outfile)
+                        argnodes = getargnodes(mwenode, allcompnodes)
+
+                        print('Arguments:', file=outfile)
+                        for _, argnode in argnodes:
+                            rel = gav(argnode, 'rel')
+                            fringe = getyieldstr(argnode)
+                            hdnode = getheadof(argnode)
+                            hdword = gav(hdnode, 'word')
+
+                            print(f'{rel}: head={hdword}, phrase={fringe}', file=outfile)
+        self.check_output(filename)
 
     @unittest.skip("obsolete?")
     def test2(self):
@@ -255,66 +286,65 @@ class TextMweState(unittest.TestCase):
             displaystats('Determination', detstats, allcompnodes, None)
 
 
-    def test_full_mwe_stats(self):
+    def test_full_mwe_stats_dansontspringena(self):
         self.prepare_data()
-        dotbfolder = self.data_path('mwetreebanks', 'dansontspringena')
-        #dotbfolder = self.data_path('mwetreebanks', 'hartbreken')
+        self.check_full_mwe_stats('dansontspringena', 'iemand zal de dans ontspringen')
+        self.check_full_mwe_stats('hartbreken', 'iemand zal iemands hart breken')
+
+    def check_full_mwe_stats(self, treebank_name: str, mwe: str):
+        dotbfolder = self.data_path('mwetreebanks', treebank_name)
         rawtreebankfilenames = os.listdir(dotbfolder)
         selcond = lambda _: True
-        #selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'
-        #selcond = lambda x: x == 'WR-P-P-G__part00788_3A_3AWR-P-P-G-0000361564.p.1.s.4.xml'
-        #selcond = lambda x: x == 'WR-P-P-G__part00012_3A_3AWR-P-P-G-0000006175.p.6.s.3.xml'
         treebankfilenames = [os.path.join(dotbfolder,fn) for fn in rawtreebankfilenames if fn[-4:] == '.xml' and selcond(fn)]
         treebank = gettreebank(treebankfilenames)
-        mwes = ['iemand zal de dans ontspringen']
-        #mwes = ['iemand zal iemands hart breken']
-        for mwe in mwes:
-            mwestructures = generatemwestructures(mwe)
-            allcompnodes = []
-            for mweparse in mwestructures:
-                xpathexprs = getcompsxpaths(mweparse)
-                mwequery, nearmissquery, supersetquery = generatequeries(mwe)
-                queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
+        
+        mwestructures = generatemwestructures(mwe)
+        allcompnodes = []
+        for i, mweparse in enumerate(mwestructures):
+            xpathexprs = getcompsxpaths(mweparse)
+            mwequery, nearmissquery, supersetquery = generatequeries(mwe)
+            queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
-                fullmwestats = getstats(mwe, queryresults, treebank)
+            fullmwestats = getstats(mwe, queryresults, treebank)
 
-                outputfilename = self.output_path('full_mwe_stats.txt')
-                with open(outputfilename, 'w', encoding='utf8') as outfile:
+            filename = f'full_mwe_stats_{treebank_name}_{i}.txt'
+            outputfilename = self.output_path(filename)
+            
+            with open(outputfilename, 'w', encoding='utf8') as outfile:
 
-                    displayfullstats(fullmwestats.mwestats, outfile, header='*****MWE statistics*****')
-                    displayfullstats(fullmwestats.nearmissstats, outfile, header='*****Near-miss statistics*****')
-                    displayfullstats(fullmwestats.diffstats, outfile, header='*****Near-miss - MWE statistics*****')
+                displayfullstats(fullmwestats.mwestats, outfile, header='*****MWE statistics*****')
+                displayfullstats(fullmwestats.nearmissstats, outfile, header='*****Near-miss statistics*****')
+                displayfullstats(fullmwestats.diffstats, outfile, header='*****Near-miss - MWE statistics*****')
+
+            self.check_output(filename)
 
 
 
-    def testgramchains(self):
+    def test_gramchains(self):
+        self.check_gramchains('dansontspringena')
+        self.check_gramchains('hartbreken')
+
+
+    def check_gramchains(self, treebank_name: str):
         self.prepare_data()
-        #dotbfolder = self.data_path('mwetreebanks', 'dansontspringena')
-        dotbfolder = self.data_path('mwetreebanks', 'hartbreken')
+
+        dotbfolder = self.data_path('mwetreebanks', treebank_name)
         rawtreebankfilenames = os.listdir(dotbfolder)
         selcond = lambda _: True
-        # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'
-        # selcond = lambda x: x == 'WR-P-P-G__part00788_3A_3AWR-P-P-G-0000361564.p.1.s.4.xml'
-        # selcond = lambda x: x == 'WR-P-P-G__part00012_3A_3AWR-P-P-G-0000006175.p.6.s.3.xml'
-        #selcond = lambda x: x == 'WR-P-P-G_part00001__WR-P-P-G-0000000166.p.6.s.2.xml'
+
         treebankfilenames = [os.path.join(dotbfolder, fn) for fn in rawtreebankfilenames if
                             fn[-4:] == '.xml' and selcond(fn)]
         treebank = gettreebank(treebankfilenames)
-        #mwes = ['iemand zal de dans ontspringen']
-        mwes = ['iemand zal iemands hart breken']
+
         componentslist = [['hart', 'breken'], ['de', 'dans', 'ontspringen']]
         gramconfigstatsdata = getgramconfigstats(componentslist, treebank)
         gramconfigstats = MWEcsv(gramconfigheader, gramconfigstatsdata)
 
-        outfilename = self.output_path('gramconfig.txt')
-        with open(outfilename, 'w', encoding='utf8') as outfile:
+        filename = f'gramconfig_{treebank_name}.txt'
+        with open(self.output_path(filename), 'w', encoding='utf8') as outfile:
 
             print(outsep.join(gramconfigstats.header), file=outfile)
             for row in gramconfigstats.data:
                 print(outsep.join(row), file=outfile)
 
-# if __name__ == '__main__':
-#     #test1()
-#     #test2() # should become obsolete
-#     #test3()
-#     testgramchains()
+        self.check_output(filename)
