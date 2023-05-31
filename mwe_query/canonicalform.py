@@ -3,7 +3,7 @@ Methods for parsing annotated canonical forms,
 to generate queries from them and to search using these queries.
 """
 
-from typing import Dict, Iterable, List, Sequence, Optional, Set, Tuple
+from typing import Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
 from sastadev.sastatypes import SynTree
 import re
 import sys
@@ -146,14 +146,16 @@ def tokenize(sentence):
     sentence = re.sub(r'\s+', r' ', sentence)
     return sentence.split()
 
-
-def listofsets2setoflists(listofset):
+T = TypeVar('T')
+def listofsets2setoflists(listofset: Iterable[Iterable[T]]) -> List[List[T]]:
+    resultset: List[List[T]]
     if listofset == []:
         resultset = [[]]
     else:
         resultset = []
-        for el in listofset[0]:
-            tailresults = listofsets2setoflists(listofset[1:])
+        head, *tail = listofset
+        for el in head:
+            tailresults = listofsets2setoflists(tail)
             for tailresult in tailresults:
                 newresult = [el] + tailresult
                 resultset.append(newresult)

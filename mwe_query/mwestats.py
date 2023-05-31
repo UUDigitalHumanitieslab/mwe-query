@@ -309,7 +309,7 @@ def displaystats(label: str, modstats: MWEcsv, allcompnodes, outfile):
 
 
 class MWEstats:
-    def __init__(self, compliststats, argrelcatstats, argframestats, argstats, modstats, detstats, compnodes):
+    def __init__(self, compliststats: MWEcsv, argrelcatstats: MWEcsv, argframestats: MWEcsv, argstats: MWEcsv, modstats: MWEcsv, detstats: MWEcsv, compnodes: List[SynTree]):
         self.compliststats = compliststats
         self.argrelcatstats = argrelcatstats
         self.argframestats = argframestats
@@ -541,12 +541,12 @@ def updateargs(argstats, argrelcatstats, argframestats, argnodes, tree):
     return argstats, argrelcatstats, argframestats
 
 
-def updatecomponents(compcsv, allcompnodes: List[SynTree], mwenode: SynTree, xpathexprs: List[str], tree):
+def updatecomponents(compcsv: MWEcsv, allcompnodes: List[SynTree], mwenode: SynTree, xpathexprs: List[str], tree: SynTree):
     for xpathexpr in xpathexprs:
         compnodes = mwenode.xpath(xpathexpr)
         allcompnodes += cast(Iterable[SynTree], compnodes)
 
-    complist = []
+    complist: List[Tuple[str, str, int]] = []
     for compnode in allcompnodes:
         word = gav(compnode, 'word')
         lemma = gav(compnode, 'lemma')
@@ -570,13 +570,13 @@ def updatecomponents(compcsv, allcompnodes: List[SynTree], mwenode: SynTree, xpa
     return compcsv, allcompnodes
 
 
-def markutt(wlist: List[str], poslist: List[str]):
+def markutt(wlist: List[Tuple[int, str]], poslist: List[int]):
     result: List[str] = []
-    for curword in wlist:
-        if curword in poslist:
-            newword = markword(curword)
+    for pos, word in wlist:
+        if pos in poslist:
+            newword = markword(word)
         else:
-            newword = curword
+            newword = word
         result.append(newword)
     return result
 
@@ -586,15 +586,15 @@ def markword(w: str):
     return result
 
 
-def getmarkedutt(tree: SynTree, poslist):
+def getmarkedutt(tree: SynTree, poslist: List[int]):
     treeyield = getnodeyield(tree)
-    treeyieldstrlist = [gav(node, 'word') for node in treeyield]
+    treeyieldstrlist = [(int(getatt_or_from_parents(node, 'begin', '9999')), gav(node, 'word')) for node in treeyield]
     markedutt = markutt(treeyieldstrlist, poslist)
     markeduttstr = space.join(markedutt)
     return markeduttstr
 
 
-def getwordposlist(node):
+def getwordposlist(node: SynTree):
     wordnodes = getnodeyield(node)
     poslist = [int(gav(n, 'begin')) for n in wordnodes]
     return poslist

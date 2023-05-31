@@ -88,15 +88,15 @@ def contains(node1: Optional[SynTree], node2: Optional[SynTree]) -> bool:
     return False
 
 
-def getgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, SynTree]) -> List[List[Any]]:
-    gramconfigstatsdata = []
+def getgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, SynTree]) -> List[List[str]]:
+    gramconfigstatsdata: List[List[str]] = []
     for treeid in treebank:
         tree = treebank[treeid]
         for components in componentslist:
             componentstuple = tuple(components)
-            componentsnodes = []
+            componentsnodes: List[List[SynTree]] = []
             for component in components:
-                componentnodes = tree.xpath(f'//node[@lemma="{component}"]')
+                componentnodes = cast(List[SynTree], tree.xpath(f'//node[@lemma="{component}"]'))
                 componentsnodes.append(componentnodes)
 
             cnodelists = listofsets2setoflists(componentsnodes)
