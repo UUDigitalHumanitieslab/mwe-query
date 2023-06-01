@@ -63,7 +63,7 @@ streestrings[2] = """
 
 
 
-class TextMweState(unittest.TestCase):
+class TestMweState(unittest.TestCase):
     def data_path(self, *paths):
         return os.path.join(os.path.dirname(__file__), "data", *paths)
     
