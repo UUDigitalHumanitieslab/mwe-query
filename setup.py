@@ -6,7 +6,7 @@ with open('README.md') as file:
 setup(
     name='mwe-query',
     python_requires='>=3.7, <4',
-    version='0.0.1',
+    version='0.0.2',
     description='',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,7 +18,7 @@ setup(
     package_data={"mwe_query": ["py.typed"]},
     zip_safe=True,
     install_requires=[
-        'alpino-query>=2.1.8', 'requests', 'BaseXClient', 'sastadev>=0.0.3'
+        'alpino-query>=2.1.8', 'requests', 'BaseXClient', 'sastadev>=0.0.4'
     ],
     entry_points={
         'console_scripts': [

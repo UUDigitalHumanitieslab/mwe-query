@@ -326,6 +326,104 @@ class FullMWEstats:
         self.diffstats = diffstats
 
 
+class MweHitInfoDetails:
+    def __init__(self, marked_utt: str):
+        self.marked_utt = marked_utt
+
+
+class MweHitComponents(MweHitInfoDetails):
+    def __init__(self, mwe_hit: SynTree, xpath_exprs: Iterable[Xpath], tree: SynTree):
+        (lemmastr, wordstr, markeduttstr), allcompnodes = \
+            updatecomponents(mwe_hit, xpath_exprs, tree)
+        super().__init__(markeduttstr)
+        self.nodes = allcompnodes
+        self.lemma_parts = lemmastr
+        self.word_parts = wordstr
+        self.marked_utt = markeduttstr
+
+
+class MweHitArgumentFrame(MweHitInfoDetails):
+    def __init__(self, frame: Frame, tree: SynTree):
+        self.frame = frame
+        sortedargframe = sortframe(frame)
+        sortedargframe2 = [
+            f'{rel}/{poscat}' for (rel, poscat) in sortedargframe]
+        argframetuple = tuple(sortedargframe2)
+        self.frame_str = '+'.join(argframetuple)
+        marked_utt = getmarkedutt(tree, [])
+
+        super().__init__(marked_utt)
+
+
+class MweHitArgumentHead(MweHitInfoDetails):
+    def __init__(self, rel_cat: 'MweHitArgumentRelCat', hdnode: SynTree):
+        super().__init__(rel_cat.marked_utt)
+
+        if gav(hdnode, 'cat') == 'mwu':
+            hdword = getyieldstr(hdnode)
+            hdlemmalist = [gav(n, 'lemma') for n in getnodeyield(hdnode)]
+            hdlemma = space.join(hdlemmalist)
+        else:
+            hdword = gav(hdnode, 'word')
+            hdlemma = gav(hdnode, 'lemma')
+
+        self.rel = rel_cat.rel
+        self.hdlemma = hdlemma
+        self.hdword = hdword
+        self.fringe = rel_cat.fringe
+        self.marked_utt = rel_cat.marked_utt
+
+
+class MweHitArgumentModification(MweHitInfoDetails):
+    def __init__(self, complemma: str, node_rel: str, node_cat: str, head_pos_cat: str,
+                 head_lemma: str, head_word: str, fringe: str, marked_utt: str):
+        super().__init__(marked_utt)
+        self.complemma = complemma
+        self.node_rel = node_rel
+        self.node_cat = node_cat
+        self.head_pos_cat = head_pos_cat
+        self.head_lemma = head_lemma
+        self.head_word = head_word
+        self.fringe = fringe
+
+
+class MweHitArgumentDeterminations(MweHitInfoDetails):
+    def __init__(self, comp_lemma: str, node_rel: str, node_cat: str, head_pos_cat: str,
+                 head_lemma: str, head_word: str, fringe: str, marked_utt: str):
+        super().__init__(marked_utt)
+        self.comp_lemma = comp_lemma
+        self.node_rel = node_rel
+        self.node_cat = node_cat
+        self.head_pos_cat = head_pos_cat
+        self.head_lemma = head_lemma
+        self.head_word = head_word
+        self.fringe = fringe
+
+
+class MweHitArgumentRelCat(MweHitInfoDetails):
+    def __init__(self, rellist: List[Relation], argnode: SynTree, tree: SynTree):
+        basicrel = gav(argnode, 'rel')
+        self.rel = slash.join(rellist + [basicrel])
+        self.poscat = getposcat(argnode)
+        poslist = getwordposlist(argnode)
+        marked_utt = getmarkedutt(tree, poslist)
+        self.fringe = getyieldstr(argnode)
+        super().__init__(marked_utt)
+
+        hdnodes = getheads(argnode)
+        self.heads: List[MweHitArgumentHead] = []
+        for hdnode in hdnodes:
+            self.heads.append(MweHitArgumentHead(self, hdnode))
+
+
+class MweHitInfo:
+    def __init__(self, mwe_hit: SynTree, xpath_exprs: Iterable[Xpath], tree: SynTree):
+        self.components = MweHitComponents(mwe_hit, xpath_exprs, tree)
+        self.arguments = MweHitArguments(mwe_hit, self.components.nodes, tree)
+        self.modifications = updatemodstats(self.components.nodes, tree)
+        self.determinations = updatedetstats(self.components.nodes, tree)
+
+
 def gettreebank(filenames: List[str]) -> Dict[str, SynTree]:
     results: Dict[str, SynTree] = {}
     for filename in filenames:
@@ -377,29 +475,44 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
             for (mwenodes, nearmissnodes, supersetnodes) in resultlist:
                 resultcount += 1
                 missednodes = [node for node in nearmissnodes if node not in mwenodes]
-                todo = [(mwenodes, mwecompsxpathexprs, cmwe),
+                todo: List[Tuple[NodeSet, List[List[Xpath]], int]] = \
+                       [(mwenodes, mwecompsxpathexprs, cmwe),
                         (nearmissnodes, nearmisscompsxpathexprs, cnearmiss),
                         (missednodes, nearmisscompsxpathexprs, cmissed)]
                 for todonodes, xpathexprslist, qrt in todo:
 
                     for xpathexprs in xpathexprslist:
                         for mwenode in todonodes:
+                            info = MweHitInfo(
+                                mwenode, xpathexprs, treebank[id])
 
                             # MWE Components
-                            allcompnodes[qrt] = []
-                            compliststats[qrt], allcompnodes[qrt] = \
-                                updatecomponents(compliststats[qrt], allcompnodes[qrt], mwenode, xpathexprs, treebank[id])
+                            allcompnodes[qrt] = info.components.nodes
+                            compliststats[qrt].data.append([info.components.lemma_parts,
+                                                            info.components.word_parts,
+                                                            info.components.marked_utt])
 
                             # Arguments
-                            argnodes = getargnodes(mwenode, allcompnodes[qrt])
-                            argstats[qrt], argrelcatstats[qrt], argframestats[qrt] = \
-                                updateargs(argstats[qrt], argrelcatstats[qrt], argframestats[qrt], argnodes, treebank[id])
+                            for head in info.arguments.heads:
+                                argstats[qrt].data.append(
+                                    [head.rel, head.hdlemma, head.hdword, head.fringe, head.marked_utt])
+                            for rel_cat in info.arguments.rel_cats:
+                                argrelcatstats[qrt].data.append(
+                                    [rel_cat.rel, rel_cat.poscat, rel_cat.marked_utt])
+                            argframestats[qrt].data.append(
+                                [info.arguments.frame.frame_str, info.arguments.frame.marked_utt])
 
                             # Modification
-                            modstats[qrt] = updatemodstats(modstats[qrt], allcompnodes[qrt], treebank[id])
+                            for modification in info.modifications:
+                                modstats[qrt].data.append([
+                                    modification.complemma, modification.node_rel, modification.node_cat, modification.head_pos_cat,
+                                    modification.head_lemma, modification.head_word, modification.fringe, modification.marked_utt])
 
                             # Determination
-                            detstats[qrt] = updatedetstats(detstats[qrt], allcompnodes[qrt], treebank[id])
+                            for determination in info.determinations:
+                                detstats[qrt].data.append([
+                                    determination.comp_lemma, determination.node_rel, determination.node_cat, determination.head_pos_cat,
+                                    determination.head_lemma, determination.head_word, determination.fringe, determination.marked_utt])
 
     newstats: Dict[int, MWEstats] = {}
     for qrt in queryresulttypes:
@@ -454,7 +567,8 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     displaystats('Determination', detstats, allcompnodes, outfile)
 
 
-def updatedetstats(detstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree) -> MWEcsv:
+def updatedetstats(allcompnodes: List[SynTree], tree: SynTree) -> List[MweHitArgumentDeterminations]:
+    detstats: List[MweHitArgumentDeterminations] = []
     for compnode in allcompnodes:
         comprel = gav(compnode, 'rel')
         complemma = gav(compnode, 'lemma')
@@ -473,13 +587,14 @@ def updatedetstats(detstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree)
                     detheadlemma = gav(dethead, 'lemma')
                     detheadword = gav(dethead, 'word')
                     detheadposcat = getposcat(dethead)
-                    newentry = [complemma, detnoderel, detnodecat, detheadposcat,
-                                detheadlemma, detheadword, detfringe, markeduttstr]
-                    detstats.data.append(newentry)
+                    newentry = MweHitArgumentDeterminations(complemma, detnoderel, detnodecat, detheadposcat,
+                                                            detheadlemma, detheadword, detfringe, markeduttstr)
+                    detstats.append(newentry)
     return detstats
 
 
-def updatemodstats(modstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree) -> MWEcsv:
+def updatemodstats(allcompnodes: List[SynTree], tree: SynTree) -> List[MweHitArgumentModification]:
+    modstats: List[MweHitArgumentModification] = []
     for compnode in allcompnodes:
         comprel = gav(compnode, 'rel')
         complemma = gav(compnode, 'lemma')
@@ -498,50 +613,29 @@ def updatemodstats(modstats: MWEcsv, allcompnodes: List[SynTree], tree: SynTree)
                     modheadlemma = gav(modhead, 'lemma')
                     modheadword = gav(modhead, 'word')
                     modheadposcat = getposcat(modhead)
-                    newentry = [complemma, modnoderel, modnodecat, modheadposcat,
-                                modheadlemma, modheadword, modfringe, markeduttstr]
-                    modstats.data.append(newentry)
+                    newentry = MweHitArgumentModification(complemma, modnoderel, modnodecat, modheadposcat,
+                                                          modheadlemma, modheadword, modfringe, markeduttstr)
+                    modstats.append(newentry)
     return modstats
 
 
-def updateargs(argstats, argrelcatstats, argframestats, argnodes, tree):
-    argframe = []
-    for rellist, argnode in argnodes:
-        basicrel = gav(argnode, 'rel')
-        rel = slash.join(rellist + [basicrel])
-        poscat = getposcat(argnode)
-        argframe.append((rel, poscat))
-        poslist = getwordposlist(argnode)
-        markeduttstr = getmarkedutt(tree, poslist)
+class MweHitArguments:
+    def __init__(self, mwe_hit: SynTree, component_nodes: List[SynTree], tree: SynTree):
+        argnodes = getargnodes(mwe_hit, component_nodes)
+        argframe: Frame = []
+        self.heads: List[MweHitArgumentHead] = []
+        self.rel_cats: List[MweHitArgumentRelCat] = []
+        for rellist, argnode in argnodes:
+            newargrelcatstat = MweHitArgumentRelCat(rellist, argnode, tree)
+            argframe.append((newargrelcatstat.rel, newargrelcatstat.poscat))
+            self.rel_cats.append(newargrelcatstat)
+            self.heads += newargrelcatstat.heads
 
-        newargrelcatstat = [rel, poscat, markeduttstr]
-        argrelcatstats.data.append(newargrelcatstat)
-        argfringe = getyieldstr(argnode)
-        hdnodes = getheads(argnode)
-        for hdnode in hdnodes:
-            if gav(hdnode, 'cat') == 'mwu':
-                hdword = getyieldstr(hdnode)
-                hdlemmalist = [gav(n, 'lemma') for n in getnodeyield(hdnode)]
-                hdlemma = space.join(hdlemmalist)
-            else:
-                hdword = gav(hdnode, 'word')
-                hdlemma = gav(hdnode, 'lemma')
-            newargstat = [rel, hdlemma, hdword, argfringe, markeduttstr]
-            argstats.data.append(newargstat)
-
-    sortedargframe = sortframe(argframe)
-    sortedargframe2 = [f'{rel}/{poscat}' for (rel, poscat) in sortedargframe]
-    argframetuple = tuple(sortedargframe2)
-    argframetuplestr = '+'.join(argframetuple)
-    markeduttstr = getmarkedutt(tree, [])
-    newargframestat = [argframetuplestr, markeduttstr]
-    argframestats.data.append(newargframestat)
-    # print(f'{rel}: head={hdword}, phrase={fringe}')
-
-    return argstats, argrelcatstats, argframestats
+        self.frame = MweHitArgumentFrame(argframe, tree)
 
 
-def updatecomponents(compcsv: MWEcsv, allcompnodes: List[SynTree], mwenode: SynTree, xpathexprs: List[str], tree: SynTree):
+def updatecomponents(mwenode: SynTree, xpathexprs: Iterable[str], tree: SynTree):
+    allcompnodes: List[SynTree] = []
     for xpathexpr in xpathexprs:
         compnodes = mwenode.xpath(xpathexpr)
         allcompnodes += cast(Iterable[SynTree], compnodes)
@@ -563,11 +657,9 @@ def updatecomponents(compcsv: MWEcsv, allcompnodes: List[SynTree], mwenode: SynT
 
     markeduttstr = getmarkedutt(tree, poslist)
 
-    newentry = [lemmastr, wordstr, markeduttstr]
+    newentry = (lemmastr, wordstr, markeduttstr)
 
-    compcsv.data.append(newentry)
-
-    return compcsv, allcompnodes
+    return newentry, allcompnodes
 
 
 def markutt(wlist: List[Tuple[int, str]], poslist: List[int]):

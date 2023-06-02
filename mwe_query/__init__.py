@@ -3,9 +3,11 @@ __author__ = 'marti'
 import re
 from alpino_query import parse_sentence  # type: ignore
 from copy import deepcopy
-from typing import cast, Dict, List, Optional
+from typing import cast, Dict, Iterable, List, Optional
+from sastadev.sastatypes import SynTree
 import time
 from .basex_query import list_databases, perform_xpath
+from .mwestats import MweHitInfo
 import os
 import xml.etree.ElementTree as ET
 
@@ -104,10 +106,13 @@ class Mwe:
         self.parsed = ET.fromstring(alpino_xml)
 
     def generate_queries(self) -> List['MweQuery']:  # noqa: C901
-        """_summary_
+        """Generates the MWE, near-miss and superset queries
+
+        Raises:
+            ValueError: unexpected parse structure
 
         Returns:
-            _type_: _description_
+            List[MweQuery]: list containing three queries
         """
         # expand index nodes in parse
         mwe = expand_index_nodes(self.parsed)
@@ -331,6 +336,21 @@ def expand_index_nodes(sentence: ET.Element, index_dict: Optional[Dict[str, ET.E
             for i, c in enumerate(expanded_index):
                 node.append(c)
     return sentence
+
+
+def analyze_mwe_hit(hit: SynTree, queries: Iterable[MweQuery], tree: SynTree) -> MweHitInfo:
+    """Analyses a match found by applying an MWE query on a treebank.
+
+    Args:
+        hit (SynTree): contains the node which matched
+        queries (Iterable[MweQuery]): query objects which were used for searching
+        tree (SynTree): entire utterance tree
+
+    Returns:
+        MweHitInfo: information describing the properties of the found expression
+    """
+    xpaths = (query.xpath for query in queries)
+    return MweHitInfo(hit, xpaths, tree)
 
 
 def main():
