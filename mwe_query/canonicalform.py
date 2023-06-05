@@ -146,7 +146,10 @@ def tokenize(sentence):
     sentence = re.sub(r'\s+', r' ', sentence)
     return sentence.split()
 
+
 T = TypeVar('T')
+
+
 def listofsets2setoflists(listofset: Iterable[Iterable[T]]) -> List[List[T]]:
     resultset: List[List[T]]
     if listofset == []:

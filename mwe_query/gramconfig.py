@@ -1,4 +1,4 @@
-from typing import cast, Any, Dict, List, Optional
+from typing import cast, Dict, List, Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
 from .canonicalform import listofsets2setoflists

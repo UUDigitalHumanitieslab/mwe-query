@@ -476,9 +476,9 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
                 resultcount += 1
                 missednodes = [node for node in nearmissnodes if node not in mwenodes]
                 todo: List[Tuple[NodeSet, List[List[Xpath]], int]] = \
-                       [(mwenodes, mwecompsxpathexprs, cmwe),
-                        (nearmissnodes, nearmisscompsxpathexprs, cnearmiss),
-                        (missednodes, nearmisscompsxpathexprs, cmissed)]
+                    [(mwenodes, mwecompsxpathexprs, cmwe),
+                     (nearmissnodes, nearmisscompsxpathexprs, cnearmiss),
+                     (missednodes, nearmisscompsxpathexprs, cmissed)]
                 for todonodes, xpathexprslist, qrt in todo:
 
                     for xpathexprs in xpathexprslist:
