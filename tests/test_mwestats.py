@@ -340,7 +340,9 @@ class TestMweState(unittest.TestCase):
         with open(self.output_path(filename), 'w', encoding='utf8') as outfile:
 
             print(outsep.join(gramconfigstats.header), file=outfile)
-            for row in gramconfigstats.data:
-                print(outsep.join(row), file=outfile)
+            rows = list(outsep.join(row).strip() for row in gramconfigstats.data)
+            rows.sort()
+            for row in rows:
+                print(row, file=outfile)
 
         self.check_output(filename)

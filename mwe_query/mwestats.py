@@ -1,4 +1,4 @@
-from typing import cast, Dict, Iterable, List, Tuple
+from typing import cast, Dict, IO, Iterable, List, Tuple
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, getheadof, getyieldstr
 from .canonicalform import tree2xpath, mknearmissstructs, listofsets2setoflists, NodeSet
@@ -301,11 +301,13 @@ def isdetnode(node: SynTree, compnodes: List[SynTree]) -> bool:
     return result
 
 
-def displaystats(label: str, modstats: MWEcsv, allcompnodes, outfile):
+def displaystats(label: str, modstats: MWEcsv, outfile: IO):
     print(f'\n{label}:', file=outfile)
     print(outsep.join(modstats.header), file=outfile)
-    for row in modstats.data:
-        print(outsep.join(row), file=outfile)
+    rows = list(outsep.join(row).strip() for row in modstats.data)
+    rows.sort()
+    for row in rows:
+        print(row, file=outfile)
 
 
 class MWEstats:
@@ -532,39 +534,48 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     print('\nMWE Components:', file=outfile)
     headerstr = outsep.join(compliststats.header)
     print(headerstr, file=outfile)
+    rows: List[str] = []
     for clemmas, cwords, utt in compliststats.data:
+        rows.append(f'{clemmas}: {cwords}: {utt}'.strip())
+        
+    rows.sort()
+
+    for row in rows:
         print(f'{clemmas}: {cwords}: {utt}', file=outfile)
 
     argstats = stats.argstats
     print('\nArguments:', file=outfile)
     headerstr = outsep.join(argstats.header)
     print(headerstr, file=outfile)
-    for row in argstats.data:
-        rowstr = outsep.join(row)
-        print(rowstr, file=outfile)
+    rows = list(outsep.join(row).strip() for row in argstats.data)
+    rows.sort()
+    for row in rows:
+        print(row, file=outfile)
 
     argrelcatstats = stats.argrelcatstats
     print('\nArguments by relation and category:', file=outfile)
     headerstr = outsep.join(argrelcatstats.header)
     print(headerstr, file=outfile)
-    for row in argrelcatstats.data:
-        rowstr = outsep.join(row)
-        print(rowstr, file=outfile)
+    rows = list(outsep.join(row).strip() for row in argrelcatstats.data)
+    rows.sort()
+    for row in rows:
+        print(row, file=outfile)
 
     argframestats = stats.argframestats
     print('\nArgument frames:', file=outfile)
     headerstr = outsep.join(argframestats.header)
     print(headerstr, file=outfile)
-    for row in argframestats.data:
-        rowstr = outsep.join(row)
-        print(rowstr, file=outfile)
+    rows = list(outsep.join(row).strip() for row in argframestats.data)
+    rows.sort()
+    for row in rows:
+        print(row, file=outfile)
 
     allcompnodes = stats.compnodes
     modstats = stats.modstats
-    displaystats('Modification', modstats, allcompnodes, outfile)
+    displaystats('Modification', modstats, outfile)
 
     detstats = stats.detstats
-    displaystats('Determination', detstats, allcompnodes, outfile)
+    displaystats('Determination', detstats, outfile)
 
 
 def updatedetstats(allcompnodes: List[SynTree], tree: SynTree) -> List[MweHitArgumentDeterminations]:
