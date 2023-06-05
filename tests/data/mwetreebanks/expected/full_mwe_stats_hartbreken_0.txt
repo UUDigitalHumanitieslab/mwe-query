@@ -4,48 +4,48 @@
 
 MWE Components:
 clemmas:cwords:utt
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
-breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .                          
+breken;hart: brak;hart: " Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het <b>brak</b> mijn <b>hart</b> om ze te missen . ''
+breken;hart: brak;hart: Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier <b>hart</b> hij <b>brak</b> toen hij een relatie begon met Kate Moss .
+breken;hart: brak;hart: Dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: brak;hart: De kleine David <b>brak</b> meteen haar <b>hart</b> .
+breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .
+breken;hart: brak;hart: Het <b>brak</b> ons <b>hart</b> dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+breken;hart: brak;hart: Ik moet bekennen , dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: brak;hart: ` Hij beging een misstap die haar <b>hart</b> <b>brak</b> .
+breken;hart: braken;hart: " Ik wou dat hij en de mannen die mijn en jullie <b>hart</b> <b>braken</b> , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+breken;hart: breek;hart: Ik <b>breek</b> nooit iemands <b>hart</b> . "
+breken;hart: breekt;hart: " Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: " Het <b>breekt</b> mijn <b>hart</b> als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+breken;hart: breekt;hart: ' Het is walgelijk en wat die mannen heben gedaan <b>breekt</b> mijn <b>hart</b> ' , zegt zij .
+breken;hart: breekt;hart: Als die dan zijn <b>hart</b> <b>breekt</b> , wordt hij pas echt James Bond . "
+breken;hart: breekt;hart: Daarmee <b>breekt</b> Neko Case je <b>hart</b> , terwijl ze tegelijk je wil beheerst .
+breken;hart: breekt;hart: Dat <b>breekt</b> mijn <b>hart</b> en sloopt mijn gezondheid .
+breken;hart: breekt;hart: Het <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> ons <b>hart</b> , want het baby'tje hoort ook bij ons.»
+breken;hart: breekt;hart: In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het <b>breekt</b> ons <b>hart</b> en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+breken;hart: breekt;hart: Verhuizen is hetzelfde als een verhouding hebben , maar " je <b>breekt</b> er niemands <b>hart</b> mee .
+breken;hart: breekt;hart: Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn <b>hart</b> <b>breekt</b> .
+breken;hart: breekt;hart: Ze dramatiseert niets , houdt de toon licht , en juist dat <b>breekt</b> je <b>hart</b> .
+breken;hart: breekt;hart»: «Wat de kinderen nu overkomt , <b>breekt</b> mijn <b>hart»</b> , vervolgt Wims moeder .
+breken;hart: breken;hart: De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes <b>breken</b> Johnny's <b>hart</b> .
+breken;hart: breken;hart: Harry Potter krijgt een vriendinnetje , en ze zal zijn <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Het onderzoek , dat de titel Een gezonde economie kan je <b>hart</b> <b>breken</b> meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+breken;hart: breken;hart: Ik heb hem gedumpt voor hij mijn <b>hart</b> kon <b>breken</b> .
+breken;hart: breken;hart: Ik wil niemands <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Koeznetsova kon dat <b>hart</b> niet <b>breken</b> .
+breken;hart: breken;hart: Vechten tegen elkaar zou haar <b>hart</b> <b>breken</b> " , legt Vitali dat uit .
+breken;hart: breken;hart: Ze wil haar <b>hart</b> niet nog een keer <b>breken</b> en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken;hart: gebroken.»;hart: Tom Schipper zijn <b>hart</b> heeft men bij Wilrijk op het einde van vorig seizoen <b>gebroken.»</b>
+breken;hart: gebroken;hart: " Dat nieuwsbericht heeft echt mijn <b>hart</b> <b>gebroken</b> " , bekent Proper-Sheppard .
+breken;hart: gebroken;hart: ' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn <b>hart</b> <b>gebroken</b> had .
+breken;hart: gebroken;hart: ' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn <b>hart</b> heeft <b>gebroken</b> ' , schrijft Ellen van de Graaf aan haar clientèle .
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn <b>hart</b> had <b>gebroken</b> , maar na twee weken was ik bereid hem te ontmoeten .
+breken;hart: gebroken;hart: Nelly's <b>hart</b> wordt <b>gebroken</b> wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood is .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken;hart: gebroken;hart: Zeven jaar geleden heeft ze zijn <b>hart</b> <b>gebroken</b> , nu wil ze hem terug .
 
 Arguments:
 rel:arglemma:argword:arg:utt
@@ -323,69 +323,69 @@ hart:det:detp:vnw:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart ge
 
 MWE Components:
 clemmas:cwords:utt
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
+breken;hart: brak;hart: " Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het <b>brak</b> mijn <b>hart</b> om ze te missen . ''
+breken;hart: brak;hart: Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier <b>hart</b> hij <b>brak</b> toen hij een relatie begon met Kate Moss .
+breken;hart: brak;hart: Dat <b>brak</b> het <b>hart</b> van haar moeder .
+breken;hart: brak;hart: Dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: brak;hart: De kleine David <b>brak</b> meteen haar <b>hart</b> .
+breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .
+breken;hart: brak;hart: Het <b>brak</b> ons <b>hart</b> dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+breken;hart: brak;hart: Ik moet bekennen , dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: brak;hart: ` Hij beging een misstap die haar <b>hart</b> <b>brak</b> .
+breken;hart: braken;hart: " Ik wou dat hij en de mannen die mijn en jullie <b>hart</b> <b>braken</b> , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+breken;hart: breek;hart: Ik <b>breek</b> nooit iemands <b>hart</b> . "
+breken;hart: breekt;hart: " Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: " Het <b>breekt</b> mijn <b>hart</b> als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+breken;hart: breekt;hart: ' Het is walgelijk en wat die mannen heben gedaan <b>breekt</b> mijn <b>hart</b> ' , zegt zij .
+breken;hart: breekt;hart: Als die dan zijn <b>hart</b> <b>breekt</b> , wordt hij pas echt James Bond . "
+breken;hart: breekt;hart: Daarmee <b>breekt</b> Neko Case je <b>hart</b> , terwijl ze tegelijk je wil beheerst .
+breken;hart: breekt;hart: Dat <b>breekt</b> mijn <b>hart</b> en sloopt mijn gezondheid .
+breken;hart: breekt;hart: Het <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> ons <b>hart</b> , want het baby'tje hoort ook bij ons.»
+breken;hart: breekt;hart: In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het <b>breekt</b> ons <b>hart</b> en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+breken;hart: breekt;hart: In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het <b>hart</b> <b>breekt</b> van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken;hart: breekt;hart: Met deze mededeling <b>breekt</b> hij het <b>hart</b> van iedere Jos .
+breken;hart: breekt;hart: Verhuizen is hetzelfde als een verhouding hebben , maar " je <b>breekt</b> er niemands <b>hart</b> mee .
+breken;hart: breekt;hart: Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn <b>hart</b> <b>breekt</b> .
+breken;hart: breekt;hart: Ze dramatiseert niets , houdt de toon licht , en juist dat <b>breekt</b> je <b>hart</b> .
+breken;hart: breekt;harten: In aflevering drie van The Bachelorette , uitgezonden op Yorin , <b>breekt</b> Trista haar eerste <b>harten</b> .
+breken;hart: breekt;hart»: «Wat de kinderen nu overkomt , <b>breekt</b> mijn <b>hart»</b> , vervolgt Wims moeder .
+breken;hart: breken;hart: Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het <b>hart</b> van hun ouders <b>breken</b> door te snel groot te worden ... ) .
+breken;hart: breken;hart: De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes <b>breken</b> Johnny's <b>hart</b> .
+breken;hart: breken;hart: Harry Potter krijgt een vriendinnetje , en ze zal zijn <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Het onderzoek , dat de titel Een gezonde economie kan je <b>hart</b> <b>breken</b> meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+breken;hart: breken;hart: Ik heb hem gedumpt voor hij mijn <b>hart</b> kon <b>breken</b> .
+breken;hart: breken;hart: Ik wil niemands <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Koeznetsova kon dat <b>hart</b> niet <b>breken</b> .
+breken;hart: breken;hart: Vechten tegen elkaar zou haar <b>hart</b> <b>breken</b> " , legt Vitali dat uit .
+breken;hart: breken;hart: Ze wil haar <b>hart</b> niet nog een keer <b>breken</b> en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken;hart: breken;hart: Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het <b>hart</b> van Eka moeder <b>breken</b> .
+breken;hart: breken;harten: Als hij daarom de <b>harten</b> van zijn eigen fans moet <b>breken</b> , dan moet het maar .
+breken;hart: breken;harten: De vernietiging van de citadel zal de <b>harten</b> van alle Iraniërs <b>breken</b> .
+breken;hart: breken;harten: Het is heel goed mogelijk dat Irak onze <b>harten</b> gaat <b>breken</b> .
+breken;hart: gebroken.»;hart: Tom Schipper zijn <b>hart</b> heeft men bij Wilrijk op het einde van vorig seizoen <b>gebroken.»</b>
+breken;hart: gebroken;hart: " Dat nieuwsbericht heeft echt mijn <b>hart</b> <b>gebroken</b> " , bekent Proper-Sheppard .
+breken;hart: gebroken;hart: ' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het <b>hart</b> <b>gebroken</b> van tienduizenden familieleden .
+breken;hart: gebroken;hart: ' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn <b>hart</b> <b>gebroken</b> had .
+breken;hart: gebroken;hart: ' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn <b>hart</b> heeft <b>gebroken</b> ' , schrijft Ellen van de Graaf aan haar clientèle .
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: Het <b>hart</b> van hoofdrolspeelster Nelly wordt al in de eerste aflevering <b>gebroken</b> wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken;hart: gebroken;hart: Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het <b>hart</b> van Queen of Hearts Diana had <b>gebroken</b> , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+breken;hart: gebroken;hart: Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn <b>hart</b> had <b>gebroken</b> , maar na twee weken was ik bereid hem te ontmoeten .
+breken;hart: gebroken;hart: Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je <b>hart</b> heeft <b>gebroken</b> , dat helpt . "
+breken;hart: gebroken;hart: Nelly's <b>hart</b> wordt <b>gebroken</b> wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+breken;hart: gebroken;hart: Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig <b>hart</b> ( Halina Reijn ) <b>gebroken</b> .
+breken;hart: gebroken;hart: Volgens ingewijden heeft Clooney het <b>hart</b> <b>gebroken</b> van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood is .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken;hart: gebroken;hart: Zeven jaar geleden heeft ze zijn <b>hart</b> <b>gebroken</b> , nu wil ze hem terug .
+breken;hart: gebroken;harten: " Ik heb best wel wat <b>harten</b> <b>gebroken</b> .
+breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .
+breken;hart: gebroken;harten: Hun beider <b>harten</b> werden dan ook <b>gebroken</b> toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar geen erg , de pijn is niet ondraaglijk .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar niet getreurd : de pijn is niet ondraaglijk .
+breken;hart: gebroken;harten: Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen <b>harten</b> <b>gebroken</b> worden ?
 
 Arguments:
 rel:arglemma:argword:arg:utt
@@ -787,27 +787,27 @@ hart:det:detp:vnw:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart ge
 
 MWE Components:
 clemmas:cwords:utt
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
-breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .                                
+breken;hart: brak;hart: Dat <b>brak</b> het <b>hart</b> van haar moeder .
+breken;hart: breekt;hart: In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het <b>hart</b> <b>breekt</b> van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken;hart: breekt;hart: Met deze mededeling <b>breekt</b> hij het <b>hart</b> van iedere Jos .
+breken;hart: breekt;harten: In aflevering drie van The Bachelorette , uitgezonden op Yorin , <b>breekt</b> Trista haar eerste <b>harten</b> .
+breken;hart: breken;hart: Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het <b>hart</b> van hun ouders <b>breken</b> door te snel groot te worden ... ) .
+breken;hart: breken;hart: Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het <b>hart</b> van Eka moeder <b>breken</b> .
+breken;hart: breken;harten: Als hij daarom de <b>harten</b> van zijn eigen fans moet <b>breken</b> , dan moet het maar .
+breken;hart: breken;harten: De vernietiging van de citadel zal de <b>harten</b> van alle Iraniërs <b>breken</b> .
+breken;hart: breken;harten: Het is heel goed mogelijk dat Irak onze <b>harten</b> gaat <b>breken</b> .
+breken;hart: gebroken;hart: ' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het <b>hart</b> <b>gebroken</b> van tienduizenden familieleden .
+breken;hart: gebroken;hart: Het <b>hart</b> van hoofdrolspeelster Nelly wordt al in de eerste aflevering <b>gebroken</b> wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken;hart: gebroken;hart: Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het <b>hart</b> van Queen of Hearts Diana had <b>gebroken</b> , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+breken;hart: gebroken;hart: Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je <b>hart</b> heeft <b>gebroken</b> , dat helpt . "
+breken;hart: gebroken;hart: Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig <b>hart</b> ( Halina Reijn ) <b>gebroken</b> .
+breken;hart: gebroken;hart: Volgens ingewijden heeft Clooney het <b>hart</b> <b>gebroken</b> van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+breken;hart: gebroken;harten: " Ik heb best wel wat <b>harten</b> <b>gebroken</b> .
+breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .
+breken;hart: gebroken;harten: Hun beider <b>harten</b> werden dan ook <b>gebroken</b> toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar geen erg , de pijn is niet ondraaglijk .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar niet getreurd : de pijn is niet ondraaglijk .
+breken;hart: gebroken;harten: Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen <b>harten</b> <b>gebroken</b> worden ?
 
 Arguments:
 rel:arglemma:argword:arg:utt

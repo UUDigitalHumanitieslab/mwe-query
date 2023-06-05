@@ -1445,7 +1445,7 @@ def removeemptyalts(stree: SynTree) -> SynTree:
     return newstree
 
 
-def mknearmissstructs(mwetrees:  List[SynTree]) -> List[SynTree]:
+def mknearmissstructs(mwetrees: List[SynTree]) -> List[SynTree]:
     reducedmwetrees = []
     for mwetree in mwetrees:
         reducedmwetree = copy.deepcopy(mwetree)

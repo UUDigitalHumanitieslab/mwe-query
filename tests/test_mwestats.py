@@ -86,7 +86,11 @@ class TestMweState(unittest.TestCase):
         with open(self.expected_path(filename), encoding='utf-8') as f:
             expected = f.read()
         
-        self.assertEqual(output, expected)
+        try:
+            self.assertEqual(output, expected)
+        except Exception as error:
+            print(f"Problem in {filename}")
+            raise error
         
     def test_match_canonical(self):
         """Tests whether the MWE will match the canonical form.

@@ -541,7 +541,7 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     rows.sort()
 
     for row in rows:
-        print(f'{clemmas}: {cwords}: {utt}', file=outfile)
+        print(row, file=outfile)
 
     argstats = stats.argstats
     print('\nArguments:', file=outfile)
