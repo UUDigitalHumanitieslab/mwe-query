@@ -3,7 +3,7 @@ __author__ = 'marti'
 import re
 from alpino_query import parse_sentence  # type: ignore
 from copy import deepcopy
-from typing import cast, Dict, Iterable, List, Optional
+from typing import Union, cast, Dict, Iterable, List, Optional
 from sastadev.sastatypes import SynTree
 import time
 from .basex_query import list_databases, perform_xpath
@@ -338,7 +338,7 @@ def expand_index_nodes(sentence: ET.Element, index_dict: Optional[Dict[str, ET.E
     return sentence
 
 
-def analyze_mwe_hit(hit: SynTree, queries: Iterable[MweQuery], tree: SynTree) -> MweHitInfo:
+def analyze_mwe_hit(hit: SynTree, queries: Union[Iterable[str], Iterable[MweQuery]], tree: SynTree) -> MweHitInfo:
     """Analyses a match found by applying an MWE query on a treebank.
 
     Args:
@@ -349,7 +349,7 @@ def analyze_mwe_hit(hit: SynTree, queries: Iterable[MweQuery], tree: SynTree) ->
     Returns:
         MweHitInfo: information describing the properties of the found expression
     """
-    xpaths = (query.xpath for query in queries)
+    xpaths = (query.xpath if isinstance(query, MweQuery) else query for query in queries)
     return MweHitInfo(hit, xpaths, tree)
 
 

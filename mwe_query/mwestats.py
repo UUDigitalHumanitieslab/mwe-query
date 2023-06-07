@@ -377,10 +377,10 @@ class MweHitArgumentHead(MweHitInfoDetails):
 
 
 class MweHitArgumentModification(MweHitInfoDetails):
-    def __init__(self, complemma: str, node_rel: str, node_cat: str, head_pos_cat: str,
+    def __init__(self, comp_lemma: str, node_rel: str, node_cat: str, head_pos_cat: str,
                  head_lemma: str, head_word: str, fringe: str, marked_utt: str):
         super().__init__(marked_utt)
-        self.complemma = complemma
+        self.comp_lemma = comp_lemma
         self.node_rel = node_rel
         self.node_cat = node_cat
         self.head_pos_cat = head_pos_cat
@@ -507,7 +507,7 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
                             # Modification
                             for modification in info.modifications:
                                 modstats[qrt].data.append([
-                                    modification.complemma, modification.node_rel, modification.node_cat, modification.head_pos_cat,
+                                    modification.comp_lemma, modification.node_rel, modification.node_cat, modification.head_pos_cat,
                                     modification.head_lemma, modification.head_word, modification.fringe, modification.marked_utt])
 
                             # Determination
