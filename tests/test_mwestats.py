@@ -86,7 +86,11 @@ class TestMweState(unittest.TestCase):
         with open(self.expected_path(filename), encoding='utf-8') as f:
             expected = f.read()
         
-        self.assertEqual(output, expected)
+        try:
+            self.assertEqual(output, expected)
+        except Exception as error:
+            print(f"Problem in {filename}")
+            raise error
         
     def test_match_canonical(self):
         """Tests whether the MWE will match the canonical form.
@@ -340,7 +344,9 @@ class TestMweState(unittest.TestCase):
         with open(self.output_path(filename), 'w', encoding='utf8') as outfile:
 
             print(outsep.join(gramconfigstats.header), file=outfile)
-            for row in gramconfigstats.data:
-                print(outsep.join(row), file=outfile)
+            rows = list(outsep.join(row).strip() for row in gramconfigstats.data)
+            rows.sort()
+            for row in rows:
+                print(row, file=outfile)
 
         self.check_output(filename)

@@ -13,6 +13,8 @@ python -m mwe_query
 
 ## Use as Library
 
+### Create Queries
+
 ```python
 from mwe_query import Mwe
 from alpino_query import parse_sentence
@@ -37,6 +39,19 @@ print(superset.description)
 # superset
 print(superset.rank)
 # 3
+```
+
+### Analyze Results
+
+```python
+from mwe_query import analyze_mwe_hit
+
+# hit: etree._Element containing the node which matched on of the
+# queries
+# queries: generated query objects
+# tree: etree._Element of the entire utterance tree
+info = analyze_mwe_hit(hit, queries, tree)
+print(hit.components.marked_utt)
 ```
 
 ## Upload to PyPi

@@ -146,7 +146,10 @@ def tokenize(sentence):
     sentence = re.sub(r'\s+', r' ', sentence)
     return sentence.split()
 
+
 T = TypeVar('T')
+
+
 def listofsets2setoflists(listofset: Iterable[Iterable[T]]) -> List[List[T]]:
     resultset: List[List[T]]
     if listofset == []:
@@ -1442,7 +1445,7 @@ def removeemptyalts(stree: SynTree) -> SynTree:
     return newstree
 
 
-def mknearmissstructs(mwetrees:  List[SynTree]) -> List[SynTree]:
+def mknearmissstructs(mwetrees: List[SynTree]) -> List[SynTree]:
     reducedmwetrees = []
     for mwetree in mwetrees:
         reducedmwetree = copy.deepcopy(mwetree)
