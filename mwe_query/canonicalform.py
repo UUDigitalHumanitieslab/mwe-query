@@ -3,12 +3,12 @@ Methods for parsing annotated canonical forms,
 to generate queries from them and to search using these queries.
 """
 
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
 from sastadev.sastatypes import SynTree
 import re
 import sys
 from sastadev.treebankfunctions import getattval as gav, terminal, getnodeyield, find1, bareindexnode, indextransform, \
-    getindexednodesmap, getbasicindexednodesmap, clausecats, clausebodycats
+    getindexednodesmap, getbasicindexednodesmap, clausebodycats
 
 import lxml.etree as ET
 import copy
@@ -56,8 +56,8 @@ contentwordpts = ['adj', 'n', 'tw', 'ww', 'bw']
 
 vblnode = """(not(@word) and not(@pt) and count(node)=0)"""
 npmodppidxpath = \
-   f""".//node[@cat="np" and 
-                node[@rel="mod" and @cat="pp" and not(node[@rel="pobj1"]) and not(node[@rel="vc"])] and 
+   """.//node[@cat="np" and
+                node[@rel="mod" and @cat="pp" and not(node[@rel="pobj1"]) and not(node[@rel="vc"])] and
                 ../node[@rel="hd" and @pt="ww"]]/@id"""
 
 vobj1nodeidxpath = f'.//node[@rel="obj1" and {vblnode} and ../node[@rel="hd" and @pt="ww"]]/@id'
@@ -112,7 +112,7 @@ def orconds(att: str, vals: List[str]) -> str:
     return endresult
 
 
-def alts(ls: List[str]) -> str:
+def alts(ls: Iterable[str]) -> str:
     result = altsym.join(ls)
     return result
 
@@ -146,14 +146,16 @@ def tokenize(sentence):
     sentence = re.sub(r'\s+', r' ', sentence)
     return sentence.split()
 
-
-def listofsets2setoflists(listofset):
+T = TypeVar('T')
+def listofsets2setoflists(listofset: Iterable[Iterable[T]]) -> List[List[T]]:
+    resultset: List[List[T]]
     if listofset == []:
         resultset = [[]]
     else:
         resultset = []
-        for el in listofset[0]:
-            tailresults = listofsets2setoflists(listofset[1:])
+        head, *tail = listofset
+        for el in head:
+            tailresults = listofsets2setoflists(tail)
             for tailresult in tailresults:
                 newresult = [el] + tailresult
                 resultset.append(newresult)
@@ -321,7 +323,7 @@ def all_leaves(stree: SynTree, annotations: List[Annotation], allowedannotations
     return True
 
 
-def headmodifiable(stree, mwetop, annotations):
+def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
     head = getchild(stree, 'hd')
     if terminal(head):
         beginint = int(gav(head, 'begin'))
@@ -351,7 +353,7 @@ def headmodifiable(stree, mwetop, annotations):
     return result
 
 
-def attcopy(sourcenode: SynTree,  atts: List[str]) -> SynTree:
+def attcopy(sourcenode: SynTree, atts: List[str]) -> SynTree:
     targetnode = mknode()
     # we always copy the 'id' and 'index'attributes, needed for conditions, perhaps not needed anymorre
     extatts = atts + ['id', 'index']
@@ -378,7 +380,7 @@ def zerochildrencount(stree, annotations):
     return result
 
 
-def mknewnode(stree, mwetop, atts, annotations):
+def mknewnode(stree: SynTree, mwetop: int, atts: List[str], annotations: List[int]) -> SynTree:
     newnode = attcopy(stree, atts)
     if not headmodifiable(stree, mwetop, annotations):
         if zerochildrencount(stree, annotations) == 0:
@@ -429,16 +431,15 @@ def zullenheadclause(stree: SynTree) -> bool:
 #   * literal: word=node.@word.lower(), pt, rel
 
 
-def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, axis=None) -> List[SynTree]:  # noqa: C901
+def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, axis=None) -> Sequence[Optional[SynTree]]:  # noqa: C901
     # it is presupposed that with zullen + vc the subject index node of the vc has already been expanded
     # it is presupposed that the function is called with node SynTree at the top
     if stree.tag != 'node':
         return [stree]
     else:
-        newnodes = []
+        newnodes: List[Optional[SynTree]] = []
         if not terminal(stree):
             cat = gav(stree, 'cat')
-            id = gav(stree, 'id')
             rel = gav(stree, 'rel')
             if cat == 'top' and len(stree) > 1:
 
@@ -461,6 +462,9 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                 if lemma == 'zullen' and vc is not None:
                     subject = find1(newstree, './node[@rel="su"]')
                     newvc = getchild(newstree, 'vc')
+                    if not isinstance(newvc, SynTree):
+                        # TODO: correct behavior??
+                        return []
                     newvc = expandsu(newvc, subject)
                     results = transformtree(
                         newvc, annotations, mwetop=itop, axis=axis)
@@ -476,7 +480,7 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                         newnode.attrib['axis'] = axis
                     newnodes.append(newnode)
             elif rel == 'vc' and mwetop == itop:
-                atts = []
+                atts: List[str] = []
                 newnode = mknewnode(stree, mwetop, atts, annotations)
                 if axis is not None:
                     newnode.attrib['axis'] = axis
@@ -503,8 +507,9 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                 return newnodes
             elif all_leaves(stree, annotations, {zero}):
                 newnode = None  # remove it
-                if axis is not None:
-                    newnode.attrib['axis'] = axis
+                # ???
+                # if axis is not None:
+                #     newnode.attrib['axis'] = axis
                 newnodes.append(newnode)
                 return newnodes
             else:
@@ -519,7 +524,6 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                     newnode.attrib['rel'] = 'pc|ld|mod|predc|svp|predm'
                 newnodes.append(newnode)
 
-            newchilds= []
             newchildalternativeslist = []
             for child in stree:
                 childaxis = None
@@ -624,7 +628,6 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                     newnode = attcopy(stree, ['rel', 'pt'] + subcatproperties)
                     lemma = gav(stree, 'lemma')
                     pt = gav(stree, 'pt')
-                    id = gav(stree, 'id')
                     vwtype = gav(stree, 'vwtype')
                     if lemma == 'zich':
                         newnode.attrib['lemma'] = alts(zichlemmas)
@@ -677,13 +680,14 @@ def expandsu(vc: SynTree, subject: SynTree) -> SynTree:
     :return:
     '''
     newvc = copy.deepcopy(vc)
-    newsubject = copy.deepcopy(subject)
+    newsubject: Optional[SynTree] = copy.deepcopy(subject)
     if subject is not None and isvblnode(subject):
         newsubject = None
     vcsup = find1(newvc, './node[@rel="sup"]')
     if vcsup is not None:
         vcsubject = vcsup
-        newsubject.attrib['rel'] = 'sup'
+        if newsubject is not None:
+            newsubject.attrib['rel'] = 'sup'
     else:
         vcsubject = find1(newvc, './node[@rel="su"]')
     if vcsubject is not None and isvblnode(vcsubject) and newsubject is not None:
@@ -783,7 +787,6 @@ def mkpronadvvc(stree, ppnodeid):
     newstree = copy.deepcopy(stree)
     ppnode = find1(newstree, f'.//node[@id="{str(ppnodeid)}"]')
     vzlemma = find1(ppnode, './/node[@rel="hd"]/@lemma')
-    pprel = gav(ppnode, 'rel')
     headnode = find1(ppnode, './node[@rel="hd"]')
     obj1node = find1(ppnode, './node[@rel="obj1"] ')
     if obj1node is not None and headnode is not None and vzlemma is not None:
@@ -923,7 +926,7 @@ def mkalternativenode(altlist: List[SynTree]) -> SynTree:
 def lowerpredm(stree: SynTree) -> SynTree:
     # print('lowerpredm: stree:')
     # ET.dump(stree)
-    predmnodeids = stree.xpath('.//node[@rel="predm"]/@id')
+    predmnodeids = xpath_values(stree, './/node[@rel="predm"]/@id')
     lowestvcnode = find1(stree, './/node[@rel="vc" and not(node[@rel="vc"])]')
     if predmnodeids != [] and lowestvcnode is not None:
         newstree = copy.deepcopy(stree)
@@ -1059,7 +1062,8 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
                                                   pppobj1vcnode], [pppronadvvcnode], [pronadvnode]])
             parent.append(alternativesnode)
 
-        vblgennpnodeids = newstree.xpath(
+        vblgennpnodeids = xpath_values(
+            newstree,
             f'//node[@cat="np" and node[@naamval="gen" and @rel="det" and {vblnode}]]/@id')
         for vblgennpnodeid in vblgennpnodeids:
             npnode = find1(newstree, f'//node[@id="{vblgennpnodeid}"]')
@@ -1221,7 +1225,7 @@ def removesuperfluousindexes(stree: SynTree) -> SynTree:
 def tree2xpath(stree: SynTree, indent=0) -> Xpathexpression:
     indentstr = indent * space
     childxpaths = [tree2xpath(child, indent+5) for child in stree]
-    attconditions = []
+    attconditions: List[str] = []
     polarity = 'yes'
     axisstr = ''
     if stree.tag == 'node':
@@ -1233,11 +1237,11 @@ def tree2xpath(stree: SynTree, indent=0) -> Xpathexpression:
             if att in {'id', 'index'}:
                 continue
             elif att == 'genus':   # nouns are not specified for genus when in plural
-                genusval = stree.attrib['genus']
+                genusval = str(stree.attrib['genus'])
                 attcondition = f'(@genus="{genusval}" or @getal="mv")'
                 attconditions.append(attcondition)
             elif att == 'conditions':
-                attcondition = stree.attrib[att]
+                attcondition = str(stree.attrib[att])
                 attconditions.append(attcondition)
             elif att == 'nodecount':
                 attstr = 'count(node)'
@@ -1261,18 +1265,18 @@ def tree2xpath(stree: SynTree, indent=0) -> Xpathexpression:
                 if stree.attrib[att] is None:
                     axisstr = ''
                 else:
-                    axisstr = f'{stree.attrib[att]}::'
+                    axisstr = f'{str(stree.attrib[att])}::'
             else:
-                attstr = '@' + att
+                attstr = f'@{str(att)}'
                 opstr = '='
 
-                vals = stree.attrib[att].split('|')
+                vals = str(stree.attrib[att]).split('|')
                 if len(vals) == 1:
-                    val = stree.attrib[att]
+                    val = str(stree.attrib[att])
                     attcondition = f'{attstr}{opstr}"{val}"'
                 else:
                     orconditionlist = [
-                        f'{attstr}{opstr}"{val}"' for val in vals]
+                        f'{attstr}{opstr}"{str(val)}"' for val in vals]
                     attcondition = f'({" or ".join(orconditionlist)})'
 
                 attconditions.append(attcondition)
@@ -1318,7 +1322,7 @@ def tree2xpath(stree: SynTree, indent=0) -> Xpathexpression:
     return result
 
 
-def adaptindexes(stree: SynTree, antecedent: SynTree, rhdnode: SynTree) -> SynTree:
+def adaptindexes(stree: SynTree, antecedent: SynTree, rhdnode: SynTree) -> None:
     antecedentindex = gav(antecedent, 'index')
     rhdindex = gav(rhdnode, 'index')
     if antecedentindex != '':
@@ -1356,8 +1360,10 @@ def adaptvzlemma_inv(inlemma: str) -> str:
 
 def relpronsubst(stree: SynTree) -> SynTree:
     newstree = copy.deepcopy(stree)
-    npwithrelnodeids = stree.xpath(
-        './/node[@cat="np" and node[@rel="mod" and @cat="rel"]]/@id')
+    npwithrelnodeids: List[int] = list(
+        int(n) for n in
+        xpath_values(stree,
+                     './/node[@cat="np" and node[@rel="mod" and @cat="rel"]]/@id'))
     for npwithrelnodeid in npwithrelnodeids:
         npnode = find1(newstree, f'.//node[@id="{npwithrelnodeid}"]')
         if npnode is not None:
@@ -1430,7 +1436,9 @@ def removeemptyalts(stree: SynTree) -> SynTree:
     newstree = copy.deepcopy(stree)
     for node in newstree.iter():
         if node.tag in {'alternative', 'alternatives'} and len(node) == 0:
-            node.getparent().remove(node)
+            parent = node.getparent()
+            if parent:
+                parent.remove(node)
     return newstree
 
 
@@ -1442,14 +1450,13 @@ def mknearmissstructs(mwetrees:  List[SynTree]) -> List[SynTree]:
         contentwordnodes = [node for node in nodelist if iscontentwordnode(node)]
         contentwordcount = len(contentwordnodes)
         for node in nodelist:
-            id = gav(node, 'id')
-            nodept = gav(node, 'pt')
             if 'pt' in node.attrib and not iscontentwordnode(node) and contentwordcount > 1:
                 parent = node.getparent()
-                parent.remove(node)
-                grandparent = parent.getparent()
-                if grandparent is not None and len(parent) == 0:
-                    grandparent.remove(parent)
+                if isinstance(parent, SynTree):
+                    parent.remove(node)
+                    grandparent = parent.getparent()
+                    if isinstance(grandparent, SynTree) and len(parent) == 0:
+                        grandparent.remove(parent)
             else:
                 relevantproperties = coreproperties + subcatproperties + xpathproperties
                 for att in node.attrib:
@@ -1458,6 +1465,7 @@ def mknearmissstructs(mwetrees:  List[SynTree]) -> List[SynTree]:
         cleanreducedmwetree = removeemptyalts(reducedmwetree)
         reducedmwetrees.append(cleanreducedmwetree)
     return reducedmwetrees
+
 
 def mknearmiss(mwetrees: List[SynTree]) -> Xpathexpression:
     reducedmwetrees = mknearmissstructs(mwetrees)
@@ -1496,26 +1504,29 @@ def mksuperquery(mwetrees) -> Xpathexpression:
         tree2xpath(children[0]),
         tree2xpath(target_node))
 
+
 def generatemwestructures(mwe: str, lcatexpansion=True) -> List[SynTree]:
     annotatedlist = preprocess_MWE(mwe)
     annotations = [el[1] for el in annotatedlist]
     cleanmwe = space.join([el[0] for el in annotatedlist])
 
-    #parse the utterance
+    # parse the utterance
     unexpandedfullmweparse = parse(cleanmwe)
 
     if lcatexpansion:
         fullmweparse = expandnonheadwords(unexpandedfullmweparse)
     else:
         fullmweparse = unexpandedfullmweparse
-    #ET.dump(fullmweparse)
+    # ET.dump(fullmweparse)
     mweparse = gettopnode(fullmweparse)
     newtreesa = transformtree(mweparse, annotations)
     newtrees = []
     for newtreea in newtreesa:
-        newtrees += newgenvariants(newtreea)
+        if isinstance(newtreea, SynTree):
+            newtrees += newgenvariants(newtreea)
     cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
     return cleantrees
+
 
 def mkmwestructs(newtreesa):
     newtrees = []
@@ -1523,6 +1534,7 @@ def mkmwestructs(newtreesa):
         newtrees += newgenvariants(newtreea)
     cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
     return cleantrees
+
 
 def generatequeries(mwe: str, lcatexpansion=True) -> Tuple[Xpathexpression, Xpathexpression, Xpathexpression]:
     """
@@ -1551,10 +1563,11 @@ def generatequeries(mwe: str, lcatexpansion=True) -> Tuple[Xpathexpression, Xpat
 
     # transform the tree to a form from which queries can be derived
     newtreesa = transformtree(mweparse, annotations)
-    newtrees = []
+    newtrees: List[SynTree] = []
     # alternative trees
     for newtreea in newtreesa:
-        newtrees += newgenvariants(newtreea)
+        if isinstance(newtreea, SynTree):
+            newtrees += newgenvariants(newtreea)
     cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
     mwequery = trees2xpath(cleantrees, expanded=True)
 
@@ -1611,8 +1624,32 @@ def mark(wrd: str) -> str:
     return f'*{wrd}*'
 
 
+def xpath(tree: SynTree, query: Xpathexpression) -> Iterable[SynTree]:
+    result = tree.xpath(query)
+    if not result:
+        return []
+    elif not isinstance(result, list):
+        raise ValueError(f"Unexpected type: {type(result)}")
+    else:
+        for item in result:
+            if not isinstance(item, SynTree):
+                raise ValueError(f"Unexpected type: {type(item)}")
+            yield item
+
+
+def xpath_values(tree: SynTree, query: Xpathexpression) -> Iterable[str]:
+    result = tree.xpath(query)
+    if not result:
+        return []
+    elif not isinstance(result, list):
+        return [str(result)]
+    else:
+        for value in result:
+            yield str(value)
+
+
 def applyqueries(treebank: Dict[str, SynTree], mwe: str, mwequery: Xpathexpression, nearmissquery: Xpathexpression,
-                 supersetquery: Xpathexpression, lcatexpansion=True, verbose=True) -> Dict[str, Tuple[List[SynTree], List[SynTree], List[SynTree]]]:
+                 supersetquery: Xpathexpression, lcatexpansion=True, verbose=True) -> Dict[str, List[Tuple[List[SynTree], List[SynTree], List[SynTree]]]]:
     """
     Applies three queries on a treebank and returns a dictionary with their hits.
     Args:
@@ -1626,15 +1663,16 @@ def applyqueries(treebank: Dict[str, SynTree], mwe: str, mwequery: Xpathexpressi
     Returns:
         Dict[str, Tuple[List[SynTree], List[SynTree], List[SynTree]]]: tree id and the hits for each query
     """
-    allresults: Dict[str, Tuple[List[SynTree],
-                                List[SynTree], List[SynTree]]] = {}
+    allresults: Dict[str, List[Tuple[List[SynTree],
+                                     List[SynTree],
+                                     List[SynTree]]]] = {}
     for treeid, tree in treebank.items():
         allresults[treeid] = []
         unexpandedfullparse = lowerpredm(tree)
         # ET.dump(unexpandedfullparse)
 
         # in the real application this should be done on the treebank's index
-        supersetnodes: List[SynTree] = unexpandedfullparse.xpath(supersetquery)
+        supersetnodes: List[SynTree] = list(xpath(unexpandedfullparse, supersetquery))
 
         nearmissnodes: List[SynTree] = []
         mwenodes: List[SynTree] = []
@@ -1648,8 +1686,8 @@ def applyqueries(treebank: Dict[str, SynTree], mwe: str, mwequery: Xpathexpressi
             indexpfullparse = indextransform(fullparse)
 
             # ET.dump(indexpfullparse)
-            nearmissnodes += indexpfullparse.xpath(nearmissquery)
-            mwenodes += indexpfullparse.xpath(mwequery)
+            nearmissnodes += xpath(indexpfullparse, nearmissquery)
+            mwenodes += xpath(indexpfullparse, mwequery)
 
             allresults[treeid].append((mwenodes, nearmissnodes, supersetnodes))
             if verbose:

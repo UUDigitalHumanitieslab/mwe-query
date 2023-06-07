@@ -1,10 +1,8 @@
-from typing import Any, Dict, List
-from sastatypes import SynTree
-from treebankfunctions import getattval as gav
-from collections import defaultdict
-from canonicalform import  listofsets2setoflists
-from typefunctions import nested_dict
-from mwestats import getmarkedutt
+from typing import cast, Any, Dict, List, Optional
+from sastadev.sastatypes import SynTree
+from sastadev.treebankfunctions import getattval as gav
+from .canonicalform import listofsets2setoflists
+from .mwestats import getmarkedutt
 
 Relation = str
 Direction = int
@@ -14,19 +12,23 @@ dirchars = r'\/'
 
 gramconfigheader = ['ctuple', 'gramconfig', 'treeid', 'utt']
 
+
 class Gramchain:
     def __init__(self, rellist: List[Relation], dir: Direction):
         self.rellist = rellist
         self.direction = dir
+
     def __str__(self):
-        dirchar =  dirchars[self.direction]
+        dirchar = dirchars[self.direction]
         resultlist = [dirchar + rel for rel in self.rellist]
         result = ''.join(resultlist)
         return result
 
+
 class Gramconfig:
-    def __init__(self, gramchains: Gramchain):
+    def __init__(self, gramchains: List[Gramchain]):
         self.gramchains = gramchains
+
     def __str__(self):
         gramchainstrs = [str(gramchain) for gramchain in self.gramchains]
         result = ''.join(gramchainstrs)
@@ -42,20 +44,27 @@ def getgramconfig(nodelist: List[SynTree]) -> Gramconfig:
             node1 = sortednodelist[i]
             node2 = sortednodelist[i+1]
             rellist = []
-            parent = node1
+            parent = cast(Optional[SynTree], node1)
+            lca = node1  # lowest common ancestor
             while not contains(parent, node2):
+                if parent is None:
+                    break
                 rel = gav(parent, 'rel')
                 rellist.append(rel)
                 parent = parent.getparent()
+                if parent is None:
+                    break
+                else:
+                    lca = parent
 
             gramchain1 = Gramchain(rellist, up)
             gramchains.append(gramchain1)
 
-            lca = parent # lowest common ancestor
-
             rellist = []
             parent = node2
             while parent != lca:
+                if parent is None:
+                    break
                 rel = gav(parent, 'rel')
                 rellist.append(rel)
                 parent = parent.getparent()
@@ -67,22 +76,27 @@ def getgramconfig(nodelist: List[SynTree]) -> Gramconfig:
     result = Gramconfig(gramchains)
     return result
 
-def contains(node1:SynTree, node2: SynTree) -> bool:
+
+def contains(node1: Optional[SynTree], node2: Optional[SynTree]) -> bool:
+    if node1 is None or node2 is None:
+        return False
+
     for node in node1.iter('node'):
         if node == node2:
             return True
 
     return False
 
-def getgramconfigstats(componentslist:List[List[str]], treebank:Dict[str,SynTree]) -> List[List[Any]]:
-    gramconfigstatsdata = []
+
+def getgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, SynTree]) -> List[List[str]]:
+    gramconfigstatsdata: List[List[str]] = []
     for treeid in treebank:
         tree = treebank[treeid]
         for components in componentslist:
             componentstuple = tuple(components)
-            componentsnodes = []
+            componentsnodes: List[List[SynTree]] = []
             for component in components:
-                componentnodes = tree.xpath(f'//node[@lemma="{component}"]')
+                componentnodes = cast(List[SynTree], tree.xpath(f'//node[@lemma="{component}"]'))
                 componentsnodes.append(componentnodes)
 
             cnodelists = listofsets2setoflists(componentsnodes)

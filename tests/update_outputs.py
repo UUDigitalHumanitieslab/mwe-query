@@ -3,7 +3,7 @@
 Run the commands and write their output
 """
 
-from alpino_query import parse_sentence
+from alpino_query import parse_sentence  # type: ignore
 import sys
 from os import path
 import glob
@@ -80,6 +80,7 @@ def update_transform():
             j += 1
 
         i += 1
+
 
 input_files = glob.glob(path.join(datadir, "generate", '*.txt'))
 for input in input_files:

@@ -1,5 +1,5 @@
 __author__ = 'marti'
-from BaseXClient import BaseXClient
+from BaseXClient import BaseXClient  # type: ignore
 import os
 
 basex_location = 'C:/Program Files (x86)/BaseX/data'

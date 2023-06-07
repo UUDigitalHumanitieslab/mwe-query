@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 __author__ = 'marti'
 import re
-from alpino_query import parse_sentence
+from alpino_query import parse_sentence  # type: ignore
 from copy import deepcopy
-from typing import Dict, List, Optional
+from typing import cast, Dict, List, Optional
 import time
 from .basex_query import list_databases, perform_xpath
 import os
@@ -76,7 +76,7 @@ class Mwe:
                 # children.append('('+xml_to_xpath(elem, number_of_child_nodes=number_of_child_nodes, include_passives=include_passives) + ' or ' + xml_to_xpath(by_subject, number_of_child_nodes=number_of_child_nodes, include_passives=include_passives) + ')')
             if elem.attrib.get('cat', None) == 'np' and [grandchild.attrib.get('pt', None) for grandchild in elem] in [['n'], ['ww']]:
                 grandchild = deepcopy([grandchild for grandchild in elem][0])
-                grandchild.attrib['rel'] = elem.attrib.get('rel', None)
+                grandchild.attrib['rel'] = elem.attrib.get('rel', '')
                 alternatives.append(grandchild)
                 # children.append('(' + xml_to_xpath(elem, number_of_child_nodes=number_of_child_nodes, include_passives=include_passives) + ' or ' + xml_to_xpath(grandchild, number_of_child_nodes=number_of_child_nodes, include_passives=include_passives) + ')')
             if alternatives == [elem]:
@@ -98,18 +98,26 @@ class Mwe:
         node = root.find(f'.//node[@id="{id}"]')
         parent = root.find(f'.//node[@id="{id}"]...')
         if parent is not None:
-            parent.remove(node)
+            parent.remove(cast(ET.Element, node))
 
     def set_tree(self, alpino_xml: str) -> None:
         self.parsed = ET.fromstring(alpino_xml)
 
-    def generate_queries(self) -> List['MweQuery']:
+    def generate_queries(self) -> List['MweQuery']:  # noqa: C901
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         # expand index nodes in parse
         mwe = expand_index_nodes(self.parsed)
         generated: List[MweQuery] = []
 
         if self.head == 'v':
-            mwe = mwe.find('.//node[@rel="vc"]')
+            vc = mwe.find('.//node[@rel="vc"]')
+            if vc is None:
+                raise ValueError('no @rel="vc" in expression')
+            mwe = vc
         while True:  # remove "trailing" top nodes
             if len(mwe) == 1:
                 mwe = mwe[0]
@@ -161,9 +169,9 @@ class Mwe:
                     #     als zinscomplement:
                     #         hd/bw van pc/pp
                     #     let op andere r-pronomina (hiervan, daarvan)
-        xpath_1 = [self.__xml_to_xpath(child, number_of_child_nodes='strict')
-                   for child in mwe]
-        xpath_1 = '//node[' + ' and '.join(xpath_1) + ']'
+        xpath_1_parts = [self.__xml_to_xpath(child, number_of_child_nodes='strict')
+                         for child in mwe]
+        xpath_1 = '//node[' + ' and '.join(xpath_1_parts) + ']'
         generated.append(
             MweQuery(self, description='multi-word expression', xpath=xpath_1, rank=1))
 
@@ -185,11 +193,11 @@ class Mwe:
             for feat in list(node.attrib.keys()):
                 if feat not in ['lemma', 'pt']:
                     node.attrib.pop(feat, None)
-        xpath_3 = [node for node in mwe.iter() if set(
+        xpath_3_elements = [node for node in mwe.iter() if set(
             node.attrib.keys()) != set()]
-        xpath_3 = ['..//' + self.__xml_to_xpath(node) for node in xpath_3]
+        xpath_3_parts = ['..//' + self.__xml_to_xpath(node) for node in xpath_3_elements]
         # this assumes a single top node
-        xpath_3 = '/node[' + ' and '.join(xpath_3) + ']'
+        xpath_3 = '/node[' + ' and '.join(xpath_3_parts) + ']'
         generated.append(
             MweQuery(self, description='superset', xpath=xpath_3, rank=3))
 
@@ -224,12 +232,13 @@ class MweQuery:
         for x in result:
             i += 1
             tree = ET.fromstring(x)
-            sentence = [
-                child.text for child in tree if child.tag == 'sentence'][0]
-            output_treebank.write(ET.tostring(tree).decode() + '\n')
-            output_plain.write(sentence + '\n')
-            if i == max_trees:
-                break
+            sentences = [
+                child.text or '' for child in tree if child.tag == 'sentence']
+            if sentences and sentences[0]:
+                output_treebank.write(ET.tostring(tree).decode() + '\n')
+                output_plain.write(sentences[0] + '\n')
+                if i == max_trees:
+                    break
         output_treebank.write('</treebank>')
         output_treebank.close()
         output_plain.close()
@@ -242,9 +251,9 @@ def handle_rel_rhd(node: ET.Element, sentence: ET.Element) -> Optional[ET.Elemen
     id_ = node.attrib['id']
     parent = sentence.find(f'.//node[@id="{id_}"]...')
     if parent is None:
-        return
+        return None
     elif parent.attrib.get('cat') != 'rel':
-        return
+        return None
     if node.attrib.get('word') == 'zoals':
         # TODO zoals als rhd
         print("WARNING: encountered 'zoals' as relative head. Ignoring for now, not fully implemented. Filling in dummy 'zo'.")
@@ -252,10 +261,10 @@ def handle_rel_rhd(node: ET.Element, sentence: ET.Element) -> Optional[ET.Elemen
                                           'pos': 'adv', 'root': 'zo', 'sense': 'zo',
                                           'word': 'zo', 'lemma': 'zo', 'pt': 'bw', })
     antecedent = sentence.find(f'.//node[@id="{id_}"]....')
-    if antecedent.attrib.get('cat') == 'conj':
+    if antecedent and antecedent.attrib.get('cat') == 'conj':
         antecedent = sentence.find(f'.//node[@id="{id_}"]......')
-    if antecedent.attrib.get('cat') in ['top', 'du']:
-        return
+    if not antecedent or antecedent.attrib.get('cat') in ['top', 'du']:
+        return None
 
     node_copy = deepcopy(node)
     antecedent = deepcopy(antecedent)
