@@ -20,7 +20,7 @@ requests==2.28.1
     # via
     #   alpino-query
     #   mwe-query (setup.py)
-sastadev==git+https://github.com/UUDigitalHumanitieslab/sastadev@feature/packaging#egg=sastadev
+-e git+https://github.com/UUDigitalHumanitieslab/sastadev@feature/packaging#egg=sastadev
     # via mwe-query (setup.py)
 urllib3==1.26.11
     # via requests
