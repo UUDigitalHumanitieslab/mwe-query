@@ -4,7 +4,7 @@ phrasal node is generated for each (relevant) non-head single word.
 """
 
 from sastadev.sastatypes import SynTree
-from treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
+from sastadev.treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
 import copy
 import lxml.etree as ET
 
