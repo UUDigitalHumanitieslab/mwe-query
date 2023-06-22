@@ -3,7 +3,7 @@ Methods for converting a standard treebank into a treebank where a
 phrasal node is generated for each (relevant) non-head single word.
 """
 
-from sastadevs.astatypes import SynTree
+from sastadev.sastatypes import SynTree
 from treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
 import copy
 import lxml.etree as ET
