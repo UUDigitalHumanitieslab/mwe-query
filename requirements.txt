@@ -37,10 +37,6 @@ requests==2.28.1
     #   alpino-query
     #   mwe-query (setup.py)
 sastadev==0.1.0
-    # via
-    #   auchann
-    #   mwe-query (setup.py)
-typing-extensions==4.7.1
     # via mwe-query (setup.py)
 urllib3==1.26.11
     # via requests
