@@ -6,8 +6,8 @@ import os
 import sys
 import lxml.etree as ET
 from difflib import context_diff
-from treebankfunctions import getstree, getyield, indextransform, getyieldstr
-from alpinoparsing import parse
+from sastadev.treebankfunctions import getstree, getyield, indextransform, getyieldstr
+from sastadev.alpinoparsing import parse
 from mwe_query.lcat import expandnonheadwords
 
 

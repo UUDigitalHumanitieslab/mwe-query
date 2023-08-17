@@ -1,6 +1,6 @@
 import os
 from collections import defaultdict
-from treebankfunctions import getstree, getattval as gav
+from sastadev.treebankfunctions import getstree, getattval as gav
 from lcat import getlcat
 
 properties = ['pt',  'positie', 'wvorm', 'frame', 'numtype', 'vwtype']
