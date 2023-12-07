@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="6" id="0" rel="top">
+    <node begin="0" cat="smain" end="5" id="1" rel="--">
+      <node begin="0" cat="np" end="2" id="2" rel="su">
+        <node begin="0" buiging="zonder" end="1" frame="determiner(pron)" getal="ev" id="3" infl="pron" lcat="detp" lemma="mijn" naamval="stan" npagr="agr" pdtype="det" persoon="1" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,1,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="mijn" sense="mijn" status="vol" vwtype="bez" word="Mijn">
+          <ud id="1" form="Mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="2" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+            <dep id="1" head="2" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+          </ud>
+        </node>
+        <node begin="1" end="2" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="4" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart">
+          <ud id="2" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="nsubj" deprel_main="nsubj">
+            <dep id="2" head="3" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="2" end="3" frame="verb(zijn,sg3,ld_pp)" id="5" infl="sg3" lcat="smain" lemma="breken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="breek" sc="ld_pp" sense="breek" stype="declarative" tense="present" word="breekt" wvorm="pv">
+        <ud id="3" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="3" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="3" cat="pp" end="5" id="6" rel="ld">
+        <node begin="3" end="4" frame="preposition(in,[])" id="7" lcat="pp" lemma="in" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="in" sense="in" vztype="init" word="in">
+          <ud id="4" form="in" lemma="in" upos="ADP" head="5" deprel="case" deprel_main="case">
+            <dep id="4" head="5" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="4" end="5" frame="number(hoofd(pl_num))" id="8" infl="pl_num" lcat="np" lemma="duizend" numtype="hoofd" pos="num" positie="vrij" postag="TW(hoofd,vrij)" pt="tw" rel="obj1" rnum="pl" root="duizend" sense="duizend" special="hoofd" word="duizend">
+          <ud id="5" form="duizend" lemma="duizend" upos="NUM" head="3" deprel="obl" deprel_main="obl">
+            <dep id="5" head="3" deprel="obl:in" deprel_main="obl" deprel_aux="in"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="5" end="6" frame="punct(punt)" id="9" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="6" form="." lemma="." upos="PUNCT" head="3" deprel="punct" deprel_main="punct">
+        <dep id="6" head="3" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000166615.p.3.s.4">Mijn hart breekt in duizend .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000166615.p.3.s.4|Mijn hart breekt in duizend .|1|1|1.6489476063999997</comment>
+  </comments>
+  <root ud="basic" id="3" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="2" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="basic" id="1" form="Mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="2" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+    <obl ud="basic" id="5" form="duizend" lemma="duizend" upos="NUM" head="3" deprel="obl" numtype="hoofd" positie="vrij" pt="tw">
+      <case ud="basic" id="4" form="in" lemma="in" upos="ADP" head="5" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <punct ud="basic" id="6" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="3" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="2" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="enhanced" id="1" form="Mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="2" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+    <obl ud="enhanced" id="5" form="duizend" lemma="duizend" upos="NUM" head="3" deprel="obl:in" deprel_aux="in" numtype="hoofd" positie="vrij" pt="tw">
+      <case ud="enhanced" id="4" form="in" lemma="in" upos="ADP" head="5" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <punct ud="enhanced" id="6" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Mijn	mijn	PRON	VNW|bez|det|stan|vol|1|ev|prenom|zonder|agr	Person=1|Poss=Yes|PronType=Prs	2	nmod:poss	2:nmod:poss	_
+2	hart	hart	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	3	nsubj	3:nsubj	_
+3	breekt	breken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+4	in	in	ADP	VZ|init	_	5	case	5:case	_
+5	duizend	duizend	NUM	TW|hoofd|vrij	_	3	obl	3:obl:in	_
+6	.	.	PUNCT	LET	_	3	punct	3:punct	_
+]]></conllu>
+</alpino_ds>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="6" id="0" rel="top">
+    <node begin="2" end="3" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="3" form="," lemma="," upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="3" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="6" id="2" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" id="3" lcat="du" lemma="en" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="en" sc="root" sense="en" word="En">
+        <ud id="1" form="En" lemma="en" upos="CCONJ" head="6" deprel="mark" deprel_main="mark">
+          <dep id="1" head="6" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="du" end="6" id="4" rel="nucl">
+        <node begin="1" end="2" frame="adv_tag" id="5" lcat="advp" lemma="inderdaad" pos="tag" postag="BW()" pt="bw" rel="tag" root="inderdaad" sense="inderdaad" word="inderdaad">
+          <ud id="2" form="inderdaad" lemma="inderdaad" upos="ADV" head="6" deprel="parataxis" deprel_main="parataxis">
+            <dep id="2" head="6" deprel="parataxis" deprel_main="parataxis"/>
+          </ud>
+        </node>
+        <node begin="3" cat="smain" end="6" id="6" rel="nucl">
+          <node begin="3" cat="np" end="5" id="7" rel="su">
+            <node begin="3" buiging="zonder" end="4" frame="determiner(pron)" getal="ev" id="8" infl="pron" lcat="detp" lemma="mijn" naamval="stan" npagr="agr" pdtype="det" persoon="1" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,1,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="mijn" sense="mijn" status="vol" vwtype="bez" word="mijn">
+              <ud id="4" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="5" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+                <dep id="4" head="5" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+              </ud>
+            </node>
+            <node begin="4" end="5" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="9" lcat="np" lemma="hart" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="hart" sense="hart" word="hart">
+              <ud id="5" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="6" deprel="nsubj" deprel_main="nsubj">
+                <dep id="5" head="6" deprel="nsubj" deprel_main="nsubj"/>
+              </ud>
+            </node>
+          </node>
+          <node begin="5" end="6" frame="verb(zijn,past(sg),intransitive)" id="10" infl="sg" lcat="smain" lemma="breken" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="breek" sc="intransitive" sense="breek" stype="declarative" tense="past" word="brak" wvorm="pv">
+            <ud id="6" form="brak" lemma="breken" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+              <dep id="6" head="0" deprel="root" deprel_main="root"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000123033.head.1.s.1">En inderdaad , mijn hart brak</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000123033.head.1.s.1|En inderdaad , mijn hart brak|1|1|2.621677841399998</comment>
+  </comments>
+  <root ud="basic" id="6" form="brak" lemma="breken" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <mark ud="basic" id="1" form="En" lemma="en" upos="CCONJ" head="6" deprel="mark" conjtype="neven" pt="vg"/>
+    <parataxis ud="basic" id="2" form="inderdaad" lemma="inderdaad" upos="ADV" head="6" deprel="parataxis" pt="bw">
+      <punct ud="basic" id="3" form="," lemma="," upos="PUNCT" head="2" deprel="punct" pt="let"/>
+    </parataxis>
+    <nsubj ud="basic" id="5" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="6" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="basic" id="4" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="5" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+  </root>
+  <root ud="enhanced" id="6" form="brak" lemma="breken" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <mark ud="enhanced" id="1" form="En" lemma="en" upos="CCONJ" head="6" deprel="mark" conjtype="neven" pt="vg"/>
+    <parataxis ud="enhanced" id="2" form="inderdaad" lemma="inderdaad" upos="ADV" head="6" deprel="parataxis" pt="bw">
+      <punct ud="enhanced" id="3" form="," lemma="," upos="PUNCT" head="2" deprel="punct" pt="let"/>
+    </parataxis>
+    <nsubj ud="enhanced" id="5" form="hart" lemma="hart" upos="NOUN" Gender="Neut" Number="Sing" head="6" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <nmod ud="enhanced" id="4" form="mijn" lemma="mijn" upos="PRON" Person="1" PronType="Prs" head="5" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="1" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+    </nsubj>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	En	en	CCONJ	VG|neven	_	6	mark	6:mark	_
+2	inderdaad	inderdaad	ADV	BW	_	6	parataxis	6:parataxis	_
+3	,	,	PUNCT	LET	_	2	punct	2:punct	_
+4	mijn	mijn	PRON	VNW|bez|det|stan|vol|1|ev|prenom|zonder|agr	Person=1|Poss=Yes|PronType=Prs	5	nmod:poss	5:nmod:poss	_
+5	hart	hart	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	6	nsubj	6:nsubj	_
+6	brak	breken	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+]]></conllu>
+</alpino_ds>

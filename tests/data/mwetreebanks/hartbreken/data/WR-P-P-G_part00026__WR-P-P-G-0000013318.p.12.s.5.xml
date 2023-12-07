@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="13" id="0" rel="top">
+    <node begin="6" end="7" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="7" form="," lemma="," upos="PUNCT" head="6" deprel="punct" deprel_main="punct">
+        <dep id="7" head="6" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="smain" end="12" id="2" rel="--">
+      <node begin="0" cat="cp" end="6" id="3" rel="mod">
+        <node begin="0" conjtype="onder" end="1" frame="complementizer" id="4" lcat="cp" lemma="hoewel" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="hoewel" sense="hoewel" word="Hoewel">
+          <ud id="1" form="Hoewel" lemma="hoewel" upos="SCONJ" head="6" deprel="mark" deprel_main="mark">
+            <dep id="1" head="6" deprel="mark" deprel_main="mark"/>
+          </ud>
+        </node>
+        <node begin="1" cat="ssub" end="6" id="5" rel="body">
+          <node begin="1" cat="np" end="3" id="6" rel="su">
+            <node aform="base" begin="1" buiging="met-e" end="2" frame="adjective(e)" graad="basis" id="7" infl="e" lcat="ap" lemma="Iers" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="Iers" sense="Iers" vform="adj" word="Ierse">
+              <ud id="2" form="Ierse" lemma="Iers" upos="ADJ" Degree="Pos" head="3" deprel="amod" deprel_main="amod">
+                <dep id="2" head="3" deprel="amod" deprel_main="amod"/>
+              </ud>
+            </node>
+            <node begin="2" end="3" frame="proper_name(sg,'PER')" genus="zijd" getal="ev" graad="basis" id="8" lcat="np" lemma="Mickey" naamval="stan" neclass="PER" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="Mickey" sense="Mickey" word="Mickey">
+              <ud id="3" form="Mickey" lemma="Mickey" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="nsubj" deprel_main="nsubj">
+                <dep id="3" head="6" deprel="nsubj" deprel_main="nsubj"/>
+              </ud>
+            </node>
+          </node>
+          <node aform="base" begin="3" buiging="zonder" end="4" frame="adjective(no_e(adv))" graad="basis" id="9" infl="no_e" lcat="ap" lemma="heus" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="heus" sense="heus" vform="adj" word="heus">
+            <ud id="4" form="heus" lemma="heus" upos="ADJ" Degree="Pos" head="6" deprel="advmod" deprel_main="advmod">
+              <dep id="4" head="6" deprel="advmod" deprel_main="advmod"/>
+            </ud>
+          </node>
+          <node begin="4" end="5" frame="noun(het,count,pl)" gen="het" getal="mv" graad="basis" id="10" lcat="np" lemma="hart" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="obj1" rnum="pl" root="hart" sense="hart" word="harten">
+            <ud id="5" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="6" deprel="obj" deprel_main="obj">
+              <dep id="5" head="6" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+          <node begin="5" end="6" frame="verb(hebben,sg3,transitive)" id="11" infl="sg3" lcat="ssub" lemma="breken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="breek" sc="transitive" sense="breek" tense="present" word="breekt" wvorm="pv">
+            <ud id="6" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="8" deprel="advcl" deprel_main="advcl">
+              <dep id="6" head="8" deprel="advcl:hoewel" deprel_main="advcl" deprel_aux="hoewel"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="7" end="8" frame="verb(hebben,pl,pc_pp(naar))" id="12" infl="pl" lcat="smain" lemma="neigen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="neig" sc="pc_pp(naar)" sense="neig-naar" stype="declarative" tense="present" word="neigen" wvorm="pv">
+        <ud id="8" form="neigen" lemma="neigen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="8" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="8" case="nom" def="def" end="9" frame="pronoun(nwh,fir,pl,de,nom,def,wkpro)" gen="de" getal="mv" id="13" lcat="np" lemma="we" naamval="nomin" num="pl" pdtype="pron" per="fir" persoon="1" pos="pron" postag="VNW(pers,pron,nomin,red,1,mv)" pt="vnw" rel="su" rnum="pl" root="we" sense="we" special="wkpro" status="red" vwtype="pers" wh="nwh" word="we">
+        <ud id="9" form="we" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="8" deprel="nsubj" deprel_main="nsubj">
+          <dep id="9" head="8" deprel="nsubj" deprel_main="nsubj"/>
+        </ud>
+      </node>
+      <node begin="9" cat="pp" end="12" id="14" rel="pc">
+        <node begin="9" end="10" frame="preposition(naar,[toe])" id="15" lcat="pp" lemma="naar" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="naar" sense="naar" vztype="init" word="naar">
+          <ud id="10" form="naar" lemma="naar" upos="ADP" head="12" deprel="case" deprel_main="case">
+            <dep id="10" head="12" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="10" cat="np" end="12" id="16" rel="obj1">
+          <node begin="10" end="11" frame="determiner(het,nwh,nmod,pro,nparg,wkpro)" id="17" infl="het" lcat="detp" lemma="het" lwtype="bep" naamval="stan" npagr="evon" pos="det" postag="LID(bep,stan,evon)" pt="lid" rel="det" root="het" sense="het" wh="nwh" word="het">
+            <ud id="11" form="het" lemma="het" upos="DET" Definite="Def" head="12" deprel="det" deprel_main="det">
+              <dep id="11" head="12" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node aform="super" begin="11" buiging="met-e" end="12" frame="adjective(ste)" getal-n="zonder-n" graad="sup" id="18" infl="e" lcat="np" lemma="laat" naamval="stan" pos="adj" positie="nom" postag="ADJ(nom,sup,met-e,zonder-n,stan)" pt="adj" rel="hd" rnum="sg" root="laat" sense="laat" vform="adj" word="laatste">
+            <ud id="12" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="8" deprel="obl" deprel_main="obl">
+              <dep id="12" head="8" deprel="obl:naar" deprel_main="obl" deprel_aux="naar"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="12" end="13" frame="punct(punt)" id="19" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="13" form="." lemma="." upos="PUNCT" head="8" deprel="punct" deprel_main="punct">
+        <dep id="13" head="8" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000013318.p.12.s.5">Hoewel Ierse Mickey heus harten breekt , neigen we naar het laatste .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000013318.p.12.s.5|Hoewel Ierse Mickey heus harten breekt , neigen we naar het laatste .|1|1|0.6873926097000025</comment>
+  </comments>
+  <root ud="basic" id="8" form="neigen" lemma="neigen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <advcl ud="basic" id="6" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="8" deprel="advcl" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <mark ud="basic" id="1" form="Hoewel" lemma="hoewel" upos="SCONJ" head="6" deprel="mark" conjtype="onder" pt="vg"/>
+      <nsubj ud="basic" id="3" form="Mickey" lemma="Mickey" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <amod ud="basic" id="2" form="Ierse" lemma="Iers" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      </nsubj>
+      <advmod ud="basic" id="4" form="heus" lemma="heus" upos="ADJ" Degree="Pos" head="6" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+      <obj ud="basic" id="5" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="6" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+      <punct ud="basic" id="7" form="," lemma="," upos="PUNCT" head="6" deprel="punct" pt="let"/>
+    </advcl>
+    <nsubj ud="basic" id="9" form="we" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="8" deprel="nsubj" getal="mv" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="red" vwtype="pers"/>
+    <obl ud="basic" id="12" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="8" deprel="obl" buiging="met-e" getal-n="zonder-n" graad="sup" naamval="stan" positie="nom" pt="adj">
+      <case ud="basic" id="10" form="naar" lemma="naar" upos="ADP" head="12" deprel="case" pt="vz" vztype="init"/>
+      <det ud="basic" id="11" form="het" lemma="het" upos="DET" Definite="Def" head="12" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+    </obl>
+    <punct ud="basic" id="13" form="." lemma="." upos="PUNCT" head="8" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="8" form="neigen" lemma="neigen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <advcl ud="enhanced" id="6" form="breekt" lemma="breken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="8" deprel="advcl:hoewel" deprel_aux="hoewel" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <mark ud="enhanced" id="1" form="Hoewel" lemma="hoewel" upos="SCONJ" head="6" deprel="mark" conjtype="onder" pt="vg"/>
+      <nsubj ud="enhanced" id="3" form="Mickey" lemma="Mickey" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <amod ud="enhanced" id="2" form="Ierse" lemma="Iers" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      </nsubj>
+      <advmod ud="enhanced" id="4" form="heus" lemma="heus" upos="ADJ" Degree="Pos" head="6" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+      <obj ud="enhanced" id="5" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="6" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+      <punct ud="enhanced" id="7" form="," lemma="," upos="PUNCT" head="6" deprel="punct" pt="let"/>
+    </advcl>
+    <nsubj ud="enhanced" id="9" form="we" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="8" deprel="nsubj" getal="mv" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="red" vwtype="pers"/>
+    <obl ud="enhanced" id="12" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="8" deprel="obl:naar" deprel_aux="naar" buiging="met-e" getal-n="zonder-n" graad="sup" naamval="stan" positie="nom" pt="adj">
+      <case ud="enhanced" id="10" form="naar" lemma="naar" upos="ADP" head="12" deprel="case" pt="vz" vztype="init"/>
+      <det ud="enhanced" id="11" form="het" lemma="het" upos="DET" Definite="Def" head="12" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+    </obl>
+    <punct ud="enhanced" id="13" form="." lemma="." upos="PUNCT" head="8" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Hoewel	hoewel	SCONJ	VG|onder	_	6	mark	6:mark	_
+2	Ierse	Iers	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	3	amod	3:amod	_
+3	Mickey	Mickey	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	nsubj	6:nsubj	_
+4	heus	heus	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	6	advmod	6:advmod	_
+5	harten	hart	NOUN	N|soort|mv|basis	Number=Plur	6	obj	6:obj	_
+6	breekt	breken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	8	advcl	8:advcl:hoewel	_
+7	,	,	PUNCT	LET	_	6	punct	6:punct	_
+8	neigen	neigen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+9	we	we	PRON	VNW|pers|pron|nomin|red|1|mv	Case=Nom|Person=1|PronType=Prs	8	nsubj	8:nsubj	_
+10	naar	naar	ADP	VZ|init	_	12	case	12:case	_
+11	het	het	DET	LID|bep|stan|evon	Definite=Def	12	det	12:det	_
+12	laatste	laat	ADJ	ADJ|nom|sup|met-e|zonder-n|stan	Degree=Sup	8	obl	8:obl:naar	_
+13	.	.	PUNCT	LET	_	8	punct	8:punct	_
+]]></conllu>
+</alpino_ds>

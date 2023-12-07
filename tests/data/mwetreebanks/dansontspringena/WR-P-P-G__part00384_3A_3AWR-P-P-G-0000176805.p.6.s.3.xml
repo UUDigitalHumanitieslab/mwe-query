@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="18" id="0" rel="top">
+    <node begin="7" end="8" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="8" form="," lemma="," upos="PUNCT" head="15" deprel="punct" deprel_main="punct">
+        <dep id="8" head="15" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="17" id="2" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" id="3" lcat="du" lemma="maar" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="maar" sc="root" sense="maar" word="Maar">
+        <ud id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" deprel_main="mark">
+          <dep id="1" head="4" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="du" end="17" id="4" rel="nucl">
+        <node begin="1" cat="smain" end="7" id="5" rel="dp">
+          <node begin="1" cat="np" end="3" id="6" rel="su">
+            <node begin="1" end="2" frame="determiner(het,nwh,nmod,pro,nparg,wkpro)" id="7" infl="het" lcat="detp" lemma="het" lwtype="bep" naamval="stan" npagr="evon" pos="det" postag="LID(bep,stan,evon)" pt="lid" rel="det" root="het" sense="het" wh="nwh" word="het">
+              <ud id="2" form="het" lemma="het" upos="DET" Definite="Def" head="3" deprel="det" deprel_main="det">
+                <dep id="2" head="3" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node begin="2" end="3" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="8" lcat="np" lemma="parket" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="parket" sense="parket" word="parket">
+              <ud id="3" form="parket" lemma="parket" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" deprel_main="nsubj">
+                <dep id="3" head="4" deprel="nsubj" deprel_main="nsubj"/>
+              </ud>
+            </node>
+          </node>
+          <node begin="3" end="4" frame="verb(zijn,past(sg),fixed([svp_pp(in,beroep)],no_passive))" id="9" infl="sg" lcat="smain" lemma="gaan" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="ga" sc="fixed([svp_pp(in,beroep)],no_passive)" sense="in-beroep-ga" stype="declarative" tense="past" word="ging" wvorm="pv">
+            <ud id="4" form="ging" lemma="gaan" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+              <dep id="4" head="0" deprel="root" deprel_main="root"/>
+            </ud>
+          </node>
+          <node aform="base" begin="4" buiging="zonder" end="5" frame="adjective(no_e(adv))" graad="basis" id="10" infl="no_e" lcat="ap" lemma="onmiddellijk" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="onmiddellijk" sense="onmiddellijk" vform="adj" word="onmiddellijk">
+            <ud id="5" form="onmiddellijk" lemma="onmiddellijk" upos="ADJ" Degree="Pos" head="4" deprel="advmod" deprel_main="advmod">
+              <dep id="5" head="4" deprel="advmod" deprel_main="advmod"/>
+            </ud>
+          </node>
+          <node begin="5" cat="pp" end="7" id="11" rel="svp">
+            <node begin="5" end="6" frame="preposition(in,[])" id="12" lcat="pp" lemma="in" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="in" sense="in" vztype="init" word="in">
+              <ud id="6" form="in" lemma="in" upos="ADP" head="7" deprel="case" deprel_main="case">
+                <dep id="6" head="7" deprel="case" deprel_main="case"/>
+              </ud>
+            </node>
+            <node begin="6" end="7" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" id="13" lcat="np" lemma="beroep" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="obj1" rnum="sg" root="beroep" sense="beroep" word="beroep">
+              <ud id="7" form="beroep" lemma="beroep" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="compound:prt" deprel_main="compound" deprel_aux="prt">
+                <dep id="7" head="4" deprel="compound:prt" deprel_main="compound" deprel_aux="prt"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+        <node begin="8" cat="smain" end="17" id="14" rel="dp">
+          <node begin="8" cat="np" end="14" id="15" rel="su">
+            <node begin="8" end="9" frame="modal_adverb" id="16" lcat="advp" lemma="alleen" pos="adv" postag="BW()" pt="bw" rel="mod" root="alleen" sc="modal" sense="alleen" word="alleen">
+              <ud id="9" form="alleen" lemma="alleen" upos="ADV" head="11" deprel="amod" deprel_main="amod">
+                <dep id="9" head="11" deprel="amod" deprel_main="amod"/>
+              </ud>
+            </node>
+            <node aform="base" begin="9" buiging="zonder" end="10" frame="adjective(both(nonadv))" graad="basis" id="17" infl="both" lcat="ap" lemma="voormalig" pos="adj" positie="prenom" postag="ADJ(prenom,basis,zonder)" pt="adj" rel="mod" root="voormalig" sense="voormalig" vform="adj" word="voormalig">
+              <ud id="10" form="voormalig" lemma="voormalig" upos="ADJ" Degree="Pos" head="11" deprel="amod" deprel_main="amod">
+                <dep id="10" head="11" deprel="amod" deprel_main="amod"/>
+              </ud>
+            </node>
+            <node begin="10" end="11" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="18" lcat="np" lemma="bestuur_directeur" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="bestuur_directeur" sense="bestuur_directeur" word="bestuursdirecteur">
+              <ud id="11" form="bestuursdirecteur" lemma="bestuur_directeur" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="nsubj" deprel_main="nsubj">
+                <dep id="11" head="15" deprel="nsubj" deprel_main="nsubj"/>
+              </ud>
+            </node>
+            <node begin="11" cat="mwu" end="14" id="19" mwu_root="Gerda Van Hove" mwu_sense="Gerda Van Hove" rel="app">
+              <node begin="11" end="12" frame="proper_name(sg,&apos;PER&apos;)" id="20" lcat="np" lemma="Gerda" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Gerda" sense="Gerda" spectype="deeleigen" word="Gerda">
+                <ud id="12" form="Gerda" lemma="Gerda" upos="PROPN" head="11" deprel="appos" deprel_main="appos">
+                  <dep id="12" head="11" deprel="appos" deprel_main="appos"/>
+                </ud>
+              </node>
+              <node begin="12" end="13" frame="proper_name(sg,&apos;PER&apos;)" id="21" lcat="np" lemma="Van" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Van" sense="Van" spectype="deeleigen" word="Van">
+                <ud id="13" form="Van" lemma="Van" upos="PROPN" head="12" deprel="flat" deprel_main="flat">
+                  <dep id="13" head="12" deprel="flat" deprel_main="flat"/>
+                </ud>
+              </node>
+              <node begin="13" end="14" frame="proper_name(sg,&apos;PER&apos;)" id="22" lcat="np" lemma="Hove" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Hove" sense="Hove" spectype="deeleigen" word="Hove">
+                <ud id="14" form="Hove" lemma="Hove" upos="PROPN" head="12" deprel="flat" deprel_main="flat">
+                  <dep id="14" head="12" deprel="flat" deprel_main="flat"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+          <node begin="14" end="15" frame="verb(unacc,past(sg),transitive)" id="23" infl="sg" lcat="smain" lemma="ontspringen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="ontspring" sc="transitive" sense="ontspring" stype="declarative" tense="past" word="ontsprong" wvorm="pv">
+            <ud id="15" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="4" deprel="parataxis" deprel_main="parataxis">
+              <dep id="15" head="4" deprel="parataxis" deprel_main="parataxis"/>
+            </ud>
+          </node>
+          <node begin="15" cat="np" end="17" id="24" rel="obj1">
+            <node begin="15" end="16" frame="determiner(de)" id="25" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+              <ud id="16" form="de" lemma="de" upos="DET" Definite="Def" head="17" deprel="det" deprel_main="det">
+                <dep id="16" head="17" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node begin="16" end="17" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="26" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans">
+              <ud id="17" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="obj" deprel_main="obj">
+                <dep id="17" head="15" deprel="obj" deprel_main="obj"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="17" end="18" frame="punct(punt)" id="27" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="18" form="." lemma="." upos="PUNCT" head="4" deprel="punct" deprel_main="punct">
+        <dep id="18" head="4" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000176805.p.6.s.3">Maar het parket ging onmiddellijk in beroep , alleen voormalig bestuursdirecteur Gerda Van Hove ontsprong de dans .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000176805.p.6.s.3|Maar het parket ging onmiddellijk in beroep , alleen voormalig bestuursdirecteur Gerda Van Hove ontsprong de dans .|1|1|-3.762304486099991</comment>
+  </comments>
+  <root ud="basic" id="4" form="ging" lemma="gaan" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <mark ud="basic" id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" conjtype="neven" pt="vg"/>
+    <nsubj ud="basic" id="3" form="parket" lemma="parket" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="2" form="het" lemma="het" upos="DET" Definite="Def" head="3" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+    </nsubj>
+    <advmod ud="basic" id="5" form="onmiddellijk" lemma="onmiddellijk" upos="ADJ" Degree="Pos" head="4" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <compound ud="basic" id="7" form="beroep" lemma="beroep" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="compound:prt" deprel_aux="prt" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="basic" id="6" form="in" lemma="in" upos="ADP" head="7" deprel="case" pt="vz" vztype="init"/>
+    </compound>
+    <parataxis ud="basic" id="15" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="4" deprel="parataxis" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+      <punct ud="basic" id="8" form="," lemma="," upos="PUNCT" head="15" deprel="punct" pt="let"/>
+      <nsubj ud="basic" id="11" form="bestuursdirecteur" lemma="bestuur_directeur" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <amod ud="basic" id="9" form="alleen" lemma="alleen" upos="ADV" head="11" deprel="amod" pt="bw"/>
+        <amod ud="basic" id="10" form="voormalig" lemma="voormalig" upos="ADJ" Degree="Pos" head="11" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+        <appos ud="basic" id="12" form="Gerda" lemma="Gerda" upos="PROPN" head="11" deprel="appos" pt="spec" spectype="deeleigen">
+          <flat ud="basic" id="13" form="Van" lemma="Van" upos="PROPN" head="12" deprel="flat" pt="spec" spectype="deeleigen"/>
+          <flat ud="basic" id="14" form="Hove" lemma="Hove" upos="PROPN" head="12" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </appos>
+      </nsubj>
+      <obj ud="basic" id="17" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="16" form="de" lemma="de" upos="DET" Definite="Def" head="17" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      </obj>
+    </parataxis>
+    <punct ud="basic" id="18" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="4" form="ging" lemma="gaan" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <mark ud="enhanced" id="1" form="Maar" lemma="maar" upos="CCONJ" head="4" deprel="mark" conjtype="neven" pt="vg"/>
+    <nsubj ud="enhanced" id="3" form="parket" lemma="parket" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="2" form="het" lemma="het" upos="DET" Definite="Def" head="3" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+    </nsubj>
+    <advmod ud="enhanced" id="5" form="onmiddellijk" lemma="onmiddellijk" upos="ADJ" Degree="Pos" head="4" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <compound ud="enhanced" id="7" form="beroep" lemma="beroep" upos="NOUN" Gender="Neut" Number="Sing" head="4" deprel="compound:prt" deprel_aux="prt" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="enhanced" id="6" form="in" lemma="in" upos="ADP" head="7" deprel="case" pt="vz" vztype="init"/>
+    </compound>
+    <parataxis ud="enhanced" id="15" form="ontsprong" lemma="ontspringen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="4" deprel="parataxis" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+      <punct ud="enhanced" id="8" form="," lemma="," upos="PUNCT" head="15" deprel="punct" pt="let"/>
+      <nsubj ud="enhanced" id="11" form="bestuursdirecteur" lemma="bestuur_directeur" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <amod ud="enhanced" id="9" form="alleen" lemma="alleen" upos="ADV" head="11" deprel="amod" pt="bw"/>
+        <amod ud="enhanced" id="10" form="voormalig" lemma="voormalig" upos="ADJ" Degree="Pos" head="11" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+        <appos ud="enhanced" id="12" form="Gerda" lemma="Gerda" upos="PROPN" head="11" deprel="appos" pt="spec" spectype="deeleigen">
+          <flat ud="enhanced" id="13" form="Van" lemma="Van" upos="PROPN" head="12" deprel="flat" pt="spec" spectype="deeleigen"/>
+          <flat ud="enhanced" id="14" form="Hove" lemma="Hove" upos="PROPN" head="12" deprel="flat" pt="spec" spectype="deeleigen"/>
+        </appos>
+      </nsubj>
+      <obj ud="enhanced" id="17" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="15" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="16" form="de" lemma="de" upos="DET" Definite="Def" head="17" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      </obj>
+    </parataxis>
+    <punct ud="enhanced" id="18" form="." lemma="." upos="PUNCT" head="4" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Maar	maar	CCONJ	VG|neven	_	4	mark	4:mark	_
+2	het	het	DET	LID|bep|stan|evon	Definite=Def	3	det	3:det	_
+3	parket	parket	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	4	nsubj	4:nsubj	_
+4	ging	gaan	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+5	onmiddellijk	onmiddellijk	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	4	advmod	4:advmod	_
+6	in	in	ADP	VZ|init	_	7	case	7:case	_
+7	beroep	beroep	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	4	compound:prt	4:compound:prt	_
+8	,	,	PUNCT	LET	_	15	punct	15:punct	_
+9	alleen	alleen	ADV	BW	_	11	amod	11:amod	_
+10	voormalig	voormalig	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	11	amod	11:amod	_
+11	bestuursdirecteur	bestuur_directeur	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	15	nsubj	15:nsubj	_
+12	Gerda	Gerda	PROPN	SPEC|deeleigen	_	11	appos	11:appos	_
+13	Van	Van	PROPN	SPEC|deeleigen	_	12	flat	12:flat	_
+14	Hove	Hove	PROPN	SPEC|deeleigen	_	12	flat	12:flat	_
+15	ontsprong	ontspringen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	4	parataxis	4:parataxis	_
+16	de	de	DET	LID|bep|stan|rest	Definite=Def	17	det	17:det	_
+17	dans	dans	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	15	obj	15:obj	_
+18	.	.	PUNCT	LET	_	4	punct	4:punct	_
+]]></conllu>
+</alpino_ds>

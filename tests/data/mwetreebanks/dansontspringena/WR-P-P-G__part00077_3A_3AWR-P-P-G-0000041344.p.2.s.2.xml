@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="10" id="0" rel="top">
+    <node begin="0" cat="smain" end="9" id="1" rel="--">
+      <node begin="0" cat="np" end="6" id="2" rel="su">
+        <node aform="base" begin="0" buiging="met-e" end="1" frame="nominalized_adjective" getal-n="mv-n" graad="basis" id="3" lcat="np" lemma="arbeidsongeschikt" num="pl" personalized="true" pos="adj" positie="nom" postag="ADJ(nom,basis,met-e,mv-n)" pt="adj" rel="hd" rnum="pl" root="arbeidsongeschikt" sense="arbeidsongeschikt" special="a_noun" word="Arbeidsongeschikten">
+          <ud id="1" form="Arbeidsongeschikten" lemma="arbeidsongeschikt" upos="ADJ" Degree="Pos" head="7" deprel="nsubj" deprel_main="nsubj">
+            <dep id="1" head="7" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="1" cat="pp" end="6" id="4" rel="mod">
+          <node begin="1" end="2" frame="preposition(van,[af,uit,vandaan,[af,aan]])" id="5" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+            <ud id="2" form="van" lemma="van" upos="ADP" head="4" deprel="case" deprel_main="case">
+              <dep id="2" head="4" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="2" cat="conj" end="6" id="6" rel="obj1">
+            <node begin="2" cat="np" end="4" id="7" rel="cnj">
+              <node begin="2" end="3" frame="number(hoofd(pl_num))" id="8" index="1" infl="pl_num" lcat="detp" lemma="55" naamval="stan" numtype="hoofd" pos="num" positie="prenom" postag="TW(hoofd,prenom,stan)" pt="tw" rel="det" root="55" sense="55" special="hoofd" word="55">
+                <ud id="3" form="55" lemma="55" upos="NUM" head="4" deprel="nummod" deprel_main="nummod">
+                  <dep id="3" head="4" deprel="nummod" deprel_main="nummod"/>
+                  <dep id="3" head="6" deprel="nummod" deprel_main="nummod"/>
+                </ud>
+              </node>
+              <node begin="3" end="4" frame="tmp_noun(het,count,meas)" gen="het" genus="onz" getal="ev" graad="basis" id="9" lcat="np" lemma="jaar" naamval="stan" ntype="soort" num="meas" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="jaar" sense="jaar" special="tmp" word="jaar">
+                <ud id="4" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="1" deprel="nmod" deprel_main="nmod">
+                  <dep id="4" head="1" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                </ud>
+              </node>
+            </node>
+            <node begin="4" conjtype="neven" end="5" frame="conj(of)" id="10" lcat="vg" lemma="of" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="of" sense="of" word="of">
+              <ud id="5" form="of" lemma="of" upos="CCONJ" head="6" deprel="cc" deprel_main="cc">
+                <dep id="5" head="6" deprel="cc" deprel_main="cc"/>
+              </ud>
+            </node>
+            <node begin="2" cat="np" end="6" id="11" rel="cnj">
+              <node begin="2" end="3" id="12" index="1" rel="det"/>
+              <node begin="5" end="6" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="13" lcat="np" lemma="ouder" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="ouder" sense="ouder" word="ouder">
+                <ud id="6" form="ouder" lemma="ouder" upos="NOUN" Gender="Com" Number="Sing" head="4" deprel="conj" deprel_main="conj">
+                  <dep id="6" head="1" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                  <dep id="6" head="4" deprel="conj:of" deprel_main="conj" deprel_aux="of"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node begin="6" end="7" frame="verb(unacc,pl,transitive)" id="14" infl="pl" lcat="smain" lemma="ontspringen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="ontspring" sc="transitive" sense="ontspring" stype="declarative" tense="present" word="ontspringen" wvorm="pv">
+        <ud id="7" form="ontspringen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="7" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="7" cat="np" end="9" id="15" rel="obj1">
+        <node begin="7" end="8" frame="determiner(de)" id="16" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+          <ud id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" deprel_main="det">
+            <dep id="8" head="9" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="8" end="9" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="17" lcat="np" lemma="dans" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="dans" sense="dans" word="dans">
+          <ud id="9" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" deprel_main="obj">
+            <dep id="9" head="7" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="9" end="10" frame="punct(punt)" id="18" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="10" form="." lemma="." upos="PUNCT" head="7" deprel="punct" deprel_main="punct">
+        <dep id="10" head="7" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000041344.p.2.s.2">Arbeidsongeschikten van 55 jaar of ouder ontspringen de dans .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000041344.p.2.s.2|Arbeidsongeschikten van 55 jaar of ouder ontspringen de dans .|1|1|0.07782934379999996</comment>
+  </comments>
+  <root ud="basic" id="7" form="ontspringen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="1" form="Arbeidsongeschikten" lemma="arbeidsongeschikt" upos="ADJ" Degree="Pos" head="7" deprel="nsubj" buiging="met-e" getal-n="mv-n" graad="basis" positie="nom" pt="adj">
+      <nmod ud="basic" id="4" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="1" deprel="nmod" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="basic" id="2" form="van" lemma="van" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+        <nummod ud="basic" id="3" form="55" lemma="55" upos="NUM" head="4" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+        <conj ud="basic" id="6" form="ouder" lemma="ouder" upos="NOUN" Gender="Com" Number="Sing" head="4" deprel="conj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <cc ud="basic" id="5" form="of" lemma="of" upos="CCONJ" head="6" deprel="cc" conjtype="neven" pt="vg"/>
+        </conj>
+      </nmod>
+    </nsubj>
+    <obj ud="basic" id="9" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <punct ud="basic" id="10" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="7" form="ontspringen" lemma="ontspringen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="Arbeidsongeschikten" lemma="arbeidsongeschikt" upos="ADJ" Degree="Pos" head="7" deprel="nsubj" buiging="met-e" getal-n="mv-n" graad="basis" positie="nom" pt="adj">
+      <nmod ud="enhanced" id="4" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="1" deprel="nmod:van" deprel_aux="van" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="enhanced" id="2" form="van" lemma="van" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+        <nummod ud="enhanced" id="3" form="55" lemma="55" upos="NUM" head="4" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+        <conj ud="enhanced" id="6" form="ouder" lemma="ouder" upos="NOUN" Gender="Com" Number="Sing" head="4" deprel="conj:of" deprel_aux="of" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <nummod ud="enhanced" id="3" form="55" lemma="55" upos="NUM" head="6" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+          <cc ud="enhanced" id="5" form="of" lemma="of" upos="CCONJ" head="6" deprel="cc" conjtype="neven" pt="vg"/>
+        </conj>
+      </nmod>
+      <nmod ud="enhanced" id="6" form="ouder" lemma="ouder" upos="NOUN" Gender="Com" Number="Sing" head="1" deprel="nmod:van" deprel_aux="van" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <nummod ud="enhanced" id="3" form="55" lemma="55" upos="NUM" head="6" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+        <cc ud="enhanced" id="5" form="of" lemma="of" upos="CCONJ" head="6" deprel="cc" conjtype="neven" pt="vg"/>
+      </nmod>
+    </nsubj>
+    <obj ud="enhanced" id="9" form="dans" lemma="dans" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </obj>
+    <punct ud="enhanced" id="10" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Arbeidsongeschikten	arbeidsongeschikt	ADJ	ADJ|nom|basis|met-e|mv-n	Degree=Pos	7	nsubj	7:nsubj	_
+2	van	van	ADP	VZ|init	_	4	case	4:case	_
+3	55	55	NUM	TW|hoofd|prenom|stan	_	4	nummod	4:nummod|6:nummod	_
+4	jaar	jaar	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	1	nmod	1:nmod:van	_
+5	of	of	CCONJ	VG|neven	_	6	cc	6:cc	_
+6	ouder	ouder	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	4	conj	1:nmod:van|4:conj:of	_
+7	ontspringen	ontspringen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+8	de	de	DET	LID|bep|stan|rest	Definite=Def	9	det	9:det	_
+9	dans	dans	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	7	obj	7:obj	_
+10	.	.	PUNCT	LET	_	7	punct	7:punct	_
+]]></conllu>
+</alpino_ds>

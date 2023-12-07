@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.10">
+  <node begin="0" cat="top" end="19" id="0" rel="top">
+    <node begin="4" end="5" frame="punct(komma)" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="5" form="," lemma="," upos="PUNCT" head="7" deprel="punct" deprel_main="punct">
+        <dep id="5" head="7" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="7" end="8" frame="punct(komma)" id="2" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="8" form="," lemma="," upos="PUNCT" head="9" deprel="punct" deprel_main="punct">
+        <dep id="8" head="9" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="9" end="10" frame="punct(komma)" id="3" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="10" form="," lemma="," upos="PUNCT" head="11" deprel="punct" deprel_main="punct">
+        <dep id="10" head="11" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="11" end="12" frame="punct(komma)" id="4" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="12" form="," lemma="," upos="PUNCT" head="4" deprel="punct" deprel_main="punct">
+        <dep id="12" head="4" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="ap" end="18" id="5" rel="--">
+      <node aform="base" begin="0" buiging="zonder" end="1" frame="adjective(end(both))" id="6" infl="no_e" lcat="ppres" lemma="voort_duren" pos="adj" positie="vrij" postag="WW(od,vrij,zonder)" pt="ww" rel="mod" root="duur_voort" sense="duur_voort" vform="gerund" word="Voortdurend" wvorm="od">
+        <ud id="1" form="Voortdurend" lemma="voort_duren" upos="VERB" VerbForm="Part" head="13" deprel="obl" deprel_main="obl">
+          <dep id="1" head="13" deprel="obl" deprel_main="obl"/>
+        </ud>
+      </node>
+      <node begin="1" cat="pp" end="11" id="7" rel="mod">
+        <node begin="1" end="2" frame="preposition(aan,[vooraf])" id="8" lcat="pp" lemma="aan" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="aan" sense="aan" vztype="init" word="aan">
+          <ud id="2" form="aan" lemma="aan" upos="ADP" head="4" deprel="case" deprel_main="case">
+            <dep id="2" head="4" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="2" cat="conj" end="11" id="9" rel="obj1">
+          <node begin="2" cat="np" end="4" id="10" rel="cnj">
+            <node begin="2" end="3" frame="determiner(het,nwh,nmod,pro,nparg,wkpro)" id="11" infl="het" lcat="detp" lemma="het" lwtype="bep" naamval="stan" npagr="evon" pos="det" postag="LID(bep,stan,evon)" pt="lid" rel="det" root="het" sense="het" wh="nwh" word="het">
+              <ud id="3" form="het" lemma="het" upos="DET" Definite="Def" head="4" deprel="det" deprel_main="det">
+                <dep id="3" head="4" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node begin="3" buiging="zonder" end="4" frame="v_noun(intransitive)" getal-n="zonder-n" id="12" lcat="np" lemma="hunkeren" pos="verb" positie="nom" postag="WW(inf,nom,zonder,zonder-n)" pt="ww" rel="hd" rnum="sg" root="hunker" sc="intransitive" sense="hunker" special="v_noun" word="hunkeren" wvorm="inf">
+              <ud id="4" form="hunkeren" lemma="hunkeren" upos="VERB" VerbForm="Inf" head="13" deprel="obl" deprel_main="obl">
+                <dep id="4" head="13" deprel="obl:aan" deprel_main="obl" deprel_aux="aan"/>
+              </ud>
+            </node>
+          </node>
+          <node begin="5" cat="np" end="7" id="13" rel="cnj">
+            <node begin="5" end="6" frame="noun(het,count,pl)" gen="het" getal="mv" graad="basis" id="14" lcat="np" lemma="hart" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="obj1" rnum="pl" root="hart" sense="hart" word="harten">
+              <ud id="6" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="7" deprel="obj" deprel_main="obj">
+                <dep id="6" head="7" deprel="obj" deprel_main="obj"/>
+              </ud>
+            </node>
+            <node begin="6" buiging="zonder" end="7" frame="v_noun(transitive)" getal-n="zonder-n" id="15" lcat="np" lemma="breken" pos="verb" positie="nom" postag="WW(inf,nom,zonder,zonder-n)" pt="ww" rel="hd" rnum="sg" root="breek" sc="transitive" sense="breek" special="v_noun" word="breken" wvorm="inf">
+              <ud id="7" form="breken" lemma="breken" upos="VERB" VerbForm="Inf" head="4" deprel="conj" deprel_main="conj">
+                <dep id="7" head="4" deprel="conj" deprel_main="conj"/>
+                <dep id="7" head="13" deprel="obl:aan" deprel_main="obl" deprel_aux="aan"/>
+              </ud>
+            </node>
+          </node>
+          <node begin="8" buiging="zonder" end="9" frame="v_noun(intransitive)" getal-n="zonder-n" id="16" lcat="np" lemma="versieren" pos="verb" positie="nom" postag="WW(inf,nom,zonder,zonder-n)" pt="ww" rel="cnj" rnum="sg" root="versier" sc="intransitive" sense="versier" special="v_noun" word="versieren" wvorm="inf">
+            <ud id="9" form="versieren" lemma="versieren" upos="VERB" VerbForm="Inf" head="4" deprel="conj" deprel_main="conj">
+              <dep id="9" head="4" deprel="conj" deprel_main="conj"/>
+              <dep id="9" head="13" deprel="obl:aan" deprel_main="obl" deprel_aux="aan"/>
+            </ud>
+          </node>
+          <node begin="10" buiging="zonder" end="11" frame="v_noun(intransitive)" getal-n="zonder-n" id="17" lcat="np" lemma="daten" pos="verb" positie="nom" postag="WW(inf,nom,zonder,zonder-n)" pt="ww" rel="cnj" rnum="sg" root="date" sc="intransitive" sense="date" special="v_noun" word="daten" wvorm="inf">
+            <ud id="11" form="daten" lemma="daten" upos="VERB" VerbForm="Inf" head="4" deprel="conj" deprel_main="conj">
+              <dep id="11" head="4" deprel="conj" deprel_main="conj"/>
+              <dep id="11" head="13" deprel="obl:aan" deprel_main="obl" deprel_aux="aan"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="12" cat="mwu" end="14" id="18" mwu_root="op zoek" mwu_sense="op zoek-naar" rel="hd">
+        <node aform="base" begin="12" end="13" frame="adjective(pred(padv),pp(naar))" id="19" infl="pred" lcat="ap" lemma="op" pos="adj" postag="VZ(init)" pt="vz" rel="mwp" root="op" sc="pp(naar)" sense="op-naar" vform="adj" vztype="init" word="op">
+          <ud id="13" form="op" lemma="op" upos="ADP" head="0" deprel="root" deprel_main="root">
+            <dep id="13" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node aform="base" begin="13" end="14" frame="adjective(pred(padv),pp(naar))" genus="onz" getal="ev" graad="basis" id="20" infl="pred" lcat="ap" lemma="zoek" naamval="stan" ntype="soort" pos="adj" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="mwp" root="zoek" sc="pp(naar)" sense="zoek-naar" vform="adj" word="zoek">
+          <ud id="14" form="zoek" lemma="zoek" upos="NOUN" Gender="Neut" Number="Sing" head="13" deprel="fixed" deprel_main="fixed">
+            <dep id="14" head="13" deprel="fixed" deprel_main="fixed"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="14" cat="pp" end="18" id="21" rel="pc">
+        <node begin="14" end="15" frame="preposition(naar,[toe])" id="22" lcat="pp" lemma="naar" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="naar" sense="naar" vztype="init" word="naar">
+          <ud id="15" form="naar" lemma="naar" upos="ADP" head="18" deprel="case" deprel_main="case">
+            <dep id="15" head="18" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="15" cat="np" end="18" id="23" rel="obj1">
+          <node begin="15" buiging="zonder" end="16" frame="determiner(de,nwh,nmod,pro,nparg)" id="24" infl="de" lcat="detp" lemma="die" naamval="stan" npagr="rest" pdtype="det" pos="det" positie="prenom" postag="VNW(aanw,det,stan,prenom,zonder,rest)" pt="vnw" rel="det" root="die" sense="die" vwtype="aanw" wh="nwh" word="die">
+            <ud id="16" form="die" lemma="die" upos="DET" head="18" deprel="det" deprel_main="det">
+              <dep id="16" head="18" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node aform="base" begin="16" buiging="met-e" end="17" frame="adjective(e)" id="25" infl="e" lcat="ap" lemma="ene" naamval="stan" npagr="evz" pdtype="det" pos="adj" positie="prenom" postag="VNW(onbep,det,stan,prenom,met-e,evz)" pt="vnw" rel="mod" root="ene" sense="ene" vform="adj" vwtype="onbep" word="ene">
+            <ud id="17" form="ene" lemma="ene" upos="PRON" PronType="Ind" head="18" deprel="nmod" deprel_main="nmod">
+              <dep id="17" head="18" deprel="nmod" deprel_main="nmod"/>
+            </ud>
+          </node>
+          <node begin="17" end="18" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" id="26" lcat="np" lemma="vrijer" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="vrijer" sense="vrijer" word="vrijer">
+            <ud id="18" form="vrijer" lemma="vrijer" upos="NOUN" Gender="Com" Number="Sing" head="13" deprel="obl" deprel_main="obl">
+              <dep id="18" head="13" deprel="obl:naar" deprel_main="obl" deprel_aux="naar"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="18" end="19" frame="punct(vraag)" id="27" lcat="punct" lemma="?" pos="punct" postag="LET()" pt="let" rel="--" root="?" sense="?" special="vraag" word="?">
+      <ud id="19" form="?" lemma="?" upos="PUNCT" head="13" deprel="punct" deprel_main="punct">
+        <dep id="19" head="13" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000155035.p.4.s.2">Voortdurend aan het hunkeren , harten breken , versieren , daten , op zoek naar die ene vrijer ?</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000155035.p.4.s.2|Voortdurend aan het hunkeren , harten breken , versieren , daten , op zoek naar die ene vrijer ?|1|1|7.015052132700005</comment>
+  </comments>
+  <root ud="basic" id="13" form="op" lemma="op" upos="ADP" head="0" deprel="root" pt="vz" vztype="init">
+    <obl ud="basic" id="1" form="Voortdurend" lemma="voort_duren" upos="VERB" VerbForm="Part" head="13" deprel="obl" buiging="zonder" positie="vrij" pt="ww" wvorm="od"/>
+    <obl ud="basic" id="4" form="hunkeren" lemma="hunkeren" upos="VERB" VerbForm="Inf" head="13" deprel="obl" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+      <case ud="basic" id="2" form="aan" lemma="aan" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+      <det ud="basic" id="3" form="het" lemma="het" upos="DET" Definite="Def" head="4" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+      <conj ud="basic" id="7" form="breken" lemma="breken" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="basic" id="5" form="," lemma="," upos="PUNCT" head="7" deprel="punct" pt="let"/>
+        <obj ud="basic" id="6" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="7" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+      </conj>
+      <conj ud="basic" id="9" form="versieren" lemma="versieren" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="basic" id="8" form="," lemma="," upos="PUNCT" head="9" deprel="punct" pt="let"/>
+      </conj>
+      <conj ud="basic" id="11" form="daten" lemma="daten" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="basic" id="10" form="," lemma="," upos="PUNCT" head="11" deprel="punct" pt="let"/>
+      </conj>
+      <punct ud="basic" id="12" form="," lemma="," upos="PUNCT" head="4" deprel="punct" pt="let"/>
+    </obl>
+    <fixed ud="basic" id="14" form="zoek" lemma="zoek" upos="NOUN" Gender="Neut" Number="Sing" head="13" deprel="fixed" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n"/>
+    <obl ud="basic" id="18" form="vrijer" lemma="vrijer" upos="NOUN" Gender="Com" Number="Sing" head="13" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="basic" id="15" form="naar" lemma="naar" upos="ADP" head="18" deprel="case" pt="vz" vztype="init"/>
+      <det ud="basic" id="16" form="die" lemma="die" upos="DET" head="18" deprel="det" buiging="zonder" naamval="stan" npagr="rest" pdtype="det" positie="prenom" pt="vnw" vwtype="aanw"/>
+      <nmod ud="basic" id="17" form="ene" lemma="ene" upos="PRON" PronType="Ind" head="18" deprel="nmod" buiging="met-e" naamval="stan" npagr="evz" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+    </obl>
+    <punct ud="basic" id="19" form="?" lemma="?" upos="PUNCT" head="13" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="13" form="op" lemma="op" upos="ADP" head="0" deprel="root" pt="vz" vztype="init">
+    <obl ud="enhanced" id="1" form="Voortdurend" lemma="voort_duren" upos="VERB" VerbForm="Part" head="13" deprel="obl" buiging="zonder" positie="vrij" pt="ww" wvorm="od"/>
+    <obl ud="enhanced" id="4" form="hunkeren" lemma="hunkeren" upos="VERB" VerbForm="Inf" head="13" deprel="obl:aan" deprel_aux="aan" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+      <case ud="enhanced" id="2" form="aan" lemma="aan" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+      <det ud="enhanced" id="3" form="het" lemma="het" upos="DET" Definite="Def" head="4" deprel="det" lwtype="bep" naamval="stan" npagr="evon" pt="lid"/>
+      <conj ud="enhanced" id="7" form="breken" lemma="breken" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="enhanced" id="5" form="," lemma="," upos="PUNCT" head="7" deprel="punct" pt="let"/>
+        <obj ud="enhanced" id="6" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="7" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+      </conj>
+      <conj ud="enhanced" id="9" form="versieren" lemma="versieren" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="enhanced" id="8" form="," lemma="," upos="PUNCT" head="9" deprel="punct" pt="let"/>
+      </conj>
+      <conj ud="enhanced" id="11" form="daten" lemma="daten" upos="VERB" VerbForm="Inf" head="4" deprel="conj" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+        <punct ud="enhanced" id="10" form="," lemma="," upos="PUNCT" head="11" deprel="punct" pt="let"/>
+      </conj>
+      <punct ud="enhanced" id="12" form="," lemma="," upos="PUNCT" head="4" deprel="punct" pt="let"/>
+    </obl>
+    <obl ud="enhanced" id="7" form="breken" lemma="breken" upos="VERB" VerbForm="Inf" head="13" deprel="obl:aan" deprel_aux="aan" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+      <punct ud="enhanced" id="5" form="," lemma="," upos="PUNCT" head="7" deprel="punct" pt="let"/>
+      <obj ud="enhanced" id="6" form="harten" lemma="hart" upos="NOUN" Number="Plur" head="7" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+    </obl>
+    <obl ud="enhanced" id="9" form="versieren" lemma="versieren" upos="VERB" VerbForm="Inf" head="13" deprel="obl:aan" deprel_aux="aan" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+      <punct ud="enhanced" id="8" form="," lemma="," upos="PUNCT" head="9" deprel="punct" pt="let"/>
+    </obl>
+    <obl ud="enhanced" id="11" form="daten" lemma="daten" upos="VERB" VerbForm="Inf" head="13" deprel="obl:aan" deprel_aux="aan" buiging="zonder" getal-n="zonder-n" positie="nom" pt="ww" wvorm="inf">
+      <punct ud="enhanced" id="10" form="," lemma="," upos="PUNCT" head="11" deprel="punct" pt="let"/>
+    </obl>
+    <fixed ud="enhanced" id="14" form="zoek" lemma="zoek" upos="NOUN" Gender="Neut" Number="Sing" head="13" deprel="fixed" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n"/>
+    <obl ud="enhanced" id="18" form="vrijer" lemma="vrijer" upos="NOUN" Gender="Com" Number="Sing" head="13" deprel="obl:naar" deprel_aux="naar" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="enhanced" id="15" form="naar" lemma="naar" upos="ADP" head="18" deprel="case" pt="vz" vztype="init"/>
+      <det ud="enhanced" id="16" form="die" lemma="die" upos="DET" head="18" deprel="det" buiging="zonder" naamval="stan" npagr="rest" pdtype="det" positie="prenom" pt="vnw" vwtype="aanw"/>
+      <nmod ud="enhanced" id="17" form="ene" lemma="ene" upos="PRON" PronType="Ind" head="18" deprel="nmod" buiging="met-e" naamval="stan" npagr="evz" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+    </obl>
+    <punct ud="enhanced" id="19" form="?" lemma="?" upos="PUNCT" head="13" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.8.1"><![CDATA[
+1	Voortdurend	voort_duren	VERB	WW|od|vrij|zonder	VerbForm=Part	13	obl	13:obl	_
+2	aan	aan	ADP	VZ|init	_	4	case	4:case	_
+3	het	het	DET	LID|bep|stan|evon	Definite=Def	4	det	4:det	_
+4	hunkeren	hunkeren	VERB	WW|inf|nom|zonder|zonder-n	VerbForm=Inf	13	obl	13:obl:aan	_
+5	,	,	PUNCT	LET	_	7	punct	7:punct	_
+6	harten	hart	NOUN	N|soort|mv|basis	Number=Plur	7	obj	7:obj	_
+7	breken	breken	VERB	WW|inf|nom|zonder|zonder-n	VerbForm=Inf	4	conj	4:conj|13:obl:aan	_
+8	,	,	PUNCT	LET	_	9	punct	9:punct	_
+9	versieren	versieren	VERB	WW|inf|nom|zonder|zonder-n	VerbForm=Inf	4	conj	4:conj|13:obl:aan	_
+10	,	,	PUNCT	LET	_	11	punct	11:punct	_
+11	daten	daten	VERB	WW|inf|nom|zonder|zonder-n	VerbForm=Inf	4	conj	4:conj|13:obl:aan	_
+12	,	,	PUNCT	LET	_	4	punct	4:punct	_
+13	op	op	ADP	VZ|init	_	0	root	0:root	_
+14	zoek	zoek	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	13	fixed	13:fixed	_
+15	naar	naar	ADP	VZ|init	_	18	case	18:case	_
+16	die	die	DET	VNW|aanw|det|stan|prenom|zonder|rest	_	18	det	18:det	_
+17	ene	ene	PRON	VNW|onbep|det|stan|prenom|met-e|evz	PronType=Ind	18	nmod	18:nmod	_
+18	vrijer	vrijer	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	13	obl	13:obl:naar	_
+19	?	?	PUNCT	LET	_	13	punct	13:punct	_
+]]></conllu>
+</alpino_ds>
