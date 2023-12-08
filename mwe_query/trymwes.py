@@ -9,7 +9,7 @@ debug = False
 geenhaankraaien = ('0geen *haan zal naar iets kraaien',
                    ['Daar kraait geen haan naar', 'Hier heeft geen haan naar gekraaid',
                     'geen haan kraaide daarnaar', 'geen haan kraaide ernaar dat hij niet kwam',
-                    'geen haan kraaide er naar dat hij niet kwam', 
+                    'geen haan kraaide er naar dat hij niet kwam',
                     'er is geen haan die daar naar kraait', ]
                    )
 
