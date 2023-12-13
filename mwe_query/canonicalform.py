@@ -386,7 +386,14 @@ def mknewnode(stree, mwetop, atts, annotations):
             newnode.attrib['maxnodecount'] = f'{len(stree)}'
     return newnode
 
-
+def expandnonheadwordnode(nonheadwordnode, phrasenodeproperties):
+    phraserel = gav(nonheadwordnode, 'rel')
+    newnonheadwordnode = copy.copy(nonheadwordnode)
+    newnonheadwordnode.attrib['rel'] = 'hd'
+    phrasenode = ET.Element('node', attrib=phrasenodeproperties)
+    phrasenode.attrib['rel'] = phraserel
+    phrasenode.append(newnonheadwordnode)
+    return phrasenode
 def zullenheadclause(stree: SynTree) -> bool:
     if stree.tag == 'node':
         cat = gav(stree, 'cat')
@@ -1016,9 +1023,10 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
             Rpronounobj1node = copy.copy(obj1node)
             Rpronounobj1node.attrib['lemma'] = 'er|hier|daar|waar|ergens|nergens|overal'
             Rpronounobj1node.attrib['pt'] = 'vnw'
+            newphrase = expandnonheadwordnode(Rpronounobj1node, {})
             for child in newppnode2:
                 newppnode2.remove(child)
-            newppnode2.append(Rpronounobj1node)
+            newppnode2.append(newphrase)
             newppnode2.append(newvz2)
 
             # pp with R-pronoun object which has been replaced by a full NO with a dummymod
@@ -1047,11 +1055,15 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
                 pppronadvvcnode.append(pronadvnode1)
                 pppronadvvcnode.append(newvcnode)
 
+            # pp's with a pronominal adverb. e.g. daarnaar
             pprel = gav(ppnode, 'rel')
             pronadvnode = getpronadv(vzlemma, pprel)
+            pronadvppnode = expandnonheadwordnode(pronadvnode, {'cat': 'pp', 'rel': pprel})
+            pronadvnode.attrib['rel'] = 'hd'
+            pronadvppnode.append(pronadvnode)
 
             alternativesnode = mkalternativesnode([[ppnode], [newppnode2], [newppnode3], [
-                                                  pppobj1vcnode], [pppronadvvcnode], [pronadvnode]])
+                                                  pppobj1vcnode], [pppronadvvcnode], [pronadvppnode]])
             parent.append(alternativesnode)
 
         vblgennpnodeids = newstree.xpath(
@@ -1404,8 +1416,9 @@ def relpronsubst(stree: SynTree) -> SynTree:
 def expandfull(stree: SynTree) -> SynTree:
     # possibly add getlcat
     stree1 = relpronsubst(stree)
-    stree2 = indextransform(stree1)
-    return stree2
+    stree2 = expandnonheadwords(stree1)
+    stree3 = indextransform(stree2)
+    return stree3
 
 
 def gettopnode(stree):
