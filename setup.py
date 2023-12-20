@@ -6,7 +6,7 @@ with open('README.md') as file:
 setup(
     name='mwe-query',
     python_requires='>=3.7, <4',
-    version='0.0.1',
+    version='0.0.5',
     description='',
     long_description=long_description,
     long_description_content_type="text/markdown",
