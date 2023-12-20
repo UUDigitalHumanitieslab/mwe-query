@@ -8,6 +8,8 @@ from sastadev.treebankfunctions import getattval as gav, terminal, allcats as va
 import copy
 import lxml.etree as ET
 
+dummy = 'dummy'
+
 
 def expandnonheadwords(stree: SynTree) -> SynTree:
     # it is presupposed that the input stree is not None
@@ -47,7 +49,8 @@ def getlcatatt(node: SynTree) -> str:
 
 def mkphrase(child: SynTree) -> SynTree:
     newnode = ET.Element('node')
-    newnode.attrib['id'] = child.attrib['id'] + 'a'
+    if 'íd' in child.attrib:
+        newnode.attrib['id'] = child.attrib['id'] + 'a'
     lcat = getlcatatt(child)
     if lcat in validcats:
         newnode.attrib['cat'] = lcat
@@ -175,6 +178,8 @@ def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
     elif pt == 'spec' and rel == 'app':
         result = 'np'
     elif pt == 'spec':
+        result = None
+    elif pt == dummy:
         result = None
     else:
         print('Unknown att value (pt) encountered in:')
