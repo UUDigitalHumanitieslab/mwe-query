@@ -1,6 +1,8 @@
+# MWE Query
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10410636.svg)](https://doi.org/10.5281/zenodo.10410636)
+[![PyPI version](https://badge.fury.io/py/mwe-query.svg)](https://badge.fury.io/py/mwe-query)
 [![Actions Status](https://github.com/UUDigitalHumanitiesLab/mwe-query/workflows/Tests/badge.svg)](https://github.com/UUDigitalHumanitiesLab/mwe-query/actions)
 
-# MWE Query
 
 ## Run Locally
 
