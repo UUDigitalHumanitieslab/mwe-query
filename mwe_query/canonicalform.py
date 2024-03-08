@@ -394,6 +394,7 @@ def mknewnode(stree: SynTree, mwetop: int, atts: List[str], annotations: List[in
             newnode.attrib['maxnodecount'] = f'{len(stree)}'
     return newnode
 
+
 def expandnonheadwordnode(nonheadwordnode, phrasenodeproperties):
     phraserel = gav(nonheadwordnode, 'rel')
     newnonheadwordnode = copy.copy(nonheadwordnode)
@@ -402,6 +403,8 @@ def expandnonheadwordnode(nonheadwordnode, phrasenodeproperties):
     phrasenode.attrib['rel'] = phraserel
     phrasenode.append(newnonheadwordnode)
     return phrasenode
+
+
 def zullenheadclause(stree: SynTree) -> bool:
     if stree.tag == 'node':
         cat = gav(stree, 'cat')
