@@ -3,7 +3,7 @@ Methods for parsing annotated canonical forms,
 to generate queries from them and to search using these queries.
 """
 
-from typing import Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
+from typing import cast, Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
 from sastadev.sastatypes import SynTree
 import re
 import sys
@@ -328,7 +328,9 @@ def all_leaves(stree: SynTree, annotations: List[Annotation], allowedannotations
 
 def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
     head = getchild(stree, 'hd')
-    if terminal(head):
+    if head is None:
+        return False
+    elif terminal(head):
         beginint = int(gav(head, 'begin'))
         if 0 <= beginint < len(annotations):
             if mwetop == notop:
@@ -397,6 +399,8 @@ def zullenheadclause(stree: SynTree) -> bool:
     if stree.tag == 'node':
         cat = gav(stree, 'cat')
         head = getchild(stree, 'hd')
+        if head is None:
+            return False
         headlemma = gav(head, 'lemma')
         headpt = gav(head, 'pt')
         result = cat in {
@@ -456,6 +460,8 @@ def transformtree(stree: SynTree, annotations: List[Annotation], mwetop=notop, a
                 return results
             elif cat in {'smain', 'sv1'}:
                 head = getchild(stree, 'hd')
+                if head is None:
+                    return []
                 lemma = gav(head, 'lemma')
                 vc = getchild(stree, 'vc')
                 # predm, if present,  must be moved downwards here
@@ -938,8 +944,9 @@ def lowerpredm(stree: SynTree) -> SynTree:
         for predmnodeid in predmnodeids:
             predmnode = find1(newstree, f'.//node[@id="{predmnodeid}"]')
             predmparent = predmnode.getparent()
-            predmparent.remove(predmnode)
-            lowestvcnode.append(predmnode)
+            if predmparent is not None:
+                predmparent.remove(predmnode)
+                lowestvcnode.append(predmnode)
         # print('lowerpredm: newstree')
         # ET.dump(newstree)
         return newstree
@@ -966,7 +973,8 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
     vblsu = find1(newstree, f'.//node[@rel="su" and {vblnode}]')
     if vblsu is not None:
         parent = vblsu.getparent()
-        parent.remove(vblsu)
+        if parent is not None:
+            parent.remove(vblsu)
 
     # move predm down not needed already done in transformtree
     # newstree = lowerpredm(newstree)
@@ -997,10 +1005,11 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
             newvcnode1 = nodecopy(vcnode)
             newvcnode2 = nodecopy(vcnode)
             parent = obj1node.getparent()
-            parent.remove(obj1node)
-            alternativesnode = mkalternativesnode(
-                [[obj1node], [newvcnode1], [newpobj1node, newvcnode2]])
-            parent.append(alternativesnode)
+            if parent is not None:
+                parent.remove(obj1node)
+                alternativesnode = mkalternativesnode(
+                    [[obj1node], [newvcnode1], [newpobj1node, newvcnode2]])
+                parent.append(alternativesnode)
 
         vblppnodeids = globalresult.xpath(vblppnodeidxpath)
         for vblppnodeid in vblppnodeids:
@@ -1008,6 +1017,8 @@ def newgenvariants(stree: SynTree) -> List[SynTree]:
             newpobj1node1 = nodecopy(pobj1node)
             newvcnode1 = nodecopy(vcnode)
             parent = ppnode.getparent()
+            if parent is None:
+                continue
             parent.remove(ppnode)
             newppnode1 = copy.copy(ppnode)
             for child in newppnode1:
@@ -1395,7 +1406,7 @@ def relpronsubst(stree: SynTree) -> SynTree:
                 if govprep is not None:
                     govprep.attrib['vztype'] = 'init'
                     govprep.attrib['lemma'] = adaptvzlemma_inv(
-                        govprep.attrib['lemma'])
+                        cast(str, govprep.attrib['lemma']))
                 # ET.dump(newstree)
 
             elif rhdframe.startswith('waar_adverb'):
