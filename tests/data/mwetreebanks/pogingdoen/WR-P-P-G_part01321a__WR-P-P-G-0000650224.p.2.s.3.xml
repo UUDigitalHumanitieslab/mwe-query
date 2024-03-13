@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-29T02:53" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="31" id="0" rel="top">
+    <node begin="4" end="5" frame="punct(komma)" his="normal" his_1="normal" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="5" form="," lemma="," upos="PUNCT" head="6" deprel="punct" deprel_main="punct">
+        <dep id="5" head="6" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="10" end="11" frame="punct(komma)" his="normal" his_1="normal" id="2" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="11" form="," lemma="," upos="PUNCT" head="12" deprel="punct" deprel_main="punct">
+        <dep id="11" head="12" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="12" end="13" frame="punct(schuin_streep)" his="normal" his_1="normal" id="3" lcat="punct" lemma="/" pos="punct" postag="LET()" pt="let" rel="--" root="/" sense="/" special="schuin_streep" word="/">
+      <ud id="13" form="/" lemma="/" upos="PUNCT" head="14" deprel="punct" deprel_main="punct">
+        <dep id="13" head="14" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="14" end="15" frame="punct(komma)" his="normal" his_1="normal" id="4" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="15" form="," lemma="," upos="PUNCT" head="16" deprel="punct" deprel_main="punct">
+        <dep id="15" head="16" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="20" end="21" frame="punct(schuin_streep)" his="normal" his_1="normal" id="5" lcat="punct" lemma="/" pos="punct" postag="LET()" pt="let" rel="--" root="/" sense="/" special="schuin_streep" word="/">
+      <ud id="21" form="/" lemma="/" upos="PUNCT" head="23" deprel="punct" deprel_main="punct">
+        <dep id="21" head="23" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="30" id="6" rel="--">
+      <node begin="0" cat="conj" end="12" id="7" is_np="true" rel="dp">
+        <node begin="0" cat="np" end="4" id="8" is_np="true" rel="cnj">
+          <node begin="0" end="1" frame="modal_adverb" his="normal" his_1="decap" his_1_1="normal" id="9" index="1" lcat="advp" lemma="ook" pos="adv" postag="BW()" pt="bw" rel="mod" root="ook" sc="modal" sense="ook" word="Ook">
+            <ud id="1" form="Ook" lemma="ook" upos="ADV" head="2" deprel="amod" deprel_main="amod">
+              <dep id="1" head="2" deprel="amod" deprel_main="amod"/>
+              <dep id="1" head="6" deprel="amod" deprel_main="amod"/>
+              <dep id="1" head="12" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="1" cat="mwu" end="4" his="slash" his_1="name" his_2="normal" his_1_1="not_begin" his_2_1="names_dictionary" id="10" rel="hd">
+            <node begin="1" end="2" frame="proper_name(sg,'PER')" id="11" lcat="np" lemma="Ottevaere" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Ottevaere" sense="Ottevaere" spectype="deeleigen" word="Ottevaere">
+              <ud id="2" form="Ottevaere" lemma="Ottevaere" upos="PROPN" head="0" deprel="root" deprel_main="root">
+                <dep id="2" head="0" deprel="root" deprel_main="root"/>
+              </ud>
+            </node>
+            <node begin="2" end="3" frame="proper_name(sg,'PER')" id="12" lcat="np" lemma="/" neclass="PER" num="sg" pos="name" postag="LET()" pt="let" rel="mwp" rnum="sg" root="/" sense="/" word="/">
+              <ud id="3" form="/" lemma="/" upos="SYM" head="2" deprel="flat" deprel_main="flat">
+                <dep id="3" head="2" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+            <node begin="3" end="4" frame="proper_name(sg,'PER')" id="13" lcat="np" lemma="Dewulf" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Dewulf" sense="Dewulf" spectype="deeleigen" word="Dewulf">
+              <ud id="4" form="Dewulf" lemma="Dewulf" upos="PROPN" head="2" deprel="flat" deprel_main="flat">
+                <dep id="4" head="2" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+        <node begin="0" cat="np" end="10" id="14" is_np="true" rel="cnj">
+          <node begin="0" end="1" id="15" index="1" rel="mod"/>
+          <node begin="5" cat="mwu" end="10" his="slash" his_1="name" his_2="name" his_1_1="not_begin" his_2_1="not_begin" id="16" rel="hd">
+            <node begin="5" end="6" frame="proper_name(sg,'PER')" id="17" lcat="np" lemma="Callebert" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Callebert" sense="Callebert" spectype="deeleigen" word="Callebert">
+              <ud id="6" form="Callebert" lemma="Callebert" upos="PROPN" head="2" deprel="conj" deprel_main="conj">
+                <dep id="6" head="2" deprel="conj" deprel_main="conj"/>
+              </ud>
+            </node>
+            <node begin="6" end="7" frame="proper_name(sg,'PER')" id="18" lcat="np" lemma="/" neclass="PER" num="sg" pos="name" postag="LET()" pt="let" rel="mwp" rnum="sg" root="/" sense="/" word="/">
+              <ud id="7" form="/" lemma="/" upos="SYM" head="6" deprel="flat" deprel_main="flat">
+                <dep id="7" head="6" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+            <node begin="7" end="8" frame="proper_name(sg,'PER')" id="19" lcat="np" lemma="Van" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Van" sense="Van" spectype="deeleigen" word="Van">
+              <ud id="8" form="Van" lemma="Van" upos="PROPN" head="6" deprel="flat" deprel_main="flat">
+                <dep id="8" head="6" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+            <node begin="8" end="9" frame="proper_name(sg,'PER')" id="20" lcat="np" lemma="der" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="der" sense="der" spectype="deeleigen" word="der">
+              <ud id="9" form="der" lemma="der" upos="PROPN" head="6" deprel="flat" deprel_main="flat">
+                <dep id="9" head="6" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+            <node begin="9" end="10" frame="proper_name(sg,'PER')" id="21" lcat="np" lemma="Ougstraete" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Ougstraete" sense="Ougstraete" spectype="deeleigen" word="Ougstraete">
+              <ud id="10" form="Ougstraete" lemma="Ougstraete" upos="PROPN" head="6" deprel="flat" deprel_main="flat">
+                <dep id="10" head="6" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+        <node begin="0" cat="np" end="12" id="22" is_np="true" rel="cnj">
+          <node begin="0" end="1" id="23" index="1" rel="mod"/>
+          <node begin="11" end="12" frame="proper_name(both,'LOC')" genus="onz" getal="ev" graad="basis" his="name" his_1="not_begin" id="24" lcat="np" lemma="Clarysse" naamval="stan" neclass="LOC" ntype="eigen" num="both" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="hd" root="Clarysse" sense="Clarysse" word="Clarysse">
+            <ud id="12" form="Clarysse" lemma="Clarysse" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="conj" deprel_main="conj">
+              <dep id="12" head="2" deprel="conj" deprel_main="conj"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="13" cat="du" end="30" id="25" rel="dp">
+        <node begin="13" cat="conj" end="20" id="26" is_np="true" rel="dp">
+          <node begin="13" end="14" frame="proper_name(sg,'PER')" genus="zijd" getal="ev" graad="basis" his="name" his_1="not_begin" id="27" is_np="true" lcat="np" lemma="Grootaerdt" naamval="stan" neclass="PER" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="cnj" rnum="sg" root="Grootaerdt" sense="Grootaerdt" word="Grootaerdt">
+            <ud id="14" form="Grootaerdt" lemma="Grootaerdt" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="parataxis" deprel_main="parataxis">
+              <dep id="14" head="2" deprel="parataxis" deprel_main="parataxis"/>
+            </ud>
+          </node>
+          <node begin="15" cat="mwu" end="18" his="slash" his_1="normal" his_2="normal" his_1_1="names_dictionary" his_2_1="names_dictionary" id="28" rel="cnj">
+            <node begin="15" end="16" frame="proper_name(sg,'PER')" id="29" lcat="np" lemma="Feys" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Feys" sense="Feys" spectype="deeleigen" word="Feys">
+              <ud id="16" form="Feys" lemma="Feys" upos="PROPN" head="14" deprel="conj" deprel_main="conj">
+                <dep id="16" head="14" deprel="conj:en" deprel_main="conj" deprel_aux="en"/>
+              </ud>
+            </node>
+            <node begin="16" end="17" frame="proper_name(sg,'PER')" id="30" lcat="np" lemma="/" neclass="PER" num="sg" pos="name" postag="LET()" pt="let" rel="mwp" rnum="sg" root="/" sense="/" word="/">
+              <ud id="17" form="/" lemma="/" upos="SYM" head="16" deprel="flat" deprel_main="flat">
+                <dep id="17" head="16" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+            <node begin="17" end="18" frame="proper_name(sg,'PER')" id="31" lcat="np" lemma="Callens" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Callens" sense="Callens" spectype="deeleigen" word="Callens">
+              <ud id="18" form="Callens" lemma="Callens" upos="PROPN" head="16" deprel="flat" deprel_main="flat">
+                <dep id="18" head="16" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+          </node>
+          <node begin="18" conjtype="neven" end="19" frame="conj(en)" his="normal" his_1="normal" id="32" lcat="vg" lemma="en" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="en" sense="en" word="en">
+            <ud id="19" form="en" lemma="en" upos="CCONJ" head="20" deprel="cc" deprel_main="cc">
+              <dep id="19" head="20" deprel="cc" deprel_main="cc"/>
+            </ud>
+          </node>
+          <node begin="19" end="20" frame="proper_name(sg,'PER')" genus="zijd" getal="ev" graad="basis" his="name" his_1="not_begin" id="33" is_np="true" lcat="np" lemma="Dekeyser" naamval="stan" neclass="PER" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="cnj" rnum="sg" root="Dekeyser" sense="Dekeyser" word="Dekeyser">
+            <ud id="20" form="Dekeyser" lemma="Dekeyser" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="conj" deprel_main="conj">
+              <dep id="20" head="14" deprel="conj:en" deprel_main="conj" deprel_aux="en"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="21" cat="smain" end="30" id="34" rel="dp">
+          <node begin="21" end="22" frame="proper_name(both,'LOC')" getal="mv" graad="basis" his="name" his_1="not_begin" id="35" is_np="true" is_vorfeld="true" lcat="np" lemma="Seynaeve" neclass="LOC" ntype="eigen" num="both" pos="name" postag="N(eigen,mv,basis)" pt="n" rel="su" rnum="pl" root="Seynaeve" sense="Seynaeve" word="Seynaeve">
+            <ud id="22" form="Seynaeve" lemma="Seynaeve" upos="PROPN" Number="Plur" head="23" deprel="nsubj" deprel_main="nsubj">
+              <dep id="22" head="23" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+          <node begin="22" end="23" frame="verb(hebben,pl,transitive_ndev)" his="normal" his_1="normal" id="36" infl="pl" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doen" wvorm="pv">
+            <ud id="23" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="14" deprel="parataxis" deprel_main="parataxis">
+              <dep id="23" head="14" deprel="parataxis" deprel_main="parataxis"/>
+            </ud>
+          </node>
+          <node begin="23" cat="np" end="30" id="37" is_np="true" rel="obj1">
+            <node begin="23" end="24" frame="determiner(een)" his="normal" his_1="normal" id="38" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+              <ud id="24" form="een" lemma="een" upos="DET" Definite="Ind" head="25" deprel="det" deprel_main="det">
+                <dep id="24" head="25" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node begin="24" end="25" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="39" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+              <ud id="25" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="23" deprel="obj" deprel_main="obj">
+                <dep id="25" head="23" deprel="obj" deprel_main="obj"/>
+              </ud>
+            </node>
+            <node begin="25" cat="oti" end="30" id="40" rel="vc">
+              <node begin="25" end="26" frame="complementizer(om)" his="normal" his_1="normal" id="41" lcat="oti" lemma="om" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="om" sc="om" sense="om" vztype="init" word="om">
+                <ud id="26" form="om" lemma="om" upos="ADP" head="30" deprel="mark" deprel_main="mark">
+                  <dep id="26" head="30" deprel="mark" deprel_main="mark"/>
+                </ud>
+              </node>
+              <node begin="26" cat="ti" end="30" id="42" rel="body">
+                <node begin="28" end="29" frame="complementizer(te)" his="normal" his_1="normal" id="43" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+                  <ud id="29" form="te" lemma="te" upos="ADP" head="30" deprel="mark" deprel_main="mark">
+                    <dep id="29" head="30" deprel="mark" deprel_main="mark"/>
+                  </ud>
+                </node>
+                <node begin="26" cat="inf" end="30" id="44" rel="body">
+                  <node begin="26" cat="np" end="28" id="45" is_np="true" rel="obj1">
+                    <node begin="26" end="27" frame="determiner(de)" his="normal" his_1="normal" id="46" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                      <ud id="27" form="de" lemma="de" upos="DET" Definite="Def" head="28" deprel="det" deprel_main="det">
+                        <dep id="27" head="28" deprel="det" deprel_main="det"/>
+                      </ud>
+                    </node>
+                    <node begin="27" end="28" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="47" lcat="np" lemma="kwalificatie" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="kwalificatie" sense="kwalificatie" word="kwalificaties">
+                      <ud id="28" form="kwalificaties" lemma="kwalificatie" upos="NOUN" Number="Plur" head="30" deprel="obj" deprel_main="obj">
+                        <dep id="28" head="30" deprel="obj" deprel_main="obj"/>
+                      </ud>
+                    </node>
+                  </node>
+                  <node begin="29" buiging="zonder" end="30" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="48" infl="inf" lcat="inf" lemma="doorspartelen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="doorspartel" sc="transitive" sense="doorspartel" word="doorspartelen" wvorm="inf">
+                    <ud id="30" form="doorspartelen" lemma="doorspartelen" upos="VERB" VerbForm="Inf" head="25" deprel="acl" deprel_main="acl">
+                      <dep id="30" head="25" deprel="acl:om" deprel_main="acl" deprel_aux="om"/>
+                    </ud>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="30" end="31" frame="punct(punt)" his="normal" his_1="normal" id="49" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="31" form="." lemma="." upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="31" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000650224.p.2.s.3">Ook Ottevaere / Dewulf , Callebert / Van der Ougstraete , Clarysse / Grootaerdt , Feys / Callens en Dekeyser / Seynaeve doen een poging om de kwalificaties te doorspartelen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000650224.p.2.s.3|Ook Ottevaere / Dewulf , Callebert / Van der Ougstraete , Clarysse / Grootaerdt , Feys / Callens en Dekeyser / Seynaeve doen een poging om de kwalificaties te doorspartelen .|1|1|-3.9994901656000037</comment>
+  </comments>
+  <root ud="basic" id="2" form="Ottevaere" lemma="Ottevaere" upos="PROPN" head="0" deprel="root" pt="spec" spectype="deeleigen">
+    <amod ud="basic" id="1" form="Ook" lemma="ook" upos="ADV" head="2" deprel="amod" pt="bw"/>
+    <flat ud="basic" id="3" form="/" lemma="/" upos="SYM" head="2" deprel="flat" pt="let"/>
+    <flat ud="basic" id="4" form="Dewulf" lemma="Dewulf" upos="PROPN" head="2" deprel="flat" pt="spec" spectype="deeleigen"/>
+    <conj ud="basic" id="6" form="Callebert" lemma="Callebert" upos="PROPN" head="2" deprel="conj" pt="spec" spectype="deeleigen">
+      <punct ud="basic" id="5" form="," lemma="," upos="PUNCT" head="6" deprel="punct" pt="let"/>
+      <flat ud="basic" id="7" form="/" lemma="/" upos="SYM" head="6" deprel="flat" pt="let"/>
+      <flat ud="basic" id="8" form="Van" lemma="Van" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="basic" id="9" form="der" lemma="der" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="basic" id="10" form="Ougstraete" lemma="Ougstraete" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+    </conj>
+    <conj ud="basic" id="12" form="Clarysse" lemma="Clarysse" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="conj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <punct ud="basic" id="11" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+    </conj>
+    <parataxis ud="basic" id="14" form="Grootaerdt" lemma="Grootaerdt" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="parataxis" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <punct ud="basic" id="13" form="/" lemma="/" upos="PUNCT" head="14" deprel="punct" pt="let"/>
+      <conj ud="basic" id="16" form="Feys" lemma="Feys" upos="PROPN" head="14" deprel="conj" pt="spec" spectype="deeleigen">
+        <punct ud="basic" id="15" form="," lemma="," upos="PUNCT" head="16" deprel="punct" pt="let"/>
+        <flat ud="basic" id="17" form="/" lemma="/" upos="SYM" head="16" deprel="flat" pt="let"/>
+        <flat ud="basic" id="18" form="Callens" lemma="Callens" upos="PROPN" head="16" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </conj>
+      <conj ud="basic" id="20" form="Dekeyser" lemma="Dekeyser" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="conj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <cc ud="basic" id="19" form="en" lemma="en" upos="CCONJ" head="20" deprel="cc" conjtype="neven" pt="vg"/>
+      </conj>
+      <parataxis ud="basic" id="23" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="14" deprel="parataxis" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+        <punct ud="basic" id="21" form="/" lemma="/" upos="PUNCT" head="23" deprel="punct" pt="let"/>
+        <nsubj ud="basic" id="22" form="Seynaeve" lemma="Seynaeve" upos="PROPN" Number="Plur" head="23" deprel="nsubj" getal="mv" graad="basis" ntype="eigen" pt="n"/>
+        <obj ud="basic" id="25" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="23" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="basic" id="24" form="een" lemma="een" upos="DET" Definite="Ind" head="25" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+          <acl ud="basic" id="30" form="doorspartelen" lemma="doorspartelen" upos="VERB" VerbForm="Inf" head="25" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+            <mark ud="basic" id="26" form="om" lemma="om" upos="ADP" head="30" deprel="mark" pt="vz" vztype="init"/>
+            <obj ud="basic" id="28" form="kwalificaties" lemma="kwalificatie" upos="NOUN" Number="Plur" head="30" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+              <det ud="basic" id="27" form="de" lemma="de" upos="DET" Definite="Def" head="28" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            </obj>
+            <mark ud="basic" id="29" form="te" lemma="te" upos="ADP" head="30" deprel="mark" pt="vz" vztype="init"/>
+          </acl>
+        </obj>
+      </parataxis>
+    </parataxis>
+    <punct ud="basic" id="31" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="2" form="Ottevaere" lemma="Ottevaere" upos="PROPN" head="0" deprel="root" pt="spec" spectype="deeleigen">
+    <amod ud="enhanced" id="1" form="Ook" lemma="ook" upos="ADV" head="2" deprel="amod" pt="bw"/>
+    <flat ud="enhanced" id="3" form="/" lemma="/" upos="SYM" head="2" deprel="flat" pt="let"/>
+    <flat ud="enhanced" id="4" form="Dewulf" lemma="Dewulf" upos="PROPN" head="2" deprel="flat" pt="spec" spectype="deeleigen"/>
+    <conj ud="enhanced" id="6" form="Callebert" lemma="Callebert" upos="PROPN" head="2" deprel="conj" pt="spec" spectype="deeleigen">
+      <amod ud="enhanced" id="1" form="Ook" lemma="ook" upos="ADV" head="6" deprel="amod" pt="bw"/>
+      <punct ud="enhanced" id="5" form="," lemma="," upos="PUNCT" head="6" deprel="punct" pt="let"/>
+      <flat ud="enhanced" id="7" form="/" lemma="/" upos="SYM" head="6" deprel="flat" pt="let"/>
+      <flat ud="enhanced" id="8" form="Van" lemma="Van" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="enhanced" id="9" form="der" lemma="der" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="enhanced" id="10" form="Ougstraete" lemma="Ougstraete" upos="PROPN" head="6" deprel="flat" pt="spec" spectype="deeleigen"/>
+    </conj>
+    <conj ud="enhanced" id="12" form="Clarysse" lemma="Clarysse" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="conj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <amod ud="enhanced" id="1" form="Ook" lemma="ook" upos="ADV" head="12" deprel="amod" pt="bw"/>
+      <punct ud="enhanced" id="11" form="," lemma="," upos="PUNCT" head="12" deprel="punct" pt="let"/>
+    </conj>
+    <parataxis ud="enhanced" id="14" form="Grootaerdt" lemma="Grootaerdt" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="parataxis" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <punct ud="enhanced" id="13" form="/" lemma="/" upos="PUNCT" head="14" deprel="punct" pt="let"/>
+      <conj ud="enhanced" id="16" form="Feys" lemma="Feys" upos="PROPN" head="14" deprel="conj:en" deprel_aux="en" pt="spec" spectype="deeleigen">
+        <punct ud="enhanced" id="15" form="," lemma="," upos="PUNCT" head="16" deprel="punct" pt="let"/>
+        <flat ud="enhanced" id="17" form="/" lemma="/" upos="SYM" head="16" deprel="flat" pt="let"/>
+        <flat ud="enhanced" id="18" form="Callens" lemma="Callens" upos="PROPN" head="16" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </conj>
+      <conj ud="enhanced" id="20" form="Dekeyser" lemma="Dekeyser" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="conj:en" deprel_aux="en" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <cc ud="enhanced" id="19" form="en" lemma="en" upos="CCONJ" head="20" deprel="cc" conjtype="neven" pt="vg"/>
+      </conj>
+      <parataxis ud="enhanced" id="23" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="14" deprel="parataxis" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+        <punct ud="enhanced" id="21" form="/" lemma="/" upos="PUNCT" head="23" deprel="punct" pt="let"/>
+        <nsubj ud="enhanced" id="22" form="Seynaeve" lemma="Seynaeve" upos="PROPN" Number="Plur" head="23" deprel="nsubj" getal="mv" graad="basis" ntype="eigen" pt="n"/>
+        <obj ud="enhanced" id="25" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="23" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="enhanced" id="24" form="een" lemma="een" upos="DET" Definite="Ind" head="25" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+          <acl ud="enhanced" id="30" form="doorspartelen" lemma="doorspartelen" upos="VERB" VerbForm="Inf" head="25" deprel="acl:om" deprel_aux="om" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+            <mark ud="enhanced" id="26" form="om" lemma="om" upos="ADP" head="30" deprel="mark" pt="vz" vztype="init"/>
+            <obj ud="enhanced" id="28" form="kwalificaties" lemma="kwalificatie" upos="NOUN" Number="Plur" head="30" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+              <det ud="enhanced" id="27" form="de" lemma="de" upos="DET" Definite="Def" head="28" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            </obj>
+            <mark ud="enhanced" id="29" form="te" lemma="te" upos="ADP" head="30" deprel="mark" pt="vz" vztype="init"/>
+          </acl>
+        </obj>
+      </parataxis>
+    </parataxis>
+    <punct ud="enhanced" id="31" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Ook	ook	ADV	BW	_	2	amod	2:amod|6:amod|12:amod	_
+2	Ottevaere	Ottevaere	PROPN	SPEC|deeleigen	_	0	root	0:root	_
+3	/	/	SYM	LET	_	2	flat	2:flat	_
+4	Dewulf	Dewulf	PROPN	SPEC|deeleigen	_	2	flat	2:flat	_
+5	,	,	PUNCT	LET	_	6	punct	6:punct	_
+6	Callebert	Callebert	PROPN	SPEC|deeleigen	_	2	conj	2:conj	_
+7	/	/	SYM	LET	_	6	flat	6:flat	_
+8	Van	Van	PROPN	SPEC|deeleigen	_	6	flat	6:flat	_
+9	der	der	PROPN	SPEC|deeleigen	_	6	flat	6:flat	_
+10	Ougstraete	Ougstraete	PROPN	SPEC|deeleigen	_	6	flat	6:flat	_
+11	,	,	PUNCT	LET	_	12	punct	12:punct	_
+12	Clarysse	Clarysse	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	2	conj	2:conj	_
+13	/	/	PUNCT	LET	_	14	punct	14:punct	_
+14	Grootaerdt	Grootaerdt	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	2	parataxis	2:parataxis	_
+15	,	,	PUNCT	LET	_	16	punct	16:punct	_
+16	Feys	Feys	PROPN	SPEC|deeleigen	_	14	conj	14:conj:en	_
+17	/	/	SYM	LET	_	16	flat	16:flat	_
+18	Callens	Callens	PROPN	SPEC|deeleigen	_	16	flat	16:flat	_
+19	en	en	CCONJ	VG|neven	_	20	cc	20:cc	_
+20	Dekeyser	Dekeyser	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	14	conj	14:conj:en	_
+21	/	/	PUNCT	LET	_	23	punct	23:punct	_
+22	Seynaeve	Seynaeve	PROPN	N|eigen|mv|basis	Number=Plur	23	nsubj	23:nsubj	_
+23	doen	doen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	14	parataxis	14:parataxis	_
+24	een	een	DET	LID|onbep|stan|agr	Definite=Ind	25	det	25:det	_
+25	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	23	obj	23:obj	_
+26	om	om	ADP	VZ|init	_	30	mark	30:mark	_
+27	de	de	DET	LID|bep|stan|rest	Definite=Def	28	det	28:det	_
+28	kwalificaties	kwalificatie	NOUN	N|soort|mv|basis	Number=Plur	30	obj	30:obj	_
+29	te	te	ADP	VZ|init	_	30	mark	30:mark	_
+30	doorspartelen	doorspartelen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	25	acl	25:acl:om	_
+31	.	.	PUNCT	LET	_	2	punct	2:punct	_
+]]></conllu>
+</alpino_ds>

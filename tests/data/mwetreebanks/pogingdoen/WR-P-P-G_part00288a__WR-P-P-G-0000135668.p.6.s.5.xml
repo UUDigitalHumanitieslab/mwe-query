@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T19:57" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="9" id="0" rel="top">
+    <node begin="0" cat="smain" end="8" id="1" rel="--">
+      <node begin="0" cat="np" end="2" id="2" is_np="true" is_vorfeld="true" rel="su">
+        <node begin="0" end="1" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="decap" his_1_1="normal" id="3" lcat="np" lemma="president" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="president" sense="president" word="President">
+          <ud id="1" form="President" lemma="president" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="nsubj" deprel_main="nsubj">
+            <dep id="1" head="3" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="1" end="2" frame="proper_name(sg,'PER')" genus="zijd" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="4" is_np="true" lcat="np" lemma="Bouteflika" naamval="stan" neclass="PER" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="app" rnum="sg" root="Bouteflika" sense="Bouteflika" word="Bouteflika">
+          <ud id="2" form="Bouteflika" lemma="Bouteflika" upos="PROPN" Gender="Com" Number="Sing" head="1" deprel="appos" deprel_main="appos">
+            <dep id="2" head="1" deprel="appos" deprel_main="appos"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="2" end="3" frame="verb(hebben,past(sg),transitive_ndev)" his="normal" his_1="normal" id="5" infl="sg" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="past" v_per="thi" word="deed" wvorm="pv">
+        <ud id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="3" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="3" cat="np" end="8" id="6" is_np="true" rel="obj1">
+        <node begin="3" end="4" frame="determiner(een)" his="normal" his_1="normal" id="7" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" deprel_main="det">
+            <dep id="4" head="5" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="4" end="5" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="8" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+          <ud id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" deprel_main="obj">
+            <dep id="5" head="3" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+        <node begin="5" cat="ti" end="8" id="9" rel="vc">
+          <node begin="6" end="7" frame="complementizer(te)" his="normal" his_1="normal" id="10" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+            <ud id="7" form="te" lemma="te" upos="ADP" head="8" deprel="mark" deprel_main="mark">
+              <dep id="7" head="8" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="5" cat="inf" end="8" id="11" rel="body">
+            <node begin="5" case="dat_acc" def="def" end="6" frame="pronoun(nwh,thi,pl,de,dat_acc,def)" gen="de" getal="mv" his="normal" his_1="normal" id="12" is_np="true" lcat="np" lemma="hen" naamval="obl" num="pl" pdtype="pron" per="thi" persoon="3p" pos="pron" postag="VNW(pers,pron,obl,vol,3p,mv)" pt="vnw" rel="obj1" rnum="pl" root="hen" sense="hen" status="vol" vwtype="pers" wh="nwh" word="hen">
+              <ud id="6" form="hen" lemma="hen" upos="PRON" Case="Acc" Person="3" PronType="Prs" head="8" deprel="obj" deprel_main="obj">
+                <dep id="6" head="8" deprel="obj" deprel_main="obj"/>
+              </ud>
+            </node>
+            <node begin="7" buiging="zonder" end="8" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="13" infl="inf" lcat="inf" lemma="troosten" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="troost" sc="transitive" sense="troost" word="troosten" wvorm="inf">
+              <ud id="8" form="troosten" lemma="troosten" upos="VERB" VerbForm="Inf" head="5" deprel="acl" deprel_main="acl">
+                <dep id="8" head="5" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="8" end="9" frame="punct(punt)" his="normal" his_1="normal" id="14" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" deprel_main="punct">
+        <dep id="9" head="3" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000135668.p.6.s.5">President Bouteflika deed een poging hen te troosten .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000135668.p.6.s.5|President Bouteflika deed een poging hen te troosten .|1|1|-3.7467587048999995</comment>
+  </comments>
+  <root ud="basic" id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="basic" id="1" form="President" lemma="president" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <appos ud="basic" id="2" form="Bouteflika" lemma="Bouteflika" upos="PROPN" Gender="Com" Number="Sing" head="1" deprel="appos" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    </nsubj>
+    <obj ud="basic" id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <acl ud="basic" id="8" form="troosten" lemma="troosten" upos="VERB" VerbForm="Inf" head="5" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="basic" id="6" form="hen" lemma="hen" upos="PRON" Case="Acc" Person="3" PronType="Prs" head="8" deprel="obj" getal="mv" naamval="obl" pdtype="pron" persoon="3p" pt="vnw" status="vol" vwtype="pers"/>
+        <mark ud="basic" id="7" form="te" lemma="te" upos="ADP" head="8" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="basic" id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="President" lemma="president" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <appos ud="enhanced" id="2" form="Bouteflika" lemma="Bouteflika" upos="PROPN" Gender="Com" Number="Sing" head="1" deprel="appos" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    </nsubj>
+    <obj ud="enhanced" id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <acl ud="enhanced" id="8" form="troosten" lemma="troosten" upos="VERB" VerbForm="Inf" head="5" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="enhanced" id="6" form="hen" lemma="hen" upos="PRON" Case="Acc" Person="3" PronType="Prs" head="8" deprel="obj" getal="mv" naamval="obl" pdtype="pron" persoon="3p" pt="vnw" status="vol" vwtype="pers"/>
+        <mark ud="enhanced" id="7" form="te" lemma="te" upos="ADP" head="8" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="enhanced" id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	President	president	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	nsubj	3:nsubj	_
+2	Bouteflika	Bouteflika	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	1	appos	1:appos	_
+3	deed	doen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+4	een	een	DET	LID|onbep|stan|agr	Definite=Ind	5	det	5:det	_
+5	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	obj	3:obj	_
+6	hen	hen	PRON	VNW|pers|pron|obl|vol|3p|mv	Case=Acc|Person=3|PronType=Prs	8	obj	8:obj	_
+7	te	te	ADP	VZ|init	_	8	mark	8:mark	_
+8	troosten	troosten	VERB	WW|inf|vrij|zonder	VerbForm=Inf	5	acl	5:acl:te	_
+9	.	.	PUNCT	LET	_	3	punct	3:punct	_
+]]></conllu>
+</alpino_ds>

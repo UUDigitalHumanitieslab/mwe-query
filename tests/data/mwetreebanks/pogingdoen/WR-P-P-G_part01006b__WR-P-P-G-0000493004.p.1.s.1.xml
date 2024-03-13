@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-29T02:39" cats="2" skips="0"/>
+  <node begin="0" cat="top" end="20" id="0" rel="top">
+    <node begin="0" cat="du" end="19" id="1" rel="--">
+      <node begin="0" end="1" frame="proper_name(sg,'LOC')" genus="onz" getal="ev" graad="basis" his="special" his_1="decap" his_1_1="names_dictionary" id="2" is_np="true" lcat="np" lemma="Brussel" naamval="stan" neclass="LOC" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="dp" rnum="sg" root="Brussel" sense="Brussel" word="BRUSSEL">
+        <ud id="1" form="BRUSSEL" lemma="Brussel" upos="PROPN" Gender="Neut" Number="Sing" head="0" deprel="root" deprel_main="root">
+          <dep id="1" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="1" cat="smain" end="19" id="3" rel="dp">
+        <node begin="1" end="2" frame="proper_name(sg,'ORG')" genus="zijd" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="4" is_np="true" is_vorfeld="true" lcat="np" lemma="Fiat" naamval="stan" neclass="ORG" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="su" rnum="sg" root="Fiat" sense="Fiat" word="Fiat">
+          <ud id="2" form="Fiat" lemma="Fiat" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="nsubj" deprel_main="nsubj">
+            <dep id="2" head="3" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="2" end="3" frame="verb(hebben,sg3,np_pc_pp(met))" his="normal" his_1="normal" id="5" infl="sg3" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="doe" sc="np_pc_pp(met)" sense="doe-met" stype="declarative" tense="present" v_per="thi" word="doet" wvorm="pv">
+          <ud id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="1" deprel="parataxis" deprel_main="parataxis">
+            <dep id="3" head="1" deprel="parataxis" deprel_main="parataxis"/>
+          </ud>
+        </node>
+        <node begin="3" cat="pp" end="7" id="6" rel="pc">
+          <node begin="3" end="4" frame="preposition(met,[mee,[en,al]])" his="normal" his_1="normal" id="7" lcat="pp" lemma="met" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="met" sense="met" vztype="init" word="met">
+            <ud id="4" form="met" lemma="met" upos="ADP" head="7" deprel="case" deprel_main="case">
+              <dep id="4" head="7" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="4" cat="np" end="7" id="8" is_np="true" rel="obj1">
+            <node begin="4" buiging="met-e" end="5" frame="determiner(de,nwh,nmod,pro,nparg)" his="normal" his_1="normal" id="9" infl="de" lcat="detp" lemma="deze" naamval="stan" npagr="rest" pdtype="det" pos="det" positie="prenom" postag="VNW(aanw,det,stan,prenom,met-e,rest)" pt="vnw" rel="det" root="deze" sense="deze" vwtype="aanw" wh="nwh" word="deze">
+              <ud id="5" form="deze" lemma="deze" upos="DET" head="7" deprel="det" deprel_main="det">
+                <dep id="5" head="7" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node aform="base" begin="5" buiging="met-e" end="6" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="10" infl="e" lcat="ap" lemma="nieuw" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="nieuw" sense="nieuw" vform="adj" word="nieuwe">
+              <ud id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" deprel_main="amod">
+                <dep id="6" head="7" deprel="amod" deprel_main="amod"/>
+              </ud>
+            </node>
+            <node begin="6" end="7" frame="proper_name(sg,'ORG')" genus="zijd" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="11" lcat="np" lemma="Bravo" naamval="stan" neclass="ORG" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="Bravo" sense="Bravo" word="Bravo">
+              <ud id="7" form="Bravo" lemma="Bravo" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="obl" deprel_main="obl">
+                <dep id="7" head="3" deprel="obl:met" deprel_main="obl" deprel_aux="met"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+        <node begin="7" end="8" frame="adverb" his="normal" his_1="normal" id="12" lcat="advp" lemma="nog" pos="adv" postag="BW()" pt="bw" rel="mod" root="nog" sense="nog" word="nog">
+          <ud id="8" form="nog" lemma="nog" upos="ADV" head="3" deprel="advmod" deprel_main="advmod">
+            <dep id="8" head="3" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="8" end="9" frame="tmp_adverb" his="normal" his_1="normal" id="13" lcat="advp" lemma="eens" pos="adv" postag="BW()" pt="bw" rel="mod" root="eens" sense="eens" special="tmp" word="eens">
+          <ud id="9" form="eens" lemma="eens" upos="ADV" head="3" deprel="advmod" deprel_main="advmod">
+            <dep id="9" head="3" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="9" cat="np" end="19" id="14" is_np="true" rel="obj1">
+          <node begin="9" end="10" frame="determiner(een)" his="normal" his_1="normal" id="15" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+            <ud id="10" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" deprel_main="det">
+              <dep id="10" head="11" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="10" end="11" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="16" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+            <ud id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" deprel_main="obj">
+              <dep id="11" head="3" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+          <node begin="11" cat="ti" end="19" id="17" rel="vc">
+            <node begin="17" end="18" frame="complementizer(te)" his="normal" his_1="normal" id="18" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+              <ud id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" deprel_main="mark">
+                <dep id="18" head="19" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="11" cat="inf" end="19" id="19" rel="body">
+              <node begin="11" cat="np" end="14" id="20" is_np="true" rel="obj1">
+                <node begin="11" end="12" frame="determiner(de)" his="normal" his_1="normal" id="21" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                  <ud id="12" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" deprel_main="det">
+                    <dep id="12" head="13" deprel="det" deprel_main="det"/>
+                  </ud>
+                </node>
+                <node begin="12" cat="mwu" end="14" his="name" his_1="not_begin" id="22" rel="hd">
+                  <node begin="12" end="13" frame="proper_name(both,'ORG')" id="23" lcat="np" lemma="VW" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" root="VW" sense="VW" spectype="deeleigen" word="VW">
+                    <ud id="13" form="VW" lemma="VW" upos="PROPN" head="19" deprel="obj" deprel_main="obj">
+                      <dep id="13" head="19" deprel="obj" deprel_main="obj"/>
+                    </ud>
+                  </node>
+                  <node begin="13" end="14" frame="proper_name(both,'ORG')" id="24" lcat="np" lemma="Golf" neclass="ORG" num="both" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" root="Golf" sense="Golf" spectype="deeleigen" word="Golf">
+                    <ud id="14" form="Golf" lemma="Golf" upos="PROPN" head="13" deprel="flat" deprel_main="flat">
+                      <dep id="14" head="13" deprel="flat" deprel_main="flat"/>
+                    </ud>
+                  </node>
+                </node>
+              </node>
+              <node begin="14" cat="pp" end="17" id="25" rel="ld">
+                <node begin="14" end="15" frame="preposition(van,[af,uit,vandaan,[af,aan]])" his="normal" his_1="normal" id="26" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+                  <ud id="15" form="van" lemma="van" upos="ADP" head="17" deprel="case" deprel_main="case">
+                    <dep id="15" head="17" deprel="case" deprel_main="case"/>
+                  </ud>
+                </node>
+                <node begin="15" cat="np" end="17" id="27" is_np="true" rel="obj1">
+                  <node begin="15" buiging="zonder" end="16" frame="determiner(pron)" getal="ev" his="normal" his_1="normal" id="28" infl="pron" lcat="detp" lemma="zijn" naamval="stan" npagr="agr" pdtype="det" persoon="3" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,3,ev,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="zijn" sense="zijn" status="vol" vwtype="bez" word="zijn">
+                    <ud id="16" form="zijn" lemma="zijn" upos="PRON" Person="3" PronType="Prs" head="17" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+                      <dep id="16" head="17" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+                    </ud>
+                  </node>
+                  <node begin="16" end="17" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="29" lcat="np" lemma="troon" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="troon" sense="troon" word="troon">
+                    <ud id="17" form="troon" lemma="troon" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obl" deprel_main="obl">
+                      <dep id="17" head="19" deprel="obl:van" deprel_main="obl" deprel_aux="van"/>
+                    </ud>
+                  </node>
+                </node>
+              </node>
+              <node begin="18" buiging="zonder" end="19" frame="verb(hebben,inf,np_ld_pp)" his="normal" his_1="normal" id="30" infl="inf" lcat="inf" lemma="stoten" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="stoot" sc="np_ld_pp" sense="stoot" word="stoten" wvorm="inf">
+                <ud id="19" form="stoten" lemma="stoten" upos="VERB" VerbForm="Inf" head="11" deprel="acl" deprel_main="acl">
+                  <dep id="19" head="11" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="19" end="20" frame="punct(punt)" his="robust_skip" id="31" lcat="--" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="20" form="." lemma="." upos="PUNCT" head="1" deprel="punct" deprel_main="punct">
+        <dep id="20" head="1" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000493004.p.1.s.1">BRUSSEL Fiat doet met deze nieuwe Bravo nog eens een poging de VW Golf van zijn troon te stoten .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000493004.p.1.s.1|BRUSSEL Fiat doet met deze nieuwe Bravo nog eens een poging de VW Golf van zijn troon te stoten .|1|2|2.288129520099996</comment>
+  </comments>
+  <root ud="basic" id="1" form="BRUSSEL" lemma="Brussel" upos="PROPN" Gender="Neut" Number="Sing" head="0" deprel="root" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+    <parataxis ud="basic" id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="1" deprel="parataxis" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <nsubj ud="basic" id="2" form="Fiat" lemma="Fiat" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+      <obl ud="basic" id="7" form="Bravo" lemma="Bravo" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <case ud="basic" id="4" form="met" lemma="met" upos="ADP" head="7" deprel="case" pt="vz" vztype="init"/>
+        <det ud="basic" id="5" form="deze" lemma="deze" upos="DET" head="7" deprel="det" buiging="met-e" naamval="stan" npagr="rest" pdtype="det" positie="prenom" pt="vnw" vwtype="aanw"/>
+        <amod ud="basic" id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      </obl>
+      <advmod ud="basic" id="8" form="nog" lemma="nog" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+      <advmod ud="basic" id="9" form="eens" lemma="eens" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+      <obj ud="basic" id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="10" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+        <acl ud="basic" id="19" form="stoten" lemma="stoten" upos="VERB" VerbForm="Inf" head="11" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+          <obj ud="basic" id="13" form="VW" lemma="VW" upos="PROPN" head="19" deprel="obj" pt="spec" spectype="deeleigen">
+            <det ud="basic" id="12" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            <flat ud="basic" id="14" form="Golf" lemma="Golf" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </obj>
+          <obl ud="basic" id="17" form="troon" lemma="troon" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+            <case ud="basic" id="15" form="van" lemma="van" upos="ADP" head="17" deprel="case" pt="vz" vztype="init"/>
+            <nmod ud="basic" id="16" form="zijn" lemma="zijn" upos="PRON" Person="3" PronType="Prs" head="17" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+          </obl>
+          <mark ud="basic" id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" pt="vz" vztype="init"/>
+        </acl>
+      </obj>
+    </parataxis>
+    <punct ud="basic" id="20" form="." lemma="." upos="PUNCT" head="1" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="1" form="BRUSSEL" lemma="Brussel" upos="PROPN" Gender="Neut" Number="Sing" head="0" deprel="root" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+    <parataxis ud="enhanced" id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="1" deprel="parataxis" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+      <nsubj ud="enhanced" id="2" form="Fiat" lemma="Fiat" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+      <obl ud="enhanced" id="7" form="Bravo" lemma="Bravo" upos="PROPN" Gender="Com" Number="Sing" head="3" deprel="obl:met" deprel_aux="met" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+        <case ud="enhanced" id="4" form="met" lemma="met" upos="ADP" head="7" deprel="case" pt="vz" vztype="init"/>
+        <det ud="enhanced" id="5" form="deze" lemma="deze" upos="DET" head="7" deprel="det" buiging="met-e" naamval="stan" npagr="rest" pdtype="det" positie="prenom" pt="vnw" vwtype="aanw"/>
+        <amod ud="enhanced" id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      </obl>
+      <advmod ud="enhanced" id="8" form="nog" lemma="nog" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+      <advmod ud="enhanced" id="9" form="eens" lemma="eens" upos="ADV" head="3" deprel="advmod" pt="bw"/>
+      <obj ud="enhanced" id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="10" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+        <acl ud="enhanced" id="19" form="stoten" lemma="stoten" upos="VERB" VerbForm="Inf" head="11" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+          <obj ud="enhanced" id="13" form="VW" lemma="VW" upos="PROPN" head="19" deprel="obj" pt="spec" spectype="deeleigen">
+            <det ud="enhanced" id="12" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+            <flat ud="enhanced" id="14" form="Golf" lemma="Golf" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+          </obj>
+          <obl ud="enhanced" id="17" form="troon" lemma="troon" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obl:van" deprel_aux="van" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+            <case ud="enhanced" id="15" form="van" lemma="van" upos="ADP" head="17" deprel="case" pt="vz" vztype="init"/>
+            <nmod ud="enhanced" id="16" form="zijn" lemma="zijn" upos="PRON" Person="3" PronType="Prs" head="17" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="ev" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+          </obl>
+          <mark ud="enhanced" id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" pt="vz" vztype="init"/>
+        </acl>
+      </obj>
+    </parataxis>
+    <punct ud="enhanced" id="20" form="." lemma="." upos="PUNCT" head="1" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	BRUSSEL	Brussel	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	0	root	0:root	_
+2	Fiat	Fiat	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	nsubj	3:nsubj	_
+3	doet	doen	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	1	parataxis	1:parataxis	_
+4	met	met	ADP	VZ|init	_	7	case	7:case	_
+5	deze	deze	DET	VNW|aanw|det|stan|prenom|met-e|rest	_	7	det	7:det	_
+6	nieuwe	nieuw	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	7	amod	7:amod	_
+7	Bravo	Bravo	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	obl	3:obl:met	_
+8	nog	nog	ADV	BW	_	3	advmod	3:advmod	_
+9	eens	eens	ADV	BW	_	3	advmod	3:advmod	_
+10	een	een	DET	LID|onbep|stan|agr	Definite=Ind	11	det	11:det	_
+11	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	obj	3:obj	_
+12	de	de	DET	LID|bep|stan|rest	Definite=Def	13	det	13:det	_
+13	VW	VW	PROPN	SPEC|deeleigen	_	19	obj	19:obj	_
+14	Golf	Golf	PROPN	SPEC|deeleigen	_	13	flat	13:flat	_
+15	van	van	ADP	VZ|init	_	17	case	17:case	_
+16	zijn	zijn	PRON	VNW|bez|det|stan|vol|3|ev|prenom|zonder|agr	Person=3|Poss=Yes|PronType=Prs	17	nmod:poss	17:nmod:poss	_
+17	troon	troon	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	19	obl	19:obl:van	_
+18	te	te	ADP	VZ|init	_	19	mark	19:mark	_
+19	stoten	stoten	VERB	WW|inf|vrij|zonder	VerbForm=Inf	11	acl	11:acl:te	_
+20	.	.	PUNCT	LET	_	1	punct	1:punct	_
+]]></conllu>
+</alpino_ds>

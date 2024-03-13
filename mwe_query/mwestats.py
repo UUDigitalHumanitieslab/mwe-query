@@ -1,19 +1,31 @@
+import os
 from typing import cast, Dict, IO, Iterable, List, Tuple
-from sastadev.sastatypes import SynTree
-from sastadev.treebankfunctions import getattval as gav, getheadof, getyieldstr
-from .canonicalform import tree2xpath, mknearmissstructs, listofsets2setoflists, NodeSet
-from .canonicalform import generatemwestructures
+from tbfstandin import getyieldstr
+from sastadev.sastatypes import Optional, SynTree
+from sastadev.treebankfunctions import find1, getattval as gav, getheadof, getsentence
+import canonicalform
+from canonicalform import expandaltvals, generatemwestructures, tree2xpath, mknearmissstructs, listofsets2setoflists, NodeSet
 import copy
-from sastadev.treebankfunctions import getstree
+from sastadev.treebankfunctions import getstree, getattval as gav
+from lxml import etree
+
+noneval = '@@NA@@'
+
+
+underscore = '_'
+compoundsep = underscore
 
 cmwe = 0
 cnearmiss = 1
 cmissed = 2
 queryresulttypes = [cmwe, cnearmiss, cmissed]
 
+headrels = ['hd', 'whd', 'rhd', 'cnj', 'nucl']
+
 
 Relation = str
 Xpath = str
+Axis = str
 
 space = ' '
 slash = '/'
@@ -34,12 +46,14 @@ modrels = ['mod', 'predm', 'obcomp', 'app', 'me']
 detrels = ['det']
 
 
-componentsheader = ['clemmas', 'cwords', 'utt']
-argheader = ['rel',  'arglemma', 'argword', 'arg', 'utt']
-argrelcatheader = ['rel', 'cat', 'utt']
-argframeheader = ['argframe', 'utt']
-detheader = ['clemma', 'detrel', 'detcat', 'detheadcat', 'detheadlemma', 'detheadword', 'detfringe', 'utt']
-modheader = ['clemma', 'modrel', 'modcat', 'modheadcat', 'modheadlemma', 'modheadword', 'modfringe', 'utt']
+componentsheader = ['clemmas', 'cwords', 'utt', 'id']
+argheader = ['rel',  'arglemma', 'argword', 'arg', 'utt', 'id']
+argrelcatheader = ['rel', 'cat', 'utt', 'id']
+argframeheader = ['argframe', 'utt', 'id']
+detheader = ['clemma', 'detrel', 'detcat', 'detheadcat', 'detheadlemma', 'detheadword', 'detfringe', 'utt', 'id']
+modheader = ['clemma', 'modrel', 'modcat', 'modheadcat', 'modheadlemma', 'modheadword', 'modfringe', 'utt', 'id']
+
+childaxis = 'child'
 
 
 class MWEcsv:
@@ -60,6 +74,10 @@ def getnodeyield(syntree: SynTree) -> List[SynTree]:
         sortedresultlist = sorted(resultlist, key=lambda x: int(getatt_or_from_parents(x, 'end', '9999')))
         return sortedresultlist
 
+
+def canbeabsent(node: SynTree) -> bool:
+    result = gav(node, 'rel') == 'svp'
+    return result
 
 def getatt_or_from_parents(node: SynTree, att: str, fallback: str = '') -> str:
     """Gets the attribute from the current node or goes up in parents to find it
@@ -87,6 +105,8 @@ def getatt_or_from_parents(node: SynTree, att: str, fallback: str = '') -> str:
 def removeud(stree):
     newstree = copy.deepcopy(stree)
     udnodes = newstree.xpath('.//ud')
+    udnodes += newstree.xpath('.//root')
+    udnodes += newstree.xpath('.//conllu')
     for udnode in udnodes:
         parent = udnode.getparent()
         parent.remove(udnode)
@@ -98,16 +118,37 @@ def iscomponent(stree: SynTree) -> bool:
     return result
 
 
-def getcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[Relation]]]:
+
+
+def oldgetcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[Relation]]]:
     results = []
     if iscomponent(stree):
         results = [(stree, fpath)]
+        # if isparticleverb(stree):
+        #    particle = getparticlenode(stree)
+        #    results += [(particle, fpath)]
     else:
         for child in stree:
             chrel = gav(child, 'rel')
             childresults = getcomps(child, fpath + [chrel])
             results += childresults
     return results
+
+def getcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[Tuple[Axis, Relation]]]]:
+    results = []
+    if iscomponent(stree):
+        results = [(stree, fpath)]
+        # if isparticleverb(stree):
+        #    particle = getparticlenode(stree)
+        #    results += [(particle, fpath)]
+    else:
+        for child in stree:
+            chrel = gav(child, 'rel')
+            axis = child.attrib['axis'] if 'axis' in child.attrib else childaxis
+            childresults = getcomps(child, fpath + [(axis, chrel)])
+            results += childresults
+    return results
+
 
 
 def shownode(stree):
@@ -154,6 +195,16 @@ def expandalternatives(stree: SynTree) -> List[SynTree]:
     return results
 
 
+def oldgetcompsxpaths(stree: SynTree) -> List[Xpath]:
+    results = []
+    comps = getcomps(stree, [])
+    for (lstree, fpath) in comps:
+        lxpath = tree2xpath(lstree)
+        lfpath = mkfxpath(fpath)
+        xpathresult = mkxpath(lxpath, lfpath)
+        results.append(xpathresult)
+    return results
+
 def getcompsxpaths(stree: SynTree) -> List[Xpath]:
     results = []
     comps = getcomps(stree, [])
@@ -171,11 +222,20 @@ def mkxpath(lxpath: Xpath, lfpath: Xpath):
     return result
 
 
-def mkfxpath(fpath: List[Relation]) -> Xpath:
-    nodelist = [f'node[@rel="{rel}"]' for rel in fpath[:-1]]  # we skip the last one because that is the node we look for
+def oldmkfxpath(fpath: List[Relation]) -> Xpath:
+    nodelist = [f'node[{expandaltvals("@rel", rel,"=")}]' if rel != '' else 'node' for rel in fpath[:-1]]  # we skip the last one because that is the node we look for
     result = '/'.join(nodelist)
     return result
 
+def mkfxpath(fpath: List[Tuple[Axis, Relation]]) -> Xpath:
+    nodelist= []
+    for (axis, rel) in fpath[:-1]: # we skip the last one because that is the node we look for
+        axisstr = f'{axis}::' if axis != childaxis else ''
+        newnode = f'node[{expandaltvals("@rel", rel,"=")}]' if rel != '' else 'node'
+        newnodewithaxis = f'{axisstr}{newnode}'
+        nodelist.append(newnodewithaxis)
+    result = '/'.join(nodelist)
+    return result
 
 def getargnodes(mwenode: SynTree, compnodes: List[SynTree], rellist=[]) -> List[Tuple[List[Relation], SynTree]]:
     argnodes = []
@@ -426,7 +486,13 @@ class MweHitInfo:
         self.determinations = updatedetstats(self.components.nodes, tree)
 
 
-def gettreebank(filenames: List[str]) -> Dict[str, SynTree]:
+def getfnelements(fullname: str) -> Tuple[str, str, str]:
+    path, filename = os.path.split(fullname)
+    basefilename, ext = os.path.splitext(filename)
+    result = (path, basefilename, ext)
+    return result
+
+def gettreebank(filenames: List[str], filenameid=False) -> Dict[str, SynTree]:
     results: Dict[str, SynTree] = {}
     for filename in filenames:
         fullstree = getstree(filename)
@@ -434,9 +500,24 @@ def gettreebank(filenames: List[str]) -> Dict[str, SynTree]:
             rawstree = fullstree.getroot()
             stree = removeud(rawstree)
             # etree.dump(stree)
-            sent = stree.xpath(sentencexpath)[0]
-            results[sent] = stree
+            if filenameid:
+                fnelements = getfnelements(filename)
+                mweid = fnelements[1]
+            else:
+                sent = stree.xpath(sentencexpath)[0]
+                mweid = sent
+            results[mweid] = stree
     return results
+
+def removeduplicatenodes(nodelist:List[SynTree]) -> List[SynTree]:
+    resultlist = []
+    seenspans = set()
+    for node in nodelist:
+        (b, e) = (gav(node, 'begin'), gav(node, 'end'))
+        if (b, e) not in seenspans:
+            resultlist.append(node)
+            seenspans.add((b,e))
+    return resultlist
 
 
 def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, NodeSet]]], treebank: Dict[str, SynTree]) -> FullMWEstats:
@@ -481,7 +562,9 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
                     [(mwenodes, mwecompsxpathexprs, cmwe),
                      (nearmissnodes, nearmisscompsxpathexprs, cnearmiss),
                      (missednodes, nearmisscompsxpathexprs, cmissed)]
-                for todonodes, xpathexprslist, qrt in todo:
+                for rawtodonodes, xpathexprslist, qrt in todo:
+
+                    todonodes = removeduplicatenodes(rawtodonodes)
 
                     for xpathexprs in xpathexprslist:
                         for mwenode in todonodes:
@@ -497,24 +580,26 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
                             # Arguments
                             for head in info.arguments.heads:
                                 argstats[qrt].data.append(
-                                    [head.rel, head.hdlemma, head.hdword, head.fringe, head.marked_utt])
+                                    [head.rel, head.hdlemma, head.hdword, head.fringe, head.marked_utt, id])
                             for rel_cat in info.arguments.rel_cats:
                                 argrelcatstats[qrt].data.append(
-                                    [rel_cat.rel, rel_cat.poscat, rel_cat.marked_utt])
+                                    [rel_cat.rel, rel_cat.poscat, rel_cat.marked_utt, id])
                             argframestats[qrt].data.append(
-                                [info.arguments.frame.frame_str, info.arguments.frame.marked_utt])
+                                [info.arguments.frame.frame_str, info.arguments.frame.marked_utt, id])
 
                             # Modification
                             for modification in info.modifications:
                                 modstats[qrt].data.append([
                                     modification.comp_lemma, modification.node_rel, modification.node_cat, modification.head_pos_cat,
-                                    modification.head_lemma, modification.head_word, modification.fringe, modification.marked_utt])
+                                    modification.head_lemma, modification.head_word, modification.fringe,
+                                    modification.marked_utt, id])
 
                             # Determination
                             for determination in info.determinations:
                                 detstats[qrt].data.append([
                                     determination.comp_lemma, determination.node_rel, determination.node_cat, determination.head_pos_cat,
-                                    determination.head_lemma, determination.head_word, determination.fringe, determination.marked_utt])
+                                    determination.head_lemma, determination.head_word, determination.fringe,
+                                    determination.marked_utt, id])
 
     newstats: Dict[int, MWEstats] = {}
     for qrt in queryresulttypes:
@@ -524,6 +609,30 @@ def getstats(mwe: str, queryresults: Dict[str, List[Tuple[NodeSet, NodeSet, Node
     result = FullMWEstats(newstats[cmwe], newstats[cnearmiss], newstats[cmissed])
     return result
 
+
+def getmwecomponents(matchingnodes: List[SynTree], mwestructures: List[SynTree]) -> List[List[SynTree]]:
+    componentslist = []
+    for mweparse in mwestructures:
+        mwecompsxpathexprs = getcompsxpaths(mweparse)
+        for matchingnode in matchingnodes:
+            components = []
+            for mwecompsxpathexpr in mwecompsxpathexprs:
+                newcomponents = matchingnode.xpath(mwecompsxpathexpr)  # multiple for cases such as mwu[hand in hand]
+                if newcomponents == []:
+                    components = [] # because all components must be present
+                    break
+                for newcomponent in newcomponents:
+                    if newcomponent is not None:
+                        if newcomponent not in components:  #for cases suchj as hand in hand under mwu
+                            components.append(newcomponent)
+                            break    # as soon as we have found on we are done
+                    else:
+                        if not canbeabsent(newcomponent):
+                            components = []  # because all components must be present
+                            break
+        if components != []:
+            componentslist.append(components)
+    return componentslist
 
 def displayfullstats(stats: MWEstats, outfile, header=''):
 
@@ -587,20 +696,26 @@ def updatedetstats(allcompnodes: List[SynTree], tree: SynTree) -> List[MweHitArg
             compparent = compnode.getparent()
             detnodes = [child for child in compparent if isdetnode(child, allcompnodes)] \
                 if compparent is not None else []
-            for detnode in detnodes:
-                detnodecat = getposcat(detnode)
-                detnoderel = gav(detnode, 'rel')
-                detfringe = getyieldstr(detnode)
-                detheads = getheads(detnode)
-                poslist = getwordposlist(detnode)
-                markeduttstr = getmarkedutt(tree, poslist)
-                for dethead in detheads:
-                    detheadlemma = gav(dethead, 'lemma')
-                    detheadword = gav(dethead, 'word')
-                    detheadposcat = getposcat(dethead)
-                    newentry = MweHitArgumentDeterminations(complemma, detnoderel, detnodecat, detheadposcat,
-                                                            detheadlemma, detheadword, detfringe, markeduttstr)
-                    detstats.append(newentry)
+            if detnodes == []:
+                uttstr = getsentence(tree)
+                newentry = MweHitArgumentModification(complemma, noneval, noneval, noneval,
+                                                      noneval, noneval, '', uttstr)
+                detstats.append(newentry)
+            else:
+                for detnode in detnodes:
+                    detnodecat = getposcat(detnode)
+                    detnoderel = gav(detnode, 'rel')
+                    detfringe = getyieldstr(detnode)
+                    detheads = getheads(detnode)
+                    poslist = getwordposlist(detnode)
+                    markeduttstr = getmarkedutt(tree, poslist)
+                    for dethead in detheads:
+                        detheadlemma = gav(dethead, 'lemma')
+                        detheadword = gav(dethead, 'word')
+                        detheadposcat = getposcat(dethead)
+                        newentry = MweHitArgumentDeterminations(complemma, detnoderel, detnodecat, detheadposcat,
+                                                                detheadlemma, detheadword, detfringe, markeduttstr)
+                        detstats.append(newentry)
     return detstats
 
 
@@ -613,20 +728,26 @@ def updatemodstats(allcompnodes: List[SynTree], tree: SynTree) -> List[MweHitArg
             compparent = compnode.getparent()
             modnodes = [child for child in compparent if ismodnode(child, allcompnodes)] \
                 if compparent is not None else []
-            for modnode in modnodes:
-                modnodecat = getposcat(modnode)
-                modnoderel = gav(modnode, 'rel')
-                modfringe = getyieldstr(modnode)
-                modheads = getheads(modnode)
-                poslist = getwordposlist(modnode)
-                markeduttstr = getmarkedutt(tree, poslist)
-                for modhead in modheads:
-                    modheadlemma = gav(modhead, 'lemma')
-                    modheadword = gav(modhead, 'word')
-                    modheadposcat = getposcat(modhead)
-                    newentry = MweHitArgumentModification(complemma, modnoderel, modnodecat, modheadposcat,
-                                                          modheadlemma, modheadword, modfringe, markeduttstr)
-                    modstats.append(newentry)
+            if modnodes == []:
+                uttstr = getsentence(tree)
+                newentry = MweHitArgumentModification(complemma, noneval, noneval, noneval,
+                                                      noneval, noneval, '', uttstr)
+                modstats.append(newentry)
+            else:
+                for modnode in modnodes:
+                    modnodecat = getposcat(modnode)
+                    modnoderel = gav(modnode, 'rel')
+                    modfringe = getyieldstr(modnode)
+                    modheads = getheads(modnode)
+                    poslist = getwordposlist(modnode)
+                    markeduttstr = getmarkedutt(tree, poslist)
+                    for modhead in modheads:
+                        modheadlemma = gav(modhead, 'lemma')
+                        modheadword = gav(modhead, 'word')
+                        modheadposcat = getposcat(modhead)
+                        newentry = MweHitArgumentModification(complemma, modnoderel, modnodecat, modheadposcat,
+                                                              modheadlemma, modheadword, modfringe, markeduttstr)
+                        modstats.append(newentry)
     return modstats
 
 
@@ -689,6 +810,8 @@ def markword(w: str):
     return result
 
 
+
+
 def getmarkedutt(tree: SynTree, poslist: List[int]):
     treeyield = getnodeyield(tree)
     treeyieldstrlist = [(int(getatt_or_from_parents(node, 'begin', '9999')), gav(node, 'word')) for node in treeyield]
@@ -701,3 +824,31 @@ def getwordposlist(node: SynTree):
     wordnodes = getnodeyield(node)
     poslist = [int(gav(n, 'begin')) for n in wordnodes]
     return poslist
+
+def getheadcomponents(match: SynTree, components: List[SynTree]) -> List[SynTree]:
+    headcomponents  = [child for child in match if child in components and 'pt' in child.attrib
+                       and gav(child, 'rel') in headrels]
+    if headcomponents == []:
+        for child in match:
+            childheadcomponents = getheadcomponents(child, components)
+            if childheadcomponents != []:
+                return childheadcomponents
+        return []
+    else:
+        return headcomponents
+
+def getheadcomponent(match: SynTree, components: List[SynTree]) -> SynTree:
+
+    headcomponents  = getheadcomponents(match, components)
+    if headcomponents == []:
+        headcomponents = components
+    for headcomponent in headcomponents:
+        if headcomponent is None:
+            print(f'"None head component for {getyieldstr(match)}')
+            print('\nmatch:')
+            etree.dump(match)
+            exit(-1)
+
+    sortedheadcomponents = sorted(headcomponents, key=lambda c: int(gav(c, 'end')))
+    headcomponent = sortedheadcomponents[0] if sortedheadcomponents != [] else None
+    return headcomponent

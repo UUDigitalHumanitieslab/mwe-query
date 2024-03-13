@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T21:53" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="11" id="0" rel="top">
+    <node begin="0" cat="smain" end="10" id="1" rel="--">
+      <node begin="1" end="2" frame="verb(unacc,pl,passive)" his="normal" his_1="normal" id="2" infl="pl" lcat="smain" lemma="worden" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="word" sc="passive" sense="word" stype="declarative" tense="present" v_per="thi" word="worden" wvorm="pv">
+        <ud id="2" form="worden" lemma="worden" upos="AUX" Number="Plur" Tense="Pres" VerbForm="Fin" head="10" deprel="aux:pass" deprel_main="aux" deprel_aux="pass">
+          <dep id="2" head="10" deprel="aux:pass" deprel_main="aux" deprel_aux="pass"/>
+        </ud>
+      </node>
+      <node begin="5" cat="np" end="9" id="3" index="1" is_np="true" rel="su">
+        <node begin="5" end="6" frame="number(hoofd(pl_num))" his="normal" his_1="number_expression" id="4" infl="pl_num" lcat="detp" lemma="9500" naamval="stan" numtype="hoofd" pos="num" positie="prenom" postag="TW(hoofd,prenom,stan)" pt="tw" rel="det" root="9500" sense="9500" word="9500">
+          <ud id="6" form="9500" lemma="9500" upos="NUM" head="7" deprel="nummod" deprel_main="nummod">
+            <dep id="6" head="7" deprel="nummod" deprel_main="nummod"/>
+          </ud>
+        </node>
+        <node begin="6" end="7" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="5" lcat="np" lemma="poging" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="poging" sense="poging" word="pogingen">
+          <ud id="7" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="10" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass">
+            <dep id="7" head="10" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass"/>
+          </ud>
+        </node>
+        <node begin="7" cat="pp" end="9" id="6" rel="mod">
+          <node begin="7" end="8" frame="preposition(tot,[toe,[aan,toe]])" his="normal" his_1="normal" id="7" lcat="pp" lemma="tot" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="tot" sense="tot" vztype="init" word="tot">
+            <ud id="8" form="tot" lemma="tot" upos="ADP" head="9" deprel="case" deprel_main="case">
+              <dep id="8" head="9" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="8" end="9" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="compound" his_1="3" id="8" is_np="true" lcat="np" lemma="reageer_buis_bevruchting" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="obj1" rnum="sg" root="reageer_buis_bevruchting" sense="reageer_buis_bevruchting" word="reageerbuisbevruchting">
+            <ud id="9" form="reageerbuisbevruchting" lemma="reageer_buis_bevruchting" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nmod" deprel_main="nmod">
+              <dep id="9" head="7" deprel="nmod:tot" deprel_main="nmod" deprel_aux="tot"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="0" cat="ppart" end="10" id="9" rel="vc">
+        <node aform="base" begin="0" buiging="zonder" end="1" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="decap" his_1_1="normal" id="10" infl="no_e" is_vorfeld="true" lcat="ap" lemma="jaarlijks" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="jaarlijks" sense="jaarlijks" vform="adj" word="Jaarlijks">
+          <ud id="1" form="Jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="10" deprel="advmod" deprel_main="advmod">
+            <dep id="1" head="10" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="2" cat="pp" end="4" id="11" rel="mod">
+          <node begin="2" end="3" frame="preposition(in,[])" his="normal" his_1="normal" id="12" lcat="pp" lemma="in" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="in" sense="in" vztype="init" word="in">
+            <ud id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" deprel_main="case">
+              <dep id="3" head="4" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="3" end="4" frame="proper_name(sg,'LOC')" genus="onz" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="13" is_np="true" lcat="np" lemma="Nederland" naamval="stan" neclass="LOC" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="obj1" rnum="sg" root="Nederland" sense="Nederland" word="Nederland">
+            <ud id="4" form="Nederland" lemma="Nederland" upos="PROPN" Gender="Neut" Number="Sing" head="10" deprel="obl" deprel_main="obl">
+              <dep id="4" head="10" deprel="obl:in" deprel_main="obl" deprel_aux="in"/>
+            </ud>
+          </node>
+        </node>
+        <node aform="base" begin="4" buiging="zonder" end="5" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="normal" id="14" infl="no_e" lcat="ap" lemma="rond" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="rond" sense="rond" vform="adj" word="rond">
+          <ud id="5" form="rond" lemma="rond" upos="ADJ" Degree="Pos" head="10" deprel="advmod" deprel_main="advmod">
+            <dep id="5" head="10" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="5" end="9" id="15" index="1" rel="obj1"/>
+        <node begin="9" buiging="zonder" end="10" frame="verb(hebben,psp,transitive_ndev)" his="normal" his_1="normal" id="16" infl="psp" lcat="ppart" lemma="doen" pos="verb" positie="vrij" postag="WW(vd,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="gedaan" wvorm="vd">
+          <ud id="10" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" deprel_main="root">
+            <dep id="10" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="10" end="11" frame="punct(punt)" his="normal" his_1="normal" id="17" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="11" form="." lemma="." upos="PUNCT" head="10" deprel="punct" deprel_main="punct">
+        <dep id="11" head="10" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000116741.p.2.s.3">Jaarlijks worden in Nederland rond 9500 pogingen tot reageerbuisbevruchting gedaan .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000116741.p.2.s.3|Jaarlijks worden in Nederland rond 9500 pogingen tot reageerbuisbevruchting gedaan .|1|1|-2.6322736050000004</comment>
+  </comments>
+  <root ud="basic" id="10" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <advmod ud="basic" id="1" form="Jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="10" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <aux ud="basic" id="2" form="worden" lemma="worden" upos="AUX" Number="Plur" Tense="Pres" VerbForm="Fin" head="10" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv"/>
+    <obl ud="basic" id="4" form="Nederland" lemma="Nederland" upos="PROPN" Gender="Neut" Number="Sing" head="10" deprel="obl" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <case ud="basic" id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <advmod ud="basic" id="5" form="rond" lemma="rond" upos="ADJ" Degree="Pos" head="10" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <nsubj ud="basic" id="7" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="10" deprel="nsubj:pass" deprel_aux="pass" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nummod ud="basic" id="6" form="9500" lemma="9500" upos="NUM" head="7" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+      <nmod ud="basic" id="9" form="reageerbuisbevruchting" lemma="reageer_buis_bevruchting" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="basic" id="8" form="tot" lemma="tot" upos="ADP" head="9" deprel="case" pt="vz" vztype="init"/>
+      </nmod>
+    </nsubj>
+    <punct ud="basic" id="11" form="." lemma="." upos="PUNCT" head="10" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="10" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <advmod ud="enhanced" id="1" form="Jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="10" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <aux ud="enhanced" id="2" form="worden" lemma="worden" upos="AUX" Number="Plur" Tense="Pres" VerbForm="Fin" head="10" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv"/>
+    <obl ud="enhanced" id="4" form="Nederland" lemma="Nederland" upos="PROPN" Gender="Neut" Number="Sing" head="10" deprel="obl:in" deprel_aux="in" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <case ud="enhanced" id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <advmod ud="enhanced" id="5" form="rond" lemma="rond" upos="ADJ" Degree="Pos" head="10" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <nsubj ud="enhanced" id="7" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="10" deprel="nsubj:pass" deprel_aux="pass" getal="mv" graad="basis" ntype="soort" pt="n">
+      <nummod ud="enhanced" id="6" form="9500" lemma="9500" upos="NUM" head="7" deprel="nummod" naamval="stan" numtype="hoofd" positie="prenom" pt="tw"/>
+      <nmod ud="enhanced" id="9" form="reageerbuisbevruchting" lemma="reageer_buis_bevruchting" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nmod:tot" deprel_aux="tot" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="enhanced" id="8" form="tot" lemma="tot" upos="ADP" head="9" deprel="case" pt="vz" vztype="init"/>
+      </nmod>
+    </nsubj>
+    <punct ud="enhanced" id="11" form="." lemma="." upos="PUNCT" head="10" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Jaarlijks	jaarlijks	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	10	advmod	10:advmod	_
+2	worden	worden	AUX	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	10	aux:pass	10:aux:pass	_
+3	in	in	ADP	VZ|init	_	4	case	4:case	_
+4	Nederland	Nederland	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	10	obl	10:obl:in	_
+5	rond	rond	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	10	advmod	10:advmod	_
+6	9500	9500	NUM	TW|hoofd|prenom|stan	_	7	nummod	7:nummod	_
+7	pogingen	poging	NOUN	N|soort|mv|basis	Number=Plur	10	nsubj:pass	10:nsubj:pass	_
+8	tot	tot	ADP	VZ|init	_	9	case	9:case	_
+9	reageerbuisbevruchting	reageer_buis_bevruchting	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	7	nmod	7:nmod:tot	_
+10	gedaan	doen	VERB	WW|vd|vrij|zonder	VerbForm=Part	0	root	0:root	_
+11	.	.	PUNCT	LET	_	10	punct	10:punct	_
+]]></conllu>
+</alpino_ds>

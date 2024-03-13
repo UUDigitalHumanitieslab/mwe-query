@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T20:13" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="8" id="0" rel="top">
+    <node begin="0" cat="smain" end="7" id="1" rel="--">
+      <node begin="0" cat="np" end="2" id="2" is_np="true" is_vorfeld="true" rel="mod">
+        <node aform="base" begin="0" buiging="zonder" end="1" frame="adjective(no_e(nonadv))" graad="basis" his="normal" his_1="decap" his_1_1="normal" id="3" infl="no_e" lcat="ap" lemma="vorig" pos="adj" positie="prenom" postag="ADJ(prenom,basis,zonder)" pt="adj" rel="mod" root="vorig" sense="vorig" vform="adj" word="Vorig">
+          <ud id="1" form="Vorig" lemma="vorig" upos="ADJ" Degree="Pos" head="2" deprel="amod" deprel_main="amod">
+            <dep id="1" head="2" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="1" end="2" frame="tmp_noun(het,count,bare_meas)" gen="het" genus="onz" getal="ev" graad="basis" his="normal" his_1="normal" id="4" lcat="np" lemma="jaar" naamval="stan" ntype="soort" num="bare_meas" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="sg" root="jaar" sense="jaar" special="tmp" word="jaar">
+          <ud id="2" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="obl" deprel_main="obl">
+            <dep id="2" head="3" deprel="obl" deprel_main="obl"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="2" end="3" frame="verb(hebben,past(sg),transitive_ndev)" his="normal" his_1="normal" id="5" infl="sg" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="past" v_per="thi" word="deed" wvorm="pv">
+        <ud id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="3" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="3" case="nom" def="def" end="4" frame="pronoun(nwh,thi,sg,de,nom,def)" gen="de" genus="masc" getal="ev" his="normal" his_1="normal" id="6" is_np="true" lcat="np" lemma="hij" naamval="nomin" num="sg" pdtype="pron" per="thi" persoon="3" pos="pron" postag="VNW(pers,pron,nomin,vol,3,ev,masc)" pt="vnw" rel="su" rnum="sg" root="hij" sense="hij" status="vol" vwtype="pers" wh="nwh" word="hij">
+        <ud id="4" form="hij" lemma="hij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="3" deprel="nsubj" deprel_main="nsubj">
+          <dep id="4" head="3" deprel="nsubj" deprel_main="nsubj"/>
+        </ud>
+      </node>
+      <node begin="4" cat="np" end="7" id="7" is_np="true" rel="obj1">
+        <node begin="4" end="5" frame="determiner(een)" his="normal" his_1="normal" id="8" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="7" deprel="det" deprel_main="det">
+            <dep id="5" head="7" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node aform="base" begin="5" buiging="met-e" end="6" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="9" infl="e" lcat="ap" lemma="nieuw" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="nieuw" sense="nieuw" vform="adj" word="nieuwe">
+          <ud id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" deprel_main="amod">
+            <dep id="6" head="7" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="6" end="7" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="10" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+          <ud id="7" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" deprel_main="obj">
+            <dep id="7" head="3" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="7" end="8" frame="punct(punt)" his="normal" his_1="normal" id="11" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="8" form="." lemma="." upos="PUNCT" head="3" deprel="punct" deprel_main="punct">
+        <dep id="8" head="3" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000117731.p.4.s.3">Vorig jaar deed hij een nieuwe poging .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000117731.p.4.s.3|Vorig jaar deed hij een nieuwe poging .|1|1|-7.665304997900001</comment>
+  </comments>
+  <root ud="basic" id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <obl ud="basic" id="2" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="obl" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="basic" id="1" form="Vorig" lemma="vorig" upos="ADJ" Degree="Pos" head="2" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+    </obl>
+    <nsubj ud="basic" id="4" form="hij" lemma="hij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="3" deprel="nsubj" genus="masc" getal="ev" naamval="nomin" pdtype="pron" persoon="3" pt="vnw" status="vol" vwtype="pers"/>
+    <obj ud="basic" id="7" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="7" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="basic" id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </obj>
+    <punct ud="basic" id="8" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="3" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <obl ud="enhanced" id="2" form="jaar" lemma="jaar" upos="NOUN" Gender="Neut" Number="Sing" head="3" deprel="obl" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="enhanced" id="1" form="Vorig" lemma="vorig" upos="ADJ" Degree="Pos" head="2" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+    </obl>
+    <nsubj ud="enhanced" id="4" form="hij" lemma="hij" upos="PRON" Case="Nom" Person="3" PronType="Prs" head="3" deprel="nsubj" genus="masc" getal="ev" naamval="nomin" pdtype="pron" persoon="3" pt="vnw" status="vol" vwtype="pers"/>
+    <obj ud="enhanced" id="7" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="7" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="enhanced" id="6" form="nieuwe" lemma="nieuw" upos="ADJ" Degree="Pos" head="7" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </obj>
+    <punct ud="enhanced" id="8" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Vorig	vorig	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	2	amod	2:amod	_
+2	jaar	jaar	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	3	obl	3:obl	_
+3	deed	doen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+4	hij	hij	PRON	VNW|pers|pron|nomin|vol|3|ev|masc	Case=Nom|Person=3|PronType=Prs	3	nsubj	3:nsubj	_
+5	een	een	DET	LID|onbep|stan|agr	Definite=Ind	7	det	7:det	_
+6	nieuwe	nieuw	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	7	amod	7:amod	_
+7	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	obj	3:obj	_
+8	.	.	PUNCT	LET	_	3	punct	3:punct	_
+]]></conllu>
+</alpino_ds>

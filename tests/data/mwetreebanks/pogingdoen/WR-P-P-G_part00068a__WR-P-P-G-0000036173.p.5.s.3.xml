@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T21:23" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="8" id="0" rel="top">
+    <node begin="0" cat="smain" end="7" id="1" rel="--">
+      <node begin="0" case="nom" def="def" end="1" frame="pronoun(nwh,fir,pl,de,nom,def,wkpro)" gen="de" getal="mv" his="normal" his_1="decap" his_1_1="normal" id="2" index="1" is_np="true" is_vorfeld="true" lcat="np" lemma="we" naamval="nomin" num="pl" pdtype="pron" per="fir" persoon="1" pos="pron" postag="VNW(pers,pron,nomin,red,1,mv)" pt="vnw" rel="su" rnum="pl" root="we" sense="we" special="wkpro" status="red" vwtype="pers" wh="nwh" word="We">
+        <ud id="1" form="We" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="2" deprel="nsubj" deprel_main="nsubj">
+          <dep id="1" head="2" deprel="nsubj" deprel_main="nsubj"/>
+          <dep id="1" head="7" deprel="nsubj:xsubj" deprel_main="nsubj" deprel_aux="xsubj"/>
+        </ud>
+      </node>
+      <node begin="1" end="2" frame="verb(hebben,pl,modifier(aux(inf)))" his="normal" his_1="normal" id="3" infl="pl" lcat="smain" lemma="willen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="wil" sc="modifier(aux(inf))" sense="wil" stype="declarative" tense="present" v_per="fir" word="willen" wvorm="pv">
+        <ud id="2" form="willen" lemma="willen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="2" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="0" cat="inf" end="7" id="4" rel="vc">
+        <node begin="0" end="1" id="5" index="1" rel="su"/>
+        <node begin="2" end="3" frame="adverb" his="normal" his_1="normal" id="6" lcat="advp" lemma="nog" pos="adv" postag="BW()" pt="bw" rel="mod" root="nog" sense="nog" word="nog">
+          <ud id="3" form="nog" lemma="nog" upos="ADV" head="7" deprel="advmod" deprel_main="advmod">
+            <dep id="3" head="7" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node begin="3" cat="np" end="6" id="7" is_np="true" rel="obj1">
+          <node begin="3" end="4" frame="determiner(een)" his="normal" his_1="normal" id="8" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+            <ud id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" deprel_main="det">
+              <dep id="4" head="6" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="4" buiging="met-e" end="5" frame="number(rang)" graad="sup" his="normal" his_1="normal" id="9" lcat="ap" lemma="laat" naamval="stan" numtype="rang" pos="num" positie="prenom" postag="ADJ(prenom,sup,met-e,stan)" pt="adj" rel="mod" root="laat" sense="laat" word="laatste">
+            <ud id="5" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="6" deprel="amod" deprel_main="amod">
+              <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="5" end="6" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="10" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+            <ud id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" deprel_main="obj">
+              <dep id="6" head="7" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="6" buiging="zonder" end="7" frame="verb(hebben,inf(no_e),transitive_ndev)" his="normal" his_1="normal" id="11" infl="inf(no_e)" lcat="inf" lemma="doen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="doen" wvorm="inf">
+          <ud id="7" form="doen" lemma="doen" upos="VERB" VerbForm="Inf" head="2" deprel="xcomp" deprel_main="xcomp">
+            <dep id="7" head="2" deprel="xcomp" deprel_main="xcomp"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="7" end="8" frame="punct(punt)" his="normal" his_1="normal" id="12" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="8" form="." lemma="." upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="8" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000036173.p.5.s.3">We willen nog een laatste poging doen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000036173.p.5.s.3|We willen nog een laatste poging doen .|1|1|-11.1723034507</comment>
+  </comments>
+  <root ud="basic" id="2" form="willen" lemma="willen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="1" form="We" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="2" deprel="nsubj" getal="mv" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="red" vwtype="pers"/>
+    <xcomp ud="basic" id="7" form="doen" lemma="doen" upos="VERB" VerbForm="Inf" head="2" deprel="xcomp" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <advmod ud="basic" id="3" form="nog" lemma="nog" upos="ADV" head="7" deprel="advmod" pt="bw"/>
+      <obj ud="basic" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="basic" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+        <amod ud="basic" id="5" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="6" deprel="amod" buiging="met-e" graad="sup" naamval="stan" numtype="rang" positie="prenom" pt="adj"/>
+      </obj>
+    </xcomp>
+    <punct ud="basic" id="8" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="2" form="willen" lemma="willen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="We" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="2" deprel="nsubj" getal="mv" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="red" vwtype="pers"/>
+    <xcomp ud="enhanced" id="7" form="doen" lemma="doen" upos="VERB" VerbForm="Inf" head="2" deprel="xcomp" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+      <nsubj ud="enhanced" id="1" form="We" lemma="we" upos="PRON" Case="Nom" Person="1" PronType="Prs" head="7" deprel="nsubj:xsubj" deprel_aux="xsubj" getal="mv" naamval="nomin" pdtype="pron" persoon="1" pt="vnw" status="red" vwtype="pers"/>
+      <advmod ud="enhanced" id="3" form="nog" lemma="nog" upos="ADV" head="7" deprel="advmod" pt="bw"/>
+      <obj ud="enhanced" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <det ud="enhanced" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+        <amod ud="enhanced" id="5" form="laatste" lemma="laat" upos="ADJ" Degree="Sup" head="6" deprel="amod" buiging="met-e" graad="sup" naamval="stan" numtype="rang" positie="prenom" pt="adj"/>
+      </obj>
+    </xcomp>
+    <punct ud="enhanced" id="8" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	We	we	PRON	VNW|pers|pron|nomin|red|1|mv	Case=Nom|Person=1|PronType=Prs	2	nsubj	2:nsubj|7:nsubj:xsubj	_
+2	willen	willen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+3	nog	nog	ADV	BW	_	7	advmod	7:advmod	_
+4	een	een	DET	LID|onbep|stan|agr	Definite=Ind	6	det	6:det	_
+5	laatste	laat	ADJ	ADJ|prenom|sup|met-e|stan	Degree=Sup	6	amod	6:amod	_
+6	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	7	obj	7:obj	_
+7	doen	doen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	2	xcomp	2:xcomp	_
+8	.	.	PUNCT	LET	_	2	punct	2:punct	_
+]]></conllu>
+</alpino_ds>

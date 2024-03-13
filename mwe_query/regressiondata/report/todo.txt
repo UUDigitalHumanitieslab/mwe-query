@@ -1,0 +1,183 @@
+To do for rwq
+	MWE: iemand zal van iemand|iets houden
+		hij houdt van voetbal
+		Hij houdt er niet van
+		Hij houdt daarvan
+		hij houdt er niet van om te schaken
+		hij houdt er van om te schaken,
+	MWE: Iemand zal zich aan iemand optrekken
+		hij heeft zich altijd aan zijn vriend op kunnen trekken
+	MWE: 0een vrolijk Fransje
+		vrolijke Fransjes
+	MWE: iemand zal tegen iets aan lopen
+		hij liep tegen veel problemen aan
+		hij liep er tegen aan dat hij ziek was
+	MWE: iemand zal liegen dat hij +barst
+		jij liegt dat je basrt
+	MWE: iemand zal het laten afweten
+		hij heeft het af laten weten
+	MWE: iemand zal voor =iets tussen iets zitten
+		Hij heeft er voor iets tussen gezeten
+To do for mlq
+	MWE: 0een vrolijk Fransje
+		vrolijke Fransjes
+	MWE: iemand zal een mouw aan iets passen
+		Hij paste er een mouw aan
+	MWE: iemand zal tegen iets aan lopen
+		hij liep tegen veel problemen aan
+		hij liep er tegen aan dat hij ziek was
+	MWE: iets zal in de sterren geschreven staan
+		staat in de sterren geschreven
+		dat staat in de  sterren geschreven
+	MWE: iets zal op de klippen lopen
+		Hun huwelijk is de klippen op gelopen
+	MWE: iemand zal 'm smeren
+		Hij is 'm gesmeerd
+	MWE: iemand zal iets 0niet kunnen velen
+		Hij kan dat niet velen
+	MWE: iemand zal liegen dat hij +barst
+		jij liegt dat je basrt
+	MWE: kant en klaar
+		kant en klare oplossingen
+	MWE: iemand zal het laten afweten
+		hij heeft het af laten weten
+To do for nmq
+	MWE: 0geen *haan zal naar iets kraaien
+		maar daar kraait geen haan naar maar als het er drieduizend zijn of meer staat belgie op zen kop kweet niet of da verschil even groot is hoor
+		geen haan kraaide daarnaar
+		geen haan kraaide ernaar dat hij niet kwam
+		Weinig hanen die daarnaar kraaien .
+		Weinig hanen die ernaar kraaiden .
+		geen haan evenwel die er naar kraait
+		geen haan evenwel die ernaar kraait
+		geen haan evenwel die daarnaar kraait
+	MWE: iemand zal in voor iets zijn
+		hij zal daar voor in zijn
+	MWE: iemand zal voor iets in zijn
+		hij zal daar voor in zijn
+		hij zal daarvoor in zijn
+	MWE: in geval van iets
+		in geval hiervan
+		in geval hier van
+	MWE: De appel zal niet ver van de boom vallen
+		hij zegt dat de appel niet ver van de boom valt
+	MWE: De laatste loodjes zullen het zwaarst wegen
+		De laatste loodje wegen het zwaarst
+	MWE: Iemand zal iemands hart breken
+		Jan brak tantes hart
+		Wiens hart brak Marie
+		De jongen wiens hart Marie brak was ontroostbaar
+	MWE: 0een vrolijk Fransje
+		vrolijke Fransjes
+	MWE: iemand zal een mouw aan iets passen
+		Hij paste er een mouw aan
+	MWE: iemand zal tegen iets aan lopen
+		hij liep tegen veel problemen aan
+		hij liep er tegen aan dat hij ziek was
+	MWE: iets zal in de sterren geschreven staan
+		staat in de sterren geschreven
+		dat staat in de  sterren geschreven
+	MWE: iemand zal de plaat poetsen
+		Er was geen plaat die hij gepoetst had
+	MWE: Iemand zal iemand de schuld van iets geven
+		iemand zal iemand daar van de schuld geven
+		iemand zal iemand van iets de schuld geven
+	MWE: dag en nacht
+		nacht en dag
+	MWE: dames en heren
+		heren en dames
+	MWE: iemand zal 'm smeren
+		Hij is 'm gesmeerd
+	MWE: iemand zal iets 0niet kunnen velen
+		Hij kan dat niet velen
+	MWE: iemand zal liegen dat hij +barst
+		jij liegt dat je basrt
+	MWE: kant en klaar
+		kant en klare oplossingen
+	MWE: dd:[dat] oude =!liedje
+		dat oude liedje
+		dit oude liedje
+		het oude liedje
+		een oud liedje
+	MWE: iemand zal het laten afweten
+		hij heeft het af laten weten
+	MWE: iemand zal *tegenwicht voor iets bieden
+		hij bood daar niet heel veel tegenwicht voor
+	MWE: iemand zal 0een L:blik com:[met] iemand wisselen
+		zij wisselden blikken
+	MWE: iemand zal de spot met iets drijven
+		 zij dreef daar de spot mee
+To do for meq
+	MWE: 0geen *haan zal naar iets kraaien
+		maar daar kraait geen haan naar maar als het er drieduizend zijn of meer staat belgie op zen kop kweet niet of da verschil even groot is hoor
+		Weinig hanen die daarnaar kraaien .
+		Weinig hanen die ernaar kraaiden .
+		Oost-Europese au pairs komen als toerist naar Nederland en volgens Ales kraait er geen haan naar dat ze stiekem werken .
+		geen haan evenwel die er naar kraait
+		geen haan evenwel die ernaar kraait
+		geen haan evenwel die daarnaar kraait
+	MWE: iemand zal in voor iets zijn
+		hij zal daar voor in zijn
+	MWE: iemand zal voor iets in zijn
+		hij zal daar voor in zijn
+		hij zal daarvoor in zijn
+	MWE: in geval van iets
+		in geval hiervan
+		in geval hier van
+	MWE: iemand zal zijn geduld verliezen
+		Zij verloor haar geduld
+		Zij verloren hun geduld
+	MWE: De appel zal niet ver van de boom vallen
+		hij zegt dat de appel niet ver van de boom valt
+	MWE: De laatste loodjes zullen het zwaarst wegen
+		De laatste loodje wegen het zwaarst
+	MWE: Iemand zal <makkelijk> in de omgang zijn
+		Hij is nogal moeilijk in de omgang
+	MWE: Iemand zal iemands hart breken
+		Jan brak tantes hart
+		Marie brak het hart van haar buurman
+		Wiens hart brak Marie
+		De jongen wiens hart Marie brak was ontroostbaar
+	MWE: 0een vrolijk Fransje
+		vrolijke Fransjes
+	MWE: iemand zal een mouw aan iets passen
+		Hij paste er een mouw aan
+	MWE: iemand zal tegen iets aan lopen
+		hij liep tegen veel problemen aan
+		hij liep er tegen aan dat hij ziek was
+	MWE: iets zal in de sterren geschreven staan
+		staat in de sterren geschreven
+		dat staat in de  sterren geschreven
+	MWE: Iemand zal iemand de schuld van iets geven
+		iemand zal iemand daar van de schuld geven
+		iemand zal iemand van iets de schuld geven
+	MWE: dag en nacht
+		nacht en dag
+	MWE: dames en heren
+		heren en dames
+	MWE: iemand zal 'm smeren
+		Hij is 'm gesmeerd
+	MWE: iemand zal iets 0niet kunnen velen
+		Hij kan dat niet velen
+	MWE: iemand zal liegen dat hij +barst
+		jij liegt dat je basrt
+	MWE: kant en klaar
+		kant en klare oplossingen
+	MWE: dd:[dat] oude =!liedje
+		dat oude liedje
+		dit oude liedje
+		het oude liedje
+	MWE: dat +valt te bezien
+		dat viel nog te bezien
+	MWE: iemand zal het laten afweten
+		hij heeft het af laten weten
+	MWE: iemand zal *tegenwicht voor iets bieden
+		hij bood daar niet heel veel tegenwicht voor
+	MWE: iemand zal 0de M:dans L:ontspringen
+		Met veel moeite kon hij die juridische dans ontspringen
+	MWE: iemand zal 0een L:blik com:[met] iemand wisselen
+		zij wisselden blikken
+	MWE: iets zal door iemands hoofd malen
+		dat bleef maar door  het hoofd van die jongen malen
+	MWE: iemand zal de spot met iets drijven
+		 zij dreef daar de spot mee

@@ -1,0 +1,5 @@
+81 MWEs dealt with: 
+195 utterances dealt with: 
+0 improvements: 
+0 differences found: 
+Comparison with Golddata: meq: 76.92307692307693;	nmq: 78.97435897435898;	mlq: 93.84615384615384;	rwq: 93.84615384615384: 

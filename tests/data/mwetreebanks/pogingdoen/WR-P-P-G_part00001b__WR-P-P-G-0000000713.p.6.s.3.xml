@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:58" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="20" id="0" rel="top">
+    <node begin="3" end="4" frame="punct(aanhaal_both)" his="normal" his_1="normal" id="1" lcat="punct" lemma="'" pos="punct" postag="LET()" pt="let" rel="--" root="'" sense="'" special="aanhaal_both" word="'">
+      <ud id="4" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" deprel_main="punct">
+        <dep id="4" head="5" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="5" end="6" frame="punct(aanhaal_both)" his="normal" his_1="normal" id="2" lcat="punct" lemma="'" pos="punct" postag="LET()" pt="let" rel="--" root="'" sense="'" special="aanhaal_both" word="'">
+      <ud id="6" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" deprel_main="punct">
+        <dep id="6" head="5" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="19" id="3" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" his="normal" his_1="decap" his_1_1="normal" id="4" lcat="du" lemma="en" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="en" sc="root" sense="en" word="En">
+        <ud id="1" form="En" lemma="en" upos="CCONJ" head="8" deprel="mark" deprel_main="mark">
+          <dep id="1" head="8" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="smain" end="19" id="5" rel="nucl">
+        <node begin="1" cat="pp" end="7" id="6" is_vorfeld="true" rel="mod">
+          <node begin="1" end="2" frame="preposition(via,[])" his="normal" his_1="normal" id="7" lcat="pp" lemma="via" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="via" sense="via" vztype="init" word="via">
+            <ud id="2" form="via" lemma="via" upos="ADP" head="5" deprel="case" deprel_main="case">
+              <dep id="2" head="5" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="2" cat="np" end="7" id="8" is_np="true" rel="obj1">
+            <node begin="2" buiging="zonder" end="3" frame="determiner(pron)" getal="mv" his="normal" his_1="normal" id="9" infl="pron" lcat="detp" lemma="hun" naamval="stan" npagr="agr" pdtype="det" persoon="3" pos="det" positie="prenom" postag="VNW(bez,det,stan,vol,3,mv,prenom,zonder,agr)" pron="true" pt="vnw" rel="det" root="hun" sense="hun" status="vol" vwtype="bez" word="hun">
+              <ud id="3" form="hun" lemma="hun" upos="PRON" Person="3" PronType="Prs" head="5" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss">
+                <dep id="3" head="5" deprel="nmod:poss" deprel_main="nmod" deprel_aux="poss"/>
+              </ud>
+            </node>
+            <node begin="4" end="5" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="compound" his_1="2" id="10" lcat="np" lemma="neo_kolonie" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="neo_kolonie" sense="neo_kolonie" word="neokolonie">
+              <ud id="5" form="neokolonie" lemma="neo_kolonie" upos="NOUN" Gender="Com" Number="Sing" head="8" deprel="obl" deprel_main="obl">
+                <dep id="5" head="8" deprel="obl:via" deprel_main="obl" deprel_aux="via"/>
+              </ud>
+            </node>
+            <node begin="6" end="7" frame="proper_name(sg,'LOC')" genus="onz" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="11" is_np="true" lcat="np" lemma="Groot-Brittannië" naamval="stan" neclass="LOC" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="app" rnum="sg" root="Groot-Brittannië" sense="Groot-Brittannië" word="Groot-Brittannië">
+              <ud id="7" form="Groot-Brittannië" lemma="Groot-Brittannië" upos="PROPN" Gender="Neut" Number="Sing" head="5" deprel="appos" deprel_main="appos">
+                <dep id="7" head="5" deprel="appos" deprel_main="appos"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+        <node begin="7" end="8" frame="verb(hebben,pl,transitive_ndev)" his="normal" his_1="normal" id="12" infl="pl" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doen" wvorm="pv">
+          <ud id="8" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+            <dep id="8" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="8" cat="np" end="10" id="13" is_np="true" rel="su">
+          <node begin="8" end="9" frame="determiner(de)" his="normal" his_1="normal" id="14" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+            <ud id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" deprel_main="det">
+              <dep id="9" head="10" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="9" end="10" frame="proper_name(both,'LOC')" getal="mv" graad="basis" his="normal" his_1="names_dictionary" id="15" lcat="np" lemma="VS" neclass="LOC" ntype="eigen" num="both" pos="name" postag="N(eigen,mv,basis)" pt="n" rel="hd" rnum="pl" root="VS" sense="VS" word="VS">
+            <ud id="10" form="VS" lemma="VS" upos="PROPN" Number="Plur" head="8" deprel="nsubj" deprel_main="nsubj">
+              <dep id="10" head="8" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="10" cat="np" end="19" id="16" is_np="true" rel="obj1">
+          <node aform="compar" begin="10" buiging="met-e" end="11" frame="adjective(ere)" graad="comp" his="normal" his_1="normal" id="17" infl="e" lcat="ap" lemma="ver" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,comp,met-e,stan)" pt="adj" rel="mod" root="ver" sense="ver" vform="adj" word="verdere">
+            <ud id="11" form="verdere" lemma="ver" upos="ADJ" Degree="Cmp" head="12" deprel="amod" deprel_main="amod">
+              <dep id="11" head="12" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="11" end="12" frame="noun(de,count,pl,vp)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="18" lcat="np" lemma="poging" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="poging" sc="vp" sense="poging" word="pogingen">
+            <ud id="12" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="8" deprel="obj" deprel_main="obj">
+              <dep id="12" head="8" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+          <node begin="12" cat="ti" end="19" id="19" rel="vc">
+            <node begin="17" end="18" frame="complementizer(te)" his="normal" his_1="normal" id="20" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+              <ud id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" deprel_main="mark">
+                <dep id="18" head="19" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="12" cat="inf" end="19" id="21" rel="body">
+              <node begin="12" cat="np" end="17" id="22" is_np="true" rel="obj1">
+                <node begin="12" end="13" frame="determiner(de)" his="normal" his_1="normal" id="23" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                  <ud id="13" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" deprel_main="det">
+                    <dep id="13" head="15" deprel="det" deprel_main="det"/>
+                  </ud>
+                </node>
+                <node aform="base" begin="13" buiging="met-e" end="14" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="24" infl="e" lcat="ap" lemma="economisch" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="economisch" sense="economisch" vform="adj" word="economische">
+                  <ud id="14" form="economische" lemma="economisch" upos="ADJ" Degree="Pos" head="15" deprel="amod" deprel_main="amod">
+                    <dep id="14" head="15" deprel="amod" deprel_main="amod"/>
+                  </ud>
+                </node>
+                <node begin="14" end="15" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="25" lcat="np" lemma="ontwikkeling" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="ontwikkeling" sense="ontwikkeling" word="ontwikkeling">
+                  <ud id="15" form="ontwikkeling" lemma="ontwikkeling" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" deprel_main="obj">
+                    <dep id="15" head="19" deprel="obj" deprel_main="obj"/>
+                  </ud>
+                </node>
+                <node begin="15" cat="pp" end="17" id="26" rel="mod">
+                  <node begin="15" end="16" frame="preposition(van,[af,uit,vandaan,[af,aan]])" his="normal" his_1="normal" id="27" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+                    <ud id="16" form="van" lemma="van" upos="ADP" head="17" deprel="case" deprel_main="case">
+                      <dep id="16" head="17" deprel="case" deprel_main="case"/>
+                    </ud>
+                  </node>
+                  <node begin="16" end="17" frame="proper_name(sg,'LOC')" genus="onz" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="28" is_np="true" lcat="np" lemma="Europa" naamval="stan" neclass="LOC" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="obj1" rnum="sg" root="Europa" sense="Europa" word="Europa">
+                    <ud id="17" form="Europa" lemma="Europa" upos="PROPN" Gender="Neut" Number="Sing" head="15" deprel="nmod" deprel_main="nmod">
+                      <dep id="17" head="15" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                    </ud>
+                  </node>
+                </node>
+              </node>
+              <node begin="18" buiging="zonder" end="19" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="29" infl="inf" lcat="inf" lemma="verstoren" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="verstoor" sc="transitive" sense="verstoor" word="verstoren" wvorm="inf">
+                <ud id="19" form="verstoren" lemma="verstoren" upos="VERB" VerbForm="Inf" head="12" deprel="acl" deprel_main="acl">
+                  <dep id="19" head="12" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="19" end="20" frame="punct(punt)" his="normal" his_1="normal" id="30" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="20" form="." lemma="." upos="PUNCT" head="8" deprel="punct" deprel_main="punct">
+        <dep id="20" head="8" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000000713.p.6.s.3">En via hun ' neokolonie ' Groot-Brittannië doen de VS verdere pogingen de economische ontwikkeling van Europa te verstoren .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000000713.p.6.s.3|En via hun ' neokolonie ' Groot-Brittannië doen de VS verdere pogingen de economische ontwikkeling van Europa te verstoren .|1|1|-6.205413205800001</comment>
+  </comments>
+  <root ud="basic" id="8" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <mark ud="basic" id="1" form="En" lemma="en" upos="CCONJ" head="8" deprel="mark" conjtype="neven" pt="vg"/>
+    <obl ud="basic" id="5" form="neokolonie" lemma="neo_kolonie" upos="NOUN" Gender="Com" Number="Sing" head="8" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="basic" id="2" form="via" lemma="via" upos="ADP" head="5" deprel="case" pt="vz" vztype="init"/>
+      <nmod ud="basic" id="3" form="hun" lemma="hun" upos="PRON" Person="3" PronType="Prs" head="5" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="mv" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      <punct ud="basic" id="4" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" pt="let"/>
+      <punct ud="basic" id="6" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" pt="let"/>
+      <appos ud="basic" id="7" form="Groot-Brittannië" lemma="Groot-Brittannië" upos="PROPN" Gender="Neut" Number="Sing" head="5" deprel="appos" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    </obl>
+    <nsubj ud="basic" id="10" form="VS" lemma="VS" upos="PROPN" Number="Plur" head="8" deprel="nsubj" getal="mv" graad="basis" ntype="eigen" pt="n">
+      <det ud="basic" id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </nsubj>
+    <obj ud="basic" id="12" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="8" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <amod ud="basic" id="11" form="verdere" lemma="ver" upos="ADJ" Degree="Cmp" head="12" deprel="amod" buiging="met-e" graad="comp" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="basic" id="19" form="verstoren" lemma="verstoren" upos="VERB" VerbForm="Inf" head="12" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="basic" id="15" form="ontwikkeling" lemma="ontwikkeling" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="basic" id="13" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          <amod ud="basic" id="14" form="economische" lemma="economisch" upos="ADJ" Degree="Pos" head="15" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+          <nmod ud="basic" id="17" form="Europa" lemma="Europa" upos="PROPN" Gender="Neut" Number="Sing" head="15" deprel="nmod" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+            <case ud="basic" id="16" form="van" lemma="van" upos="ADP" head="17" deprel="case" pt="vz" vztype="init"/>
+          </nmod>
+        </obj>
+        <mark ud="basic" id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="basic" id="20" form="." lemma="." upos="PUNCT" head="8" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="8" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <mark ud="enhanced" id="1" form="En" lemma="en" upos="CCONJ" head="8" deprel="mark" conjtype="neven" pt="vg"/>
+    <obl ud="enhanced" id="5" form="neokolonie" lemma="neo_kolonie" upos="NOUN" Gender="Com" Number="Sing" head="8" deprel="obl:via" deprel_aux="via" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <case ud="enhanced" id="2" form="via" lemma="via" upos="ADP" head="5" deprel="case" pt="vz" vztype="init"/>
+      <nmod ud="enhanced" id="3" form="hun" lemma="hun" upos="PRON" Person="3" PronType="Prs" head="5" deprel="nmod:poss" deprel_aux="poss" buiging="zonder" getal="mv" naamval="stan" npagr="agr" pdtype="det" persoon="3" positie="prenom" pt="vnw" status="vol" vwtype="bez"/>
+      <punct ud="enhanced" id="4" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" pt="let"/>
+      <punct ud="enhanced" id="6" form="'" lemma="'" upos="PUNCT" head="5" deprel="punct" pt="let"/>
+      <appos ud="enhanced" id="7" form="Groot-Brittannië" lemma="Groot-Brittannië" upos="PROPN" Gender="Neut" Number="Sing" head="5" deprel="appos" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    </obl>
+    <nsubj ud="enhanced" id="10" form="VS" lemma="VS" upos="PROPN" Number="Plur" head="8" deprel="nsubj" getal="mv" graad="basis" ntype="eigen" pt="n">
+      <det ud="enhanced" id="9" form="de" lemma="de" upos="DET" Definite="Def" head="10" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+    </nsubj>
+    <obj ud="enhanced" id="12" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="8" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <amod ud="enhanced" id="11" form="verdere" lemma="ver" upos="ADJ" Degree="Cmp" head="12" deprel="amod" buiging="met-e" graad="comp" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="enhanced" id="19" form="verstoren" lemma="verstoren" upos="VERB" VerbForm="Inf" head="12" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="enhanced" id="15" form="ontwikkeling" lemma="ontwikkeling" upos="NOUN" Gender="Com" Number="Sing" head="19" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="enhanced" id="13" form="de" lemma="de" upos="DET" Definite="Def" head="15" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          <amod ud="enhanced" id="14" form="economische" lemma="economisch" upos="ADJ" Degree="Pos" head="15" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+          <nmod ud="enhanced" id="17" form="Europa" lemma="Europa" upos="PROPN" Gender="Neut" Number="Sing" head="15" deprel="nmod:van" deprel_aux="van" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+            <case ud="enhanced" id="16" form="van" lemma="van" upos="ADP" head="17" deprel="case" pt="vz" vztype="init"/>
+          </nmod>
+        </obj>
+        <mark ud="enhanced" id="18" form="te" lemma="te" upos="ADP" head="19" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="enhanced" id="20" form="." lemma="." upos="PUNCT" head="8" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	En	en	CCONJ	VG|neven	_	8	mark	8:mark	_
+2	via	via	ADP	VZ|init	_	5	case	5:case	_
+3	hun	hun	PRON	VNW|bez|det|stan|vol|3|mv|prenom|zonder|agr	Person=3|Poss=Yes|PronType=Prs	5	nmod:poss	5:nmod:poss	_
+4	'	'	PUNCT	LET	_	5	punct	5:punct	_
+5	neokolonie	neo_kolonie	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	8	obl	8:obl:via	_
+6	'	'	PUNCT	LET	_	5	punct	5:punct	_
+7	Groot-Brittannië	Groot-Brittannië	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	5	appos	5:appos	_
+8	doen	doen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+9	de	de	DET	LID|bep|stan|rest	Definite=Def	10	det	10:det	_
+10	VS	VS	PROPN	N|eigen|mv|basis	Number=Plur	8	nsubj	8:nsubj	_
+11	verdere	ver	ADJ	ADJ|prenom|comp|met-e|stan	Degree=Cmp	12	amod	12:amod	_
+12	pogingen	poging	NOUN	N|soort|mv|basis	Number=Plur	8	obj	8:obj	_
+13	de	de	DET	LID|bep|stan|rest	Definite=Def	15	det	15:det	_
+14	economische	economisch	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	15	amod	15:amod	_
+15	ontwikkeling	ontwikkeling	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	19	obj	19:obj	_
+16	van	van	ADP	VZ|init	_	17	case	17:case	_
+17	Europa	Europa	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	15	nmod	15:nmod:van	_
+18	te	te	ADP	VZ|init	_	19	mark	19:mark	_
+19	verstoren	verstoren	VERB	WW|inf|vrij|zonder	VerbForm=Inf	12	acl	12:acl:te	_
+20	.	.	PUNCT	LET	_	8	punct	8:punct	_
+]]></conllu>
+</alpino_ds>

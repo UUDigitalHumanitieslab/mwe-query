@@ -22,7 +22,7 @@ def expandnonheadwords(stree: SynTree) -> SynTree:
         for child in stree:
             if terminal(child):
                 rel = gav(child, 'rel')
-                if rel not in ['hd', 'mwp', 'svp', 'hdf', 'cmp']:
+                if rel not in ['hd', 'mwp',  'hdf', 'cmp']:  # leave svp out here
                     newchild = mkphrase(child)
                 else:
                     newchild = copy.copy(child)
@@ -82,8 +82,8 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     frame = gav(node, 'frame')
     numtype = gav(node, 'numtype')
     vwtype = gav(node, 'vwtype')
-    result: Optional[str] = 'xp'
-    if 'word' not in node.attrib or 'pt' not in node.attrib or pt in {'let', 'tsw', 'vg'} or rel in {'svp'}:
+    result: Optional[str] = 'xp0'
+    if 'word' not in node.attrib or 'pt' not in node.attrib or pt in {'let', 'tsw', 'vg'}: # or rel in {'svp'}: put off to see what happens
         result = None
     elif rel == 'mwp':
         result = 'mwu'
@@ -95,17 +95,17 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         if positie == 'nom':
             result = 'np'
         elif positie == 'vrij':
-            if 'adjective' in frame:
+            if 'adjective' in frame or frame == '':
                 result = 'ap'
             elif 'preposition' in frame:
                 result = 'pp'
             elif 'adverb' in frame:
                 result = 'advp'
             else:
-                result = 'xp'
-        elif 'positie' == 'postnom':
+                result = 'ap'
+        elif positie == 'postnom':
             result = 'ap'
-        elif 'positie' == 'prenom':
+        elif positie == 'prenom':
             if rel == 'mod':
                 result = 'ap'
             elif rel == 'det':
@@ -142,7 +142,7 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         elif wvorm == 'vd' and positie == 'nom':
             result = 'np'
         elif wvorm == 'vd':
-            result = 'xp'
+            result = 'xp2'
         elif wvorm == 'inf' and positie == 'nom':
             result = 'np'
         elif wvorm == 'inf' and positie == 'vrij':
@@ -152,16 +152,18 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         elif wvorm == 'pv':
             result = 'sv1'
         else:
-            result = 'xp'
+            result = 'xp3'
     elif pt == 'tw' and numtype == 'hoofd':
         if positie == 'nom':
             result = 'np'
         elif positie == 'prenom' and 'adjective' in frame:
             result = 'ap'
-        elif positie == 'prenom' and 'number' in frame:
+        elif positie == 'prenom' and ('number' in frame or frame == ''):
             result = 'detp'
+        elif positie == 'vrij':
+            result = 'np'
         else:
-            result = 'xp'
+            result = 'xp4'
     elif pt == 'tw' and numtype == 'rang':
         result = 'ap'
     elif pt == 'vnw':
@@ -169,14 +171,16 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
             result = 'np'
         elif positie == 'prenom' and 'determiner' in frame:
             result = 'detp'
+        elif positie == 'prenom' and vwtype == 'bez':
+            result = 'detp'
         elif 'positie' not in node.attrib and vwtype == 'aanw':
             result = 'detp'
         elif rel == 'det' and vwtype == 'aanw':
             result = 'detp'
-        elif vwtype in {'aanw', 'pers', 'pr', 'recip', 'vb'}:
+        elif vwtype in {'aanw', 'betr', 'pers', 'pr', 'recip', 'vb', 'onbep', 'refl'}:
             result = 'np'
         else:
-            result = 'xp'
+            result = 'xp5'
     elif pt == 'spec' and rel == 'app':
         result = 'np'
     elif pt == 'spec':
@@ -184,11 +188,12 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     elif pt == dummy:
         result = None
     else:
-        print('Unknown att value (pt) encountered in:')
+        print('lcat: Unknown att value (pt) encountered in:')
         ET.dump(node)
         result = None
-    if result == 'xp':
-        print('Unexpected att value  encountered in:')
+    if result is not None and result.startswith('xp'):
+        print(f'lcat: {result}: Unexpected att value  encountered in:')
         ET.dump(node)
+        result = 'xp'
 
     return result

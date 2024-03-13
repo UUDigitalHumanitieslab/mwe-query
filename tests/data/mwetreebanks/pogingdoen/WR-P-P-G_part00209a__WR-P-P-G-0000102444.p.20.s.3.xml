@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:25" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="45" id="0" rel="top">
+    <node begin="13" end="14" frame="punct(komma)" his="normal" his_1="normal" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="14" form="," lemma="," upos="PUNCT" head="13" deprel="punct" deprel_main="punct">
+        <dep id="14" head="13" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="18" end="19" frame="punct(komma)" his="normal" his_1="normal" id="2" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="19" form="," lemma="," upos="PUNCT" head="18" deprel="punct" deprel_main="punct">
+        <dep id="19" head="18" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="31" end="32" frame="punct(komma)" his="normal" his_1="normal" id="3" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="32" form="," lemma="," upos="PUNCT" head="36" deprel="punct" deprel_main="punct">
+        <dep id="32" head="36" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="du" end="43" id="4" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" his="normal" his_1="decap" his_1_1="normal" id="5" lcat="du" lemma="en" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="en" sc="root" sense="en" word="En">
+        <ud id="1" form="En" lemma="en" upos="CCONJ" head="2" deprel="mark" deprel_main="mark">
+          <dep id="1" head="2" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="du" end="43" id="6" rel="nucl">
+        <node begin="1" end="2" frame="cleft_het_noun" getal="ev" his="normal" his_1="normal" id="7" is_np="true" lcat="np" lemma="dat" naamval="stan" pdtype="pron" persoon="3o" pos="det" postag="VNW(aanw,pron,stan,vol,3o,ev)" pt="vnw" rel="dp" root="dat" sense="dat" special="cleft_het" status="vol" vwtype="aanw" word="dat">
+          <ud id="2" form="dat" lemma="dat" upos="PRON" Person="3" PronType="Dem" head="0" deprel="root" deprel_main="root">
+            <dep id="2" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="2" cat="cp" end="43" id="8" rel="dp">
+          <node begin="2" conjtype="onder" end="3" frame="complementizer" his="normal" his_1="normal" id="9" lcat="cp" lemma="terwijl" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="terwijl" sense="terwijl" word="terwijl">
+            <ud id="3" form="terwijl" lemma="terwijl" upos="SCONJ" head="7" deprel="mark" deprel_main="mark">
+              <dep id="3" head="7" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="3" cat="ssub" end="43" id="10" rel="body">
+            <node begin="3" end="4" frame="er_vp_adverb" getal="getal" his="normal" his_1="normal" id="11" lcat="advp" lemma="er" naamval="stan" pdtype="adv-pron" persoon="3" pos="adv" postag="VNW(aanw,adv-pron,stan,red,3,getal)" pt="vnw" rel="mod" root="er" sense="er" special="er" status="red" vwtype="aanw" word="er">
+              <ud id="4" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" deprel_main="advmod">
+                <dep id="4" head="7" deprel="advmod" deprel_main="advmod"/>
+              </ud>
+            </node>
+            <node begin="6" end="7" frame="verb(unacc,pl,intransitive)" his="normal" his_1="normal" id="12" infl="pl" lcat="ssub" lemma="zijn" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="ben" sc="intransitive" sense="ben" tense="present" v_per="thi" word="zijn" wvorm="pv">
+              <ud id="7" form="zijn" lemma="zijn" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="2" deprel="parataxis" deprel_main="parataxis">
+                <dep id="7" head="2" deprel="parataxis" deprel_main="parataxis"/>
+              </ud>
+            </node>
+            <node begin="4" cat="np" end="43" id="13" is_np="true" rel="su">
+              <node aform="base" begin="4" buiging="met-e" end="5" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="14" infl="e" lcat="ap" lemma="veel" naamval="stan" npagr="agr" pdtype="grad" pos="adj" positie="prenom" postag="VNW(onbep,grad,stan,prenom,met-e,agr,basis)" pt="vnw" rel="mod" root="veel" sense="veel" vform="adj" vwtype="onbep" word="vele">
+                <ud id="5" form="vele" lemma="veel" upos="ADV" head="6" deprel="amod" deprel_main="amod">
+                  <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+                </ud>
+              </node>
+              <node begin="5" end="6" frame="noun(het,count,pl)" gen="het" getal="mv" graad="basis" his="normal" his_1="normal" id="15" lcat="np" lemma="voorbeeld" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="voorbeeld" sense="voorbeeld" word="voorbeelden">
+                <ud id="6" form="voorbeelden" lemma="voorbeeld" upos="NOUN" Number="Plur" head="7" deprel="nsubj" deprel_main="nsubj">
+                  <dep id="6" head="7" deprel="nsubj" deprel_main="nsubj"/>
+                </ud>
+              </node>
+              <node begin="7" cat="rel" end="43" id="16" is_nachfeld="true" rel="mod">
+                <node begin="7" end="8" frame="waar_adverb(uit)" his="normal" his_1="normal" id="17" index="1" lcat="pp" lemma="waaruit" pos="pp" postag="BW()" pt="bw" rel="rhd" root="waaruit" sense="waaruit" special="waar" word="waaruit">
+                  <ud id="8" form="waaruit" lemma="waaruit" upos="ADV" head="9" deprel="advmod" deprel_main="advmod">
+                    <dep id="8" head="6" deprel="ref" deprel_main="ref"/>
+                  </ud>
+                </node>
+                <node begin="7" cat="ssub" end="43" id="18" rel="body">
+                  <node begin="7" end="8" id="19" index="1" rel="pc"/>
+                  <node begin="8" end="9" frame="verb(unacc,sg3,pp_sbar_subj(uit))" his="normal" his_1="normal" id="20" infl="sg3" lcat="ssub" lemma="blijken" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="blijk" sc="pp_sbar_subj(uit)" sense="blijk-uit" tense="present" v_per="thi" word="blijkt" wvorm="pv">
+                    <ud id="9" form="blijkt" lemma="blijken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="6" deprel="acl:relcl" deprel_main="acl" deprel_aux="relcl">
+                      <dep id="9" head="6" deprel="acl:relcl" deprel_main="acl" deprel_aux="relcl"/>
+                    </ud>
+                  </node>
+                  <node begin="9" cat="cp" end="43" id="21" is_nachfeld="true" rel="su">
+                    <node begin="9" conjtype="onder" end="10" frame="complementizer(dat)" his="normal" his_1="normal" id="22" lcat="cp" lemma="dat" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="dat" sc="dat" sense="dat" word="dat">
+                      <ud id="10" form="dat" lemma="dat" upos="SCONJ" head="22" deprel="mark" deprel_main="mark">
+                        <dep id="10" head="22" deprel="mark" deprel_main="mark"/>
+                      </ud>
+                    </node>
+                    <node begin="10" cat="ssub" end="43" id="23" rel="body">
+                      <node begin="10" cat="np" end="13" id="24" index="2" is_np="true" rel="su">
+                        <node begin="10" end="11" frame="determiner(de)" his="normal" his_1="normal" id="25" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                          <ud id="11" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" deprel_main="det">
+                            <dep id="11" head="13" deprel="det" deprel_main="det"/>
+                          </ud>
+                        </node>
+                        <node aform="base" begin="11" buiging="met-e" end="12" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="26" infl="e" lcat="ap" lemma="farmaceutisch" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="farmaceutisch" sense="farmaceutisch" vform="adj" word="farmaceutische">
+                          <ud id="12" form="farmaceutische" lemma="farmaceutisch" upos="ADJ" Degree="Pos" head="13" deprel="amod" deprel_main="amod">
+                            <dep id="12" head="13" deprel="amod" deprel_main="amod"/>
+                          </ud>
+                        </node>
+                        <node begin="12" end="13" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="27" lcat="np" lemma="industrie" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="industrie" sense="industrie" word="industrie">
+                          <ud id="13" form="industrie" lemma="industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="nsubj" deprel_main="nsubj">
+                            <dep id="13" head="22" deprel="nsubj" deprel_main="nsubj"/>
+                          </ud>
+                        </node>
+                      </node>
+                      <node begin="20" end="21" frame="verb(hebben,sg_heeft,aux_psp_hebben)" his="normal" his_1="normal" id="28" infl="sg_heeft" lcat="ssub" lemma="hebben" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="heb" sc="aux_psp_hebben" sense="heb" tense="present" v_per="thi" word="heeft" wvorm="pv">
+                        <ud id="21" form="heeft" lemma="hebben" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="22" deprel="aux" deprel_main="aux">
+                          <dep id="21" head="22" deprel="aux" deprel_main="aux"/>
+                        </ud>
+                      </node>
+                      <node begin="10" cat="ppart" end="43" id="29" rel="vc">
+                        <node begin="10" end="13" id="30" index="2" rel="su"/>
+                        <node begin="14" cat="cp" end="18" id="31" rel="mod">
+                          <node begin="14" end="15" frame="modal_adverb" his="normal" his_1="normal" id="32" lcat="advp" lemma="net" pos="adv" postag="BW()" pt="bw" rel="mod" root="net" sc="modal" sense="net" word="net">
+                            <ud id="15" form="net" lemma="net" upos="ADV" head="18" deprel="advmod" deprel_main="advmod">
+                              <dep id="15" head="18" deprel="advmod" deprel_main="advmod"/>
+                            </ud>
+                          </node>
+                          <node begin="15" conjtype="onder" end="16" frame="complementizer(als)" his="normal" his_1="normal" id="33" lcat="cp" lemma="als" pos="comp" postag="VG(onder)" pt="vg" rel="cmp" root="als" sc="als" sense="als" word="als">
+                            <ud id="16" form="als" lemma="als" upos="SCONJ" head="18" deprel="mark" deprel_main="mark">
+                              <dep id="16" head="18" deprel="mark" deprel_main="mark"/>
+                            </ud>
+                          </node>
+                          <node begin="16" cat="np" end="18" id="34" is_np="true" rel="body">
+                            <node begin="16" end="17" frame="determiner(de)" his="normal" his_1="normal" id="35" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                              <ud id="17" form="de" lemma="de" upos="DET" Definite="Def" head="18" deprel="det" deprel_main="det">
+                                <dep id="17" head="18" deprel="det" deprel_main="det"/>
+                              </ud>
+                            </node>
+                            <node begin="17" end="18" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="36" lcat="np" lemma="tabak_industrie" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="tabak_industrie" sense="tabak_industrie" word="tabaksindustrie">
+                              <ud id="18" form="tabaksindustrie" lemma="tabak_industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="advcl" deprel_main="advcl">
+                                <dep id="18" head="22" deprel="advcl:als" deprel_main="advcl" deprel_aux="als"/>
+                              </ud>
+                            </node>
+                          </node>
+                        </node>
+                        <node begin="21" buiging="zonder" end="22" frame="verb(hebben,psp,transitive_ndev)" his="normal" his_1="normal" id="37" infl="psp" lcat="ppart" lemma="doen" pos="verb" positie="vrij" postag="WW(vd,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="gedaan" wvorm="vd">
+                          <ud id="22" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="9" deprel="csubj" deprel_main="csubj">
+                            <dep id="22" head="9" deprel="csubj" deprel_main="csubj"/>
+                          </ud>
+                        </node>
+                        <node begin="19" cat="np" end="43" id="38" is_np="true" rel="obj1">
+                          <node begin="19" end="20" frame="noun(de,count,pl,vp)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="39" lcat="np" lemma="poging" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="poging" sc="vp" sense="poging" word="pogingen">
+                            <ud id="20" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="22" deprel="obj" deprel_main="obj">
+                              <dep id="20" head="22" deprel="obj" deprel_main="obj"/>
+                            </ud>
+                          </node>
+                          <node begin="22" cat="oti" end="43" id="40" is_nachfeld="true" rel="vc">
+                            <node begin="22" end="23" frame="complementizer(om)" his="normal" his_1="normal" id="41" lcat="oti" lemma="om" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="om" sc="om" sense="om" vztype="init" word="om">
+                              <ud id="23" form="om" lemma="om" upos="ADP" head="31" deprel="mark" deprel_main="mark">
+                                <dep id="23" head="31" deprel="mark" deprel_main="mark"/>
+                              </ud>
+                            </node>
+                            <node begin="23" cat="conj" end="43" id="42" rel="body">
+                              <node begin="23" cat="ti" end="31" id="43" rel="cnj">
+                                <node begin="29" end="30" frame="complementizer(te)" his="normal" his_1="normal" id="44" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+                                  <ud id="30" form="te" lemma="te" upos="ADP" head="31" deprel="mark" deprel_main="mark">
+                                    <dep id="30" head="31" deprel="mark" deprel_main="mark"/>
+                                  </ud>
+                                </node>
+                                <node begin="23" cat="inf" end="31" id="45" rel="body">
+                                  <node begin="23" cat="conj" end="29" id="46" is_np="true" rel="obj1">
+                                    <node begin="25" conjtype="neven" end="26" frame="conj(en)" his="normal" his_1="normal" id="47" lcat="vg" lemma="en" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="en" sense="en" word="en">
+                                      <ud id="26" form="en" lemma="en" upos="CCONJ" head="27" deprel="cc" deprel_main="cc">
+                                        <dep id="26" head="27" deprel="cc" deprel_main="cc"/>
+                                      </ud>
+                                    </node>
+                                    <node begin="23" cat="np" end="29" id="48" is_np="true" rel="cnj">
+                                      <node begin="23" end="24" frame="determiner(de)" his="normal" his_1="normal" id="49" index="3" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                                        <ud id="24" form="de" lemma="de" upos="DET" Definite="Def" head="25" deprel="det" deprel_main="det">
+                                          <dep id="24" head="25" deprel="det" deprel_main="det"/>
+                                          <dep id="24" head="27" deprel="det" deprel_main="det"/>
+                                        </ud>
+                                      </node>
+                                      <node begin="24" end="25" frame="noun(de,mass,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="50" lcat="np" lemma="onafhankelijkheid" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="onafhankelijkheid" sense="onafhankelijkheid" word="onafhankelijkheid">
+                                        <ud id="25" form="onafhankelijkheid" lemma="onafhankelijkheid" upos="NOUN" Gender="Com" Number="Sing" head="31" deprel="obj" deprel_main="obj">
+                                          <dep id="25" head="31" deprel="obj" deprel_main="obj"/>
+                                        </ud>
+                                      </node>
+                                      <node begin="27" cat="pp" end="29" id="51" index="4" rel="mod">
+                                        <node begin="27" end="28" frame="preposition(van,[af,uit,vandaan,[af,aan]])" his="normal" his_1="normal" id="52" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+                                          <ud id="28" form="van" lemma="van" upos="ADP" head="29" deprel="case" deprel_main="case">
+                                            <dep id="28" head="29" deprel="case" deprel_main="case"/>
+                                          </ud>
+                                        </node>
+                                        <node begin="28" end="29" frame="noun(het,count,sg)" gen="het" genus="onz" getal="ev" graad="basis" his="normal" his_1="normal" id="53" is_np="true" lcat="np" lemma="onderzoek" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="obj1" rnum="sg" root="onderzoek" sense="onderzoek" word="onderzoek">
+                                          <ud id="29" form="onderzoek" lemma="onderzoek" upos="NOUN" Gender="Neut" Number="Sing" head="25" deprel="nmod" deprel_main="nmod">
+                                            <dep id="29" head="25" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                                            <dep id="29" head="27" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                                          </ud>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node begin="23" cat="np" end="29" id="54" is_np="true" rel="cnj">
+                                      <node begin="23" end="24" id="55" index="3" rel="det"/>
+                                      <node begin="26" end="27" frame="noun(de,mass,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="56" lcat="np" lemma="betrouwbaarheid" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="betrouwbaarheid" sense="betrouwbaarheid" word="betrouwbaarheid">
+                                        <ud id="27" form="betrouwbaarheid" lemma="betrouwbaarheid" upos="NOUN" Gender="Com" Number="Sing" head="25" deprel="conj" deprel_main="conj">
+                                          <dep id="27" head="25" deprel="conj:en" deprel_main="conj" deprel_aux="en"/>
+                                          <dep id="27" head="31" deprel="obj" deprel_main="obj"/>
+                                        </ud>
+                                      </node>
+                                      <node begin="27" end="29" id="57" index="4" rel="mod"/>
+                                    </node>
+                                  </node>
+                                  <node begin="30" buiging="zonder" end="31" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="58" infl="inf" lcat="inf" lemma="ondermijnen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="ondermijn" sc="transitive" sense="ondermijn" word="ondermijnen" wvorm="inf">
+                                    <ud id="31" form="ondermijnen" lemma="ondermijnen" upos="VERB" VerbForm="Inf" head="20" deprel="acl" deprel_main="acl">
+                                      <dep id="31" head="20" deprel="acl:om" deprel_main="acl" deprel_aux="om"/>
+                                    </ud>
+                                  </node>
+                                </node>
+                              </node>
+                              <node begin="32" cat="ti" end="36" id="59" rel="cnj">
+                                <node begin="34" end="35" frame="complementizer(te)" his="normal" his_1="normal" id="60" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+                                  <ud id="35" form="te" lemma="te" upos="ADP" head="36" deprel="mark" deprel_main="mark">
+                                    <dep id="35" head="36" deprel="mark" deprel_main="mark"/>
+                                  </ud>
+                                </node>
+                                <node begin="32" cat="inf" end="36" id="61" rel="body">
+                                  <node begin="32" end="33" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="62" is_np="true" lcat="np" lemma="beleid_maker" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="obj1" rnum="pl" root="beleid_maker" sense="beleid_maker" word="beleidsmakers">
+                                    <ud id="33" form="beleidsmakers" lemma="beleid_maker" upos="NOUN" Number="Plur" head="36" deprel="obj" deprel_main="obj">
+                                      <dep id="33" head="36" deprel="obj" deprel_main="obj"/>
+                                    </ud>
+                                  </node>
+                                  <node aform="base" begin="33" buiging="zonder" end="34" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="normal" id="63" infl="no_e" lcat="ap" lemma="verkeerd" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="verkeerd" sense="verkeerd" vform="adj" word="verkeerd">
+                                    <ud id="34" form="verkeerd" lemma="verkeerd" upos="ADJ" Degree="Pos" head="36" deprel="advmod" deprel_main="advmod">
+                                      <dep id="34" head="36" deprel="advmod" deprel_main="advmod"/>
+                                    </ud>
+                                  </node>
+                                  <node begin="35" buiging="zonder" end="36" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="64" infl="inf" lcat="inf" lemma="informeren" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="informeer" sc="transitive" sense="informeer" word="informeren" wvorm="inf">
+                                    <ud id="36" form="informeren" lemma="informeren" upos="VERB" VerbForm="Inf" head="31" deprel="conj" deprel_main="conj">
+                                      <dep id="36" head="31" deprel="conj:of" deprel_main="conj" deprel_aux="of"/>
+                                    </ud>
+                                  </node>
+                                </node>
+                              </node>
+                              <node begin="36" conjtype="neven" end="37" frame="conj(of)" his="normal" his_1="normal" id="65" lcat="vg" lemma="of" pos="vg" postag="VG(neven)" pt="vg" rel="crd" root="of" sense="of" word="of">
+                                <ud id="37" form="of" lemma="of" upos="CCONJ" head="41" deprel="cc" deprel_main="cc">
+                                  <dep id="37" head="41" deprel="cc" deprel_main="cc"/>
+                                </ud>
+                              </node>
+                              <node begin="37" cat="ti" end="43" id="66" rel="cnj">
+                                <node begin="39" end="40" frame="complementizer(te)" his="normal" his_1="normal" id="67" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+                                  <ud id="40" form="te" lemma="te" upos="ADP" head="41" deprel="mark" deprel_main="mark">
+                                    <dep id="40" head="41" deprel="mark" deprel_main="mark"/>
+                                  </ud>
+                                </node>
+                                <node begin="37" cat="inf" end="43" id="68" rel="body">
+                                  <node begin="37" cat="np" end="39" id="69" is_np="true" rel="obj1">
+                                    <node aform="base" begin="37" buiging="met-e" end="38" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="70" infl="e" lcat="ap" lemma="grotesk" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="grotesk" sense="grotesk" vform="adj" word="groteske">
+                                      <ud id="38" form="groteske" lemma="grotesk" upos="ADJ" Degree="Pos" head="39" deprel="amod" deprel_main="amod">
+                                        <dep id="38" head="39" deprel="amod" deprel_main="amod"/>
+                                      </ud>
+                                    </node>
+                                    <node begin="38" end="39" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="71" lcat="np" lemma="winst" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="winst" sense="winst" word="winsten">
+                                      <ud id="39" form="winsten" lemma="winst" upos="NOUN" Number="Plur" head="41" deprel="obj" deprel_main="obj">
+                                        <dep id="39" head="41" deprel="obj" deprel_main="obj"/>
+                                      </ud>
+                                    </node>
+                                  </node>
+                                  <node begin="40" buiging="zonder" end="41" frame="verb(hebben,inf,np_ld_pp)" his="normal" his_1="normal" id="72" infl="inf" lcat="inf" lemma="halen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="haal" sc="np_ld_pp" sense="haal" word="halen" wvorm="inf">
+                                    <ud id="41" form="halen" lemma="halen" upos="VERB" VerbForm="Inf" head="31" deprel="conj" deprel_main="conj">
+                                      <dep id="41" head="31" deprel="conj:of" deprel_main="conj" deprel_aux="of"/>
+                                    </ud>
+                                  </node>
+                                  <node begin="41" cat="pp" end="43" id="73" is_nachfeld="true" rel="ld">
+                                    <node begin="41" end="42" frame="preposition(uit,[vandaan])" his="normal" his_1="normal" id="74" lcat="pp" lemma="uit" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="uit" sense="uit" vztype="init" word="uit">
+                                      <ud id="42" form="uit" lemma="uit" upos="ADP" head="43" deprel="case" deprel_main="case">
+                                        <dep id="42" head="43" deprel="case" deprel_main="case"/>
+                                      </ud>
+                                    </node>
+                                    <node begin="42" end="43" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="75" is_np="true" lcat="np" lemma="ziekte" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="obj1" rnum="pl" root="ziekte" sense="ziekte" word="ziekten">
+                                      <ud id="43" form="ziekten" lemma="ziekte" upos="NOUN" Number="Plur" head="41" deprel="obl" deprel_main="obl">
+                                        <dep id="43" head="41" deprel="obl:uit" deprel_main="obl" deprel_aux="uit"/>
+                                      </ud>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="43" end="44" frame="punct(punt)" his="normal" his_1="normal" id="76" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="44" form="." lemma="." upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="44" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="44" end="45" frame="punct(aanhaal_both)" his="skip" id="77" lcat="--" lemma="''" pos="punct" postag="LET()" pt="let" rel="--" root="''" sense="''" special="aanhaal_both" word="''">
+      <ud id="45" form="''" lemma="''" upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="45" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000102444.p.20.s.3">En dat terwijl er vele voorbeelden zijn waaruit blijkt dat de farmaceutische industrie , net als de tabaksindustrie , pogingen heeft gedaan om de onafhankelijkheid en betrouwbaarheid van onderzoek te ondermijnen , beleidsmakers verkeerd te informeren of groteske winsten te halen uit ziekten . ''</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000102444.p.20.s.3|En dat terwijl er vele voorbeelden zijn waaruit blijkt dat de farmaceutische industrie , net als de tabaksindustrie , pogingen heeft gedaan om de onafhankelijkheid en betrouwbaarheid van onderzoek te ondermijnen , beleidsmakers verkeerd te informeren of groteske winsten te halen uit ziekten . ''|1|1|-29.9126593272</comment>
+  </comments>
+  <root ud="basic" id="2" form="dat" lemma="dat" upos="PRON" Person="3" PronType="Dem" head="0" deprel="root" getal="ev" naamval="stan" pdtype="pron" persoon="3o" pt="vnw" status="vol" vwtype="aanw">
+    <mark ud="basic" id="1" form="En" lemma="en" upos="CCONJ" head="2" deprel="mark" conjtype="neven" pt="vg"/>
+    <parataxis ud="basic" id="7" form="zijn" lemma="zijn" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="2" deprel="parataxis" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+      <mark ud="basic" id="3" form="terwijl" lemma="terwijl" upos="SCONJ" head="7" deprel="mark" conjtype="onder" pt="vg"/>
+      <advmod ud="basic" id="4" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+      <nsubj ud="basic" id="6" form="voorbeelden" lemma="voorbeeld" upos="NOUN" Number="Plur" head="7" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+        <amod ud="basic" id="5" form="vele" lemma="veel" upos="ADV" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" npagr="agr" pdtype="grad" positie="prenom" pt="vnw" vwtype="onbep"/>
+        <acl ud="basic" id="9" form="blijkt" lemma="blijken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="6" deprel="acl:relcl" deprel_aux="relcl" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+          <advmod ud="basic" id="8" form="waaruit" lemma="waaruit" upos="ADV" head="9" deprel="advmod" pt="bw"/>
+          <csubj ud="basic" id="22" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="9" deprel="csubj" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+            <mark ud="basic" id="10" form="dat" lemma="dat" upos="SCONJ" head="22" deprel="mark" conjtype="onder" pt="vg"/>
+            <nsubj ud="basic" id="13" form="industrie" lemma="industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+              <det ud="basic" id="11" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+              <amod ud="basic" id="12" form="farmaceutische" lemma="farmaceutisch" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+              <punct ud="basic" id="14" form="," lemma="," upos="PUNCT" head="13" deprel="punct" pt="let"/>
+            </nsubj>
+            <advcl ud="basic" id="18" form="tabaksindustrie" lemma="tabak_industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="advcl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+              <advmod ud="basic" id="15" form="net" lemma="net" upos="ADV" head="18" deprel="advmod" pt="bw"/>
+              <mark ud="basic" id="16" form="als" lemma="als" upos="SCONJ" head="18" deprel="mark" conjtype="onder" pt="vg"/>
+              <det ud="basic" id="17" form="de" lemma="de" upos="DET" Definite="Def" head="18" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+              <punct ud="basic" id="19" form="," lemma="," upos="PUNCT" head="18" deprel="punct" pt="let"/>
+            </advcl>
+            <obj ud="basic" id="20" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="22" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+              <acl ud="basic" id="31" form="ondermijnen" lemma="ondermijnen" upos="VERB" VerbForm="Inf" head="20" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                <mark ud="basic" id="23" form="om" lemma="om" upos="ADP" head="31" deprel="mark" pt="vz" vztype="init"/>
+                <obj ud="basic" id="25" form="onafhankelijkheid" lemma="onafhankelijkheid" upos="NOUN" Gender="Com" Number="Sing" head="31" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                  <det ud="basic" id="24" form="de" lemma="de" upos="DET" Definite="Def" head="25" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+                  <conj ud="basic" id="27" form="betrouwbaarheid" lemma="betrouwbaarheid" upos="NOUN" Gender="Com" Number="Sing" head="25" deprel="conj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                    <cc ud="basic" id="26" form="en" lemma="en" upos="CCONJ" head="27" deprel="cc" conjtype="neven" pt="vg"/>
+                  </conj>
+                  <nmod ud="basic" id="29" form="onderzoek" lemma="onderzoek" upos="NOUN" Gender="Neut" Number="Sing" head="25" deprel="nmod" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                    <case ud="basic" id="28" form="van" lemma="van" upos="ADP" head="29" deprel="case" pt="vz" vztype="init"/>
+                  </nmod>
+                </obj>
+                <mark ud="basic" id="30" form="te" lemma="te" upos="ADP" head="31" deprel="mark" pt="vz" vztype="init"/>
+                <conj ud="basic" id="36" form="informeren" lemma="informeren" upos="VERB" VerbForm="Inf" head="31" deprel="conj" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                  <punct ud="basic" id="32" form="," lemma="," upos="PUNCT" head="36" deprel="punct" pt="let"/>
+                  <obj ud="basic" id="33" form="beleidsmakers" lemma="beleid_maker" upos="NOUN" Number="Plur" head="36" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+                  <advmod ud="basic" id="34" form="verkeerd" lemma="verkeerd" upos="ADJ" Degree="Pos" head="36" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+                  <mark ud="basic" id="35" form="te" lemma="te" upos="ADP" head="36" deprel="mark" pt="vz" vztype="init"/>
+                </conj>
+                <conj ud="basic" id="41" form="halen" lemma="halen" upos="VERB" VerbForm="Inf" head="31" deprel="conj" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                  <cc ud="basic" id="37" form="of" lemma="of" upos="CCONJ" head="41" deprel="cc" conjtype="neven" pt="vg"/>
+                  <obj ud="basic" id="39" form="winsten" lemma="winst" upos="NOUN" Number="Plur" head="41" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+                    <amod ud="basic" id="38" form="groteske" lemma="grotesk" upos="ADJ" Degree="Pos" head="39" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+                  </obj>
+                  <mark ud="basic" id="40" form="te" lemma="te" upos="ADP" head="41" deprel="mark" pt="vz" vztype="init"/>
+                  <obl ud="basic" id="43" form="ziekten" lemma="ziekte" upos="NOUN" Number="Plur" head="41" deprel="obl" getal="mv" graad="basis" ntype="soort" pt="n">
+                    <case ud="basic" id="42" form="uit" lemma="uit" upos="ADP" head="43" deprel="case" pt="vz" vztype="init"/>
+                  </obl>
+                </conj>
+              </acl>
+            </obj>
+            <aux ud="basic" id="21" form="heeft" lemma="hebben" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="22" deprel="aux" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv"/>
+          </csubj>
+        </acl>
+      </nsubj>
+    </parataxis>
+    <punct ud="basic" id="44" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+    <punct ud="basic" id="45" form="''" lemma="''" upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="2" form="dat" lemma="dat" upos="PRON" Person="3" PronType="Dem" head="0" deprel="root" getal="ev" naamval="stan" pdtype="pron" persoon="3o" pt="vnw" status="vol" vwtype="aanw">
+    <mark ud="enhanced" id="1" form="En" lemma="en" upos="CCONJ" head="2" deprel="mark" conjtype="neven" pt="vg"/>
+    <parataxis ud="enhanced" id="7" form="zijn" lemma="zijn" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="2" deprel="parataxis" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+      <mark ud="enhanced" id="3" form="terwijl" lemma="terwijl" upos="SCONJ" head="7" deprel="mark" conjtype="onder" pt="vg"/>
+      <advmod ud="enhanced" id="4" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+      <nsubj ud="enhanced" id="6" form="voorbeelden" lemma="voorbeeld" upos="NOUN" Number="Plur" head="7" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+        <amod ud="enhanced" id="5" form="vele" lemma="veel" upos="ADV" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" npagr="agr" pdtype="grad" positie="prenom" pt="vnw" vwtype="onbep"/>
+        <ref ud="enhanced" id="8" form="waaruit" lemma="waaruit" upos="ADV" head="6" deprel="ref" pt="bw"/>
+        <acl ud="enhanced" id="9" form="blijkt" lemma="blijken" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="6" deprel="acl:relcl" deprel_aux="relcl" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+          <csubj ud="enhanced" id="22" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="9" deprel="csubj" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+            <mark ud="enhanced" id="10" form="dat" lemma="dat" upos="SCONJ" head="22" deprel="mark" conjtype="onder" pt="vg"/>
+            <nsubj ud="enhanced" id="13" form="industrie" lemma="industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+              <det ud="enhanced" id="11" form="de" lemma="de" upos="DET" Definite="Def" head="13" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+              <amod ud="enhanced" id="12" form="farmaceutische" lemma="farmaceutisch" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+              <punct ud="enhanced" id="14" form="," lemma="," upos="PUNCT" head="13" deprel="punct" pt="let"/>
+            </nsubj>
+            <advcl ud="enhanced" id="18" form="tabaksindustrie" lemma="tabak_industrie" upos="NOUN" Gender="Com" Number="Sing" head="22" deprel="advcl:als" deprel_aux="als" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+              <advmod ud="enhanced" id="15" form="net" lemma="net" upos="ADV" head="18" deprel="advmod" pt="bw"/>
+              <mark ud="enhanced" id="16" form="als" lemma="als" upos="SCONJ" head="18" deprel="mark" conjtype="onder" pt="vg"/>
+              <det ud="enhanced" id="17" form="de" lemma="de" upos="DET" Definite="Def" head="18" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+              <punct ud="enhanced" id="19" form="," lemma="," upos="PUNCT" head="18" deprel="punct" pt="let"/>
+            </advcl>
+            <obj ud="enhanced" id="20" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="22" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+              <acl ud="enhanced" id="31" form="ondermijnen" lemma="ondermijnen" upos="VERB" VerbForm="Inf" head="20" deprel="acl:om" deprel_aux="om" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                <mark ud="enhanced" id="23" form="om" lemma="om" upos="ADP" head="31" deprel="mark" pt="vz" vztype="init"/>
+                <obj ud="enhanced" id="25" form="onafhankelijkheid" lemma="onafhankelijkheid" upos="NOUN" Gender="Com" Number="Sing" head="31" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                  <det ud="enhanced" id="24" form="de" lemma="de" upos="DET" Definite="Def" head="25" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+                  <conj ud="enhanced" id="27" form="betrouwbaarheid" lemma="betrouwbaarheid" upos="NOUN" Gender="Com" Number="Sing" head="25" deprel="conj:en" deprel_aux="en" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                    <det ud="enhanced" id="24" form="de" lemma="de" upos="DET" Definite="Def" head="27" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+                    <cc ud="enhanced" id="26" form="en" lemma="en" upos="CCONJ" head="27" deprel="cc" conjtype="neven" pt="vg"/>
+                    <nmod ud="enhanced" id="29" form="onderzoek" lemma="onderzoek" upos="NOUN" Gender="Neut" Number="Sing" head="27" deprel="nmod:van" deprel_aux="van" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                      <case ud="enhanced" id="28" form="van" lemma="van" upos="ADP" head="29" deprel="case" pt="vz" vztype="init"/>
+                    </nmod>
+                  </conj>
+                  <nmod ud="enhanced" id="29" form="onderzoek" lemma="onderzoek" upos="NOUN" Gender="Neut" Number="Sing" head="25" deprel="nmod:van" deprel_aux="van" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                    <case ud="enhanced" id="28" form="van" lemma="van" upos="ADP" head="29" deprel="case" pt="vz" vztype="init"/>
+                  </nmod>
+                </obj>
+                <obj ud="enhanced" id="27" form="betrouwbaarheid" lemma="betrouwbaarheid" upos="NOUN" Gender="Com" Number="Sing" head="31" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                  <det ud="enhanced" id="24" form="de" lemma="de" upos="DET" Definite="Def" head="27" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+                  <cc ud="enhanced" id="26" form="en" lemma="en" upos="CCONJ" head="27" deprel="cc" conjtype="neven" pt="vg"/>
+                  <nmod ud="enhanced" id="29" form="onderzoek" lemma="onderzoek" upos="NOUN" Gender="Neut" Number="Sing" head="27" deprel="nmod:van" deprel_aux="van" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+                    <case ud="enhanced" id="28" form="van" lemma="van" upos="ADP" head="29" deprel="case" pt="vz" vztype="init"/>
+                  </nmod>
+                </obj>
+                <mark ud="enhanced" id="30" form="te" lemma="te" upos="ADP" head="31" deprel="mark" pt="vz" vztype="init"/>
+                <conj ud="enhanced" id="36" form="informeren" lemma="informeren" upos="VERB" VerbForm="Inf" head="31" deprel="conj:of" deprel_aux="of" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                  <punct ud="enhanced" id="32" form="," lemma="," upos="PUNCT" head="36" deprel="punct" pt="let"/>
+                  <obj ud="enhanced" id="33" form="beleidsmakers" lemma="beleid_maker" upos="NOUN" Number="Plur" head="36" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n"/>
+                  <advmod ud="enhanced" id="34" form="verkeerd" lemma="verkeerd" upos="ADJ" Degree="Pos" head="36" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+                  <mark ud="enhanced" id="35" form="te" lemma="te" upos="ADP" head="36" deprel="mark" pt="vz" vztype="init"/>
+                </conj>
+                <conj ud="enhanced" id="41" form="halen" lemma="halen" upos="VERB" VerbForm="Inf" head="31" deprel="conj:of" deprel_aux="of" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+                  <cc ud="enhanced" id="37" form="of" lemma="of" upos="CCONJ" head="41" deprel="cc" conjtype="neven" pt="vg"/>
+                  <obj ud="enhanced" id="39" form="winsten" lemma="winst" upos="NOUN" Number="Plur" head="41" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+                    <amod ud="enhanced" id="38" form="groteske" lemma="grotesk" upos="ADJ" Degree="Pos" head="39" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+                  </obj>
+                  <mark ud="enhanced" id="40" form="te" lemma="te" upos="ADP" head="41" deprel="mark" pt="vz" vztype="init"/>
+                  <obl ud="enhanced" id="43" form="ziekten" lemma="ziekte" upos="NOUN" Number="Plur" head="41" deprel="obl:uit" deprel_aux="uit" getal="mv" graad="basis" ntype="soort" pt="n">
+                    <case ud="enhanced" id="42" form="uit" lemma="uit" upos="ADP" head="43" deprel="case" pt="vz" vztype="init"/>
+                  </obl>
+                </conj>
+              </acl>
+            </obj>
+            <aux ud="enhanced" id="21" form="heeft" lemma="hebben" upos="AUX" Number="Sing" Tense="Pres" VerbForm="Fin" head="22" deprel="aux" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv"/>
+          </csubj>
+        </acl>
+      </nsubj>
+    </parataxis>
+    <punct ud="enhanced" id="44" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+    <punct ud="enhanced" id="45" form="''" lemma="''" upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	En	en	CCONJ	VG|neven	_	2	mark	2:mark	_
+2	dat	dat	PRON	VNW|aanw|pron|stan|vol|3o|ev	Person=3|PronType=Dem	0	root	0:root	_
+3	terwijl	terwijl	SCONJ	VG|onder	_	7	mark	7:mark	_
+4	er	er	ADV	VNW|aanw|adv-pron|stan|red|3|getal	_	7	advmod	7:advmod	_
+5	vele	veel	ADV	VNW|onbep|grad|stan|prenom|met-e|agr|basis	_	6	amod	6:amod	_
+6	voorbeelden	voorbeeld	NOUN	N|soort|mv|basis	Number=Plur	7	nsubj	7:nsubj	_
+7	zijn	zijn	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	2	parataxis	2:parataxis	_
+8	waaruit	waaruit	ADV	BW	_	9	advmod	6:ref	_
+9	blijkt	blijken	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	6	acl:relcl	6:acl:relcl	_
+10	dat	dat	SCONJ	VG|onder	_	22	mark	22:mark	_
+11	de	de	DET	LID|bep|stan|rest	Definite=Def	13	det	13:det	_
+12	farmaceutische	farmaceutisch	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	13	amod	13:amod	_
+13	industrie	industrie	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	22	nsubj	22:nsubj	_
+14	,	,	PUNCT	LET	_	13	punct	13:punct	_
+15	net	net	ADV	BW	_	18	advmod	18:advmod	_
+16	als	als	SCONJ	VG|onder	_	18	mark	18:mark	_
+17	de	de	DET	LID|bep|stan|rest	Definite=Def	18	det	18:det	_
+18	tabaksindustrie	tabak_industrie	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	22	advcl	22:advcl:als	_
+19	,	,	PUNCT	LET	_	18	punct	18:punct	_
+20	pogingen	poging	NOUN	N|soort|mv|basis	Number=Plur	22	obj	22:obj	_
+21	heeft	hebben	AUX	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	22	aux	22:aux	_
+22	gedaan	doen	VERB	WW|vd|vrij|zonder	VerbForm=Part	9	csubj	9:csubj	_
+23	om	om	ADP	VZ|init	_	31	mark	31:mark	_
+24	de	de	DET	LID|bep|stan|rest	Definite=Def	25	det	25:det|27:det	_
+25	onafhankelijkheid	onafhankelijkheid	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	31	obj	31:obj	_
+26	en	en	CCONJ	VG|neven	_	27	cc	27:cc	_
+27	betrouwbaarheid	betrouwbaarheid	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	25	conj	25:conj:en|31:obj	_
+28	van	van	ADP	VZ|init	_	29	case	29:case	_
+29	onderzoek	onderzoek	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	25	nmod	25:nmod:van|27:nmod:van	_
+30	te	te	ADP	VZ|init	_	31	mark	31:mark	_
+31	ondermijnen	ondermijnen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	20	acl	20:acl:om	_
+32	,	,	PUNCT	LET	_	36	punct	36:punct	_
+33	beleidsmakers	beleid_maker	NOUN	N|soort|mv|basis	Number=Plur	36	obj	36:obj	_
+34	verkeerd	verkeerd	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	36	advmod	36:advmod	_
+35	te	te	ADP	VZ|init	_	36	mark	36:mark	_
+36	informeren	informeren	VERB	WW|inf|vrij|zonder	VerbForm=Inf	31	conj	31:conj:of	_
+37	of	of	CCONJ	VG|neven	_	41	cc	41:cc	_
+38	groteske	grotesk	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	39	amod	39:amod	_
+39	winsten	winst	NOUN	N|soort|mv|basis	Number=Plur	41	obj	41:obj	_
+40	te	te	ADP	VZ|init	_	41	mark	41:mark	_
+41	halen	halen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	31	conj	31:conj:of	_
+42	uit	uit	ADP	VZ|init	_	43	case	43:case	_
+43	ziekten	ziekte	NOUN	N|soort|mv|basis	Number=Plur	41	obl	41:obl:uit	_
+44	.	.	PUNCT	LET	_	2	punct	2:punct	_
+45	''	''	PUNCT	LET	_	2	punct	2:punct	_
+]]></conllu>
+</alpino_ds>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+       <h1>MWE Analysis: $analysisname</h1>
+	   
+	   <p>for MWE <b>$MWE</b> in treebank <i>$treebankname</i></p>
+	   
+	   <p>$overviewlinkhtml</p>
+</head>
+
+<body>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js"></script>
+        <style>
+            body {font-family: Verdana;}
+        </style>
+
+$selectionsequence
+
+<script>	
+ $$(function(){
+        $$("#output").pivotUI(
+            $data,
+            {
+                rows: $rows,
+                cols: $cols,
+				rowOrder: "value_z_to_a"
+				$sorters
+            }
+        );
+     });	
+</script>
+
+
+<div id="output" style="margin: 30px;"></div>
+
+<p>$overviewlinkhtml</p>
+
+</body>
+</html>

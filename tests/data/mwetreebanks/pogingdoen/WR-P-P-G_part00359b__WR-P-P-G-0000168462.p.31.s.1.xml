@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-29T00:54" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="14" id="0" rel="top">
+    <node begin="0" cat="smain" end="13" id="1" rel="--">
+      <node begin="2" end="3" frame="verb(unacc,past(sg),passive)" his="normal" his_1="normal" id="2" infl="sg" lcat="smain" lemma="zijn" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="ben" sc="passive" sense="ben" stype="declarative" tense="past" v_per="thi" word="was" wvorm="pv">
+        <ud id="3" form="was" lemma="zijn" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="6" deprel="aux:pass" deprel_main="aux" deprel_aux="pass">
+          <dep id="3" head="6" deprel="aux:pass" deprel_main="aux" deprel_aux="pass"/>
+        </ud>
+      </node>
+      <node begin="0" cat="ppart" end="13" id="3" rel="vc">
+        <node begin="0" cat="np" end="2" id="4" is_np="true" is_vorfeld="true" rel="mod">
+          <node begin="0" buiging="zonder" end="1" frame="determiner(geen,nwh,mod,pro,yparg,nwkpro,geen)" his="normal" his_1="decap" his_1_1="normal" id="5" infl="geen" lcat="detp" lemma="geen" naamval="stan" npagr="agr" pdtype="det" pos="det" positie="prenom" postag="VNW(onbep,det,stan,prenom,zonder,agr)" pt="vnw" rel="det" root="geen" sense="geen" vwtype="onbep" wh="nwh" word="Geen">
+            <ud id="1" form="Geen" lemma="geen" upos="DET" head="2" deprel="det" deprel_main="det">
+              <dep id="1" head="2" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="1" end="2" frame="tmp_noun(de,count,meas)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="6" lcat="np" lemma="tel" naamval="stan" ntype="soort" num="meas" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="tel" sense="tel" special="tmp" word="tel">
+            <ud id="2" form="tel" lemma="tel" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obl" deprel_main="obl">
+              <dep id="2" head="6" deprel="obl" deprel_main="obl"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="5" buiging="zonder" end="6" frame="verb(hebben,psp,transitive_ndev)" his="normal" his_1="normal" id="7" infl="psp" lcat="ppart" lemma="doen" pos="verb" positie="vrij" postag="WW(vd,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="gedaan" wvorm="vd">
+          <ud id="6" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" deprel_main="root">
+            <dep id="6" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="3" cat="np" end="13" id="8" index="1" is_np="true" rel="obj1">
+          <node begin="3" end="4" frame="determiner(een)" his="normal" his_1="normal" id="9" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+            <ud id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" deprel_main="det">
+              <dep id="4" head="5" deprel="det" deprel_main="det"/>
+            </ud>
+          </node>
+          <node begin="4" end="5" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="10" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+            <ud id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass">
+              <dep id="5" head="6" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass"/>
+            </ud>
+          </node>
+          <node begin="6" cat="ti" end="13" id="11" is_nachfeld="true" rel="vc">
+            <node begin="7" end="8" frame="complementizer(te)" his="normal" his_1="normal" id="12" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+              <ud id="8" form="te" lemma="te" upos="ADP" head="9" deprel="mark" deprel_main="mark">
+                <dep id="8" head="9" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="6" cat="inf" end="13" id="13" rel="body">
+              <node begin="6" end="7" frame="meas_mod_noun(het,mass,sg)" gen="het" getal="ev" his="normal" his_1="normal" id="14" is_np="true" lcat="np" lemma="iets" naamval="stan" num="sg" pdtype="pron" persoon="3o" pos="noun" postag="VNW(onbep,pron,stan,vol,3o,ev)" pt="vnw" rel="obj1" rnum="sg" root="iets" sense="iets" special="meas_mod" status="vol" vwtype="onbep" word="iets">
+                <ud id="7" form="iets" lemma="iets" upos="PRON" Person="3" PronType="Ind" head="9" deprel="obj" deprel_main="obj">
+                  <dep id="7" head="9" deprel="obj" deprel_main="obj"/>
+                </ud>
+              </node>
+              <node begin="8" buiging="zonder" end="9" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="15" infl="inf" lcat="inf" lemma="zeggen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="zeg" sc="transitive" sense="zeg" word="zeggen" wvorm="inf">
+                <ud id="9" form="zeggen" lemma="zeggen" upos="VERB" VerbForm="Inf" head="5" deprel="acl" deprel_main="acl">
+                  <dep id="9" head="5" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+                </ud>
+              </node>
+              <node begin="9" cat="pp" end="13" id="16" is_nachfeld="true" rel="mod">
+                <node begin="9" end="10" frame="preposition(over,[heen])" his="normal" his_1="normal" id="17" lcat="pp" lemma="over" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="over" sense="over" vztype="init" word="over">
+                  <ud id="10" form="over" lemma="over" upos="ADP" head="13" deprel="case" deprel_main="case">
+                    <dep id="10" head="13" deprel="case" deprel_main="case"/>
+                  </ud>
+                </node>
+                <node begin="10" cat="np" end="13" id="18" is_np="true" rel="obj1">
+                  <node aform="base" begin="10" buiging="zonder" end="11" frame="adjective(both(nonadv))" graad="basis" his="normal" his_1="normal" id="19" infl="both" lcat="ap" lemma="eigen" pos="adj" positie="prenom" postag="ADJ(prenom,basis,zonder)" pt="adj" rel="mod" root="eigen" sense="eigen" vform="adj" word="eigen">
+                    <ud id="11" form="eigen" lemma="eigen" upos="ADJ" Degree="Pos" head="13" deprel="amod" deprel_main="amod">
+                      <dep id="11" head="13" deprel="amod" deprel_main="amod"/>
+                    </ud>
+                  </node>
+                  <node aform="base" begin="11" buiging="met-e" end="12" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="20" infl="e" lcat="ap" lemma="inhoudelijk" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="inhoudelijk" sense="inhoudelijk" vform="adj" word="inhoudelijke">
+                    <ud id="12" form="inhoudelijke" lemma="inhoudelijk" upos="ADJ" Degree="Pos" head="13" deprel="amod" deprel_main="amod">
+                      <dep id="12" head="13" deprel="amod" deprel_main="amod"/>
+                    </ud>
+                  </node>
+                  <node begin="12" end="13" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="21" lcat="np" lemma="opvatting" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="opvatting" sense="opvatting" word="opvattingen">
+                    <ud id="13" form="opvattingen" lemma="opvatting" upos="NOUN" Number="Plur" head="9" deprel="obl" deprel_main="obl">
+                      <dep id="13" head="9" deprel="obl:over" deprel_main="obl" deprel_aux="over"/>
+                    </ud>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node begin="3" end="13" id="22" index="1" rel="su"/>
+    </node>
+    <node begin="13" end="14" frame="punct(punt)" his="normal" his_1="normal" id="23" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="14" form="." lemma="." upos="PUNCT" head="6" deprel="punct" deprel_main="punct">
+        <dep id="14" head="6" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000168462.p.31.s.1">Geen tel was een poging gedaan iets te zeggen over eigen inhoudelijke opvattingen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000168462.p.31.s.1|Geen tel was een poging gedaan iets te zeggen over eigen inhoudelijke opvattingen .|1|1|-6.882322733499999</comment>
+  </comments>
+  <root ud="basic" id="6" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <obl ud="basic" id="2" form="tel" lemma="tel" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="1" form="Geen" lemma="geen" upos="DET" head="2" deprel="det" buiging="zonder" naamval="stan" npagr="agr" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+    </obl>
+    <aux ud="basic" id="3" form="was" lemma="zijn" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="6" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv"/>
+    <nsubj ud="basic" id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nsubj:pass" deprel_aux="pass" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <acl ud="basic" id="9" form="zeggen" lemma="zeggen" upos="VERB" VerbForm="Inf" head="5" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="basic" id="7" form="iets" lemma="iets" upos="PRON" Person="3" PronType="Ind" head="9" deprel="obj" getal="ev" naamval="stan" pdtype="pron" persoon="3o" pt="vnw" status="vol" vwtype="onbep"/>
+        <mark ud="basic" id="8" form="te" lemma="te" upos="ADP" head="9" deprel="mark" pt="vz" vztype="init"/>
+        <obl ud="basic" id="13" form="opvattingen" lemma="opvatting" upos="NOUN" Number="Plur" head="9" deprel="obl" getal="mv" graad="basis" ntype="soort" pt="n">
+          <case ud="basic" id="10" form="over" lemma="over" upos="ADP" head="13" deprel="case" pt="vz" vztype="init"/>
+          <amod ud="basic" id="11" form="eigen" lemma="eigen" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+          <amod ud="basic" id="12" form="inhoudelijke" lemma="inhoudelijk" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+        </obl>
+      </acl>
+    </nsubj>
+    <punct ud="basic" id="14" form="." lemma="." upos="PUNCT" head="6" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="6" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <obl ud="enhanced" id="2" form="tel" lemma="tel" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="1" form="Geen" lemma="geen" upos="DET" head="2" deprel="det" buiging="zonder" naamval="stan" npagr="agr" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+    </obl>
+    <aux ud="enhanced" id="3" form="was" lemma="zijn" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="6" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv"/>
+    <nsubj ud="enhanced" id="5" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nsubj:pass" deprel_aux="pass" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="5" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <acl ud="enhanced" id="9" form="zeggen" lemma="zeggen" upos="VERB" VerbForm="Inf" head="5" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="enhanced" id="7" form="iets" lemma="iets" upos="PRON" Person="3" PronType="Ind" head="9" deprel="obj" getal="ev" naamval="stan" pdtype="pron" persoon="3o" pt="vnw" status="vol" vwtype="onbep"/>
+        <mark ud="enhanced" id="8" form="te" lemma="te" upos="ADP" head="9" deprel="mark" pt="vz" vztype="init"/>
+        <obl ud="enhanced" id="13" form="opvattingen" lemma="opvatting" upos="NOUN" Number="Plur" head="9" deprel="obl:over" deprel_aux="over" getal="mv" graad="basis" ntype="soort" pt="n">
+          <case ud="enhanced" id="10" form="over" lemma="over" upos="ADP" head="13" deprel="case" pt="vz" vztype="init"/>
+          <amod ud="enhanced" id="11" form="eigen" lemma="eigen" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="zonder" graad="basis" positie="prenom" pt="adj"/>
+          <amod ud="enhanced" id="12" form="inhoudelijke" lemma="inhoudelijk" upos="ADJ" Degree="Pos" head="13" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+        </obl>
+      </acl>
+    </nsubj>
+    <punct ud="enhanced" id="14" form="." lemma="." upos="PUNCT" head="6" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Geen	geen	DET	VNW|onbep|det|stan|prenom|zonder|agr	_	2	det	2:det	_
+2	tel	tel	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	obl	6:obl	_
+3	was	zijn	AUX	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	6	aux:pass	6:aux:pass	_
+4	een	een	DET	LID|onbep|stan|agr	Definite=Ind	5	det	5:det	_
+5	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	nsubj:pass	6:nsubj:pass	_
+6	gedaan	doen	VERB	WW|vd|vrij|zonder	VerbForm=Part	0	root	0:root	_
+7	iets	iets	PRON	VNW|onbep|pron|stan|vol|3o|ev	Person=3|PronType=Ind	9	obj	9:obj	_
+8	te	te	ADP	VZ|init	_	9	mark	9:mark	_
+9	zeggen	zeggen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	5	acl	5:acl:te	_
+10	over	over	ADP	VZ|init	_	13	case	13:case	_
+11	eigen	eigen	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	13	amod	13:amod	_
+12	inhoudelijke	inhoudelijk	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	13	amod	13:amod	_
+13	opvattingen	opvatting	NOUN	N|soort|mv|basis	Number=Plur	9	obl	9:obl:over	_
+14	.	.	PUNCT	LET	_	6	punct	6:punct	_
+]]></conllu>
+</alpino_ds>

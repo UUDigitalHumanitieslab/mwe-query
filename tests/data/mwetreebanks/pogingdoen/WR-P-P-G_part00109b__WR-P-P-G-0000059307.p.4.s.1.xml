@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:36" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="15" id="0" rel="top">
+    <node begin="0" cat="smain" end="14" id="1" rel="--">
+      <node begin="0" cat="np" end="3" id="2" index="1" is_np="true" is_vorfeld="true" rel="su">
+        <node begin="0" end="1" frame="determiner(de)" his="normal" his_1="decap" his_1_1="normal" id="3" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="De">
+          <ud id="1" form="De" lemma="de" upos="DET" Definite="Def" head="3" deprel="det" deprel_main="det">
+            <dep id="1" head="3" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node aform="base" begin="1" buiging="met-e" end="2" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="4" infl="e" lcat="ap" lemma="Latijns_Amerikaans" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="Latijns_Amerikaans" sense="Latijns_Amerikaans" vform="adj" word="Latijns-Amerikaanse">
+          <ud id="2" form="Latijns-Amerikaanse" lemma="Latijns_Amerikaans" upos="ADJ" Degree="Pos" head="3" deprel="amod" deprel_main="amod">
+            <dep id="2" head="3" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="2" end="3" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="5" lcat="np" lemma="migrant" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="migrant" sense="migrant" word="migranten">
+          <ud id="3" form="migranten" lemma="migrant" upos="NOUN" Number="Plur" head="7" deprel="nsubj" deprel_main="nsubj">
+            <dep id="3" head="7" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="3" end="4" frame="verb(hebben,past(pl),aux_psp_hebben)" his="normal" his_1="normal" id="6" infl="pl" lcat="smain" lemma="hebben" pos="verb" postag="WW(pv,verl,mv)" pt="ww" pvagr="mv" pvtijd="verl" rel="hd" root="heb" sc="aux_psp_hebben" sense="heb" stype="declarative" tense="past" v_per="thi" word="hadden" wvorm="pv">
+        <ud id="4" form="hadden" lemma="hebben" upos="AUX" Number="Plur" Tense="Past" VerbForm="Fin" head="7" deprel="aux" deprel_main="aux">
+          <dep id="4" head="7" deprel="aux" deprel_main="aux"/>
+        </ud>
+      </node>
+      <node begin="0" cat="ppart" end="14" id="7" rel="vc">
+        <node begin="0" end="3" id="8" index="1" rel="su"/>
+        <node begin="6" buiging="zonder" end="7" frame="verb(hebben,psp,transitive_ndev)" his="normal" his_1="normal" id="9" infl="psp" lcat="ppart" lemma="doen" pos="verb" positie="vrij" postag="WW(vd,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="gedaan" wvorm="vd">
+          <ud id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" deprel_main="root">
+            <dep id="7" head="0" deprel="root" deprel_main="root"/>
+          </ud>
+        </node>
+        <node begin="4" cat="np" end="14" id="10" is_np="true" rel="obj1">
+          <node aform="base" begin="4" buiging="met-e" end="5" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="11" infl="e" lcat="ap" lemma="verwoed" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="verwoed" sense="verwoed" vform="adj" word="verwoede">
+            <ud id="5" form="verwoede" lemma="verwoed" upos="ADJ" Degree="Pos" head="6" deprel="amod" deprel_main="amod">
+              <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+            </ud>
+          </node>
+          <node begin="5" end="6" frame="noun(de,count,pl,vp)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="12" lcat="np" lemma="poging" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="poging" sc="vp" sense="poging" word="pogingen">
+            <ud id="6" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="7" deprel="obj" deprel_main="obj">
+              <dep id="6" head="7" deprel="obj" deprel_main="obj"/>
+            </ud>
+          </node>
+          <node begin="7" cat="ti" end="14" id="13" is_nachfeld="true" rel="vc">
+            <node begin="9" end="10" frame="complementizer(te)" his="normal" his_1="normal" id="14" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+              <ud id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" deprel_main="mark">
+                <dep id="10" head="11" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="7" cat="inf" end="14" id="15" rel="body">
+              <node begin="10" buiging="zonder" end="11" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="16" infl="inf" lcat="inf" lemma="trekken" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="trek" sc="transitive" sense="trek" word="trekken" wvorm="inf">
+                <ud id="11" form="trekken" lemma="trekken" upos="VERB" VerbForm="Inf" head="6" deprel="acl" deprel_main="acl">
+                  <dep id="11" head="6" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+                </ud>
+              </node>
+              <node begin="7" cat="np" end="14" id="17" is_np="true" rel="obj1">
+                <node begin="7" end="8" frame="determiner(de)" his="normal" his_1="normal" id="18" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                  <ud id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" deprel_main="det">
+                    <dep id="8" head="9" deprel="det" deprel_main="det"/>
+                  </ud>
+                </node>
+                <node begin="8" end="9" frame="noun(de,mass,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="19" lcat="np" lemma="aandacht" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="aandacht" sense="aandacht" word="aandacht">
+                  <ud id="9" form="aandacht" lemma="aandacht" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" deprel_main="obj">
+                    <dep id="9" head="11" deprel="obj" deprel_main="obj"/>
+                  </ud>
+                </node>
+                <node begin="11" cat="pp" end="14" id="20" is_nachfeld="true" rel="mod">
+                  <node begin="11" end="12" frame="preposition(van,[af,uit,vandaan,[af,aan]])" his="normal" his_1="normal" id="21" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+                    <ud id="12" form="van" lemma="van" upos="ADP" head="14" deprel="case" deprel_main="case">
+                      <dep id="12" head="14" deprel="case" deprel_main="case"/>
+                    </ud>
+                  </node>
+                  <node begin="12" cat="np" end="14" id="22" is_np="true" rel="obj1">
+                    <node begin="12" end="13" frame="determiner(de)" his="normal" his_1="normal" id="23" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                      <ud id="13" form="de" lemma="de" upos="DET" Definite="Def" head="14" deprel="det" deprel_main="det">
+                        <dep id="13" head="14" deprel="det" deprel_main="det"/>
+                      </ud>
+                    </node>
+                    <node begin="13" end="14" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="24" lcat="np" lemma="chauffeur" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="chauffeur" sense="chauffeur" word="chauffeur">
+                      <ud id="14" form="chauffeur" lemma="chauffeur" upos="NOUN" Gender="Com" Number="Sing" head="9" deprel="nmod" deprel_main="nmod">
+                        <dep id="14" head="9" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+                      </ud>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="14" end="15" frame="punct(punt)" his="normal" his_1="normal" id="25" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="15" form="." lemma="." upos="PUNCT" head="7" deprel="punct" deprel_main="punct">
+        <dep id="15" head="7" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000059307.p.4.s.1">De Latijns-Amerikaanse migranten hadden verwoede pogingen gedaan de aandacht te trekken van de chauffeur .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000059307.p.4.s.1|De Latijns-Amerikaanse migranten hadden verwoede pogingen gedaan de aandacht te trekken van de chauffeur .|1|1|-3.748942918600001</comment>
+  </comments>
+  <root ud="basic" id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <nsubj ud="basic" id="3" form="migranten" lemma="migrant" upos="NOUN" Number="Plur" head="7" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <det ud="basic" id="1" form="De" lemma="de" upos="DET" Definite="Def" head="3" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      <amod ud="basic" id="2" form="Latijns-Amerikaanse" lemma="Latijns_Amerikaans" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <aux ud="basic" id="4" form="hadden" lemma="hebben" upos="AUX" Number="Plur" Tense="Past" VerbForm="Fin" head="7" deprel="aux" pt="ww" pvagr="mv" pvtijd="verl" wvorm="pv"/>
+    <obj ud="basic" id="6" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="7" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <amod ud="basic" id="5" form="verwoede" lemma="verwoed" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="basic" id="11" form="trekken" lemma="trekken" upos="VERB" VerbForm="Inf" head="6" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="basic" id="9" form="aandacht" lemma="aandacht" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="basic" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          <nmod ud="basic" id="14" form="chauffeur" lemma="chauffeur" upos="NOUN" Gender="Com" Number="Sing" head="9" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+            <case ud="basic" id="12" form="van" lemma="van" upos="ADP" head="14" deprel="case" pt="vz" vztype="init"/>
+            <det ud="basic" id="13" form="de" lemma="de" upos="DET" Definite="Def" head="14" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          </nmod>
+        </obj>
+        <mark ud="basic" id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="basic" id="15" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <nsubj ud="enhanced" id="3" form="migranten" lemma="migrant" upos="NOUN" Number="Plur" head="7" deprel="nsubj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <det ud="enhanced" id="1" form="De" lemma="de" upos="DET" Definite="Def" head="3" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+      <amod ud="enhanced" id="2" form="Latijns-Amerikaanse" lemma="Latijns_Amerikaans" upos="ADJ" Degree="Pos" head="3" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </nsubj>
+    <aux ud="enhanced" id="4" form="hadden" lemma="hebben" upos="AUX" Number="Plur" Tense="Past" VerbForm="Fin" head="7" deprel="aux" pt="ww" pvagr="mv" pvtijd="verl" wvorm="pv"/>
+    <obj ud="enhanced" id="6" form="pogingen" lemma="poging" upos="NOUN" Number="Plur" head="7" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+      <amod ud="enhanced" id="5" form="verwoede" lemma="verwoed" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="enhanced" id="11" form="trekken" lemma="trekken" upos="VERB" VerbForm="Inf" head="6" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="enhanced" id="9" form="aandacht" lemma="aandacht" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="enhanced" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          <nmod ud="enhanced" id="14" form="chauffeur" lemma="chauffeur" upos="NOUN" Gender="Com" Number="Sing" head="9" deprel="nmod:van" deprel_aux="van" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+            <case ud="enhanced" id="12" form="van" lemma="van" upos="ADP" head="14" deprel="case" pt="vz" vztype="init"/>
+            <det ud="enhanced" id="13" form="de" lemma="de" upos="DET" Definite="Def" head="14" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+          </nmod>
+        </obj>
+        <mark ud="enhanced" id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="enhanced" id="15" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	De	de	DET	LID|bep|stan|rest	Definite=Def	3	det	3:det	_
+2	Latijns-Amerikaanse	Latijns_Amerikaans	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	3	amod	3:amod	_
+3	migranten	migrant	NOUN	N|soort|mv|basis	Number=Plur	7	nsubj	7:nsubj	_
+4	hadden	hebben	AUX	WW|pv|verl|mv	Number=Plur|Tense=Past|VerbForm=Fin	7	aux	7:aux	_
+5	verwoede	verwoed	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	6	amod	6:amod	_
+6	pogingen	poging	NOUN	N|soort|mv|basis	Number=Plur	7	obj	7:obj	_
+7	gedaan	doen	VERB	WW|vd|vrij|zonder	VerbForm=Part	0	root	0:root	_
+8	de	de	DET	LID|bep|stan|rest	Definite=Def	9	det	9:det	_
+9	aandacht	aandacht	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	11	obj	11:obj	_
+10	te	te	ADP	VZ|init	_	11	mark	11:mark	_
+11	trekken	trekken	VERB	WW|inf|vrij|zonder	VerbForm=Inf	6	acl	6:acl:te	_
+12	van	van	ADP	VZ|init	_	14	case	14:case	_
+13	de	de	DET	LID|bep|stan|rest	Definite=Def	14	det	14:det	_
+14	chauffeur	chauffeur	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	9	nmod	9:nmod:van	_
+15	.	.	PUNCT	LET	_	7	punct	7:punct	_
+]]></conllu>
+</alpino_ds>

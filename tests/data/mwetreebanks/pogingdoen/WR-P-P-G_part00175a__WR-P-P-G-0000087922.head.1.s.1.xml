@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:57" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="6" id="0" rel="top">
+    <node begin="0" cat="smain" end="6" id="1" rel="--">
+      <node begin="0" end="1" frame="proper_name(sg,'PER')" genus="zijd" getal="ev" graad="basis" his="name" his_1="begin" id="2" is_np="true" is_vorfeld="true" lcat="np" lemma="Belka" naamval="stan" neclass="PER" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="su" rnum="sg" root="Belka" sense="Belka" word="Belka">
+        <ud id="1" form="Belka" lemma="Belka" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="nsubj" deprel_main="nsubj">
+          <dep id="1" head="2" deprel="nsubj" deprel_main="nsubj"/>
+        </ud>
+      </node>
+      <node begin="1" end="2" frame="verb(hebben,sg3,transitive_ndev)" his="normal" his_1="normal" id="3" infl="sg3" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doet" wvorm="pv">
+        <ud id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="2" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="2" cat="pp" end="4" id="4" rel="mod">
+        <node begin="2" end="3" frame="preposition(in,[])" his="normal" his_1="normal" id="5" lcat="pp" lemma="in" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="in" sense="in" vztype="init" word="in">
+          <ud id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" deprel_main="case">
+            <dep id="3" head="4" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="3" end="4" frame="proper_name(both,'LOC')" genus="onz" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="6" is_np="true" lcat="np" lemma="Polen" naamval="stan" neclass="LOC" ntype="eigen" num="both" pos="name" postag="N(eigen,ev,basis,onz,stan)" pt="n" rel="obj1" root="Polen" sense="Polen" word="Polen">
+          <ud id="4" form="Polen" lemma="Polen" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="obl" deprel_main="obl">
+            <dep id="4" head="2" deprel="obl:in" deprel_main="obl" deprel_aux="in"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="4" cat="np" end="6" id="7" is_np="true" rel="obj1">
+        <node begin="4" end="5" frame="number(rang)" his="normal" his_1="number_rang" id="8" lcat="ap" lemma="twee" naamval="stan" numtype="rang" pos="num" positie="prenom" postag="TW(rang,prenom,stan)" pt="tw" rel="mod" root="twee" sense="twee" word="tweede">
+          <ud id="5" form="tweede" lemma="twee" upos="ADJ" head="6" deprel="amod" deprel_main="amod">
+            <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="5" end="6" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="9" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+          <ud id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" deprel_main="obj">
+            <dep id="6" head="2" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000087922.head.1.s.1">Belka doet in Polen tweede poging</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000087922.head.1.s.1|Belka doet in Polen tweede poging|1|1|0.4691054364999987</comment>
+  </comments>
+  <root ud="basic" id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="1" form="Belka" lemma="Belka" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    <obl ud="basic" id="4" form="Polen" lemma="Polen" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="obl" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <case ud="basic" id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <obj ud="basic" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="basic" id="5" form="tweede" lemma="twee" upos="ADJ" head="6" deprel="amod" naamval="stan" numtype="rang" positie="prenom" pt="tw"/>
+    </obj>
+  </root>
+  <root ud="enhanced" id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="Belka" lemma="Belka" upos="PROPN" Gender="Com" Number="Sing" head="2" deprel="nsubj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    <obl ud="enhanced" id="4" form="Polen" lemma="Polen" upos="PROPN" Gender="Neut" Number="Sing" head="2" deprel="obl:in" deprel_aux="in" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <case ud="enhanced" id="3" form="in" lemma="in" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <obj ud="enhanced" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <amod ud="enhanced" id="5" form="tweede" lemma="twee" upos="ADJ" head="6" deprel="amod" naamval="stan" numtype="rang" positie="prenom" pt="tw"/>
+    </obj>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Belka	Belka	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	2	nsubj	2:nsubj	_
+2	doet	doen	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+3	in	in	ADP	VZ|init	_	4	case	4:case	_
+4	Polen	Polen	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	2	obl	2:obl:in	_
+5	tweede	twee	ADJ	TW|rang|prenom|stan	_	6	amod	6:amod	_
+6	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	2	obj	2:obj	_
+]]></conllu>
+</alpino_ds>

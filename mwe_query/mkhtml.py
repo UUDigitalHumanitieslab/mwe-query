@@ -403,8 +403,8 @@ def sumdictelems(dct) -> List[Tuple[str, int, List[str]]]:
 
 
 def test():
-    dotbfolder = r'./mwe_query/testdata/mwetreebanks/dansontspringena'
-    #dotbfolder = r'./mwe_query/testdata/mwetreebanks/hartbreken/data'
+    dotbfolder = r'./mwe_query/tests/data/mwetreebanks/dansontspringena'
+    #dotbfolder = r'./mwe_query/tests/data/mwetreebanks/hartbreken/data'
     rawtreebankfilenames = os.listdir(dotbfolder)
     selcond = lambda _: True
     # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'

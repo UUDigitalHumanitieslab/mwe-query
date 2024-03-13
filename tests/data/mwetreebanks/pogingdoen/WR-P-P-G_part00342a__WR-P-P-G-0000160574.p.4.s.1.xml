@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T21:25" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="15" id="0" rel="top">
+    <node begin="0" cat="smain" end="14" id="1" rel="--">
+      <node begin="0" end="1" frame="proper_name(sg,'ORG')" genus="genus" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="2" is_np="true" is_vorfeld="true" lcat="np" lemma="VROM" naamval="stan" neclass="ORG" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,genus,stan)" pt="n" rel="su" rnum="sg" root="VROM" sense="VROM" word="VROM">
+        <ud id="1" form="VROM" lemma="VROM" upos="PROPN" Gender="Com,Neut" Number="Sing" head="2" deprel="nsubj" deprel_main="nsubj">
+          <dep id="1" head="2" deprel="nsubj" deprel_main="nsubj"/>
+        </ud>
+      </node>
+      <node begin="1" end="2" frame="verb(hebben,sg3,transitive_ndev)" his="normal" his_1="normal" id="3" infl="sg3" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doet" wvorm="pv">
+        <ud id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="2" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="2" end="3" frame="tmp_adverb" his="normal" his_1="normal" id="4" lcat="advp" lemma="nu" pos="adv" postag="BW()" pt="bw" rel="mod" root="nu" sense="nu" special="tmp" word="nu">
+        <ud id="3" form="nu" lemma="nu" upos="ADV" head="2" deprel="advmod" deprel_main="advmod">
+          <dep id="3" head="2" deprel="advmod" deprel_main="advmod"/>
+        </ud>
+      </node>
+      <node begin="3" cat="np" end="14" id="5" is_np="true" rel="obj1">
+        <node begin="3" end="4" frame="determiner(een)" his="normal" his_1="normal" id="6" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" deprel_main="det">
+            <dep id="4" head="6" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node aform="base" begin="4" buiging="met-e" end="5" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="7" infl="e" lcat="ap" lemma="ultiem" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="ultiem" sense="ultiem" vform="adj" word="ultieme">
+          <ud id="5" form="ultieme" lemma="ultiem" upos="ADJ" Degree="Pos" head="6" deprel="amod" deprel_main="amod">
+            <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="5" end="6" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="8" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+          <ud id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" deprel_main="obj">
+            <dep id="6" head="2" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+        <node begin="6" cat="oti" end="14" id="9" rel="vc">
+          <node begin="6" end="7" frame="complementizer(om)" his="normal" his_1="normal" id="10" lcat="oti" lemma="om" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="om" sc="om" sense="om" vztype="init" word="om">
+            <ud id="7" form="om" lemma="om" upos="ADP" head="14" deprel="mark" deprel_main="mark">
+              <dep id="7" head="14" deprel="mark" deprel_main="mark"/>
+            </ud>
+          </node>
+          <node begin="7" cat="ti" end="14" id="11" rel="body">
+            <node begin="12" end="13" frame="complementizer(te)" his="normal" his_1="normal" id="12" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+              <ud id="13" form="te" lemma="te" upos="ADP" head="14" deprel="mark" deprel_main="mark">
+                <dep id="13" head="14" deprel="mark" deprel_main="mark"/>
+              </ud>
+            </node>
+            <node begin="7" cat="inf" end="14" id="13" rel="body">
+              <node begin="7" cat="np" end="9" id="14" is_np="true" rel="obj1">
+                <node begin="7" end="8" frame="determiner(de)" his="normal" his_1="normal" id="15" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                  <ud id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" deprel_main="det">
+                    <dep id="8" head="9" deprel="det" deprel_main="det"/>
+                  </ud>
+                </node>
+                <node begin="8" end="9" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="compound" his_1="2" id="16" lcat="np" lemma="sanering_kost" ntype="soort" num="pl" pos="noun" postag="N(soort,mv,basis)" pt="n" rel="hd" rnum="pl" root="sanering_kost" sense="sanering_kost" word="saneringskosten">
+                  <ud id="9" form="saneringskosten" lemma="sanering_kost" upos="NOUN" Number="Plur" head="14" deprel="obj" deprel_main="obj">
+                    <dep id="9" head="14" deprel="obj" deprel_main="obj"/>
+                  </ud>
+                </node>
+              </node>
+              <node begin="9" end="10" frame="adverb" his="normal" his_1="normal" id="17" lcat="advp" lemma="alsnog" pos="adv" postag="BW()" pt="bw" rel="mod" root="alsnog" sense="alsnog" word="alsnog">
+                <ud id="10" form="alsnog" lemma="alsnog" upos="ADV" head="14" deprel="advmod" deprel_main="advmod">
+                  <dep id="10" head="14" deprel="advmod" deprel_main="advmod"/>
+                </ud>
+              </node>
+              <node begin="10" cat="pp" end="12" id="18" rel="pc">
+                <node begin="10" end="11" frame="preposition(op,[af,na])" his="normal" his_1="normal" id="19" lcat="pp" lemma="op" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="op" sense="op" vztype="init" word="op">
+                  <ud id="11" form="op" lemma="op" upos="ADP" head="12" deprel="case" deprel_main="case">
+                    <dep id="11" head="12" deprel="case" deprel_main="case"/>
+                  </ud>
+                </node>
+                <node begin="11" end="12" frame="proper_name(sg,'ORG')" genus="zijd" getal="ev" graad="basis" his="normal" his_1="names_dictionary" id="20" is_np="true" lcat="np" lemma="Akzo" naamval="stan" neclass="ORG" ntype="eigen" num="sg" pos="name" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="obj1" rnum="sg" root="Akzo" sense="Akzo" word="Akzo">
+                  <ud id="12" form="Akzo" lemma="Akzo" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="obl" deprel_main="obl">
+                    <dep id="12" head="14" deprel="obl:op" deprel_main="obl" deprel_aux="op"/>
+                  </ud>
+                </node>
+              </node>
+              <node begin="13" buiging="zonder" end="14" frame="verb(hebben,inf,np_pc_pp(op))" his="normal" his_1="normal" id="21" infl="inf" lcat="inf" lemma="verhalen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="verhaal" sc="np_pc_pp(op)" sense="verhaal-op" word="verhalen" wvorm="inf">
+                <ud id="14" form="verhalen" lemma="verhalen" upos="VERB" VerbForm="Inf" head="6" deprel="acl" deprel_main="acl">
+                  <dep id="14" head="6" deprel="acl:om" deprel_main="acl" deprel_aux="om"/>
+                </ud>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="14" end="15" frame="punct(punt)" his="normal" his_1="normal" id="22" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="15" form="." lemma="." upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="15" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000160574.p.4.s.1">VROM doet nu een ultieme poging om de saneringskosten alsnog op Akzo te verhalen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000160574.p.4.s.1|VROM doet nu een ultieme poging om de saneringskosten alsnog op Akzo te verhalen .|1|1|-10.371337243899998</comment>
+  </comments>
+  <root ud="basic" id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="basic" id="1" form="VROM" lemma="VROM" upos="PROPN" Gender="Com,Neut" Number="Sing" head="2" deprel="nsubj" genus="genus" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    <advmod ud="basic" id="3" form="nu" lemma="nu" upos="ADV" head="2" deprel="advmod" pt="bw"/>
+    <obj ud="basic" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="basic" id="5" form="ultieme" lemma="ultiem" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="basic" id="14" form="verhalen" lemma="verhalen" upos="VERB" VerbForm="Inf" head="6" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <mark ud="basic" id="7" form="om" lemma="om" upos="ADP" head="14" deprel="mark" pt="vz" vztype="init"/>
+        <obj ud="basic" id="9" form="saneringskosten" lemma="sanering_kost" upos="NOUN" Number="Plur" head="14" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+          <det ud="basic" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+        </obj>
+        <advmod ud="basic" id="10" form="alsnog" lemma="alsnog" upos="ADV" head="14" deprel="advmod" pt="bw"/>
+        <obl ud="basic" id="12" form="Akzo" lemma="Akzo" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+          <case ud="basic" id="11" form="op" lemma="op" upos="ADP" head="12" deprel="case" pt="vz" vztype="init"/>
+        </obl>
+        <mark ud="basic" id="13" form="te" lemma="te" upos="ADP" head="14" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="basic" id="15" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="2" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="VROM" lemma="VROM" upos="PROPN" Gender="Com,Neut" Number="Sing" head="2" deprel="nsubj" genus="genus" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n"/>
+    <advmod ud="enhanced" id="3" form="nu" lemma="nu" upos="ADV" head="2" deprel="advmod" pt="bw"/>
+    <obj ud="enhanced" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="4" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="enhanced" id="5" form="ultieme" lemma="ultiem" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="enhanced" id="14" form="verhalen" lemma="verhalen" upos="VERB" VerbForm="Inf" head="6" deprel="acl:om" deprel_aux="om" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <mark ud="enhanced" id="7" form="om" lemma="om" upos="ADP" head="14" deprel="mark" pt="vz" vztype="init"/>
+        <obj ud="enhanced" id="9" form="saneringskosten" lemma="sanering_kost" upos="NOUN" Number="Plur" head="14" deprel="obj" getal="mv" graad="basis" ntype="soort" pt="n">
+          <det ud="enhanced" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+        </obj>
+        <advmod ud="enhanced" id="10" form="alsnog" lemma="alsnog" upos="ADV" head="14" deprel="advmod" pt="bw"/>
+        <obl ud="enhanced" id="12" form="Akzo" lemma="Akzo" upos="PROPN" Gender="Com" Number="Sing" head="14" deprel="obl:op" deprel_aux="op" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+          <case ud="enhanced" id="11" form="op" lemma="op" upos="ADP" head="12" deprel="case" pt="vz" vztype="init"/>
+        </obl>
+        <mark ud="enhanced" id="13" form="te" lemma="te" upos="ADP" head="14" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </obj>
+    <punct ud="enhanced" id="15" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	VROM	VROM	PROPN	N|eigen|ev|basis|genus|stan	Gender=Com,Neut|Number=Sing	2	nsubj	2:nsubj	_
+2	doet	doen	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+3	nu	nu	ADV	BW	_	2	advmod	2:advmod	_
+4	een	een	DET	LID|onbep|stan|agr	Definite=Ind	6	det	6:det	_
+5	ultieme	ultiem	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	6	amod	6:amod	_
+6	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	2	obj	2:obj	_
+7	om	om	ADP	VZ|init	_	14	mark	14:mark	_
+8	de	de	DET	LID|bep|stan|rest	Definite=Def	9	det	9:det	_
+9	saneringskosten	sanering_kost	NOUN	N|soort|mv|basis	Number=Plur	14	obj	14:obj	_
+10	alsnog	alsnog	ADV	BW	_	14	advmod	14:advmod	_
+11	op	op	ADP	VZ|init	_	12	case	12:case	_
+12	Akzo	Akzo	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	14	obl	14:obl:op	_
+13	te	te	ADP	VZ|init	_	14	mark	14:mark	_
+14	verhalen	verhalen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	6	acl	6:acl:om	_
+15	.	.	PUNCT	LET	_	2	punct	2:punct	_
+]]></conllu>
+</alpino_ds>

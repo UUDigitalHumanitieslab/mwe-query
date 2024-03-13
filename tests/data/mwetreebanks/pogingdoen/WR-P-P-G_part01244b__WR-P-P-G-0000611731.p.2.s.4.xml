@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-29T01:53" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="24" id="0" rel="top">
+    <node begin="17" end="18" frame="punct(komma)" his="normal" his_1="normal" id="1" lcat="punct" lemma="," pos="punct" postag="LET()" pt="let" rel="--" root="," sense="," special="komma" word=",">
+      <ud id="18" form="," lemma="," upos="PUNCT" head="21" deprel="punct" deprel_main="punct">
+        <dep id="18" head="21" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+    <node begin="0" cat="smain" end="23" id="2" rel="--">
+      <node begin="0" cat="np" end="5" id="3" is_np="true" is_vorfeld="true" rel="su">
+        <node begin="0" cat="mwu" end="2" his="normal" his_1="names_dictionary" id="4" rel="hd">
+          <node begin="0" end="1" frame="proper_name(sg,'PER')" id="5" lcat="np" lemma="Terry" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Terry" sense="Terry" spectype="deeleigen" word="Terry">
+            <ud id="1" form="Terry" lemma="Terry" upos="PROPN" head="6" deprel="nsubj" deprel_main="nsubj">
+              <dep id="1" head="6" deprel="nsubj" deprel_main="nsubj"/>
+            </ud>
+          </node>
+          <node begin="1" end="2" frame="proper_name(sg,'PER')" id="6" lcat="np" lemma="Gilliam" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Gilliam" sense="Gilliam" spectype="deeleigen" word="Gilliam">
+            <ud id="2" form="Gilliam" lemma="Gilliam" upos="PROPN" head="1" deprel="flat" deprel_main="flat">
+              <dep id="2" head="1" deprel="flat" deprel_main="flat"/>
+            </ud>
+          </node>
+        </node>
+        <node begin="2" cat="pp" end="5" id="7" rel="mod">
+          <node begin="2" end="3" frame="preposition(van,[af,uit,vandaan,[af,aan]])" his="normal" his_1="normal" id="8" lcat="pp" lemma="van" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="van" sense="van" vztype="init" word="van">
+            <ud id="3" form="van" lemma="van" upos="ADP" head="4" deprel="case" deprel_main="case">
+              <dep id="3" head="4" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="3" cat="mwu" end="5" his="normal" his_1="names_dictionary" id="9" is_np="true" rel="obj1">
+            <node begin="3" end="4" frame="proper_name(sg,'ORG')" id="10" lcat="np" lemma="Monty" neclass="ORG" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Monty" sense="Monty" spectype="deeleigen" word="Monty">
+              <ud id="4" form="Monty" lemma="Monty" upos="PROPN" head="1" deprel="nmod" deprel_main="nmod">
+                <dep id="4" head="1" deprel="nmod:van" deprel_main="nmod" deprel_aux="van"/>
+              </ud>
+            </node>
+            <node begin="4" end="5" frame="proper_name(sg,'ORG')" id="11" lcat="np" lemma="Python" neclass="ORG" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Python" sense="Python" spectype="deeleigen" word="Python">
+              <ud id="5" form="Python" lemma="Python" upos="PROPN" head="4" deprel="flat" deprel_main="flat">
+                <dep id="5" head="4" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node begin="5" end="6" frame="verb(hebben,past(sg),np_pc_pp(met))" his="normal" his_1="normal" id="12" infl="sg" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="doe" sc="np_pc_pp(met)" sense="doe-met" stype="declarative" tense="past" v_per="thi" word="deed" wvorm="pv">
+        <ud id="6" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="6" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="6" cat="pp" end="8" id="13" rel="mod">
+        <node begin="6" end="7" frame="preposition(in,[])" his="normal" his_1="normal" id="14" lcat="pp" lemma="in" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="in" sense="in" vztype="init" word="in">
+          <ud id="7" form="in" lemma="in" upos="ADP" head="8" deprel="case" deprel_main="case">
+            <dep id="7" head="8" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="7" end="8" frame="np(year)" his="normal" his_1="date_year" id="15" is_np="true" lcat="np" lemma="1988" neclass="year" numtype="hoofd" pos="noun" positie="vrij" postag="TW(hoofd,vrij)" pt="tw" rel="obj1" root="1988" sense="1988" word="1988">
+          <ud id="8" form="1988" lemma="1988" upos="NUM" head="6" deprel="obl" deprel_main="obl">
+            <dep id="8" head="6" deprel="obl:in" deprel_main="obl" deprel_aux="in"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="8" cat="np" end="11" id="16" is_np="true" rel="obj1">
+        <node begin="8" end="9" frame="determiner(een)" his="normal" his_1="normal" id="17" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="9" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" deprel_main="det">
+            <dep id="9" head="11" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node aform="base" begin="9" buiging="met-e" end="10" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="18" infl="e" lcat="ap" lemma="verdienstelijk" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="verdienstelijk" sense="verdienstelijk" vform="adj" word="verdienstelijke">
+          <ud id="10" form="verdienstelijke" lemma="verdienstelijk" upos="ADJ" Degree="Pos" head="11" deprel="amod" deprel_main="amod">
+            <dep id="10" head="11" deprel="amod" deprel_main="amod"/>
+          </ud>
+        </node>
+        <node begin="10" end="11" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="19" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+          <ud id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obj" deprel_main="obj">
+            <dep id="11" head="6" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="11" cat="pp" end="17" id="20" rel="pc">
+        <node begin="11" end="12" frame="preposition(met,[mee,[en,al]])" his="normal" his_1="normal" id="21" lcat="pp" lemma="met" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="met" sense="met" vztype="init" word="met">
+          <ud id="12" form="met" lemma="met" upos="ADP" head="13" deprel="case" deprel_main="case">
+            <dep id="12" head="13" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="12" cat="mwu" end="17" his="normal" his_1="names_dictionary" id="22" is_np="true" rel="obj1">
+          <node begin="12" end="13" frame="proper_name(sg)" id="23" lcat="np" lemma="The" neclass="MISC" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="The" sense="The" spectype="deeleigen" word="The">
+            <ud id="13" form="The" lemma="The" upos="PROPN" head="6" deprel="obl" deprel_main="obl">
+              <dep id="13" head="6" deprel="obl:met" deprel_main="obl" deprel_aux="met"/>
+            </ud>
+          </node>
+          <node begin="13" end="14" frame="proper_name(sg)" id="24" lcat="np" lemma="Adventures" neclass="MISC" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Adventures" sense="Adventures" spectype="deeleigen" word="Adventures">
+            <ud id="14" form="Adventures" lemma="Adventures" upos="PROPN" head="13" deprel="flat" deprel_main="flat">
+              <dep id="14" head="13" deprel="flat" deprel_main="flat"/>
+            </ud>
+          </node>
+          <node begin="14" end="15" frame="proper_name(sg)" id="25" lcat="np" lemma="of" neclass="MISC" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="of" sense="of" spectype="deeleigen" word="of">
+            <ud id="15" form="of" lemma="of" upos="PROPN" head="13" deprel="flat" deprel_main="flat">
+              <dep id="15" head="13" deprel="flat" deprel_main="flat"/>
+            </ud>
+          </node>
+          <node begin="15" end="16" frame="proper_name(sg)" id="26" lcat="np" lemma="Baron" neclass="MISC" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Baron" sense="Baron" spectype="deeleigen" word="Baron">
+            <ud id="16" form="Baron" lemma="Baron" upos="PROPN" head="13" deprel="flat" deprel_main="flat">
+              <dep id="16" head="13" deprel="flat" deprel_main="flat"/>
+            </ud>
+          </node>
+          <node begin="16" end="17" frame="proper_name(sg)" id="27" lcat="np" lemma="Munchausen" neclass="MISC" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Munchausen" sense="Munchausen" spectype="deeleigen" word="Munchausen">
+            <ud id="17" form="Munchausen" lemma="Munchausen" upos="PROPN" head="13" deprel="flat" deprel_main="flat">
+              <dep id="17" head="13" deprel="flat" deprel_main="flat"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+      <node begin="18" cat="pp" end="23" id="28" rel="mod">
+        <node begin="18" end="19" frame="preposition(met,[mee,[en,al]])" his="normal" his_1="normal" id="29" lcat="pp" lemma="met" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="met" sense="met" vztype="init" word="met">
+          <ud id="19" form="met" lemma="met" upos="ADP" head="21" deprel="case" deprel_main="case">
+            <dep id="19" head="21" deprel="case" deprel_main="case"/>
+          </ud>
+        </node>
+        <node begin="19" cat="np" end="23" id="30" is_np="true" rel="obj1">
+          <node begin="19" end="20" frame="modal_adverb" his="normal" his_1="abbreviation" his_1_1="normal" id="31" lcat="advp" lemma="onder ander" pos="adv" postag="SPEC(afk)" pt="spec" rel="mod" root="onder ander" sc="modal" sense="onder ander" spectype="afk" word="o.a.">
+            <ud id="20" form="o.a." lemma="onder ander" upos="X" Abbr="Yes" head="21" deprel="nmod" deprel_main="nmod">
+              <dep id="20" head="21" deprel="nmod" deprel_main="nmod"/>
+            </ud>
+          </node>
+          <node begin="20" end="21" frame="noun(de,mass,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="left_headed_compound" id="32" lcat="np" lemma="mede_Python" naamval="stan" ntype="eigen" num="sg" pos="noun" postag="N(eigen,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="mede_Python" sense="mede_Python" word="mede-Python">
+            <ud id="21" form="mede-Python" lemma="mede_Python" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="obl" deprel_main="obl">
+              <dep id="21" head="6" deprel="obl:met" deprel_main="obl" deprel_aux="met"/>
+            </ud>
+          </node>
+          <node begin="21" cat="mwu" end="23" his="name" his_1="not_begin" id="33" is_np="true" rel="app">
+            <node begin="21" end="22" frame="proper_name(sg,'PER')" id="34" lcat="np" lemma="Eric" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Eric" sense="Eric" spectype="deeleigen" word="Eric">
+              <ud id="22" form="Eric" lemma="Eric" upos="PROPN" head="21" deprel="appos" deprel_main="appos">
+                <dep id="22" head="21" deprel="appos" deprel_main="appos"/>
+              </ud>
+            </node>
+            <node begin="22" end="23" frame="proper_name(sg,'PER')" id="35" lcat="np" lemma="Idle" neclass="PER" num="sg" pos="name" postag="SPEC(deeleigen)" pt="spec" rel="mwp" rnum="sg" root="Idle" sense="Idle" spectype="deeleigen" word="Idle">
+              <ud id="23" form="Idle" lemma="Idle" upos="PROPN" head="22" deprel="flat" deprel_main="flat">
+                <dep id="23" head="22" deprel="flat" deprel_main="flat"/>
+              </ud>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="23" end="24" frame="punct(punt)" his="normal" his_1="normal" id="36" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="24" form="." lemma="." upos="PUNCT" head="6" deprel="punct" deprel_main="punct">
+        <dep id="24" head="6" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000611731.p.2.s.4">Terry Gilliam van Monty Python deed in 1988 een verdienstelijke poging met The Adventures of Baron Munchausen , met o.a. mede-Python Eric Idle .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000611731.p.2.s.4|Terry Gilliam van Monty Python deed in 1988 een verdienstelijke poging met The Adventures of Baron Munchausen , met o.a. mede-Python Eric Idle .|1|1|-1.8061974169000032</comment>
+  </comments>
+  <root ud="basic" id="6" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="basic" id="1" form="Terry" lemma="Terry" upos="PROPN" head="6" deprel="nsubj" pt="spec" spectype="deeleigen">
+      <flat ud="basic" id="2" form="Gilliam" lemma="Gilliam" upos="PROPN" head="1" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <nmod ud="basic" id="4" form="Monty" lemma="Monty" upos="PROPN" head="1" deprel="nmod" pt="spec" spectype="deeleigen">
+        <case ud="basic" id="3" form="van" lemma="van" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+        <flat ud="basic" id="5" form="Python" lemma="Python" upos="PROPN" head="4" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </nmod>
+    </nsubj>
+    <obl ud="basic" id="8" form="1988" lemma="1988" upos="NUM" head="6" deprel="obl" numtype="hoofd" positie="vrij" pt="tw">
+      <case ud="basic" id="7" form="in" lemma="in" upos="ADP" head="8" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <obj ud="basic" id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="9" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="basic" id="10" form="verdienstelijke" lemma="verdienstelijk" upos="ADJ" Degree="Pos" head="11" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </obj>
+    <obl ud="basic" id="13" form="The" lemma="The" upos="PROPN" head="6" deprel="obl" pt="spec" spectype="deeleigen">
+      <case ud="basic" id="12" form="met" lemma="met" upos="ADP" head="13" deprel="case" pt="vz" vztype="init"/>
+      <flat ud="basic" id="14" form="Adventures" lemma="Adventures" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="basic" id="15" form="of" lemma="of" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="basic" id="16" form="Baron" lemma="Baron" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="basic" id="17" form="Munchausen" lemma="Munchausen" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+    </obl>
+    <obl ud="basic" id="21" form="mede-Python" lemma="mede_Python" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="obl" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <punct ud="basic" id="18" form="," lemma="," upos="PUNCT" head="21" deprel="punct" pt="let"/>
+      <case ud="basic" id="19" form="met" lemma="met" upos="ADP" head="21" deprel="case" pt="vz" vztype="init"/>
+      <nmod ud="basic" id="20" form="o.a." lemma="onder ander" upos="X" Abbr="Yes" head="21" deprel="nmod" pt="spec" spectype="afk"/>
+      <appos ud="basic" id="22" form="Eric" lemma="Eric" upos="PROPN" head="21" deprel="appos" pt="spec" spectype="deeleigen">
+        <flat ud="basic" id="23" form="Idle" lemma="Idle" upos="PROPN" head="22" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </appos>
+    </obl>
+    <punct ud="basic" id="24" form="." lemma="." upos="PUNCT" head="6" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="6" form="deed" lemma="doen" upos="VERB" Number="Sing" Tense="Past" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv">
+    <nsubj ud="enhanced" id="1" form="Terry" lemma="Terry" upos="PROPN" head="6" deprel="nsubj" pt="spec" spectype="deeleigen">
+      <flat ud="enhanced" id="2" form="Gilliam" lemma="Gilliam" upos="PROPN" head="1" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <nmod ud="enhanced" id="4" form="Monty" lemma="Monty" upos="PROPN" head="1" deprel="nmod:van" deprel_aux="van" pt="spec" spectype="deeleigen">
+        <case ud="enhanced" id="3" form="van" lemma="van" upos="ADP" head="4" deprel="case" pt="vz" vztype="init"/>
+        <flat ud="enhanced" id="5" form="Python" lemma="Python" upos="PROPN" head="4" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </nmod>
+    </nsubj>
+    <obl ud="enhanced" id="8" form="1988" lemma="1988" upos="NUM" head="6" deprel="obl:in" deprel_aux="in" numtype="hoofd" positie="vrij" pt="tw">
+      <case ud="enhanced" id="7" form="in" lemma="in" upos="ADP" head="8" deprel="case" pt="vz" vztype="init"/>
+    </obl>
+    <obj ud="enhanced" id="11" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="9" form="een" lemma="een" upos="DET" Definite="Ind" head="11" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <amod ud="enhanced" id="10" form="verdienstelijke" lemma="verdienstelijk" upos="ADJ" Degree="Pos" head="11" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+    </obj>
+    <obl ud="enhanced" id="13" form="The" lemma="The" upos="PROPN" head="6" deprel="obl:met" deprel_aux="met" pt="spec" spectype="deeleigen">
+      <case ud="enhanced" id="12" form="met" lemma="met" upos="ADP" head="13" deprel="case" pt="vz" vztype="init"/>
+      <flat ud="enhanced" id="14" form="Adventures" lemma="Adventures" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="enhanced" id="15" form="of" lemma="of" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="enhanced" id="16" form="Baron" lemma="Baron" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+      <flat ud="enhanced" id="17" form="Munchausen" lemma="Munchausen" upos="PROPN" head="13" deprel="flat" pt="spec" spectype="deeleigen"/>
+    </obl>
+    <obl ud="enhanced" id="21" form="mede-Python" lemma="mede_Python" upos="PROPN" Gender="Com" Number="Sing" head="6" deprel="obl:met" deprel_aux="met" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="eigen" pt="n">
+      <punct ud="enhanced" id="18" form="," lemma="," upos="PUNCT" head="21" deprel="punct" pt="let"/>
+      <case ud="enhanced" id="19" form="met" lemma="met" upos="ADP" head="21" deprel="case" pt="vz" vztype="init"/>
+      <nmod ud="enhanced" id="20" form="o.a." lemma="onder ander" upos="X" Abbr="Yes" head="21" deprel="nmod" pt="spec" spectype="afk"/>
+      <appos ud="enhanced" id="22" form="Eric" lemma="Eric" upos="PROPN" head="21" deprel="appos" pt="spec" spectype="deeleigen">
+        <flat ud="enhanced" id="23" form="Idle" lemma="Idle" upos="PROPN" head="22" deprel="flat" pt="spec" spectype="deeleigen"/>
+      </appos>
+    </obl>
+    <punct ud="enhanced" id="24" form="." lemma="." upos="PUNCT" head="6" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Terry	Terry	PROPN	SPEC|deeleigen	_	6	nsubj	6:nsubj	_
+2	Gilliam	Gilliam	PROPN	SPEC|deeleigen	_	1	flat	1:flat	_
+3	van	van	ADP	VZ|init	_	4	case	4:case	_
+4	Monty	Monty	PROPN	SPEC|deeleigen	_	1	nmod	1:nmod:van	_
+5	Python	Python	PROPN	SPEC|deeleigen	_	4	flat	4:flat	_
+6	deed	doen	VERB	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	0	root	0:root	_
+7	in	in	ADP	VZ|init	_	8	case	8:case	_
+8	1988	1988	NUM	TW|hoofd|vrij	_	6	obl	6:obl:in	_
+9	een	een	DET	LID|onbep|stan|agr	Definite=Ind	11	det	11:det	_
+10	verdienstelijke	verdienstelijk	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	11	amod	11:amod	_
+11	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	obj	6:obj	_
+12	met	met	ADP	VZ|init	_	13	case	13:case	_
+13	The	The	PROPN	SPEC|deeleigen	_	6	obl	6:obl:met	_
+14	Adventures	Adventures	PROPN	SPEC|deeleigen	_	13	flat	13:flat	_
+15	of	of	PROPN	SPEC|deeleigen	_	13	flat	13:flat	_
+16	Baron	Baron	PROPN	SPEC|deeleigen	_	13	flat	13:flat	_
+17	Munchausen	Munchausen	PROPN	SPEC|deeleigen	_	13	flat	13:flat	_
+18	,	,	PUNCT	LET	_	21	punct	21:punct	_
+19	met	met	ADP	VZ|init	_	21	case	21:case	_
+20	o.a.	onder ander	X	SPEC|afk	Abbr=Yes	21	nmod	21:nmod	_
+21	mede-Python	mede_Python	PROPN	N|eigen|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	obl	6:obl:met	_
+22	Eric	Eric	PROPN	SPEC|deeleigen	_	21	appos	21:appos	_
+23	Idle	Idle	PROPN	SPEC|deeleigen	_	22	flat	22:flat	_
+24	.	.	PUNCT	LET	_	6	punct	6:punct	_
+]]></conllu>
+</alpino_ds>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:09" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="9" id="0" rel="top">
+    <node begin="0" cat="smain" end="8" id="1" rel="--">
+      <node aform="base" begin="0" buiging="zonder" end="1" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="decap" his_1_1="normal" id="2" infl="no_e" is_vorfeld="true" lcat="ap" lemma="uiteindelijk" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="uiteindelijk" sense="uiteindelijk" vform="adj" word="Uiteindelijk">
+        <ud id="1" form="Uiteindelijk" lemma="uiteindelijk" upos="ADJ" Degree="Pos" head="2" deprel="advmod" deprel_main="advmod">
+          <dep id="1" head="2" deprel="advmod" deprel_main="advmod"/>
+        </ud>
+      </node>
+      <node begin="1" end="2" frame="verb(hebben,pl,transitive_ndev)" his="normal" his_1="normal" id="3" infl="pl" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,mv)" pt="ww" pvagr="mv" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doen" wvorm="pv">
+        <ud id="2" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="2" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="2" cat="np" end="5" id="4" is_np="true" rel="su">
+        <node begin="2" end="3" frame="determiner(een)" his="normal" his_1="normal" id="5" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="3" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" deprel_main="det">
+            <dep id="3" head="4" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="3" end="4" frame="meas_mod_noun(both,count,bare_meas,measure)" gen="both" genus="onz" getal="ev" graad="basis" his="normal" his_1="normal" id="6" lcat="np" lemma="miljoen" naamval="stan" ntype="soort" num="bare_meas" pos="noun" postag="N(soort,ev,basis,onz,stan)" pt="n" rel="hd" rnum="pl" root="miljoen" sc="measure" sense="miljoen" special="meas_mod" word="miljoen">
+          <ud id="4" form="miljoen" lemma="miljoen" upos="NOUN" Gender="Neut" Number="Sing" head="2" deprel="nsubj" deprel_main="nsubj">
+            <dep id="4" head="2" deprel="nsubj" deprel_main="nsubj"/>
+          </ud>
+        </node>
+        <node begin="4" end="5" frame="noun(de,count,pl)" gen="de" getal="mv" graad="basis" his="normal" his_1="normal" id="7" is_np="true" lcat="np" lemma="Nederlander" ntype="eigen" num="pl" pos="noun" postag="N(eigen,mv,basis)" pt="n" rel="mod" rnum="pl" root="Nederlander" sense="Nederlander" word="Nederlanders">
+          <ud id="5" form="Nederlanders" lemma="Nederlander" upos="PROPN" Number="Plur" head="4" deprel="nmod" deprel_main="nmod">
+            <dep id="5" head="4" deprel="nmod" deprel_main="nmod"/>
+          </ud>
+        </node>
+      </node>
+      <node aform="base" begin="5" buiging="zonder" end="6" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="normal" id="8" infl="no_e" lcat="ap" lemma="jaarlijks" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="jaarlijks" sense="jaarlijks" vform="adj" word="jaarlijks">
+        <ud id="6" form="jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="2" deprel="advmod" deprel_main="advmod">
+          <dep id="6" head="2" deprel="advmod" deprel_main="advmod"/>
+        </ud>
+      </node>
+      <node begin="6" cat="np" end="8" id="9" is_np="true" rel="obj1">
+        <node begin="6" end="7" frame="determiner(een)" his="normal" his_1="normal" id="10" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="7" form="een" lemma="een" upos="DET" Definite="Ind" head="8" deprel="det" deprel_main="det">
+            <dep id="7" head="8" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="7" end="8" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="11" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+          <ud id="8" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" deprel_main="obj">
+            <dep id="8" head="2" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+      </node>
+    </node>
+    <node begin="8" end="9" frame="punct(punt)" his="normal" his_1="normal" id="12" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="9" form="." lemma="." upos="PUNCT" head="2" deprel="punct" deprel_main="punct">
+        <dep id="9" head="2" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000118510.p.8.s.4">Uiteindelijk doen een miljoen Nederlanders jaarlijks een poging .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000118510.p.8.s.4|Uiteindelijk doen een miljoen Nederlanders jaarlijks een poging .|1|1|-3.7488767062000004</comment>
+  </comments>
+  <root ud="basic" id="2" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <advmod ud="basic" id="1" form="Uiteindelijk" lemma="uiteindelijk" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <nsubj ud="basic" id="4" form="miljoen" lemma="miljoen" upos="NOUN" Gender="Neut" Number="Sing" head="2" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="3" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <nmod ud="basic" id="5" form="Nederlanders" lemma="Nederlander" upos="PROPN" Number="Plur" head="4" deprel="nmod" getal="mv" graad="basis" ntype="eigen" pt="n"/>
+    </nsubj>
+    <advmod ud="basic" id="6" form="jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <obj ud="basic" id="8" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="7" form="een" lemma="een" upos="DET" Definite="Ind" head="8" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+    </obj>
+    <punct ud="basic" id="9" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="2" form="doen" lemma="doen" upos="VERB" Number="Plur" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="mv" pvtijd="tgw" wvorm="pv">
+    <advmod ud="enhanced" id="1" form="Uiteindelijk" lemma="uiteindelijk" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <nsubj ud="enhanced" id="4" form="miljoen" lemma="miljoen" upos="NOUN" Gender="Neut" Number="Sing" head="2" deprel="nsubj" genus="onz" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="3" form="een" lemma="een" upos="DET" Definite="Ind" head="4" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <nmod ud="enhanced" id="5" form="Nederlanders" lemma="Nederlander" upos="PROPN" Number="Plur" head="4" deprel="nmod" getal="mv" graad="basis" ntype="eigen" pt="n"/>
+    </nsubj>
+    <advmod ud="enhanced" id="6" form="jaarlijks" lemma="jaarlijks" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    <obj ud="enhanced" id="8" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="2" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="7" form="een" lemma="een" upos="DET" Definite="Ind" head="8" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+    </obj>
+    <punct ud="enhanced" id="9" form="." lemma="." upos="PUNCT" head="2" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Uiteindelijk	uiteindelijk	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	2	advmod	2:advmod	_
+2	doen	doen	VERB	WW|pv|tgw|mv	Number=Plur|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+3	een	een	DET	LID|onbep|stan|agr	Definite=Ind	4	det	4:det	_
+4	miljoen	miljoen	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	2	nsubj	2:nsubj	_
+5	Nederlanders	Nederlander	PROPN	N|eigen|mv|basis	Number=Plur	4	nmod	4:nmod	_
+6	jaarlijks	jaarlijks	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	2	advmod	2:advmod	_
+7	een	een	DET	LID|onbep|stan|agr	Definite=Ind	8	det	8:det	_
+8	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	2	obj	2:obj	_
+9	.	.	PUNCT	LET	_	2	punct	2:punct	_
+]]></conllu>
+</alpino_ds>

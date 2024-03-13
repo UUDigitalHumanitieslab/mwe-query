@@ -1,0 +1,116 @@
+top/top
+   --/let(,, ,)
+   --/smain
+      hd/ww(is, zijn)
+      su/np:1
+         det/detp
+            hd/lid(het, het)
+         hd/n(risico, risico)
+         vc/cp
+            cmp/vg(dat, dat)
+            body/ssub
+               su/np
+                  hd/n(ambtenaren, ambtenaar)
+                  mod/rel
+                     rhd/np:2
+                        hd/n(ambtenaren, ambtenaar)
+                     body/ssub
+                        su/np:2
+                           hd/n(ambtenaren, ambtenaar)
+                        mod/advp
+                           hd/bw(nu, nu)
+                        obj1/np
+                           det/detp
+                              hd/lid(de, de)
+                           hd/n(dans, dans)
+                        hd/ww(ontspringen, ontspringen)
+               predc/np
+                  hd/n(chantabel, chantabel)
+               hd/ww(zijn, zijn)
+      vc/inf
+         su/np:1
+            det/detp
+               hd/lid(het, het)
+            hd/n(risico, risico)
+            vc/cp
+               cmp/vg(dat, dat)
+               body/ssub
+                  su/np
+                     hd/n(ambtenaren, ambtenaar)
+                     mod/rel
+                        rhd/np:2
+                           hd/n(ambtenaren, ambtenaar)
+                        body/ssub
+                           su/np:2
+                              hd/n(ambtenaren, ambtenaar)
+                           mod/advp
+                              hd/bw(nu, nu)
+                           obj1/np
+                              det/detp
+                                 hd/lid(de, de)
+                              hd/n(dans, dans)
+                           hd/ww(ontspringen, ontspringen)
+                  predc/np
+                     hd/n(chantabel, chantabel)
+                  hd/ww(zijn, zijn)
+         hd/ww(zijn, zijn)
+         vc/ppart
+            mod/advp
+               hd/bw(Bovendien, bovendien)
+            su/np:1
+               det/detp
+                  hd/lid(het, het)
+               hd/n(risico, risico)
+               vc/cp
+                  cmp/vg(dat, dat)
+                  body/ssub
+                     su/np
+                        hd/n(ambtenaren, ambtenaar)
+                        mod/rel
+                           rhd/np:2
+                              hd/n(ambtenaren, ambtenaar)
+                           body/ssub
+                              su/np:2
+                                 hd/n(ambtenaren, ambtenaar)
+                              mod/advp
+                                 hd/bw(nu, nu)
+                              obj1/np
+                                 det/detp
+                                    hd/lid(de, de)
+                                 hd/n(dans, dans)
+                              hd/ww(ontspringen, ontspringen)
+                     predc/np
+                        hd/n(chantabel, chantabel)
+                     hd/ww(zijn, zijn)
+            mod/pp
+               hd/vz(door, door)
+               obj1/np
+                  hd/n(mensen, mens)
+                  mod/rel
+                     rhd/np:3
+                        hd/n(mensen, mens)
+                        mod/dummy(dummy, )
+                     body/ssub
+                        su/np:3
+                           hd/n(mensen, mens)
+                           mod/dummy(dummy, )
+                        hd/ww(weten, weten)
+                        vc/advp
+                           hd/vnw(waar, waar)
+            obj2/np
+               hd/vnw(ze, ze)
+            mod/pp
+               hd/vz(in, in)
+               obj1/np
+                  det/detp
+                     hd/lid(het, het)
+                  hd/n(verleden, verleden)
+            predc/ppart
+               pc/pp
+                  obj1/advp
+                     hd/vnw(er, er)
+                  hd/vz(bij, bij)
+               hd/ww(betrokken, betrokken)
+            hd/ww(geweest, zijn)
+   --/let(., .)
+

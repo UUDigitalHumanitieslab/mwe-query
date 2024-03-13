@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T23:44" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="9" id="0" rel="top">
+    <node begin="0" cat="smain" end="8" id="1" rel="--">
+      <node begin="0" cat="ap" end="2" id="2" is_vorfeld="true" rel="predm">
+        <node aform="base" begin="0" buiging="zonder" end="1" frame="adjective(no_e(adv))" graad="basis" his="normal" his_1="decap" his_1_1="normal" id="3" infl="no_e" lcat="ap" lemma="half" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="mod" root="half" sense="half" vform="adj" word="Half">
+          <ud id="1" form="Half" lemma="half" upos="ADJ" Degree="Pos" head="2" deprel="advmod" deprel_main="advmod">
+            <dep id="1" head="2" deprel="advmod" deprel_main="advmod"/>
+          </ud>
+        </node>
+        <node aform="base" begin="1" buiging="zonder" end="2" frame="adjective(no_e(padv))" graad="basis" his="normal" his_1="normal" id="4" infl="no_e" lcat="ap" lemma="verbouwereerd" pos="adj" positie="vrij" postag="ADJ(vrij,basis,zonder)" pt="adj" rel="hd" root="verbouwereerd" sense="verbouwereerd" vform="adj" word="verbouwereerd">
+          <ud id="2" form="verbouwereerd" lemma="verbouwereerd" upos="ADJ" Degree="Pos" head="3" deprel="advcl" deprel_main="advcl">
+            <dep id="2" head="3" deprel="advcl" deprel_main="advcl"/>
+          </ud>
+        </node>
+      </node>
+      <node begin="2" end="3" frame="verb(hebben,sg3,transitive_ndev)" his="normal" his_1="normal" id="5" infl="sg3" lcat="smain" lemma="doen" pos="verb" postag="WW(pv,tgw,met-t)" pt="ww" pvagr="met-t" pvtijd="tgw" rel="hd" root="doe" sc="transitive_ndev" sense="doe" stype="declarative" tense="present" v_per="thi" word="doet" wvorm="pv">
+        <ud id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" deprel_main="root">
+          <dep id="3" head="0" deprel="root" deprel_main="root"/>
+        </ud>
+      </node>
+      <node begin="3" case="both" def="def" end="4" frame="pronoun(nwh,thi,both,de,both,def,wkpro)" gen="de" genus="fem" getal="ev" his="normal" his_1="normal" id="6" is_np="true" lcat="np" lemma="ze" naamval="stan" num="both" pdtype="pron" per="thi" persoon="3" pos="pron" postag="VNW(pers,pron,stan,red,3,ev,fem)" pt="vnw" rel="su" rnum="sg" root="ze" sense="ze" special="wkpro" status="red" vwtype="pers" wh="nwh" word="ze">
+        <ud id="4" form="ze" lemma="ze" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nsubj" deprel_main="nsubj">
+          <dep id="4" head="3" deprel="nsubj" deprel_main="nsubj"/>
+        </ud>
+      </node>
+      <node begin="4" cat="np" end="8" id="7" is_np="true" rel="obj1">
+        <node begin="4" end="5" frame="determiner(een)" his="normal" his_1="normal" id="8" infl="een" lcat="detp" lemma="een" lwtype="onbep" naamval="stan" npagr="agr" pos="det" postag="LID(onbep,stan,agr)" pt="lid" rel="det" root="een" sense="een" word="een">
+          <ud id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" deprel_main="det">
+            <dep id="5" head="6" deprel="det" deprel_main="det"/>
+          </ud>
+        </node>
+        <node begin="5" end="6" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="9" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sense="poging" word="poging">
+          <ud id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" deprel_main="obj">
+            <dep id="6" head="3" deprel="obj" deprel_main="obj"/>
+          </ud>
+        </node>
+        <node begin="6" cat="pp" end="8" id="10" rel="mod">
+          <node begin="6" end="7" frame="preposition(tot,[toe,[aan,toe]])" his="normal" his_1="normal" id="11" lcat="pp" lemma="tot" pos="prep" postag="VZ(init)" pt="vz" rel="hd" root="tot" sense="tot" vztype="init" word="tot">
+            <ud id="7" form="tot" lemma="tot" upos="ADP" head="8" deprel="case" deprel_main="case">
+              <dep id="7" head="8" deprel="case" deprel_main="case"/>
+            </ud>
+          </node>
+          <node begin="7" end="8" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="12" is_np="true" lcat="np" lemma="reconstructie" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="obj1" rnum="sg" root="reconstructie" sense="reconstructie" word="reconstructie">
+            <ud id="8" form="reconstructie" lemma="reconstructie" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nmod" deprel_main="nmod">
+              <dep id="8" head="6" deprel="nmod:tot" deprel_main="nmod" deprel_aux="tot"/>
+            </ud>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node begin="8" end="9" frame="punct(punt)" his="normal" his_1="normal" id="13" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" deprel_main="punct">
+        <dep id="9" head="3" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000191212.p.24.s.6">Half verbouwereerd doet ze een poging tot reconstructie .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000191212.p.24.s.6|Half verbouwereerd doet ze een poging tot reconstructie .|1|1|-4.9931298463000005</comment>
+  </comments>
+  <root ud="basic" id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <advcl ud="basic" id="2" form="verbouwereerd" lemma="verbouwereerd" upos="ADJ" Degree="Pos" head="3" deprel="advcl" buiging="zonder" graad="basis" positie="vrij" pt="adj">
+      <advmod ud="basic" id="1" form="Half" lemma="half" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    </advcl>
+    <nsubj ud="basic" id="4" form="ze" lemma="ze" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nsubj" genus="fem" getal="ev" naamval="stan" pdtype="pron" persoon="3" pt="vnw" status="red" vwtype="pers"/>
+    <obj ud="basic" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <nmod ud="basic" id="8" form="reconstructie" lemma="reconstructie" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nmod" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="basic" id="7" form="tot" lemma="tot" upos="ADP" head="8" deprel="case" pt="vz" vztype="init"/>
+      </nmod>
+    </obj>
+    <punct ud="basic" id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="3" form="doet" lemma="doen" upos="VERB" Number="Sing" Tense="Pres" VerbForm="Fin" head="0" deprel="root" pt="ww" pvagr="met-t" pvtijd="tgw" wvorm="pv">
+    <advcl ud="enhanced" id="2" form="verbouwereerd" lemma="verbouwereerd" upos="ADJ" Degree="Pos" head="3" deprel="advcl" buiging="zonder" graad="basis" positie="vrij" pt="adj">
+      <advmod ud="enhanced" id="1" form="Half" lemma="half" upos="ADJ" Degree="Pos" head="2" deprel="advmod" buiging="zonder" graad="basis" positie="vrij" pt="adj"/>
+    </advcl>
+    <nsubj ud="enhanced" id="4" form="ze" lemma="ze" upos="PRON" Person="3" PronType="Prs" head="3" deprel="nsubj" genus="fem" getal="ev" naamval="stan" pdtype="pron" persoon="3" pt="vnw" status="red" vwtype="pers"/>
+    <obj ud="enhanced" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="3" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="5" form="een" lemma="een" upos="DET" Definite="Ind" head="6" deprel="det" lwtype="onbep" naamval="stan" npagr="agr" pt="lid"/>
+      <nmod ud="enhanced" id="8" form="reconstructie" lemma="reconstructie" upos="NOUN" Gender="Com" Number="Sing" head="6" deprel="nmod:tot" deprel_aux="tot" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+        <case ud="enhanced" id="7" form="tot" lemma="tot" upos="ADP" head="8" deprel="case" pt="vz" vztype="init"/>
+      </nmod>
+    </obj>
+    <punct ud="enhanced" id="9" form="." lemma="." upos="PUNCT" head="3" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Half	half	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	2	advmod	2:advmod	_
+2	verbouwereerd	verbouwereerd	ADJ	ADJ|vrij|basis|zonder	Degree=Pos	3	advcl	3:advcl	_
+3	doet	doen	VERB	WW|pv|tgw|met-t	Number=Sing|Tense=Pres|VerbForm=Fin	0	root	0:root	_
+4	ze	ze	PRON	VNW|pers|pron|stan|red|3|ev|fem	Person=3|PronType=Prs	3	nsubj	3:nsubj	_
+5	een	een	DET	LID|onbep|stan|agr	Definite=Ind	6	det	6:det	_
+6	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	3	obj	3:obj	_
+7	tot	tot	ADP	VZ|init	_	8	case	8:case	_
+8	reconstructie	reconstructie	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	6	nmod	6:nmod:tot	_
+9	.	.	PUNCT	LET	_	3	punct	3:punct	_
+]]></conllu>
+</alpino_ds>

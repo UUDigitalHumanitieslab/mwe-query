@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alpino_ds version="1.16">
+  <metadata>
+    <meta type="text" name="source" value="SONAR500"/>
+    <meta type="text" name="type" value="WR-P-P-G"/>
+    <meta type="text" name="description" value="newspapers"/>
+  </metadata>
+  <parser build="Alpino-x86_64-linux-glibc2.5-git1003-sicstus" date="2023-05-28T22:34" cats="1" skips="0"/>
+  <node begin="0" cat="top" end="12" id="0" rel="top">
+    <node begin="0" cat="du" end="11" id="1" rel="--">
+      <node begin="0" conjtype="neven" end="1" frame="complementizer(root)" his="normal" his_1="decap" his_1_1="normal" id="2" lcat="du" lemma="maar" pos="comp" postag="VG(neven)" pt="vg" rel="dlink" root="maar" sc="root" sense="maar" word="Maar">
+        <ud id="1" form="Maar" lemma="maar" upos="CCONJ" head="7" deprel="mark" deprel_main="mark">
+          <dep id="1" head="7" deprel="mark" deprel_main="mark"/>
+        </ud>
+      </node>
+      <node begin="1" cat="smain" end="11" id="3" rel="nucl">
+        <node begin="2" end="3" frame="verb(unacc,past(sg),passive)" his="normal" his_1="normal" id="4" infl="sg" lcat="smain" lemma="worden" pos="verb" postag="WW(pv,verl,ev)" pt="ww" pvagr="ev" pvtijd="verl" rel="hd" root="word" sc="passive" sense="word" stype="declarative" tense="past" v_per="thi" word="werd" wvorm="pv">
+          <ud id="3" form="werd" lemma="worden" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="7" deprel="aux:pass" deprel_main="aux" deprel_aux="pass">
+            <dep id="3" head="7" deprel="aux:pass" deprel_main="aux" deprel_aux="pass"/>
+          </ud>
+        </node>
+        <node begin="1" cat="ppart" end="11" id="5" rel="vc">
+          <node begin="1" end="2" frame="er_vp_adverb" getal="getal" his="normal" his_1="normal" id="6" is_vorfeld="true" lcat="advp" lemma="er" naamval="stan" pdtype="adv-pron" persoon="3" pos="adv" postag="VNW(aanw,adv-pron,stan,red,3,getal)" pt="vnw" rel="mod" root="er" sense="er" special="er" status="red" vwtype="aanw" word="er">
+            <ud id="2" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" deprel_main="advmod">
+              <dep id="2" head="7" deprel="advmod" deprel_main="advmod"/>
+            </ud>
+          </node>
+          <node begin="6" buiging="zonder" end="7" frame="verb(hebben,psp,transitive_ndev)" his="normal" his_1="normal" id="7" infl="psp" lcat="ppart" lemma="doen" pos="verb" positie="vrij" postag="WW(vd,vrij,zonder)" pt="ww" rel="hd" root="doe" sc="transitive_ndev" sense="doe" word="gedaan" wvorm="vd">
+            <ud id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" deprel_main="root">
+              <dep id="7" head="0" deprel="root" deprel_main="root"/>
+            </ud>
+          </node>
+          <node begin="3" cat="np" end="11" id="8" index="1" is_np="true" rel="obj1">
+            <node begin="3" buiging="zonder" end="4" frame="determiner(geen,nwh,mod,pro,yparg,nwkpro,geen)" his="normal" his_1="normal" id="9" infl="geen" lcat="detp" lemma="geen" naamval="stan" npagr="agr" pdtype="det" pos="det" positie="prenom" postag="VNW(onbep,det,stan,prenom,zonder,agr)" pt="vnw" rel="det" root="geen" sense="geen" vwtype="onbep" wh="nwh" word="geen">
+              <ud id="4" form="geen" lemma="geen" upos="DET" head="6" deprel="det" deprel_main="det">
+                <dep id="4" head="6" deprel="det" deprel_main="det"/>
+              </ud>
+            </node>
+            <node aform="base" begin="4" buiging="met-e" end="5" frame="adjective(e)" graad="basis" his="normal" his_1="normal" id="10" infl="e" lcat="ap" lemma="serieus" naamval="stan" pos="adj" positie="prenom" postag="ADJ(prenom,basis,met-e,stan)" pt="adj" rel="mod" root="serieus" sense="serieus" vform="adj" word="serieuze">
+              <ud id="5" form="serieuze" lemma="serieus" upos="ADJ" Degree="Pos" head="6" deprel="amod" deprel_main="amod">
+                <dep id="5" head="6" deprel="amod" deprel_main="amod"/>
+              </ud>
+            </node>
+            <node begin="5" end="6" frame="noun(de,count,sg,vp)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="11" lcat="np" lemma="poging" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="poging" sc="vp" sense="poging" word="poging">
+              <ud id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass">
+                <dep id="6" head="7" deprel="nsubj:pass" deprel_main="nsubj" deprel_aux="pass"/>
+              </ud>
+            </node>
+            <node begin="7" cat="ti" end="11" id="12" is_nachfeld="true" rel="vc">
+              <node begin="9" end="10" frame="complementizer(te)" his="normal" his_1="normal" id="13" lcat="ti" lemma="te" pos="comp" postag="VZ(init)" pt="vz" rel="cmp" root="te" sc="te" sense="te" vztype="init" word="te">
+                <ud id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" deprel_main="mark">
+                  <dep id="10" head="11" deprel="mark" deprel_main="mark"/>
+                </ud>
+              </node>
+              <node begin="7" cat="inf" end="11" id="14" rel="body">
+                <node begin="7" cat="np" end="9" id="15" is_np="true" rel="obj1">
+                  <node begin="7" end="8" frame="determiner(de)" his="normal" his_1="normal" id="16" infl="de" lcat="detp" lemma="de" lwtype="bep" naamval="stan" npagr="rest" pos="det" postag="LID(bep,stan,rest)" pt="lid" rel="det" root="de" sense="de" word="de">
+                    <ud id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" deprel_main="det">
+                      <dep id="8" head="9" deprel="det" deprel_main="det"/>
+                    </ud>
+                  </node>
+                  <node begin="8" end="9" frame="noun(de,count,sg)" gen="de" genus="zijd" getal="ev" graad="basis" his="normal" his_1="normal" id="17" lcat="np" lemma="straf_maat" naamval="stan" ntype="soort" num="sg" pos="noun" postag="N(soort,ev,basis,zijd,stan)" pt="n" rel="hd" rnum="sg" root="straf_maat" sense="straf_maat" word="strafmaat">
+                    <ud id="9" form="strafmaat" lemma="straf_maat" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" deprel_main="obj">
+                      <dep id="9" head="11" deprel="obj" deprel_main="obj"/>
+                    </ud>
+                  </node>
+                </node>
+                <node begin="10" buiging="zonder" end="11" frame="verb(hebben,inf,transitive)" his="normal" his_1="normal" id="18" infl="inf" lcat="inf" lemma="verminderen" pos="verb" positie="vrij" postag="WW(inf,vrij,zonder)" pt="ww" rel="hd" root="verminder" sc="transitive" sense="verminder" word="verminderen" wvorm="inf">
+                  <ud id="11" form="verminderen" lemma="verminderen" upos="VERB" VerbForm="Inf" head="6" deprel="acl" deprel_main="acl">
+                    <dep id="11" head="6" deprel="acl:te" deprel_main="acl" deprel_aux="te"/>
+                  </ud>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node begin="3" end="11" id="19" index="1" rel="su"/>
+      </node>
+    </node>
+    <node begin="11" end="12" frame="punct(punt)" his="normal" his_1="normal" id="20" lcat="punct" lemma="." pos="punct" postag="LET()" pt="let" rel="--" root="." sense="." special="punt" word=".">
+      <ud id="12" form="." lemma="." upos="PUNCT" head="7" deprel="punct" deprel_main="punct">
+        <dep id="12" head="7" deprel="punct" deprel_main="punct"/>
+      </ud>
+    </node>
+  </node>
+  <sentence sentid="WR-P-P-G-0000236178.p.9.s.6">Maar er werd geen serieuze poging gedaan de strafmaat te verminderen .</sentence>
+  <comments>
+    <comment>Q#WR-P-P-G-0000236178.p.9.s.6|Maar er werd geen serieuze poging gedaan de strafmaat te verminderen .|1|1|-7.847650356000001</comment>
+  </comments>
+  <root ud="basic" id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <mark ud="basic" id="1" form="Maar" lemma="maar" upos="CCONJ" head="7" deprel="mark" conjtype="neven" pt="vg"/>
+    <advmod ud="basic" id="2" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+    <aux ud="basic" id="3" form="werd" lemma="worden" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="7" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv"/>
+    <nsubj ud="basic" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nsubj:pass" deprel_aux="pass" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="basic" id="4" form="geen" lemma="geen" upos="DET" head="6" deprel="det" buiging="zonder" naamval="stan" npagr="agr" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+      <amod ud="basic" id="5" form="serieuze" lemma="serieus" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="basic" id="11" form="verminderen" lemma="verminderen" upos="VERB" VerbForm="Inf" head="6" deprel="acl" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="basic" id="9" form="strafmaat" lemma="straf_maat" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="basic" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+        </obj>
+        <mark ud="basic" id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </nsubj>
+    <punct ud="basic" id="12" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <root ud="enhanced" id="7" form="gedaan" lemma="doen" upos="VERB" VerbForm="Part" head="0" deprel="root" buiging="zonder" positie="vrij" pt="ww" wvorm="vd">
+    <mark ud="enhanced" id="1" form="Maar" lemma="maar" upos="CCONJ" head="7" deprel="mark" conjtype="neven" pt="vg"/>
+    <advmod ud="enhanced" id="2" form="er" lemma="er" upos="ADV" head="7" deprel="advmod" getal="getal" naamval="stan" pdtype="adv-pron" persoon="3" pt="vnw" status="red" vwtype="aanw"/>
+    <aux ud="enhanced" id="3" form="werd" lemma="worden" upos="AUX" Number="Sing" Tense="Past" VerbForm="Fin" head="7" deprel="aux:pass" deprel_aux="pass" pt="ww" pvagr="ev" pvtijd="verl" wvorm="pv"/>
+    <nsubj ud="enhanced" id="6" form="poging" lemma="poging" upos="NOUN" Gender="Com" Number="Sing" head="7" deprel="nsubj:pass" deprel_aux="pass" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+      <det ud="enhanced" id="4" form="geen" lemma="geen" upos="DET" head="6" deprel="det" buiging="zonder" naamval="stan" npagr="agr" pdtype="det" positie="prenom" pt="vnw" vwtype="onbep"/>
+      <amod ud="enhanced" id="5" form="serieuze" lemma="serieus" upos="ADJ" Degree="Pos" head="6" deprel="amod" buiging="met-e" graad="basis" naamval="stan" positie="prenom" pt="adj"/>
+      <acl ud="enhanced" id="11" form="verminderen" lemma="verminderen" upos="VERB" VerbForm="Inf" head="6" deprel="acl:te" deprel_aux="te" buiging="zonder" positie="vrij" pt="ww" wvorm="inf">
+        <obj ud="enhanced" id="9" form="strafmaat" lemma="straf_maat" upos="NOUN" Gender="Com" Number="Sing" head="11" deprel="obj" genus="zijd" getal="ev" graad="basis" naamval="stan" ntype="soort" pt="n">
+          <det ud="enhanced" id="8" form="de" lemma="de" upos="DET" Definite="Def" head="9" deprel="det" lwtype="bep" naamval="stan" npagr="rest" pt="lid"/>
+        </obj>
+        <mark ud="enhanced" id="10" form="te" lemma="te" upos="ADP" head="11" deprel="mark" pt="vz" vztype="init"/>
+      </acl>
+    </nsubj>
+    <punct ud="enhanced" id="12" form="." lemma="." upos="PUNCT" head="7" deprel="punct" pt="let"/>
+  </root>
+  <conllu status="OK" auto="ALUD2.13.0"><![CDATA[
+1	Maar	maar	CCONJ	VG|neven	_	7	mark	7:mark	_
+2	er	er	ADV	VNW|aanw|adv-pron|stan|red|3|getal	_	7	advmod	7:advmod	_
+3	werd	worden	AUX	WW|pv|verl|ev	Number=Sing|Tense=Past|VerbForm=Fin	7	aux:pass	7:aux:pass	_
+4	geen	geen	DET	VNW|onbep|det|stan|prenom|zonder|agr	_	6	det	6:det	_
+5	serieuze	serieus	ADJ	ADJ|prenom|basis|met-e|stan	Degree=Pos	6	amod	6:amod	_
+6	poging	poging	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	7	nsubj:pass	7:nsubj:pass	_
+7	gedaan	doen	VERB	WW|vd|vrij|zonder	VerbForm=Part	0	root	0:root	_
+8	de	de	DET	LID|bep|stan|rest	Definite=Def	9	det	9:det	_
+9	strafmaat	straf_maat	NOUN	N|soort|ev|basis|zijd|stan	Gender=Com|Number=Sing	11	obj	11:obj	_
+10	te	te	ADP	VZ|init	_	11	mark	11:mark	_
+11	verminderen	verminderen	VERB	WW|inf|vrij|zonder	VerbForm=Inf	6	acl	6:acl:te	_
+12	.	.	PUNCT	LET	_	7	punct	7:punct	_
+]]></conllu>
+</alpino_ds>
