@@ -6,16 +6,17 @@ import copy
 
 debug = False
 
+
 def expandalternatives(stree: SynTree) -> List[SynTree]:
     results = []
-    if stree.tag == 'node':
-        poscat = gav(stree, 'pt') if 'pt' in stree.attrib else gav(stree, 'cat')
-        lemma = gav(stree, 'lemma')
+    if stree.tag == "node":
+        poscat = gav(stree, "pt") if "pt" in stree.attrib else gav(stree, "cat")
+        lemma = gav(stree, "lemma")
     else:
-        poscat, lemma = '', ''
+        poscat, lemma = "", ""
     if debug:
-        print(f'==>{stree.tag}: {poscat} {lemma}')
-    if stree.tag in ['node', 'localt']:
+        print(f"==>{stree.tag}: {poscat} {lemma}")
+    if stree.tag in ["node", "localt"]:
         children = [child for child in stree]
         newsonslist = expandalternativeslist(children)
         for newsons in newsonslist:
@@ -23,35 +24,36 @@ def expandalternatives(stree: SynTree) -> List[SynTree]:
             for newson in newsons:
                 newstree.append(newson)
             results.append(newstree)
-    elif stree.tag == 'subnode':
+    elif stree.tag == "subnode":
         newstree = nodecopy(stree)
         results.append(newstree)
-    elif stree.tag == 'alternatives':
+    elif stree.tag == "alternatives":
         for alternative in stree:
             if debug:
-                print('==>alternative')
+                print("==>alternative")
             alternativesons = [son for son in alternative]
             if alternativesons != []:
                 alternativeresults = expandalternatives(alternativesons[0])
                 results.extend(alternativeresults)
             if debug:
-                print('<==alternative')
+                print("<==alternative")
 
     else:
         # should not happen
-        print(f'Alternatives:unknown node type encountered: {stree.tag}')
+        print(f"Alternatives:unknown node type encountered: {stree.tag}")
         results = [expandalternatives(child) for child in stree]
     if debug:
-        print('results:')
+        print("results:")
         for result in results:
             etree.dump(result)
-        print(f'<=={stree.tag}: {poscat} {lemma}')
+        print(f"<=={stree.tag}: {poscat} {lemma}")
     return results
+
 
 def expandalternativeslist(syntrees: List[SynTree]) -> List[List[SynTree]]:
     tags = f'[{" ".join([f"{st.tag}" for st in syntrees])}]'
     if debug:
-        print(f'==>list:{tags}')
+        print(f"==>list:{tags}")
     results = []
     if syntrees == []:
         results = [[]]
@@ -67,13 +69,13 @@ def expandalternativeslist(syntrees: List[SynTree]) -> List[List[SynTree]]:
                 newresult = [headresultcopy] + tailresultcopy
                 results.append(newresult)
     if debug:
-        print('results:')
+        print("results:")
         for resultlist in results:
-            print('[')
+            print("[")
             for result in resultlist:
-              etree.dump(result)
-            print(']')
-        print(f'<==list:{tags}')
+                etree.dump(result)
+            print("]")
+        print(f"<==list:{tags}")
     return results
 
 
@@ -178,7 +180,8 @@ strees.append(etree.fromstring(streestr1))
 strees.append(etree.fromstring(streestr2))
 strees.append(etree.fromstring(streestr3))
 strees = [etree.fromstring(streestr3)]
-#strees = [etree.fromstring(streestr2)]
+# strees = [etree.fromstring(streestr2)]
+
 
 def test():
     for stree in strees:
@@ -188,5 +191,5 @@ def test():
             etree.dump(newstree)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test()

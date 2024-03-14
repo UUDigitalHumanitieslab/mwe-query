@@ -87,7 +87,7 @@ def update_full_mwe_stats(treebank_name: str, mwe: str):
 
     mwestructures = generatemwestructures(mwe)
     for i, mweparse in enumerate(mwestructures):
-        mwequery, nearmissquery, supersetquery = generatequeries(mwe)
+        mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(mwe)
         queryresults = applyqueries(
             treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False
         )

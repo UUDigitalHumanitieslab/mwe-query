@@ -1,13 +1,13 @@
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 from string import Template
 import os
-from canonicalform import generatemwestructures, generatequeries, applyqueries, getmajorlemmas
+from .canonicalform import generatemwestructures, generatequeries, applyqueries, getmajorlemmas
 from sastadev.treebankfunctions import getattval as gav
 from sastadev.sastatypes import SynTree
-from gramconfig import getgramconfigstats, gramconfigheader
-from mwestats import getstats
+from .gramconfig import getgramconfigstats, gramconfigheader
+from .mwestats import getstats
 #    getcompsxpaths, showframe, showrelcat, gettreebank
-from mwetyping import AllQueriesResult, FileName, QueryResult
+from .mwetyping import AllQueriesResult, FileName, QueryResult
 
 comma = ','
 space = ' '
@@ -193,7 +193,7 @@ def getmlqresults(queryresultsdict: Dict[str, List[AllQueriesResult]]) -> Dict[s
     return mlqdict
 
 
-def selectqueryresults(queryresultsdict: Dict[str, List[AllQueriesResult]], query: int, exclude: int = None) \
+def selectqueryresults(queryresultsdict: Dict[str, List[AllQueriesResult]], query: int, exclude: Optional[int] = None) \
         -> Dict[str, QueryResult]:
     """
     selects queryresults

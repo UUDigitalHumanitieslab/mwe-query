@@ -2,7 +2,7 @@
   <node rel="su" id="2" index="1"/>
   <node rel="obj1" cat="np" id="6" nodecount="2">
     <node lemma="de" rel="det" pt="lid" lwtype="bep" id="7"/>
-    <node word="dans" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" naamval="stan" id="8"/>
+    <node lemma="dans" word="dans" rel="hd" pt="n" ntype="soort" genus="zijd" getal="ev" graad="basis" naamval="stan" id="8"/>
   </node>
   <node lemma="ontspringen" rel="hd" pt="ww" id="9"/>
 </node>

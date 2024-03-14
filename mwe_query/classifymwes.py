@@ -1,24 +1,25 @@
 from lxml import etree
-from collections import Counter, defaultdict
+from collections import defaultdict
 from sastadev.treebankfunctions import getsentence, find1, getattval as gav
-import sys
 from typing import List
 from sastadev.sastatypes import SynTree
 from sastadev.xlsx import mkworkbook
 
-hyphen = '-'
-headrels = ['hd', 'whd', 'rhd', 'crd', 'nucl']
+hyphen = "-"
+headrels = ["hd", "whd", "rhd", "crd", "nucl"]
+
 
 def getposcat(tree):
-    result = gav(tree, 'pt')
-    if result == '':
-        result = gav(tree, 'pos')
-    if result == '':
-        result = gav(tree, 'cat')
+    result = gav(tree, "pt")
+    if result == "":
+        result = gav(tree, "pos")
+    if result == "":
+        result = gav(tree, "cat")
     return result
 
+
 def getheadchilds(tree) -> List[SynTree]:
-    result = [child for child in tree if gav(child, 'rel') in headrels]
+    result = [child for child in tree if gav(child, "rel") in headrels]
     return result
 
 
@@ -29,25 +30,25 @@ def getalpinohead(tree):
     else:
         headchilds = getheadchilds(tree)
     if len(headchilds) > 1:
-        resultlist = [getposcat(headchild) for headchild in headchilds ]
+        resultlist = [getposcat(headchild) for headchild in headchilds]
         result = hyphen.join(resultlist)
     elif len(headchilds) == 0:
         resultlist = [f'{gav(child, "rel")}/{getposcat(child)}' for child in tree]
-        result = 'headless: ' + hyphen.join(resultlist)
+        result = "headless: " + hyphen.join(resultlist)
     else:
         thehead = headchilds[0]
         result = getposcat(thehead)
-        if 'cat' in thehead.attrib and gav(thehead, 'cat') != 'mwu':
+        if "cat" in thehead.attrib and gav(thehead, "cat") != "mwu":
             result = getalpinohead(thehead)
     return result
 
 
 def getudhead(tree):
-    result = ''
+    result = ""
     return result
 
 
-intreebankfilename = 'ducame v300_treebank.xml'
+intreebankfilename = "ducame v300_treebank.xml"
 
 fulltreebank = etree.parse(intreebankfilename)
 treebank = fulltreebank.getroot()
@@ -70,7 +71,7 @@ for tree in treebank:
         diffdict[(alpinohead, udhead)].append(mwe)
 
 selectioncount = 10
-header = ['alpino class', 'count'] + [f'example{str(i)}' for i in range(selectioncount)]
+header = ["alpino class", "count"] + [f"example{str(i)}" for i in range(selectioncount)]
 data = []
 for el, lst in alpinoclasses.items():
     cnt = len(lst)
@@ -78,6 +79,6 @@ for el, lst in alpinoclasses.items():
     row = [el, cnt] + selection
     data.append(row)
 
-outfilename = 'alpinomweclasses.xlsx'
+outfilename = "alpinomweclasses.xlsx"
 wb = mkworkbook(outfilename, [header], data)
 wb.close()

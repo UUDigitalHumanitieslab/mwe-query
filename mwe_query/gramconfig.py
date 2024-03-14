@@ -1,18 +1,18 @@
 from typing import cast, Dict, List, Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, find1
-from canonicalform import listofsets2setoflists
-from mwestats import getmarkedutt
+from .canonicalform import listofsets2setoflists
+from .mwestats import getmarkedutt
 
 Relation = str
 Direction = int
 
 up, down = 0, 1
-#dirchars = r'\/'
-dirchars = '\u2191\u2193'
+# dirchars = r'\/'
+dirchars = "\u2191\u2193"
 
 
-gramconfigheader = ['ctuple', 'gramconfig', 'treeid', 'utt']
+gramconfigheader = ["ctuple", "gramconfig", "treeid", "utt"]
 
 
 class Gramchain:
@@ -23,7 +23,7 @@ class Gramchain:
     def __str__(self):
         dirchar = dirchars[self.direction]
         resultlist = [dirchar + rel for rel in self.rellist]
-        result = ''.join(resultlist)
+        result = "".join(resultlist)
         return result
 
 
@@ -33,25 +33,25 @@ class Gramconfig:
 
     def __str__(self):
         gramchainstrs = [str(gramchain) for gramchain in self.gramchains]
-        result = ''.join(gramchainstrs)
+        result = "".join(gramchainstrs)
         return result
 
 
 def getgramconfig(nodelist: List[SynTree]) -> Gramconfig:
-    sortednodelist = sorted(nodelist, key=lambda n: gav(n, 'lemma'))
+    sortednodelist = sorted(nodelist, key=lambda n: gav(n, "lemma"))
     lsortednodelist = len(sortednodelist)
     gramchains = []
     for i in range(lsortednodelist):
         if i < lsortednodelist - 1:
             node1 = sortednodelist[i]
-            node2 = sortednodelist[i+1]
+            node2 = sortednodelist[i + 1]
             rellist = []
             parent = cast(Optional[SynTree], node1)
             lca = node1  # lowest common ancestor
             while not contains(parent, node2):
                 if parent is None:
                     break
-                rel = gav(parent, 'rel')
+                rel = gav(parent, "rel")
                 rellist.append(rel)
                 parent = parent.getparent()
                 if parent is None:
@@ -67,7 +67,7 @@ def getgramconfig(nodelist: List[SynTree]) -> Gramconfig:
             while parent != lca:
                 if parent is None:
                     break
-                rel = gav(parent, 'rel')
+                rel = gav(parent, "rel")
                 rellist.append(rel)
                 parent = parent.getparent()
 
@@ -83,14 +83,16 @@ def contains(node1: Optional[SynTree], node2: Optional[SynTree]) -> bool:
     if node1 is None or node2 is None:
         return False
 
-    for node in node1.iter('node'):
+    for node in node1.iter("node"):
         if node == node2:
             return True
 
     return False
 
 
-def oldgetgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, SynTree]) -> List[List[str]]:
+def oldgetgramconfigstats(
+    componentslist: List[List[str]], treebank: Dict[str, SynTree]
+) -> List[List[str]]:
     gramconfigstatsdata: List[List[str]] = []
     for treeid in treebank:
         tree = treebank[treeid]
@@ -98,7 +100,9 @@ def oldgetgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, S
             componentstuple = tuple(components)
             componentsnodes: List[List[SynTree]] = []
             for component in components:
-                componentnodes = cast(List[SynTree], tree.xpath(f'//node[@lemma="{component}"]'))
+                componentnodes = cast(
+                    List[SynTree], tree.xpath(f'//node[@lemma="{component}"]')
+                )
                 componentsnodes.append(componentnodes)
 
             cnodelists = listofsets2setoflists(componentsnodes)
@@ -106,8 +110,8 @@ def oldgetgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, S
             for cnodelist in cnodelists:
                 result = getgramconfig(cnodelist)
                 resultstr = str(result)
-                ctuplestr = '+'.join(componentstuple)
-                poslist = [int(gav(cnode, 'begin')) for cnode in cnodelist]
+                ctuplestr = "+".join(componentstuple)
+                poslist = [int(gav(cnode, "begin")) for cnode in cnodelist]
                 utt = getmarkedutt(tree, poslist)
                 newentry = [ctuplestr, resultstr, treeid, utt]
                 gramconfigstatsdata.append(newentry)
@@ -115,18 +119,22 @@ def oldgetgramconfigstats(componentslist: List[List[str]], treebank: Dict[str, S
     return gramconfigstatsdata
 
 
-def getgramconfigstats(componentslist: List[List[str]], hitsdict: Dict[str, List[SynTree]]) -> List[List[str]]:
+def getgramconfigstats(
+    componentslist: List[List[str]], hitsdict: Dict[str, List[SynTree]]
+) -> List[List[str]]:
     gramconfigstatsdata: List[List[str]] = []
     for treeid in hitsdict:
         hits = hitsdict[treeid]
         for hit in hits:
-            tree = find1(hit, 'ancestor::alpino_ds')
+            tree = find1(hit, "ancestor::alpino_ds")
             for components in componentslist:
                 sortedcomponents = sorted(components)
                 componentstuple = tuple(sortedcomponents)
                 componentsnodes: List[List[SynTree]] = []
                 for component in sortedcomponents:
-                    componentnodes = cast(List[SynTree], hit.xpath(f'//node[@lemma="{component}"]'))
+                    componentnodes = cast(
+                        List[SynTree], hit.xpath(f'//node[@lemma="{component}"]')
+                    )
                     componentsnodes.append(componentnodes)
 
                 cnodelists = listofsets2setoflists(componentsnodes)
@@ -134,8 +142,8 @@ def getgramconfigstats(componentslist: List[List[str]], hitsdict: Dict[str, List
                 for cnodelist in cnodelists:
                     result = getgramconfig(cnodelist)
                     resultstr = str(result)
-                    ctuplestr = '+'.join(componentstuple)
-                    poslist = [int(gav(cnode, 'begin')) for cnode in cnodelist]
+                    ctuplestr = "+".join(componentstuple)
+                    poslist = [int(gav(cnode, "begin")) for cnode in cnodelist]
                     utt = getmarkedutt(tree, poslist)
                     newentry = [ctuplestr, resultstr, treeid, utt]
                     gramconfigstatsdata.append(newentry)

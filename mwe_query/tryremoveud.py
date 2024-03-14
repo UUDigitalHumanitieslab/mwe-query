@@ -1,4 +1,4 @@
-from mwestats import removeud
+from .mwestats import removeud
 from lxml import etree
 
 

@@ -1,20 +1,21 @@
-from mwe_annotate import annotate, getmwemetacounts
-from mwemeta import mwemetaheader
-from lxml import etree
+from .mwe_annotate import annotate, getmwemetacounts
+from .mwemeta import mwemetaheader
 from sastadev.alpinoparsing import parse
-from sastadev.treebankfunctions import getmeta
 from sastadev.xlsx import add_worksheet, mkworkbook
-import os
 from sastadev.readcsv import readcsv
-from canonicalform import removeannotations
-from indexes import mwetreebank, mwelexiconfullname
+from .canonicalform import removeannotations
+from .indexes import mwetreebank, mwelexiconfullname
 from typing import List, Tuple
 from collections import defaultdict
-tab = '\t'
 
-def getmisses(ilexicon:List[Tuple[int, Tuple[str, str]]], fullrowlist:List[List[str]]) -> List[List[str]]:
+tab = "\t"
+
+
+def getmisses(
+    ilexicon: List[Tuple[int, Tuple[str, str]]], fullrowlist: List[List[str]]
+) -> List[List[str]]:
     results = []
-    index =defaultdict(list)
+    index = defaultdict(list)
     for row in fullrowlist:
         key = row[1]
         index[key].append(row)
@@ -68,29 +69,41 @@ def selftest():
         else:
             tree = parse(sentence)
         if tree is not None:
-            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(tree, treeid)
+            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(
+                tree, treeid
+            )
             fullmwemetalist += mwemetalist
             fulldiscardedmwemetalist += discardedmwemetalist
             fullduplicatemwemetalist += duplicatemwemetalist
         else:
-            print(f'No parse for {rawsentence}')
+            print(f"No parse for {rawsentence}")
 
     (statsheader, statsrows) = getmwemetacounts(fullmwemetalist, sentcount=counter)
-    fullrowlist = [mwemeta.torow() for mwemeta in fullmwemetalist if mwemeta is not None]
-    enrichedmwemetaheader = mwemetaheader + ['different']
-    enrichedfullrowlist = [fullrow + [f'{str(fullrow[1] != fullrow[5])}'] for fullrow in fullrowlist]
-    wb = mkworkbook('MWEmetadata.xlsx', [enrichedmwemetaheader], enrichedfullrowlist, freeze_panes=(1, 0))
-    add_worksheet(wb, [statsheader], statsrows, sheetname='Stats')
+    fullrowlist = [
+        mwemeta.torow() for mwemeta in fullmwemetalist if mwemeta is not None
+    ]
+    enrichedmwemetaheader = mwemetaheader + ["different"]
+    enrichedfullrowlist = [
+        fullrow + [f"{str(fullrow[1] != fullrow[5])}"] for fullrow in fullrowlist
+    ]
+    wb = mkworkbook(
+        "MWEmetadata.xlsx",
+        [enrichedmwemetaheader],
+        enrichedfullrowlist,
+        freeze_panes=(1, 0),
+    )
+    add_worksheet(wb, [statsheader], statsrows, sheetname="Stats")
     fullduplicaterows = [mwemeta.torow() for mwemeta in fullduplicatemwemetalist]
-    add_worksheet(wb, [mwemetaheader], fullduplicaterows, sheetname='Duplicates')
+    add_worksheet(wb, [mwemetaheader], fullduplicaterows, sheetname="Duplicates")
 
     wb.close()
 
     missedones = getmisses(ilexicon, fullrowlist)
-    missedfilename = 'missedones.txt'
-    with open(missedfilename, 'w', encoding='utf8') as missedfile:
+    missedfilename = "missedones.txt"
+    with open(missedfilename, "w", encoding="utf8") as missedfile:
         for missedone in missedones:
             print(tab.join(missedone), file=missedfile)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     selftest()

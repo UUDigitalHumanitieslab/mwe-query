@@ -46,36 +46,37 @@ A report is created in the file *reportfilename* (default: 'regressionreport.txt
 * number of differences
 * Comparison with gold data
 """
+
 from collections import defaultdict
 import json
 import os
 
 from sastadev.alpinoparsing import parse
-from lcat import expandnonheadwords
 from sastadev.xlsx import getxlsxdata
-from sastadev.treebankfunctions import indextransform, getsentence
+from sastadev.treebankfunctions import getsentence
 
 from lxml import etree
-from canonicalform import generatequeries, expandfull, preprocess_MWE
+from .canonicalform import generatequeries, expandfull, preprocess_MWE
 from sastadev.sastatypes import SynTree
 from typing import Dict, List, Tuple
 import sys
 import shutil
 import re
 
-space = ' '
+space = " "
 different, equal, improvement = 0, 1, 2
 
-defaultreportfilename = 'regressionreport.txt'
-defaulttreebankfilename = 'regressiontreebank.xml'
-defaultreffilename = 'mweregressionset.json'
-defaulttestfilename = 'regressionexamples.xlsx'
-defaulttodofilename = 'todo.txt'
-regressiondatapath = './regressiondata/data'
-regressionauxdatapath = './regressiondata/auxdata'
-defaultreportpath = './regressiondata/report'
+defaultreportfilename = "regressionreport.txt"
+defaulttreebankfilename = "regressiontreebank.xml"
+defaultreffilename = "mweregressionset.json"
+defaulttestfilename = "regressionexamples.xlsx"
+defaulttodofilename = "todo.txt"
+regressiondatapath = "./regressiondata/data"
+regressionauxdatapath = "./regressiondata/auxdata"
+defaultreportpath = "./regressiondata/report"
 
-prevsuffix = '_previous'
+prevsuffix = "_previous"
+
 
 def check(resultlist, reflist):
     outcome = equal
@@ -88,23 +89,29 @@ def check(resultlist, reflist):
             outcome = different
     return outcome
 
+
 def getlabel(item, label):
-    result = f'\n{label}: ' if item != '' else ''
+    result = f"\n{label}: " if item != "" else ""
     return result
 
 
 def mkreport(label, mwe, utterance, resultlist, reflist):
-    return((label, mwe, utterance, resultlist, reflist))
+    return (label, mwe, utterance, resultlist, reflist)
+
 
 def showreport(report: List[Tuple[str]], filename: str):
-    with open(filename, 'w', encoding='utf8') as outfile:
+    with open(filename, "w", encoding="utf8") as outfile:
         for label, mwe, utterance, resultlist, reflist in report:
-            mwelabel = getlabel(mwe, 'mwe')
-            uttlabel = getlabel(utterance, 'utt')
-            resultlabel = getlabel(resultlist, 'result')
-            reflabel = getlabel(reflist, 'ref')
+            mwelabel = getlabel(mwe, "mwe")
+            uttlabel = getlabel(utterance, "utt")
+            resultlabel = getlabel(resultlist, "result")
+            reflabel = getlabel(reflist, "ref")
 
-            print(f'{label}: {mwelabel}{mwe}{uttlabel}{utterance}{resultlabel}{resultlist}{reflabel}{reflist}', file=outfile)
+            print(
+                f"{label}: {mwelabel}{mwe}{uttlabel}{utterance}{resultlabel}{resultlist}{reflabel}{reflist}",
+                file=outfile,
+            )
+
 
 def gettrees(treebankfilename: str) -> Dict[str, SynTree]:
     if not os.path.exists(treebankfilename):
@@ -118,56 +125,63 @@ def gettrees(treebankfilename: str) -> Dict[str, SynTree]:
         resultdict[cleansentence] = tree
     return resultdict
 
+
 def clean(sentence: str) -> str:
     result = space.join(sentence.split())
     return result
 
+
 def store(treebankdict, treebankfilename):
-    treebank = etree.Element('treebank')
+    treebank = etree.Element("treebank")
     for el in treebankdict:
         treebank.append(treebankdict[el])
     fulltreebank = etree.ElementTree(treebank)
-    fulltreebank.write(treebankfilename, encoding="UTF8", xml_declaration=False,
-                       pretty_print=True)
+    fulltreebank.write(
+        treebankfilename, encoding="UTF8", xml_declaration=False, pretty_print=True
+    )
+
 
 def savecopy(infilename, prevsuffix=prevsuffix):
     base, ext = os.path.splitext(infilename)
     previousinfilename = base + prevsuffix + ext
     shutil.copyfile(infilename, previousinfilename)
 
+
 def getcleanmwe(mwe):
     annotatedlist = preprocess_MWE(mwe)
     cleanmwe = space.join([el[0] for el in annotatedlist])
     return cleanmwe
 
+
 def getgoldvalue(gv: str) -> Tuple[int, int, int, int]:
-    '''
+    """
 
     Args:
         gv: input string must match te re "^x[01][01][01]$"
 
     Returns: goldvalue as a tuple of 3 integers
-    '''
-    if re.match(r'^x[01][01][01][01]$', gv):
+    """
+    if re.match(r"^x[01][01][01][01]$", gv):
         result = (int(gv[1]), int(gv[2]), int(gv[3]), int(gv[4]))
     else:
-        print(f'Illegal gold value: {gv}.\n Default value assumed')
+        print(f"Illegal gold value: {gv}.\n Default value assumed")
         result = (1, 1, 1, 1)
     return result
 
+
 def updatetododict(tododict, mwe, utt, resulttuple, goldtuple):
     if resulttuple[0] != goldtuple[0]:
-        tododict['meq'][mwe].append(utt)
+        tododict["meq"][mwe].append(utt)
     if resulttuple[1] != goldtuple[1]:
-        tododict['nmq'][mwe].append(utt)
+        tododict["nmq"][mwe].append(utt)
     if resulttuple[2] != goldtuple[2]:
-        tododict['mlq'][mwe].append(utt)
+        tododict["mlq"][mwe].append(utt)
     if resulttuple[3] != goldtuple[3]:
-        tododict['rwq'][mwe].append(utt)
+        tododict["rwq"][mwe].append(utt)
     return tododict
 
 
-def regressiontest():
+def regressiontest():  # noqa: C901
 
     auxdatapath = regressionauxdatapath
     datapath = regressiondatapath
@@ -184,7 +198,7 @@ def regressiontest():
     tododict = defaultdict(lambda: defaultdict(list))
 
     if os.path.exists(reffilename):
-        with open(reffilename, 'r', encoding='utf8') as infile:
+        with open(reffilename, "r", encoding="utf8") as infile:
             refdata = json.load(infile)
 
         # copy this file to a previousversion
@@ -215,29 +229,29 @@ def regressiontest():
     if os.path.exists(testfilename):
         header, mwedata = getxlsxdata(testfilename)
     else:
-        print(f'input file {testfilename} not found. Aborting', file=sys.stderr)
+        print(f"input file {testfilename} not found. Aborting", file=sys.stderr)
         exit(-1)
 
-    curmwe = ''
+    curmwe = ""
     golddata = {}
     for row in mwedata:
-        if row[0] != '':
+        if row[0] != "":
             curmwe = row[0]
         utt = row[1]
         # add an initial reference for new data
         if curmwe not in refdata:
             refdata[curmwe] = {}
             refdata[curmwe][utt] = (0, 0, 0, 0)
-            message = mkreport('New MWE', curmwe, '', '', '')
+            message = mkreport("New MWE", curmwe, "", "", "")
             report.append(message)
         else:
             if utt not in refdata[curmwe]:
                 refdata[curmwe][utt] = (0, 0, 0, 0)
-                message = mkreport('New utterance', '', utt, '', '')
+                message = mkreport("New utterance", "", utt, "", "")
                 report.append(message)
 
         # add them to the golddata
-        if row[2].lower() != '':
+        if row[2].lower() != "":
             goldvalue = getgoldvalue(row[2].lower())
         else:
             goldvalue = (1, 1, 1, 1)
@@ -258,8 +272,8 @@ def regressiontest():
         mwecount += 1
         debug = False
         if debug:
-            print(f'Processing mwe {mwe}...')
-        print(f'Processing mwe {mwe}...', file=sys.stderr)
+            print(f"Processing mwe {mwe}...")
+        print(f"Processing mwe {mwe}...", file=sys.stderr)
         cleanmwe = getcleanmwe(mwe)
         if cleanmwe in treebankdict:
             mwetree = treebankdict[cleanmwe]
@@ -267,8 +281,12 @@ def regressiontest():
             mwetree = parse(cleanmwe)
             treebankdict[cleanmwe] = mwetree
         mwequeries = generatequeries(mwe, mwetree=mwetree)
-        labeledmwequeries = (('MWEQ', mwequeries[0]), ('NMQ', mwequeries[1]),
-                             ('MLQ', mwequeries[2]), ('RWQ', mwequeries[3]))
+        labeledmwequeries = (
+            ("MWEQ", mwequeries[0]),
+            ("NMQ", mwequeries[1]),
+            ("MLQ", mwequeries[2]),
+            ("RWQ", mwequeries[3]),
+        )
         for utterance in refdata[mwe]:
             (mwqrefc, nmqrefc, mlqrefc, rwqrefc) = refdata[mwe][utterance]
             if (mwe, utterance) not in golddata:
@@ -279,7 +297,7 @@ def regressiontest():
             uttcount += 1
             debug = False
             if debug:
-                print(f'{uttcount}: {utterance}')
+                print(f"{uttcount}: {utterance}")
             cleanutterance = clean(utterance)
             if cleanutterance in treebankdict:
                 uttparse = treebankdict[cleanutterance]
@@ -297,63 +315,69 @@ def regressiontest():
             reflist = [mwqrefc, nmqrefc, mlqrefc, rwqrefc]
 
             status = check(resultlist, reflist)
-            tododict = updatetododict(tododict, mwe, utterance, tuple(resultlist), goldtuple)
+            tododict = updatetododict(
+                tododict, mwe, utterance, tuple(resultlist), goldtuple
+            )
             if status == improvement:
-                reportlabel = 'UP'
+                reportlabel = "UP"
                 improvementcount += 1
             if status == different:
-                reportlabel = 'DN'
+                reportlabel = "DN"
                 differencecount += 1
-            if status == improvement or status == different :
+            if status == improvement or status == different:
                 message = mkreport(reportlabel, mwe, utterance, resultlist, reflist)
                 report.append(message)
                 if status == different:
                     errorfound = True
 
-             # compare with the golddata
+            # compare with the golddata
 
             if resultlist[0] == golddata[(mwe, utterance)][0]:
-                 mwqcount += 1
+                mwqcount += 1
             if resultlist[1] == golddata[(mwe, utterance)][1]:
-                 nmqcount += 1
+                nmqcount += 1
             if resultlist[2] == golddata[(mwe, utterance)][2]:
-                 mlqcount += 1
+                mlqcount += 1
             if resultlist[3] == golddata[(mwe, utterance)][3]:
-                 rwqcount += 1
+                rwqcount += 1
 
-    message1 = mkreport(f'{mwecount} MWEs dealt with', '', '', '', '')
-    message2 = mkreport(f'{uttcount} utterances dealt with', '', '', '', '')
-    message3 = mkreport(f'{improvementcount} improvements', '', '', '', '')
-    message4 = mkreport(f'{differencecount} differences found', '', '', '', '')
+    message1 = mkreport(f"{mwecount} MWEs dealt with", "", "", "", "")
+    message2 = mkreport(f"{uttcount} utterances dealt with", "", "", "", "")
+    message3 = mkreport(f"{improvementcount} improvements", "", "", "", "")
+    message4 = mkreport(f"{differencecount} differences found", "", "", "", "")
     mwqscore = mwqcount / uttcount * 100
     nmqscore = nmqcount / uttcount * 100
     mlqscore = mlqcount / uttcount * 100
     rwqscore = rwqcount / uttcount * 100
-    message5 = mkreport(f'Comparison with Golddata: meq: {mwqscore};\tnmq: {nmqscore};\tmlq: {mlqscore};\trwq: {rwqscore}', '', '', '', '')
+    message5 = mkreport(
+        f"Comparison with Golddata: meq: {mwqscore};\tnmq: {nmqscore};\tmlq: {mlqscore};\trwq: {rwqscore}",
+        "",
+        "",
+        "",
+        "",
+    )
     report += [message1, message2, message3, message4, message5]
     showreport(report, reportfilename)
 
-    with open(todofilename, 'w', encoding='utf8') as todofile:
-        for mwetype in ['rwq', 'mlq', 'nmq', 'meq']:
-            print(f'To do for {mwetype}', file=todofile)
+    with open(todofilename, "w", encoding="utf8") as todofile:
+        for mwetype in ["rwq", "mlq", "nmq", "meq"]:
+            print(f"To do for {mwetype}", file=todofile)
             for mwe in tododict[mwetype]:
-                print(f'\tMWE: {mwe}', file=todofile)
+                print(f"\tMWE: {mwe}", file=todofile)
                 for utt in tododict[mwetype][mwe]:
-                    print(f'\t\t{utt}', file=todofile)
-
-
+                    print(f"\t\t{utt}", file=todofile)
 
     # store the treebankdict in the treebankfile
     store(treebankdict, treebankfilename)
 
     # store the new reference data in the reference file if no errors have been found
     if not errorfound:
-        with open(reffilename, 'w', encoding='utf8') as reffile:
+        with open(reffilename, "w", encoding="utf8") as reffile:
             json.dump(newdata, reffile, indent=4)
-
 
     if errorfound:
         raise AssertionError
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     regressiontest()

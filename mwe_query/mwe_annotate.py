@@ -1,27 +1,35 @@
 from collections import Counter
-from getalpinomwes import getalpinomwes
-from indexes import indexes, getatt, mwelexiconfilename as mwelexicon
+from .getalpinomwes import getalpinomwes
+from .indexes import indexes, getatt, mwelexiconfilename as mwelexicon
 from itertools import combinations
 from lxml import etree
-from mwemeta import isidentical, MWEMeta, meq, nmq, mlq
-from mwetypes import getmweclasses, getmwetype
-from canonicalform import expandaltvals, expandfull, generatemwestructures, generatequeries, getmajorlemmas, \
-    mknearmissstructs, preprocess_MWE
-from mwestats import getheadcomponent, getmwecomponents
-from mwus import get_mwuprops
-from pronadvs import allpronadvlemmas, pronadv2vz
+from .mwemeta import isidentical, MWEMeta, meq, nmq, mlq
+from .mwetypes import getmweclasses, getmwetype
+from .canonicalform import (
+    expandaltvals,
+    expandfull,
+    generatemwestructures,
+    generatequeries,
+    getmajorlemmas,
+    mknearmissstructs,
+    preprocess_MWE,
+)
+from .mwestats import getheadcomponent, getmwecomponents
+from .mwus import get_mwuprops
+from .pronadvs import allpronadvlemmas, pronadv2vz
 from sastadev.sastatypes import SynTree
-from sastadev.treebankfunctions import getattval, getyieldstr, getsentence, find1, showtree
-from typing import Any, List, Optional, Tuple
+from sastadev.treebankfunctions import getattval, getsentence, find1, showtree
+from typing import cast, Any, List, Optional, Tuple
 import itertools
-from alternatives import expandalternatives
+from .alternatives import expandalternatives
 import sys
 
 Mwetype = str
 XpathExpression = str
-altsym = '|'
+altsym = "|"
 
-mwecomponentsxpath = './/node[@lemma]'
+mwecomponentsxpath = ".//node[@lemma]"
+
 
 def getmweheadnode(syntree: SynTree) -> Optional[Tuple[SynTree, str]]:
     topnode = find1(syntree, './/node[@cat="top"]')
@@ -29,33 +37,33 @@ def getmweheadnode(syntree: SynTree) -> Optional[Tuple[SynTree, str]]:
         if len(topnode) == 1:
             topchild = topnode[0]
             candhead = find1(topchild, './node[@rel="hd"]')
-            if getattval(topchild, 'cat') == 'mwu':
+            if getattval(topchild, "cat") == "mwu":
                 headnode, headpos, headposition = get_mwuprops(topchild)
                 result = headnode, headpos
-            elif getattval(candhead, 'lemma') == 'zullen':
+            elif getattval(candhead, "lemma") == "zullen":
                 vc = find1(topchild, './node[@rel="vc"]')
                 if vc is not None:
                     headnode = find1(vc, './node[@rel="hd"]')
-                    result = headnode, getattval(headnode, 'pt')
+                    result = headnode, getattval(headnode, "pt")
                 else:
                     result = None
-            elif getattval(candhead, 'cat') == 'mwu':
+            elif getattval(candhead, "cat") == "mwu":
                 headnode, headpos, headposition = get_mwuprops(candhead)
                 result = headnode, headpos
 
             else:
-                result = candhead, getattval(candhead, 'pt')
+                result = candhead, getattval(candhead, "pt")
         else:
             result = None
     return result
 
 
 def getmweheadposition(syntree: SynTree) -> int:
-    hdtuple  = getmweheadnode(syntree)
+    hdtuple = getmweheadnode(syntree)
     if hdtuple is not None:
         hdnode, hdpos = hdtuple
-        hdnodeend = getattval(hdnode, 'end')
-        if hdnodeend != '':
+        hdnodeend = getattval(hdnode, "end")
+        if hdnodeend != "":
             result = int(hdnodeend)
         else:
             result = -1
@@ -63,29 +71,33 @@ def getmweheadposition(syntree: SynTree) -> int:
         result = -1
     return result
 
+
 def getmweheadlemma(stree: SynTree) -> str:
     hdtuple = getmweheadnode(stree)
     if hdtuple is not None:
         hdnode, hdpt = hdtuple
-        result = getattval(hdnode, 'lemma')
+        result = getattval(hdnode, "lemma")
     else:
-        result = ''
+        result = ""
     return result
 
 
-def getmweheadpt(syntree:SynTree) -> str:
+def getmweheadpt(syntree: SynTree) -> str:
     hdtuple = getmweheadnode(syntree)
     if hdtuple is not None:
         hdnode, hdpt = hdtuple
         result = hdpt
     else:
-        result = ''
+        result = ""
     return result
 
-def getheadnode(syntree:SynTree) -> Optional[SynTree]:
+
+def getheadnode(syntree: SynTree) -> Optional[SynTree]:
     # etree.dump(syntree)
     # xpexpr = './/node[@cat="top"]/node/node[@rel="hd" and @pt]'
-    xpexpr = './node[(@rel="hd" or @rel="cmp") and @pt]'   # this applies to MWE structures
+    xpexpr = (
+        './node[(@rel="hd" or @rel="cmp") and @pt]'  # this applies to MWE structures
+    )
     hdnodes = syntree.xpath(xpexpr)
     if len(hdnodes) >= 1:
         result = hdnodes[0]
@@ -94,17 +106,19 @@ def getheadnode(syntree:SynTree) -> Optional[SynTree]:
     return result
 
 
-
-def getlemmas(syntree:SynTree) -> List[str]:
+def getlemmas(syntree: SynTree) -> List[str]:
     # lemmanodes = syntree.xpath('.//node[@lemma and not(@rel="svp")]')  # we must exclude svps from the lemmas
-    lemmanodes = syntree.xpath('.//node[@lemma]')  # no we must keep svps from the lemmas
+    lemmanodes = syntree.xpath(
+        ".//node[@lemma]"
+    )  # no we must keep svps from the lemmas
     lemmas = []
     for lemmanode in lemmanodes:
-        lemma = getattval(lemmanode, 'lemma')
+        lemma = getattval(lemmanode, "lemma")
         lemmas.append(lemma)
     return lemmas
 
-def adaptlemma(lemma:str) -> List[str]:
+
+def adaptlemma(lemma: str) -> List[str]:
     if lemma in allpronadvlemmas:
         vzaz = pronadv2vz(lemma)
         if vzaz is None:
@@ -120,7 +134,7 @@ def adaptlemma(lemma:str) -> List[str]:
     return result
 
 
-def adaptlemmas(rawlemmas:List[str]) -> List[str]:
+def adaptlemmas(rawlemmas: List[str]) -> List[str]:
     results = []
     for rawlemma in rawlemmas:
         newlemmas = adaptlemma(rawlemma)
@@ -129,6 +143,7 @@ def adaptlemmas(rawlemmas:List[str]) -> List[str]:
         else:
             results.extend(newlemmas)
     return results
+
 
 def is_subset(list1, list2):
     clist1 = Counter(list1)
@@ -140,7 +155,17 @@ def is_subset(list1, list2):
     return True
 
 
-def results2metadata(queryresult, mwestructures, sentence, sentenceid, origutt, mweclasses, mwetype, mwelexiconid,  querytype):
+def results2metadata(
+    queryresult,
+    mwestructures,
+    sentence,
+    sentenceid,
+    origutt,
+    mweclasses,
+    mwetype,
+    mwelexiconid,
+    querytype,
+):
     # get the components
     componentslist = getmwecomponents([queryresult], mwestructures)
     # components = componentslist[0] if componentslist != [] else []
@@ -149,17 +174,28 @@ def results2metadata(queryresult, mwestructures, sentence, sentenceid, origutt, 
         # print('New components')
         headcomponent = getheadcomponent(queryresult, components)
         if headcomponent is not None:
-            headposition = int(getattval(headcomponent, 'end'))
-            headpos = getattval(headcomponent, 'pt')
+            headposition = int(getattval(headcomponent, "end"))
+            headpos = getattval(headcomponent, "pt")
         else:
             headposition = -1
-            headpos = 'UNK'
-        positions = [int(getattval(component, 'end')) for component in components]
+            headpos = "UNK"
+        positions = [int(getattval(component, "end")) for component in components]
         sortedpositions = sorted(positions)
 
         # store the results in metadata
-        mwemeta = MWEMeta(sentence, sentenceid, origutt, mwelexicon, querytype, mwelexiconid, sortedpositions, headposition, headpos,
-                          mweclasses, mwetype)
+        mwemeta = MWEMeta(
+            sentence,
+            sentenceid,
+            origutt,
+            mwelexicon,
+            querytype,
+            mwelexiconid,
+            sortedpositions,
+            headposition,
+            headpos,
+            mweclasses,
+            mwetype,
+        )
         mwemetas.append(mwemeta)
     if len(mwemetas) >= 1:
         result = mwemetas[0]
@@ -170,11 +206,16 @@ def results2metadata(queryresult, mwestructures, sentence, sentenceid, origutt, 
         #    result = MWEMeta(sentence, sentenceid, origutt, mwelexicon, mlq, '', [], -1, 'UNK', 'NO') # dit moet uit staan!!!
     return result
 
+
 def getmajorlemmaqueries(lemmanodes: List[SynTree]) -> List[XpathExpression]:
-    results = [f'.//node[{expandaltvals("@lemma", getattval(lemmanode, "lemma"), "=")}]' for lemmanode in lemmanodes]
+    results = [
+        f'.//node[{expandaltvals("@lemma", getattval(lemmanode, "lemma"), "=")}]'
+        for lemmanode in lemmanodes
+    ]
     return results
 
-def noduplicatesin(lst:list) -> bool:
+
+def noduplicatesin(lst: list) -> bool:
     seenelements = []
     for el in lst:
         if el in seenelements:
@@ -182,6 +223,7 @@ def noduplicatesin(lst:list) -> bool:
         else:
             seenelements.append(el)
     return True
+
 
 def expandlemmas(lemmas: List[str]) -> List[List[str]]:
     results = []
@@ -197,18 +239,20 @@ def expandlemmas(lemmas: List[str]) -> List[List[str]]:
             results.append(result)
     return results
 
+
 def identicalisin(mwemeta: MWEMeta, mwemetalist: List[MWEMeta]) -> bool:
     for lmwemeta in mwemetalist:
         if isidentical(mwemeta, lmwemeta):
             return True
     return False
 
+
 def cleanmwemetalist(mwemetalist: List[MWEMeta]) -> List[MWEMeta]:
-    '''
+    """
     remove duplicates and occurrence with [] for positions if there are with non-empty positions
     :param mwemetalist:  mwemetalist with duplicates and [] positions
     :return: mwemetalist without duplicates and [][ positions if there are mwemetas with nonemptypositions
-    '''
+    """
 
     emptypositionslist = []
     resultlist = []
@@ -224,9 +268,11 @@ def cleanmwemetalist(mwemetalist: List[MWEMeta]) -> List[MWEMeta]:
         resultlist = emptypositionslist
     return resultlist
 
+
 def getmwecomponentnodes(mwetree: SynTree) -> List[SynTree]:
     mwecomponents = mwetree.xpath(mwecomponentsxpath)
     return mwecomponents
+
 
 def containsalllemmas(lemmaslist1: List[List[str]], lemmaslist2: List[List[str]]):
     zippedlemmaslists = zip(lemmaslist1, lemmaslist2)
@@ -238,8 +284,9 @@ def containsalllemmas(lemmaslist1: List[List[str]], lemmaslist2: List[List[str]]
     return True
 
 
-def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
-
+def annotate(  # noqa: C901
+    syntree: SynTree, sentenceid: str
+) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
     discardedmwemetalist = []
     duplicatemwemetalist = []
     # get the lemmas from this tree
@@ -248,24 +295,23 @@ def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWE
 
     alllemmaslist = [rawlemmas, lemmas] if lemmas != rawlemmas else [rawlemmas]
 
-    junk = 0
     validmweids = []
     for lemmas in alllemmaslist:
-        #for each lemma find the potential mwes
+        # for each lemma find the potential mwes
         for lemma in lemmas:
             if lemma in indexes.lemma2iddict:
                 mweids = indexes.lemma2iddict[lemma]
             else:
                 mweids = []
 
-            #check for each mweid whether all lemmas it requires occurs in lemmas, if sp add it to validmweids
+            # check for each mweid whether all lemmas it requires occurs in lemmas, if sp add it to validmweids
             for mweid in mweids:
                 try:
                     mweidlemmas = indexes.lemmasofmwedict[str(mweid)]
                 except KeyError as e:
-                    print(f'{e}', file=sys.stderr)
+                    print(f"{e}", file=sys.stderr)
                     print(indexes.id2mweid[str(mweid)], file=sys.stderr)
-                    raise(KeyError)
+                    raise (KeyError)
                 expandedmweidlemmaslist = expandlemmas(mweidlemmas)
                 for expandedmweidlemmas in expandedmweidlemmaslist:
                     if is_subset(expandedmweidlemmas, lemmas):
@@ -281,6 +327,9 @@ def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWE
         etree.dump(expandedsyntree)
     sentence = getsentence(syntree)
 
+    if sentence is None:
+        raise RuntimeError(f"No sentence for tree {sentenceid}")
+
     mwemetalist = []
 
     # find the Alpino MWEs
@@ -289,130 +338,159 @@ def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWE
     for validmweid in validmweids:
 
         # find the mwe structure
-        if validmweid not in indexes.mwetreesdict: # this can happen if there duplicates
+        if (
+            validmweid not in indexes.mwetreesdict
+        ):  # this can happen if there duplicates
             continue
         mwetree = indexes.mwetreesdict[validmweid]
-        origutt = getatt(mwetree, 'origutt')
+        origutt = getatt(mwetree, "origutt")
         annotatedwords = preprocess_MWE(origutt)
-        cleanmwewords = [annotatedword[0] for annotatedword in annotatedwords]
         annotations = [annotatedword[1] for annotatedword in annotatedwords]
         mwelexiconid = indexes.id2mweid[str(validmweid)]
-
-
-
 
         # get the mwestructures
 
         mwestructures = generatemwestructures(origutt, mwetree=mwetree)
-        reducedmwetree = mwestructures[0] if mwestructures != [] else None
         headpos = getmweheadpt(mwetree)
         mweheadposition = getmweheadposition(mwetree)
         mweheadlemma = getmweheadlemma(mwetree)
-
 
         showmwestructures = False
         if showmwestructures:
             for mwestructure in mwestructures:
                 etree.dump(mwestructure)
 
-        #determine the mweclasses and mwetype
+        # determine the mweclasses and mwetype
         mwecomponentnodes = getmwecomponentnodes(mwestructures[0])
-        mweclasses = getmweclasses(origutt, headpos, annotations, mweheadposition, mwecomponentnodes)
+        mweclasses = getmweclasses(
+            origutt, headpos, annotations, mweheadposition, mwecomponentnodes
+        )
         # mwetype can only be computed when a match  has been found
 
         # derive the queries
         queries = generatequeries(origutt, mwetree=mwetree)
 
         # apply the mwe-query, get the components, and store the results
-        mwequery = f'.{queries[0]}'   # is the dot necessary?
+        mwequery = f".{queries[0]}"  # is the dot necessary?
 
         showexpandedsyntree = False
         if showexpandedsyntree:
-            showtree(expandedsyntree, 'mwe_annotate: annotate: expandedsyntree')
+            showtree(expandedsyntree, "mwe_annotate: annotate: expandedsyntree")
         # apply the mwequery
         try:
             mwequeryresults = expandedsyntree.xpath(mwequery)
         except etree.XPathEvalError as e:
-            print(f'{e}, query=\n{mwequery}')
+            print(f"{e}, query=\n{mwequery}")
             mwequeryresults = []
 
         if mwequeryresults == []:
             # print(f'No mwe query results for {origutt}')
             mwelexid = indexes.id2mweid[str(validmweid)]
             if sentenceid == mwelexid:
-                print(f'MEQ selfidentification failure ({mwelexid})')
+                print(f"MEQ selfidentification failure ({mwelexid})")
 
-        expandedmwestructureslist = [expandalternatives(mwestructure) for mwestructure in mwestructures]
+        expandedmwestructureslist = [
+            expandalternatives(mwestructure) for mwestructure in mwestructures
+        ]
         altdebug = False
         if altdebug:
-            print('mwe_annotate: (altdebug): mwestructures with unexpanded alternatives')
+            print(
+                "mwe_annotate: (altdebug): mwestructures with unexpanded alternatives"
+            )
             for mwestructure in mwestructures:
                 etree.dump(mwestructure)
-            print('mwe_annotate: (altdebug):mwetrees with alternatives expanded')
+            print("mwe_annotate: (altdebug):mwetrees with alternatives expanded")
         for expmwetrees in expandedmwestructureslist:
             if altdebug:
                 for expmwetree in expmwetrees:
                     etree.dump(expmwetree)
             for mwequeryresult in mwequeryresults:
                 mwetype = getmwetype(mwequeryresult, headpos, mweclasses)
-                mwemeta = results2metadata(mwequeryresult, expmwetrees, sentence, sentenceid, origutt,
-                                            mweclasses, mwetype, mwelexiconid, meq)
+                mwemeta = results2metadata(
+                    mwequeryresult,
+                    expmwetrees,
+                    sentence,
+                    sentenceid,
+                    origutt,
+                    mweclasses,
+                    mwetype,
+                    mwelexiconid,
+                    meq,
+                )
                 if mwemeta is not None:
                     mwemetalist.append(mwemeta)
 
         # here we remove submwes from the mwemetalist and identify duplicates, and remove duplicates
-        mwemetalist, discardedmwemetalist1, duplicatemwemetalist1 = removesubsetmwes(mwemetalist)
-        mwemetalist, discardedmwemetalist2, duplicatemwemetalist2 = removeduplicatemwes(mwemetalist)
+        mwemetalist, discardedmwemetalist1, duplicatemwemetalist1 = removesubsetmwes(
+            mwemetalist
+        )
+        mwemetalist, discardedmwemetalist2, duplicatemwemetalist2 = removeduplicatemwes(
+            mwemetalist
+        )
         discardedmwemetalist = discardedmwemetalist1 + discardedmwemetalist2
-        duplicatemwemmetalist = duplicatemwemetalist1 + duplicatemwemetalist2
 
         nearmissqueryresults = []
         if mwequeryresults == []:
-            nearmissquery = f'.{queries[1]}'   # is the dot necessary?
+            nearmissquery = f".{queries[1]}"  # is the dot necessary?
             # apply the nearmissquery
             try:
                 nearmissqueryresults = expandedsyntree.xpath(nearmissquery)
             except etree.XPathEvalError as e:
-                print(f'{e}, query=\n{nearmissquery}')
+                print(f"{e}, query=\n{nearmissquery}")
 
             nearmissmwestructures = mknearmissstructs(mwestructures)
             for nearmissqueryresult in nearmissqueryresults:
                 mwetype = getmwetype(nearmissqueryresult, headpos, mweclasses)
-                mwemeta = results2metadata(nearmissqueryresult, nearmissmwestructures, sentence, sentenceid, origutt,
-                                            mweclasses, mwetype, mwelexiconid, nmq)
+                mwemeta = results2metadata(
+                    nearmissqueryresult,
+                    nearmissmwestructures,
+                    sentence,
+                    sentenceid,
+                    origutt,
+                    mweclasses,
+                    mwetype,
+                    mwelexiconid,
+                    nmq,
+                )
                 mwemetalist.append(mwemeta)
 
         if mwequeryresults == [] and nearmissqueryresults == []:
             querytype = mlq
             if queries[2] is not None:
-                majorlemmaquery = f'.{queries[2]}'
+                majorlemmaquery = f".{queries[2]}"
             else:
                 majorlemmaquery = None
             mlqquerydebug = False
             if mlqquerydebug:
-                print('mwe_annotate: mlqquerydebug')
+                print("mwe_annotate: mlqquerydebug")
                 etree.dump(syntree)
-                print(f'MLQ:\n{majorlemmaquery}')
+                print(f"MLQ:\n{majorlemmaquery}")
             try:
                 if majorlemmaquery is not None:
                     majorlemmaqueryresults = syntree.xpath(majorlemmaquery)
                 else:
                     majorlemmaqueryresults = []
             except etree.XPathEvalError as e:
-                print(f'{e}, query=\n{majorlemmaquery}')
+                print(f"{e}, query=\n{majorlemmaquery}")
                 majorlemmaqueryresults = []
 
             for expandedmwestructures in expandedmwestructureslist:
-                for mwetree in expandedmwestructures:    # was mwestructures but that was wrong
+                for (
+                    mwetree
+                ) in expandedmwestructures:  # was mwestructures but that was wrong
                     majorlemmas = getmajorlemmas(mwetree)
                     majorlemmaqueries = getmajorlemmaqueries(majorlemmas)
                     for majorlemmaqueryresult in majorlemmaqueryresults:
                         mwetype = getmwetype(None, headpos, mweclasses)
                         majorlemmanodeslist = []
                         for majorlemmaquery in majorlemmaqueries:
-                            newmajorlemmanodes = majorlemmaqueryresult.xpath(majorlemmaquery)
+                            newmajorlemmanodes = majorlemmaqueryresult.xpath(
+                                majorlemmaquery
+                            )
                             if newmajorlemmanodes == []:
-                                majorlemmanodeslist = []    # all major lemmas must be present
+                                majorlemmanodeslist = (
+                                    []
+                                )  # all major lemmas must be present
                                 break
                             else:
                                 majorlemmanodeslist.append(newmajorlemmanodes)
@@ -420,16 +498,30 @@ def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWE
                         pd = itertools.product(*majorlemmanodestuple)
                         donepositions = []
                         for tpl in pd:
-                            rawpositions = sorted([int(getattval(node, 'end')) for node in tpl])
-                            if not rawpositions in donepositions and noduplicatesin(rawpositions):
+                            rawpositions = sorted(
+                                [int(getattval(node, "end")) for node in tpl]
+                            )
+                            if rawpositions not in donepositions and noduplicatesin(
+                                rawpositions
+                            ):
                                 positions = rawpositions
                                 donepositions.append(rawpositions)
 
                                 headposition = getmlqheadposition(tpl, mweheadlemma)
 
-
-                                mwemeta = MWEMeta(sentence, sentenceid, origutt, mwelexicon, querytype, mwelexiconid, positions,
-                                                  headposition, headpos, mweclasses, mwetype)
+                                mwemeta = MWEMeta(
+                                    sentence,
+                                    sentenceid,
+                                    origutt,
+                                    mwelexicon,
+                                    querytype,
+                                    mwelexiconid,
+                                    positions,
+                                    headposition,
+                                    headpos,
+                                    mweclasses,
+                                    mwetype,
+                                )
                                 mwemetalist.append(mwemeta)
 
     cleanmetalist = cleanmwemetalist(mwemetalist)
@@ -437,20 +529,23 @@ def annotate(syntree: SynTree, sentenceid: str) -> Tuple[List[MWEMeta], List[MWE
     return cleanmetalist, discardedmwemetalist, duplicatemwemetalist
 
 
-def getmlqheadposition(nodes: Tuple[SynTree], lemma:str) -> int:
+def getmlqheadposition(nodes: Tuple[SynTree], lemma: str) -> int:
     if len(nodes) > 0:
         firstnode = nodes[0]
-        result = int(getattval(firstnode, 'end'))
+        result = int(getattval(firstnode, "end"))
     else:
         result = -1
     for node in nodes:
-        if getattval(node, 'lemma') == lemma:
-            result = int(getattval(node, 'end'))
+        if getattval(node, "lemma") == lemma:
+            result = int(getattval(node, "end"))
             return result
     return result
 
-def removesubsetmwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
-    '''
+
+def removesubsetmwes(
+    mwemetalist: List[MWEMeta],
+) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
+    """
     if two results meat1 and meta2 for the same sentence with status MEQ have the same head and the meta1.positions
     is a real subset of meta2,positions, then meta1 is a submwe of meta2, and meta2 is a supermwe of meta1.
     if a mwemeta is a submwe of any other mwemeta, it is added to the discardedmwemetas;
@@ -460,7 +555,7 @@ def removesubsetmwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List[MW
     (otherwise, other datastructures (e.g. dict with sentenceid as key) might speed up the process)
     :param mwemetalist: list of mwemeta elements for identified occurrences of mwes
     :return: (keptmwemetas, discardedmwemetas)
-    '''
+    """
 
     keptmwemetas = []
     discardedmwemetas = []
@@ -470,36 +565,52 @@ def removesubsetmwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List[MW
     else:
         for mwemeta1 in mwemetalist:
             if mwemeta1 is None:
-                print('None mwemeta1 encountered', file=sys.stderr)
+                print("None mwemeta1 encountered", file=sys.stderr)
                 continue
             supermwefound = False
             for mwemeta2 in mwemetalist:
                 if mwemeta2 is None:
-                    print('None mwemeta2 encountered', file=sys.stderr)
+                    print("None mwemeta2 encountered", file=sys.stderr)
                     continue
                 # VPCs should not be removed Guideline 6
                 # https://parsemefr.lis-lab.fr/parseme-st-guidelines/1.1/?page=070_Annotation_management/005_Frequently_asked_questions#faq-more-1-categ
-                if mwemeta1 is not None and mwemeta2 is not None and \
-                   mwemeta1 != mwemeta2 and \
-                   mwemeta1.sentenceid == mwemeta2.sentenceid and \
-                   mwemeta1.sentence == mwemeta2.sentence and \
-                   mwemeta1.mwequerytype == meq and mwemeta2.mwequerytype == meq and \
-                   mwemeta1.headposition == mwemeta2.headposition and \
-                   all([position in mwemeta2.positions for position in mwemeta1.positions ]) and \
-                   (len(mwemeta2.mweclasses) != 1 or mwemeta2.mweclasses[0] in  {'VPC.full', 'VPC.semi', 'VPC'}) and \
-                   mwemeta1.positions != mwemeta2.positions:                # we assume that both are sorted
-                       supermwefound = True
-                       discardedmwemetas.append(mwemeta1)
-                       break
-                if mwemeta1 is not None and mwemeta2 is not None and \
-                   mwemeta1 != mwemeta2 and \
-                   mwemeta1.sentenceid == mwemeta2.sentenceid and \
-                   mwemeta1.sentence == mwemeta2.sentence and \
-                   mwemeta1.mwequerytype == meq and mwemeta2.mwequerytype == meq and \
-                   mwemeta1.headposition == mwemeta2.headposition and \
-                   mwemeta1.positions == mwemeta2.positions and \
-                   mwemeta1.mweid != mwemeta2.mweid and \
-                   mwemeta2.sentenceid != mwemeta2.mweid:
+                if (
+                    mwemeta1 is not None
+                    and mwemeta2 is not None
+                    and mwemeta1 != mwemeta2
+                    and mwemeta1.sentenceid == mwemeta2.sentenceid
+                    and mwemeta1.sentence == mwemeta2.sentence
+                    and mwemeta1.mwequerytype == meq
+                    and mwemeta2.mwequerytype == meq
+                    and mwemeta1.headposition == mwemeta2.headposition
+                    and all(
+                        [
+                            position in mwemeta2.positions
+                            for position in mwemeta1.positions
+                        ]
+                    )
+                    and (
+                        len(mwemeta2.mweclasses) != 1
+                        or mwemeta2.mweclasses[0] in {"VPC.full", "VPC.semi", "VPC"}
+                    )
+                    and mwemeta1.positions != mwemeta2.positions
+                ):  # we assume that both are sorted
+                    supermwefound = True
+                    discardedmwemetas.append(mwemeta1)
+                    break
+                if (
+                    mwemeta1 is not None
+                    and mwemeta2 is not None
+                    and mwemeta1 != mwemeta2
+                    and mwemeta1.sentenceid == mwemeta2.sentenceid
+                    and mwemeta1.sentence == mwemeta2.sentence
+                    and mwemeta1.mwequerytype == meq
+                    and mwemeta2.mwequerytype == meq
+                    and mwemeta1.headposition == mwemeta2.headposition
+                    and mwemeta1.positions == mwemeta2.positions
+                    and mwemeta1.mweid != mwemeta2.mweid
+                    and mwemeta2.sentenceid != mwemeta2.mweid
+                ):
                     duplicatemwemetas.append(mwemeta2)
             if not supermwefound:
                 keptmwemetas.append(mwemeta1)
@@ -507,8 +618,11 @@ def removesubsetmwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List[MW
     result = (keptmwemetas, discardedmwemetas, duplicatemwemetas)
     return result
 
-def removeduplicatemwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
-    '''
+
+def removeduplicatemwes(
+    mwemetalist: List[MWEMeta],
+) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
+    """
     Duplicate MWEs can arise due to different syntactic selection variants and due to Alpino, e.gg
     -if it has a multiword svp
     -if V+P is in DUCAME because P is ld but Alpino analyses it as pc
@@ -516,45 +630,52 @@ def removeduplicatemwes(mwemetalist: List[MWEMeta]) -> Tuple[List[MWEMeta], List
     for syntactic selection varinants we seelct the longest because i meets more requirements
     :param mwemetalist:
     :return:
-    '''
+    """
     keptmwemetas = []
     discardedmwemetas = []
     duplicatemwemetas = []
     if len(mwemetalist) < 2:
         keptmwemetas = mwemetalist
     mwemetapairs = combinations(mwemetalist, 2)
-    for (mwemeta1, mwemeta2) in mwemetapairs:
+    for mwemeta1, mwemeta2 in mwemetapairs:
         if mwemeta1 is None:
-            print('None mwemeta1 encountered', file=sys.stderr)
+            print("None mwemeta1 encountered", file=sys.stderr)
             continue
         if mwemeta2 is None:
-            print('None mwemeta2 encountered', file=sys.stderr)
+            print("None mwemeta2 encountered", file=sys.stderr)
             continue
-        if mwemeta1 != mwemeta2 and \
-           mwemeta1.positions == mwemeta2.positions and \
-            mwemeta1.sentenceid == mwemeta2.sentenceid and \
-            mwemeta1.sentence == mwemeta2.sentence and \
-            mwemeta1.mwequerytype == meq and mwemeta2.mwequerytype == meq:
-           if mwemeta1.mwelexicon.lower() == 'alpino':
-               discardedmwemetas.append(mwemeta1)
-           elif mwemeta2.mwelexicon.lower() == 'alpino':
-               discardedmwemetas.append(mwemeta2)
-           elif len(mwemeta1.mwe) > len(mwemeta2.mwe):
-               discardedmwemetas.append(mwemeta2)
-           else:
-               discardedmwemetas.append(mwemeta1)
-           duplicatemwemetas.append(mwemeta1)
-           duplicatemwemetas.append(mwemeta2)
+        if (
+            mwemeta1 != mwemeta2
+            and mwemeta1.positions == mwemeta2.positions
+            and mwemeta1.sentenceid == mwemeta2.sentenceid
+            and mwemeta1.sentence == mwemeta2.sentence
+            and mwemeta1.mwequerytype == meq
+            and mwemeta2.mwequerytype == meq
+        ):
+            if mwemeta1.mwelexicon.lower() == "alpino":
+                discardedmwemetas.append(mwemeta1)
+            elif mwemeta2.mwelexicon.lower() == "alpino":
+                discardedmwemetas.append(mwemeta2)
+            elif len(mwemeta1.mwe) > len(mwemeta2.mwe):
+                discardedmwemetas.append(mwemeta2)
+            else:
+                discardedmwemetas.append(mwemeta1)
+            duplicatemwemetas.append(mwemeta1)
+            duplicatemwemetas.append(mwemeta2)
         else:
             # keptmwemetas.append(mwemeta1)
             # keptmwemetas.append(mwemeta2)
             pass
-    keptmwemetas = [mwemeta for mwemeta in mwemetalist if mwemeta not in discardedmwemetas]
+    keptmwemetas = [
+        mwemeta for mwemeta in mwemetalist if mwemeta not in discardedmwemetas
+    ]
     result = (keptmwemetas, discardedmwemetas, duplicatemwemetas)
     return result
 
 
-def getmwemetacounts(mwemetas: List[MWEMeta], sentcount = None) -> Tuple[List[str], List[List[Any]]]:
+def getmwemetacounts(
+    mwemetas: List[MWEMeta], sentcount=None
+) -> Tuple[List[str], List[List[Any]]]:
     meqselfcount = 0
     meqcount = 0
     nmqselfcount = 0
@@ -568,7 +689,7 @@ def getmwemetacounts(mwemetas: List[MWEMeta], sentcount = None) -> Tuple[List[st
     for mwemeta in mwemetas:
         sentenceids.add(mwemeta.sentenceid)
         if mwemeta.sentenceid == mwemeta.mweid:
-            selfcount +=1
+            selfcount += 1
         if mwemeta.mwequerytype == meq:
             meqcount += 1
             if mwemeta.sentenceid == mwemeta.mweid:
@@ -582,30 +703,35 @@ def getmwemetacounts(mwemetas: List[MWEMeta], sentcount = None) -> Tuple[List[st
             if mwemeta.sentenceid == mwemeta.mweid:
                 mlqselfcount += 1
 
-    meqselfscore = meqselfcount / selfcount * 100 if selfcount != 0 else 'NA'
-    nmqselfscore = nmqselfcount / selfcount * 100 if selfcount != 0 else 'NA'
-    mlqselfscore = mlqselfcount / selfcount * 100 if selfcount != 0 else 'NA'
+    meqselfscore = meqselfcount / selfcount * 100 if selfcount != 0 else "NA"
+    nmqselfscore = nmqselfcount / selfcount * 100 if selfcount != 0 else "NA"
+    mlqselfscore = mlqselfcount / selfcount * 100 if selfcount != 0 else "NA"
 
-    meqscore = meqcount / totalcount * 100 if totalcount != 0 else 'NA'
-    nmqscore = nmqcount / totalcount * 100 if totalcount != 0 else 'NA'
-    mlqscore = mlqcount / totalcount * 100 if totalcount != 0 else 'NA'
+    meqscore = meqcount / totalcount * 100 if totalcount != 0 else "NA"
+    nmqscore = nmqcount / totalcount * 100 if totalcount != 0 else "NA"
+    mlqscore = mlqcount / totalcount * 100 if totalcount != 0 else "NA"
 
-
-    querycount  =  meqcount + nmqcount + mlqcount
-    queryscore = querycount / totalcount * 100 if totalcount != 0 else 'NA'
+    querycount = meqcount + nmqcount + mlqcount
+    queryscore = querycount / totalcount * 100 if totalcount != 0 else "NA"
     queryselfcount = meqselfcount + nmqselfcount + mlqselfcount
-    queryselfscore = queryselfcount / len(sentenceids) * 100 if len(sentenceids) != 0 else 'NA'
-    sentcountstr = str(sentcount if sentcount is not None else 'no count')
+    queryselfscore = (
+        queryselfcount / len(sentenceids) * 100 if len(sentenceids) != 0 else "NA"
+    )
+    sentcountstr = str(sentcount if sentcount is not None else "no count")
 
-    rows = [['meq', meqcount, meqscore, meqselfcount,  meqselfscore],
-            ['nmq', nmqcount, nmqscore, nmqselfcount, nmqselfscore],
-            ['mlq', mlqcount, mlqscore, mlqselfcount, mlqselfscore],
-            ['Queries', querycount, queryscore, queryselfcount, queryselfscore],
-            ['Total', totalcount],
-            ['Different sentences', len(sentenceids)],
-            ['# sentences', sentcountstr]
-            ]
-    header = ['Item', 'Count', 'Score', 'Self count', 'Self score']
+    rows = cast(
+        List[List[Any]],
+        [
+            ["meq", meqcount, meqscore, meqselfcount, meqselfscore],
+            ["nmq", nmqcount, nmqscore, nmqselfcount, nmqselfscore],
+            ["mlq", mlqcount, mlqscore, mlqselfcount, mlqselfscore],
+            ["Queries", querycount, queryscore, queryselfcount, queryselfscore],
+            ["Total", totalcount],
+            ["Different sentences", len(sentenceids)],
+            ["# sentences", sentcountstr],
+        ],
+    )
+    header = ["Item", "Count", "Score", "Self count", "Self score"]
 
     result = (header, rows)
     return result

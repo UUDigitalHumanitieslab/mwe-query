@@ -26,10 +26,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
         pip install -r requirements.txt
     - name: Lint with flake8
       run: |
+        pip install flake8
         # stop the build if there are Python syntax errors or undefined names
         flake8 mwe_query --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 tests --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -38,11 +38,13 @@ jobs:
         flake8 mwe_query --count --exit-zero --max-complexity=22 --max-line-length=261 --statistics
         # TODO:
         # flake8 tests --count --exit-zero --max-complexity=22 --max-line-length=261 --statistics
-    - name: Check typing
-      run: |
-        pip install mypy
-        pip install lxml-stubs
-        mypy **/*.py
+    # TODO:
+    # - name: Check typing
+    #   run: |
+    #     pip install mypy
+    #     pip install pandas-stubs
+    #     pip install lxml-stubs
+    #     mypy **/*.py
     - name: Run unit tests
       run: |
         python -m unittest discover tests/

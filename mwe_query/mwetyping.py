@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 from sastadev.sastatypes import SynTree
 
 Annotation = int
@@ -16,5 +16,5 @@ State = int
 QueryResult = List[SynTree]
 Xpathexpression = str
 
-AllQueriesResult = Tuple[QueryResult, QueryResult, QueryResult]
+AllQueriesResult = Dict[str, List[Tuple[QueryResult, QueryResult, QueryResult]]]
 QueryResults = List[QueryResult]

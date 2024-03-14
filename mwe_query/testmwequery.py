@@ -2,7 +2,7 @@ from mwe_query import Mwe
 from alpino_query import parse_sentence
 
 # the pronominal is marked with <>
-sentence = 'iemand zal er <goed> voor staan'
+sentence = "iemand zal er <goed> voor staan"
 mwe = Mwe(sentence)
 # parse this sentence using Alpino
 tree = parse_sentence(mwe.can_form)
@@ -23,5 +23,4 @@ print(superset.rank)
 # 3
 
 print(queries[0].xpath)
-print(queries[1].xpath
-      )
+print(queries[1].xpath)

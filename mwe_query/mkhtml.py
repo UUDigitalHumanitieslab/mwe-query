@@ -421,7 +421,7 @@ def test():
         # flake8: noqa
         for mweparse in mwestructures:
             # xpathexprs = getcompsxpaths(mweparse)
-            mwequery, nearmissquery, supersetquery = generatequeries(mwe)
+            mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(mwe)
             queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
             fullmwestats = getstats(mwe, queryresults, treebank)
