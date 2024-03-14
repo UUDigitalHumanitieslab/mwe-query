@@ -3,7 +3,6 @@ Methods for converting a standard treebank into a treebank where a
 phrasal node is generated for each (relevant) non-head single word.
 """
 
-
 from typing import Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
@@ -52,7 +51,7 @@ def getlcatatt(node: SynTree) -> str:
 def mkphrase(child: SynTree) -> SynTree:
     newnode = ET.Element('node')
     if 'íd' in child.attrib:
-        newnode.attrib['id'] = child.attrib['id'] + 'a'
+        newnode.attrib['id'] = str(child.attrib['id']) + 'a'
     lcat = getlcatatt(child)
     if lcat in validcats:
         newnode.attrib['cat'] = lcat

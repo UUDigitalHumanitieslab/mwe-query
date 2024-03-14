@@ -646,7 +646,7 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     rows: List[str] = []
     for clemmas, cwords, utt in compliststats.data:
         rows.append(f'{clemmas}: {cwords}: {utt}'.strip())
-        
+
     rows.sort()
 
     for row in rows:
@@ -679,7 +679,6 @@ def displayfullstats(stats: MWEstats, outfile, header=''):
     for row in rows:
         print(row, file=outfile)
 
-    allcompnodes = stats.compnodes
     modstats = stats.modstats
     displaystats('Modification', modstats, outfile)
 
