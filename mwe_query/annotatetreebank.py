@@ -3,8 +3,8 @@ import os
 import sys
 from optparse import OptionParser
 
-from .mwe_annotate import annotate
-from .mwemeta import MWEMeta, mwemetaheader
+from mwe_query.mwe_annotate import annotate
+from mwe_query.mwemeta import MWEMeta, mwemetaheader
 from sastadev.xlsx import mkworkbook, add_worksheet
 from typing import List
 

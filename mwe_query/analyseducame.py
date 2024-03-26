@@ -2,14 +2,17 @@ from collections import defaultdict
 import os
 import re
 from typing import List, Tuple
-from .canonicalform import preprocess_MWE, tokenize, vblwords
-from .annotations import dropanns, lvcannotation2annotationcodedict
+from mwe_query.canonicalform import preprocess_MWE, tokenize, vblwords
+from mwe_query.annotations import dropanns, lvcannotation2annotationcodedict
 from sastadev.xlsx import getxlsxdata
 
 
 plussym = "+"
 bracketvblpattern = r"<[^>]*>"
 bracketvblre = re.compile(bracketvblpattern)
+
+illegalsymbols = """@#$%&()_{};"\\/123456789"""
+illegalstrings = ['iest', 'iemnd']
 
 ducamepath = r"D:\Dropbox\jodijk\Utrecht\researchproposals\MWEs"
 ducamefilename = "DUCAME_Current.xlsx"
@@ -69,6 +72,25 @@ def findlvcverbs(newcan: str) -> Tuple[str, str]:
     return results, errors
 
 
+def containsillegalsymbols(canform: str) -> Tuple[bool, str]:
+    illegalchars = ''
+    result = False
+    for ch in canform:
+        if ch in illegalsymbols:
+            illegalchars += ch
+            result = True
+    return result, illegalchars
+
+def containsillegalwords(canform:str) -> Tuple[bool, List[str]]:
+    illegalwords = []
+    result = False
+    tokens = canform.split()
+    for token in tokens:
+        if token in illegalstrings:
+            illegalwords.append(token)
+            result = True
+    return result, illegalwords
+
 def analyseentries(ducamedata):
     vblcountdict = {}
     bracketvbldict = defaultdict(int)
@@ -79,6 +101,15 @@ def analyseentries(ducamedata):
     for row in ducamedata:
         newcan = row[4]
         mweid = row[0]
+
+        wrong, wrongstr = containsillegalsymbols(newcan)
+        if wrong:
+            print(f'Error: Illegal symbol(s) ({wrongstr}) in {newcan}')
+
+        wrong, wronglist = containsillegalwords(newcan)
+        if wrong:
+            print(f'Error: Illegal word(s) ({wronglist}) in {newcan}')
+
 
         vblcount = countvbls(newcan)
         vblcountdict[mweid] = vblcount

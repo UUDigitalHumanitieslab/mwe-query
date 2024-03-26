@@ -87,7 +87,7 @@ def mkpivothtmls(analysisname, header, data, overviewfilename, mwe, treebankname
     return zerofilename
 
 
-def mkoverviewhtml(overviewlist: List[Tuple[str, str, str]], overviewfullname: FileName) -> None:
+def mkoverviewhtml(mwe: str, treebankname: str, overviewlist: List[Tuple[str, str, str]], overviewfullname: FileName) -> None:
     bodysections = ''
     previoussection = ''
     statsitems = []
@@ -109,7 +109,7 @@ def mkoverviewhtml(overviewlist: List[Tuple[str, str, str]], overviewfullname: F
         statsitemshtml = f'<ol>{statsitemshtml}</ol>\n'
         bodysections += statsitemshtml
 
-    mapping = {"bodysections": bodysections}
+    mapping = {"bodysections": bodysections, "MWE": mwe, "treebankname": treebankname}
 
     resultstr = overviewtemplate.substitute(mapping)
 
@@ -127,6 +127,26 @@ def createstatshtmlpages(mwe: str, treebank: Dict[str, SynTree], fulltreebanknam
         queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
         queryresults2statshtml(mwe, mweparse, treebank, fulltreebankname, queryresults)
+
+def adaptcomponentstlist(componentslist: List[List[str]]) -> List[List[str]]:
+    newcomponentslist = []
+    for components in componentslist:
+        results = expandcomponents(components)
+        newcomponentslist += results
+    return newcomponentslist
+
+def expandcomponents(components: List[str]) -> List[List[str]]:
+        allresults = []
+        if components == []:
+            return [[]]
+        componentshead = components[0]
+        componentstail = components[1:]
+        componentstailexpansions = expandcomponents(componentstail)
+        componentsheadalternatives = componentshead.split('|')
+        for componentsheadalternative in componentsheadalternatives:
+            newresults = [[componentsheadalternative] + componentstailexpansion for componentstailexpansion in componentstailexpansions]
+            allresults += newresults
+        return allresults
 
 
 
@@ -154,7 +174,7 @@ def queryresults2statshtml(mwe: str, mweparse: SynTree, treebank: Dict[str, SynT
     # componentslist = [['dans', 'ontspringen']]
     majorlemmanodes = getmajorlemmas(mweparse)
     components = [gav(majorlemmanode, 'lemma') for majorlemmanode in majorlemmanodes]
-    componentslist = [components]
+    componentslist = expandcomponents(components)
 
     mlqresults = selectqueryresults(queryresults, 2, 1)
     allmlqresults = selectqueryresults(queryresults, 2)
@@ -178,7 +198,7 @@ def queryresults2statshtml(mwe: str, mweparse: SynTree, treebank: Dict[str, SynT
 
     overviewlist.append(('MLQ-NMQ', mlqnonmqgramconfigstr, gramconfigfn))
 
-    mkoverviewhtml(overviewlist, overviewfullname)
+    mkoverviewhtml(mwe, fulltreebankname, overviewlist, overviewfullname)
 
 
 def getmlqresults(queryresultsdict: Dict[str, List[AllQueriesResult]]) -> Dict[str, QueryResult]:

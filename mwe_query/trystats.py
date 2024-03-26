@@ -1,19 +1,19 @@
 import os
-from .mwestats import gettreebank
-from .mkpivothtmls import createstatshtmlpages
+from mwe_query.mwestats import gettreebank
+from mwe_query.mkpivothtmls import createstatshtmlpages
 
 
 def test():
     # mwes,  dotbfolder, treebankname = ['iemand zal 0de *dans ontspringen'], r'../tests/data/mwetreebanks/dansontspringena', 'Lassy-Groot/Kranten'
-    # mwes, dotbfolder, treebankname =  ['iemand zal iemands hart breken'], r'../tests/data/mwetreebanks/hartbreken/data','Lassy-Groot/Kranten'
-    mwes, dotbfolder, treebankname = (
-        ["iemand zal 0een L:poging DO:doen"],
-        r"..\tests\data\mwetreebanks\pogingdoen",
-        "Lassy-Groot/Kranten",
-    )
+    mwes, dotbfolder, treebankname =  ['iemand zal iemands hart breken'], r'../tests/data/mwetreebanks/hartbreken/data','Lassy-Groot/Kranten'
+    # mwes, dotbfolder, treebankname = (
+    #    ["iemand zal 0een L:poging DO:doen"],
+    #    r"..\tests\data\mwetreebanks\pogingdoen",
+    #    "Lassy-Groot/Kranten",
+    # )
     rawtreebankfilenames = os.listdir(dotbfolder)
 
-    def selcond():
+    def selcond(_):
         return True
 
     # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'

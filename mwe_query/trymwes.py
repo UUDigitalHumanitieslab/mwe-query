@@ -1,7 +1,7 @@
 from sastadev.alpinoparsing import parse
 from sastadev.treebankfunctions import showtree
 from lxml import etree
-from .canonicalform import generatequeries, expandfull
+from mwe_query.canonicalform import generatequeries, expandfull
 
 debug = False
 
@@ -20,8 +20,16 @@ geenhaankraaien = (
         "Weinig hanen die ernaar kraaiden .",
         "Oost-Europese au pairs komen als toerist naar Nederland en "
         "volgens Ales kraait er geen haan naar dat ze stiekem werken .",
-    ],
+        "er kraait geen haan over dat probleem"                     # should be found by MLQ and NMQ, not by MEQ
+     ],
 )
+
+geenhaankraaien2 = (
+    "0geen *haan zal naar iets kraaien",
+    [ "er kraait geen haan over dat probleem"
+      ]
+   )
+
 
 invoorietszijn = (
     "iemand zal in voor iets zijn",
@@ -121,8 +129,8 @@ liegenbarsten = (
         "zij logen dat ze barstten",
     ],
 )
-vrolijkeFrans = [
-    ("0een vrolijke Frans"),
+vrolijkeFrans = (
+    "0een vrolijke Frans",
     [
         "een vrolijk Fransje",
         "dit vrolijke Fransje",
@@ -130,7 +138,9 @@ vrolijkeFrans = [
         "vrolijke Fransjes",
         "een vrolijke Frans",
     ],
-]
+)
+
+vanhethoutje = ('iemand zal van het houtje zijn', ['Filip is nooit van het houtje geweest'])
 
 
 def select(mweutts, utt=None):
@@ -157,22 +167,25 @@ def trysomemwes():
     mwe, utterances = select(voorietsinzijn)  # hier zitten missers van MWEQ bij
     mwe, utterances = select(ingevalvaniets)
     mwe, utterances = select(geenhaankraaien)
-    mwe, utterances = select(houdenvan)
-    mwe, utterances = select(zichschamen)
-    mwe, utterances = select(zichzelfzijn)
-    mwe, utterances = select(deplaatpoetsen)
-    mwe, utterances = select(houdenvan)
-    mwe, utterances = select(ietshebben)
-    mwe, utterances = select(geenhaankraaien)
-    mwe, utterances = select(tukhebben)
-    mwe, utterances = select(liegenbarsten)
-    mwe, utterances = select(vrolijkeFrans)
+    mwe, utterances = select(geenhaankraaien2)
+    mwe, utterances = select(vanhethoutje)
+    # mwe, utterances = select(houdenvan)
+    # mwe, utterances = select(zichschamen)
+    # mwe, utterances = select(zichzelfzijn)
+    # mwe, utterances = select(deplaatpoetsen)
+    # mwe, utterances = select(houdenvan)
+    # mwe, utterances = select(ietshebben)
+    # mwe, utterances = select(geenhaankraaien)
+    # mwe, utterances = select(tukhebben)
+    # mwe, utterances = select(liegenbarsten)
+    # mwe, utterances = select(vrolijkeFrans)
     mwequeries = generatequeries(mwe)
     labeledmwequeries = (
         ("MWEQ", mwequeries[0]),
         ("NMQ", mwequeries[1]),
         ("MLQ", mwequeries[2]),
     )
+    # print(f'NMQ:\n{mwequeries[1]}' )
     uttparses = getparses(utterances)
     for utterance, uttparse in zip(utterances, uttparses):
         print(f"{utterance}:")

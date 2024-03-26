@@ -56,7 +56,7 @@ from sastadev.xlsx import getxlsxdata
 from sastadev.treebankfunctions import getsentence
 
 from lxml import etree
-from .canonicalform import generatequeries, expandfull, preprocess_MWE
+from mwe_query.canonicalform import generatequeries, expandfull, preprocess_MWE
 from sastadev.sastatypes import SynTree
 from typing import Dict, List, Tuple
 import sys

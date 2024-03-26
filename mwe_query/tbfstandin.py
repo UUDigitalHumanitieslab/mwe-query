@@ -22,13 +22,17 @@ def removeduplicates(wordnodelist: List[SynTree]) -> List[SynTree]:
     return resultlist
 
 
+def iswordnode(stree: SynTree) -> bool:
+    result = 'word' in stree.attrib or 'lemma' in stree.attrib or 'pt' in stree.attrib or 'pos' in stree.attrib
+    return result
+
 def getnodeyield(syntree: SynTree) -> List[SynTree]:
     resultlist = []
     if syntree is None:
         return []
     else:
         for node in syntree.iter():
-            if node.tag in ["node"] and "word" in node.attrib:
+            if node.tag in ["node"] and iswordnode(node):
                 if getattval(node, "pt") != "dummy":
                     resultlist.append(node)
         cleanresultlist = removeduplicates(resultlist)

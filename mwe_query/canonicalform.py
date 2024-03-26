@@ -1838,6 +1838,13 @@ def adaptvzlemma_inv(inlemma: str) -> str:
     return result
 
 
+def finddpnpdprels(stree: SynTree):
+    dpnps = stree.xpath('.//node[@rel="dp" and @cat="np"]')
+    dprels = stree.xpath('.//node[@rel="dp" and @cat="rel" ] ')
+    dpnpdprels = [(dpnp, dprel) for dpnp in dpnps for dprel in dprels if gav(dpnp, 'end') == gav(dprel,'begin' )]
+    return dpnpdprels
+
+
 def relpronsubst(stree: SynTree) -> SynTree:
     newstree = copy.deepcopy(stree)
     npwithrelnodeids: List[int] = list(
@@ -1864,8 +1871,8 @@ def relpronsubst(stree: SynTree) -> SynTree:
             # but DO NOT do this, or you will have multiple incompatible antecedents
             relnode = find1(npnode, f'./node[@id="{relnodeid}"]')
 
-            if rhdpt == "vnw":
-                rhdindex = gav(rhdnode, "index")
+            if rhdpt == "vnw" or rhdpt == "vg":
+                rhdindex = gav(rhdnode, "index")  # even if vg they have an index
                 antecedent.attrib["index"] = rhdindex
                 relnode.remove(rhdnode)
                 relnode.insert(0, antecedent)
@@ -2017,9 +2024,38 @@ def removeemptyalts(stree: SynTree) -> SynTree:
     return newstree
 
 
+
+
+def findhighestemptynode(node: SynTree) -> Optional[SynTree]:
+    '''
+
+    Args:
+        node:
+
+    Returns: the highest ancestor of node that dominates no words if it exists, else None
+
+    '''
+    parent = node.getparent()
+    if parent is None:
+        result = None
+    else:
+        wordnodes = getnodeyield(parent)
+        if len(wordnodes) != 0:
+            result = node
+        else:
+            parenthighestemptynode = findhighestemptynode(parent)
+            if parenthighestemptynode == None:
+                result = node
+            else:
+                result = parenthighestemptynode
+    return result
+
 def mknearmissstructs(mwetrees: List[SynTree]) -> List[SynTree]:
+    showthetrees = False
     reducedmwetrees = []
     for mwetree in mwetrees:
+        if showthetrees:
+            showtree(mwetree, 'canonical:mknearmissstructs')
         reducedmwetree = copy.deepcopy(mwetree)
         nodelist = list(
             reducedmwetree.iter()
@@ -2032,12 +2068,11 @@ def mknearmissstructs(mwetrees: List[SynTree]) -> List[SynTree]:
                 and not iscontentwordnode(node)
                 and contentwordcount > 1
             ):
-                parent = node.getparent()
-                if isinstance(parent, SynTree):
-                    parent.remove(node)
-                    grandparent = parent.getparent()
-                    if isinstance(grandparent, SynTree) and len(parent) == 0:
-                        grandparent.remove(parent)
+                highestemptyancestor = findhighestemptynode(node)
+                nodetodelete = highestemptyancestor if highestemptyancestor is not None else node
+                nodetodeleteparent = nodetodelete.getparent()
+                if isinstance(nodetodeleteparent, SynTree):
+                    nodetodeleteparent.remove(nodetodelete)
             else:
                 relevantproperties = coreproperties + subcatproperties + xpathproperties
                 for att in node.attrib:
@@ -2049,7 +2084,12 @@ def mknearmissstructs(mwetrees: List[SynTree]) -> List[SynTree]:
 
 
 def mknearmiss(mwetrees: List[SynTree]) -> Xpathexpression:
+    showthetrees = False
     reducedmwetrees = mknearmissstructs(mwetrees)
+    if showthetrees:
+        print('near-miss structures')
+        for reducedmwetree in reducedmwetrees:
+            showtree(reducedmwetree, '')
     result = trees2xpath(reducedmwetrees)
     return result
 
