@@ -1,10 +1,10 @@
-from .mwe_annotate import annotate, getmwemetacounts
-from .mwemeta import mwemetaheader
+from mwe_query.mwe_annotate import annotate, getmwemetacounts
+from mwe_query.mwemeta import mwemetaheader
 from sastadev.alpinoparsing import parse
 from sastadev.xlsx import add_worksheet, mkworkbook
 from sastadev.readcsv import readcsv
-from .canonicalform import removeannotations
-from .indexes import mwetreebank, mwelexiconfullname
+from mwe_query.canonicalform import removeannotations
+from mwe_query.indexes import mwetreebank, mwelexiconfullname
 from typing import List, Tuple
 from collections import defaultdict
 

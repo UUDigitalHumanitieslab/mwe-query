@@ -1,7 +1,7 @@
 from typing import List, Tuple
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
-from .adpositions import allprepositions
+from adpositions import allprepositions
 
 PosTag = str
 

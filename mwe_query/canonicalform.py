@@ -7,10 +7,10 @@ from typing import cast, Dict, Iterable, List, Sequence, Optional, Set, Tuple, T
 from sastadev.sastatypes import SynTree
 import re
 import sys
-from .tbfstandin import getnodeyield
-from .mwetyping import Annotation, Axis, NodeCondition, Polarity, Xpathexpression
-from .mwuwordlemmas import reversemwuwordlemmadict
-from .pronadvs import pronadvlemmas, Radpositions
+from tbfstandin import getnodeyield
+from mwetyping import Annotation, Axis, NodeCondition, Polarity, Xpathexpression
+from mwuwordlemmas import reversemwuwordlemmadict
+from pronadvs import pronadvlemmas, Radpositions
 
 from sastadev.treebankfunctions import (
     clausecats,
@@ -27,15 +27,15 @@ from sastadev.treebankfunctions import (
 
 import lxml.etree as ET
 import copy
-from .adpositions import vzazindex
-from .alternatives import expandalternatives
+from adpositions import vzazindex
+from alternatives import expandalternatives
 from sastadev.alpinoparsing import parse
-from .annotations import (
+from annotations import (
     lvcannotationstrings,
     lvcannotationcode2annotationdict,
     lvcannotation2annotationcodedict,
 )
-from .annotations import (
+from annotations import (
     noann,
     modifiable,
     inflectable,
@@ -59,8 +59,9 @@ from .annotations import (
     inmsem,
     coll,
 )
-from .lcat import expandnonheadwords
-from .rwq import getrwqnode
+from lcat import expandnonheadwords
+from rwq import getrwqnode
+from wordtransform import transformsvpverb
 
 space = " "
 underscore = "_"
@@ -92,7 +93,7 @@ notop, itop, parenttop = 0, 1, 2
 mwstates = {invbl_state, dd_state, com_state, dr_state, inlsem_state, inmsem_state}
 vblwords = ["iemand", "iets", "iemand|iets", "iets|iemand", "iemands", "ergens"]
 boundprons = ["zich", "zijn", "zichzelf", "hij", "hem"]
-modanns = {modifiable, modandinfl}
+modanns = {modifiable, modandinfl, msem, lsem}
 nomodanns = {unmodifiable, unmodandinfl, coll}
 
 zichlemmas = ["me", "mij", "je", "zich", "ons"]
@@ -1909,9 +1910,10 @@ def expandfull(rawstree: SynTree) -> SynTree:
     # possibly add getlcat
     stree = lowerpredm(rawstree)
     stree1 = relpronsubst(stree)
-    stree2 = expandnonheadwords(stree1)
-    stree3 = indextransform(stree2)
-    return stree3
+    stree2 = transformsvpverb(stree1)
+    stree3 = expandnonheadwords(stree2)
+    stree4 = indextransform(stree3)
+    return stree4
 
 
 def isparticleverb(stree: SynTree) -> bool:
@@ -2353,10 +2355,17 @@ def generatemwestructures(mwe: str, lcatexpansion=True, mwetree=None) -> List[Sy
     else:
         unexpandedfullmweparse = mwetree
 
+    #expand the verbal particles
+
+    svpmweparse = transformsvpverb(unexpandedfullmweparse)
+
     if lcatexpansion:
-        fullmweparse = expandnonheadwords(unexpandedfullmweparse)
+        fullmweparse = expandnonheadwords(svpmweparse)
     else:
-        fullmweparse = unexpandedfullmweparse
+        fullmweparse = svpmweparse
+
+    fullmweparse = indextransform(fullmweparse)
+
     # ET.dump(fullmweparse)
     mweparse = gettopnode(fullmweparse)
     nodeidwordmap = mknodeidwordmap(mweparse)
@@ -2421,10 +2430,13 @@ def generatequeries(mwe: str, lcatexpansion=True, mwetree=None) -> Tuple[
     else:
         unexpandedfullmweparse = mwetree
 
+
+    svpmweparse = transformsvpverb(unexpandedfullmweparse)
+
     if lcatexpansion:
-        fullmweparse = expandnonheadwords(unexpandedfullmweparse)
+        fullmweparse = expandnonheadwords(svpmweparse)
     else:
-        fullmweparse = unexpandedfullmweparse
+        fullmweparse = svpmweparse
     # ET.dump(fullmweparse)
     mweparse = gettopnode(fullmweparse)
     nodeidwordmap = mknodeidwordmap(mweparse)

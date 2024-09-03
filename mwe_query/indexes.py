@@ -1,8 +1,8 @@
 from lxml import etree
 from dataclasses import dataclass
 from sastadev.treebankfunctions import find1, getattval
-from .canonicalform import preprocess_MWE, transformtree, gettopnode
-from .mwuwordlemmas import mwuwordlemmadict
+from canonicalform import preprocess_MWE, transformtree, gettopnode
+from mwuwordlemmas import mwuwordlemmadict
 from sastadev.sastatypes import SynTree
 from sastadev import readcsv
 
@@ -21,7 +21,8 @@ modtimefilename = f"{__file__}_previousmodtime.json"
 mwelexiconpath = "./mwelexicon"
 # mwelexiconfilename = 'DUCAME_3.0.txt'
 # mwelexiconfilename = 'DUCAME_4.0.txt'
-mwelexiconfilename = "DUCAME_4.01.txt"
+# mwelexiconfilename = "DUCAME_4.01.txt"
+mwelexiconfilename = "DUCAME_4.02.txt"
 mwelexiconfullname = os.path.join(mwelexiconpath, mwelexiconfilename)
 
 

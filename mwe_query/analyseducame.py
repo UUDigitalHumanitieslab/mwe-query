@@ -19,25 +19,27 @@ ducamefilename = "DUCAME_Current.xlsx"
 ducamefullname = os.path.join(ducamepath, ducamefilename)
 
 
-def countvbls(newcan: str) -> int:
+def countvbls(rawnewcan: str) -> int:
     vblcount = 0
-    angleopen = 0
-    angleclose = 0
+    # angleopen = 0
+    # angleclose = 0
+    # replace anglebrackteed strings by a variable name
+    newcan = re.sub(bracketvblpattern, ' iets ', rawnewcan)
     tokens = tokenize(newcan)
     for token in tokens:
         if token in vblwords:
             vblcount += 1
 
-    for ch in newcan:
-        if ch == "<":
-            angleopen += 1
-        elif ch == ">":
-            angleclose += 1
-
-    if angleopen == angleclose:
-        vblcount += angleopen
-    else:
-        print(f"Angled bracket mismatch in {newcan}")
+    # for ch in newcan:
+    #     if ch == "<":
+    #         angleopen += 1
+    #     elif ch == ">":
+    #         angleclose += 1
+    #
+    # if angleopen == angleclose:
+    #     vblcount += angleopen
+    # else:
+    #     print(f"Angled bracket mismatch in {newcan}")
 
     return vblcount
 
@@ -50,8 +52,9 @@ def getbracketvbls(newcan: str) -> List[str]:
     return results
 
 
-def getcomponents(newcan: str) -> List[str]:
+def getcomponents(rawnewcan: str) -> List[str]:
     components = []
+    newcan = re.sub(bracketvblpattern, '', rawnewcan)
     anntokens = preprocess_MWE(newcan)
     for token, ann in anntokens:
         if ann not in dropanns:
@@ -138,6 +141,7 @@ def analyseentries(ducamedata):
 
 
 def run():
+    exactduplicatescount = 0
     reportfilename = "ducameanalysreport.txt"
     header, ducamedata = getxlsxdata(ducamefullname)
     vblcountdict, bracketvbldict, componentdict, compvalencydict, lvcverbdict = (
@@ -155,8 +159,14 @@ def run():
             if len(componentdict[key]) > 1:
                 componentstr, vblcnt = key
                 print(f"{componentstr}, {vblcnt}:", file=reportfile)
+                duplist = []
                 for canform in componentdict[key]:
                     print(f"\t{canform}", file=reportfile)
+                    canformtuple = tuple(canform.split())
+                    if canformtuple in duplist:
+                        exactduplicatescount += 1
+                    else:
+                        duplist.append(canformtuple)
 
         print("****Light Verbs****", file=reportfile)
         for lvcat in lvcverbdict:
@@ -172,6 +182,7 @@ def run():
                 for vblcnt, canform in sortedexamples:
                     print(f"{vblcnt}/{canform}", file=reportfile)
 
-
+        print('\n*****Number of exact duplicates*****')
+        print(exactduplicatescount)
 if __name__ == "__main__":
     run()

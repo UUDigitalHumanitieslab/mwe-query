@@ -1,6 +1,6 @@
 import os
 from typing import cast, Dict, IO, Iterable, List, Tuple
-from .tbfstandin import getyieldstr
+from tbfstandin import getyieldstr
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import (
     getattval as gav,
@@ -8,16 +8,18 @@ from sastadev.treebankfunctions import (
     getheadof,
     getsentence,
 )
-from .canonicalform import (
+from canonicalform import (
     expandaltvals,
     generatemwestructures,
     tree2xpath,
     mknearmissstructs,
     listofsets2setoflists,
 )
-from .mwetyping import NodeSet
+from mwetyping import NodeSet
 import copy
 from lxml import etree
+from getalpinomwes import isparticleverb
+from getmwecomponents import  getcompsxpaths
 
 noneval = "@@NA@@"
 
@@ -43,6 +45,7 @@ relcatsep = slash
 
 compsep = ";"
 outsep = ":"
+
 
 sentencexpath = ".//sentence/text()"
 
@@ -115,10 +118,12 @@ def getnodeyield(syntree: SynTree) -> List[SynTree]:
         )
         return sortedresultlist
 
-
-def canbeabsent(node: SynTree) -> bool:
-    result = gav(node, "rel") == "svp"
+def mkparticlenode(lemma: str) -> SynTree:
+    result = etree.Element('node', {'lemma': lemma, 'rel': 'svp'})
     return result
+
+
+
 
 
 def getatt_or_from_parents(node: SynTree, att: str, fallback: str = "") -> str:
@@ -153,47 +158,6 @@ def removeud(stree):
         parent = udnode.getparent()
         parent.remove(udnode)
     return newstree
-
-
-def iscomponent(stree: SynTree) -> bool:
-    result = "lemma" in stree.attrib
-    return result
-
-
-def oldgetcomps(
-    stree: SynTree, fpath: List[Relation]
-) -> List[Tuple[SynTree, List[Relation]]]:
-    results = []
-    if iscomponent(stree):
-        results = [(stree, fpath)]
-        # if isparticleverb(stree):
-        #    particle = getparticlenode(stree)
-        #    results += [(particle, fpath)]
-    else:
-        for child in stree:
-            chrel = gav(child, "rel")
-            childresults = getcomps(child, fpath + [chrel])
-            results += childresults
-    return results
-
-
-def getcomps(
-    stree: SynTree, fpath: List[Relation]
-) -> List[Tuple[SynTree, List[Tuple[Axis, Relation]]]]:
-    results = []
-    if iscomponent(stree):
-        results = [(stree, fpath)]
-        # if isparticleverb(stree):
-        #    particle = getparticlenode(stree)
-        #    results += [(particle, fpath)]
-    else:
-        for child in stree:
-            chrel = gav(child, "rel")
-            axis = child.attrib["axis"] if "axis" in child.attrib else childaxis
-            childresults = getcomps(child, fpath + [(axis, chrel)])
-            results += childresults
-    return results
-
 
 def shownode(stree):
     poscat = gav(stree, "cat") if "cat" in stree.attrib else gav(stree, "pt")
@@ -239,54 +203,12 @@ def expandalternatives(stree: SynTree) -> List[SynTree]:
     return results
 
 
-def oldgetcompsxpaths(stree: SynTree) -> List[Xpath]:
-    results = []
-    comps = getcomps(stree, [])
-    for lstree, fpath in comps:
-        lxpath = tree2xpath(lstree)
-        lfpath = mkfxpath(fpath)
-        xpathresult = mkxpath(lxpath, lfpath)
-        results.append(xpathresult)
-    return results
 
 
-def getcompsxpaths(stree: SynTree) -> List[Xpath]:
-    results = []
-    comps = getcomps(stree, [])
-    for lstree, fpath in comps:
-        lxpath = tree2xpath(lstree)
-        lfpath = mkfxpath(fpath)
-        xpathresult = mkxpath(lxpath, lfpath)
-        results.append(xpathresult)
-    return results
 
 
-def mkxpath(lxpath: Xpath, lfpath: Xpath):
-    core = lxpath if lfpath == "" else f"{lfpath}/{lxpath}"
-    result = f"./{core}"
-    return result
 
 
-def oldmkfxpath(fpath: List[Relation]) -> Xpath:
-    nodelist = [
-        f'node[{expandaltvals("@rel", rel,"=")}]' if rel != "" else "node"
-        for rel in fpath[:-1]
-    ]  # we skip the last one because that is the node we look for
-    result = "/".join(nodelist)
-    return result
-
-
-def mkfxpath(fpath: List[Tuple[Axis, Relation]]) -> Xpath:
-    nodelist = []
-    for axis, rel in fpath[
-        :-1
-    ]:  # we skip the last one because that is the node we look for
-        axisstr = f"{axis}::" if axis != childaxis else ""
-        newnode = f'node[{expandaltvals("@rel", rel,"=")}]' if rel != "" else "node"
-        newnodewithaxis = f"{axisstr}{newnode}"
-        nodelist.append(newnodewithaxis)
-    result = "/".join(nodelist)
-    return result
 
 
 def getargnodes(
@@ -749,35 +671,6 @@ def getstats(
     return result
 
 
-def getmwecomponents(
-    matchingnodes: List[SynTree], mwestructures: List[SynTree]
-) -> List[List[SynTree]]:
-    componentslist = []
-    for mweparse in mwestructures:
-        mwecompsxpathexprs = getcompsxpaths(mweparse)
-        for matchingnode in matchingnodes:
-            components = []
-            for mwecompsxpathexpr in mwecompsxpathexprs:
-                newcomponents = matchingnode.xpath(
-                    mwecompsxpathexpr
-                )  # multiple for cases such as mwu[hand in hand]
-                if newcomponents == []:
-                    components = []  # because all components must be present
-                    break
-                for newcomponent in newcomponents:
-                    if newcomponent is not None:
-                        if (
-                            newcomponent not in components
-                        ):  # for cases suchj as hand in hand under mwu
-                            components.append(newcomponent)
-                            break  # as soon as we have found on we are done
-                    else:
-                        if not canbeabsent(newcomponent):
-                            components = []  # because all components must be present
-                            break
-        if components != []:
-            componentslist.append(components)
-    return componentslist
 
 
 def displayfullstats(stats: MWEstats, outfile, header=""):

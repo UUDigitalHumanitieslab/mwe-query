@@ -6,6 +6,7 @@ phrasal node is generated for each (relevant) non-head single word.
 from typing import Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import (
+    bareindexnode,
     getattval as gav,
     terminal,
     allcats as validcats,
@@ -24,13 +25,13 @@ def expandnonheadwords(stree: SynTree) -> SynTree:
         newnode.remove(child)
     if stree.tag == "node":
         for child in stree:
-            if terminal(child):
+            if 'word' in child.attrib:
                 rel = gav(child, "rel")
                 if rel not in ["hd", "mwp", "hdf", "cmp"]:  # leave svp out here
                     newchild = mkphrase(child)
                 else:
                     newchild = copy.copy(child)
-            elif not terminal(child):
+            else:
                 newchild = expandnonheadwords(child)
             newnode.append(newchild)
     else:
@@ -63,8 +64,9 @@ def mkphrase(child: SynTree) -> SynTree:
     else:
         computedlcat = getlcat(child)
         if computedlcat is None:
-            newnode = copy.copy(child)
-            return newnode
+            pass
+            # newnode = copy.copy(child)   # put off to check expansion of prt in mwestructures
+            #return newnode
         else:
             newnode.attrib["cat"] = computedlcat
     for att in ["begin", "end", "index", "rel"]:
@@ -133,7 +135,7 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         result = "detp"
     elif pt == "vz":
         if "particle" in frame:
-            result = None
+            result = "part"
         elif "adjective" in frame:
             result = "ap"
         elif "adverb" in frame:

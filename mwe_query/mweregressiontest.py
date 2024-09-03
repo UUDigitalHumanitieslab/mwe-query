@@ -273,7 +273,7 @@ def regressiontest():  # noqa: C901
         debug = False
         if debug:
             print(f"Processing mwe {mwe}...")
-        print(f"Processing mwe {mwe}...", file=sys.stderr)
+        print(f"Processing mwe {mwe}...")
         cleanmwe = getcleanmwe(mwe)
         if cleanmwe in treebankdict:
             mwetree = treebankdict[cleanmwe]
@@ -307,8 +307,12 @@ def regressiontest():  # noqa: C901
             expandeduttparse = expandfull(uttparse)
             resultlist = []
             for label, mwequery in labeledmwequeries:
-                results = expandeduttparse.xpath(mwequery)
-                resultlist.append(len(results))
+                if mwequery is not None:
+                    results = expandeduttparse.xpath(mwequery)
+                    resultlist.append(len(results))
+                else:
+                    print(f'None value for {label}')
+                    resultlist.append(0)
 
             newdata[mwe][utterance] = tuple(resultlist)
 

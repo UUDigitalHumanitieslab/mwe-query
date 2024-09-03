@@ -1,7 +1,7 @@
 from typing import List
-from .pronadvs import metmeetottoe
-from .adpositions import vzandprts
-from .celexlexiconstandin import getforms
+from pronadvs import metmeetottoe
+from adpositions import vzandprts
+from celexlexiconstandin import getforms
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, showtree
 import itertools

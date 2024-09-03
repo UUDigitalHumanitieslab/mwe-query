@@ -1,22 +1,34 @@
 from lxml import etree
 import os
 import sys
+import time
 from optparse import OptionParser
 
-from mwe_query.mwe_annotate import annotate
-from mwe_query.mwemeta import MWEMeta, mwemetaheader
+from mwe_annotate import annotate
+from mwemeta import MWEMeta, mwemetaheader
 from sastadev.xlsx import mkworkbook, add_worksheet
+from tocupt import annotate_cupt, readcuptfile, writecuptfile
 from typing import List
 
+
+__version__ = '0.5'
 testing = False
+cupt_test = False
+
+conllu_extension = '.conllu'
+annotatedsuffix = '_mwe_annnotated'
 
 
 defaultinpath = r"D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD"
+defaultinpath = r"D:\Dropbox\various\Resources\Alpino Treebank\rug-compling Alpino master Treebank-cdb"
+defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme'
+# defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000012'
 # if testing:
 #    defaultinpath = r'D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD\nl_lassysmalldevelop-ud-dev\nl_lassysmalldevelop-ud-dev\LassyDevelop\wiki-737'
 basepath, basefolder = os.path.split(defaultinpath)
 defaultoutpath = os.path.join(defaultinpath, "..", f"{basefolder}-MWEAnnotated")
 
+defaultudpath = r'D:\Dropbox\various\Resources\nl-parseme-cupt'
 
 def getsentenceid(fullname: str) -> str:
     _, filename = os.path.split(fullname)
@@ -37,6 +49,7 @@ def annotatefile(filename) -> List[MWEMeta]:
 
 
 def annotatetb():
+    start_time = time.time()
 
     parser = OptionParser()
     parser.add_option(
@@ -70,6 +83,11 @@ def annotatetb():
     else:
         outpath = options.outputpath
 
+    if options.udpath is None:
+        udpath = defaultudpath
+    else:
+        udpath = options.udpath
+
     allmwemetas = []
     alldiscardedmwemetas = []
     #  process all files in all folders and subfolders
@@ -85,6 +103,11 @@ def annotatetb():
         testfullname = r"D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD\nl_lassysmalldevelop-ud-dev\nl_lassysmalldevelop-ud-dev\LassyDevelop\wiki-1820\wiki-1820.p.2.s.4.xml"
         testpath, testfilename = os.path.split(testfullname)
         inpathwalk = [(testpath, [], [testfilename])]
+    elif cupt_test:
+        inpath = 'testcupt/input/xml'
+        udpath = 'testcupt/input/conllu'
+        outpath = 'testcupt/output/cupt'
+        inpathwalk = os.walk(inpath)
     else:
         inpathwalk = os.walk(inpath)
     for root, dirs, thefiles in inpathwalk:
@@ -106,7 +129,7 @@ def annotatetb():
             mwemetas = []
             # print(f'Processing {infilename}...', file=sys.stderr)
             infullname = os.path.join(root, infilename)
-            verbose = True
+            verbose = False
             if verbose:
                 print(f"....{infullname}....", file=sys.stderr)
 
@@ -143,6 +166,22 @@ def annotatetb():
     add_worksheet(wb, [mwemetaheader], alldiscardedrows, sheetname="Discarded")
 
     wb.close()
+
+    rawconllu_infilenames = os.listdir(udpath)
+    conllu_infilenames = [f for f in rawconllu_infilenames if f.endswith(conllu_extension)]
+    for infilename in conllu_infilenames:
+        infullname = os.path.join(udpath, infilename)
+        sentences = readcuptfile(infullname)
+        newsentences = annotate_cupt(sentences, allmwemetas)
+        base, ext = os.path.splitext(infilename)
+        cuptoutfilename = f'{base}{annotatedsuffix}{ext}'
+        cuptoutfullname = os.path.join(outpath, cuptoutfilename)
+        writecuptfile(newsentences, cuptoutfullname)
+
+    end_time = time.time()
+    duration = end_time - start_time
+    timing_message = f'Duration: {duration:.2f} seconds'
+    print(timing_message)
 
 
 if __name__ == "__main__":

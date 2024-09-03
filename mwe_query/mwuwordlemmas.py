@@ -1,6 +1,6 @@
 import os
 from sastadev.readcsv import readcsv
-from .conf import SD_DIR
+from conf import SD_DIR
 from collections import defaultdict
 
 mwuwordlemmafilename = "mwuwordlemmas.txt"

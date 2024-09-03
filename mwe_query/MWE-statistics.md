@@ -177,6 +177,7 @@ the following table:
 
 The user can now add other properties, remove the *rel* property,
 filter for values etc., as is usual with these tables.
+Note that the pivot tables currently do not contain the option to export the pivottable, an option that is available in the standard Analysis section for constructions. This is still to be added. 
 
 Since it is expected that users will often want to select multiple properties, 
 in the order in which they are given, additional links are given  in the html page, e.g., for arguments:
