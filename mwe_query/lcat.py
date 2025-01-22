@@ -6,7 +6,11 @@ phrasal node is generated for each (relevant) non-head single word.
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, terminal, allcats as validcats, find1
 import copy
+import logging
 import lxml.etree as ET
+
+
+log = logging.getLogger()
 
 dummy = 'dummy'
 
@@ -182,11 +186,9 @@ def getlcat(node: SynTree, prel=None) -> str:  # noqa: C901
     elif pt == dummy:
         result = None
     else:
-        print('Unknown att value (pt) encountered in:')
-        ET.dump(node)
+        log.warning('Unknown att value (pt) encountered in: %s', ET.tostring(node))
         result = None
     if result == 'xp':
-        print('Unexpected att value  encountered in:')
-        ET.dump(node)
+        log.warning('Unexpected att value encountered in: %s', ET.tostring(node))
 
     return result
