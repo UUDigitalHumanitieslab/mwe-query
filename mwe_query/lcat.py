@@ -12,7 +12,10 @@ from sastadev.treebankfunctions import (
     find1,
 )
 import copy
+import logging
 import lxml.etree as ET
+
+log = logging.getLogger()
 
 dummy = "dummy"
 
@@ -196,12 +199,9 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     elif pt == dummy:
         result = None
     else:
-        print("lcat: Unknown att value (pt) encountered in:")
-        ET.dump(node)
+        log.warning('Unknown att value (pt) encountered in: %s', ET.tostring(node))
         result = None
-    if result is not None and result.startswith("xp"):
-        print(f"lcat: {result}: Unexpected att value  encountered in:")
-        ET.dump(node)
-        result = "xp"
+    if result == 'xp':
+        log.warning('Unexpected att value encountered in: %s', ET.tostring(node))
 
     return result

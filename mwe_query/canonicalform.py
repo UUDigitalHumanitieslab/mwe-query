@@ -5,6 +5,7 @@ to generate queries from them and to search using these queries.
 
 from typing import cast, Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
 from sastadev.sastatypes import SynTree
+import logging
 import re
 import sys
 from .tbfstandin import getnodeyield
@@ -62,6 +63,9 @@ from .annotations import (
 from .lcat import expandnonheadwords
 from .rwq import getrwqnode
 
+log = logging.getLogger()
+
+Xpathexpression = str
 space = " "
 underscore = "_"
 compoundsep = underscore
@@ -389,9 +393,8 @@ def preprocess_MWE(rawmwe: str) -> List[Tuple[str, int]]:  # noqa: C901
                 newann = noann
                 newword = word
         else:
-            print(f"illegal state: {state} for {rawmwe}", file=sys.stderr)
-            print(f"mwe={mwe}", file=sys.stderr)
-            exit(-1)
+            log.debug('illegal state: %s for %s: mwe=%s', state, rawmwe, mwe)
+            raise RuntimeError(f'illegal state: {state} for {rawmwe}')
         ann_list.append((newword, newann))
 
     return ann_list
@@ -482,10 +485,10 @@ def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
             elif mwetop in {itop, parenttop}:
                 result = annotations[beginint] not in nomodanns
             else:
-                print(f"Illegal value for mwetop={mwetop}", file=sys.stderr)
+                log.warning('Illegal value for mwetop=%s', mwetop)
                 result = False
         else:
-            print(f"Index out of range: {beginint} in {annotations}", file=sys.stderr)
+            log.warning(f'Index out of range: %s in %s', beginint, annotations)
             result = False
     else:  # can now only be node with cat=mwu
         mwps = getnodeyield(head)
@@ -498,7 +501,7 @@ def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
                 [annotations[int(gav(mwp, "begin"))] not in nomodanns for mwp in mwps]
             )
         else:
-            print(f"Illegal value for mwetop={mwetop}", file=sys.stderr)
+            log.warning('Illegal value for mwetop=%s', mwetop)
             result = False
     return result
 
@@ -525,9 +528,7 @@ def zerochildrencount(stree, annotations):
                 if annotations[intbegin] == zero:
                     result += 1
             else:
-                print(
-                    f"Index out of range: {intbegin} in {annotations}", file=sys.stderr
-                )
+                log.warning('Index out of range: %d in %s', intbegin, annotations)
     return result
 
 
@@ -749,13 +750,13 @@ def transformtree(  # noqa: C901
                         for newchild in newchildlist:
                             if newchild is not None:
                                 if DEBUG:
-                                    print("\nnewchild:")
+                                    log.debug('\nnewchild:')
                                     ET.dump(newchild)
                                 # we must make a copy of the child because each Element has only one parent
                                 newchildcopy = copy.copy(newchild)
                                 newnodecopy.append(newchildcopy)
                                 if DEBUG:
-                                    print("\n\nnewnodecopy:")
+                                    log.debug('\n\nnewnodecopy:')
                                     ET.dump(newnodecopy)
                         results.append(newnodecopy)
                 else:
@@ -771,9 +772,7 @@ def transformtree(  # noqa: C901
             pt = gav(stree, "pt")
             rel = gav(stree, "rel")
             if not (0 <= beginint < len(annotations)):
-                print(
-                    f"Index out of range: {beginint} in {annotations}", file=sys.stderr
-                )
+                log.warning('Index out of range: %d in %s', beginint, annotations)
                 # we simply skip this node
                 # newnode = None
             else:
@@ -906,10 +905,7 @@ def transformtree(  # noqa: C901
                     newnode.attrib["pt"] = "vnw"
                     results.append(newnode)
                 else:
-                    print(
-                        f"Unrecognized annotation: {annotations[beginint]}",
-                        file=sys.stderr,
-                    )
+                    log.warning('Unrecognized annotation: %s', annotations[beginint])
                     newnode = attcopy(
                         stree,
                         ["lemma", "rel", "pt"] + subcatproperties + inflproperties,
@@ -917,12 +913,12 @@ def transformtree(  # noqa: C901
                     results.append(newnode)
 
         if DEBUG:
-            print("results:")
+            log.debug('results:')
             for result in results:
                 if result is None:
-                    print("None")
+                    log.debug('None')
                 else:
-                    ET.dump(result)
+                    log.debug(ET.tostring(result))
         return results
 
 
