@@ -12,7 +12,7 @@ setup(
     long_description_content_type="text/markdown",
     author='Martin Kroon / Digital Humanities Lab, Utrecht University',
     author_email='digitalhumanities@uu.nl',
-    url='https://github.com/UUDigitalHumanitieslab/mwe-query',
+    url='https://github.com/CentreForDigitalHumanities/mwe-query',
     license='CC BY-NC-SA 4.0',
     packages=['mwe_query'],
     package_data={"mwe_query": ["py.typed"]},

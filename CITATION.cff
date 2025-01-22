@@ -25,5 +25,5 @@ authors:
 identifiers:
   - type: doi
     value: 10.5281/zenodo.10410636
-repository-code: 'https://github.com/UUDigitalHumanitieslab/mwe-query'
+repository-code: 'https://github.com/CentreForDigitalHumanities/mwe-query'
 license: BSD-3-Clause
