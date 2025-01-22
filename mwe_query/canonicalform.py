@@ -65,7 +65,6 @@ from .rwq import getrwqnode
 
 log = logging.getLogger()
 
-Xpathexpression = str
 space = " "
 underscore = "_"
 compoundsep = underscore
@@ -488,7 +487,7 @@ def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
                 log.warning('Illegal value for mwetop=%s', mwetop)
                 result = False
         else:
-            log.warning(f'Index out of range: %s in %s', beginint, annotations)
+            log.warning(f'Index out of range: {beginint} in {annotations}')
             result = False
     else:  # can now only be node with cat=mwu
         mwps = getnodeyield(head)
