@@ -1,0 +1,1716 @@
+< dat zij iets wil doen > 62
+< goed> 1
+< goede> 1
+< hij ziek is> 1
+< iets te doen > 2
+< iets te moeten doen > 5
+< iets te willen doen > 6
+< om iets te doen > 123
+< rekenen> 1
+< veel> 2
+<1948> 1
+<Aurora> 1
+<Philppot> 1
+<al te> 1
+<alle> 1
+<als dat waar is> 2
+<als een clown> 1
+<ander> 2
+<argumenten> 1
+<bestrijden> 1
+<daar> 10
+<dat dat waar is> 5
+<dat dat zo is> 6
+<dat het goed gaat komen> 1
+<dat hij ziek werd> 1
+<dat zij iets gaat doen> 12
+<de duivel> 1
+<de uitslag> 1
+<dik> 1
+<dit gebeurt> 1
+<dit> 1
+<drieën> 2
+<duur> 1
+<er> 1
+<fietsen> 1
+<flink> 3
+<goed> 15
+<goede> 2
+<hen> 3
+<het> 1
+<hij weggaat> 1
+<hij> 2
+<hoe kan dit nou> 2
+<iets na te gaan> 1
+<iets te doen> 1
+<iets te moeten doen> 2
+<koninklijke> 1
+<leven> 1
+<lopen> 23
+<makkelijk> 2
+<mindere> 1
+<naar huis> 2
+<nu> 2
+<of dat waar is> 1
+<of dat zo is> 1
+<om dit te mogen> 1
+<om iets te doen > 1
+<om iets te doen> 28
+<om iets te gaan doen> 2
+<personen> 1
+<raar> 2
+<schreeuwen> 1
+<slecht> 6
+<snel> 3
+<staan> 1
+<stevig> 1
+<taart> 1
+<toen> 1
+<treurig> 1
+<veel> 7
+<vervallen> 1
+<vreemd> 2
+<wat er aan de hand is> 1
+<werken> 3
+<zij> 25
+<zijn> 7
+<zo> 1
+zal+indruk+op+maken, 2:
+	iemand zal 0een  L:indruk OIA:op iemand DO:maken
+	iemand zal L:indruk OIA:op iemand DO:maken
+zal+idee+hebben, 1:
+	iemand zal ^geen L:idee BE:hebben
+	iemand zal 0een L:idee BE:hebben
+zal+zin+hebben, 1:
+	iemand zal  L:zin BE:hebben
+	iets zal L:zin BE:hebben
+zal+hout+snijden, 1:
+	iets zal hout snijden
+	iets zal ^weinig hout snijden
+zal+laten+vallen, 2:
+	iemand zal iemand laten vallen
+	iemand zal iets laten vallen
+zal+laten+zitten, 2:
+	iemand zal iemand laten zitten
+	iemand zal iets laten zitten
+zal+cadeau+doen, 3:
+	iemand zal iemand ^niet iets cadeau doen
+	iemand zal iemand iets cadeau doen
+zal+onder+stoelen+of+banken+steken, 2:
+	iemand zal iets ^niet onder stoelen of banken steken
+	iemand zal ^niet onder stoelen of banken steken <dat zij iets gaat doen>
+zal+uit+zijn, 2:
+	iemand zal  <duur> uit zijn
+	iemand zal uit iets zijn
+zal+onder+zitten, 2:
+	iemand zal onder iets zitten
+	iemand|iets zal onder <de uitslag> zitten
+zal+op+zichzelf+staan, 1:
+	iemand zal op zichzelf staan
+	iets zal op =zichzelf staan
+zal+de+geest+geven, 1:
+	iemand zal de geest geven
+	iets zal de geest geven
+zal+er+bij+kunnen, 1:
+	iemand zal er bij kunnen
+	iemand zal er ^niet bij kunnen
+zal+van+mening+zijn, 2:
+	iemand zal L:[van mening] BE:zijn <dat dat waar is>
+	iemand zal L:[van mening] BE:zijn <dat zij iets gaat doen>
+	iemand zal iets L:[van mening] BE:zijn
+zal+van+oordeel+zijn, 2:
+	iemand zal L:[van oordeel] BE:zijn <dat dat waar is>
+	iemand zal iets L:[van oordeel] BE:zijn
+zal+in+beslag+nemen, 2:
+	iets zal iets L:[in beslag] CBE:nemen
+	iemand zal iets L:[in beslag] CBE:nemen
+zal+indruk+geven, 2:
+	iemand zal 0de L:indruk GV:geven < dat zij iets wil doen >
+	iemand zal 0de L:indruk GV:geven < iets te willen doen >
+	iemand zal 0een <goede> L:indruk GV:geven
+zal+indruk+wekken, 2:
+	iemand zal 0de L:indruk CBE:wekken < dat zij iets wil doen >
+	iemand zal 0de L:indruk CBE:wekken < iets te moeten doen >
+zal+idee+krijgen, 2:
+	iemand zal 0het L:idee BC:krijgen < dat zij iets wil doen >
+	iemand zal 0het L:idee BC:krijgen < iets te willen doen >
+zal+gevoel+hebben, 2:
+	iemand zal 0het L:gevoel BE:hebben < dat zij iets wil doen >
+	iemand zal 0het L:gevoel BE:hebben < iets te willen doen >
+zal+gevoel+geven, 3:
+	iemand zal iemand 0het L:gevoel GV:geven < dat zij iets wil doen >
+	iemand zal iemand 0het L:gevoel GV:geven < iets te doen >
+zal+afspraak+maken, 2:
+	iemand zal 0de L:afspraak DO:maken < dat zij iets wil doen >
+	iemand zal 0de L:afspraak DO:maken < om iets te doen >
+zal+risico+lopen, 2:
+	iemand zal 0het L:risico BE:lopen < dat zij iets wil doen >
+	iemand zal 0het L:risico BE:lopen < om iets te doen >
+zal+indruk+hebben, 2:
+	iemand zal 0de L:indruk BE:hebben < dat zij iets wil doen >
+	iemand zal 0de L:indruk BE:hebben < iets te moeten doen >
+zal+gevoel+krijgen, 2:
+	iemand zal 0het L:gevoel BC:krijgen < dat zij iets wil doen >
+	iemand zal 0het L:gevoel BC:krijgen < iets te willen doen >
+zal+idee+hebben, 2:
+	iemand zal 0het L:idee BE:hebben < dat zij iets wil doen >
+	iemand zal 0het L:idee BE:hebben < iets te willen doen >
+	iemand zal 0het L:idee BE:hebben <dat zij iets gaat doen>
+	iemand zal ^geen L:idee BE:hebben <wat er aan de hand is>
+zal+winst+maken, 1:
+	iemand zal  L:winst DO:maken
+	iemand zal 0een L:winst DO:maken
+zal+indruk+krijgen, 2:
+	iemand zal 0de L:indruk GT:krijgen < dat zij iets wil doen >
+	iemand zal 0de L:indruk GT:krijgen < iets te moeten doen >
+zal+verlies+lijden, 1:
+	iemand zal L:verlies BE:lijden
+	iemand zal 0een *verlies lijden
+zal+opdracht+geven, 2:
+	iemand zal 0de L:opdracht GV:geven < om iets te doen >
+	iemand zal iemand 0een L:opdracht GV:geven
+zal+gevaar+lopen, 2:
+	iemand zal 0het L:gevaar BE:lopen < dat zij iets wil doen >
+	iemand zal 0het L:gevaar BE:lopen < om iets te doen >
+zal+initiatief+nemen, 1:
+	iemand zal L:initiatief DO:nemen
+	iemand zal 0een L:initiatief DO:nemen
+zal+bevel+krijgen, 2:
+	iemand zal L:bevel GT:krijgen < om iets te doen >
+	iemand zal 0het L:bevel GT:krijgen < om iets te doen >
+zal+uitspraak+doen, 1:
+	iemand zal 0een L:uitspraak DO:doen
+	iemand zal L:uitspraak DO:doen
+zal+dienst+weigeren, 1:
+	iemand zal dienst weigeren
+	iets zal dienst weigeren
+zal+risico+nemen, 2:
+	iemand zal 0het L:risico nemen < dat zij iets wil doen >
+	iemand zal 0het L:risico nemen < om iets te doen >
+zal+afspraak+hebben, 2:
+	iemand zal 0de L:afspraak BE:hebben <dat zij iets gaat doen>
+	iemand zal 0de L:afspraak BE:hebben <om iets te gaan doen>
+zal+zich+tot+doel+stellen, 2:
+	iemand zal zich iets tot doel stellen
+	iemand zal zich tot doel stellen < om iets te doen >
+zal+in+verhouding+tot+staan, 2:
+	iets zal in ^geen verhouding  tot iets staan
+	iets zal in verhouding tot iets staan
+zal+indruk+geven, 3:
+	iemand zal iemand 0de L:indruk GV:geven < dat zij iets wil doen >
+	iemand zal iemand 0de L:indruk GV:geven < iets te doen >
+zal+advies+geven, 2:
+	iemand zal iemand L:advies GV:geven
+	iemand zal iemand 0een L:advies GV:geven
+zal+belofte+doen, 2:
+	iemand zal iemand 0een L:belofte DO:doen
+	iemand zal 0de L:belofte DO:doen < dat zij iets wil doen >
+zal+passie+voor+hebben, 2:
+	iemand zal L:passie voor iets BE:hebben
+	iemand zal 0een L:passie voor iets BE:hebben
+zal+aversie+tegen+hebben, 2:
+	iemand zal L:aversie  tegen iemand BE:hebben
+	iemand zal 0een L:aversie tegen iemand BE:hebben
+zal+slag+leveren, 1:
+	iemand zal L:slag DO:leveren
+	iemand zal 0een L:slag DO:leveren
+zal+kracht+geven, 3:
+	iemand|iets zal iemand 0de L:kracht GV:geven < om iets te doen >
+	iemand|iets zal iemand L:kracht GV:geven < om iets te doen >
+zal+aanval+op+doen, 2:
+	iemand zal 0een L:aanval  OIA:op iemand DO:doen
+	iemand zal 0een L:aanval OIA:op iemand|iets DO:doen
+zal+vermoeden+hebben, 2:
+	iemand zal 0het L:vermoeden BE:hebben < dat zij iets wil doen >
+	iemand zal 0het L:vermoeden BE:hebben <dat zij iets gaat doen>
+zal+de+deal+maken, 2:
+	iemand zal de deal maken < dat zij iets wil doen >
+	iemand zal de deal maken < om iets te doen >
+zal+nut+hebben, 1:
+	iets zal ^geen L:nut BE:hebben
+	iemand zal L:nut BE:hebben
+zal+de+nek+omdraaien, 2:
+	iemand zal iemand de nek omdraaien
+	iemand|iets zal iemand de nek omdraaien
+zal+de+pretentie+hebben, 2:
+	iemand zal de pretentie hebben < om iets te doen >
+	iemand zal de *pretentie hebben < dat zij iets wil doen >
+zal+de+suggestie+wekken, 2:
+	iemand zal de *suggestie wekken < dat zij iets wil doen >
+	iemand zal de suggestie wekken < iets te willen doen >
+zal+genoegen+smaken, 2:
+	iemand zal 0het L:genoegen BE:smaken < dat zij iets wil doen >
+	iemand zal 0het L:genoegen BE:smaken <om iets te doen>
+zal+college+geven, 1:
+	iemand zal 0een L:college GV:geven
+	iemand zal L:college GV:geven
+zal+college+aan+geven, 2:
+	iemand zal 0een L:college  aan iemand GV:geven
+	iemand zal L:college  aan iemand GV:geven
+zal+bevel+geven, 2:
+	iemand zal L:bevel GV:geven < om iets te doen >
+	iemand zal iemand 0een L:bevel GV:geven
+	iemand zal 0het L:bevel GV:geven < om iets te doen >
+zal+bevel+geven, 3:
+	iemand zal iemand L:bevel GV:geven < om iets te doen >
+	iemand zal iemand 0het L:bevel GV:geven < om iets te doen >
+zal+voorrecht+hebben, 2:
+	iemand zal 0het L:voorrecht BE:hebben < om iets te doen >
+	iemand zal 0het L:voorrecht BE:hebben <om dit te mogen>
+zal+abortus+plegen, 1:
+	iemand zal 0een L:abortus DO:plegen
+	iemand zal L:abortus DO:plegen
+zal+hoop+hebben, 2:
+	iemand zal 0de L:hoop BE:hebben < dat zij iets wil doen >
+	iemand zal 0de L:hoop BE:hebben < om iets te doen >
+	iemand zal 0de L:hoop BE:hebben <dat het goed gaat komen>
+zal+waardering+voor+tonen, 2:
+	iemand zal  L:waardering OIA:voor iemand|iets DO:tonen
+	iemand zal L:waardering  OIA:voor iemand DO:tonen
+zal+winst+boeken, 1:
+	iemand zal L:winst DO:boeken
+	iemand zal 0een L:winst DO:boeken
+zal+hoop+houden, 2:
+	iemand zal 0de L:hoop ST:houden < dat zij iets wil doen >
+	iemand zal 0de L:hoop ST:houden < om iets te doen >
+zal+hoop+krijgen, 2:
+	iemand zal 0de L:hoop BC:krijgen < dat zij iets wil doen >
+	iemand zal 0de L:hoop BC:krijgen < om iets te doen >
+zal+hoop+koesteren, 2:
+	iemand zal 0de L:hoop BE:koesteren < dat zij iets wil doen >
+	iemand zal 0de L:hoop BE:koesteren < om iets te doen >
+zal+van+mening+lijken, 2:
+	iemand zal L:[van mening] lijken <dat zij iets gaat doen>
+	iemand zal iets L:[van mening] lijken
+met+zijn, 1:
+	met zijn <drieën>
+	met =zijn <drieën>
+zal+impact+op+hebben, 2:
+	iets zal 0een L:impact op iets|iemand BE:hebben
+	iemand zal L:impact op iets BE:hebben
+zal+zich+in+de+kaart+laten+kijken, 1:
+	iemand zal zich in de kaart laten kijken
+	iemand zal zich in de kaart laten kijken
+zal+aan+de+praat+krijgen, 2:
+	iemand zal iets L:[aan de praat] CBC:krijgen
+	iemand zal iets L:[aan de praat] CBC:krijgen
+zal+van+slag+zijn, 1:
+	iemand zal L:[van slag] BE:zijn
+	iemand zal L:[van slag] BE:zijn
+hier+en+nu, 0:
+	hier en nu
+	0het hier en nu
+zal+succes+behalen, 1:
+	iemand zal *succes behalen
+	iemand zal 0een L:succes DO:behalen
+zal+controle+over+hebben, 2:
+	iemand zal L:controle over iets BE:hebben
+	iemand zal L:controle over iets BE:hebben
+zal+genoeg+van+krijgen, 2:
+	iemand zal ^geen M:genoeg van iets BC:krijgen
+	iemand zal M:genoeg van iets BC:krijgen
+zal+onvermeld+laten, 2:
+	iemand zal iets onvermeld laten
+	iemand zal onvermeld laten <dat dat zo is>
+zal+van+oordeel+lijken, 2:
+	iemand zal iets L:[van oordeel] lijken
+	iemand zal L:[van oordeel] lijken <dat dat zo is>
+zal+onderscheid+tussen+maken, 2:
+	iemand zal L:onderscheid OIA:tussen iets DO:maken
+	iemand zal 0een L:onderscheid OIA:tussen iets DO:maken
+zal+kans+op+zien, 2:
+	iemand zal *kans OIA:op iets zien
+	iemand zal L:kans OIA:op iets BE:zien
+zal+op+één+oor+liggen, 1:
+	iemand zal L:[op één oor] BE:liggen
+	iemand zal L:[op één oor] BE:liggen
+zal+willen+zeggen, 2:
+	iets zal iets willen zeggen
+	iets zal willen zeggen <dat dat waar is>
+zal+het+met+eens+zijn, 2:
+	iemand zal het OIA:met iets eens zijn
+	iemand zal het com:[met] iemand eens zijn
+****Light Verbs****
+BE:	hebben	277
+BE:	zijn	102
+BE:	gaan	5
+BE:	staan	39
+BE:	voelen	2
+BE:	zitten	14
+BE:	liggen	21
+BE:	doen	3
+BE:	lopen	10
+BE:	lijden	3
+BE:	hechten	1
+BE:	beleven	2
+BE:	geven	1
+BE:	maken	3
+BE:	houden	1
+BE:	ondervinden	3
+BE:	huldigen	2
+BE:	vertonen	2
+BE:	stellen	1
+BE:	vormen	2
+BE:	smaken	2
+BE:	genieten	2
+BE:	verkeren	2
+BE:	koesteren	4
+BE:	vinden	1
+BE:	zien	4
+BE:	bestaan	1
+BC:	komen	103
+BC:	raken	65
+BC:	gaan	142
+BC:	geraken	5
+BC:	krijgen	37
+BC:	lopen	6
+BC:	slaan	3
+BC:	schieten	3
+BC:	roepen	1
+BC:	vallen	1
+BC:	spatten	1
+BC:	oplopen	1
+BC:	vinden	1
+BC:	wekken	1
+BC:	geven	2
+BC:	treden	3
+BC:	vliegen	2
+BC:	worden	3
+BC:	springen	2
+BC:	zijn	1
+DO:	maken	82
+DO:	lopen	2
+DO:	doen	77
+DO:	begaan	233
+DO:	slaan	2
+DO:	plegen	237
+DO:	pakken	2
+DO:	tonen	16
+DO:	gaan	1
+DO:	schoppen	2
+DO:	nemen	23
+DO:	treffen	6
+DO:	houden	42
+DO:	hebben	5
+DO:	afleggen	5
+DO:	spelen	4
+DO:	uitbrengen	1
+DO:	bouwen	1
+DO:	schieten	1
+DO:	wagen	3
+DO:	vervullen	2
+DO:	geven	16
+DO:	volbrengen	1
+DO:	voeren	23
+DO:	stellen	8
+DO:	afvuren	1
+DO:	ondernemen	6
+DO:	trekken	3
+DO:	zetten	1
+DO:	uitoefenen	7
+DO:	aantekenen	1
+DO:	leveren	11
+DO:	uitdelen	1
+DO:	besteden	1
+DO:	verrichten	10
+DO:	boeken	8
+DO:	berokkenen	1
+DO:	leggen	1
+DO:	onderhouden	1
+DO:	bekleden	3
+DO:	vellen	2
+DO:	brengen	2
+DO:	uitspreken	1
+DO:	baren	1
+DO:	openen	1
+DO:	inzetten	1
+DO:	stichten	1
+DO:	uithalen	3
+DO:	laten	1
+DO:	plaatsen	1
+DO:	uitvoeren	1
+DO:	flikken	1
+DO:	uitkramen	1
+DO:	voortbrengen	1
+DO:	verzetten	1
+DO:	behalen	1
+DO:	bieden	2
+CBE:	wekken	4
+CBE:	hebben	15
+CBE:	nemen	16
+CBE:	zetten	9
+CBE:	stellen	9
+CBE:	krijgen	3
+CBE:	steken	1
+CBE:	laten	1
+CBE:	leggen	2
+CBE:	aanrichten	1
+CBE:	helpen	1
+CBE:	plaatsen	1
+CBE:	vinden	1
+CBE:	hebbem	1
+CBE:	maken	1
+CBE:	houden	2
+CBE:	geven	1
+LBT:	klap	4
+LBT:	muilpeer	3
+LBT:	oorveeg	1
+LBT:	oorvijg	1
+LBT:	douw	4
+LBT:	opdoffer	1
+LBT:	opdonder	1
+LBT:	dreun	1
+LBT:	mokerslag	1
+LBT:	trap	5
+LBT:	haal	3
+LBT:	opflikker	3
+LBT:	peer	3
+LBT:	klets	3
+LBT:	mep	3
+LBT:	pats	3
+LBT:	pets	3
+LBT:	tik	3
+LBT:	tikje	3
+LBT:	duw	3
+LBT:	zet	3
+LBT:	zetje	3
+LBT:	kus	3
+LBT:	lik	3
+LBT:	smak	3
+LBT:	zoen	3
+LBT:	afscheidskus	3
+LBT:	kushandje	3
+LBT:	french	3
+LBT:	tongkus	3
+LBT:	tongzoen	3
+LBT:	doodskus	3
+LBT:	nachtkus	3
+LBT:	nachtzoen	3
+LBT:	klapzoen	3
+LBT:	smakker	3
+LBT:	voetkus	3
+LBT:	vredekus	3
+LBT:	handkus	3
+LBT:	judaskus	3
+LBT:	zuigzoen	3
+LBT:	por	3
+LBT:	stoot	3
+LBT:	schouderduw	3
+LBT:	kontje	3
+LBT:	bodycheck	3
+LBT:	schop	3
+LBT:	schot	3
+LBT:	doodschop	3
+LBT:	hakje	3
+LBT:	knietje	3
+LBT:	rechtse	3
+LBT:	linkse	3
+LBT:	uppercut	3
+LBT:	high-five	3
+LBT:	hug	3
+LBT:	box	3
+GT:	krijgen	127
+GT:	verwerven	4
+GT:	vragen	3
+GT:	ontvangen	1
+GT:	verkrijgen	1
+GT:	nemen	1
+CBC:	nemen	4
+CBC:	krijgen	14
+CBC:	leggen	3
+CBC:	brengen	118
+CBC:	lokken	1
+CBC:	wekken	2
+CBC:	doen	3
+CBC:	stellen	10
+CBC:	snellen	1
+CBC:	baren	1
+CBC:	roepen	1
+CBC:	schrijven	1
+CBC:	jagen	1
+CBC:	sturen	1
+CBC:	zetten	4
+CBC:	helpen	2
+CBC:	drijven	1
+CBC:	schuiven	1
+CBC:	vragen	1
+CBC:	trekken	1
+CBC:	gooien	1
+CST:	houden	77
+GV:	geven	180
+GV:	baren	1
+GV:	verkopen	5
+GV:	doen	9
+GV:	bewijzen	1
+GV:	besteden	1
+GV:	toezwaaien	1
+GV:	wensen	1
+GV:	inboezemen	1
+GV:	berokkenen	1
+GV:	brengen	7
+GV:	aanbieden	4
+GV:	verlenen	3
+GV:	aanjagen	2
+GV:	bieden	2
+GV:	schenken	2
+GV:	verschaffen	1
+GV:	uitdelen	2
+ST:	blijven	36
+ST:	houden	33
+****Valency alternations****
+
+zal+op+de+tenen+getrapt+zijn:
+1/iemand zal op de tenen getrapt zijn
+2/iemand zal <snel> op de  tenen getrapt zijn
+
+zal+op+zijn+tenen+getrapt+zijn:
+1/iemand zal op zijn tenen getrapt zijn
+2/iemand zal <snel> op zijn tenen getrapt zijn
+
+zal+aanstalten+maken:
+1/iemand zal aanstalten maken
+2/iemand zal aanstalten maken < om iets te doen >
+
+zal+alle+zeilen+bijzetten:
+1/iemand zal alle zeilen bijzetten
+2/iemand zal alle zeilen bijzetten < om iets te doen >
+
+zal+indruk+op+maken:
+2/iemand zal 0een  L:indruk OIA:op iemand DO:maken
+2/iemand zal L:indruk OIA:op iemand DO:maken
+
+zal+fout+maken:
+1/iemand zal 0een L:fout DO:maken
+2/iemand zal 0de L:fout DO:maken < dat zij iets wil doen >
+
+zal+er+doekjes+om+winden:
+1/iemand zal er ^geen doekjes om winden
+2/iemand zal er ^geen doekjes om winden <dat zij iets gaat doen>
+
+zal+speld+tussen+te+krijgen+zijn:
+0/0er  zal  ^geen speld tussen te krijgen zijn
+1/0er zal ^geen speld tussen iets te krijgen zijn
+
+zal+idee+hebben:
+1/iemand zal ^geen L:idee BE:hebben
+1/iemand zal 0een L:idee BE:hebben
+2/iemand zal 0het L:idee BE:hebben < dat zij iets wil doen >
+2/iemand zal 0het L:idee BE:hebben < iets te willen doen >
+2/iemand zal 0het L:idee BE:hebben <dat zij iets gaat doen>
+2/iemand zal ^geen L:idee BE:hebben <wat er aan de hand is>
+
+zal+zin+hebben:
+1/iemand zal  L:zin BE:hebben
+1/iets zal L:zin BE:hebben
+2/iemand zal L:zin BE:hebben < om iets te doen >
+
+zal+geluk+hebben:
+1/iemand zal L:geluk BE:hebben
+2/iemand zal 0het L:geluk BE:hebben < dat zij iets wil doen >
+
+zal+het+gortig+maken:
+1/iemand zal het gortig maken
+2/iemand zal het <al te> gortig maken
+
+zal+gevoel+hebben:
+1/iemand zal 0een L:gevoel BE:hebben
+2/iemand zal 0het L:gevoel BE:hebben < dat zij iets wil doen >
+2/iemand zal 0het L:gevoel BE:hebben < iets te willen doen >
+
+zal+lef+hebben:
+1/iemand zal L:lef BE:hebben
+2/iemand zal 0het L:lef BE:hebben <om iets te doen>
+
+zal+hout+snijden:
+1/iets zal hout snijden
+1/iets zal ^weinig hout snijden
+
+zal+kwaad+doen:
+1/iemand|iets zal ^geen kwaad doen
+2/iemand zal iemand  L:kwaad DO:doen
+
+zal+de+wacht+aanzeggen:
+1/iemand zal de wacht aanzeggen
+2/iemand zal iemand de wacht aanzeggen
+
+zal+laten+vallen:
+2/iemand zal iemand laten vallen
+2/iemand zal iets laten vallen
+
+zal+laten+zitten:
+2/iemand zal iemand laten zitten
+2/iemand zal iets laten zitten
+
+zal+kunnen+bommen:
+2/iets zal iemand ^niet kunnen bommen
+3/iets zal iemand ^niet iets kunnen bommen
+
+zal+cadeau+doen:
+3/iemand zal iemand ^niet iets cadeau doen
+3/iemand zal iemand iets cadeau doen
+
+zal+parten+spelen:
+1/iets zal parten spelen
+2/iets zal iemand *parten spelen
+
+zal+zorgen+baren:
+1/iets zal L:zorgen CBC:baren
+2/iets|iemand zal iemand L:zorgen GV:baren
+
+zal+onder+stoelen+of+banken+steken:
+2/iemand zal iets ^niet onder stoelen of banken steken
+2/iemand zal ^niet onder stoelen of banken steken <dat zij iets gaat doen>
+
+zal+in+staat+zijn:
+1/iemand zal L:[in staat] BE:zijn
+2/iemand zal in <vervallen> staat zijn
+
+zal+in+de+gelegenheid+zijn:
+1/iemand zal L:[in de gelegenheid] BE:zijn
+2/iemand zal L:[in de gelegenheid] BE:zijn < om iets te doen >
+
+zal+in+de+verleiding+komen:
+1/iemand zal L:[in de verleiding] BC:komen
+2/iemand zal L:[in de verleiding] BC:komen < om iets te doen >
+
+zal+maatregel+nemen:
+1/iemand zal 0een L:maatregel DO:nemen
+2/iemand zal  0een L:maatregel DO:nemen < om iets te doen >
+
+zal+maatregel+treffen:
+1/iemand zal 0een L:maatregel DO:treffen
+2/iemand zal 0een L:maatregel DO:treffen < om iets te doen >
+
+zal+moeite+doen:
+1/iemand zal L:moeite DO:doen
+2/iemand zal L:moeite DO:doen < om iets te doen >
+
+zal+met+uit+te+staan+hebben:
+2/iemand zal ^niet met iemand uit te staan hebben
+3/iemand zal ^niet iets  met iemand uit te staan hebben
+
+zal+uit+zijn:
+2/iemand zal  <duur> uit zijn
+2/iemand zal uit iets zijn
+
+zal+onder+zitten:
+2/iemand zal onder iets zitten
+2/iemand|iets zal onder <de uitslag> zitten
+
+zal+op+het+punt+staan:
+1/iemand zal L:[op het punt] BE:staan
+2/iemand zal L:[op het punt] BE:staan <om iets te doen>
+
+zal+op+zichzelf+staan:
+1/iemand zal op zichzelf staan
+1/iets zal op =zichzelf staan
+
+zal+pech+hebben:
+1/iemand zal L:pech BE:hebben
+2/iemand zal 0de L:pech BE:hebben <dat hij ziek werd>
+
+weet+veel:
+1/+weet iemand veel
+2/+weet iemand veel <of dat zo is>
+
+zal+zijn+tenten+opslaan:
+1/iemand zal zijn tenten opslaan
+2/iemand zal ergens zijn tenten opslaan
+
+zal+het+vertikken:
+1/iemand zal het vertikken
+2/iemand zal het vertikken <om iets te doen>
+
+zal+de+scepter+zwaaien:
+1/iemand zal de scepter zwaaien
+2/iemand zal ergens de scepter zwaaien
+
+zal+de+baas+worden:
+1/iemand zal de baas worden
+2/iemand zal iemand de baas worden
+
+zal+de+geest+geven:
+1/iemand zal de geest geven
+1/iets zal de geest geven
+
+zal+de+maat+nemen:
+1/iemand zal de maat nemen
+2/iemand zal iemand de maat nemen
+
+zal+zich+een+slag+in+de+rondte:
+1/iemand zal zich een slag in de rondte 0werken
+2/iemand zal zich een slag in de rondte <lopen>
+
+zal+besluit+nemen:
+1/iemand zal 0een L:besluit DO:nemen
+2/iemand zal 0het L:besluit DO:nemen < om iets te doen >
+
+zal+eraan+komen:
+1/iemand zal eraan komen
+2/iemand zal eraan komen <fietsen>
+
+zal+er+bij+kunnen:
+1/iemand zal er bij kunnen
+1/iemand zal er ^niet bij kunnen
+
+ten+einde:
+0/ten einde
+1/ten einde <iets na te gaan>
+
+ten+spijt:
+0/ten spijt
+1/iets ten spijt
+
+zal+poging+doen:
+1/iemand zal 0een L:poging DO:doen
+2/iemand zal 0een L:poging DO:doen < om iets te doen >
+
+zal+poging+wagen:
+1/iemand zal 0een L:poging DO:wagen
+2/iemand zal 0een L:poging DO:wagen < om iets te doen >
+
+zal+ten+laste+leggen:
+2/iemand zal iets ten laste leggen
+3/iemand zal iemand iets ten laste leggen
+
+ten+kantore:
+0/ten kantore
+1/ten kantore <Philppot>
+
+zal+ten+voorbeeld+stellen:
+2/iemand zal iemand|iets ten voorbeeld stellen
+3/iemand zal iemand iemand ten voorbeeld stellen
+
+zal+te+hulp+schieten:
+1/iemand zal L:[te hulp] BC:schieten
+2/iemand zal iemand L:[te hulp] BC:schieten
+
+zal+in+de+weg+staan:
+1/iemand zal L:[in de weg] BE:staan
+2/iemand|iets zal iemand|iets L:[in de weg] BE:staan
+
+zal+van+mening+zijn:
+2/iemand zal L:[van mening] BE:zijn <dat dat waar is>
+2/iemand zal L:[van mening] BE:zijn <dat zij iets gaat doen>
+2/iemand zal iets L:[van mening] BE:zijn
+
+zal+van+oordeel+zijn:
+2/iemand zal L:[van oordeel] BE:zijn <dat dat waar is>
+2/iemand zal iets L:[van oordeel] BE:zijn
+
+zal+een+handje+helpen:
+1/iemand zal een handje helpen
+2/iemand zal iemand een handje helpen
+
+zal+van+pas+komen:
+1/iets zal L:[van pas] BC:komen
+2/iets zal iemand L:[van pas] BC:komen
+
+zal+in+beslag+nemen:
+2/iets zal iets L:[in beslag] CBE:nemen
+2/iemand zal iets L:[in beslag] CBE:nemen
+
+zal+achter+liggen:
+1/iemand zal L:[achter] liggen
+2/iemand zal achter iemand liggen
+
+zal+in+het+oog+springen:
+1/iets zal in het oog springen
+2/iets zal iemand in het oog springen
+
+zal+indruk+geven:
+2/iemand zal 0de L:indruk GV:geven < dat zij iets wil doen >
+2/iemand zal 0de L:indruk GV:geven < iets te willen doen >
+2/iemand zal 0een <goede> L:indruk GV:geven
+3/iemand zal iemand 0de L:indruk GV:geven < dat zij iets wil doen >
+3/iemand zal iemand 0de L:indruk GV:geven < iets te doen >
+
+zal+indruk+wekken:
+2/iemand zal 0de L:indruk CBE:wekken < dat zij iets wil doen >
+2/iemand zal 0de L:indruk CBE:wekken < iets te moeten doen >
+
+zal+idee+krijgen:
+2/iemand zal 0het L:idee BC:krijgen < dat zij iets wil doen >
+2/iemand zal 0het L:idee BC:krijgen < iets te willen doen >
+
+zal+gevoel+geven:
+3/iemand zal iemand 0het L:gevoel GV:geven < dat zij iets wil doen >
+3/iemand zal iemand 0het L:gevoel GV:geven < iets te doen >
+
+zal+beslissing+nemen:
+1/iemand zal 0een L:beslissing DO:nemen
+2/iemand zal 0de L:beslissing DO:nemen < om iets te doen >
+
+zal+recht+op+geven:
+2/iets zal L:recht  op iets GV:geven
+3/iets zal iemand L:recht op iets GV:geven
+
+zal+pijn+doen:
+1/iets zal L:pijn BE:doen
+2/iemand zal iemand L:pijn GV:doen
+
+zal+afspraak+maken:
+1/iemand zal 0een L:afspraak DO:maken
+2/iemand zal 0de L:afspraak DO:maken < dat zij iets wil doen >
+2/iemand zal 0de L:afspraak DO:maken < om iets te doen >
+
+zal+vraag+stellen:
+1/iemand zal 0een L:vraag DO:stellen
+2/iemand zal iemand 0een L:vraag DO:stellen
+
+zal+risico+lopen:
+1/iemand zal L:risico BE:lopen
+2/iemand zal 0het L:risico BE:lopen < dat zij iets wil doen >
+2/iemand zal 0het L:risico BE:lopen < om iets te doen >
+
+zal+indruk+hebben:
+2/iemand zal 0de L:indruk BE:hebben < dat zij iets wil doen >
+2/iemand zal 0de L:indruk BE:hebben < iets te moeten doen >
+
+zal+zijn+steun+betuigen:
+1/iemand zal zijn steun betuigen
+2/iemand zal iemand zijn steun betuigen
+
+zal+gevoel+krijgen:
+2/iemand zal 0het L:gevoel BC:krijgen < dat zij iets wil doen >
+2/iemand zal 0het L:gevoel BC:krijgen < iets te willen doen >
+
+zal+winst+maken:
+1/iemand zal  L:winst DO:maken
+1/iemand zal 0een L:winst DO:maken
+
+zal+conclusie+trekken:
+1/iemand zal 0een L:conclusie DO:trekken
+2/iemand zal 0de L:conclusie DO:trekken < dat zij iets wil doen >
+
+zal+indruk+krijgen:
+2/iemand zal 0de L:indruk GT:krijgen < dat zij iets wil doen >
+2/iemand zal 0de L:indruk GT:krijgen < iets te moeten doen >
+
+zal+verlies+lijden:
+1/iemand zal L:verlies BE:lijden
+1/iemand zal 0een *verlies lijden
+
+zal+stap+nemen:
+1/iemand zal 0een L:stap DO:nemen
+2/iemand zal 0de L:stap DO:nemen < om iets te doen >
+
+zal+opdracht+hebben:
+1/iemand zal 0een L:opdracht BE:hebben
+2/iemand zal 0de L:opdracht BE:hebben < om iets te doen >
+
+zal+opdracht+geven:
+1/iemand zal 0een L:opdracht GV:geven
+2/iemand zal 0de L:opdracht GV:geven < om iets te doen >
+2/iemand zal iemand 0een L:opdracht GV:geven
+3/iemand zal iemand 0de L:opdracht GV:geven < om iets te doen >
+
+zal+gevaar+lopen:
+1/iemand zal L:gevaar BE:lopen
+2/iemand zal 0het L:gevaar BE:lopen < dat zij iets wil doen >
+2/iemand zal 0het L:gevaar BE:lopen < om iets te doen >
+
+zal+bezwaar+hebben:
+1/iemand zal L:bezwaar BE:hebben
+2/iemand zal 0het L:bezwaar BE:hebben < dat zij iets wil doen >
+
+zal+antwoord+geven:
+1/iemand zal L:antwoord DO:geven
+2/iemand zal iemand L:antwoord GV:geven
+
+zal+initiatief+nemen:
+1/iemand zal L:initiatief DO:nemen
+1/iemand zal 0een L:initiatief DO:nemen
+2/iemand zal 0het L:initiatief DO:nemen < om iets te doen >
+
+zal+een+verklaring+voor+geven:
+2/iemand zal een verklaring voor iets geven
+3/iemand zal iemand een verklaring voor iets geven
+
+zal+begrip+voor+vragen:
+2/iemand zal *begrip  voor iets vragen
+3/iemand zal iemand *begrip voor iets vragen
+
+zal+de+helpende+hand+bieden:
+1/iemand zal de helpende hand bieden
+2/iemand zal iemand de helpende hand bieden
+
+zal+het+woord+vragen:
+1/iemand zal het woord vragen
+2/iemand zal iemand het woord vragen
+
+zal+opdracht+krijgen:
+1/iemand zal 0een L:opdracht GT:krijgen
+2/iemand zal 0de L:opdracht GT:krijgen < om iets te doen >
+
+zal+bevel+krijgen:
+1/iemand zal 0een L:bevel GT:krijgen
+2/iemand zal L:bevel GT:krijgen < om iets te doen >
+2/iemand zal 0het L:bevel GT:krijgen < om iets te doen >
+
+zal+zich+uitbreiden:
+1/iets zal zich uitbreiden
+2/iets zal zich ergens uitbreiden
+
+zal+zich+verstoppen:
+1/iemand zal zich verstoppen
+2/iemand zal zich ergens verstoppen
+
+zal+zich+neervlijen:
+1/iemand zal zich neervlijen
+2/iemand zal zich ergens neervlijen
+
+zal+kans+geven:
+2/iemand zal iemand 0een L:kans GV:geven
+3/iemand zal iemand 0de L:kans GV:geven < om iets te doen >
+
+zal+recht+doen:
+1/iemand zal recht doen
+2/iemand zal iets recht doen
+
+zal+uitspraak+doen:
+1/iemand zal 0een L:uitspraak DO:doen
+1/iemand zal L:uitspraak DO:doen
+2/iemand zal 0de L:uitspraak DO:doen < dat zij iets wil doen >
+
+zal+de+helpende+hand+toesteken:
+1/iemand zal de helpende hand toesteken
+2/iemand zal iemand de helpende hand toesteken
+
+zal+dienst+weigeren:
+1/iemand zal dienst weigeren
+1/iets zal dienst weigeren
+
+zal+taak+hebben:
+1/iemand zal 0een L:taak BE:hebben
+2/iemand zal 0de L:taak BE:hebben < om iets te doen >
+
+zal+commentaar+geven:
+1/iemand zal L:commentaar DO:geven
+2/iemand zal 0het L:commentaar geven < dat zij iets wil doen >
+
+zal+zijn+toestemming+geven:
+1/iemand zal zijn toestemming geven
+2/iemand zal iemand zijn toestemming geven
+
+zal+toestemming+hebben:
+1/iemand zal L:toestemming BE:hebben
+2/iemand zal L:toestemming BE:hebben < om iets te doen >
+
+zal+risico+nemen:
+1/iemand zal L:risico DO:nemen
+2/iemand zal 0het L:risico nemen < dat zij iets wil doen >
+2/iemand zal 0het L:risico nemen < om iets te doen >
+
+zal+idee+opperen:
+1/iemand zal 0een L:idee opperen
+2/iemand zal 0het L:idee opperen < om iets te doen >
+
+zal+afspraak+hebben:
+1/iemand zal 0een L:afspraak BE:hebben
+2/iemand zal 0de L:afspraak BE:hebben <dat zij iets gaat doen>
+2/iemand zal 0de L:afspraak BE:hebben <om iets te gaan doen>
+
+zal+ambitie+hebben:
+1/iemand zal L:ambitie BE:hebben
+2/iemand zal 0de L:ambitie BE:hebben < om iets te doen >
+
+zal+uit+de+weg+gaan:
+1/iemand zal L:[uit de weg] BC:gaan
+2/iemand zal iemand L:[uit de weg] BC:gaan
+
+zal+in+de+weg+zitten:
+1/iemand zal L:[in de weg] BE:zitten
+2/iemand zal iemand L:[in de weg] BE:zitten
+
+zal+de+tijd+geven:
+2/iemand zal iemand de tijd geven
+3/iemand zal iemand de tijd geven < om iets te doen >
+
+zal+te+hulp+komen:
+1/iemand zal L:[te hulp] BC:komen
+2/iemand zal iemand L:[te hulp] BC:komen
+
+zal+onder+de+aandacht+brengen:
+2/iemand zal iets L:[onder de aandacht] CBC:brengen
+3/iemand zal iemand iets L:[onder de aandacht] CBC:brengen
+
+zal+zich+tot+doel+stellen:
+2/iemand zal zich iets tot doel stellen
+2/iemand zal zich tot doel stellen < om iets te doen >
+
+zal+in+verhouding+tot+staan:
+2/iets zal in ^geen verhouding  tot iets staan
+2/iets zal in verhouding tot iets staan
+
+zal+in+het+vooruitzicht+stellen:
+2/iemand zal iets in het vooruitzicht stellen
+3/iemand zal iemand iets in het vooruitzicht stellen
+
+zal+het+doen:
+1/iets zal het doen
+2/iemand|iets zal het <goed> doen
+
+zal+in+onderpand+geven:
+2/iemand zal iets in onderpand geven
+3/iemand zal iemand iets in onderpand geven
+
+zal+in+beheer+geven:
+2/iemand zal iets in beheer geven
+3/iemand zal iemand iets in beheer geven
+
+zal+zijn+kans+schoon+zien:
+1/iemand zal zijn kans schoon zien
+2/iemand zal zijn kans schoon zien < om iets te doen >
+
+zal+duidelijk+maken:
+2/iemand zal iets *duidelijk maken
+3/iemand zal iemand iets *duidelijk maken
+
+zal+ruimte+geven:
+2/iemand zal iemand *ruimte geven
+3/iemand zal iemand 0de *ruimte geven < om iets te doen >
+
+zal+toestemming+geven:
+2/iemand zal toestemming geven < om iets te doen >
+3/iemand zal iemand toestemming geven < om iets te doen >
+
+zal+advies+geven:
+2/iemand zal iemand L:advies GV:geven
+2/iemand zal iemand 0een L:advies GV:geven
+3/iemand zal iemand 0het L:advies GV:geven < om iets te doen >
+
+zal+advies+vragen:
+1/iemand zal L:advies GT:vragen
+2/iemand zal iemand L:advies GT:vragen
+
+zal+voorstel+doen:
+1/iemand zal 0een L:voorstel DO:doen
+2/iemand zal iemand 0een L:voorstel DO:doen
+
+zal+hoop+geven:
+2/iemand zal iemand L:hoop GV:geven
+3/iemand zal iemand 0de L:hoop GV:geven < dat zij iets wil doen >
+
+zal+schade+berokkenen:
+1/iemand zal L:schade DO:berokkenen
+2/iets zal iemand schade berokkenen
+
+zal+moed+geven:
+2/iemand zal iemand L:moed GV:geven
+3/iemand zal iemand 0de L:moed GV:geven < om iets te doen >
+
+zal+de+reddende+hand+bieden:
+1/iemand zal de reddende hand bieden
+2/iemand zal iemand de reddende hand bieden
+
+zal+belofte+doen:
+2/iemand zal iemand 0een L:belofte DO:doen
+2/iemand zal 0de L:belofte DO:doen < dat zij iets wil doen >
+3/iemand zal iemand 0de L:belofte DO:doen < dat zij iets wil doen >
+
+zal+aanleiding+geven:
+2/iemand zal 0de L:aanleiding BE:geven < om iets te doen >
+3/iemand zal iemand L:aanleiding GV:geven < om iets te doen >
+
+zal+aanleiding+tot+geven:
+2/iets zal  L:aanleiding tot iets BC:geven
+3/iemand zal iemand L:aanleiding tot iets GV:geven
+
+zal+inspiratie+geven:
+2/iemand zal iemand L:inspiratie GV:geven
+3/iemand zal iemand 0de L:inspiratie GV:geven < om iets te doen >
+
+zal+te+pas+komen:
+1/iets zal te pas komen
+2/iets zal iemand te pas komen
+
+zal+genoeg+de+tijd+krijgen:
+1/iemand zal genoeg de tijd krijgen
+2/iemand zal genoeg de tijd krijgen < om iets te doen >
+
+zal+passie+voor+hebben:
+2/iemand zal L:passie voor iets BE:hebben
+2/iemand zal 0een L:passie voor iets BE:hebben
+
+zal+aversie+tegen+hebben:
+2/iemand zal L:aversie  tegen iemand BE:hebben
+2/iemand zal 0een L:aversie tegen iemand BE:hebben
+
+zal+slag+leveren:
+1/iemand zal L:slag DO:leveren
+1/iemand zal 0een L:slag DO:leveren
+
+zal+kracht+hebben:
+1/iemand zal L:kracht BE:hebben
+2/iemand zal 0de L:kracht BE:hebben < om iets te doen >
+
+zal+kracht+geven:
+2/iemand|iets zal iemand L:kracht GV:geven
+3/iemand|iets zal iemand 0de L:kracht GV:geven < om iets te doen >
+3/iemand|iets zal iemand L:kracht GV:geven < om iets te doen >
+
+zal+verzoek+doen:
+1/iemand zal 0een L:verzoek DO:doen
+2/iemand zal 0het L:verzoek DO:doen < om iets te doen >
+
+zal+excuses+aanbieden:
+1/iemand zal L:excuses GV:aanbieden
+2/iemand zal iemand L:excuses GV:aanbieden
+
+zal+het+groene+licht+geven:
+1/iemand zal het groene licht geven
+2/iemand zal iemand het groene licht geven
+
+zal+aanval+op+doen:
+2/iemand zal 0een L:aanval  OIA:op iemand DO:doen
+2/iemand zal 0een L:aanval OIA:op iemand|iets DO:doen
+
+zal+voorrang+verlenen:
+1/iemand zal L:voorrang GV:verlenen
+2/iemand zal iemand L:voorrang GV:verlenen
+
+zal+voorrang+geven:
+1/iemand zal L:voorrang GV:geven
+2/iemand zal iemand L:voorrang GV:geven
+
+zal+korting+geven:
+1/iemand zal L:korting geven
+2/iemand zal iemand L:korting geven
+
+zal+oproep+doen:
+1/iemand zal 0een L:oproep DO:doen
+2/iemand zal 0de L:oproep DO:doen < om iets te doen >
+
+zal+vermoeden+hebben:
+2/iemand zal 0het L:vermoeden BE:hebben < dat zij iets wil doen >
+2/iemand zal 0het L:vermoeden BE:hebben <dat zij iets gaat doen>
+
+zal+de+deal+maken:
+2/iemand zal de deal maken < dat zij iets wil doen >
+2/iemand zal de deal maken < om iets te doen >
+
+zal+nut+hebben:
+1/iets zal ^geen L:nut BE:hebben
+1/iemand zal L:nut BE:hebben
+
+zal+diagnose+stellen:
+1/iemand zal 0een L:diagnose DO:stellen
+2/iemand zal 0de L:diagnose DO:stellen < dat zij iets wil doen >
+
+zal+standpunt+huldigen:
+1/iemand zal 0een L:standpunt BE:huldigen
+2/iemand zal 0het L:standpunt BE:huldigen < dat zij iets wil doen >
+
+zal+angst+aanjagen:
+1/iets zal L:angst GV:aanjagen
+2/iemand zal iemand L:angst GV:aanjagen
+
+zal+ontdekking+doen:
+1/iemand zal 0een L:ontdekking DO:doen
+2/iemand zal 0de L:ontdekking DO:doen < dat zij iets wil doen >
+
+zal+de+garantie+geven:
+2/iemand zal de L:garantie DO:geven < dat zij iets wil doen >
+3/iemand zal iemand de L:garantie GV:geven < dat zij iets wil doen >
+
+zal+moed+hebben:
+1/iemand zal L:moed BE:hebben
+2/iemand zal 0de L:moed BE:hebben < om iets te doen >
+
+zal+bescherming+bieden:
+1/iets zal *bescherming bieden
+2/iets zal iemand *bescherming bieden
+
+zal+de+nek+omdraaien:
+2/iemand zal iemand de nek omdraaien
+2/iemand|iets zal iemand de nek omdraaien
+
+zal+de+pretentie+hebben:
+2/iemand zal de pretentie hebben < om iets te doen >
+2/iemand zal de *pretentie hebben < dat zij iets wil doen >
+
+zal+voorbehoud+maken:
+1/iemand zal 0een L:voorbehoud DO:maken
+2/iemand zal 0het L:voorbehoud DO:maken < dat zij iets wil doen >
+
+zal+de+suggestie+wekken:
+2/iemand zal de *suggestie wekken < dat zij iets wil doen >
+2/iemand zal de suggestie wekken < iets te willen doen >
+
+zal+voorspelling+doen:
+1/iemand zal 0een L:voorspelling DO:doen
+2/iemand zal 0de L:voorspelling DO:doen < dat zij iets wil doen >
+
+zal+voorlichting+geven:
+1/iemand zal L:voorlichting GV:geven
+2/iemand zal iemand L:voorlichting GV:geven
+
+zal+genoegen+smaken:
+2/iemand zal 0het L:genoegen BE:smaken < dat zij iets wil doen >
+2/iemand zal 0het L:genoegen BE:smaken <om iets te doen>
+
+zal+instructie+geven:
+1/iemand zal 0een L:instructie GV:geven
+2/iemand zal 0de L:instructie GV:geven < om iets te doen >
+
+zal+college+geven:
+1/iemand zal 0een L:college GV:geven
+1/iemand zal L:college GV:geven
+
+zal+college+aan+geven:
+2/iemand zal 0een L:college  aan iemand GV:geven
+2/iemand zal L:college  aan iemand GV:geven
+
+zal+goedkeuring+krijgen:
+1/iemand zal  *goedkeuring krijgen
+2/iemand zal *goedkeuring krijgen < om iets te doen >
+
+zal+voldoening+geven:
+1/iets zal *voldoening geven
+2/iets zal iemand *voldoening geven
+
+zal+bevel+geven:
+1/iemand zal 0een L:bevel GV:geven
+2/iemand zal L:bevel GV:geven < om iets te doen >
+2/iemand zal iemand 0een L:bevel GV:geven
+2/iemand zal 0het L:bevel GV:geven < om iets te doen >
+3/iemand zal iemand L:bevel GV:geven < om iets te doen >
+3/iemand zal iemand 0het L:bevel GV:geven < om iets te doen >
+
+zal+mandaat+krijgen:
+1/iemand zal 0een *+mandaat krijgen
+2/iemand zal mandaat krijgen < om iets te doen >
+
+zal+richting+geven:
+1/iemand zal richting geven
+2/iemand zal iemand richting geven
+
+zal+beurt+krijgen:
+1/iemand zal 0een *+beurt krijgen
+2/iemand zal 0de *+beurt krijgen < om iets te doen >
+
+zal+aankondiging+doen:
+1/iemand zal 0een L:aankondiging DO:doen
+2/iemand zal 0de L:aankondiging DO:doen < dat zij iets wil doen >
+
+zal+de+fles+geven:
+1/iemand zal de fles geven
+2/iemand zal iemand de fles geven
+
+zal+voorrecht+hebben:
+2/iemand zal 0het L:voorrecht BE:hebben < om iets te doen >
+2/iemand zal 0het L:voorrecht BE:hebben <om dit te mogen>
+
+zal+discipline+hebben:
+1/iemand zal L:discipline BE:hebben
+2/iemand zal 0de L:discipline BE:hebben < om iets te doen >
+
+zal+abortus+plegen:
+1/iemand zal 0een L:abortus DO:plegen
+1/iemand zal L:abortus DO:plegen
+
+zal+onthulling+doen:
+1/iemand zal 0een L:onthulling DO:doen
+2/iemand zal 0de L:onthulling DO:doen < dat zij iets wil doen >
+
+zal+fatsoen+hebben:
+1/iemand zal L:fatsoen BE:hebben
+2/iemand zal 0het L:fatsoen BE:hebben < om iets te doen >
+
+zal+hoop+hebben:
+1/iemand zal L:hoop BE:hebben
+2/iemand zal 0de L:hoop BE:hebben < dat zij iets wil doen >
+2/iemand zal 0de L:hoop BE:hebben < om iets te doen >
+2/iemand zal 0de L:hoop BE:hebben <dat het goed gaat komen>
+
+zal+de+duimschroeven+aandraaien:
+1/iemand zal de duimschroeven aandraaien
+2/iemand zal iemand de duimschroeven aandraaien
+
+zal+notitie+maken:
+1/iemand zal 0een L:notitie DO:maken
+2/iemand zal 0de L:notitie DO:maken < dat zij iets wil doen >
+
+zal+interesse+hebben:
+1/iemand zal  L:interesse BE:hebben
+2/iemand zal L:interesse BE:hebben < om iets te doen >
+
+zal+waardering+voor+tonen:
+2/iemand zal  L:waardering OIA:voor iemand|iets DO:tonen
+2/iemand zal L:waardering  OIA:voor iemand DO:tonen
+
+zal+bewijs+leveren:
+1/iemand zal 0een L:bewijs DO:leveren
+2/iemand zal 0het L:bewijs DO:leveren < dat zij iets wil doen >
+
+zal+fout+begaan:
+1/iemand zal 0een L:fout DO:begaan
+2/iemand zal 0de L:fout DO:begaan < dat zij iets wil doen >
+
+zal+winst+boeken:
+1/iemand zal L:winst DO:boeken
+1/iemand zal 0een L:winst DO:boeken
+
+zal+poging+ondernemen:
+1/iemand zal 0een L:poging DO:ondernemen
+2/iemand zal 0een L:poging DO:ondernemen < om iets te doen >
+
+zal+taak+krijgen:
+1/iemand zal 0een L:taak GT:krijgen
+2/iemand zal 0de L:taak GT:krijgen < om iets te doen >
+
+zal+instructie+hebben:
+1/iemand zal 0een L:instructie BE:hebben
+2/iemand zal 0de L:instructie BE:hebben < om iets te doen >
+
+zal+instructie+krijgen:
+1/iemand zal 0een L:instructie GT:krijgen
+2/iemand zal 0de L:instructie GT:krijgen < om iets te doen >
+
+zal+voldoening+schenken:
+1/iets zal *voldoening schenken
+2/iets zal iemand *voldoening schenken
+
+zal+hoop+houden:
+1/iemand zal L:hoop ST:houden
+2/iemand zal 0de L:hoop ST:houden < dat zij iets wil doen >
+2/iemand zal 0de L:hoop ST:houden < om iets te doen >
+
+zal+hoop+krijgen:
+1/iemand zal L:hoop BC:krijgen
+2/iemand zal 0de L:hoop BC:krijgen < dat zij iets wil doen >
+2/iemand zal 0de L:hoop BC:krijgen < om iets te doen >
+
+zal+hoop+koesteren:
+1/iemand zal L:hoop BE:koesteren
+2/iemand zal 0de L:hoop BE:koesteren < dat zij iets wil doen >
+2/iemand zal 0de L:hoop BE:koesteren < om iets te doen >
+
+zal+interesse+tonen:
+1/iemand zal  L:interesse DO:tonen
+2/iemand zal L:interesse DO:tonen < om iets te doen >
+
+zal+mandaat+hebben:
+1/iemand zal 0een *+mandaat hebben
+2/iemand zal 0het L:mandaat hebben < om iets te doen >
+
+zal+bezwaar+maken:
+1/iemand zal L:bezwaar DO:maken
+2/iemand zal 0het L:bezwaar DO:maken < dat zij iets wil doen >
+
+zal+initiatief+tonen:
+1/iemand zal L:initiatief DO:tonen
+2/iemand zal 0het L:initiatief DO:tonen < om iets te doen >
+
+zal+commentaar+hebben:
+1/iemand zal L:commentaar BE:hebben
+2/iemand zal 0het L:commentaar BE:hebben < dat zij iets wil doen >
+
+zal+commentaar+krijgen:
+1/iemand zal L:commentaar GT:krijgen
+2/iemand zal 0het L:commentaar GT:krijgen < dat zij iets wil doen >
+
+zal+toestemming+krijgen:
+1/iemand zal L:toestemming GT:krijgen
+2/iemand zal L:toestemming GT:krijgen < om iets te doen >
+
+zal+in+de+verleiding+raken:
+1/iemand zal L:[in de verleiding] BC:raken
+2/iemand zal L:[in de verleiding] BC:raken < om iets te doen >
+
+zal+in+de+verleiding+zijn:
+1/iemand zal L:[in de verleiding] BE:zijn
+2/iemand zal L:[in de verleiding] BE:zijn < om iets te doen >
+
+zal+van+mening+lijken:
+2/iemand zal L:[van mening] lijken <dat zij iets gaat doen>
+2/iemand zal iets L:[van mening] lijken
+
+met+zijn:
+1/met zijn <drieën>
+1/met =zijn <drieën>
+
+zal+impact+op+hebben:
+2/iets zal 0een L:impact op iets|iemand BE:hebben
+2/iemand zal L:impact op iets BE:hebben
+
+zal+zich+in+de+kaart+laten+kijken:
+1/iemand zal zich in de kaart laten kijken
+1/iemand zal zich in de kaart laten kijken
+
+zal+aan+de+praat+krijgen:
+2/iemand zal iets L:[aan de praat] CBC:krijgen
+2/iemand zal iets L:[aan de praat] CBC:krijgen
+
+zal+van+slag+zijn:
+1/iemand zal L:[van slag] BE:zijn
+1/iemand zal L:[van slag] BE:zijn
+
+hier+en+nu:
+0/hier en nu
+0/0het hier en nu
+
+zal+rekenschap+verschuldigd+zijn:
+1/iemand zal *rekenschap verschuldigd zijn
+2/iemand zal iemand *rekenschap verschuldigd zijn
+
+zal+succes+behalen:
+1/iemand zal *succes behalen
+1/iemand zal 0een L:succes DO:behalen
+
+zal+informatie+geven:
+1/iemand zal L:informatie GV:geven
+2/iemand zal iemand L:informatie GV:geven
+
+zal+controle+over+hebben:
+2/iemand zal L:controle over iets BE:hebben
+2/iemand zal L:controle over iets BE:hebben
+
+zal+genoeg+van+krijgen:
+2/iemand zal ^geen M:genoeg van iets BC:krijgen
+2/iemand zal M:genoeg van iets BC:krijgen
+
+zal+onvermeld+laten:
+2/iemand zal iets onvermeld laten
+2/iemand zal onvermeld laten <dat dat zo is>
+
+zal+van+oordeel+lijken:
+2/iemand zal iets L:[van oordeel] lijken
+2/iemand zal L:[van oordeel] lijken <dat dat zo is>
+
+zal+in+de+weg+lopen:
+1/iemand zal L:[in de weg] BE:lopen
+2/iemand zal iemand L:[in de weg] BE:lopen
+
+zal+onderscheid+tussen+maken:
+2/iemand zal L:onderscheid OIA:tussen iets DO:maken
+2/iemand zal 0een L:onderscheid OIA:tussen iets DO:maken
+
+zal+te+hulp+springen:
+1/iemand zal L:[te hulp] BC:springen
+2/iemand zal iemand L:[te hulp] BC:springen
+
+zal+gegevens+over+verstrekken:
+2/iemand zal *gegevens over iets verstrekken
+3/iemand zal iemand *gegevens over iets verstrekken
+
+zal+gegevens+verstrekken:
+1/iemand zal *gegevens verstrekken
+2/iemand zal iemand *gegevens verstrekken
+
+zal+kans+op+zien:
+2/iemand zal *kans OIA:op iets zien
+2/iemand zal L:kans OIA:op iets BE:zien
+
+zal+trap+geven:
+1/iemand zal 0een LBT:trap GV:geven
+2/iemand zal iemand 0een LBT:trap GV:geven
+
+zal+haal+geven:
+1/iemand zal 0een LBT:haal GV:geven
+2/iemand zal iemand 0een LBT:haal GV:geven
+
+zal+klap+geven:
+1/iemand zal 0een LBT:klap GV:geven
+2/iemand zal iemand 0een LBT:klap GV:geven
+
+zal+opflikker+geven:
+1/iemand zal 0een LBT:opflikker GV:geven
+2/iemand zal iemand 0een LBT:opflikker GV:geven
+
+zal+peer+geven:
+1/iemand zal 0een LBT:peer GV:geven
+2/iemand zal iemand 0een LBT:peer GV:geven
+
+zal+klets+geven:
+1/iemand zal 0een LBT:klets GV:geven
+2/iemand zal iemand 0een LBT:klets GV:geven
+
+zal+mep+geven:
+1/iemand zal 0een LBT:mep GV:geven
+2/iemand zal iemand 0een LBT:mep GV:geven
+
+zal+pats+geven:
+1/iemand zal 0een LBT:pats GV:geven
+2/iemand zal iemand 0een LBT:pats GV:geven
+
+zal+pets+geven:
+1/iemand zal 0een LBT:pets GV:geven
+2/iemand zal iemand 0een LBT:pets GV:geven
+
+zal+tik+geven:
+1/iemand zal 0een LBT:tik GV:geven
+2/iemand zal iemand 0een LBT:tik GV:geven
+
+zal+tikje+geven:
+1/iemand zal 0een LBT:tikje GV:geven
+2/iemand zal iemand 0een LBT:tikje GV:geven
+
+zal+duw+geven:
+1/iemand zal 0een LBT:duw GV:geven
+2/iemand zal iemand 0een LBT:duw GV:geven
+
+zal+douw+geven:
+1/iemand zal 0een LBT:douw GV:geven
+2/iemand zal iemand 0een LBT:douw GV:geven
+
+zal+zet+geven:
+1/iemand zal 0een LBT:zet GV:geven
+2/iemand zal iemand 0een LBT:zet GV:geven
+
+zal+zetje+geven:
+1/iemand zal 0een LBT:zetje GV:geven
+2/iemand zal iemand 0een LBT:zetje GV:geven
+
+zal+kus+geven:
+1/iemand zal 0een LBT:kus GV:geven
+2/iemand zal iemand 0een LBT:kus GV:geven
+
+zal+lik+geven:
+1/iemand zal 0een LBT:lik GV:geven
+2/iemand zal iemand 0een LBT:lik GV:geven
+
+zal+smak+geven:
+1/iemand zal 0een LBT:smak GV:geven
+2/iemand zal iemand 0een LBT:smak GV:geven
+
+zal+zoen+geven:
+1/iemand zal 0een LBT:zoen GV:geven
+2/iemand zal iemand 0een LBT:zoen GV:geven
+
+zal+afscheidskus+geven:
+1/iemand zal 0een LBT:afscheidskus GV:geven
+2/iemand zal iemand 0een LBT:afscheidskus GV:geven
+
+zal+kushandje+geven:
+1/iemand zal 0een LBT:kushandje GV:geven
+2/iemand zal iemand 0een LBT:kushandje GV:geven
+
+zal+french+kiss+geven:
+1/iemand zal 0een LBT:french kiss GV:geven
+2/iemand zal iemand 0een LBT:french kiss GV:geven
+
+zal+tongkus+geven:
+1/iemand zal 0een LBT:tongkus GV:geven
+2/iemand zal iemand 0een LBT:tongkus GV:geven
+
+zal+tongzoen+geven:
+1/iemand zal 0een LBT:tongzoen GV:geven
+2/iemand zal iemand 0een LBT:tongzoen GV:geven
+
+zal+doodskus+geven:
+1/iemand zal 0een LBT:doodskus GV:geven
+2/iemand zal iemand 0een LBT:doodskus GV:geven
+
+zal+nachtkus+geven:
+1/iemand zal 0een LBT:nachtkus GV:geven
+2/iemand zal iemand 0een LBT:nachtkus GV:geven
+
+zal+nachtzoen+geven:
+1/iemand zal 0een LBT:nachtzoen GV:geven
+2/iemand zal iemand 0een LBT:nachtzoen GV:geven
+
+zal+klapzoen+geven:
+1/iemand zal 0een LBT:klapzoen GV:geven
+2/iemand zal iemand 0een LBT:klapzoen GV:geven
+
+zal+smakker+geven:
+1/iemand zal 0een LBT:smakker GV:geven
+2/iemand zal iemand 0een LBT:smakker GV:geven
+
+zal+voetkus+geven:
+1/iemand zal 0een LBT:voetkus GV:geven
+2/iemand zal iemand 0een LBT:voetkus GV:geven
+
+zal+vredekus+geven:
+1/iemand zal 0een LBT:vredekus GV:geven
+2/iemand zal iemand 0een LBT:vredekus GV:geven
+
+zal+handkus+geven:
+1/iemand zal 0een LBT:handkus GV:geven
+2/iemand zal iemand 0een LBT:handkus GV:geven
+
+zal+judaskus+geven:
+1/iemand zal 0een LBT:judaskus GV:geven
+2/iemand zal iemand 0een LBT:judaskus GV:geven
+
+zal+zuigzoen+geven:
+1/iemand zal 0een LBT:zuigzoen GV:geven
+2/iemand zal iemand 0een LBT:zuigzoen GV:geven
+
+zal+por+geven:
+1/iemand zal 0een LBT:por GV:geven
+2/iemand zal iemand 0een LBT:por GV:geven
+
+zal+stoot+geven:
+1/iemand zal 0een LBT:stoot GV:geven
+2/iemand zal iemand 0een LBT:stoot GV:geven
+
+zal+schouderduw+geven:
+1/iemand zal 0een LBT:schouderduw GV:geven
+2/iemand zal iemand 0een LBT:schouderduw GV:geven
+
+zal+kontje+geven:
+1/iemand zal 0een LBT:kontje GV:geven
+2/iemand zal iemand 0een LBT:kontje GV:geven
+
+zal+bodycheck+geven:
+1/iemand zal 0een LBT:bodycheck GV:geven
+2/iemand zal iemand 0een LBT:bodycheck GV:geven
+
+zal+schop+geven:
+1/iemand zal 0een LBT:schop GV:geven
+2/iemand zal iemand 0een LBT:schop GV:geven
+
+zal+schot+geven:
+1/iemand zal 0een LBT:schot GV:geven
+2/iemand zal iemand 0een LBT:schot GV:geven
+
+zal+doodschop+geven:
+1/iemand zal 0een LBT:doodschop GV:geven
+2/iemand zal iemand 0een LBT:doodschop GV:geven
+
+zal+hakje+geven:
+1/iemand zal 0een LBT:hakje GV:geven
+2/iemand zal iemand 0een LBT:hakje GV:geven
+
+zal+knietje+geven:
+1/iemand zal 0een LBT:knietje GV:geven
+2/iemand zal iemand 0een LBT:knietje GV:geven
+
+zal+rechtse+geven:
+1/iemand zal 0een LBT:rechtse  GV:geven
+2/iemand zal iemand 0een LBT:rechtse  GV:geven
+
+zal+linkse+geven:
+1/iemand zal 0een LBT:linkse  GV:geven
+2/iemand zal iemand 0een LBT:linkse  GV:geven
+
+zal+uppercut+geven:
+1/iemand zal 0een LBT:uppercut GV:geven
+2/iemand zal iemand 0een LBT:uppercut GV:geven
+
+zal+high-five+geven:
+1/iemand zal 0een LBT:high-five GV:geven
+2/iemand zal iemand 0een LBT:high-five GV:geven
+
+zal+hug+geven:
+1/iemand zal 0een LBT:hug GV:geven
+2/iemand zal iemand 0een LBT:hug GV:geven
+
+zal+box+geven:
+1/iemand zal 0een LBT:box GV:geven
+2/iemand zal iemand 0een LBT:box GV:geven
+
+zal+op+één+oor+liggen:
+1/iemand zal L:[op één oor] BE:liggen
+1/iemand zal L:[op één oor] BE:liggen
+
+zal+willen+zeggen:
+2/iets zal iets willen zeggen
+2/iets zal willen zeggen <dat dat waar is>
+
+zal+het+met+eens+zijn:
+2/iemand zal het OIA:met iets eens zijn
+2/iemand zal het com:[met] iemand eens zijn

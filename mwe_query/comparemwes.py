@@ -247,8 +247,7 @@ def getrefmwedict(sentences) -> MWEDict:
         for localid, parseme_meta in parseme_mwes.items():
             odijkmwemeta = parsememwe2odijkmwe(parseme_meta, sentence)
             odijkmwemetas.append(odijkmwemeta)
-        rawsentid = sentence.metadata['sent_id']
-        sentid = rawsentid[rawsentid.find('\\') + 1:]
+        sentid = sentence.metadata['sent_id']
         if odijkmwemetas != []:
             resultdict[sentid] = odijkmwemetas
     return resultdict
@@ -256,15 +255,19 @@ def getrefmwedict(sentences) -> MWEDict:
 
 def getsentenceid(sentence):
     rawsentenceid = sentence.metadata["sent_id"]
-    sentenceid = rawsentenceid[rawsentenceid.find('\\') + 1:]
+    # sentenceid = rawsentenceid[rawsentenceid.find('\\') + 1:]
+    sentenceid = rawsentenceid
     return sentenceid
 
 
 def main():
     # read the annotationfiles
     annotationpath = r'D:\Dropbox\various\Resources\nl-parseme-MWEAnnotated'
+    annotationpath = r'D:\Dropbox\various\Resources\nl-parseme-lassy70-enhanced-MWEAnnotated'
     afs = ['allmwemetadata.xlsx']
     fullafs = [os.path.join(annotationpath, fn) for fn in afs]
+    # allmweresults = getannotationfiles(fullafs, selection=['WR-P-P-H-0000000020.p.5.s.2'])
+    # allmweresults = getannotationfiles(fullafs, selection=['3906'])
     allmweresults = getannotationfiles(fullafs)
 
     cuptfolder = r"D:\Dropbox\various\Resources\nl-parseme-cupt"
@@ -276,6 +279,7 @@ def main():
 
     # read the cupt file(s)
     cuptfilename = 'NL_alpino-ud_1a.conllu'
+    cuptfilename = 'NL_alpino-ud_1-10a.cupt'
     cuptfilenamebase, cuptfilenameext = os.path.splitext(cuptfilename)
 
     cuptfullname = os.path.join(cuptfolder, cuptfilename)
@@ -293,9 +297,8 @@ def main():
     allcomparisons = []
     for sentence in sentences:
         sentcomparisons = []
-        rawsentenceid = sentence.metadata["sent_id"]
+        sentenceid = sentence.metadata["sent_id"]
         senttext = sentence.metadata['text']
-        sentenceid = rawsentenceid[rawsentenceid.find('\\') + 1:]
         refmwes = retrieve_mwes(sentence)
         if sentenceid not in mweresults:
             # print(sentenceid)

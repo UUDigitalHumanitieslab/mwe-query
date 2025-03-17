@@ -9,9 +9,13 @@ from mwemeta import MWEMeta, mwemetaheader
 from sastadev.xlsx import mkworkbook, add_worksheet
 from tocupt import annotate_cupt, readcuptfile, writecuptfile
 from typing import List
+from tbfstandin import removeud, writetb
+from sastadev.sastatypes import SynTree
+from mwutreebank import mwutreebankdict, mwutreebankfullname
+import copy
 
 
-__version__ = '0.5'
+__version__ = '0.6'
 testing = False
 cupt_test = False
 
@@ -22,6 +26,7 @@ annotatedsuffix = '_mwe_annnotated'
 defaultinpath = r"D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD"
 defaultinpath = r"D:\Dropbox\various\Resources\Alpino Treebank\rug-compling Alpino master Treebank-cdb"
 defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme'
+defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme-lassy70-enhanced'
 # defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000012'
 # if testing:
 #    defaultinpath = r'D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD\nl_lassysmalldevelop-ud-dev\nl_lassysmalldevelop-ud-dev\LassyDevelop\wiki-737'
@@ -31,9 +36,14 @@ defaultoutpath = os.path.join(defaultinpath, "..", f"{basefolder}-MWEAnnotated")
 defaultudpath = r'D:\Dropbox\various\Resources\nl-parseme-cupt'
 
 def getsentenceid(fullname: str) -> str:
-    _, filename = os.path.split(fullname)
-    sentenceid, _ = os.path.splitext(filename)
+    thepath, filename = os.path.split(fullname)
+    _, tail = os.path.split(thepath)
+    filenamebase, _ = os.path.splitext(filename)
+    sentenceid = f'{tail}\\{filenamebase}'
     return sentenceid
+
+
+
 
 
 def annotatefile(filename) -> List[MWEMeta]:
@@ -42,7 +52,8 @@ def annotatefile(filename) -> List[MWEMeta]:
     except etree.ParseError as e:
         print(f"Parse error: {e} in {filename}; file will be skipped", file=sys.stderr)
     else:
-        syntree = fulltree.getroot()
+        rawsyntree = fulltree.getroot()
+        syntree = removeud(rawsyntree)
         sentenceid = getsentenceid(filename)
         mwemetas, discardedmwemetas, _ = annotate(syntree, sentenceid=sentenceid)
     return mwemetas, discardedmwemetas
@@ -177,6 +188,10 @@ def annotatetb():
         cuptoutfilename = f'{base}{annotatedsuffix}{ext}'
         cuptoutfullname = os.path.join(outpath, cuptoutfilename)
         writecuptfile(newsentences, cuptoutfullname)
+        # temporarily also here to save intermediate results in case of crashes
+        # writetb(mwutreebankdict, mwutreebankfullname)
+
+    writetb(mwutreebankdict, mwutreebankfullname)
 
     end_time = time.time()
     duration = end_time - start_time

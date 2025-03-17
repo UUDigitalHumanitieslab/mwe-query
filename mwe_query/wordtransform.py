@@ -3,19 +3,45 @@ from sastadev.alpinoparsing import parse, previewurl
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
 import copy
-from lexicons import svpdict
+from lexicons import svpdict,lemmacorrectionlexicon
 from typing import Tuple
+from pronadvs import pronadv2pronvz, ispronadvp
 
 underscore = '_'
 compoundsep = underscore
 
 lcatdict = {'vz': 'part', 'bw': 'advp', 'adj': 'ap', 'n': 'np'}
 
+def alsvz2alsvg(node: SynTree) -> SynTree:
+    newnode = copy.copy(node)
+    newnode.set('pt', 'vg')
+    newnode.set('conjtype', 'onder')
+    newnode.set('postag', 'VG(onder)')
+    newnode.set('pos', 'comp')
+    newnode.set('lcat', 'cp')
+    newnode.set('frame', 'complementizer(als)')
+    newnode.attrib.pop('vztype')
+    return newnode
+
+def isalsvznode(node: SynTree) -> bool:
+    result = node.tag == 'node' and gav(node, 'lemma') == 'als' and gav(node, 'pt') == 'vz'
+    return result
+
+def transformalsvz(stree: SynTree) -> SynTree:
+    newtree = copy.deepcopy(stree)
+    for node in newtree.iter():
+        if isalsvznode(node):
+            newnode = alsvz2alsvg(node)
+            nodeparent = node.getparent()
+            if nodeparent is not None:
+                nodeparent.remove(node)
+                nodeparent.insert(0, newnode)
+    return newtree
 def getprtandverb(node: SynTree) -> Tuple[str, str]:
     nodelemma = gav(node, 'lemma')
     nodeword = gav(node, 'word')
     nodept = gav(node, 'pt')
-    prtend = nodelemma.find(compoundsep)
+    prtend = nodelemma.rfind(compoundsep)    # search from behind because the particle can contain _ (ten_onder)
     if nodept == 'ww' and prtend != -1:
         prt = nodeword[:prtend]
         verb = nodeword[prtend:]
@@ -26,7 +52,7 @@ def getprtandverb(node: SynTree) -> Tuple[str, str]:
 
 # Tparticle verbs found via this xpath; check on svps in the function
 svpverbsnoprtxpath = """.//node[@pt="ww" and contains(@lemma,"_")  and
-                         not(@wvorm="od") and (not(@positie) or @positie ="vrij") ]
+                         not(@wvorm="od") and (not(@positie) or @positie = "vrij" or @positie = "prenom") ]
                          """
 
 
@@ -42,18 +68,23 @@ def transformsvpverb(stree: SynTree) -> SynTree:
     """
     newstree = copy.deepcopy(stree)
     noprtverbs = newstree.xpath(svpverbsnoprtxpath)
+    noprtverbs = [verb for verb in noprtverbs if not gav(verb, 'lemma').startswith('on_')
+                  and gav(verb, 'word').lower() != "da's" and not gav(verb, 'lemma').startswith('niet_')]
     for noprtverb in noprtverbs:
         verblemma = gav(noprtverb, 'lemma')
-        prtword, verbword = getprtandverb(noprtverb)
-        prtlemma = prtword.lower()
+        compoundparts = verblemma.split(compoundsep)
+        prtlemma = compoundsep.join(compoundparts[:-1])
         noprtverbparent = noprtverb.getparent()
         if noprtverbparent is None:
             svpfound = False
         else:
-            svpxpath = f'./node[@rel="svp" and @lemma="{prtlemma}"]'
+            basicsvpxpath = f'(@rel="svp" and @lemma="{prtlemma}")'
+            extendedsvpxpath = f'(@rel="svp" and @cat and node[@rel="hd" and @lemma="{prtlemma}"])'
+            svpxpath = f'./node[{basicsvpxpath} or {extendedsvpxpath}]'
             svps = noprtverbparent.xpath(svpxpath)
-            svpfound = svps == []
+            svpfound = svps != []
         if not svpfound:
+            prtword, verbword = getprtandverb(noprtverb)
             vbegin = gav(noprtverb, 'begin')
             vend = gav(noprtverb, 'end')
             noprtvrel = gav(noprtverb, 'rel')
@@ -64,7 +95,7 @@ def transformsvpverb(stree: SynTree) -> SynTree:
                 prtpt = 'bw'
                 print(f'wordtransform: Error: no entry for {prtlemma} in svpdict (lemma={verblemma}')
             prtlcat = lcatdict[prtpt] if prtpt in lcatdict else 'part'
-            if prtpt not in lcatdict:
+            if prtpt != "ww" and prtpt not in lcatdict:
                 print(f'wordtransform: Error: no entry for {prtpt} in lcatdict')
             prtnode = etree.Element('node', {'rel': 'svp', 'lemma': prtlemma, 'word': prtword,
                                              'begin': vbegin, 'end': vend, 'subbegin': '1', 'spacing':'nospaceafter',
@@ -103,6 +134,26 @@ def getprtvparentcat(node: SynTree) -> str:
     return newcat
 
 
+def correctlemmas(stree: SynTree) -> SynTree:
+    wronglemmafound = False
+    lemmas = stree.xpath('.//node[@lemma]/@lemma')
+    for lemma in lemmas:
+        if lemma in lemmacorrectionlexicon:
+            wronglemmafound = True
+            break
+    if wronglemmafound:
+        newtree = copy.deepcopy(stree)
+        for node in newtree.iter():
+            nodelemma = gav(node, 'lemma')
+            if nodelemma in lemmacorrectionlexicon:
+                newlemma = lemmacorrectionlexicon[nodelemma]
+                node.set('lemma', newlemma)
+        result = newtree
+    else:
+        result = stree
+    return result
+
+
 def tryme():
     sentences = [(1, 'Ik heb hem opgebeld')]
     sentences += [(2, 'ik wil hem opbellen')]
@@ -113,6 +164,8 @@ def tryme():
     sentences += [(7, 'de opgebelde mensen')]
     sentences += [(8, 'de aanbellende kinderen')]
     sentences += [(9, 'hij wil aankondigen dat hij opbelt')]
+    sentences += [(10, 'hij wil erin')]
+    sentences += [(11, 'hij gaat erachteraan')]
 
 
     selection = [sent for i, sent in sentences if True]

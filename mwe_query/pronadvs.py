@@ -4,8 +4,12 @@ and provides a function to create pronominal adverb lemmas (strings)
 """
 
 from typing import List, Optional, Tuple
+from sastadev.sastatypes import SynTree
+from stringfstandin import strip_accents
 
 Rpronouns = ["er", "hier", "daar", "waar"]
+fixedrpronouns = Rpronouns
+
 robustrpronouns = ["d'r", "dr"]
 
 Radpositions = [
@@ -125,32 +129,73 @@ def mkpronadvs(prep: str, postp: Optional[str] = None) -> List[str]:
             results = []
     return results
 
+PronAdpositionTuple = Optional[Tuple[str, Tuple[str, Optional[str]]]]
 
-def pronadv2vz(pronadv: str) -> Optional[Tuple[str, Optional[str]]]:
-    result: Optional[Tuple[str, Optional[str]]]
-    if pronadv in allpronadvlemmas:
-        if pronadv[:4] in {"daar", "hier", "waar"}:
-            result1 = pronadv[4:]
-        elif pronadv[:3] in {"d'r"}:
-            result1 = pronadv[3:]
-        elif pronadv[:2] in {"er", "dr"}:
-            result1 = pronadv[2:]
-        else:
-            result1 = None
-        if result1 is not None:
-            if result1 in circumpositionwordsdict:
-                result = circumpositionwordsdict[result1]
-            else:
-                result = (result1, None)
+
+def pronadv2vz(pronadv:str, lemma=True) -> Optional[Tuple[str, Optional[str]]]:
+    pronvz = pronadv2pronvz(pronadv, lemma)
+    if pronvz is not None:
+        (pron, vz) = pronvz
+        result = vz
     else:
         result = None
-    (vz, az) = result
-    if vz == "mee":
-        result = ("met", az)
-    elif vz == "toe":
-        result = ("tot", az)
+    return result
+
+def ispronadvp(node: SynTree) -> bool:
+    children = [child for child in node]
+    result = len(children) == 1 and ispronadv(children[0])
+    return result
+
+
+def ispronadv(node: SynTree) -> bool:
+    if 'lemma' not in node.attrib:
+        return False
+    lemma = node.get('lemma')
+    pronvzaztuple = pronadv2pronvz(lemma)
+    if pronvzaztuple is None:
+        result = False
     else:
-        pass
+        (pron, (vz, az)) = pronvzaztuple
+        if az is None:
+            result = vz in Radpositions
+        else:
+            result = f'{vz}{az}' in circumpositionwordsdict
+    return result
+
+
+def pronadv2pronvz(pronadv: str, lemma=True) -> PronAdpositionTuple:
+    result: PronAdpositionTuple
+    cleanpronadv = strip_accents(pronadv).lower()
+    if cleanpronadv in allpronadvlemmas:
+        if cleanpronadv[:4].lower() in {"daar", "hier", "waar"}:
+            pron = pronadv[:4]
+            result1 = pronadv[4:]
+        elif cleanpronadv[:3].lower() in {"d'r"}:
+            pron = pronadv[:3]
+            result1 = pronadv[3:]
+        elif cleanpronadv[:2].lower() in {"er", "dr"}:
+            pron = pronadv[:2]
+            result1 = pronadv[2:]
+        else:
+            pron = None
+            result1 = None
+        if result1 is not None and pron is not None:
+            cleanresult1 = strip_accents(result1).lower()
+            if cleanresult1 in circumpositionwordsdict:
+                result = (pron, circumpositionwordsdict[cleanresult1])
+            else:
+                result = (pron, (result1, None))
+            (pron, (vz, az)) = result
+            cleanvz = strip_accents(vz).lower()
+            if lemma:
+                if cleanvz == "mee":
+                    result = (pron, ("met", az))
+                elif cleanvz == "toe":
+                    result = (pron, ("tot", az))
+                else:
+                    pass
+    else:
+        result = None
     return result
 
 
@@ -216,12 +261,28 @@ def test():
         ("daaropaf", opafvz),
         ("d'ropaf", opafvz),
         ("dropaf", opafvz),
+        ("Wáártoe", toevz)
     ]
 
+    counter = 0
     for testadvpron, correct in testadvprons:
+        counter += 1
         result = pronadv2vz(testadvpron)
         if result != correct:
             print(f"NO:{testadvpron}: {result} != {correct}")
+    print(f'{counter} examples tested')
+
+
+def rvz(vzlemma:str) -> List[str]:
+    if vzlemma == 'met':
+        newvzlemma = 'mee'
+    elif vzlemma == 'tot':
+        newvzlemma = 'toe'
+    else:
+        newvzlemma = vzlemma
+
+    result = [f'{rpronoun}{newvzlemma}' for rpronoun in fixedrpronouns]
+    return result
 
 
 if __name__ == "__main__":

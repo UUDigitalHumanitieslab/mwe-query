@@ -48,7 +48,11 @@ def getlcatatt(node: SynTree) -> str:
         firstchildlcat = find1(node, './node[@rel="mwp"]/@lcat')
         result = str(firstchildlcat)
     elif pt != "":
-        result = gav(node, "lcat")
+        lcat = gav(node, "lcat")
+        if lcat == "part":
+            result = "pp"
+        else:
+            result = lcat
     else:
         result = ""
     return result
@@ -88,6 +92,7 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     frame = gav(node, "frame")
     numtype = gav(node, "numtype")
     vwtype = gav(node, "vwtype")
+    pdtype = gav(node, "pdtype")
     result: Optional[str] = "xp0"
     if (
         "word" not in node.attrib
@@ -135,13 +140,15 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         result = "detp"
     elif pt == "vz":
         if "particle" in frame:
-            result = "part"
+            result = "pp"   #  used to be "part"
         elif "adjective" in frame:
             result = "ap"
         elif "adverb" in frame:
             result = "advp"
         elif "post_p" in frame or "preposition" in frame:
             result = "pp"
+        elif rel == 'obj1':      # for intransitive prepositions
+            result = "advp"
         else:
             result = "pp"
     elif pt == "ww":
@@ -183,11 +190,15 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
             result = "detp"
         elif positie == "prenom" and vwtype == "bez":
             result = "detp"
+        elif positie == "prenom" and vwtype == "onbep":
+            result = "detp"
+        elif pdtype == "adv-pron":
+            result = "advp"
         elif "positie" not in node.attrib and vwtype == "aanw":
             result = "detp"
         elif rel == "det" and vwtype == "aanw":
             result = "detp"
-        elif vwtype in {"aanw", "betr", "pers", "pr", "recip", "vb", "onbep", "refl"}:
+        elif vwtype in {"aanw", "betr", "pers", "pr", "recip", "vb", "onbep", "refl", "excl"}:
             result = "np"
         else:
             result = "xp5"

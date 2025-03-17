@@ -1,0 +1,7 @@
+1571	DCM01703	iemand zal hem om hebben
+1572	DCM01704	iemand zal hem poetsen
+3550	DCM03846	op zijn elfendertigst
+4917	DCM05366	iemand zal het hem leveren
+8683	DCM09245	iemand zal   het hem lappen
+9074	DCM09636	dd:[de] tactiek van de verschroeide aarde
+11237	DCM11822	iemand zal hem knijpen

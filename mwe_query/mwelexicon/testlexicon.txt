@@ -1,0 +1,2 @@
+MWE_ID	Canonical_Form
+DCM02401	iemand zal iemand L:[op vrije voeten] CBE:stellen

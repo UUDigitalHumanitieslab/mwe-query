@@ -80,10 +80,11 @@ def getallcomments(datasetpath):
     permdatadict = updatepermdict(permdatadict, permdata)
 
     rawcomparefilenames = os.listdir(datasetpath)
-    comparefilenames = [fn for fn in rawcomparefilenames if fn.endswith(comparisonsuffix+comparisonextension)]
+    comparefilenames = [fn for fn in rawcomparefilenames if fn.endswith(comparisonsuffix+comparisonextension) and
+                        not fn.startswith("~$")]
     for comparefilename in comparefilenames:
         comparefullname = os.path.join(datasetpath, comparefilename)
-        compareheader, comparedata = getxlsxdata(comparefullname)
+        compareheader, comparedata = getxlsxdata(comparefullname, sheetname="Sheet1")
         permdatadict = updatepermdict(permdatadict, comparedata)
     return permdatadict
 

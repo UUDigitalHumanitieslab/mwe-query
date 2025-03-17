@@ -1,11 +1,17 @@
 from mwe_annotate import annotate
 from mwemeta import mwemetaheader, metatoparsemetsv3
-from sastadev.xlsx import mkworkbook, add_worksheet
+from sastadev.xlsx import mkworkbook, add_worksheet, getxlsxdata
 from sastadev.alpinoparsing import parse
+from sastadev.sastatypes import FileName
 from canonicalform import expandfull
+from comparisonfile import parsefilecol, res_sentcol, ref_sentcol
 from typing import List, Tuple
 from lxml import etree
+from mwutreebank import mwutreebankfullname, mwutreebankdict
+from tbfstandin import writetb
 import os
+
+parsefilespath = r"D:\Dropbox\various\Resources\nl-parseme"
 
 zichbezighoudenmetparsestr = """
 <alpino_ds version="1.3">
@@ -77,6 +83,53 @@ parsefiles[58] = r'WR-P-P-H-0000000025\WR-P-P-H-0000000025.p.4.s.4.xml'
 parsefiles[59] = r'WR-P-P-H-0000000020\WR-P-P-H-0000000020.p.14.s.3.xml'
 parsefiles[60] = r'WR-P-P-H-0000000025\WR-P-P-H-0000000025.p.12.s.4.xml'
 parsefiles[61] = r'WR-P-P-H-0000000031\WR-P-P-H-0000000031.p.4.s.1.xml'
+parsefiles[62] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\4797.xml"
+parsefiles[63] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\116.xml"
+parsefiles[64] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\204.xml"
+parsefiles[65] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000008\WR-P-P-H-0000000008.p.1.s.6.xml"
+parsefiles[66] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000041\WR-P-P-H-0000000041.p.4.s.1.xml"
+parsefiles[67] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2529.xml"
+parsefiles[68] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\3397.xml"
+parsefiles[69] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000012\WR-P-P-H-0000000012.p.8.s.1.xml"
+parsefiles[70] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2992.xml"
+parsefiles[71] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1126.xml"
+parsefiles[72] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1165.xml"
+parsefiles[73] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1143.xml"
+parsefiles[74] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000105\WR-P-P-H-0000000105.p.6.s.1.xml"
+parsefiles[75] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000105\WR-P-P-H-0000000105.p.7.s.2.xml"
+parsefiles[76] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2556.xml"
+parsefiles[77] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2058.xml"
+parsefiles[78] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000092\WR-P-P-H-0000000092.p.4.s.1.xml"
+parsefiles[79] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000041\WR-P-P-H-0000000041.p.4.s.1.xml"
+parsefiles[80] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1574.xml"
+parsefiles[81] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1583.xml"
+parsefiles[82] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2023.xml"
+parsefiles[83] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2084.xml"
+parsefiles[84] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2999.xml"
+parsefiles[85] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\3906.xml"
+parsefiles[86] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-L-0000000003\WR-P-P-L-0000000003.p.112.s.2.xml"
+parsefiles[87] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1589.xml"
+parsefiles[88] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2536.xml"
+parsefiles[89] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2561.xml"
+parsefiles[90] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2998.xml"
+parsefiles[91] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\3401.xml"
+parsefiles[92] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2089.xml"
+parsefiles[93] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2074.xml"
+parsefiles[94] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2068.xml"
+parsefiles[95] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\202.xml"
+parsefiles[96] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1165.xml"
+parsefiles[97] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\114.xml"
+parsefiles[98] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1606.xml"
+parsefiles[99] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\3463.xml"
+parsefiles[100] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2967.xml"
+parsefiles[101] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000105\WR-P-P-H-0000000105.p.6.s.4.xml"
+parsefiles[102] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000041\WR-P-P-H-0000000041.p.3.s.3.xml"
+parsefiles[103] = r"D:\Dropbox\various\Resources\nl-parseme\WR-P-P-H-0000000104\WR-P-P-H-0000000104.p.3.s.1.xml"
+parsefiles[104] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1051.xml"
+parsefiles[105] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\1214.xml"
+parsefiles[106] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2162.xml"
+parsefiles[107] = r"D:\Dropbox\various\Resources\nl-parseme\cdb\2161.xml"
+
 
 def select(sents: List[Tuple[int, str]], uttids=None):
     if uttids is not None:
@@ -95,10 +148,42 @@ def getparsefromfile(id):
         print(f'id {id} not in parsefiles')
         return None
 
+def getcomparisondata(comparisonfullname: FileName) -> dict:
+    comparisondict = {}
+    header, data = getxlsxdata(comparisonfullname)
+    for i, row in enumerate(data):
+        comparisondict[i+2] = row
+    return comparisondict
+
+def gettree(infullname):
+    fulltree = etree.parse(infullname)
+    tree = fulltree.getroot()
+    return tree
+
+def selectcomparisonresults(comparisondict, rowids=[]):
+    results = []
+    for rowid in rowids:
+        result = (rowid, comparisondict[rowid])
+        results.append(result)
+    return results
 
 
+def removemarking(sent: str) -> str:
+    result = ''
+    for ch in sent:
+        if ch != '*':
+            result += ch
+    return result
+def getsentence(comparisonrow) -> str:
+    rawresult = comparisonrow[res_sentcol]
+    if rawresult == "":
+        rawresult = comparisonrow[ref_sentcol]
+    result = removemarking(rawresult)
+    return result
 
 def tryannotate():
+    comparisonfullname = r'D:\Dropbox\various\Resources\nl-parseme-cupt\NL_alpino-ud_1-10a_comparison.xlsx'
+    comparisondict = getcomparisondata(comparisonfullname)
     sentences = []
     stophere = 0  # with 0 it will do all, with a positive value n it will stop after n examples
     sentences += [
@@ -177,10 +262,77 @@ def tryannotate():
     sentences += [(59, 'Dat Roofs zich blesseerde , dat De Sjiem niet in vorm was , kun je niet voorzien .')]
     sentences += [(60, ",, Ze kunnen me niet eindeloos aan het lijntje houden .")]
     sentences += [(61, "De ontvoering van Mejia - vermoedelijk door FARC-rebellen - was de laatste in een reeks van incidenten die in verband gebracht werden met de Copa America .")]
+    sentences += [(62, "De opperofficier onthulde dat de Israeli's reeds geruime tijd hinderlagen in Zuid-Libanon uitzetten om infiltraties van El Fatah in Israel te kunnen onderscheppen .")]
+    sentences += [(63, "Jan Tinbergen is er heilig van overtuigd , dat oost en west sterk naar elkaar toegroeien .")]
+    sentences += [(64, "Sprintster Cora Schouten stelde echter danig teleur , en daarmee nauw samenhangend kwamen ook de damesestafetteteams tot nauwelijks aanvaardbare verrichtingen .")]
+    sentences += [(65, "Nederland *sloot* het evenement als negende *af* en plaatste zich niet voor het WK .")]
+    sentences += [(66, "Verdedigend stak Oranje tegen de Italianen uitstekend in elkaar maar ook aanvallend was Nederland met 14 honkslagen prima op dreef .")]
+    sentences += [(67, "Howe and Bainbridge zullen zorgdragen voor de know-how .")]
+    sentences += [(68, "Je bent blij dat je er even uitkan , maar die terugkeer is zo hopeloos .")]
+    sentences += [(69, "Het leek toen nog een beloning voor een van de weinige constante Nederlandse spelers in Argentinië , maar niet veel later nam het duel uitgerekend voor Van der Vaart een dramatische wending .")]
+    sentences += [(70, "Jeff Dexter , lang steil wit haar tot op de schouder zit in restaurant De Plasmolens met 'n witte helm op naast de stagemanager - een Engelsman met onverstaanbare naam - die op zijn rode helm STAGE heeft geschilderd .")]
+    sentences += [(71, "Uit het *teruglopen* van de beurskoers van 85 naar 69 concludeerde hij dat de aandeelhouders het bod volkomen onaanvaardbaar vinden .")]
+    sentences += [(72, '''De beste toestand is die waarin allen zich toeleggen op de produktie van wat zij het beste kunnen maken . "''')]
+    sentences += [(73, """Als daarin geen verandering komt moet de Pen dan maar worden opgedoekt ?""")]
+    sentences += [(74, "De afgelopen week twijfelde ze nog of ze wel moest meedoen aan het NK .")]
+    sentences += [(75, "Behalve Van Alebeek en haar ploeggenote Bertine Spijkerman was ook Saskia Kaagman uit de opleidingsploeg van Farm Frites meegesprongen .")]
+    sentences += [(76, "De drooggekookte rijst met 1 lepel boter en 3 lepels fijngesneden peterselie mengen en er timbaaltjes van vormen .")]
+    sentences += [(77, "Nauwelijks was het echter door de Staten aangenomen of het bestuur van Rijnmond deed er al een aanval op .")]
+    sentences += [(78, "Sommige analisten menen dat Trimble erop gokt dat het IRA door zijn vertrek zo onder druk komt te staan dat de organisatie alsnog overstag gaat .")]
+    sentences += [(79, "Verdedigend stak Oranje tegen de Italianen uitstekend in elkaar maar ook aanvallend was Nederland met 14 honkslagen prima op dreef .")]
+    sentences += [(80, """AVRO's Televizier had een exclusief interview gekocht met " de gevangene van Peking " de Engelse Reutercorrespondent Anthony Gray die 2 jaar lang huisarrest heeft gehad .""")]
+    sentences += [(81, """Voor de heer Schravenmade lijdt het geen twijfel , dat de Rijn-Schelde , waarin Wilton-Feijenoord is opgenomen , alle haast maakt om zich op de Maasvlakte met een reparatie- en werfbedrijf ( voor nieuwbouw ) te vestigen .""")]
+    sentences += [(82, """Zij krijgt hiervoor in het kader van de manifestatie C'70 de beschikking over een nieuw paviljoen op het Stadhuisplein .""")]
+    sentences += [(83, """Het Haags muziektheater , dat onlangs werd opgericht met de bedoeling niet alleen een Haagse maar vooral bij de keuze van de medewerkers ook een echt Nederlandse bijdrage te leveren aan de operacultuur in ons land , zal zaterdag 27 september in het Scheveningse Circustheater debuteren met een voorstelling van twee korte opera's :""")]
+    sentences += [(84, """Er waren enige honderden mensen in de Rivierahal en die hadden veel plezier in al dat beweeg en het hyper-theatrale spel van deze Italianen , dat vaak in verschillende hoeken van de zaal geboden werd en dan moest men zelf maar uitzoeken wat men wilde zien .""")]
+    sentences += [(85, """Voor een ogenblik had ik spijt van deze uitspraak en dacht ik dat het beter zou zijn geweest toch maar de handen op elkaar te brengen .""")]
+    sentences += [(86, """Vooralsnog moet dus gebruik worden gemaakt van het Van Wiechenonderzoek , waarvan het registratieformulier is opgenomen in het Integraal Dossier JGZ .""")]
+    sentences += [(87, """Koeperman ging kansloos ten onder .""")]
+    sentences += [(88, """Maar wegens gebrek aan ijzersterke aanwijzingen die de vermoedens van zijn schuld vastere grond moesten geven , werd hij weer op vrije voeten gesteld .""")]
+    sentences += [(89, """Naast Asterix doet de opmerkelijke couwboy Lucky Luke het ook erg goed , Batman en dat soort krachtpatsers hebben intussen een inzinking .""")]
+    sentences += [(90, """Indutten was er niet bij , zoals , volgens de tomatisten althans , in onze schouwburgen regelmatig het geval is .""")]
+    sentences += [(91, """Dat behoren toch openbare gegevens te zijn , maar daar is geen sprake van . """)]
+    sentences += [(92, """De minister stond er niet afwijzend tegenover om die voorzieningen los te maken van de universiteit en onder te brengen in de algemene voorzieningen .""")]
+    sentences += [(93, """Uit de discussie in de synode bleek dat de leden wel begrip hadden voor de gewetensbezwaren van de lectoren , maar zij hadden een andere weg moeten kiezen , namelijk die van het appel .""")]
+    sentences += [(94, """Althans dit is de strekking van hetgeen nu al naar buiten is gekomen van het rapport der staatscommissie dat binnenkort zal worden gepubliceerd .""")]
+    sentences += [(95, """De goal van Ruud Witgen voor Nijmegen zou men een " verlossende " kunnen noemen , want na liefst 185 minuten beslissingshockey konden de Nijmegenaren juichend het veld van stadgenoot Union verlaten omdat Upward - dit seizoen gepromoveerd - dan toch het hoofd gebogen had en daarmee het recht verworven was om als " tweede " in oost alsnog in de landencompetitie te mogen spelen .""")]
+    sentences += [(96, """De beste toestand is die waarin allen *zich* *toeleggen* *op* de produktie van wat zij het beste kunnen maken . " """)]
+    sentences += [(97, """Vele omroepmedewerkers zijn de pioniersdagen van de Nederlandse televisie nog niet vergeten , toen Carel Enkelaar op de stoel van de heer Simons een journaal maakte dat vaktechnisch gesproken , klonk als een klok .""")]
+    sentences += [(98, """De overkoepelende studentenorganisatie wil hiermee de aandacht vestigen op de plannen van minister Veringa om het universitaire bestel in Nederland vergaand te centraliseren .""")]
+    sentences += [(99, """ Zoiets zit er altijd in , als je begint .""")]
+    sentences += [(100, """Maar om commerciele redenen , zal het er nooit van komen .""")]
+    sentences += [(101, """,, Mijn gedachten sprongen alle kanten op .""")]
+    sentences += [(102, """Maar dat wil niet zeggen dat we niet voor de overwinning zullen knokken .""")]
+    sentences += [(103, """Hans van Warmerdam van Sjalhomo hield een voordracht over Pesach , homochristenen zongen liederen .""")]
+    sentences += [(104, """De werkende jongeren hebben daarop volledig recht , aldus de heer Den Uyl .""")]
+    sentences += [(105, """ " In Dublin ben ik al een keer of zes zeven geweest .""")]
+    sentences += [(106, """ De ruststand van de wedstrijd die gisteren op het terrein van HFC te Haarlem werd gespeeld , was 0-1 .""")]
+    sentences += [(107, """ De traditionele nieuwjaarswedstrijd tussen HFC en de oud-internationals is geeindigd in een 4-0 overwinning voor de "oudjes"  .""")]
 
     fullmwemetalist = []
+    fulldiscardedmwemetalist = []
+    fullduplicatemwemetalist = []
+
     counter = 0
-    selectedsentences = select(sentences, uttids=[60])
+
+    comparisonresults = selectcomparisonresults(comparisondict, rowids=[780])
+    for rowid, comparisonresult in comparisonresults:
+        sentence = getsentence(comparisonresult)
+        parsefilename = f'{comparisonresult[parsefilecol]}.xml'
+        parsefullname = os.path.join(parsefilespath, parsefilename)
+        tree = gettree(parsefullname)
+        print(f"annotating {rowid}: {sentence}...")
+        if tree is not None:
+            expandedtree = expandfull(tree)
+            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(expandedtree, rowid)
+
+            fullmwemetalist += mwemetalist
+            fulldiscardedmwemetalist += discardedmwemetalist
+            fullduplicatemwemetalist += duplicatemwemetalist
+
+
+
+    selectedsentences = select(sentences, uttids=[])
     for id, sentence in selectedsentences:
         counter += 1
         print(f"annotating {id}: {sentence}...")
@@ -197,9 +349,18 @@ def tryannotate():
             mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(expandedtree, id)
 
             fullmwemetalist += mwemetalist
+            fulldiscardedmwemetalist += discardedmwemetalist
+            fullduplicatemwemetalist += duplicatemwemetalist
+
             ptsv3 = metatoparsemetsv3(sentence, mwemetalist)
             with open(f"./ptsv3/{id:03}.ptsv3", "w", encoding="utf8") as outfile:
                 print(ptsv3, file=outfile)
+
+        else:
+            print(f'No parse tree found for id {id} ({sentence})')
+            exit(-1)
+
+    writetb(mwutreebankdict, mwutreebankfullname)
 
     fullrowlist = [mwemeta.torow() for mwemeta in fullmwemetalist]
     wb = mkworkbook(
@@ -209,8 +370,8 @@ def tryannotate():
         sheetname='MWE meta',
         freeze_panes=(1, 0)
     )
-    discardedrows = [mwemeta.torow() for mwemeta in discardedmwemetalist]
-    duplicaterows = [mwemeta.torow() for mwemeta in duplicatemwemetalist]
+    discardedrows = [mwemeta.torow() for mwemeta in fulldiscardedmwemetalist]
+    duplicaterows = [mwemeta.torow() for mwemeta in fullduplicatemwemetalist]
     add_worksheet(wb,[mwemetaheader], discardedrows, sheetname='Discarded')
     add_worksheet(wb,[mwemetaheader], duplicaterows, sheetname='Duplicates')
     wb.close()

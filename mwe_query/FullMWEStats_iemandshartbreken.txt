@@ -1,0 +1,949 @@
+
+
+*****MWE statistics*****
+
+MWE Components:
+clemmas:cwords:utt
+breken;hart: brak;hart: ` Hij beging een misstap die haar <b>hart</b> <b>brak</b> .
+breken;hart: breken;hart: Harry Potter krijgt een vriendinnetje , en ze zal zijn <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Ze wil haar <b>hart</b> niet nog een keer <b>breken</b> en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken;hart: breekt;hart: ' Het is walgelijk en wat die mannen heben gedaan <b>breekt</b> mijn <b>hart</b> ' , zegt zij .
+breken;hart: brak;hart: Dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: breken;hart: Ik heb hem gedumpt voor hij mijn <b>hart</b> kon <b>breken</b> .
+breken;hart: breekt;hart: Dat <b>breekt</b> mijn <b>hart</b> en sloopt mijn gezondheid .
+breken;hart: gebroken;hart: ' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn <b>hart</b> heeft <b>gebroken</b> ' , schrijft Ellen van de Graaf aan haar clientèle .
+breken;hart: brak;hart: " Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het <b>brak</b> mijn <b>hart</b> om ze te missen . ''
+breken;hart: breekt;hart: Ze dramatiseert niets , houdt de toon licht , en juist dat <b>breekt</b> je <b>hart</b> .
+breken;hart: gebroken;hart: ' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn <b>hart</b> <b>gebroken</b> had .
+breken;hart: breekt;hart: In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het <b>breekt</b> ons <b>hart</b> en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+breken;hart: gebroken;hart: Zeven jaar geleden heeft ze zijn <b>hart</b> <b>gebroken</b> , nu wil ze hem terug .
+breken;hart: breken;hart: Het onderzoek , dat de titel Een gezonde economie kan je <b>hart</b> <b>breken</b> meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+breken;hart: breek;hart: Ik <b>breek</b> nooit iemands <b>hart</b> . "
+breken;hart: breken;hart: Koeznetsova kon dat <b>hart</b> niet <b>breken</b> .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood is .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken;hart: brak;hart: Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier <b>hart</b> hij <b>brak</b> toen hij een relatie begon met Kate Moss .
+breken;hart: breken;hart: De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes <b>breken</b> Johnny's <b>hart</b> .
+breken;hart: braken;hart: " Ik wou dat hij en de mannen die mijn en jullie <b>hart</b> <b>braken</b> , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: breken;hart: Vechten tegen elkaar zou haar <b>hart</b> <b>breken</b> " , legt Vitali dat uit .
+breken;hart: breekt;hart: Daarmee <b>breekt</b> Neko Case je <b>hart</b> , terwijl ze tegelijk je wil beheerst .
+breken;hart: brak;hart: Het <b>brak</b> ons <b>hart</b> dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+breken;hart: breekt;hart: Verhuizen is hetzelfde als een verhouding hebben , maar " je <b>breekt</b> er niemands <b>hart</b> mee .
+breken;hart: gebroken.»;hart: Tom Schipper zijn <b>hart</b> heeft men bij Wilrijk op het einde van vorig seizoen <b>gebroken.»</b>
+breken;hart: breekt;hart»: «Wat de kinderen nu overkomt , <b>breekt</b> mijn <b>hart»</b> , vervolgt Wims moeder .
+breken;hart: brak;hart: Ik moet bekennen , dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: brak;hart: De kleine David <b>brak</b> meteen haar <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> ons <b>hart</b> , want het baby'tje hoort ook bij ons.»
+breken;hart: breken;hart: Ik wil niemands <b>hart</b> <b>breken</b> .
+breken;hart: gebroken;hart: Nelly's <b>hart</b> wordt <b>gebroken</b> wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+breken;hart: breekt;hart: " Het <b>breekt</b> mijn <b>hart</b> als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .
+breken;hart: breekt;hart: " Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat <b>breekt</b> mijn <b>hart</b> .
+breken;hart: gebroken;hart: Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn <b>hart</b> had <b>gebroken</b> , maar na twee weken was ik bereid hem te ontmoeten .
+breken;hart: gebroken;hart: " Dat nieuwsbericht heeft echt mijn <b>hart</b> <b>gebroken</b> " , bekent Proper-Sheppard .
+breken;hart: breekt;hart: Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn <b>hart</b> <b>breekt</b> .
+breken;hart: breekt;hart: Als die dan zijn <b>hart</b> <b>breekt</b> , wordt hij pas echt James Bond . "
+
+Arguments:
+rel:arglemma:argword:arg:utt
+su:die:die:die:` Hij beging een misstap <b>die</b> haar hart brak .
+obj1/det:haar:haar:haar:` Hij beging een misstap die <b>haar</b> hart brak .
+su:ze:ze:ze:Harry Potter krijgt een vriendinnetje , en <b>ze</b> zal zijn hart breken .
+obj1/det:zijn:zijn:zijn:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+su:ze:Ze:Ze:<b>Ze</b> wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+obj1/det:haar:haar:haar:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su:wat:wat:wat wat die die mannen mannen heben gedaan:' Het is walgelijk en <b>wat</b> <b>die</b> <b>mannen</b> <b>heben</b> <b>gedaan</b> breekt mijn hart ' , zegt zij .
+obj1/det:mijn:mijn:mijn:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+su:dat:Dat:Dat:<b>Dat</b> brak mijn hart .
+obj1/det:mijn:mijn:mijn:Dat brak <b>mijn</b> hart .
+su:hij:hij:hij:Ik heb hem gedumpt voor <b>hij</b> mijn hart kon breken .
+obj1/det:mijn:mijn:mijn:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+su:dat:Dat:Dat:<b>Dat</b> breekt mijn hart en sloopt mijn gezondheid .
+obj1/det:mijn:mijn:mijn:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+su:beslissing:beslissing:de beslissing om na 68 jaar ons mooi ABC op te heffen:' U zult begrijpen dat <b>de</b> <b>beslissing</b> <b>om</b> <b>na</b> <b>68</b> <b>jaar</b> <b>ons</b> <b>mooi</b> <b>ABC</b> <b>op</b> <b>te</b> <b>heffen</b> mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+obj1/det:mijn:mijn:mijn:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su:het:het:het:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en <b>het</b> brak mijn hart om ze te missen . ''
+obj1/det:mijn:mijn:mijn:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+su:dat:dat:juist dat:Ze dramatiseert niets , houdt de toon licht , en <b>juist</b> <b>dat</b> breekt je hart .
+obj1/det:je:je:je:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+su:hij:hij:hij:' Hij leek wanhopig op die dag ... Ik dacht dat <b>hij</b> zijn hart gebroken had .
+obj1/det:zijn:zijn:zijn:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+su:het:het:het:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en <b>het</b> breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+obj1/det:ons:ons:ons:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su:ze:ze:ze:Zeven jaar geleden heeft <b>ze</b> zijn hart gebroken , nu wil ze hem terug .
+obj1/det:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+obj1/det:je:je:je:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su:ik:Ik:Ik:<b>Ik</b> breek nooit iemands hart . "
+su:Koeznetsova:Koeznetsova:Koeznetsova:<b>Koeznetsova</b> kon dat hart niet breken .
+su:iemand:iemand:iemand:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+obj1/det:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su:iemand:iemand:iemand:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+obj1/det:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+su:hij:hij:hij:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart <b>hij</b> brak toen hij een relatie begon met Kate Moss .
+su:blik:blikjes:achtergelaten blikjes:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en <b>achtergelaten</b> <b>blikjes</b> breken Johnny's hart .
+su:die:die:die:" Ik wou dat hij en de mannen <b>die</b> mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su:die:die:die:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:die:die:die:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:vechten:Vechten:Vechten tegen elkaar:<b>Vechten</b> <b>tegen</b> <b>elkaar</b> zou haar hart breken " , legt Vitali dat uit .
+obj1/det:haar:haar:haar:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+su:Neko Case:Neko Case:Neko Case:Daarmee breekt <b>Neko</b> <b>Case</b> je hart , terwijl ze tegelijk je wil beheerst .
+obj1/det:je:je:je:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+su:het:Het:Het:<b>Het</b> brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+obj1/det:ons:ons:ons:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su:je:je:je:Verhuizen is hetzelfde als een verhouding hebben , maar " <b>je</b> breekt er niemands hart mee .
+obj1/det:zijn:zijn:Tom Schipper zijn:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:men:men:men:Tom Schipper zijn hart heeft <b>men</b> bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:wat:«Wat:«Wat «Wat de kinderen nu overkomt:<b>«Wat</b> <b>de</b> <b>kinderen</b> <b>nu</b> <b>overkomt</b> , breekt mijn hart» , vervolgt Wims moeder .
+obj1/det:mijn:mijn:mijn:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+su:dat:dat:dat:Ik moet bekennen , <b>dat</b> brak mijn hart .
+obj1/det:mijn:mijn:mijn:Ik moet bekennen , dat brak <b>mijn</b> hart .
+su:David:David:De kleine David:<b>De</b> <b>kleine</b> <b>David</b> brak meteen haar hart .
+obj1/det:haar:haar:haar:De kleine David brak meteen <b>haar</b> hart .
+su:het:Het:Het:<b>Het</b> breekt mijn hart .
+obj1/det:mijn:mijn:mijn:Het breekt <b>mijn</b> hart .
+su:het:Het:Het:<b>Het</b> breekt ons hart , want het baby'tje hoort ook bij ons.»
+obj1/det:ons:ons:ons:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+su:ik:Ik:Ik:<b>Ik</b> wil niemands hart breken .
+su:het:Het:Het:" <b>Het</b> breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+obj1/det:mijn:mijn:mijn:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su:zij:zij:zij:Een jaar lang was hij gelukkig , tot <b>zij</b> zijn hart brak .
+obj1/det:zijn:zijn:zijn:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+su:dat:Dat:Dat:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... <b>Dat</b> breekt mijn hart .
+obj1/det:mijn:mijn:mijn:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+su:die:die:die:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen <b>die</b> mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+obj1/det:mijn:mijn:mijn:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+su:nieuwsbericht:nieuwsbericht:Dat nieuwsbericht:" <b>Dat</b> <b>nieuwsbericht</b> heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+obj1/det:mijn:mijn:mijn:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+su:liefde:liefde:die liefde:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als <b>die</b> <b>liefde</b> zijn hart breekt .
+obj1/det:zijn:zijn:zijn:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+su:die:die:die:Als <b>die</b> dan zijn hart breekt , wordt hij pas echt James Bond . "
+obj1/det:zijn:zijn:zijn:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+
+Arguments by relation and category:
+rel:cat:utt
+su:np:` Hij beging een misstap <b>die</b> haar hart brak .
+obj1/det:detp:` Hij beging een misstap die <b>haar</b> hart brak .
+su:np:Harry Potter krijgt een vriendinnetje , en <b>ze</b> zal zijn hart breken .
+obj1/det:detp:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+su:np:<b>Ze</b> wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+obj1/det:detp:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su:whrel:' Het is walgelijk en <b>wat</b> <b>die</b> <b>mannen</b> <b>heben</b> <b>gedaan</b> breekt mijn hart ' , zegt zij .
+obj1/det:detp:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+su:np:<b>Dat</b> brak mijn hart .
+obj1/det:detp:Dat brak <b>mijn</b> hart .
+su:np:Ik heb hem gedumpt voor <b>hij</b> mijn hart kon breken .
+obj1/det:detp:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+su:np:<b>Dat</b> breekt mijn hart en sloopt mijn gezondheid .
+obj1/det:detp:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+su:np:' U zult begrijpen dat <b>de</b> <b>beslissing</b> <b>om</b> <b>na</b> <b>68</b> <b>jaar</b> <b>ons</b> <b>mooi</b> <b>ABC</b> <b>op</b> <b>te</b> <b>heffen</b> mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+obj1/det:detp:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su:np:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en <b>het</b> brak mijn hart om ze te missen . ''
+obj1/det:detp:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+su:np:Ze dramatiseert niets , houdt de toon licht , en <b>juist</b> <b>dat</b> breekt je hart .
+obj1/det:detp:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+su:np:' Hij leek wanhopig op die dag ... Ik dacht dat <b>hij</b> zijn hart gebroken had .
+obj1/det:detp:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+su:np:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en <b>het</b> breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+obj1/det:detp:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su:np:Zeven jaar geleden heeft <b>ze</b> zijn hart gebroken , nu wil ze hem terug .
+obj1/det:detp:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+obj1/det:detp:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su:np:<b>Ik</b> breek nooit iemands hart . "
+su:np:<b>Koeznetsova</b> kon dat hart niet breken .
+su:np:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+obj1/det:detp:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su:np:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+obj1/det:detp:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+su:np:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart <b>hij</b> brak toen hij een relatie begon met Kate Moss .
+su:np:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en <b>achtergelaten</b> <b>blikjes</b> breken Johnny's hart .
+su:np:" Ik wou dat hij en de mannen <b>die</b> mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su:np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:np:<b>Vechten</b> <b>tegen</b> <b>elkaar</b> zou haar hart breken " , legt Vitali dat uit .
+obj1/det:detp:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+su:mwu:Daarmee breekt <b>Neko</b> <b>Case</b> je hart , terwijl ze tegelijk je wil beheerst .
+obj1/det:detp:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+su:np:<b>Het</b> brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+obj1/det:detp:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su:np:Verhuizen is hetzelfde als een verhouding hebben , maar " <b>je</b> breekt er niemands hart mee .
+obj1/det:detp:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:np:Tom Schipper zijn hart heeft <b>men</b> bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:whrel:<b>«Wat</b> <b>de</b> <b>kinderen</b> <b>nu</b> <b>overkomt</b> , breekt mijn hart» , vervolgt Wims moeder .
+obj1/det:detp:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+su:np:Ik moet bekennen , <b>dat</b> brak mijn hart .
+obj1/det:detp:Ik moet bekennen , dat brak <b>mijn</b> hart .
+su:np:<b>De</b> <b>kleine</b> <b>David</b> brak meteen haar hart .
+obj1/det:detp:De kleine David brak meteen <b>haar</b> hart .
+su:np:<b>Het</b> breekt mijn hart .
+obj1/det:detp:Het breekt <b>mijn</b> hart .
+su:np:<b>Het</b> breekt ons hart , want het baby'tje hoort ook bij ons.»
+obj1/det:detp:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+su:np:<b>Ik</b> wil niemands hart breken .
+su:np:" <b>Het</b> breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+obj1/det:detp:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su:np:Een jaar lang was hij gelukkig , tot <b>zij</b> zijn hart brak .
+obj1/det:detp:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+su:np:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... <b>Dat</b> breekt mijn hart .
+obj1/det:detp:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+su:np:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen <b>die</b> mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+obj1/det:detp:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+su:np:" <b>Dat</b> <b>nieuwsbericht</b> heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+obj1/det:detp:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+su:np:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als <b>die</b> <b>liefde</b> zijn hart breekt .
+obj1/det:detp:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+su:np:Als <b>die</b> dan zijn hart breekt , wordt hij pas echt James Bond . "
+obj1/det:detp:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+
+Argument frames:
+argframe:utt
+su/np+obj1/det/detp:` Hij beging een misstap die haar hart brak .
+su/np+obj1/det/detp:Harry Potter krijgt een vriendinnetje , en ze zal zijn hart breken .
+su/np+obj1/det/detp:Ze wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su/whrel+obj1/det/detp:' Het is walgelijk en wat die mannen heben gedaan breekt mijn hart ' , zegt zij .
+su/np+obj1/det/detp:Dat brak mijn hart .
+su/np+obj1/det/detp:Ik heb hem gedumpt voor hij mijn hart kon breken .
+su/np+obj1/det/detp:Dat breekt mijn hart en sloopt mijn gezondheid .
+su/np+obj1/det/detp:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su/np+obj1/det/detp:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak mijn hart om ze te missen . ''
+su/np+obj1/det/detp:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt je hart .
+su/np+obj1/det/detp:' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn hart gebroken had .
+su/np+obj1/det/detp:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su/np+obj1/det/detp:Zeven jaar geleden heeft ze zijn hart gebroken , nu wil ze hem terug .
+obj1/det/detp:Het onderzoek , dat de titel Een gezonde economie kan je hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su/np:Ik breek nooit iemands hart . "
+su/np:Koeznetsova kon dat hart niet breken .
+su/np+obj1/det/detp:Vorige week nog heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su/np+obj1/det/detp:Vorige week nog heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+su/np:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart hij brak toen hij een relatie begon met Kate Moss .
+su/np:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes breken Johnny's hart .
+su/np:" Ik wou dat hij en de mannen die mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su/np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su/np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su/np+obj1/det/detp:Vechten tegen elkaar zou haar hart breken " , legt Vitali dat uit .
+su/mwu+obj1/det/detp:Daarmee breekt Neko Case je hart , terwijl ze tegelijk je wil beheerst .
+su/np+obj1/det/detp:Het brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su/np:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart mee .
+su/np+obj1/det/detp:Tom Schipper zijn hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su/whrel+obj1/det/detp:«Wat de kinderen nu overkomt , breekt mijn hart» , vervolgt Wims moeder .
+su/np+obj1/det/detp:Ik moet bekennen , dat brak mijn hart .
+su/np+obj1/det/detp:De kleine David brak meteen haar hart .
+su/np+obj1/det/detp:Het breekt mijn hart .
+su/np+obj1/det/detp:Het breekt ons hart , want het baby'tje hoort ook bij ons.»
+su/np:Ik wil niemands hart breken .
+:Nelly's hart wordt gebroken wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+su/np+obj1/det/detp:" Het breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su/np+obj1/det/detp:Een jaar lang was hij gelukkig , tot zij zijn hart brak .
+su/np+obj1/det/detp:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt mijn hart .
+su/np+obj1/det/detp:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+su/np+obj1/det/detp:" Dat nieuwsbericht heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+su/np+obj1/det/detp:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn hart breekt .
+su/np+obj1/det/detp:Als die dan zijn hart breekt , wordt hij pas echt James Bond . "
+
+Modification:
+clemma:modrel:modcat:modheadcat:modheadlemma:modheadword:modfringe:utt
+breken:mod:advp:bw:niet:niet:niet:Ze wil haar hart <b>niet</b> nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken:mod:np:n:keer:keer:nog een keer:Ze wil haar hart niet <b>nog</b> <b>een</b> <b>keer</b> breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken:mod:oti:vz:om:om:om ze te missen:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak mijn hart <b>om</b> <b>ze</b> <b>te</b> <b>missen</b> . ''
+breken:mod:ap:bw:geleden:geleden:Zeven jaar geleden:<b>Zeven</b> <b>jaar</b> <b>geleden</b> heeft ze zijn hart gebroken , nu wil ze hem terug .
+breken:mod:advp:bw:nooit:nooit:nooit:Ik breek <b>nooit</b> iemands hart . "
+breken:mod:advp:bw:niet:niet:niet:Koeznetsova kon dat hart <b>niet</b> breken .
+breken:mod:np:n:week:week:Vorige week nog:<b>Vorige</b> <b>week</b> <b>nog</b> heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+breken:mod:cp:vz:door:door:door te zeggen dat Sun Ra al jaren dood is:Vorige week nog heeft iemand mijn hart gebroken <b>door</b> <b>te</b> <b>zeggen</b> <b>dat</b> <b>Sun</b> <b>Ra</b> <b>al</b> <b>jaren</b> <b>dood</b> <b>is</b> .
+breken:mod:np:n:week:week:Vorige week nog:<b>Vorige</b> <b>week</b> <b>nog</b> heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken:mod:cp:vz:door:door:door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is:Vorige week nog heeft iemand mijn hart gebroken <b>door</b> <b>te</b> <b>zeggen</b> <b>dat</b> <b>Sun</b> <b>Ra</b> <b>al</b> <b>jaren</b> <b>dood</b> <b>isHet</b> <b>seksisme</b> <b>in</b> <b>de</b> <b>hiphop</b> <b>is</b> vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken:mod:cp:vg:toen:toen:toen hij een relatie begon met Kate Moss:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart hij brak <b>toen</b> <b>hij</b> <b>een</b> <b>relatie</b> <b>begon</b> <b>met</b> <b>Kate</b> <b>Moss</b> .
+breken:mod:pp:bw:daarmee:Daarmee:Daarmee:<b>Daarmee</b> breekt Neko Case je hart , terwijl ze tegelijk je wil beheerst .
+breken:mod:cp:vg:terwijl:terwijl:terwijl ze tegelijk je wil beheerst:Daarmee breekt Neko Case je hart , <b>terwijl</b> <b>ze</b> <b>tegelijk</b> <b>je</b> <b>wil</b> <b>beheerst</b> .
+breken:mod:advp:vnw:er:er:er:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt <b>er</b> niemands hart mee .
+breken:mod:advp:bw:mee:mee:mee:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart <b>mee</b> .
+breken:mod:pp:vz:bij:bij:bij Wilrijk:Tom Schipper zijn hart heeft men <b>bij</b> <b>Wilrijk</b> op het einde van vorig seizoen gebroken.»
+breken:mod:pp:vz:op:op:op het einde van vorig seizoen:Tom Schipper zijn hart heeft men bij Wilrijk <b>op</b> <b>het</b> <b>einde</b> <b>van</b> <b>vorig</b> <b>seizoen</b> gebroken.»
+breken:mod:advp:bw:meteen:meteen:meteen:De kleine David brak <b>meteen</b> haar hart .
+breken:mod:cp:vg:wanneer:wanneer:wanneer haar verloofde Jens haar bedriegt met haar beste vriendin:Nelly's hart wordt gebroken <b>wanneer</b> <b>haar</b> <b>verloofde</b> <b>Jens</b> <b>haar</b> <b>bedriegt</b> <b>met</b> <b>haar</b> <b>beste</b> <b>vriendin</b> ... op haar huwelijksdag .
+breken:mod:cp:vg:als:als:als ik op zitdagen jonge jonge boeren boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hun hebben en houden voor hun vreselijk zware leningen:" Het breekt mijn hart <b>als</b> <b>ik</b> <b>op</b> <b>zitdagen</b> <b>jonge</b> <b>boeren</b> <b>nog</b> <b>altijd</b> <b>hoor</b> <b>vertellen</b> <b>dat</b> <b>ze</b> <b>persoonlijk</b> <b>borg</b> <b>staan</b> <b>met</b> <b>hun</b> <b>hebben</b> <b>en</b> <b>houden</b> <b>voor</b> <b>hun</b> <b>vreselijk</b> <b>zware</b> <b>leningen</b> "
+breken:mod:ap:adj:echt:echt:echt:" Dat nieuwsbericht heeft <b>echt</b> mijn hart gebroken " , bekent Proper-Sheppard .
+breken:mod:advp:bw:dan:dan:dan:Als die <b>dan</b> zijn hart breekt , wordt hij pas echt James Bond . "
+
+Determination:
+clemma:detrel:detcat:detheadcat:detheadlemma:detheadword:detfringe:utt
+hart:det:detp:vnw:haar:haar:haar:` Hij beging een misstap die <b>haar</b> hart brak .
+hart:det:detp:vnw:zijn:zijn:zijn:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+hart:det:detp:vnw:haar:haar:haar:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+hart:det:detp:vnw:mijn:mijn:mijn:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+hart:det:detp:vnw:mijn:mijn:mijn:Dat brak <b>mijn</b> hart .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+hart:det:detp:vnw:mijn:mijn:mijn:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+hart:det:detp:vnw:mijn:mijn:mijn:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+hart:det:detp:vnw:mijn:mijn:mijn:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+hart:det:detp:vnw:je:je:je:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+hart:det:detp:vnw:zijn:zijn:zijn:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+hart:det:detp:vnw:ons:ons:ons:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+hart:det:detp:vnw:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+hart:det:detp:vnw:je:je:je:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+hart:det:detp:vnw:iemand:iemands:iemands:Ik breek nooit <b>iemands</b> hart . "
+hart:det:detp:vnw:dat:dat:dat:Koeznetsova kon <b>dat</b> hart niet breken .
+hart:det:detp:vnw:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+hart:det:detp:vnw:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+hart:det:detp:vnw:wier:wier:wier:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , <b>wier</b> hart hij brak toen hij een relatie begon met Kate Moss .
+hart:det:detp:n:Johnny:Johnny's:Johnny's:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes breken <b>Johnny's</b> hart .
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vg:en:en:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vg:en:en:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vg:en:en:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:detp:vnw:haar:haar:haar:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+hart:det:detp:vnw:je:je:je:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+hart:det:detp:vnw:ons:ons:ons:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+hart:det:detp:vnw:niemand:niemands:niemands:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er <b>niemands</b> hart mee .
+hart:det:detp:vnw:zijn:zijn:Tom Schipper zijn:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+hart:det:detp:vnw:mijn:mijn:mijn:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik moet bekennen , dat brak <b>mijn</b> hart .
+hart:det:detp:vnw:haar:haar:haar:De kleine David brak meteen <b>haar</b> hart .
+hart:det:detp:vnw:mijn:mijn:mijn:Het breekt <b>mijn</b> hart .
+hart:det:detp:vnw:ons:ons:ons:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+hart:det:detp:vnw:niemand:niemands:niemands:Ik wil <b>niemands</b> hart breken .
+hart:det:detp:n:Nelly:Nelly's:Nelly's:<b>Nelly's</b> hart wordt gebroken wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+hart:det:detp:vnw:mijn:mijn:mijn:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+hart:det:detp:vnw:zijn:zijn:zijn:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+hart:det:detp:vnw:mijn:mijn:mijn:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+hart:det:detp:vnw:mijn:mijn:mijn:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+hart:det:detp:vnw:zijn:zijn:zijn:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+hart:det:detp:vnw:zijn:zijn:zijn:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+
+
+*****Near-miss statistics*****
+
+MWE Components:
+clemmas:cwords:utt
+breken;hart: gebroken;harten: Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen <b>harten</b> <b>gebroken</b> worden ?
+breken;hart: brak;hart: ` Hij beging een misstap die haar <b>hart</b> <b>brak</b> .
+breken;hart: breken;hart: Harry Potter krijgt een vriendinnetje , en ze zal zijn <b>hart</b> <b>breken</b> .
+breken;hart: breken;hart: Ze wil haar <b>hart</b> niet nog een keer <b>breken</b> en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken;hart: gebroken;hart: ' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het <b>hart</b> <b>gebroken</b> van tienduizenden familieleden .
+breken;hart: breekt;hart: ' Het is walgelijk en wat die mannen heben gedaan <b>breekt</b> mijn <b>hart</b> ' , zegt zij .
+breken;hart: gebroken;hart: Volgens ingewijden heeft Clooney het <b>hart</b> <b>gebroken</b> van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+breken;hart: breken;hart: Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het <b>hart</b> van Eka moeder <b>breken</b> .
+breken;hart: gebroken;hart: Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig <b>hart</b> ( Halina Reijn ) <b>gebroken</b> .
+breken;hart: brak;hart: Dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: breken;hart: Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het <b>hart</b> van hun ouders <b>breken</b> door te snel groot te worden ... ) .
+breken;hart: breken;hart: Ik heb hem gedumpt voor hij mijn <b>hart</b> kon <b>breken</b> .
+breken;hart: breekt;hart: Dat <b>breekt</b> mijn <b>hart</b> en sloopt mijn gezondheid .
+breken;hart: gebroken;hart: ' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn <b>hart</b> heeft <b>gebroken</b> ' , schrijft Ellen van de Graaf aan haar clientèle .
+breken;hart: brak;hart: " Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het <b>brak</b> mijn <b>hart</b> om ze te missen . ''
+breken;hart: breekt;hart: Ze dramatiseert niets , houdt de toon licht , en juist dat <b>breekt</b> je <b>hart</b> .
+breken;hart: breken;harten: De vernietiging van de citadel zal de <b>harten</b> van alle Iraniërs <b>breken</b> .
+breken;hart: gebroken;harten: Hun beider <b>harten</b> werden dan ook <b>gebroken</b> toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken;hart: gebroken;hart: ' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn <b>hart</b> <b>gebroken</b> had .
+breken;hart: breekt;harten: In aflevering drie van The Bachelorette , uitgezonden op Yorin , <b>breekt</b> Trista haar eerste <b>harten</b> .
+breken;hart: breekt;hart: In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het <b>breekt</b> ons <b>hart</b> en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+breken;hart: gebroken;hart: Zeven jaar geleden heeft ze zijn <b>hart</b> <b>gebroken</b> , nu wil ze hem terug .
+breken;hart: gebroken;hart: Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je <b>hart</b> heeft <b>gebroken</b> , dat helpt . "
+breken;hart: breken;hart: Het onderzoek , dat de titel Een gezonde economie kan je <b>hart</b> <b>breken</b> meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+breken;hart: breek;hart: Ik <b>breek</b> nooit iemands <b>hart</b> . "
+breken;hart: gebroken;harten: " Ik heb best wel wat <b>harten</b> <b>gebroken</b> .
+breken;hart: breken;hart: Koeznetsova kon dat <b>hart</b> niet <b>breken</b> .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood is .
+breken;hart: gebroken;hart: Vorige week nog heeft iemand mijn <b>hart</b> <b>gebroken</b> door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .
+breken;hart: breken;harten: Het is heel goed mogelijk dat Irak onze <b>harten</b> gaat <b>breken</b> .
+breken;hart: brak;hart: Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier <b>hart</b> hij <b>brak</b> toen hij een relatie begon met Kate Moss .
+breken;hart: breken;hart: De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes <b>breken</b> Johnny's <b>hart</b> .
+breken;hart: braken;hart: " Ik wou dat hij en de mannen die mijn en jullie <b>hart</b> <b>braken</b> , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: gebroken;hart: En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie <b>hart</b> <b>gebroken</b> hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+breken;hart: breken;hart: Vechten tegen elkaar zou haar <b>hart</b> <b>breken</b> " , legt Vitali dat uit .
+breken;hart: breekt;hart: Daarmee <b>breekt</b> Neko Case je <b>hart</b> , terwijl ze tegelijk je wil beheerst .
+breken;hart: gebroken;hart: Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het <b>hart</b> van Queen of Hearts Diana had <b>gebroken</b> , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+breken;hart: brak;hart: Dat <b>brak</b> het <b>hart</b> van haar moeder .
+breken;hart: brak;hart: Het <b>brak</b> ons <b>hart</b> dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+breken;hart: breekt;hart: Verhuizen is hetzelfde als een verhouding hebben , maar " je <b>breekt</b> er niemands <b>hart</b> mee .
+breken;hart: gebroken;hart: Het <b>hart</b> van hoofdrolspeelster Nelly wordt al in de eerste aflevering <b>gebroken</b> wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken;hart: gebroken.»;hart: Tom Schipper zijn <b>hart</b> heeft men bij Wilrijk op het einde van vorig seizoen <b>gebroken.»</b>
+breken;hart: breken;harten: Als hij daarom de <b>harten</b> van zijn eigen fans moet <b>breken</b> , dan moet het maar .
+breken;hart: breekt;hart»: «Wat de kinderen nu overkomt , <b>breekt</b> mijn <b>hart»</b> , vervolgt Wims moeder .
+breken;hart: brak;hart: Ik moet bekennen , dat <b>brak</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het <b>hart</b> <b>breekt</b> van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken;hart: brak;hart: De kleine David <b>brak</b> meteen haar <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> mijn <b>hart</b> .
+breken;hart: breekt;hart: Het <b>breekt</b> ons <b>hart</b> , want het baby'tje hoort ook bij ons.»
+breken;hart: breken;hart: Ik wil niemands <b>hart</b> <b>breken</b> .
+breken;hart: gebroken;hart: Nelly's <b>hart</b> wordt <b>gebroken</b> wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+breken;hart: breekt;hart: " Het <b>breekt</b> mijn <b>hart</b> als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+breken;hart: breekt;hart: Met deze mededeling <b>breekt</b> hij het <b>hart</b> van iedere Jos .
+breken;hart: brak;hart: Een jaar lang was hij gelukkig , tot zij zijn <b>hart</b> <b>brak</b> .
+breken;hart: breekt;hart: " Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat <b>breekt</b> mijn <b>hart</b> .
+breken;hart: gebroken;hart: Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn <b>hart</b> had <b>gebroken</b> , maar na twee weken was ik bereid hem te ontmoeten .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar niet getreurd : de pijn is niet ondraaglijk .
+breken;hart: gebroken;hart: " Dat nieuwsbericht heeft echt mijn <b>hart</b> <b>gebroken</b> " , bekent Proper-Sheppard .
+breken;hart: breekt;hart: Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn <b>hart</b> <b>breekt</b> .
+breken;hart: breekt;hart: Als die dan zijn <b>hart</b> <b>breekt</b> , wordt hij pas echt James Bond . "
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar geen erg , de pijn is niet ondraaglijk .
+
+Arguments:
+rel:arglemma:argword:arg:utt
+su:die:die:die:` Hij beging een misstap <b>die</b> haar hart brak .
+obj1/det:haar:haar:haar:` Hij beging een misstap die <b>haar</b> hart brak .
+su:ze:ze:ze:Harry Potter krijgt een vriendinnetje , en <b>ze</b> zal zijn hart breken .
+obj1/det:zijn:zijn:zijn:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+su:ze:Ze:Ze:<b>Ze</b> wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+obj1/det:haar:haar:haar:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su:terrorist:terroristen:De terroristen:' <b>De</b> <b>terroristen</b> hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su:wat:wat:wat wat die die mannen mannen heben gedaan:' Het is walgelijk en <b>wat</b> <b>die</b> <b>mannen</b> <b>heben</b> <b>gedaan</b> breekt mijn hart ' , zegt zij .
+obj1/det:mijn:mijn:mijn:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+su:Clooney:Clooney:Clooney:Volgens ingewijden heeft <b>Clooney</b> het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su:nieuws:nieuws:het vreselijke nieuws:Zijn zuster en nichtje weten niet wat te doen , <b>het</b> <b>vreselijke</b> <b>nieuws</b> zou zeker het hart van Eka moeder breken .
+su:dat:Dat:Dat:<b>Dat</b> brak mijn hart .
+obj1/det:mijn:mijn:mijn:Dat brak <b>mijn</b> hart .
+su:toilet_rol:toiletrollen:hele toiletrollen:Dat lijkt wel onderdeel van hun taakomschrijving ( net als <b>hele</b> <b>toiletrollen</b> door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su:hij:hij:hij:Ik heb hem gedumpt voor <b>hij</b> mijn hart kon breken .
+obj1/det:mijn:mijn:mijn:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+su:dat:Dat:Dat:<b>Dat</b> breekt mijn hart en sloopt mijn gezondheid .
+obj1/det:mijn:mijn:mijn:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+su:beslissing:beslissing:de beslissing om na 68 jaar ons mooi ABC op te heffen:' U zult begrijpen dat <b>de</b> <b>beslissing</b> <b>om</b> <b>na</b> <b>68</b> <b>jaar</b> <b>ons</b> <b>mooi</b> <b>ABC</b> <b>op</b> <b>te</b> <b>heffen</b> mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+obj1/det:mijn:mijn:mijn:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su:het:het:het:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en <b>het</b> brak mijn hart om ze te missen . ''
+obj1/det:mijn:mijn:mijn:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+su:dat:dat:juist dat:Ze dramatiseert niets , houdt de toon licht , en <b>juist</b> <b>dat</b> breekt je hart .
+obj1/det:je:je:je:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+su:vernietiging:vernietiging:De vernietiging van de citadel:<b>De</b> <b>vernietiging</b> <b>van</b> <b>de</b> <b>citadel</b> zal de harten van alle Iraniërs breken .
+obj1/det:hun:Hun:Hun:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su:hij:hij:hij:' Hij leek wanhopig op die dag ... Ik dacht dat <b>hij</b> zijn hart gebroken had .
+obj1/det:zijn:zijn:zijn:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+su:Trista:Trista:Trista:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt <b>Trista</b> haar eerste harten .
+obj1/det:haar:haar:haar:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+su:het:het:het:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en <b>het</b> breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+obj1/det:ons:ons:ons:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su:ze:ze:ze:Zeven jaar geleden heeft <b>ze</b> zijn hart gebroken , nu wil ze hem terug .
+obj1/det:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+su:die:die:die:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene <b>die</b> je hart heeft gebroken , dat helpt . "
+obj1/det:je:je:je:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+obj1/det:je:je:je:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su:ik:Ik:Ik:<b>Ik</b> breek nooit iemands hart . "
+su:ik:Ik:Ik:" <b>Ik</b> heb best wel wat harten gebroken .
+su:Koeznetsova:Koeznetsova:Koeznetsova:<b>Koeznetsova</b> kon dat hart niet breken .
+su:iemand:iemand:iemand:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+obj1/det:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su:iemand:iemand:iemand:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+obj1/det:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+su:Irak:Irak:Irak:Het is heel goed mogelijk dat <b>Irak</b> onze harten gaat breken .
+obj1/det:ons:onze:onze:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+su:hij:hij:hij:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart <b>hij</b> brak toen hij een relatie begon met Kate Moss .
+su:blik:blikjes:achtergelaten blikjes:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en <b>achtergelaten</b> <b>blikjes</b> breken Johnny's hart .
+su:die:die:die:" Ik wou dat hij en de mannen <b>die</b> mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su:die:die:die:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:die:die:die:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:vechten:Vechten:Vechten tegen elkaar:<b>Vechten</b> <b>tegen</b> <b>elkaar</b> zou haar hart breken " , legt Vitali dat uit .
+obj1/det:haar:haar:haar:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+su:Neko Case:Neko Case:Neko Case:Daarmee breekt <b>Neko</b> <b>Case</b> je hart , terwijl ze tegelijk je wil beheerst .
+obj1/det:je:je:je:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+su:die:die:die:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker <b>die</b> het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su:dat:Dat:Dat:<b>Dat</b> brak het hart van haar moeder .
+su:het:Het:Het:<b>Het</b> brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+obj1/det:ons:ons:ons:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su:je:je:je:Verhuizen is hetzelfde als een verhouding hebben , maar " <b>je</b> breekt er niemands hart mee .
+obj1/det:zijn:zijn:Tom Schipper zijn:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:men:men:men:Tom Schipper zijn hart heeft <b>men</b> bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:hij:hij:hij:Als <b>hij</b> daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su:wat:«Wat:«Wat «Wat de kinderen nu overkomt:<b>«Wat</b> <b>de</b> <b>kinderen</b> <b>nu</b> <b>overkomt</b> , breekt mijn hart» , vervolgt Wims moeder .
+obj1/det:mijn:mijn:mijn:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+su:dat:dat:dat:Ik moet bekennen , <b>dat</b> brak mijn hart .
+obj1/det:mijn:mijn:mijn:Ik moet bekennen , dat brak <b>mijn</b> hart .
+su:hij:hij:hij:In die mate zelfs dat <b>hij</b> bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su:David:David:De kleine David:<b>De</b> <b>kleine</b> <b>David</b> brak meteen haar hart .
+obj1/det:haar:haar:haar:De kleine David brak meteen <b>haar</b> hart .
+su:het:Het:Het:<b>Het</b> breekt mijn hart .
+obj1/det:mijn:mijn:mijn:Het breekt <b>mijn</b> hart .
+su:het:Het:Het:<b>Het</b> breekt ons hart , want het baby'tje hoort ook bij ons.»
+obj1/det:ons:ons:ons:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+su:ik:Ik:Ik:<b>Ik</b> wil niemands hart breken .
+su:het:Het:Het:" <b>Het</b> breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+obj1/det:mijn:mijn:mijn:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su:hij:hij:hij:Met deze mededeling breekt <b>hij</b> het hart van iedere Jos .
+su:zij:zij:zij:Een jaar lang was hij gelukkig , tot <b>zij</b> zijn hart brak .
+obj1/det:zijn:zijn:zijn:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+su:dat:Dat:Dat:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... <b>Dat</b> breekt mijn hart .
+obj1/det:mijn:mijn:mijn:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+su:die:die:die:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen <b>die</b> mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+obj1/det:mijn:mijn:mijn:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+su:nieuwsbericht:nieuwsbericht:Dat nieuwsbericht:" <b>Dat</b> <b>nieuwsbericht</b> heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+obj1/det:mijn:mijn:mijn:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+su:liefde:liefde:die liefde:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als <b>die</b> <b>liefde</b> zijn hart breekt .
+obj1/det:zijn:zijn:zijn:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+su:die:die:die:Als <b>die</b> dan zijn hart breekt , wordt hij pas echt James Bond . "
+obj1/det:zijn:zijn:zijn:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+
+Arguments by relation and category:
+rel:cat:utt
+su:np:` Hij beging een misstap <b>die</b> haar hart brak .
+obj1/det:detp:` Hij beging een misstap die <b>haar</b> hart brak .
+su:np:Harry Potter krijgt een vriendinnetje , en <b>ze</b> zal zijn hart breken .
+obj1/det:detp:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+su:np:<b>Ze</b> wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+obj1/det:detp:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su:np:' <b>De</b> <b>terroristen</b> hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su:whrel:' Het is walgelijk en <b>wat</b> <b>die</b> <b>mannen</b> <b>heben</b> <b>gedaan</b> breekt mijn hart ' , zegt zij .
+obj1/det:detp:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+su:np:Volgens ingewijden heeft <b>Clooney</b> het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su:np:Zijn zuster en nichtje weten niet wat te doen , <b>het</b> <b>vreselijke</b> <b>nieuws</b> zou zeker het hart van Eka moeder breken .
+su:np:<b>Dat</b> brak mijn hart .
+obj1/det:detp:Dat brak <b>mijn</b> hart .
+su:np:Dat lijkt wel onderdeel van hun taakomschrijving ( net als <b>hele</b> <b>toiletrollen</b> door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su:np:Ik heb hem gedumpt voor <b>hij</b> mijn hart kon breken .
+obj1/det:detp:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+su:np:<b>Dat</b> breekt mijn hart en sloopt mijn gezondheid .
+obj1/det:detp:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+su:np:' U zult begrijpen dat <b>de</b> <b>beslissing</b> <b>om</b> <b>na</b> <b>68</b> <b>jaar</b> <b>ons</b> <b>mooi</b> <b>ABC</b> <b>op</b> <b>te</b> <b>heffen</b> mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+obj1/det:detp:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su:np:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en <b>het</b> brak mijn hart om ze te missen . ''
+obj1/det:detp:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+su:np:Ze dramatiseert niets , houdt de toon licht , en <b>juist</b> <b>dat</b> breekt je hart .
+obj1/det:detp:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+su:np:<b>De</b> <b>vernietiging</b> <b>van</b> <b>de</b> <b>citadel</b> zal de harten van alle Iraniërs breken .
+obj1/det:detp:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su:np:' Hij leek wanhopig op die dag ... Ik dacht dat <b>hij</b> zijn hart gebroken had .
+obj1/det:detp:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+su:np:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt <b>Trista</b> haar eerste harten .
+obj1/det:detp:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+su:np:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en <b>het</b> breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+obj1/det:detp:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su:np:Zeven jaar geleden heeft <b>ze</b> zijn hart gebroken , nu wil ze hem terug .
+obj1/det:detp:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+su:np:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene <b>die</b> je hart heeft gebroken , dat helpt . "
+obj1/det:detp:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+obj1/det:detp:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su:np:<b>Ik</b> breek nooit iemands hart . "
+su:np:" <b>Ik</b> heb best wel wat harten gebroken .
+su:np:<b>Koeznetsova</b> kon dat hart niet breken .
+su:np:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+obj1/det:detp:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su:np:Vorige week nog heeft <b>iemand</b> mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+obj1/det:detp:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+su:np:Het is heel goed mogelijk dat <b>Irak</b> onze harten gaat breken .
+obj1/det:detp:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+su:np:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart <b>hij</b> brak toen hij een relatie begon met Kate Moss .
+su:np:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en <b>achtergelaten</b> <b>blikjes</b> breken Johnny's hart .
+su:np:" Ik wou dat hij en de mannen <b>die</b> mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su:np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen <b>die</b> mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su:np:<b>Vechten</b> <b>tegen</b> <b>elkaar</b> zou haar hart breken " , legt Vitali dat uit .
+obj1/det:detp:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+su:mwu:Daarmee breekt <b>Neko</b> <b>Case</b> je hart , terwijl ze tegelijk je wil beheerst .
+obj1/det:detp:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+su:np:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker <b>die</b> het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su:np:<b>Dat</b> brak het hart van haar moeder .
+su:np:<b>Het</b> brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+obj1/det:detp:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su:np:Verhuizen is hetzelfde als een verhouding hebben , maar " <b>je</b> breekt er niemands hart mee .
+obj1/det:detp:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:np:Tom Schipper zijn hart heeft <b>men</b> bij Wilrijk op het einde van vorig seizoen gebroken.»
+su:np:Als <b>hij</b> daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su:whrel:<b>«Wat</b> <b>de</b> <b>kinderen</b> <b>nu</b> <b>overkomt</b> , breekt mijn hart» , vervolgt Wims moeder .
+obj1/det:detp:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+su:np:Ik moet bekennen , <b>dat</b> brak mijn hart .
+obj1/det:detp:Ik moet bekennen , dat brak <b>mijn</b> hart .
+su:np:In die mate zelfs dat <b>hij</b> bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su:np:<b>De</b> <b>kleine</b> <b>David</b> brak meteen haar hart .
+obj1/det:detp:De kleine David brak meteen <b>haar</b> hart .
+su:np:<b>Het</b> breekt mijn hart .
+obj1/det:detp:Het breekt <b>mijn</b> hart .
+su:np:<b>Het</b> breekt ons hart , want het baby'tje hoort ook bij ons.»
+obj1/det:detp:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+su:np:<b>Ik</b> wil niemands hart breken .
+su:np:" <b>Het</b> breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+obj1/det:detp:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su:np:Met deze mededeling breekt <b>hij</b> het hart van iedere Jos .
+su:np:Een jaar lang was hij gelukkig , tot <b>zij</b> zijn hart brak .
+obj1/det:detp:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+su:np:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... <b>Dat</b> breekt mijn hart .
+obj1/det:detp:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+su:np:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen <b>die</b> mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+obj1/det:detp:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+su:np:" <b>Dat</b> <b>nieuwsbericht</b> heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+obj1/det:detp:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+su:np:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als <b>die</b> <b>liefde</b> zijn hart breekt .
+obj1/det:detp:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+su:np:Als <b>die</b> dan zijn hart breekt , wordt hij pas echt James Bond . "
+obj1/det:detp:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+
+Argument frames:
+argframe:utt
+:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen harten gebroken worden ?
+su/np+obj1/det/detp:` Hij beging een misstap die haar hart brak .
+su/np+obj1/det/detp:Harry Potter krijgt een vriendinnetje , en ze zal zijn hart breken .
+su/np+obj1/det/detp:Ze wil haar hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+su/np:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su/whrel+obj1/det/detp:' Het is walgelijk en wat die mannen heben gedaan breekt mijn hart ' , zegt zij .
+su/np:Volgens ingewijden heeft Clooney het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su/np:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het hart van Eka moeder breken .
+:Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig hart ( Halina Reijn ) gebroken .
+su/np+obj1/det/detp:Dat brak mijn hart .
+su/np:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su/np+obj1/det/detp:Ik heb hem gedumpt voor hij mijn hart kon breken .
+su/np+obj1/det/detp:Dat breekt mijn hart en sloopt mijn gezondheid .
+su/np+obj1/det/detp:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen mijn hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+su/np+obj1/det/detp:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak mijn hart om ze te missen . ''
+su/np+obj1/det/detp:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt je hart .
+su/np:De vernietiging van de citadel zal de harten van alle Iraniërs breken .
+obj1/det/detp:Hun beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su/np+obj1/det/detp:' Hij leek wanhopig op die dag ... Ik dacht dat hij zijn hart gebroken had .
+su/np+obj1/det/detp:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista haar eerste harten .
+su/np+obj1/det/detp:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt ons hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+su/np+obj1/det/detp:Zeven jaar geleden heeft ze zijn hart gebroken , nu wil ze hem terug .
+su/np+obj1/det/detp:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je hart heeft gebroken , dat helpt . "
+obj1/det/detp:Het onderzoek , dat de titel Een gezonde economie kan je hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+su/np:Ik breek nooit iemands hart . "
+su/np:" Ik heb best wel wat harten gebroken .
+su/np:Koeznetsova kon dat hart niet breken .
+su/np+obj1/det/detp:Vorige week nog heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+su/np+obj1/det/detp:Vorige week nog heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+:Als er maar niet te veel harten gebroken worden , dan zijn wij allang tevreden .
+su/np+obj1/det/detp:Het is heel goed mogelijk dat Irak onze harten gaat breken .
+su/np:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart hij brak toen hij een relatie begon met Kate Moss .
+su/np:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes breken Johnny's hart .
+su/np:" Ik wou dat hij en de mannen die mijn en jullie hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+su/np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su/np:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die mijn en jullie hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+su/np+obj1/det/detp:Vechten tegen elkaar zou haar hart breken " , legt Vitali dat uit .
+su/mwu+obj1/det/detp:Daarmee breekt Neko Case je hart , terwijl ze tegelijk je wil beheerst .
+su/np:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su/np:Dat brak het hart van haar moeder .
+su/np+obj1/det/detp:Het brak ons hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+su/np:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart mee .
+:Het hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+su/np+obj1/det/detp:Tom Schipper zijn hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+su/np:Als hij daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su/whrel+obj1/det/detp:«Wat de kinderen nu overkomt , breekt mijn hart» , vervolgt Wims moeder .
+su/np+obj1/det/detp:Ik moet bekennen , dat brak mijn hart .
+su/np:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su/np+obj1/det/detp:De kleine David brak meteen haar hart .
+su/np+obj1/det/detp:Het breekt mijn hart .
+su/np+obj1/det/detp:Het breekt ons hart , want het baby'tje hoort ook bij ons.»
+su/np:Ik wil niemands hart breken .
+:Nelly's hart wordt gebroken wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+su/np+obj1/det/detp:" Het breekt mijn hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+su/np:Met deze mededeling breekt hij het hart van iedere Jos .
+su/np+obj1/det/detp:Een jaar lang was hij gelukkig , tot zij zijn hart brak .
+su/np+obj1/det/detp:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt mijn hart .
+su/np+obj1/det/detp:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die mijn hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+:Links en rechts worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+su/np+obj1/det/detp:" Dat nieuwsbericht heeft echt mijn hart gebroken " , bekent Proper-Sheppard .
+su/np+obj1/det/detp:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde zijn hart breekt .
+su/np+obj1/det/detp:Als die dan zijn hart breekt , wordt hij pas echt James Bond . "
+:Links en rechts worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+
+Modification:
+clemma:modrel:modcat:modheadcat:modheadlemma:modheadword:modfringe:utt
+breken:mod:advp:vnw:er:er:er:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en <b>er</b> geen harten gebroken worden ?
+breken:mod:advp:bw:niet:niet:niet:Ze wil haar hart <b>niet</b> nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+breken:mod:np:n:keer:keer:nog een keer:Ze wil haar hart niet <b>nog</b> <b>een</b> <b>keer</b> breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+hart:mod:pp:vz:van:van:van tienduizenden familieleden:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken <b>van</b> <b>tienduizenden</b> <b>familieleden</b> .
+breken:mod:advp:bw:ook:ook:ook:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar <b>ook</b> het hart gebroken van tienduizenden familieleden .
+hart:mod:pp:vz:van:van:van de actrice die die hij ontmoette op de set van zijn regiedebuut Confessions of a Dangerous Mind:Volgens ingewijden heeft Clooney het hart gebroken <b>van</b> <b>de</b> <b>actrice</b> <b>die</b> <b>hij</b> <b>ontmoette</b> <b>op</b> <b>de</b> <b>set</b> <b>van</b> <b>zijn</b> <b>regiedebuut</b> , <b>Confessions</b> <b>of</b> <b>a</b> <b>Dangerous</b> <b>Mind</b> .
+breken:mod:pp:vz:volgens:Volgens:Volgens ingewijden:<b>Volgens</b> <b>ingewijden</b> heeft Clooney het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+hart:mod:pp:vz:van:van:van Eka moeder:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het hart <b>van</b> <b>Eka</b> <b>moeder</b> breken .
+breken:mod:ap:adj:zeker:zeker:zeker:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou <b>zeker</b> het hart van Eka moeder breken .
+hart:mod:ap:adj:jong:jong:jong:Ondertussen is iedereen verliefd , en wordt en passant een <b>jong</b> , vurig hart ( Halina Reijn ) gebroken .
+hart:mod:ap:adj:vurig:vurig:vurig:Ondertussen is iedereen verliefd , en wordt en passant een jong , <b>vurig</b> hart ( Halina Reijn ) gebroken .
+hart:mod:mwu:mwu:::Halina Reijn:Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig hart ( <b>Halina</b> <b>Reijn</b> ) gebroken .
+breken:mod:advp:bw:ondertussen:Ondertussen:Ondertussen:<b>Ondertussen</b> is iedereen verliefd , en wordt en passant een jong , vurig hart ( Halina Reijn ) gebroken .
+breken:mod:mwu:mwu:::en passant:Ondertussen is iedereen verliefd , en wordt <b>en</b> <b>passant</b> een jong , vurig hart ( Halina Reijn ) gebroken .
+hart:mod:pp:vz:van:van:van hun ouders:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart <b>van</b> <b>hun</b> <b>ouders</b> breken door te snel groot te worden ... ) .
+breken:mod:ap:adj:natuurlijk:natuurlijk:natuurlijk:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en <b>natuurlijk</b> het hart van hun ouders breken door te snel groot te worden ... ) .
+breken:mod:cp:vz:door:door:door te snel groot te worden:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken <b>door</b> <b>te</b> <b>snel</b> <b>groot</b> <b>te</b> <b>worden</b> ... ) .
+breken:mod:oti:vz:om:om:om ze te missen:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak mijn hart <b>om</b> <b>ze</b> <b>te</b> <b>missen</b> . ''
+hart:mod:pp:vz:van:van:van alle Iraniërs:De vernietiging van de citadel zal de harten <b>van</b> <b>alle</b> <b>Iraniërs</b> breken .
+breken:mod:advp:bw:dan:dan:dan:Hun beider harten werden <b>dan</b> ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken:mod:advp:bw:ook:ook:ook:Hun beider harten werden dan <b>ook</b> gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken:mod:cp:vg:toen:toen:toen bleek dat Beckham Beckham niet van plan was zijn gezin aan de kant te zetten:Hun beider harten werden dan ook gebroken <b>toen</b> <b>bleek</b> <b>dat</b> <b>Beckham</b> <b>niet</b> <b>van</b> <b>plan</b> <b>was</b> <b>zijn</b> <b>gezin</b> <b>aan</b> <b>de</b> <b>kant</b> <b>te</b> <b>zetten</b> .
+hart:mod:ap:tw:eerste:eerste:eerste:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista haar <b>eerste</b> harten .
+breken:mod:pp:vz:in:In:In aflevering drie van The Bachelorette uitgezonden op Yorin:<b>In</b> <b>aflevering</b> <b>drie</b> <b>van</b> <b>The</b> <b>Bachelorette</b> , <b>uitgezonden</b> <b>op</b> <b>Yorin</b> , breekt Trista haar eerste harten .
+breken:mod:ap:bw:geleden:geleden:Zeven jaar geleden:<b>Zeven</b> <b>jaar</b> <b>geleden</b> heeft ze zijn hart gebroken , nu wil ze hem terug .
+hart:mod:rel:vnw:dat:dat:dat dat helpt:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je hart heeft gebroken , <b>dat</b> <b>helpt</b> . "
+breken:mod:advp:bw:nooit:nooit:nooit:Ik breek <b>nooit</b> iemands hart . "
+breken:mod:ap:bw:wel:wel:best wel:" Ik heb <b>best</b> <b>wel</b> wat harten gebroken .
+breken:mod:advp:bw:niet:niet:niet:Koeznetsova kon dat hart <b>niet</b> breken .
+breken:mod:np:n:week:week:Vorige week nog:<b>Vorige</b> <b>week</b> <b>nog</b> heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+breken:mod:cp:vz:door:door:door te zeggen dat Sun Ra al jaren dood is:Vorige week nog heeft iemand mijn hart gebroken <b>door</b> <b>te</b> <b>zeggen</b> <b>dat</b> <b>Sun</b> <b>Ra</b> <b>al</b> <b>jaren</b> <b>dood</b> <b>is</b> .
+breken:mod:np:n:week:week:Vorige week nog:<b>Vorige</b> <b>week</b> <b>nog</b> heeft iemand mijn hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken:mod:cp:vz:door:door:door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is:Vorige week nog heeft iemand mijn hart gebroken <b>door</b> <b>te</b> <b>zeggen</b> <b>dat</b> <b>Sun</b> <b>Ra</b> <b>al</b> <b>jaren</b> <b>dood</b> <b>isHet</b> <b>seksisme</b> <b>in</b> <b>de</b> <b>hiphop</b> <b>is</b> vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+breken:mod:advp:vnw:er:er:er:Als <b>er</b> maar niet te veel harten gebroken worden , dan zijn wij allang tevreden .
+breken:mod:cp:vg:toen:toen:toen hij een relatie begon met Kate Moss:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , wier hart hij brak <b>toen</b> <b>hij</b> <b>een</b> <b>relatie</b> <b>begon</b> <b>met</b> <b>Kate</b> <b>Moss</b> .
+breken:mod:pp:bw:daarmee:Daarmee:Daarmee:<b>Daarmee</b> breekt Neko Case je hart , terwijl ze tegelijk je wil beheerst .
+breken:mod:cp:vg:terwijl:terwijl:terwijl ze tegelijk je wil beheerst:Daarmee breekt Neko Case je hart , <b>terwijl</b> <b>ze</b> <b>tegelijk</b> <b>je</b> <b>wil</b> <b>beheerst</b> .
+hart:mod:pp:vz:van:van:van Queen of Hearts Diana:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het hart <b>van</b> <b>Queen</b> <b>of</b> <b>Hearts</b> <b>Diana</b> had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+hart:mod:pp:vz:van:van:van haar moeder:Dat brak het hart <b>van</b> <b>haar</b> <b>moeder</b> .
+breken:mod:advp:vnw:er:er:er:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt <b>er</b> niemands hart mee .
+breken:mod:advp:bw:mee:mee:mee:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er niemands hart <b>mee</b> .
+hart:mod:pp:vz:van:van:van hoofdrolspeelster Nelly:Het hart <b>van</b> <b>hoofdrolspeelster</b> <b>Nelly</b> wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:advp:bw:al:al:al:Het hart van hoofdrolspeelster Nelly wordt <b>al</b> in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:pp:vz:in:in:in de eerste aflevering:Het hart van hoofdrolspeelster Nelly wordt al <b>in</b> <b>de</b> <b>eerste</b> <b>aflevering</b> gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:cp:vg:wanneer:wanneer:wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin:Het hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken <b>wanneer</b> <b>ze</b> <b>haar</b> <b>vriend</b> <b>Jens</b> <b>vijf</b> <b>minuten</b> <b>voor</b> <b>hun</b> <b>huwelijk</b> <b>al</b> <b>vrijend</b> <b>betrapt</b> <b>met</b> <b>haar</b> <b>beste</b> <b>vriendin</b> .
+breken:mod:pp:vz:bij:bij:bij Wilrijk:Tom Schipper zijn hart heeft men <b>bij</b> <b>Wilrijk</b> op het einde van vorig seizoen gebroken.»
+breken:mod:pp:vz:op:op:op het einde van vorig seizoen:Tom Schipper zijn hart heeft men bij Wilrijk <b>op</b> <b>het</b> <b>einde</b> <b>van</b> <b>vorig</b> <b>seizoen</b> gebroken.»
+hart:mod:pp:vz:van:van:van zijn eigen fans:Als hij daarom de harten <b>van</b> <b>zijn</b> <b>eigen</b> <b>fans</b> moet breken , dan moet het maar .
+breken:mod:pp:bw:daarom:daarom:daarom:Als hij <b>daarom</b> de harten van zijn eigen fans moet breken , dan moet het maar .
+hart:mod:pp:vz:van:van:van zijn zoon:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt <b>van</b> <b>zijn</b> <b>zoon</b> ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken:mod:advp:bw:zo:zo:zo:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en <b>zo</b> het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken:mod:ppart:ww:pikken:gepikt:een ouwe mop gepikt uit Will and Grace:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( <b>een</b> <b>ouwe</b> <b>mop</b> <b>gepikt</b> <b>uit</b> ' <b>Will</b> <b>and</b> <b>Grace</b> ' ) .
+breken:mod:advp:bw:meteen:meteen:meteen:De kleine David brak <b>meteen</b> haar hart .
+breken:mod:cp:vg:wanneer:wanneer:wanneer haar verloofde Jens haar bedriegt met haar beste vriendin:Nelly's hart wordt gebroken <b>wanneer</b> <b>haar</b> <b>verloofde</b> <b>Jens</b> <b>haar</b> <b>bedriegt</b> <b>met</b> <b>haar</b> <b>beste</b> <b>vriendin</b> ... op haar huwelijksdag .
+breken:mod:cp:vg:als:als:als ik op zitdagen jonge jonge boeren boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hun hebben en houden voor hun vreselijk zware leningen:" Het breekt mijn hart <b>als</b> <b>ik</b> <b>op</b> <b>zitdagen</b> <b>jonge</b> <b>boeren</b> <b>nog</b> <b>altijd</b> <b>hoor</b> <b>vertellen</b> <b>dat</b> <b>ze</b> <b>persoonlijk</b> <b>borg</b> <b>staan</b> <b>met</b> <b>hun</b> <b>hebben</b> <b>en</b> <b>houden</b> <b>voor</b> <b>hun</b> <b>vreselijk</b> <b>zware</b> <b>leningen</b> "
+hart:mod:pp:vz:van:van:van iedere Jos:Met deze mededeling breekt hij het hart <b>van</b> <b>iedere</b> <b>Jos</b> .
+breken:mod:pp:vz:met:Met:Met deze mededeling:<b>Met</b> <b>deze</b> <b>mededeling</b> breekt hij het hart van iedere Jos .
+breken:mod:conj:adj:links:Links:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:conj:vg:en:en:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:conj:adj:rechts:rechts:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:advp:bw:nog:nog:nog:Links en rechts worden <b>nog</b> wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:ap:adj:echt:echt:echt:" Dat nieuwsbericht heeft <b>echt</b> mijn hart gebroken " , bekent Proper-Sheppard .
+breken:mod:advp:bw:dan:dan:dan:Als die <b>dan</b> zijn hart breekt , wordt hij pas echt James Bond . "
+breken:mod:conj:adj:links:Links:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:conj:vg:en:en:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:conj:adj:rechts:rechts:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:advp:bw:nog:nog:nog:Links en rechts worden <b>nog</b> wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+
+Determination:
+clemma:detrel:detcat:detheadcat:detheadlemma:detheadword:detfringe:utt
+hart:det:detp:vnw:geen:geen:geen:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er <b>geen</b> harten gebroken worden ?
+hart:det:detp:vnw:haar:haar:haar:` Hij beging een misstap die <b>haar</b> hart brak .
+hart:det:detp:vnw:zijn:zijn:zijn:Harry Potter krijgt een vriendinnetje , en ze zal <b>zijn</b> hart breken .
+hart:det:detp:vnw:haar:haar:haar:Ze wil <b>haar</b> hart niet nog een keer breken en begint aan een veilig , want liefdeloos huwelijk met een arts , terwijl ze de passie voor een popmuzikant onderdrukt ( 1999 ) .
+hart:det:detp:lid:het:het:het:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook <b>het</b> hart gebroken van tienduizenden familieleden .
+hart:det:detp:vnw:mijn:mijn:mijn:' Het is walgelijk en wat die mannen heben gedaan breekt <b>mijn</b> hart ' , zegt zij .
+hart:det:detp:lid:het:het:het:Volgens ingewijden heeft Clooney <b>het</b> hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+hart:det:detp:lid:het:het:het:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker <b>het</b> hart van Eka moeder breken .
+hart:det:detp:lid:een:een:een:Ondertussen is iedereen verliefd , en wordt en passant <b>een</b> jong , vurig hart ( Halina Reijn ) gebroken .
+hart:det:detp:vnw:mijn:mijn:mijn:Dat brak <b>mijn</b> hart .
+hart:det:detp:lid:het:het:het:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk <b>het</b> hart van hun ouders breken door te snel groot te worden ... ) .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik heb hem gedumpt voor hij <b>mijn</b> hart kon breken .
+hart:det:detp:vnw:mijn:mijn:mijn:Dat breekt <b>mijn</b> hart en sloopt mijn gezondheid .
+hart:det:detp:vnw:mijn:mijn:mijn:' U zult begrijpen dat de beslissing om na 68 jaar ons mooi ABC op te heffen <b>mijn</b> hart heeft gebroken ' , schrijft Ellen van de Graaf aan haar clientèle .
+hart:det:detp:vnw:mijn:mijn:mijn:" Het wereldrecord op de marathon had niet meer dan een bonus moeten zijn , de WK waren mijn hoofddoel en het brak <b>mijn</b> hart om ze te missen . ''
+hart:det:detp:vnw:je:je:je:Ze dramatiseert niets , houdt de toon licht , en juist dat breekt <b>je</b> hart .
+hart:det:detp:lid:de:de:de:De vernietiging van de citadel zal <b>de</b> harten van alle Iraniërs breken .
+hart:det:detp:vnw:hun:Hun:Hun:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+hart:det:detp:vnw:beide:beider:beider:Hun <b>beider</b> harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+hart:det:detp:vnw:zijn:zijn:zijn:' Hij leek wanhopig op die dag ... Ik dacht dat hij <b>zijn</b> hart gebroken had .
+hart:det:detp:vnw:haar:haar:haar:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+hart:det:detp:vnw:ons:ons:ons:In Afrika , ja daar gebeurt het nog wel , we zien die dingen op televisie en het breekt <b>ons</b> hart en dus geven we geld ( in Nederland zijn er zelfs al plannen voor een goededoelenzender ) .
+hart:det:detp:vnw:zijn:zijn:zijn:Zeven jaar geleden heeft ze <b>zijn</b> hart gebroken , nu wil ze hem terug .
+hart:det:detp:vnw:je:je:je:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+hart:det:detp:vnw:je:je:je:Het onderzoek , dat de titel Een gezonde economie kan <b>je</b> hart breken meekreeg , wijst niet duidelijk uit wat het verband tussen hoogconjunctuur en hartaanval veroorzaakt .
+hart:det:detp:vnw:iemand:iemands:iemands:Ik breek nooit <b>iemands</b> hart . "
+hart:det:detp:vnw:wat:wat:wat:" Ik heb best wel <b>wat</b> harten gebroken .
+hart:det:detp:vnw:dat:dat:dat:Koeznetsova kon <b>dat</b> hart niet breken .
+hart:det:detp:vnw:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood is .
+hart:det:detp:vnw:mijn:mijn:mijn:Vorige week nog heeft iemand <b>mijn</b> hart gebroken door te zeggen dat Sun Ra al jaren dood isHet seksisme in de hiphop is vanzelf al een grap : zwarte vrouwen dragen meestal de broek thuis .
+hart:det:ap:vnw:veel:veel:maar niet te veel:Als er <b>maar</b> <b>niet</b> <b>te</b> <b>veel</b> harten gebroken worden , dan zijn wij allang tevreden .
+hart:det:detp:vnw:ons:onze:onze:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+hart:det:detp:vnw:wier:wier:wier:Daarna had hij een lange relatie met de Schotse actrice Heike Makatsch ( Love Actually ) , <b>wier</b> hart hij brak toen hij een relatie begon met Kate Moss .
+hart:det:detp:n:Johnny:Johnny's:Johnny's:De idee dat Suwarrow het mooiste eiland ter wereld is - niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en achtergelaten blikjes breken <b>Johnny's</b> hart .
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vg:en:en:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:" Ik wou dat hij en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart braken , de waarheid vertelden , dat ze hun zonden zouden opbiechten , dat ze zouden boeten en hun leven zouden beteren .
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vg:en:en:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:mijn:mijn:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vg:en:en:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:conj:vnw:jullie:jullie:mijn en jullie:En verder : " Ik nam de beslissing om dit boek uit te geven en face to face met de moordenaar te zitten omdat ik wilde dat hij , en de mannen die <b>mijn</b> <b>en</b> <b>jullie</b> hart gebroken hebben , de waarheid zouden vertellen , hun zonden opbiechten , boete doen en hun levens veranderen . "
+hart:det:detp:vnw:haar:haar:haar:Vechten tegen elkaar zou <b>haar</b> hart breken " , legt Vitali dat uit .
+hart:det:detp:vnw:je:je:je:Daarmee breekt Neko Case <b>je</b> hart , terwijl ze tegelijk je wil beheerst .
+hart:det:detp:lid:het:het:het:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die <b>het</b> hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+hart:det:detp:lid:het:het:het:Dat brak <b>het</b> hart van haar moeder .
+hart:det:detp:vnw:ons:ons:ons:Het brak <b>ons</b> hart dat dit zelfs het prijsbeest " Demagogue '' de das omdeed .
+hart:det:detp:vnw:niemand:niemands:niemands:Verhuizen is hetzelfde als een verhouding hebben , maar " je breekt er <b>niemands</b> hart mee .
+hart:det:detp:lid:het:Het:Het:<b>Het</b> hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+hart:det:detp:vnw:zijn:zijn:Tom Schipper zijn:<b>Tom</b> <b>Schipper</b> <b>zijn</b> hart heeft men bij Wilrijk op het einde van vorig seizoen gebroken.»
+hart:det:detp:lid:de:de:de:Als hij daarom <b>de</b> harten van zijn eigen fans moet breken , dan moet het maar .
+hart:det:detp:vnw:mijn:mijn:mijn:«Wat de kinderen nu overkomt , breekt <b>mijn</b> hart» , vervolgt Wims moeder .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik moet bekennen , dat brak <b>mijn</b> hart .
+hart:det:detp:lid:het:het:het:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo <b>het</b> hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+hart:det:detp:vnw:haar:haar:haar:De kleine David brak meteen <b>haar</b> hart .
+hart:det:detp:vnw:mijn:mijn:mijn:Het breekt <b>mijn</b> hart .
+hart:det:detp:vnw:ons:ons:ons:Het breekt <b>ons</b> hart , want het baby'tje hoort ook bij ons.»
+hart:det:detp:vnw:niemand:niemands:niemands:Ik wil <b>niemands</b> hart breken .
+hart:det:detp:n:Nelly:Nelly's:Nelly's:<b>Nelly's</b> hart wordt gebroken wanneer haar verloofde Jens haar bedriegt met haar beste vriendin ... op haar huwelijksdag .
+hart:det:detp:vnw:mijn:mijn:mijn:" Het breekt <b>mijn</b> hart als ik op zitdagen jonge boeren nog altijd hoor vertellen dat ze persoonlijk borg staan met hun hebben en houden voor hun vreselijk zware leningen "
+hart:det:detp:lid:het:het:het:Met deze mededeling breekt hij <b>het</b> hart van iedere Jos .
+hart:det:detp:vnw:zijn:zijn:zijn:Een jaar lang was hij gelukkig , tot zij <b>zijn</b> hart brak .
+hart:det:detp:vnw:mijn:mijn:mijn:" Dat gemis , die weekends en die vakanties met Kateherine , haar broertje Jason die zijn zus wil zien , haar vrolijk gezicht dat nooit meer weerkeert ... Dat breekt <b>mijn</b> hart .
+hart:det:detp:vnw:mijn:mijn:mijn:Ik hield het een beetje af omdat ik nog niet over een afgesprongen relatie heen was met een andere jongen die <b>mijn</b> hart had gebroken , maar na twee weken was ik bereid hem te ontmoeten .
+hart:det:detp:vnw:wat:wat:wat:Links en rechts worden nog <b>wat</b> harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+hart:det:detp:vnw:mijn:mijn:mijn:" Dat nieuwsbericht heeft echt <b>mijn</b> hart gebroken " , bekent Proper-Sheppard .
+hart:det:detp:vnw:zijn:zijn:zijn:Voor het eerst sinds lang zien we Bond als een échte mens , die als het moet een koele moordenaar kan zijn , maar ook echt verliefd wordt en verdriet heeft als die liefde <b>zijn</b> hart breekt .
+hart:det:detp:vnw:zijn:zijn:zijn:Als die dan <b>zijn</b> hart breekt , wordt hij pas echt James Bond . "
+hart:det:detp:vnw:wat:wat:wat:Links en rechts worden nog <b>wat</b> harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+
+
+*****Near-miss - MWE statistics*****
+
+MWE Components:
+clemmas:cwords:utt
+breken;hart: gebroken;harten: Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen <b>harten</b> <b>gebroken</b> worden ?
+breken;hart: gebroken;hart: ' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het <b>hart</b> <b>gebroken</b> van tienduizenden familieleden .
+breken;hart: gebroken;hart: Volgens ingewijden heeft Clooney het <b>hart</b> <b>gebroken</b> van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+breken;hart: breken;hart: Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het <b>hart</b> van Eka moeder <b>breken</b> .
+breken;hart: gebroken;hart: Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig <b>hart</b> ( Halina Reijn ) <b>gebroken</b> .
+breken;hart: breken;hart: Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het <b>hart</b> van hun ouders <b>breken</b> door te snel groot te worden ... ) .
+breken;hart: breken;harten: De vernietiging van de citadel zal de <b>harten</b> van alle Iraniërs <b>breken</b> .
+breken;hart: gebroken;harten: Hun beider <b>harten</b> werden dan ook <b>gebroken</b> toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken;hart: breekt;harten: In aflevering drie van The Bachelorette , uitgezonden op Yorin , <b>breekt</b> Trista haar eerste <b>harten</b> .
+breken;hart: gebroken;hart: Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je <b>hart</b> heeft <b>gebroken</b> , dat helpt . "
+breken;hart: gebroken;harten: " Ik heb best wel wat <b>harten</b> <b>gebroken</b> .
+breken;hart: gebroken;harten: Als er maar niet te veel <b>harten</b> <b>gebroken</b> worden , dan zijn wij allang tevreden .
+breken;hart: breken;harten: Het is heel goed mogelijk dat Irak onze <b>harten</b> gaat <b>breken</b> .
+breken;hart: gebroken;hart: Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het <b>hart</b> van Queen of Hearts Diana had <b>gebroken</b> , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+breken;hart: brak;hart: Dat <b>brak</b> het <b>hart</b> van haar moeder .
+breken;hart: gebroken;hart: Het <b>hart</b> van hoofdrolspeelster Nelly wordt al in de eerste aflevering <b>gebroken</b> wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken;hart: breken;harten: Als hij daarom de <b>harten</b> van zijn eigen fans moet <b>breken</b> , dan moet het maar .
+breken;hart: breekt;hart: In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het <b>hart</b> <b>breekt</b> van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken;hart: breekt;hart: Met deze mededeling <b>breekt</b> hij het <b>hart</b> van iedere Jos .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar niet getreurd : de pijn is niet ondraaglijk .
+breken;hart: gebroken;harten: Links en rechts worden nog wat <b>harten</b> <b>gebroken</b> , maar geen erg , de pijn is niet ondraaglijk .
+
+Arguments:
+rel:arglemma:argword:arg:utt
+su:terrorist:terroristen:De terroristen:' <b>De</b> <b>terroristen</b> hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su:Clooney:Clooney:Clooney:Volgens ingewijden heeft <b>Clooney</b> het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su:nieuws:nieuws:het vreselijke nieuws:Zijn zuster en nichtje weten niet wat te doen , <b>het</b> <b>vreselijke</b> <b>nieuws</b> zou zeker het hart van Eka moeder breken .
+su:toilet_rol:toiletrollen:hele toiletrollen:Dat lijkt wel onderdeel van hun taakomschrijving ( net als <b>hele</b> <b>toiletrollen</b> door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su:vernietiging:vernietiging:De vernietiging van de citadel:<b>De</b> <b>vernietiging</b> <b>van</b> <b>de</b> <b>citadel</b> zal de harten van alle Iraniërs breken .
+obj1/det:hun:Hun:Hun:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su:Trista:Trista:Trista:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt <b>Trista</b> haar eerste harten .
+obj1/det:haar:haar:haar:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+su:die:die:die:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene <b>die</b> je hart heeft gebroken , dat helpt . "
+obj1/det:je:je:je:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+su:ik:Ik:Ik:" <b>Ik</b> heb best wel wat harten gebroken .
+su:Irak:Irak:Irak:Het is heel goed mogelijk dat <b>Irak</b> onze harten gaat breken .
+obj1/det:ons:onze:onze:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+su:die:die:die:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker <b>die</b> het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su:dat:Dat:Dat:<b>Dat</b> brak het hart van haar moeder .
+su:hij:hij:hij:Als <b>hij</b> daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su:hij:hij:hij:In die mate zelfs dat <b>hij</b> bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su:hij:hij:hij:Met deze mededeling breekt <b>hij</b> het hart van iedere Jos .
+
+Arguments by relation and category:
+rel:cat:utt
+su:np:' <b>De</b> <b>terroristen</b> hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su:np:Volgens ingewijden heeft <b>Clooney</b> het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su:np:Zijn zuster en nichtje weten niet wat te doen , <b>het</b> <b>vreselijke</b> <b>nieuws</b> zou zeker het hart van Eka moeder breken .
+su:np:Dat lijkt wel onderdeel van hun taakomschrijving ( net als <b>hele</b> <b>toiletrollen</b> door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su:np:<b>De</b> <b>vernietiging</b> <b>van</b> <b>de</b> <b>citadel</b> zal de harten van alle Iraniërs breken .
+obj1/det:detp:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su:np:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt <b>Trista</b> haar eerste harten .
+obj1/det:detp:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+su:np:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene <b>die</b> je hart heeft gebroken , dat helpt . "
+obj1/det:detp:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+su:np:" <b>Ik</b> heb best wel wat harten gebroken .
+su:np:Het is heel goed mogelijk dat <b>Irak</b> onze harten gaat breken .
+obj1/det:detp:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+su:np:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker <b>die</b> het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su:np:<b>Dat</b> brak het hart van haar moeder .
+su:np:Als <b>hij</b> daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su:np:In die mate zelfs dat <b>hij</b> bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su:np:Met deze mededeling breekt <b>hij</b> het hart van iedere Jos .
+
+Argument frames:
+argframe:utt
+:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er geen harten gebroken worden ?
+su/np:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken van tienduizenden familieleden .
+su/np:Volgens ingewijden heeft Clooney het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+su/np:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het hart van Eka moeder breken .
+:Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig hart ( Halina Reijn ) gebroken .
+su/np:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken door te snel groot te worden ... ) .
+su/np:De vernietiging van de citadel zal de harten van alle Iraniërs breken .
+obj1/det/detp:Hun beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+su/np+obj1/det/detp:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista haar eerste harten .
+su/np+obj1/det/detp:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je hart heeft gebroken , dat helpt . "
+su/np:" Ik heb best wel wat harten gebroken .
+:Als er maar niet te veel harten gebroken worden , dan zijn wij allang tevreden .
+su/np+obj1/det/detp:Het is heel goed mogelijk dat Irak onze harten gaat breken .
+su/np:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+su/np:Dat brak het hart van haar moeder .
+:Het hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+su/np:Als hij daarom de harten van zijn eigen fans moet breken , dan moet het maar .
+su/np:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+su/np:Met deze mededeling breekt hij het hart van iedere Jos .
+:Links en rechts worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+:Links en rechts worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+
+Modification:
+clemma:modrel:modcat:modheadcat:modheadlemma:modheadword:modfringe:utt
+breken:mod:advp:vnw:er:er:er:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en <b>er</b> geen harten gebroken worden ?
+hart:mod:pp:vz:van:van:van tienduizenden familieleden:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook het hart gebroken <b>van</b> <b>tienduizenden</b> <b>familieleden</b> .
+breken:mod:advp:bw:ook:ook:ook:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar <b>ook</b> het hart gebroken van tienduizenden familieleden .
+hart:mod:pp:vz:van:van:van de actrice die die hij ontmoette op de set van zijn regiedebuut Confessions of a Dangerous Mind:Volgens ingewijden heeft Clooney het hart gebroken <b>van</b> <b>de</b> <b>actrice</b> <b>die</b> <b>hij</b> <b>ontmoette</b> <b>op</b> <b>de</b> <b>set</b> <b>van</b> <b>zijn</b> <b>regiedebuut</b> , <b>Confessions</b> <b>of</b> <b>a</b> <b>Dangerous</b> <b>Mind</b> .
+breken:mod:pp:vz:volgens:Volgens:Volgens ingewijden:<b>Volgens</b> <b>ingewijden</b> heeft Clooney het hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+hart:mod:pp:vz:van:van:van Eka moeder:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker het hart <b>van</b> <b>Eka</b> <b>moeder</b> breken .
+breken:mod:ap:adj:zeker:zeker:zeker:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou <b>zeker</b> het hart van Eka moeder breken .
+hart:mod:ap:adj:jong:jong:jong:Ondertussen is iedereen verliefd , en wordt en passant een <b>jong</b> , vurig hart ( Halina Reijn ) gebroken .
+hart:mod:ap:adj:vurig:vurig:vurig:Ondertussen is iedereen verliefd , en wordt en passant een jong , <b>vurig</b> hart ( Halina Reijn ) gebroken .
+hart:mod:mwu:mwu:::Halina Reijn:Ondertussen is iedereen verliefd , en wordt en passant een jong , vurig hart ( <b>Halina</b> <b>Reijn</b> ) gebroken .
+breken:mod:advp:bw:ondertussen:Ondertussen:Ondertussen:<b>Ondertussen</b> is iedereen verliefd , en wordt en passant een jong , vurig hart ( Halina Reijn ) gebroken .
+breken:mod:mwu:mwu:::en passant:Ondertussen is iedereen verliefd , en wordt <b>en</b> <b>passant</b> een jong , vurig hart ( Halina Reijn ) gebroken .
+hart:mod:pp:vz:van:van:van hun ouders:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart <b>van</b> <b>hun</b> <b>ouders</b> breken door te snel groot te worden ... ) .
+breken:mod:ap:adj:natuurlijk:natuurlijk:natuurlijk:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en <b>natuurlijk</b> het hart van hun ouders breken door te snel groot te worden ... ) .
+breken:mod:cp:vz:door:door:door te snel groot te worden:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk het hart van hun ouders breken <b>door</b> <b>te</b> <b>snel</b> <b>groot</b> <b>te</b> <b>worden</b> ... ) .
+hart:mod:pp:vz:van:van:van alle Iraniërs:De vernietiging van de citadel zal de harten <b>van</b> <b>alle</b> <b>Iraniërs</b> breken .
+breken:mod:advp:bw:dan:dan:dan:Hun beider harten werden <b>dan</b> ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken:mod:advp:bw:ook:ook:ook:Hun beider harten werden dan <b>ook</b> gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+breken:mod:cp:vg:toen:toen:toen bleek dat Beckham Beckham niet van plan was zijn gezin aan de kant te zetten:Hun beider harten werden dan ook gebroken <b>toen</b> <b>bleek</b> <b>dat</b> <b>Beckham</b> <b>niet</b> <b>van</b> <b>plan</b> <b>was</b> <b>zijn</b> <b>gezin</b> <b>aan</b> <b>de</b> <b>kant</b> <b>te</b> <b>zetten</b> .
+hart:mod:ap:tw:eerste:eerste:eerste:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista haar <b>eerste</b> harten .
+breken:mod:pp:vz:in:In:In aflevering drie van The Bachelorette uitgezonden op Yorin:<b>In</b> <b>aflevering</b> <b>drie</b> <b>van</b> <b>The</b> <b>Bachelorette</b> , <b>uitgezonden</b> <b>op</b> <b>Yorin</b> , breekt Trista haar eerste harten .
+hart:mod:rel:vnw:dat:dat:dat dat helpt:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die je hart heeft gebroken , <b>dat</b> <b>helpt</b> . "
+breken:mod:ap:bw:wel:wel:best wel:" Ik heb <b>best</b> <b>wel</b> wat harten gebroken .
+breken:mod:advp:vnw:er:er:er:Als <b>er</b> maar niet te veel harten gebroken worden , dan zijn wij allang tevreden .
+hart:mod:pp:vz:van:van:van Queen of Hearts Diana:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die het hart <b>van</b> <b>Queen</b> <b>of</b> <b>Hearts</b> <b>Diana</b> had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+hart:mod:pp:vz:van:van:van haar moeder:Dat brak het hart <b>van</b> <b>haar</b> <b>moeder</b> .
+hart:mod:pp:vz:van:van:van hoofdrolspeelster Nelly:Het hart <b>van</b> <b>hoofdrolspeelster</b> <b>Nelly</b> wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:advp:bw:al:al:al:Het hart van hoofdrolspeelster Nelly wordt <b>al</b> in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:pp:vz:in:in:in de eerste aflevering:Het hart van hoofdrolspeelster Nelly wordt al <b>in</b> <b>de</b> <b>eerste</b> <b>aflevering</b> gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+breken:mod:cp:vg:wanneer:wanneer:wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin:Het hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken <b>wanneer</b> <b>ze</b> <b>haar</b> <b>vriend</b> <b>Jens</b> <b>vijf</b> <b>minuten</b> <b>voor</b> <b>hun</b> <b>huwelijk</b> <b>al</b> <b>vrijend</b> <b>betrapt</b> <b>met</b> <b>haar</b> <b>beste</b> <b>vriendin</b> .
+hart:mod:pp:vz:van:van:van zijn eigen fans:Als hij daarom de harten <b>van</b> <b>zijn</b> <b>eigen</b> <b>fans</b> moet breken , dan moet het maar .
+breken:mod:pp:bw:daarom:daarom:daarom:Als hij <b>daarom</b> de harten van zijn eigen fans moet breken , dan moet het maar .
+hart:mod:pp:vz:van:van:van zijn zoon:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt <b>van</b> <b>zijn</b> <b>zoon</b> ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken:mod:advp:bw:zo:zo:zo:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en <b>zo</b> het hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+breken:mod:ppart:ww:pikken:gepikt:een ouwe mop gepikt uit Will and Grace:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo het hart breekt van zijn zoon ( <b>een</b> <b>ouwe</b> <b>mop</b> <b>gepikt</b> <b>uit</b> ' <b>Will</b> <b>and</b> <b>Grace</b> ' ) .
+hart:mod:pp:vz:van:van:van iedere Jos:Met deze mededeling breekt hij het hart <b>van</b> <b>iedere</b> <b>Jos</b> .
+breken:mod:pp:vz:met:Met:Met deze mededeling:<b>Met</b> <b>deze</b> <b>mededeling</b> breekt hij het hart van iedere Jos .
+breken:mod:conj:adj:links:Links:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:conj:vg:en:en:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:conj:adj:rechts:rechts:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:advp:bw:nog:nog:nog:Links en rechts worden <b>nog</b> wat harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+breken:mod:conj:adj:links:Links:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:conj:vg:en:en:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:conj:adj:rechts:rechts:Links en rechts:<b>Links</b> <b>en</b> <b>rechts</b> worden nog wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+breken:mod:advp:bw:nog:nog:nog:Links en rechts worden <b>nog</b> wat harten gebroken , maar geen erg , de pijn is niet ondraaglijk .
+
+Determination:
+clemma:detrel:detcat:detheadcat:detheadlemma:detheadword:detfringe:utt
+hart:det:detp:vnw:geen:geen:geen:Misschien een keer een mensenvrije dag , allemaal binnenblijven , zodat niemand de duivenvangers aan het werk kan zien en er <b>geen</b> harten gebroken worden ?
+hart:det:detp:lid:het:het:het:' De terroristen hebben niet alleen 3.000 mensen de dood ingejaagd , maar ook <b>het</b> hart gebroken van tienduizenden familieleden .
+hart:det:detp:lid:het:het:het:Volgens ingewijden heeft Clooney <b>het</b> hart gebroken van de actrice die hij ontmoette op de set van zijn regiedebuut , Confessions of a Dangerous Mind .
+hart:det:detp:lid:het:het:het:Zijn zuster en nichtje weten niet wat te doen , het vreselijke nieuws zou zeker <b>het</b> hart van Eka moeder breken .
+hart:det:detp:lid:een:een:een:Ondertussen is iedereen verliefd , en wordt en passant <b>een</b> jong , vurig hart ( Halina Reijn ) gebroken .
+hart:det:detp:lid:het:het:het:Dat lijkt wel onderdeel van hun taakomschrijving ( net als hele toiletrollen door de wc proberen te spoelen , doorlopend ` waarom ' vragen en natuurlijk <b>het</b> hart van hun ouders breken door te snel groot te worden ... ) .
+hart:det:detp:lid:de:de:de:De vernietiging van de citadel zal <b>de</b> harten van alle Iraniërs breken .
+hart:det:detp:vnw:hun:Hun:Hun:<b>Hun</b> beider harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+hart:det:detp:vnw:beide:beider:beider:Hun <b>beider</b> harten werden dan ook gebroken toen bleek dat Beckham niet van plan was zijn gezin aan de kant te zetten .
+hart:det:detp:vnw:haar:haar:haar:In aflevering drie van The Bachelorette , uitgezonden op Yorin , breekt Trista <b>haar</b> eerste harten .
+hart:det:detp:vnw:je:je:je:Je moet bijvoorbeeld alle slechte dingen opschrijven over diegene die <b>je</b> hart heeft gebroken , dat helpt . "
+hart:det:detp:vnw:wat:wat:wat:" Ik heb best wel <b>wat</b> harten gebroken .
+hart:det:ap:vnw:veel:veel:maar niet te veel:Als er <b>maar</b> <b>niet</b> <b>te</b> <b>veel</b> harten gebroken worden , dan zijn wij allang tevreden .
+hart:det:detp:vnw:ons:onze:onze:Het is heel goed mogelijk dat Irak <b>onze</b> harten gaat breken .
+hart:det:detp:lid:het:het:het:Hij stuurde zorgvuldig het imago van Charles als wereldvreemde , gemene echtbreker die <b>het</b> hart van Queen of Hearts Diana had gebroken , bij naar dat van een liefhebbende vader met zijn vinger aan de pols van de samenleving .
+hart:det:detp:lid:het:het:het:Dat brak <b>het</b> hart van haar moeder .
+hart:det:detp:lid:het:Het:Het:<b>Het</b> hart van hoofdrolspeelster Nelly wordt al in de eerste aflevering gebroken wanneer ze haar vriend Jens vijf minuten voor hun huwelijk al vrijend betrapt met haar beste vriendin .
+hart:det:detp:lid:de:de:de:Als hij daarom <b>de</b> harten van zijn eigen fans moet breken , dan moet het maar .
+hart:det:detp:lid:het:het:het:In die mate zelfs dat hij bij een zwemwedstrijd het verkeerde jongetje aanmoedigt en zo <b>het</b> hart breekt van zijn zoon ( een ouwe mop gepikt uit ' Will and Grace ' ) .
+hart:det:detp:lid:het:het:het:Met deze mededeling breekt hij <b>het</b> hart van iedere Jos .
+hart:det:detp:vnw:wat:wat:wat:Links en rechts worden nog <b>wat</b> harten gebroken , maar niet getreurd : de pijn is niet ondraaglijk .
+hart:det:detp:vnw:wat:wat:wat:Links en rechts worden nog <b>wat</b> harten gebroken , maar geen erg , de pijn is niet ondraaglijk .

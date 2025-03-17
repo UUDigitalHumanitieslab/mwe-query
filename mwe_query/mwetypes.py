@@ -10,11 +10,13 @@ from sastadev.treebankfunctions import (
     getattval as gav,
     clausecats,
 )
-from annotations import lvcannotation2annotationcodedict
+from annotations import lvcannotation2annotationcodedict, cia, oia
 from lexicons import irvindeplexicon
 from mwetyping import Mwetype
 from mwus import get_mwuprops
 from getmwecomponents import getmwecomponents
+from pronadvs import rvz
+from findiav import findiav, findlvciavnode
 from lxml import etree
 
 # constants for LVC subclasses
@@ -33,7 +35,17 @@ VID = 'VID'
 IAV = 'IAV'
 IRV = 'IRV'
 VPCfull = 'VPC.full'
-VPClight = 'VPC.light'
+VPClight = 'VPC.semi'
+VPCfullP = f'{VPCfull}-P'
+VPCfullN = f'{VPCfull}-N'
+VPCfullA = f'{VPCfull}-ADJ'
+VPCfullBW = f'{VPCfull}-ADV'
+VPClightP = f'{VPClight}-P'
+VPClightN = f'{VPClight}-N'
+VPClightA = f'{VPClight}-ADJ'
+VPClightBW = f'{VPClight}-ADV'
+VPCmaybelight = 'VPC.maybelight'
+VPCVID = 'VPCVID'   # temporary value to distinguish real VIDs from VPC-caused VIDs
 MVC = 'MVC'
 LVC = 'LVC'
 NIRV = 'NIRV'
@@ -54,17 +66,18 @@ UID = 'UID'
 
 headrels = ['hd', 'crd'] # should come from sastadev
 
+iavrels = ['pc', 'mod', 'ld', 'predc', 'predm', 'svp']
+
 compoundsep = '_'
 
 zichallexpression = '(@lemma="zich" or @lemma="me" or @lemmma="mij" or @lemma="je" or @lemma="ons")'
 
-fixedrpronouns = ['er', 'hier', 'daar', 'waar']
 
 PosTag = str
 
 lvcsubclasses = [DO, BE, BC, GT, GV, CBE, CBC, CST]
 lvcmweclasses = [f'{LVC}.{sc}' for sc in lvcsubclasses ]
-verbalmweclasses = [VID, IAV, IRV, VPCfull, MVC, IRVi, IRVd, VPClight, NIRV] + lvcmweclasses + [LVCfull, LVCcause]
+verbalmweclasses = [VID, IAV, IRV, VPCfull, MVC, IRVi, IRVd, NIRV, VPClight, NIRV] + lvcmweclasses + [LVCfull, LVCcause]
 
 pt2idclass = {
     "n": NID,
@@ -84,9 +97,37 @@ pt2idclass = {
 modrels = ["predm", "mod", "app", "obcomp", "me"]
 
 
+def vpcmap(vpc: str, pt:str) -> str:
+    if pt == 'adj':
+        result = f'{vpc}-ADJ'
+    elif pt == 'bw':
+        result = f'{vpc}-ADV'
+    elif pt == 'n':
+        result = f'{vpc}-N'
+    elif pt == 'vz':
+        result = f'{vpc}-P'
+    else:
+        result = f'{vpc}-?'
+        print(f'Unknown pt for vpc {vpc}: pt={pt}')
+    return result
+
+def vpcclass2type(vpc: str) -> str:
+    if vpc.startswith(VPCmaybelight):
+        newvpc = VPCfull + vpc[len(VPCmaybelight):]
+    else:
+        newvpc = vpc
+    if newvpc.endswith('-P') or vpc.endswith('-ADV'):
+        hyphenpos = newvpc.find('-')
+        result = newvpc[0:hyphenpos]
+    elif newvpc.endswith('-ADJ') or newvpc.endswith('-N'):
+        result = VPCVID
+    else:
+        result = newvpc
+    return result
+
 def isverbal(mweclasses) -> bool:
     for mweclass in mweclasses:
-        if mweclass in verbalmweclasses or mweclass.startswith('LVC'):
+        if mweclass in verbalmweclasses or mweclass.startswith('LVC') or mweclass.startswith('VPC'):
             return True
     return False
 
@@ -160,7 +201,7 @@ def getmweclasses(
     results = []
     classes = []
     cheadposition = headposition - 1 if headposition > 0 else headposition
-    if mwepos in ["n"]:
+    if mwepos in ["n", "tw"]:
         classes.append("NID")
         newresult = (classes, allpositions)
         results.append(newresult)
@@ -244,9 +285,9 @@ def getmwetype(
             lvc_classes = [mweclass for mweclass in mweclasses if mweclass.startswith(LVC)]
             if IRVd in mweclasses and IAV in mweclasses:
                 result = VID
-            elif VPCfull in (mweclasses or VPClight in mweclasses) and IAV in mweclasses:
+            elif (vpccontains(mweclasses, VPCfull) or vpccontains(mweclasses, VPClight)) and IAV in mweclasses:
                 result = VID
-            elif lvc_classes != []:
+            elif lvc_classes != [] and thelastclass not in [IAV]:
                 if lvc_classes[0] == LVCGV:
                     result = LVCcause
                 else:
@@ -255,8 +296,16 @@ def getmwetype(
                 result = VID   # maybe must also be IRV
             elif thelastclass in [IRVi]:
                 result = IRV
-            elif thelastclass in [VPCfull, VPClight, VID, IAV, MVC]:
+            elif thelastclass in [VID, IAV, MVC]:
                 result = thelastclass
+            elif (thelastclass.startswith(VPCfull) or thelastclass.startswith(VPClight)) and \
+                vpcclass2type(thelastclass) is not None:
+                result = vpcclass2type(thelastclass)
+            elif thelastclass in {ADJID}:
+                result = ADJID
+            elif thelastclass in {NID}:
+                result = NID          # maybe check for modifier rels to turn int into and AdvID
+
             else:
                 result = UID
     else: # if mwepos == "ww"
@@ -271,20 +320,27 @@ def getmwetype(
                 else:
                     result = theclass
             elif theclass in ["PID", "AdvID", "CID"]:
-                mwerel = gav(mwematch, "rel") if mwematch is not None else ""
-                if mwerel in {"mod", "predm", "me"}:
-                    result = "AdvID"
-                else:
-                    udheadlabel = getudheadlabel(mwematch)
-                    result = (
-                        pt2idclass[udheadlabel] if udheadlabel in pt2idclass else "UID"
-                    )
+                result = "AdvId"
+                # mwerel = gav(mwematch, "rel") if mwematch is not None else ""
+                # if mwerel in {"mod", "predm", "me"}:
+                #     result = "AdvID"
+                # else:
+                #     udheadlabel = getudheadlabel(mwematch)
+                #     result = (
+                #         pt2idclass[udheadlabel] if udheadlabel in pt2idclass else "UID"
+                #     )
             elif theclass in ["AdjID"]:
                 result = theclass
             else:
                 result = theclass
     return result
 
+
+def vpccontains(classes: List[str], vpc: str) -> bool:
+    for aclass in classes:
+        if aclass.startswith(vpc):
+            return True
+    return False
 
 def getudheadlabel(stree: SynTree) -> PosTag:
     streecat = gav(stree, "cat")
@@ -326,16 +382,6 @@ def getudheadlabel(stree: SynTree) -> PosTag:
 
 
 
-def rvz(vzlemma:str) -> List[str]:
-    if vzlemma == 'met':
-        newvzlemma = 'mee'
-    elif vzlemma == 'tot':
-        newvzlemma = 'toe'
-    else:
-        newvzlemma = vzlemma
-
-    result = [f'{rpronoun}{newvzlemma}' for rpronoun in fixedrpronouns]
-    return result
 
 
 
@@ -347,8 +393,8 @@ def getfirstchild(stree: SynTree, f) -> Optional[SynTree]:
 
 
 def getvclasses(match: SynTree, mwetree: SynTree, mwecomponents: List[SynTree],
-                annotations: List[int], headposition: int, match_hd: SynTree, mwematchcomponents: List[SynTree]) \
-        -> Tuple[List[str], List[int]]:
+                annotations: List[int], headposition: int, match_hd: Optional[SynTree],
+                mwematchcomponents: List[SynTree]) -> List[Tuple[List[str], List[int]]]:
     results = []
     classes = ()
     positions = ()
@@ -370,14 +416,16 @@ def getvclasses(match: SynTree, mwetree: SynTree, mwecomponents: List[SynTree],
             svpheads = match.xpath(f'./node[@rel="svp"]/node[@lemma="{prtlemma}"]')
             svphead = svpheads[0] if svpheads != [] else None
             if svphead is not None:
+                svppt = gav(svphead, 'pt')
                 svp_position = int(gav(svphead, 'end'))
-                classes = classes + ('VPC.full',)
+                vpcclass = vpcmap(VPCfull, svppt)
+                classes = classes + (vpcclass,)
                 vpcpositions = (svp_position,)
                 positions = positions + vpcpositions
                 coveredpositions = coveredpositions.union(set(vpcpositions))
                 newresult = (classes, positions)
                 results.append(newresult)
-            else:
+            else:  # @@ does it still occur?
                 coveredpositions = coveredpositions.union({match_hdposition})
                 classes = classes + ('VPC.full',)
                 newresult = (classes, positions)
@@ -417,16 +465,20 @@ def getvclasses(match: SynTree, mwetree: SynTree, mwecomponents: List[SynTree],
 
         iavfound = False
         iavposition = None
-        iavmwenode = find1(mwetree, './node[@rel="pc|ld|mod|predc|svp|predm" and @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
-        iavmatchnode = find1(match, './node[@rel="pc" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz" or @pt="bw")]')
-        if iavmwenode is not None and iavmwenode is not None:
-            vzmwelemma = gav(iavmwenode, 'lemma')
+        iavmatchnode = findiav(mwetree, match)
+        if iavmatchnode is not None:
+            iavfound = True
+            iavposition = getposition(iavmatchnode)
+            coveredpositions.add(iavposition)
+
+        # here add code for IAV's if found via OIA and CIA annotations
+        if oia in annotations or cia in annotations:
+            # add a condition to select the vz in the right position (i.e the one that has the cia/oia annotation
+            iavmatchnode = findlvciavnode(mwetree, match)
             if iavmatchnode is not None:
-                vzmatchlemma = gav(iavmatchnode, 'lemma')
-                if vzmatchlemma == vzmwelemma or vzmatchlemma in rvz(vzmwelemma):
-                    iavfound = True
-                    iavposition = getposition(iavmatchnode)
-                    coveredpositions.add(iavposition)
+                iavfound = True
+                iavposition = getposition(iavmatchnode)
+                coveredpositions.add(iavposition)
 
         # if any mwe positions are not covered yet, make them covered and add VID or LVC
         uncoveredpositions = {mweposition for mweposition in mwepositions if mweposition not in coveredpositions}

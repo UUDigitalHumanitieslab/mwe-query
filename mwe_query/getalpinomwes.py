@@ -4,24 +4,28 @@ Based on a similar module operating on UD structures cretaed by Gosse Bouma
 But we do not include here the examples derived from the Alpino lexicon, we rely on DUCAME for that
 See https://github.com/gossebouma/Parseme-NL/blob/main/Parseme-NL.ipynb
 """
-from lexicons import irvindeplexicon
+from lexicons import cranberryparticleslexicon, irvindeplexicon, notSCVslexicon, prenomadjdeelwoordenlexicon, vpcsemilexicon
 from mwemeta import MWEMeta
-from mwetypes import getmwetype, IAV, IRV, IRVd, IRVi, MVC, PID, VID, VPCfull
+from mwetypes import getmwetype, IAV, IRV, IRVd, IRVi, MVC, PID, VID, VPCfull, VPCVID, VPClight, VPCmaybelight,\
+    vpcmap, vpcclass2type
 from sastadev.treebankfunctions import (
     getattval as gav,
     getnodeyield,
     getsentence,
     terminal,
 )
-from sastadev.sastatypes import SynTree
+from sastadev.sastatypes import SynTree  # , Relation
 from typing import List, Optional, Tuple
 import sys
 from copy import deepcopy
 
+
+Relation = str
 space = " "
 plussym = "+"
 underscore = "_"
 compoundsym = underscore
+maybe = 'maybe'
 
 # we turn these into entries in DUCAME if they are not present there yet
 # dictionary derived from alpino with fixed expressions (fixed) and semi-flexible fixed expressions that are mapped to regular deprels in UD
@@ -65,11 +69,18 @@ def getheadof(node: SynTree) -> Optional[SynTree]:
         return None
 
 
+def additionalconditionsprtverb(node: SynTree) -> bool:
+    lemma = gav(node, "lemma")
+    pos = gav(node, "pos")
+    result = lemma not in notSCVslexicon and pos != "adv"
+    return result
+
 def isparticleverb(node: SynTree) -> bool:
     lemma = gav(node, "lemma")
     pt = gav(node, "pt")
+    pos = gav(node, "pos")
     lemmaparts = lemma.split(compoundsym)
-    result = pt == "ww" and len(lemmaparts) == 2 and lemmaparts[0] != "on"
+    result = pt == "ww" and len(lemmaparts) == 2 and lemmaparts[0] != "on" and additionalconditionsprtverb(node)
     return result
 
 
@@ -120,7 +131,7 @@ def getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode) -> str:
 def getprtfromlemma(prtwwnode: SynTree) -> str:
     prtwwnodelemma = gav(prtwwnode, "lemma")
     lemmaparts = prtwwnodelemma.split(compoundsym)
-    result = lemmaparts[0] if len(lemmaparts) > 1 else ""
+    result = ''.join(lemmaparts[:-1]) if len(lemmaparts) > 1 else ""
     return result
 
 
@@ -162,7 +173,7 @@ def getintpositions(mwenodes: List[SynTree]) -> List[int]:
 
     for mwenode in mwenodes:
         if mwenode is None:
-            print(f"None node encountered in {nodeliststr} ", file=sys.stderr)
+            print(f"getalpinomwes:getintpositions: None node encountered in {nodeliststr} ", file=sys.stderr)
         else:
             position = gav(mwenode, "end")
             intposition = int(position)
@@ -171,10 +182,59 @@ def getintpositions(mwenodes: List[SynTree]) -> List[int]:
     sortedintpositions = sorted(intpositions)
     return sortedintpositions
 
-def truelyverbal(verb: SynTree) -> bool:
-    positie = gav(verb, 'positie')
-    result = positie == '' or positie == 'vrij'
+def getrealparentrel(node: SynTree) -> Relation:
+    parent = node.getparent()
+    noderel = gav(node, 'rel')
+    parentrel = gav(parent, 'rel') if parent is not None else noderel
+    if parentrel == 'cnj':
+        grandparent = parent.getparent()
+        grandparentrel = gav(grandparent, 'rel')
+        result = grandparentrel
+    else:
+        result = parentrel
     return result
+
+
+
+def truelyverbal(verb: SynTree) -> bool:
+    verblemma = gav(verb, 'lemma')
+    verbwvorm = gav(verb, 'wvorm')
+    verbpositie = gav(verb, 'positie')
+    isprenominaladjective = verbpositie == 'prenom' and \
+                            verblemma in prenomadjdeelwoordenlexicon and \
+                            prenomadjdeelwoordenlexicon[verblemma] == verbwvorm
+    isnominalisedparticiple = verbpositie == 'nom' and verbwvorm in ['vd', 'od']
+    realparentrel = getrealparentrel(verb)
+    afgezien = verblemma in ['af_zien', 'om_keren'] and verbwvorm == 'vd' and \
+               verbpositie == "vrij" and realparentrel != "vc"
+    result = not isprenominaladjective and not isnominalisedparticiple and not afgezien
+    return result
+
+def getvpcclass(verb: SynTree) -> str:
+    prt= getprtfromlemma(verb)
+    if iscranberryprt(prt):
+        result = VPCVID
+    else:
+        result = getsemi(verb)
+    return result
+
+
+def iscranberryprt(prt: str) -> bool:
+    result = prt in cranberryparticleslexicon
+    return result
+
+def getsemi(node: SynTree) -> str:
+    lemma = gav(node, 'lemma')
+    if lemma in vpcsemilexicon:
+        status = vpcsemilexicon[lemma]
+        if status == maybe:
+            result = VPCmaybelight
+        else:
+            result = VPClight
+    else:
+        result = VPCfull
+    return result
+
 
 
 def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: C901
@@ -194,6 +254,7 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
         mwenodes = []
         svpnodes = []
         wwsvpnode = None
+        verblemma = gav(verb, 'lemma')
         siblings = verb.xpath("../node")
         for sibling in siblings:
             if sibling == verb:
@@ -227,7 +288,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
                             wwprt = getprtfromlemma(verb)
                             siblinglemma = gav(sibling, "lemma")
                             if wwprt == siblinglemma:
-                                classes += [VPCfull]
+                                thevpc = VPClight if verblemma in vpcsemilexicon else VPCfull
+                                classes += [vpcmap(thevpc, siblingpt)]
                                 # partnode = sibling
                                 mwenodes.append(sibling)
                             else:
@@ -241,7 +303,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
                             if siblingpt == "ww":
                                 classes += [MVC]
                             elif wwprt == siblinglemma:
-                                classes += [VPCfull]
+                                thevpc = VPClight if verblemma in vpcsemilexicon else VPCfull
+                                classes += [vpcmap(thevpc,siblingpt)]
                                 # partnode = sibling
                                 mwenodes.append(sibling)
                             else:
@@ -261,7 +324,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
                         mwenodes.append(sibling)
                         if siblingpt == "ww":
                             if isparticleverb(sibling):
-                                classes = [VID, VPCfull]
+                                thevpc = VPClight if verblemma in vpcsemilexicon else VPCfull
+                                classes = [VID, vpcmap(thevpc, siblingpt)]
                             else:
                                 classes += [MVC]
                             wwsvpnode = sibling
@@ -382,24 +446,27 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
         if isparticleverb(verb) and verbrel != "hd":
             mwenodes.append(verb)
             intpositions = getintpositions(mwenodes)
+            # @@ get the svp and its pt
             mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
-            classes = [VPCfull]
-            parsemetype = VPCfull
-            mwemeta = MWEMeta(
-                sentence,
-                sentenceid,
-                mweid,
-                mwelexicon,
-                mwequerytype,
-                mweid,
-                intpositions,
-                headposition,
-                headpos,
-                headlemma,
-                deepcopy(classes),
-                parsemetype,
-            )
-            mwemetas.append(mwemeta)
+            theclass = getvpcclass(verb)
+            classes = [theclass]
+            parsemetype = vpcclass2type(theclass)
+            if parsemetype is not None:
+                mwemeta = MWEMeta(
+                    sentence,
+                    sentenceid,
+                    mweid,
+                    mwelexicon,
+                    mwequerytype,
+                    mweid,
+                    intpositions,
+                    headposition,
+                    headpos,
+                    headlemma,
+                    deepcopy(classes),
+                    parsemetype,
+                )
+                mwemetas.append(mwemeta)
         if verbrel == 'hd':
             if isparticleverb(verb):
                 mwenodes.append(verb)
@@ -415,45 +482,50 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 classes += [MVC]
                                 parsemetype = MVC
-                                mwemeta = MWEMeta(
-                                    sentence,
-                                    sentenceid,
-                                    mweid,
-                                    mwelexicon,
-                                    mwequerytype,
-                                    mweid,
-                                    intpositions,
-                                    headposition,
-                                    headpos,
-                                    headlemma,
-                                    deepcopy(classes),
-                                    parsemetype,
-                                )
-                                mwemetas.append(mwemeta)
+                                if parsemetype is not None:
+                                    mwemeta = MWEMeta(
+                                        sentence,
+                                        sentenceid,
+                                        mweid,
+                                        mwelexicon,
+                                        mwequerytype,
+                                        mweid,
+                                        intpositions,
+                                        headposition,
+                                        headpos,
+                                        headlemma,
+                                        deepcopy(classes),
+                                        parsemetype,
+                                    )
+                                    mwemetas.append(mwemeta)
                         else: # svp sibling is not a verb
                             wwprt = getprtfromlemma(verb)
                             thesvpsiblinglemma = gav(thesvpsibling, "lemma")
+                            thesvpsiblingpt = gav(thesvpsibling, "pt")
                             if wwprt == thesvpsiblinglemma:
-                                classes += [VPCfull]
+                                theclass = getvpcclass(verb)
+                                vpcclass = vpcmap(theclass, thesvpsiblingpt)
+                                classes += [vpcclass]
                                 mwenodes.append(thesvpsibling)
                                 intpositions = getintpositions(mwenodes)
                                 mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
-                                parsemetype = VPCfull
-                                mwemeta = MWEMeta(
-                                    sentence,
-                                    sentenceid,
-                                    mweid,
-                                    mwelexicon,
-                                    mwequerytype,
-                                    mweid,
-                                    intpositions,
-                                    headposition,
-                                    headpos,
-                                    headlemma,
-                                    deepcopy(classes),
-                                    parsemetype,
-                                )
-                                mwemetas.append(mwemeta)
+                                parsemetype = vpcclass2type(vpcclass)
+                                if parsemetype is not None:
+                                    mwemeta = MWEMeta(
+                                        sentence,
+                                        sentenceid,
+                                        mweid,
+                                        mwelexicon,
+                                        mwequerytype,
+                                        mweid,
+                                        intpositions,
+                                        headposition,
+                                        headpos,
+                                        headlemma,
+                                        deepcopy(classes),
+                                        parsemetype,
+                                    )
+                                    mwemetas.append(mwemeta)
                             else:
                                 pass  # we ignore other svp nodes and rely for this on DUCAME
                     else:           # nonterminal svp sibling
@@ -484,26 +556,29 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 )
                                 mwemetas.append(mwemeta)
                             elif wwprt == siblingheadlemma:
-                                classes += [VPCfull]
-                                parsemetype = VPCfull
+                                theclass = getvpcclass(verb)
+                                vpcclass = vpcmap(theclass, siblingpt)
+                                classes += [vpcclass]
+                                parsemetype = vpcclass2type(vpcclass)
                                 mwenodes.append(siblinghead)
                                 intpositions = getintpositions(mwenodes)
                                 mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
-                                mwemeta = MWEMeta(
-                                    sentence,
-                                    sentenceid,
-                                    mweid,
-                                    mwelexicon,
-                                    mwequerytype,
-                                    mweid,
-                                    intpositions,
-                                    headposition,
-                                    headpos,
-                                    headlemma,
-                                    deepcopy(classes),
-                                    parsemetype,
-                                )
-                                mwemetas.append(mwemeta)
+                                if parsemetype is not None:
+                                    mwemeta = MWEMeta(
+                                        sentence,
+                                        sentenceid,
+                                        mweid,
+                                        mwelexicon,
+                                        mwequerytype,
+                                        mweid,
+                                        intpositions,
+                                        headposition,
+                                        headpos,
+                                        headlemma,
+                                        deepcopy(classes),
+                                        parsemetype,
+                                    )
+                                    mwemetas.append(mwemeta)
                             else:   # siblinghead is not a prt or verb
                                 classes += [VID]
                                 parsemetype = VID
@@ -553,12 +628,13 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
 
                             else:
                                 pass  # we ignore these and rely on DUCAME
-                elif len(svpsiblings) == 0:
+                elif len(svpsiblings) == 0:  # wil this still occur?
                     mwenodes.append(verb)
                     intpositions = getintpositions(mwenodes)
                     mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
-                    classes = [VPCfull]
-                    parsemetype = VPCfull
+                    theclass = getvpcclass(verb)
+                    classes = [theclass]
+                    parsemetype = vpcclass2type(theclass)
                     mwemeta = MWEMeta(
                         sentence,
                         sentenceid,
@@ -577,7 +653,7 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
 
                 else:
                     pass # we leave these to DUCAME
-            if not isparticleverb(verb):
+            if not isparticleverb(verb) and additionalconditionsprtverb(verb):
                 svpsiblings = [sibling for sibling in siblings if gav(sibling, 'rel') == 'svp']
                 if len(svpsiblings) == 1:
                     thesvpsibling = svpsiblings[0]

@@ -1,0 +1,2 @@
+
+nospaceafter = 'nospeaceafter'

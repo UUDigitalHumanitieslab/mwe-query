@@ -142,7 +142,7 @@ def analyseentries(ducamedata):
 
 def run():
     exactduplicatescount = 0
-    reportfilename = "ducameanalysreport.txt"
+    reportfilename = "ducameanalysisreport.txt"
     header, ducamedata = getxlsxdata(ducamefullname)
     vblcountdict, bracketvbldict, componentdict, compvalencydict, lvcverbdict = (
         analyseentries(ducamedata)

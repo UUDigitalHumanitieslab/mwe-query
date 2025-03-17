@@ -3,6 +3,7 @@ from sastadev.sastatypes import SynTree, Tuple
 from sastadev.treebankfunctions import getattval as gav
 from typing import List
 from lxml import etree
+import copy
 
 Relation = str
 Xpath = str
@@ -10,6 +11,8 @@ Axis = str
 
 childaxis = "child"
 
+altcomplpprels = ['pc', 'ld', 'predc', 'svp']
+altmodpprels = ['mod', 'predm']
 
 def getmwecomponents(
     matchingnodes: List[SynTree], mwestructures: List[SynTree]
@@ -20,9 +23,13 @@ def getmwecomponents(
         for matchingnode in matchingnodes:
             components = []
             for mwecompsxpathexpr in mwecompsxpathexprs:
-                newcomponents = matchingnode.xpath(
-                    mwecompsxpathexpr
-                )  # multiple for cases such as mwu[hand in hand]
+                try:
+                    newcomponents = matchingnode.xpath(mwecompsxpathexpr)  # multiple for cases such as mwu[hand in hand]
+                except etree.XPathEvalError as e:
+                    print(f'Xpath error. Xpath expression =:\n{mwecompsxpathexpr}')
+                    print(f'for mweparse\n ')
+                    etree.dump(mweparse)
+                    exit(-1)
                 if newcomponents == []:
                     components = []  # because all components must be present
                     break
@@ -41,6 +48,8 @@ def getmwecomponents(
             componentslist.append(components)
     return componentslist
 
+
+
 def getcompsxpaths(stree: SynTree) -> List[Xpath]:
     results = []
     comps = getcomps(stree, [])
@@ -51,7 +60,31 @@ def getcompsxpaths(stree: SynTree) -> List[Xpath]:
         results.append(xpathresult)
     return results
 
-def getcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[Tuple[Axis, Relation]]]]:
+
+def oldgetcompsxpaths(stree: SynTree) -> List[Xpath]:
+    results = []
+    comps = getcomps(stree, [])
+    for lstree, fpath in comps:
+        lxpath = tree2xpath(lstree)
+        lfpath = mkfxpath(fpath)
+        xpathresult = mkxpath(lxpath, lfpath)
+        results.append(xpathresult)
+    return results
+
+
+def getcomps(stree: SynTree, fpath: List[SynTree]) -> List[Tuple[SynTree, List[Tuple[Axis, SynTree]]]]:
+    results = []
+    if iscomponent(stree):
+        results = [(stree, fpath)]
+    else:
+        for child in stree:
+            axis = child.attrib["axis"] if "axis" in child.attrib else childaxis
+            childresults = getcomps(child, fpath + [(axis, child)])
+            results += childresults
+    return results
+
+
+def oldgetcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[Tuple[Axis, Relation]]]]:
     results = []
     if iscomponent(stree):
         results = [(stree, fpath)]
@@ -63,7 +96,33 @@ def getcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, List[
             results += childresults
     return results
 
-def mkfxpath(fpath: List[Tuple[Axis, Relation]]) -> Xpath:
+def newgetcomps(stree: SynTree, fpath: List[Relation]) -> \
+        List[Tuple[SynTree, List[Tuple[Axis, Relation]], List[SynTree]]]:
+    results = []
+    if iscomponent(stree):
+        results = [(stree, fpath, [])]
+    else:
+        for child in stree:
+            chrel = gav(child, "rel")
+            axis = child.attrib["axis"] if "axis" in child.attrib else childaxis
+            childresults = getcomps(child, fpath + [(axis, chrel)])
+            results += childresults
+    return results
+
+
+def mkfxpath(fpath: List[Tuple[Axis, SynTree]]) -> Xpath:
+    nodelist = []
+    for axis, stree in fpath[:-1]:  # we skip the last one because that is the node we look for
+        axisstr = f"{axis}::" if axis != childaxis else ""
+        newnode = tree2xpath(stree, alt="|")
+        newnodewithaxis = f"{axisstr}{newnode}"
+        nodelist.append(newnodewithaxis)
+    result = "/".join(nodelist)
+    return result
+
+
+
+def oldmkfxpath(fpath: List[Tuple[Axis, Relation, ]]) -> Xpath:
     nodelist = []
     for axis, rel in fpath[
         :-1
@@ -88,3 +147,28 @@ def iscomponent(stree: SynTree) -> bool:
     result = "lemma" in stree.attrib
     return result
 
+def getaltrelcond(rel: Relation) -> str:
+    if rel in altcomplpprels:
+        altrels = [r for r in altcomplpprels if r != rel]
+        altrelconds = getaltrelcondlist(rel, altrels + altmodpprels)
+    elif rel in altmodpprels:
+        altrels = [r for r in altmodpprels if r != rel]
+        altrelconds = getaltrelcondlist(rel, altrels)
+    else:
+        altrelconds = []
+    all_relconds = [f'node[@rel="{rel}"]'] + altrelconds
+    result = ' or \n'.join(all_relconds)
+    return result
+
+def getdonerelscond(donerels: List[Relation]) -> str:
+    result = ' or '.join([f'@rel={donerel}' for donerel in donerels])
+    return result
+def getaltrelcondlist(rel: Relation, altrels:List[Relation]) -> List[str]:
+    results = []
+    donerels = [rel]
+    for altrel in altrels:
+        donerelscond = getdonerelscond(donerels)
+        newcond = f'(not(node[{donerelscond}]) and node[@rel="{altrel}"])'
+        results.append(newcond)
+        donerels.append(altrel)
+    return results

@@ -231,12 +231,16 @@ def mwemeta2parseme_mwe(mwemeta: MWEMeta) -> MWE:
     mwe = MWE(mwemeta.mwetype, set(mwemeta.positions))
     return mwe
 
-def getannotationfiles(afs: List[FileName]) -> Dict[SentId, List[MWEMeta]]:
+def getannotationfiles(afs: List[FileName], selection=[]) -> Dict[SentId, List[MWEMeta]]:
     resultdict = defaultdict(list)
     for af in afs:
         header, data = getxlsxdata(af)
         for row in data:
             mwemeta = fromrow(row)
-            sentid = row[1]
-            resultdict[sentid].append(mwemeta)
+            sentid = str(row[1])
+            if selection != []:
+                if sentid in selection:
+                    resultdict[sentid].append(mwemeta)
+            else:
+                resultdict[sentid].append(mwemeta)
     return resultdict

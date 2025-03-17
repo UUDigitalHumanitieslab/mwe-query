@@ -4,7 +4,7 @@ import os
 
 tab = "\t"
 
-defaultoutputpath = r"D:D:\Dropbox\jodijk\myprograms\python\mwe-query\mwe_query\mwelexicon"
+defaultoutputpath = r"D:\Dropbox\jodijk\myprograms\python\mwe-query\mwe_query\mwelexicon"
 
 
 def releasedcm():
@@ -38,6 +38,12 @@ def releasedcm():
     excludecol = 12
 
     outrows = []
+    if len(data) == 0:
+        print(f'No data found in {options.inputfullname}. Specify the full path. Aborting')
+        exit(-1)
+    else:
+        print(f'{len(data)} rows found in {options.inputfullname}')
+
     for row in data:
         excludeval = row[excludecol].lower()
         if excludeval == "no":

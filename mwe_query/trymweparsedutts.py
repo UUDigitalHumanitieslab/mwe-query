@@ -18,8 +18,11 @@ def getuttandparse(filename, folder='./testparses'):
 
 def trysomemwes():
     testset = []
-    utterance, uttparse = getuttandparse('_its_sonar_acc_Data_Treebank_MEDIARGUS_COMPACT_NB2005_NB_20050930_01_data_dz_9011.xml')
-    mwe = 'iemand zal 0een *+varken wassen'
+
+    # utterance, uttparse = getuttandparse('_its_sonar_acc_Data_Treebank_MEDIARGUS_COMPACT_NB2005_NB_20050930_01_data_dz_9011.xml')
+    # mwe = 'iemand zal 0een *+varken wassen'
+    utterance, uttparse = getuttandparse('2058.xml')
+    mwe = 'iemand zal 0een L:aanval  OIA:op iemand DO:doen'
     testset.append((mwe, utterance, uttparse))
 
     for mwe, utterance, uttparse in testset:

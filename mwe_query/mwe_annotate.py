@@ -5,7 +5,7 @@ from indexes import indexes, getatt, mwelexiconfilename as mwelexicon
 from itertools import combinations
 from lxml import etree
 from mwemeta import isidentical, MWEMeta, meq, nmq, mlq
-from mwetypes import getmweclasses, getmwetype, VID
+from mwetypes import getmweclasses, getmwetype, VID, VPCVID
 from canonicalform import (
     expandaltvals,
     expandfull,
@@ -24,14 +24,18 @@ from sastadev.treebankfunctions import getattval, getnodeyield, getsentence, fin
 from typing import cast, Any, List, Optional, Tuple
 import itertools
 from alternatives import expandalternatives
+import copy
 import sys
+from mwetypes import IAV, MVC, IRV
 
 Mwetype = str
 XpathExpression = str
 altsym = "|"
+compoundsep = "_"
 
 mwecomponentsxpath = ".//node[@lemma]"
 
+alpinolexicon = 'Alpino'
 
 def getmweheadnode(syntree: SynTree) -> Optional[Tuple[SynTree, str]]:
     topnode = find1(syntree, './/node[@cat="top"]')
@@ -145,6 +149,33 @@ def adaptlemmas(rawlemmas: List[str]) -> List[str]:
         else:
             results.extend(newlemmas)
     return results
+
+
+def getcompoundlemmas(stree: SynTree) -> List[str]:
+    """
+    create a lemma list with  lemmas of noun compounds replaced by  the compound head
+
+    Args:
+        stree:
+
+    Returns:
+
+    """
+    newlemmas = []
+    lemmapts = [(getattval(node, 'lemma'), getattval(node, 'pt')) for node in stree.iter() if 'lemma' in node.attrib]
+    for lemma, pt in lemmapts:
+        if pt == 'n':
+            # first find the last occurrence of the compoundsep
+            compoundseppos = lemma.rfind(compoundsep)
+            if compoundseppos != -1:
+                newlemma = lemma[compoundseppos + 1:]
+            else:
+                newlemma = lemma
+        else:
+            newlemma = lemma
+        newlemmas.append(newlemma)
+    return newlemmas
+
 
 
 def is_subset(list1, list2):
@@ -298,10 +329,15 @@ def annotate(  # noqa: C901
     discardedmwemetalist = []
     duplicatemwemetalist = []
     # get the lemmas from this tree
-    rawlemmas = getlemmas(syntree)
-    lemmas = adaptlemmas(rawlemmas)
 
-    alllemmaslist = [rawlemmas, lemmas] if lemmas != rawlemmas else [rawlemmas]
+    rawlemmas = getlemmas(syntree)
+    alllemmaslist = [rawlemmas]
+    lemmas = adaptlemmas(rawlemmas)
+    if lemmas != rawlemmas:
+        alllemmaslist.append(lemmas)
+    compoundlemmas = getcompoundlemmas(syntree)
+    if compoundlemmas != rawlemmas or compoundlemmas != lemmas:
+        alllemmaslist.append(compoundlemmas)
 
     validmweids = []
     for lemmas in alllemmaslist:
@@ -312,7 +348,7 @@ def annotate(  # noqa: C901
             else:
                 mweids = []
 
-            # check for each mweid whether all lemmas it requires occurs in lemmas, if sp add it to validmweids
+            # check for each mweid whether all lemmas it requires occurs in lemmas, if so add it to validmweids
             for mweid in mweids:
                 try:
                     mweidlemmas = indexes.lemmasofmwedict[str(mweid)]
@@ -343,7 +379,13 @@ def annotate(  # noqa: C901
     # find the Alpino MWEs
     mwemetalist += getalpinomwes(expandedsyntree, sentenceid=sentenceid)
 
+    # for testing purposes
+    # validmweids = [102229]
+    dcmmweids = [indexes.id2mweid[str(validmweid)] if str(validmweid) in indexes.id2mweid else 'unknown' for validmweid in validmweids]
+
     for validmweid in validmweids:
+
+        thedcmmweid = indexes.id2mweid[str(validmweid)] if str(validmweid) in indexes.id2mweid else 'unknown'
 
         # find the mwe structure
         if (
@@ -408,6 +450,9 @@ def annotate(  # noqa: C901
                     etree.dump(expmwetree)
             for mwequeryresult in mwequeryresults:
                 # determine the mweclasses and mwetype
+                altdebug2 = False
+                if altdebug2:
+                    etree.dump(mwestructures[0])
                 mwecomponentnodes = getmwecomponentnodes(mwestructures[0])
                 matchhd = getmatch_hd(mwequeryresult)
                 match_hd_position = getposition(matchhd)
@@ -445,7 +490,7 @@ def annotate(  # noqa: C901
         mwemetalist, discardedmwemetalist2, duplicatemwemetalist2 = removeduplicatemwes(
             mwemetalist
         )
-        discardedmwemetalist = discardedmwemetalist1 + discardedmwemetalist2
+        discardedmwemetalist += discardedmwemetalist1 + discardedmwemetalist2
 
         nearmissqueryresults = []
         if mwequeryresults == []:
@@ -459,13 +504,13 @@ def annotate(  # noqa: C901
             nearmissmwestructures = mknearmissstructs(mwestructures)
             for nearmissqueryresult in nearmissqueryresults:
                 # next must be improved
-                mwecomponentnodes = getmwecomponentnodes(mwestructures[0])
+                mwecomponentnodes = getmwecomponentnodes(nearmissmwestructures[0])
                 matchhd = getmatch_hd(nearmissqueryresult)
                 match_hd_position = getposition(matchhd)
 
                 classpositiontuples = getmweclasses(
                     origutt, headpos, annotations, mweheadposition, mwecomponentnodes,
-                    nearmissqueryresult, mwestructures[0]
+                    nearmissqueryresult, nearmissmwestructures[0]
                 )
                 for mweclasses, mwepositions in classpositiontuples:
                     mwetype = getmwetype(nearmissqueryresult, headpos, mweclasses)
@@ -571,8 +616,20 @@ def annotate(  # noqa: C901
     #    mwemeta = MWEMeta(sentence, sentenceid, '', mwelexicon, '', '', [], -1, '', '', [], '')
     #    cleanmetalist.append(mwemeta)
 
-    return cleanmetalist, discardedmwemetalist, duplicatemwemetalist
+    finalcleanmetalist = [finaladaptation(mwemeta) for mwemeta in cleanmetalist]
+    finaldiscardedmwemetalist = [finaladaptation(mwemeta) for mwemeta in discardedmwemetalist]
+    finalduplicatemwemetalist = [finaladaptation(mwemeta) for mwemeta in duplicatemwemetalist]
 
+    return finalcleanmetalist, finaldiscardedmwemetalist, finalduplicatemwemetalist
+
+
+def finaladaptation(mwemeta: MWEMeta) -> MWEMeta:
+    if mwemeta.mwetype == VPCVID:
+        newmwemeta = copy.deepcopy(mwemeta)
+        newmwemeta.mwetype = VID
+    else:
+        newmwemeta = mwemeta
+    return newmwemeta
 
 def sameorder(majorlemmanodestuple, yieldnodes, positions):
     targetnodes = [node for node in yieldnodes if int(getattval(node, 'end')) in positions]
@@ -603,7 +660,7 @@ def getmlqheadposition(nodes: Tuple[SynTree], lemma: str) -> int:
 
 
 def removesubsetmwes(
-    mwemetalist: List[MWEMeta],
+    rawmwemetalist: List[MWEMeta],
 ) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
     """
     if two results meat1 and meta2 for the same sentence with status MEQ have the same head and the meta1.positions
@@ -611,17 +668,20 @@ def removesubsetmwes(
     if a mwemeta is a submwe of any other mwemeta, and their mwetypes are identical, it is added to the discardedmwemetas;
     else it added to the keptmwemetas
 
+    iav, mvc submwes of other mwes are also discarded
+
     We assume that this is checked per sentence, so that the number of comparisons remains small
     (otherwise, other datastructures (e.g. dict with sentenceid as key) might speed up the process)
     :param mwemetalist: list of mwemeta elements for identified occurrences of mwes
     :return: (keptmwemetas, discardedmwemetas)
     """
 
-    keptmwemetas = []
+    keptmwemetas = [mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype != meq]
+    mwemetalist = [mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype == meq]
     discardedmwemetas = []
     duplicatemwemetas = []
     if len(mwemetalist) < 2:
-        keptmwemetas = mwemetalist
+        keptmwemetas += mwemetalist
     else:
         for mwemeta1 in mwemetalist:
             if mwemeta1 is None:
@@ -637,20 +697,22 @@ def removesubsetmwes(
                 if (
                     mwemeta1 is not None
                     and mwemeta2 is not None
+                    and not mwemeta1.mwetype.startswith('VPC')
                     and mwemeta1 != mwemeta2
                     and mwemeta1.sentenceid == mwemeta2.sentenceid
                     and mwemeta1.sentence == mwemeta2.sentence
                     and mwemeta1.mwequerytype == meq
                     and mwemeta2.mwequerytype == meq
                     and mwemeta1.headposition == mwemeta2.headposition
-                    and mwemeta1.mwetype == mwemeta2.mwetype
+                    and (mwemeta1.mwetype == mwemeta2.mwetype or mwemeta1.mwetype in {MVC, IAV, IRV})
+                    and mwemeta2.mwelexicon != alpinolexicon
                     and all(
                         [
                             position in mwemeta2.positions
                             for position in mwemeta1.positions
                         ]
                     )
-                    and mwemeta1.positions != mwemeta2.positions
+                    and set(mwemeta1.positions) != set(mwemeta2.positions)
                 ):  # we assume that both are sorted
                     supermwefound = True
                     discardedmwemetas.append(mwemeta1)
@@ -664,7 +726,7 @@ def removesubsetmwes(
                     and mwemeta1.mwequerytype == meq
                     and mwemeta2.mwequerytype == meq
                     and mwemeta1.headposition == mwemeta2.headposition
-                    and mwemeta1.positions == mwemeta2.positions
+                    and set(mwemeta1.positions) == set(mwemeta2.positions)
                     and mwemeta1.mweid != mwemeta2.mweid
                     and mwemeta2.sentenceid != mwemeta2.mweid
                     and mwemeta1.mwetype == mwemeta2.mwetype
@@ -681,7 +743,7 @@ def removeduplicatemwes(
     mwemetalist: List[MWEMeta],
 ) -> Tuple[List[MWEMeta], List[MWEMeta], List[MWEMeta]]:
     """
-    Duplicate MWEs can arise due to different syntactic selection variants and due to Alpino, e.gg
+    Duplicate MWEs can arise due to different syntactic selection variants and due to Alpino, e.g.,
     -if it has a multiword svp
     -if V+P is in DUCAME because P is ld but Alpino analyses it as pc
 
@@ -704,7 +766,7 @@ def removeduplicatemwes(
             continue
         if (
             mwemeta1 != mwemeta2
-            and mwemeta1.positions == mwemeta2.positions
+            and set(mwemeta1.positions) == set(mwemeta2.positions)
             and mwemeta1.sentenceid == mwemeta2.sentenceid
             and mwemeta1.sentence == mwemeta2.sentence
             and mwemeta1.mwequerytype == meq

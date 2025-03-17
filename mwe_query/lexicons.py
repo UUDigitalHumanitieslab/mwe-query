@@ -28,4 +28,47 @@ for row in irvdata:
     if independent == 'yes':
         irvindeplexicon[lemma].append(vz)
 
+
+vpcsemilexicon = {}
+vpcsemilexiconfullname ='./lexicons/VPCsemi.txt'
+data = readcsv(vpcsemilexiconfullname)
+for _, row in data:
+    if len(row) >= 2:
+        vpcsemilexicon[row[0]] = row[1]
+    else:
+        vpcsemilexicon[row[0]] = ''
+
+
+cranberryparticleslexicon = set()
+cranberrysparticleslexiconfullname = './lexicons/cranberryparticles.txt'
+data = readcsv(cranberrysparticleslexiconfullname)
+for _, row in data:
+    cranberryparticleslexicon.add(row[0])
+
+
+notSCVslexicon = set()
+notSVCslexiconfullname = './lexicons/notSCVs.txt'
+data = readcsv(notSVCslexiconfullname)
+for _, row in data:
+    notSCVslexicon.add(row[0])
+
+prenomadjdeelwoordenlexicon = {}
+prenomadjdeelwoordenlexiconfullname = './lexicons/prenomadjdeelwoorden.txt'
+data = readcsv(prenomadjdeelwoordenlexiconfullname)
+for _, row in data:
+    if len(row) == 2:
+        prenomadjdeelwoordenlexicon[row[0]] = row[1]
+    else:
+        print(f'Warning: Possibly wrong entry in lexicon file {prenomadjdeelwoordenlexiconfullname}: {str(row)}')
+
+
+lemmacorrectionlexicon = {}
+lemmacorrectionlexiconfullname = './lexicons/lemmacorrections.txt'
+data = readcsv(lemmacorrectionlexiconfullname)
+for _, row in data:
+    if len(row) == 2:
+        lemmacorrectionlexicon[row[0]] = row[1]
+    else:
+        print(f'Warning: Possibly wrong entry in lexicon file {lemmacorrectionlexiconfullname}: {str(row)}')
+
 junk = 0

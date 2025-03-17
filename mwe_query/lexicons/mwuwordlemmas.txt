@@ -1,4 +1,4 @@
-lemma	word
+word	lemma
 's	de
 Europese	Europees
 Fransen	Frans
@@ -12,6 +12,7 @@ Lands	Land
 Olympische	Olympisch
 Parlement	Parlement
 Spelen	Spel
+alle	al
 aanstoots	aanstoot
 andere	ander
 banden	band
@@ -34,7 +35,6 @@ dage	dag
 dagje	dag
 dakje	dak
 dele	deel
-dele	dele
 den	de
 der	de
 des	de
