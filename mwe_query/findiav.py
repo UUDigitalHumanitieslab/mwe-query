@@ -16,11 +16,16 @@ def findiav(mwetree: SynTree, match: SynTree) -> Optional[SynTree]:
     """
 
     # iavmwenode = find1(mwetree, './node[@rel="pc|ld|mod|predc|svp|predm" and @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
-    iavmwenodes = mwetree.xpath('./node[ @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
-    iavmwenodes += mwetree.xpath('./node[@cat="ap"]/node[ @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
-    iavmatchnodes = match.xpath('./node[@rel="pc" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz" )]')
-    iavmatchnodes += match.xpath('./node[@rel="mod" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz")]')
-    iavmatchnodes += match.xpath('./node[@cat="ap" and @rel="predc"]/node[ @cat="pp" and @rel="pc"]/node[@rel="hd" and @pt="vz"]')
+    iavmwenodes = mwetree.xpath(
+        './node[ @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
+    iavmwenodes += mwetree.xpath(
+        './node[@cat="ap"]/node[ @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]')
+    iavmatchnodes = match.xpath(
+        './node[@rel="pc" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz" )]')
+    iavmatchnodes += match.xpath(
+        './node[@rel="mod" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz")]')
+    iavmatchnodes += match.xpath(
+        './node[@cat="ap" and @rel="predc"]/node[ @cat="pp" and @rel="pc"]/node[@rel="hd" and @pt="vz"]')
     for iavmwenode in iavmwenodes:
         for iavmatchnode in iavmatchnodes:
             if iavmwenode is not None:
@@ -31,6 +36,7 @@ def findiav(mwetree: SynTree, match: SynTree) -> Optional[SynTree]:
                         return iavmatchnode
     return None
 
+
 basicmodpp = 'node[@rel="mod" and (@cat="pp" or @cat="advp")]/node[@rel="hd" and (@pt="vz" or @pt="bw")]'
 modppinnp = f'node[@rel="obj1"]/{basicmodpp}'
 pcmodiavxpath = './node[@rel="mod|pc" and @cat="pp" and count(node[@pt or @cat]) = 1]/node[@rel="hd" and @pt="vz"]'
@@ -39,6 +45,7 @@ pciavxpath = './node[@rel="pc" and (@cat="pp" or @cat="advp")]/node[@rel="hd" an
 modiavxpath = f'./{basicmodpp}'
 ppinnpiavxpath = f'./{modppinnp}'
 ppinnpinppxpath = f'./node[(@rel="predc" or @rel="ld" or @rel="svp" or @rel="mod" and @cat="pp")]/{modppinnp}'
+
 
 def findlvciavnode(mwetree: SynTree, match: SynTree) -> Optional[SynTree]:
     iavmwenodes = mwetree.xpath(pcmodiavxpath)
@@ -57,4 +64,3 @@ def findlvciavnode(mwetree: SynTree, match: SynTree) -> Optional[SynTree]:
                 if vzmatchlemma == vzmwelemma or vzmatchlemma in rvz(vzmwelemma):
                     return iavmatchnode
     return None
-

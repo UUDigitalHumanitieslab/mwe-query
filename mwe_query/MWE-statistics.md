@@ -6,9 +6,9 @@ This section describes the dedicated MWE analysis component of GrETEL 5.
 
 ## HTML pages with pivot tables
 
-The functions to generate the dedicated MWE statistics generate for each 
-statistic multiple html files containing a pivottable based on 
-[*pivottablejs*](https://github.com/nicolaskruchten/pivottable). In addition, an html file is generated with 
+The functions to generate the dedicated MWE statistics generate for each
+statistic multiple html files containing a pivottable based on
+[*pivottablejs*](https://github.com/nicolaskruchten/pivottable). In addition, an html file is generated with
 an overview of all the different statistics and links to the relevant html files.
 (called *MWE-Analysis.html*)
 
@@ -17,13 +17,13 @@ that corresponds to the git repository,
 
 ## HTML template files
 
-The html files are generated on the basis of html template files in which 
+The html files are generated on the basis of html template files in which
 variables are marked with a preceding $. The
-[Template class](https://docs.python.org/3/library/string.html#template-strings) 
+[Template class](https://docs.python.org/3/library/string.html#template-strings)
 of the python string module
 is used to substitute actual values for these variables.
 
-There are two html template files,  residing in the folder 
+There are two html template files,  residing in the folder
 *htmltemplates*.
 
 The two template files are:
@@ -41,7 +41,7 @@ in the module . There are two relevant functions:
 
 ### The *getstats* function
 
-The *getstats* function generates data of type MWEcsv, which is a class with two elements: 
+The *getstats* function generates data of type MWEcsv, which is a class with two elements:
 
 - header (of type List\[str\])
 - data (of type List\[List\[str\]\])
@@ -52,33 +52,33 @@ The function *getstats* generates data for:
 
 - Arguments of the MWE
 - modifiers of the MWE components
-- Determiners of the MWE components 
+- Determiners of the MWE components
 - Argument Frames
 - Arguments with the relation and categories
 - Component Sequences
 
-and it does so for the results of MEQ, 
+and it does so for the results of MEQ,
 the NMQ, and the difference between NMQ and MEQ (NMQ-MEQ).
 
-A possible extension is to derive statistics for the governor of the MWE 
-(e.g., to answer the question: which verbs can occur as the governor 
+A possible extension is to derive statistics for the governor of the MWE
+(e.g., to answer the question: which verbs can occur as the governor
 of the MWE *in de war*, and in which frequencies).
 
-### The *getgramconfigstat* function 
+### The *getgramconfigstat* function
 
-The function *getgramconfigstats* obtains data about the 
+The function *getgramconfigstats* obtains data about the
 grammatical configurations in which the major lemmas of the MWE occur.
-The major lemmas are sorted alphabetically and the grammatical configuration 
-describes the path through the syntactic structure of a sentence 
-that connects the first major lemma to the second, etc until 
+The major lemmas are sorted alphabetically and the grammatical configuration
+describes the path through the syntactic structure of a sentence
+that connects the first major lemma to the second, etc until
 the last major lemma.
 
-This is done for the results of the MLQ, and for the results of 
+This is done for the results of the MLQ, and for the results of
 the difference between the MLQ and the NMQ results (MLQ-NMQ)
 
-This function can also be used to generate statistics 
+This function can also be used to generate statistics
 for the newly proposed (and partially implemented) *Related Word Query (RWQ)*,
-the results of which are a superset of the results of the MLQ, 
+the results of which are a superset of the results of the MLQ,
 and for the difference between the RWQ and MLQ results
 
 ## The *mkpivothtmls.py* module
@@ -92,18 +92,18 @@ which takes as parameters:
 
 - *mwe*: the MWE canonical form
 - *mweparse*: the syntactic structure of the MWE canonical form (with annotations removed)
-- *treebank*: this is a dictionary with the identifier of a sentence as key 
-and the syntactic structure of the sentence as value. This treebank contains the syntactic parses for 
-which a match has been found by  any of the queries. 
+- *treebank*: this is a dictionary with the identifier of a sentence as key
+and the syntactic structure of the sentence as value. This treebank contains the syntactic parses for
+which a match has been found by  any of the queries.
 - *fulltreebankname*: the name of the full treebank that has been queried
-- *queryresults*: result for the application of all queries (by the function 
+- *queryresults*: result for the application of all queries (by the function
 *applyqueries* of the module *canonicalform.py*)
 
 
 ## Experiments
 
-This was developed and tested with three treebanks that contain the results of the 
-MLQ query applied to the Lassy-Groot/Kranten corpus. These files were obtained 
+This was developed and tested with three treebanks that contain the results of the
+MLQ query applied to the Lassy-Groot/Kranten corpus. These files were obtained
 in PaQu with the help of Peter Kleiweg.
 The treebanks are stored in xml files in the folder *mwe-query\tests\data\mwetreebanks* in the folders:
 
@@ -117,30 +117,30 @@ The MWEs dealt with are:
 - *iemand zal iemands hart breken*
 - *iemand zal een poging doen*
 
-For the experiments the module *trystats* was used. 
+For the experiments the module *trystats* was used.
 Since the queries still have to be executed for these treebanks,
-this module executes the function *test()*, which reads the xml 
-treebank into a treebank dictionary and calls the function 
-*createstatshtmlpages*. This function takes the mwe, the 
-treebank dictionary and the treebank name as input, 
-generates the queries, applies the queries and calls the function 
+this module executes the function *test()*, which reads the xml
+treebank into a treebank dictionary and calls the function
+*createstatshtmlpages*. This function takes the mwe, the
+treebank dictionary and the treebank name as input,
+generates the queries, applies the queries and calls the function
 *queryresults2statshtml* described above.
 
 ## Pivot html pages
 
-For each analysis multiple html pages are generated. 
-Each html page contains the full data relevant 
+For each analysis multiple html pages are generated.
+Each html page contains the full data relevant
 for this analysis inside the html file.
 
-Each analysis result involves a number of properties. For example, for the analysis of the MWE arguments 
+Each analysis result involves a number of properties. For example, for the analysis of the MWE arguments
 the following properties are involved:
 
 - *rel*: the (extended) relation of the argument
 - *arglemma*: the lemma of the head of the argument
 - *argword* the word of the head of the argument
 - *arg*: the whole argument
-- *utt*: the utterance in which this match was found (actually 
-with each word of the argument marked with html bold codes, 
+- *utt*: the utterance in which this match was found (actually
+with each word of the argument marked with html bold codes,
 but these do not work here)
 - *id* the identifier of the sentence
 
@@ -150,21 +150,21 @@ Example (the bold marking does work here):
 - *arglemma*: *blik*
 - *argword*: *blikjes*
 - *arg*: *achtergelaten blikjes*
-- *utt*: *De idee dat Suwarrow het mooiste eiland ter wereld is - 
+- *utt*: *De idee dat Suwarrow het mooiste eiland ter wereld is -
 niet alleen door de Frisbies uitgedragen , maar vooral door Tom Neale , een Nieuw-Zeelander die er ruim tien jaar doorbracht en ook over zijn wedervaren publiceerde - lokt tal van zeilers en de vervuiling en <b>achtergelaten</b> <b>blikjes</b> breken Johnny's hart .*
 - *id*: WR-P-P-G_part00477__WR-P-P-G-0000206974.p.12.s.2
 
->Side note on this example: the sentence has been wrongly 
+>Side note on this example: the sentence has been wrongly
 > parsed by Alpino, of course the whole subject argument is *de vervuiling en achtergelaten blikjes*.
 > But even if Alpino would have parsed this sentence correctly, this would still be one of the results because in
-> coordinations all the heads of the conjuncts and the coordinator(s) count as the head of the subject argument. 
+> coordinations all the heads of the conjuncts and the coordinator(s) count as the head of the subject argument.
 > Here we follow the strategy adopted in PaQu
 
 
-The overview contains a link to a html file 
-in which the first property of this property list has 
-been put in the pivot row field. 
-The pivot table is sorted by row totals descending, 
+The overview contains a link to a html file
+in which the first property of this property list has
+been put in the pivot row field.
+The pivot table is sorted by row totals descending,
 so the user sees (for the treebank *hartbreken/data*)
 the following table:
 
@@ -177,16 +177,16 @@ the following table:
 
 The user can now add other properties, remove the *rel* property,
 filter for values etc., as is usual with these tables.
-Note that the pivot tables currently do not contain the option to export the pivottable, an option that is available in the standard Analysis section for constructions. This is still to be added. 
+Note that the pivot tables currently do not contain the option to export the pivottable, an option that is available in the standard Analysis section for constructions. This is still to be added.
 
-Since it is expected that users will often want to select multiple properties, 
+Since it is expected that users will often want to select multiple properties,
 in the order in which they are given, additional links are given  in the html page, e.g., for arguments:
 
-rel > arglemma > argword > arg > utt > id 
+rel > arglemma > argword > arg > utt > id
 
-Clicking on *arg*  leads the user to  a html page that contains 
-a pivot table in which all the properties preceding *arg* and *arg* (and in this order) 
+Clicking on *arg*  leads the user to  a html page that contains
+a pivot table in which all the properties preceding *arg* and *arg* (and in this order)
 are included in the pivot table row field. (and similarly for each other property)
 
-Doing this, however, does undo any filtering done in an earlier html page, 
-one starts with a fresh new page. 
+Doing this, however, does undo any filtering done in an earlier html page,
+one starts with a fresh new page.

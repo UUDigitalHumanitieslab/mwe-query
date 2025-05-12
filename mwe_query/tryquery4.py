@@ -44,7 +44,8 @@ aantotlatenwerken.extend([aanvznode, totvznode, latenwwnode, werkenwwnode])
 mouwpassenaan = etree.Element("node")
 mouwpassenaan.extend([mouwznnode, passenwwnode, aanvznode])
 gordiaanseknoopdoorhakken = etree.Element("node")
-gordiaanseknoopdoorhakken.extend([gordiaansadjnode, knoopznnode, doorhakkenwwnode])
+gordiaanseknoopdoorhakken.extend(
+    [gordiaansadjnode, knoopznnode, doorhakkenwwnode])
 
 mwestructs = [
     (kunnenbommen, "kunnen bommen"),

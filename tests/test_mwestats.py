@@ -55,7 +55,7 @@ streestrings[
   </comments>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 streestrings[
     2
 ] = """
@@ -76,7 +76,7 @@ streestrings[
   </node>
   <sentence sentid="zin">iemand zal iemands hart breken</sentence>
 </alpino_ds>
-"""
+"""  # noqa: E501
 
 
 class TestMweState(unittest.TestCase):
@@ -85,12 +85,14 @@ class TestMweState(unittest.TestCase):
 
     def output_path(self, filename):
         return os.path.join(
-            os.path.dirname(__file__), "data", "mwetreebanks", "output", filename
+            os.path.dirname(
+                __file__), "data", "mwetreebanks", "output", filename
         )
 
     def expected_path(self, filename):
         return os.path.join(
-            os.path.dirname(__file__), "data", "mwetreebanks", "expected", filename
+            os.path.dirname(
+                __file__), "data", "mwetreebanks", "expected", filename
         )
 
     def prepare_data(self):
@@ -101,7 +103,8 @@ class TestMweState(unittest.TestCase):
                 path=self.data_path("mwetreebanks", "dansontspringena")
             )
         with ZipFile(self.data_path("mwetreebanks", "hartbreken.zip")) as hartbreken:
-            hartbreken.extractall(path=self.data_path("mwetreebanks", "hartbreken"))
+            hartbreken.extractall(path=self.data_path(
+                "mwetreebanks", "hartbreken"))
 
     def check_output(self, filename: str):
         with open(self.output_path(filename), encoding="utf-8") as f:
@@ -118,8 +121,10 @@ class TestMweState(unittest.TestCase):
 
     def test_match_canonical(self):
         """Tests whether the MWE will match the canonical form."""
-        self.check_match_canonical("ontspringen", 1, "iemand zal de dans ontspringen")
-        self.check_match_canonical("hartbreken", 2, "iemand zal iemands hart breken")
+        self.check_match_canonical(
+            "ontspringen", 1, "iemand zal de dans ontspringen")
+        self.check_match_canonical(
+            "hartbreken", 2, "iemand zal iemands hart breken")
 
     def check_match_canonical(self, name: str, tree_index: int, mwe: str):
         filename = f"test1_{name}.txt"
@@ -174,12 +179,12 @@ class TestMweState(unittest.TestCase):
         self.check_output(filename)
 
     @unittest.skip("obsolete?")
-    def test2(self):
+    def test2(self):  # noqa: C901
         self.prepare_data()
         dotbfolder = self.data_path("mwetreebanks", "dansontspringena")
         # dotbfolder = self.data_path('mwetreebanks', 'hartbreken')
         rawtreebankfilenames = os.listdir(dotbfolder)
-        selcond = lambda _: True
+        def selcond(_): return True
         # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'
         # selcond = lambda x: x == 'WR-P-P-G__part00788_3A_3AWR-P-P-G-0000361564.p.1.s.4.xml'
         # selcond = lambda x: x == 'WR-P-P-G__part00012_3A_3AWR-P-P-G-0000006175.p.6.s.3.xml'
@@ -196,7 +201,8 @@ class TestMweState(unittest.TestCase):
             argrelcatstats = defaultdict(int)
             argframestats = defaultdict(int)
             argstats = defaultdict(
-                lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+                lambda: defaultdict(
+                    lambda: defaultdict(lambda: defaultdict(int)))
             )
             modstats = defaultdict(
                 lambda: defaultdict(
@@ -241,7 +247,7 @@ class TestMweState(unittest.TestCase):
                                 allcompnodes += compnodes
 
                             # print(f'MWE={mwe}')
-                            sentence = treebank[i].xpath(sentencexpath)[0]
+                            # sentence = treebank[i].xpath(sentencexpath)[0]
                             # print(f'sentence={sentence}')
                             # print(f'resultcount={resultcount}')
                             # print('MWE components:')
@@ -304,9 +310,10 @@ class TestMweState(unittest.TestCase):
                                         modfringe = getyieldstr(modnode)
                                         modheads = getheads(modnode)
                                         for modhead in modheads:
-                                            modheadlemma = gav(modhead, "lemma")
+                                            modheadlemma = gav(
+                                                modhead, "lemma")
                                             modheadword = gav(modhead, "word")
-                                            modheadposcat = getposcat(modhead)
+                                            # modheadposcat = getposcat(modhead)
                                             modstats[complemma][modnoderel][modnodecat][
                                                 modheadlemma
                                             ][modheadword][modfringe] += 1
@@ -328,9 +335,10 @@ class TestMweState(unittest.TestCase):
                                         detfringe = getyieldstr(detnode)
                                         detheads = getheads(detnode)
                                         for dethead in detheads:
-                                            detheadlemma = gav(dethead, "lemma")
+                                            detheadlemma = gav(
+                                                dethead, "lemma")
                                             detheadword = gav(dethead, "word")
-                                            detheadposcat = getposcat(dethead)
+                                            # detheadposcat = getposcat(dethead)
                                             detstats[complemma][detnoderel][detnodecat][
                                                 detheadlemma
                                             ][detheadword][detfringe] += 1
@@ -348,7 +356,8 @@ class TestMweState(unittest.TestCase):
                         lemmacount += len(argstats[rel][hdlemma][hdword2])
                     print(f"lemma={hdlemma}: {lemmacount}")
                     for hdword in argstats[rel][hdlemma]:
-                        print(f"\tword={hdword}: {len(argstats[rel][hdlemma][hdword])}")
+                        print(
+                            f"\tword={hdword}: {len(argstats[rel][hdlemma][hdword])}")
                         for fringe in argstats[rel][hdlemma][hdword]:
                             print(f"\t\t{fringe}")
 
@@ -366,13 +375,15 @@ class TestMweState(unittest.TestCase):
 
     def test_full_mwe_stats_dansontspringena(self):
         self.prepare_data()
-        self.check_full_mwe_stats("dansontspringena", "iemand zal de dans ontspringen")
-        self.check_full_mwe_stats("hartbreken", "iemand zal iemands hart breken")
+        self.check_full_mwe_stats(
+            "dansontspringena", "iemand zal de dans ontspringen")
+        self.check_full_mwe_stats(
+            "hartbreken", "iemand zal iemands hart breken")
 
     def check_full_mwe_stats(self, treebank_name: str, mwe: str):
         dotbfolder = self.data_path("mwetreebanks", treebank_name)
         rawtreebankfilenames = os.listdir(dotbfolder)
-        selcond = lambda _: True
+        def selcond(_): return True
         treebankfilenames = [
             os.path.join(dotbfolder, fn)
             for fn in rawtreebankfilenames
@@ -421,7 +432,7 @@ class TestMweState(unittest.TestCase):
 
         dotbfolder = self.data_path("mwetreebanks", treebank_name)
         rawtreebankfilenames = os.listdir(dotbfolder)
-        selcond = lambda _: True
+        def selcond(_): return True
 
         treebankfilenames = [
             os.path.join(dotbfolder, fn)
@@ -438,7 +449,8 @@ class TestMweState(unittest.TestCase):
         with open(self.output_path(filename), "w", encoding="utf8") as outfile:
 
             print(outsep.join(gramconfigstats.header), file=outfile)
-            rows = list(outsep.join(row).strip() for row in gramconfigstats.data)
+            rows = list(outsep.join(row).strip()
+                        for row in gramconfigstats.data)
             rows.sort()
             for row in rows:
                 print(row, file=outfile)

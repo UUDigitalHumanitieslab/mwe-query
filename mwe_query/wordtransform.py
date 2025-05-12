@@ -3,13 +3,14 @@ from sastadev.alpinoparsing import parse, previewurl
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
 import copy
-from .lexicons import svpdict,lemmacorrectionlexicon
+from .lexicons import svpdict, lemmacorrectionlexicon
 from typing import Tuple
 
 underscore = '_'
 compoundsep = underscore
 
 lcatdict = {'vz': 'part', 'bw': 'advp', 'adj': 'ap', 'n': 'np'}
+
 
 def alsvz2alsvg(node: SynTree) -> SynTree:
     newnode = copy.copy(node)
@@ -22,9 +23,12 @@ def alsvz2alsvg(node: SynTree) -> SynTree:
     newnode.attrib.pop('vztype')
     return newnode
 
+
 def isalsvznode(node: SynTree) -> bool:
-    result = node.tag == 'node' and gav(node, 'lemma') == 'als' and gav(node, 'pt') == 'vz'
+    result = node.tag == 'node' and gav(
+        node, 'lemma') == 'als' and gav(node, 'pt') == 'vz'
     return result
+
 
 def transformalsvz(stree: SynTree) -> SynTree:
     newtree = copy.deepcopy(stree)
@@ -36,11 +40,14 @@ def transformalsvz(stree: SynTree) -> SynTree:
                 nodeparent.remove(node)
                 nodeparent.insert(0, newnode)
     return newtree
+
+
 def getprtandverb(node: SynTree) -> Tuple[str, str]:
     nodelemma = gav(node, 'lemma')
     nodeword = gav(node, 'word')
     nodept = gav(node, 'pt')
-    prtend = nodelemma.rfind(compoundsep)    # search from behind because the particle can contain _ (ten_onder)
+    # search from behind because the particle can contain _ (ten_onder)
+    prtend = nodelemma.rfind(compoundsep)
     if nodept == 'ww' and prtend != -1:
         prt = nodeword[:prtend]
         verb = nodeword[prtend:]
@@ -48,6 +55,7 @@ def getprtandverb(node: SynTree) -> Tuple[str, str]:
         prt = ''
         verb = ''
     return prt, verb
+
 
 # Tparticle verbs found via this xpath; check on svps in the function
 svpverbsnoprtxpath = """.//node[@pt="ww" and contains(@lemma,"_")  and
@@ -92,12 +100,14 @@ def transformsvpverb(stree: SynTree) -> SynTree:
                 prtpt = svpdict[prtlemma]
             else:
                 prtpt = 'bw'
-                print(f'wordtransform: Error: no entry for {prtlemma} in svpdict (lemma={verblemma}')
+                print(
+                    f'wordtransform: Error: no entry for {prtlemma} in svpdict (lemma={verblemma}')
             prtlcat = lcatdict[prtpt] if prtpt in lcatdict else 'part'
             if prtpt != "ww" and prtpt not in lcatdict:
-                print(f'wordtransform: Error: no entry for {prtpt} in lcatdict')
+                print(
+                    f'wordtransform: Error: no entry for {prtpt} in lcatdict')
             prtnode = etree.Element('node', {'rel': 'svp', 'lemma': prtlemma, 'word': prtword,
-                                             'begin': vbegin, 'end': vend, 'subbegin': '1', 'spacing':'nospaceafter',
+                                             'begin': vbegin, 'end': vend, 'subbegin': '1', 'spacing': 'nospaceafter',
                                              'id': f'{noprtverbid}a', 'pt': prtpt, 'lcat': prtlcat})
             if prtpt == 'vz':
                 prtnode.attrib['vztype'] = 'fin'
@@ -117,8 +127,8 @@ def transformsvpverb(stree: SynTree) -> SynTree:
                 noprtverbparent.append(newparent)
     return newstree
 
+
 def getprtvparentcat(node: SynTree) -> str:
-    nodept = gav(node, 'pt')
     nodewvorm = gav(node, 'wvorm')
     if nodewvorm == 'inf':    # if utt=wilde opbellem
         newcat = 'inf'
@@ -156,7 +166,7 @@ def correctlemmas(stree: SynTree) -> SynTree:
 def tryme():
     sentences = [(1, 'Ik heb hem opgebeld')]
     sentences += [(2, 'ik wil hem opbellen')]
-    sentences += [(3, 'ik dacht dat ik opbelde' )]
+    sentences += [(3, 'ik dacht dat ik opbelde')]
     sentences += [(4, 'heb opgebeld')]
     sentences += [(5, 'wil opbellen')]
     sentences += [(6, 'opbelde')]
@@ -165,7 +175,6 @@ def tryme():
     sentences += [(9, 'hij wil aankondigen dat hij opbelt')]
     sentences += [(10, 'hij wil erin')]
     sentences += [(11, 'hij gaat erachteraan')]
-
 
     selection = [sent for i, sent in sentences if True]
     with open('previewfile.txt', 'w', encoding='utf8') as previewfile:
@@ -178,8 +187,7 @@ def tryme():
             if newstree is not None:
                 print(previewurl(newstree), file=previewfile)
             else:
-                print(f'---No parse found')
-            junk = 0
+                print('---No parse found')
 
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@ sentence = sentences[0]   # the dataset contains one sentence
 
 for token in sentence:
     upos = token["upos"]
-    form  = token["form"]
+    form = token["form"]
     print(form, upos)
 
 for token in sentence:

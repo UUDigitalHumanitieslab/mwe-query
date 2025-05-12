@@ -2,12 +2,12 @@ import os
 import shutil
 
 
-
 alpinotbpath = r'D:\Dropbox\various\Resources\Alpino Treebank'
 alpinoallcuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-all.cupt.0"
-alpinotraincuptfullname= r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-train.cupt.0"
+alpinotraincuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-train.cupt.0"
 alpinodevcuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-dev.cupt.0"
 lassysmallpath = r'D:\Dropbox\various\Resources\LASSY\Lassy-Klein70\lassysmall70\LassySmall\Treebank'
+
 
 def getalpinotreefullnames(alpinocuptfullname):
     results = []
@@ -53,11 +53,8 @@ def main():
         fulltargetname = os.path.join(targetdir, restname)
         try:
             shutil.copy(fullname, fulltargetname)
-        except FileNotFoundError as e:
+        except FileNotFoundError:
             print(f'File not found: {fullname} ')
-
-    junk = 0
-
 
 
 if __name__ == '__main__':

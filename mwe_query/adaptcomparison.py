@@ -5,6 +5,7 @@ from permcomments import labelkeycolumns, allcomparisonheader
 comma = ','
 spansep = '+'
 
+
 def adaptspan(spanstr) -> str:
     newspanstr = spanstr
     if newspanstr == 'set()':
@@ -20,7 +21,6 @@ def adaptspan(spanstr) -> str:
     sortedintstrs = [str(el) for el in sortedintpositions]
     result = spansep.join(sortedintstrs)
     return result
-
 
 
 def main():
@@ -45,7 +45,7 @@ def main():
         key = tuple([row[col] for col in labelkeycolumns])
         labeldatadict[key] = row
 
-    #merge the data
+    # merge the data
 
     newdatadict = {}
     for key in labeldatadict:
@@ -57,21 +57,22 @@ def main():
             elif len(corerow) == 15:
                 newcorerow = corerow + 4 * ['']
             else:
-                print(f'corerow: unexpected length ({len(corerow)}) in:\n{corerow}')
+                print(
+                    f'corerow: unexpected length ({len(corerow)}) in:\n{corerow}')
 
             if len(labelrow) == 19:
                 newlabelrow = labelrow
-                junk = 0
             elif len(labelrow) == 15:
                 newlabelrow = labelrow + 4 * ['']
             else:
-                print(f'labelrow: unexpected length ({len(labelrow)}) in:\n{labelrow}')
+                print(
+                    f'labelrow: unexpected length ({len(labelrow)}) in:\n{labelrow}')
 
             newrow = newcorerow + newlabelrow[-4:]
             newdatadict[key] = newrow
         else:
             print(f'Error: key {key} not found in coredatadict')
-            newrow = labelrow[:-4] + 4* [''] + labelrow[-4:]
+            newrow = labelrow[:-4] + 4 * [''] + labelrow[-4:]
             newdatadict[key] = newrow
 
     # adapt the rows
@@ -88,18 +89,17 @@ def main():
         newsuper = adaptspan(super)
         newsub = adaptspan(sub)
 
-        newrow = row[0:2] + [newrefspan, newresspan] + [row[4]] + [newsuper, newsub] + row[7:]
+        newrow = row[0:2] + [newrefspan, newresspan] + \
+            [row[4]] + [newsuper, newsub] + row[7:]
         modifieddata.append(newrow)
 
     outpath = inpath
     outfilename = 'NL_alpino-ud_1a_comparison.xlsx'
     outfullname = os.path.join(outpath, outfilename)
-    wb = mkworkbook(outfullname, [allcomparisonheader], modifieddata, freeze_panes=(1,0))
+    wb = mkworkbook(outfullname, [allcomparisonheader],
+                    modifieddata, freeze_panes=(1, 0))
     wb.close()
 
 
 if __name__ == '__main__':
     main()
-
-
-

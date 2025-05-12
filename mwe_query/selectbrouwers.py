@@ -32,14 +32,17 @@ idcol = 0
 exprcol = 2
 poscol = 3
 
+
 def nonverbal(row: List[str]) -> bool:
     pos = row[poscol]
     result = pos not in {br_v, br_sprw, br_cause}
     return result
 
+
 def ismwe(row: List[str]) -> bool:
     result = space in row[exprcol]
     return result
+
 
 def main():
     newrows = []
@@ -48,11 +51,9 @@ def main():
         if nonverbal(row) and ismwe(row):
             newrows.append(row)
 
-    wb = mkworkbook(brouweroutfullname, [brouwersoutheader], newrows, freeze_panes=(0,1))
+    wb = mkworkbook(brouweroutfullname, [
+                    brouwersoutheader], newrows, freeze_panes=(0, 1))
     wb.close()
-
-
-
 
 
 if __name__ == '__main__':

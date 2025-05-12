@@ -12,9 +12,9 @@ One can run the regression test by simply running this module:
 `python mweregressiontest.py`
 
 It does the following:
-- For each (mwe, utterance) pair in the regressiondata it counts the number of matches that are found for *utterance* for each query (MEQ, NMQ, MLQ, RWQ) derived from  *mwe*, yielding a 4-tuple of integers. 
+- For each (mwe, utterance) pair in the regressiondata it counts the number of matches that are found for *utterance* for each query (MEQ, NMQ, MLQ, RWQ) derived from  *mwe*, yielding a 4-tuple of integers.
 - it compares the result with the results of a previous run. If there are no results from a previous run, it assumes a previous result of (0,0,0,0) .
-- if the result is worse than the previous result, this is noted and reported in the report file. After all examples have been dealt with and reported about, it raises an *AssertionError* 
+- if the result is worse than the previous result, this is noted and reported in the report file. After all examples have been dealt with and reported about, it raises an *AssertionError*
 - if the results for each (mwe, utterance pair) are equally good or better than the previous results, the module terminates normally.
 - It also compares the scores with the GOLD scores, and reports about it (in the report file).
 - It currently does not do anything with the MAX scores, so this could be an extension.
@@ -24,13 +24,13 @@ It does the following:
 
 ## Data
 
-The data that the regressiontest runs on is stored in the file *regressionexamples.xlsx* 
+The data that the regressiontest runs on is stored in the file *regressionexamples.xlsx*
 in the folder *regresssiondata/data*. This is a MS Excel file because that makes editing this file easy.
 It is in essence a simple table with the following columns:
 
 - MWE: the canonical for of a MWE. If a cell is empty, its value s assumed to be identical to the same cell in the
 preceding row.
-- Uttterance: an utterance 
+- Uttterance: an utterance
 - GOLD for a gold reference (see explanation below)
 - MAX for a MAX reference (see explanation below)
 
@@ -39,7 +39,7 @@ The GOLD reference consists of a string of the following form:
 - empty string. This is interpreted as 'X1111', the most common GOLD reference value
 - a string of the form X\d\d\d\d. Each digit represents the number of matches found for a query, in the order MEQ, NMQ, MLQ, RWQ. The preceding symbol *X*is there just because otherwise Excel would interpret the value as a number, Since most utterances contain maximally one occurrence of the MWE, 'X1111' is the most common GOLD value.
 
-One can of course include utterances that are not an instance of the MWE (e.g. to check whether MEQ v. NMQ works well), and then one might have a GOLD reference such as *X0111*, which means that the MEQ should not yield  a match but all other queries should yield a single match) 
+One can of course include utterances that are not an instance of the MWE (e.g. to check whether MEQ v. NMQ works well), and then one might have a GOLD reference such as *X0111*, which means that the MEQ should not yield  a match but all other queries should yield a single match)
 
 The strings representing score are turned into 4-tuples of integers inside the program.
 
@@ -51,7 +51,7 @@ We know that we can not always obtain the score of the GOLD value due to circums
 
 >Example: Alpino does not know the word *velen* as a verb. MWE-Finder can therefore never have a match for MEQ and NMQ for the MWE *iets zal iemand ^niet kunnen velen*. The MAX reference score should reflect this and thus have a value of 'X0011'. The *todo.txt* should actually be based on a comparison between the results and the MAX score rather than between the result and the GOLD score.
 
->However, currently nothing is dome yet with the MAX score 
+>However, currently nothing is dome yet with the MAX score
 
 ## Comparing scores
 
@@ -68,4 +68,4 @@ Computers are slow, but we want them to do many things and as fast as possible. 
 
 In order to check whether there is a match in an utterance with a MWE both the utterance and the MWE must be parsed by Alpino. This is a slow process, and if we do nothing special this has to be done each time the regressiontest is run. In order to avoid this, the program stores parses of utterances and MWEs. When it has to parse an utterance or a MWE, it first checks whether a parse for this utterance or MWE has been made earlier, and if so, it just fetches that result. If not, it has to parse the utterance, but it stores the result so that it does not have to reparse t a next time.
 
-The parses for utterances and MWEs are stored in the file *regressiontreebank.xml* in the folder *regressiondata/auxdata*. This file is updated each time a new utteranc or MWE has to be parsed.The previous version is stored in the file *regressiontreebank_previous.xml* in the same folder 
+The parses for utterances and MWEs are stored in the file *regressiontreebank.xml* in the folder *regressiondata/auxdata*. This file is updated each time a new utteranc or MWE has to be parsed.The previous version is stored in the file *regressiontreebank_previous.xml* in the same folder

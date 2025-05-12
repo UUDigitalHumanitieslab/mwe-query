@@ -10,9 +10,7 @@ from sastadev.xlsx import mkworkbook, add_worksheet
 from tocupt import annotate_cupt, readcuptfile, writecuptfile
 from typing import List
 from tbfstandin import removeud, writetb
-from sastadev.sastatypes import SynTree
 from mwutreebank import mwutreebankdict, mwutreebankfullname
-import copy
 
 
 __version__ = '0.6'
@@ -31,9 +29,11 @@ defaultinpath = r'D:\Dropbox\various\Resources\nl-parseme-lassy70-enhanced'
 # if testing:
 #    defaultinpath = r'D:\Dropbox\various\Resources\LASSY\Lassy-KleinforUD\nl_lassysmalldevelop-ud-dev\nl_lassysmalldevelop-ud-dev\LassyDevelop\wiki-737'
 basepath, basefolder = os.path.split(defaultinpath)
-defaultoutpath = os.path.join(defaultinpath, "..", f"{basefolder}-MWEAnnotated")
+defaultoutpath = os.path.join(
+    defaultinpath, "..", f"{basefolder}-MWEAnnotated")
 
 defaultudpath = r'D:\Dropbox\various\Resources\nl-parseme-cupt'
+
 
 def getsentenceid(fullname: str) -> str:
     thepath, filename = os.path.split(fullname)
@@ -43,19 +43,18 @@ def getsentenceid(fullname: str) -> str:
     return sentenceid
 
 
-
-
-
 def annotatefile(filename) -> List[MWEMeta]:
     try:
         fulltree = etree.parse(filename)
     except etree.ParseError as e:
-        print(f"Parse error: {e} in {filename}; file will be skipped", file=sys.stderr)
+        print(
+            f"Parse error: {e} in {filename}; file will be skipped", file=sys.stderr)
     else:
         rawsyntree = fulltree.getroot()
         syntree = removeud(rawsyntree)
         sentenceid = getsentenceid(filename)
-        mwemetas, discardedmwemetas, _ = annotate(syntree, sentenceid=sentenceid)
+        mwemetas, discardedmwemetas, _ = annotate(
+            syntree, sentenceid=sentenceid)
     return mwemetas, discardedmwemetas
 
 
@@ -132,7 +131,8 @@ def annotatetb():
         #     xmlfiles = xmlfiles[0:1]
 
         structure = os.path.relpath(root, inpath)
-        fulloutpath = os.path.join(outpath, structure) if structure != "." else outpath
+        fulloutpath = os.path.join(
+            outpath, structure) if structure != "." else outpath
         if not os.path.exists(fulloutpath):
             os.makedirs(fulloutpath)
 
@@ -163,15 +163,18 @@ def annotatetb():
             foldermwemetarows,
             freeze_panes=(1, 0),
         )
-        folderdiscardedrows = [mwemeta.torow() for mwemeta in folderdiscardedmwemetas]
-        add_worksheet(wb, [mwemetaheader], folderdiscardedrows, sheetname="Discarded")
+        folderdiscardedrows = [mwemeta.torow()
+                               for mwemeta in folderdiscardedmwemetas]
+        add_worksheet(wb, [mwemetaheader],
+                      folderdiscardedrows, sheetname="Discarded")
         wb.close()
 
     # write the allmwemetas data to an Excel file
     allmwemetarows = [mwemeta.torow() for mwemeta in allmwemetas]
     allmwemetafullname = os.path.join(outpath, "allmwemetadata.xlsx")
     wb = mkworkbook(
-        allmwemetafullname, [mwemetaheader], allmwemetarows, freeze_panes=(1, 0)
+        allmwemetafullname, [
+            mwemetaheader], allmwemetarows, freeze_panes=(1, 0)
     )
     alldiscardedrows = [mwemeta.torow() for mwemeta in alldiscardedmwemetas]
     add_worksheet(wb, [mwemetaheader], alldiscardedrows, sheetname="Discarded")
@@ -179,7 +182,8 @@ def annotatetb():
     wb.close()
 
     rawconllu_infilenames = os.listdir(udpath)
-    conllu_infilenames = [f for f in rawconllu_infilenames if f.endswith(conllu_extension)]
+    conllu_infilenames = [
+        f for f in rawconllu_infilenames if f.endswith(conllu_extension)]
     for infilename in conllu_infilenames:
         infullname = os.path.join(udpath, infilename)
         sentences = readcuptfile(infullname)

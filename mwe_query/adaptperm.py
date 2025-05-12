@@ -9,6 +9,5 @@ def main():
     header, data = getxlsxdata(permfullname)
 
 
-
 if __name__ == '__main__':
     main()

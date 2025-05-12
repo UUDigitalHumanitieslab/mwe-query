@@ -33,7 +33,8 @@ def getalpinohead(tree):
         resultlist = [getposcat(headchild) for headchild in headchilds]
         result = hyphen.join(resultlist)
     elif len(headchilds) == 0:
-        resultlist = [f'{gav(child, "rel")}/{getposcat(child)}' for child in tree]
+        resultlist = [
+            f'{gav(child, "rel")}/{getposcat(child)}' for child in tree]
         result = "headless: " + hyphen.join(resultlist)
     else:
         thehead = headchilds[0]
@@ -71,7 +72,8 @@ for tree in treebank:
         diffdict[(alpinohead, udhead)].append(mwe)
 
 selectioncount = 10
-header = ["alpino class", "count"] + [f"example{str(i)}" for i in range(selectioncount)]
+header = ["alpino class", "count"] + \
+    [f"example{str(i)}" for i in range(selectioncount)]
 data = []
 for el, lst in alpinoclasses.items():
     cnt = len(lst)

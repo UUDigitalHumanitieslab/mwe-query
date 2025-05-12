@@ -1,5 +1,4 @@
-from typing import Union, NamedTuple, Dict, Set, Iterable, Optional, List, Tuple, Generator
-from collections import OrderedDict, Counter
+from typing import Union, NamedTuple, Dict, Set, Iterable, Optional, Tuple, Generator
 
 from conllu import TokenList, Token
 
@@ -31,9 +30,9 @@ class MWE(NamedTuple):
     #    sent: TokenList
 
     def __eq__(self, other: object, cmp_category: bool = False) -> bool:
-        return type(other) == MWE and \
-               (self.span == other.span or \
-                not cmp_category or \
+        return isinstance(other, MWE) and \
+            (self.span == other.span or
+                not cmp_category or
                 (cmp_category and self.cat == other.cat))
 
     ######################################################################
@@ -117,7 +116,7 @@ def _mwes_in_tok(tok: Token,
     else:
         result = dict()
         # Projects MWE wrongly annotated at range on the corresponding tokens
-        if project_ranges and type(tok["id"]) == tuple and len(tok["id"]) == 3:
+        if project_ranges and isinstance(tok["id"], tuple) and len(tok["id"]) == 3:
             span = set(list(range(tok["id"][0], tok["id"][2] + 1)))
         else:
             span = set([tok["id"]])

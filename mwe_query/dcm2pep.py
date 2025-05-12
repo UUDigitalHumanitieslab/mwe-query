@@ -17,7 +17,8 @@ def dcm_clean(utt: str) -> str:
 def main():
     parser = OptionParser()
     parser.add_option("-f", "--file", dest="infilename", help="ducame file")
-    parser.add_option("-o", "--outfolder", dest="outfolder", help="ducame file")
+    parser.add_option("-o", "--outfolder",
+                      dest="outfolder", help="ducame file")
 
     (options, args) = parser.parse_args()
     if options.outfolder is None:

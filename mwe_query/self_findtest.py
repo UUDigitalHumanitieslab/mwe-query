@@ -78,7 +78,8 @@ def selftest():
         else:
             print(f"No parse for {rawsentence}")
 
-    (statsheader, statsrows) = getmwemetacounts(fullmwemetalist, sentcount=counter)
+    (statsheader, statsrows) = getmwemetacounts(
+        fullmwemetalist, sentcount=counter)
     fullrowlist = [
         mwemeta.torow() for mwemeta in fullmwemetalist if mwemeta is not None
     ]
@@ -93,8 +94,10 @@ def selftest():
         freeze_panes=(1, 0),
     )
     add_worksheet(wb, [statsheader], statsrows, sheetname="Stats")
-    fullduplicaterows = [mwemeta.torow() for mwemeta in fullduplicatemwemetalist]
-    add_worksheet(wb, [mwemetaheader], fullduplicaterows, sheetname="Duplicates")
+    fullduplicaterows = [mwemeta.torow()
+                         for mwemeta in fullduplicatemwemetalist]
+    add_worksheet(wb, [mwemetaheader], fullduplicaterows,
+                  sheetname="Duplicates")
 
     wb.close()
 

@@ -1,6 +1,7 @@
 import shutil
 import os
 
+
 def savecopy(infullname, prevsuffix='_previous', prevprefix='', outpath=None):
     thepath, infilename = os.path.split(infullname)
     base, ext = os.path.splitext(infilename)

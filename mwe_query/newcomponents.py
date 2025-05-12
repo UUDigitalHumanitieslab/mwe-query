@@ -1,10 +1,9 @@
 from lxml import etree
-from canonicalform import expandaltvals, tree2xpath,mknearmissstructs
+from canonicalform import tree2xpath, mknearmissstructs
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav, nodecopy, complrels
 from typing import List, Optional, Tuple
 from getmwecomponents import Axis, childaxis, iscomponent, mkxpath, Xpath, Relation
-import copy
 
 doordemandvallenmweparsestr = """
 <node id="4">
@@ -24,6 +23,7 @@ doordemandvallenmweparsestr = """
 
 doordemandvallenparse = etree.fromstring(doordemandvallenmweparsestr)
 
+
 def getcompsxpaths(stree: SynTree) -> List[Xpath]:
     results = []
     comps = getcomps(stree, [])
@@ -33,6 +33,7 @@ def getcompsxpaths(stree: SynTree) -> List[Xpath]:
         xpathresult = mkxpath(lxpath, lfpath)
         results.append(xpathresult)
     return results
+
 
 def getcomps(stree: SynTree, fpath: List[SynTree]) -> List[Tuple[SynTree, List[Tuple[Axis, SynTree]]]]:
     results = []
@@ -48,7 +49,8 @@ def getcomps(stree: SynTree, fpath: List[SynTree]) -> List[Tuple[SynTree, List[T
 
 def mkfxpath(fpath: List[Tuple[Axis, SynTree]]) -> Xpath:
     nodelist = []
-    for axis, stree in fpath[:-1]:  # we skip the last one because that is the node we look for
+    # we skip the last one because that is the node we look for
+    for axis, stree in fpath[:-1]:
         axisstr = f"{axis}::" if axis != childaxis else ""
         newnode = tree2xpath(stree)
         newnodewithaxis = f"{axisstr}{newnode}"
@@ -75,6 +77,7 @@ def removenoncomponentphrases(stree: SynTree) -> SynTree:
     newtree = removenodes(stree, nodestoremove)
     return newtree
 
+
 def removenodes(stree: SynTree, nodestoremove: List[SynTree]) -> Optional[SynTree]:
     newchilds = []
     for child in stree:
@@ -87,6 +90,7 @@ def removenodes(stree: SynTree, nodestoremove: List[SynTree]) -> Optional[SynTre
         newstree = nodecopy(stree)
         newstree.extend(newchilds)
         return newstree
+
 
 def getnoncomplements(stree: SynTree) -> List[Relation]:
     """
@@ -102,15 +106,19 @@ def getnoncomplements(stree: SynTree) -> List[Relation]:
     Returns:
 
     """
-    compls = {gav(child, 'rel') for child in stree if gav(child, 'rel') in complrels}
-    diff = set(complrels) - compls - {'su'}  # obj1 only allowed when it is in the mwetree; its absence (topic drop) must be dealt with differently
+    compls = {gav(child, 'rel')
+              for child in stree if gav(child, 'rel') in complrels}
+    # obj1 only allowed when it is in the mwetree; its absence (topic drop) must be dealt with differently
+    diff = set(complrels) - compls - {'su'}
     return list(diff)
+
 
 def getnoncomplementscondition(stree: SynTree) -> str:
     notallowedcompls = getnoncomplements(stree)
     condition = ' or '.join([f'@rel == "{rel}"' for rel in notallowedcompls])
     result = f'not(node[{condition}])'
     return result
+
 
 if __name__ == '__main__':
     # xpaths = getcompsxpaths(doordemandvallenparse)
@@ -122,6 +130,3 @@ if __name__ == '__main__':
         print('****cleanstruct****')
         etree.dump(cleanstruct)
     junk = 0
-
-
-

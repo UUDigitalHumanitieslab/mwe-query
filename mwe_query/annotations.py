@@ -78,7 +78,7 @@ annotationstrings = (
     coll,
     oia,
     cia
-    ) = (
+) = (
     0,
     1,
     2,
@@ -132,5 +132,6 @@ lvcannotation2annotationcodedict = {}
 for anncode, ann in lvcannotationcode2annotationdict.items():
     lvcannotation2annotationcodedict[ann] = anncode
 
-iavannotationcode2annotationdict = {oia:"OIA:", cia: "CIA:"}
-iavannotation2annotatiincodedict = {ann: code for code, ann in iavannotationcode2annotationdict.items()}
+iavannotationcode2annotationdict = {oia: "OIA:", cia: "CIA:"}
+iavannotation2annotatiincodedict = {
+    ann: code for code, ann in iavannotationcode2annotationdict.items()}

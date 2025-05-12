@@ -97,7 +97,8 @@ circumpositions = [
     # bij , af
 ]
 
-circumpositionwordsdict = {f"{vz}{az}": (vz, az) for (vz, az) in circumpositions}
+circumpositionwordsdict = {f"{vz}{az}": (
+    vz, az) for (vz, az) in circumpositions}
 
 
 def metmeetottoe(prep: str) -> str:
@@ -129,10 +130,11 @@ def mkpronadvs(prep: str, postp: Optional[str] = None) -> List[str]:
             results = []
     return results
 
+
 PronAdpositionTuple = Optional[Tuple[str, Tuple[str, Optional[str]]]]
 
 
-def pronadv2vz(pronadv:str, lemma=True) -> Optional[Tuple[str, Optional[str]]]:
+def pronadv2vz(pronadv: str, lemma=True) -> Optional[Tuple[str, Optional[str]]]:
     pronvz = pronadv2pronvz(pronadv, lemma)
     if pronvz is not None:
         (pron, vz) = pronvz
@@ -140,6 +142,7 @@ def pronadv2vz(pronadv:str, lemma=True) -> Optional[Tuple[str, Optional[str]]]:
     else:
         result = None
     return result
+
 
 def ispronadvp(node: SynTree) -> bool:
     children = [child for child in node]
@@ -273,7 +276,7 @@ def test():
     print(f'{counter} examples tested')
 
 
-def rvz(vzlemma:str) -> List[str]:
+def rvz(vzlemma: str) -> List[str]:
     if vzlemma == 'met':
         newvzlemma = 'mee'
     elif vzlemma == 'tot':

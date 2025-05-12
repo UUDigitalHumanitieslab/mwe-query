@@ -13,6 +13,7 @@ childaxis = "child"
 altcomplpprels = ['pc', 'ld', 'predc', 'svp']
 altmodpprels = ['mod', 'predm']
 
+
 def getmwecomponents(
     matchingnodes: List[SynTree], mwestructures: List[SynTree]
 ) -> List[List[SynTree]]:
@@ -23,10 +24,12 @@ def getmwecomponents(
             components = []
             for mwecompsxpathexpr in mwecompsxpathexprs:
                 try:
-                    newcomponents = matchingnode.xpath(mwecompsxpathexpr)  # multiple for cases such as mwu[hand in hand]
-                except etree.XPathEvalError as e:
-                    print(f'Xpath error. Xpath expression =:\n{mwecompsxpathexpr}')
-                    print(f'for mweparse\n ')
+                    # multiple for cases such as mwu[hand in hand]
+                    newcomponents = matchingnode.xpath(mwecompsxpathexpr)
+                except etree.XPathEvalError:
+                    print(
+                        f'Xpath error. Xpath expression =:\n{mwecompsxpathexpr}')
+                    print('for mweparse\n ')
                     etree.dump(mweparse)
                     exit(-1)
                 if newcomponents == []:
@@ -46,7 +49,6 @@ def getmwecomponents(
         if components != []:
             componentslist.append(components)
     return componentslist
-
 
 
 def getcompsxpaths(stree: SynTree) -> List[Xpath]:
@@ -95,6 +97,7 @@ def oldgetcomps(stree: SynTree, fpath: List[Relation]) -> List[Tuple[SynTree, Li
             results += childresults
     return results
 
+
 def newgetcomps(stree: SynTree, fpath: List[Relation]) -> \
         List[Tuple[SynTree, List[Tuple[Axis, Relation]], List[SynTree]]]:
     results = []
@@ -111,14 +114,14 @@ def newgetcomps(stree: SynTree, fpath: List[Relation]) -> \
 
 def mkfxpath(fpath: List[Tuple[Axis, SynTree]]) -> Xpath:
     nodelist = []
-    for axis, stree in fpath[:-1]:  # we skip the last one because that is the node we look for
+    # we skip the last one because that is the node we look for
+    for axis, stree in fpath[:-1]:
         axisstr = f"{axis}::" if axis != childaxis else ""
         newnode = tree2xpath(stree, alt="|")
         newnodewithaxis = f"{axisstr}{newnode}"
         nodelist.append(newnodewithaxis)
     result = "/".join(nodelist)
     return result
-
 
 
 def oldmkfxpath(fpath: List[Tuple[Axis, Relation, ]]) -> Xpath:
@@ -133,18 +136,22 @@ def oldmkfxpath(fpath: List[Tuple[Axis, Relation, ]]) -> Xpath:
     result = "/".join(nodelist)
     return result
 
+
 def canbeabsent(node: SynTree) -> bool:
     result = gav(node, "rel") == "svp"
     return result
+
 
 def mkxpath(lxpath: Xpath, lfpath: Xpath):
     core = lxpath if lfpath == "" else f"{lfpath}/{lxpath}"
     result = f"./{core}"
     return result
 
+
 def iscomponent(stree: SynTree) -> bool:
     result = "lemma" in stree.attrib
     return result
+
 
 def getaltrelcond(rel: Relation) -> str:
     if rel in altcomplpprels:
@@ -159,10 +166,13 @@ def getaltrelcond(rel: Relation) -> str:
     result = ' or \n'.join(all_relconds)
     return result
 
+
 def getdonerelscond(donerels: List[Relation]) -> str:
     result = ' or '.join([f'@rel={donerel}' for donerel in donerels])
     return result
-def getaltrelcondlist(rel: Relation, altrels:List[Relation]) -> List[str]:
+
+
+def getaltrelcondlist(rel: Relation, altrels: List[Relation]) -> List[str]:
     results = []
     donerels = [rel]
     for altrel in altrels:

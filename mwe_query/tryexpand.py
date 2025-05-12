@@ -1,6 +1,7 @@
 from sastadev.alpinoparsing import parse, previewurl
 from canonicalform import expandfull
 
+
 def select(sentences, ids=None):
     if ids is None:
         result = sentences
@@ -12,7 +13,7 @@ def select(sentences, ids=None):
 def tryme():
     sentences = [(1, 'Ik heb hem opgebeld')]
     sentences += [(2, 'ik wil hem opbellen')]
-    sentences += [(3, 'ik dacht dat ik opbelde' )]
+    sentences += [(3, 'ik dacht dat ik opbelde')]
     sentences += [(4, 'heb opgebeld')]
     sentences += [(5, 'wil opbellen')]
     sentences += [(6, 'opbelde')]
@@ -21,7 +22,6 @@ def tryme():
     sentences += [(9, 'hij wil aankondigen dat hij opbelt')]
     sentences += [(10, 'hij wil erin')]
     sentences += [(11, 'hij gaat erachteraan')]
-
 
     selection = select(sentences, ids=[11])
     with open('previewfile.txt', 'w', encoding='utf8') as previewfile:
@@ -34,8 +34,7 @@ def tryme():
             if newstree is not None:
                 print(previewurl(newstree), file=previewfile)
             else:
-                print(f'---No parse found')
-            junk = 0
+                print('---No parse found')
 
 
 if __name__ == '__main__':

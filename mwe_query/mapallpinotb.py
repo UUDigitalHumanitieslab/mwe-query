@@ -5,8 +5,9 @@ from sastadev.treebankfunctions import getsentence
 
 alpinotbpath = r'D:\Dropbox\various\Resources\Alpino Treebank\rug-compling Alpino master Treebank-cdb'
 alpinoallcuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-all.cupt.0"
-alpinotraincuptfullname= r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-train.cupt.0"
+alpinotraincuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-train.cupt.0"
 alpinodevcuptfullname = r"D:\Dropbox\jodijk\myprograms\python\Parseme-NL\nl_alpino-ud-dev.cupt.0"
+
 
 def getalpinotbindex(alpinotbpath):
     resultdict = {}
@@ -21,6 +22,7 @@ def getalpinotbindex(alpinotbpath):
         base, ext = os.path.splitext(filename)
         resultdict[sent] = base
     return resultdict
+
 
 def getalpinocuptindex(alpinocuptfullname):
     resultdict = {}
@@ -43,7 +45,7 @@ def getalpinocuptindex(alpinocuptfullname):
                     els = line.split('=', maxsplit=2)
                     if len(els) >= 2:
                         rawval = els[1]
-                        sent = re.sub('\s', '', rawval)
+                        sent = re.sub(r'\s', '', rawval)
                         sentfound = True
                     else:
                         print(f'Line {linectr}: Illegal format: {line}')
@@ -54,21 +56,18 @@ def getalpinocuptindex(alpinocuptfullname):
     return resultdict
 
 
-
 def main():
 
     tb2cupmapping = {}
-    cup2tbmapping = {}
+    # cup2tbmapping = {}
     alpinotbindex = getalpinotbindex(alpinotbpath)
 
     alpinoallcupindex = getalpinocuptindex(alpinoallcuptfullname)
-
 
     # for sent in alpinoallcupindex:
     #    for wrd in ['verzekeringsmaatschappijen', 'parlementsverkiezingen']:
     #        if wrd in sent:
     #            print(f'word {wrd} occurs in <{sent}>')
-
 
     notfoundcount = 0
     for sent in alpinotbindex:
@@ -78,7 +77,6 @@ def main():
             notfoundcount += 1
 
     print(f'Not found: {notfoundcount}')
-    junk = 0
 
 
 if __name__ == '__main__':

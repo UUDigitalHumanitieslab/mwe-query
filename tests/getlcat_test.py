@@ -6,6 +6,7 @@ from mwe_query.lcat import getlcat
 properties = ['pt',  'positie', 'wvorm', 'frame', 'numtype', 'vwtype']
 header = properties + ['parentrel', 'parentcat', 'predictedcat']
 
+
 def testwholelassy():
     lassykleinpath = r'D:\Dropbox\various\Resources\LASSY\LASSY-Klein\Lassy-Klein\Treebank'
     data = defaultdict(int)
@@ -37,6 +38,7 @@ def testwholelassy():
                         goodcount += 1
 
     print(f'Accuracy = {goodcount} / {counter} = {goodcount/counter*100}')
+
 
 if __name__ == '__main__':
     testwholelassy()

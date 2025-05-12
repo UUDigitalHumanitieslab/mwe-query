@@ -5,11 +5,11 @@ from sastadev.readcsv import writecsv
 
 compoundsym = '_'
 
-svpfolder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'svplexicon')
+svpfolder = os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), 'svplexicon')
 
 
 def createsvplexicon():
-
 
     # read the particle properties
     infilename = 'svps.xlsx'
@@ -30,8 +30,8 @@ def createsvplexicon():
         prt = wordparts[0]
         prtfrqdict[prt] += frq
 
-    frqlist = [(wrd,frq) for wrd, frq in prtfrqdict.items()]
-    sortedfrqlist = sorted(frqlist, key=lambda x:x[1], reverse=True)
+    frqlist = [(wrd, frq) for wrd, frq in prtfrqdict.items()]
+    sortedfrqlist = sorted(frqlist, key=lambda x: x[1], reverse=True)
 
     frqheader = ['word', 'frq']
     frqfilename = 'prtfrqlist.txt'
@@ -47,7 +47,8 @@ def createsvplexicon():
         pt = row[0]
         frq = row[2]
         if wrd in prtdict:
-            print(f'Ambiguous: {wrd}; not only {prtdict[wrd][0][0]} but also {pt}')
+            print(
+                f'Ambiguous: {wrd}; not only {prtdict[wrd][0][0]} but also {pt}')
         prtdict[wrd].append((pt, frq))
 
     newdata = []
@@ -88,14 +89,13 @@ def getducameprts():
         prt = wordparts[0]
         prtfrqdict[prt] += frq
 
-    frqlist = [(wrd,frq) for wrd, frq in prtfrqdict.items()]
-    sortedfrqlist = sorted(frqlist, key=lambda x:x[1], reverse=True)
+    frqlist = [(wrd, frq) for wrd, frq in prtfrqdict.items()]
+    sortedfrqlist = sorted(frqlist, key=lambda x: x[1], reverse=True)
 
     frqheader = ['word', 'frq']
     frqfilename = 'ducameprtfrqlist.txt'
     frqfullname = os.path.join(svpfolder, frqfilename)
     writecsv(sortedfrqlist, frqfullname, frqheader)
-
 
 
 if __name__ == '__main__':

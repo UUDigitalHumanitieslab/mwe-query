@@ -8,14 +8,9 @@ def main():
         data = infile.read()
         sentences = conllu.parse(data)
     for sentence in sentences:
-        junk = 0
-
         for token in sentence:
             pass
 
 
-
 if __name__ == '__main__':
     main()
-
-

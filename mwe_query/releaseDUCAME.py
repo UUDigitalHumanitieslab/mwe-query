@@ -39,7 +39,8 @@ def releasedcm():
 
     outrows = []
     if len(data) == 0:
-        print(f'No data found in {options.inputfullname}. Specify the full path. Aborting')
+        print(
+            f'No data found in {options.inputfullname}. Specify the full path. Aborting')
         exit(-1)
     else:
         print(f'{len(data)} rows found in {options.inputfullname}')

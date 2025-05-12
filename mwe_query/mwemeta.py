@@ -1,4 +1,4 @@
-from typing import Dict, List, Tuple
+from typing import Dict, List
 from collections import defaultdict
 from dataclasses import dataclass
 from mycuptlib import MWE
@@ -85,6 +85,7 @@ class MWEMeta:
         ]
         return result
 
+
 def fromrow(row: List[str]) -> MWEMeta:
     result = MWEMeta(row[0], row[1], row[2], row[3], row[4], row[5], str2intlist(row[6]),
                      int(row[7]), row[8], row[9], str2list(row[10], sep='+'), row[11])
@@ -101,10 +102,11 @@ def str2list(wrd: str, sep=comma) -> List[str]:
     result = [res.strip() for res in rawresult]
     return result
 
+
 sentencestr = 'sentence'
 sentenceidstr = 'sentenceid'
 mwestr = 'mwe'
-mwelexiconstr =  'mwelexicon'
+mwelexiconstr = 'mwelexicon'
 mwequerytypestr = 'mwequerytype'
 mweidstr = 'mweid'
 positionsstr = 'positions'
@@ -143,11 +145,12 @@ def mwemeta2dict(mwemeta: MWEMeta, omit={}) -> dict:
         mwedict[mwetypestr] = mwemeta.mwetype
     return mwedict
 
+
 def str2intlist(wrd: str) -> List[int]:
     strlist = str2list(wrd)
     # if '' in strlist:
     #    print(wrd)
-    result = [int(el) if el != '' else -1 for el in strlist ]
+    result = [int(el) if el != '' else -1 for el in strlist]
     return result
 
 
@@ -190,17 +193,20 @@ def metatoparsemetsv3(sentence: str, metas: List[MWEMeta]) -> str:
                     mweannotation = (
                         f"{localid}:{meta.mwetype}:{meta.mwelexicon}:{meta.mweid}"
                     )
-                    newrow[annotationcol] = newrow[annotationcol] + [mweannotation]
+                    newrow[annotationcol] = newrow[annotationcol] + \
+                        [mweannotation]
                 elif curposition in meta.positions:
                     mweannotation = f"{localid}"
-                    newrow[annotationcol] = newrow[annotationcol] + [mweannotation]
+                    newrow[annotationcol] = newrow[annotationcol] + \
+                        [mweannotation]
                 else:
                     # nothing has to change
                     pass
 
     finalrows = []
     for row in newrows:
-        finalrow = row[:meqcol] + [innersep.join(cell) for cell in row[meqcol:]]
+        finalrow = row[:meqcol] + \
+            [innersep.join(cell) for cell in row[meqcol:]]
         finalrow = adaptemptycells(finalrow)
         finalrows.append(finalrow)
 
@@ -227,9 +233,11 @@ def mkrow(annotation: str, mwequerytype) -> List[str]:
 
     return result
 
+
 def mwemeta2parseme_mwe(mwemeta: MWEMeta) -> MWE:
     mwe = MWE(mwemeta.mwetype, set(mwemeta.positions))
     return mwe
+
 
 def getannotationfiles(afs: List[FileName], selection=[]) -> Dict[SentId, List[MWEMeta]]:
     resultdict = defaultdict(list)

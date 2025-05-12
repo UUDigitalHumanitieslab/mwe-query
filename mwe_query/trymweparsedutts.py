@@ -1,11 +1,10 @@
 import os
 from lxml import etree
-from sastadev.alpinoparsing import parse
 from sastadev.treebankfunctions import getsentence, showtree
-from lxml import etree
 from mwe_query.canonicalform import generatequeries, expandfull
 
 debug = False
+
 
 def getuttandparse(filename, folder='./testparses'):
     fullname = os.path.join(folder, filename)
@@ -13,7 +12,6 @@ def getuttandparse(filename, folder='./testparses'):
     tree = fulltree.getroot()
     utterance = getsentence(tree)
     return utterance, tree
-
 
 
 def trysomemwes():

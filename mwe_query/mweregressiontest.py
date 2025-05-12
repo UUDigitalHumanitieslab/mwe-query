@@ -229,7 +229,8 @@ def regressiontest():  # noqa: C901
     if os.path.exists(testfilename):
         header, mwedata = getxlsxdata(testfilename)
     else:
-        print(f"input file {testfilename} not found. Aborting", file=sys.stderr)
+        print(
+            f"input file {testfilename} not found. Aborting", file=sys.stderr)
         exit(-1)
 
     curmwe = ""
@@ -329,7 +330,8 @@ def regressiontest():  # noqa: C901
                 reportlabel = "DN"
                 differencecount += 1
             if status == improvement or status == different:
-                message = mkreport(reportlabel, mwe, utterance, resultlist, reflist)
+                message = mkreport(
+                    reportlabel, mwe, utterance, resultlist, reflist)
                 report.append(message)
                 if status == different:
                     errorfound = True

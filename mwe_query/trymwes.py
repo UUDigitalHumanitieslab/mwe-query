@@ -75,15 +75,16 @@ geenhaankraaien = (
         "Weinig hanen die ernaar kraaiden .",
         "Oost-Europese au pairs komen als toerist naar Nederland en "
         "volgens Ales kraait er geen haan naar dat ze stiekem werken .",
-        "er kraait geen haan over dat probleem"                     # should be found by MLQ and NMQ, not by MEQ
-     ],
+        # should be found by MLQ and NMQ, not by MEQ
+        "er kraait geen haan over dat probleem"
+    ],
 )
 
 geenhaankraaien2 = (
     "0geen *haan zal naar iets kraaien",
-    [ "er kraait geen haan over dat probleem"
-      ]
-   )
+    ["er kraait geen haan over dat probleem"
+     ]
+)
 
 
 invoorietszijn = (
@@ -195,9 +196,13 @@ vrolijkeFrans = (
     ],
 )
 
-vanhethoutje = ('iemand zal van het houtje zijn', ['Filip is nooit van het houtje geweest'])
+vanhethoutje = ('iemand zal van het houtje zijn', [
+                'Filip is nooit van het houtje geweest'])
 
-zichbezighoudenmet = ['iemand zal zich met iets bezighouden', ['Om ongelukken te voorkomen heb ik mezelf gedwongen om me alleen nog met de koers bezig te houden .']]
+zichbezighoudenmet = ['iemand zal zich met iets bezighouden', [
+    'Om ongelukken te voorkomen heb ik mezelf gedwongen om me alleen nog met de koers bezig te houden .']]
+
+
 def select(mweutts, utt=None):
     if utt is None:
         result = mweutts
@@ -219,7 +224,8 @@ def trysomemwes():
     mwe, utterances = select(puntjebijpaaltje)
     mwe, utterances = select(zalwel)
     mwe, utterances = select(varkentjewassen)
-    mwe, utterances = select(voorietsinzijn)  # hier zitten missers van MWEQ bij
+    # hier zitten missers van MWEQ bij
+    mwe, utterances = select(voorietsinzijn)
     mwe, utterances = select(ingevalvaniets)
     mwe, utterances = select(geenhaankraaien)
     mwe, utterances = select(geenhaankraaien2)

@@ -85,7 +85,8 @@ body {font-family: Arial;}
 
 '''
 
-stylehtml = '<style>\n' + "\n\n".join([tabstyle, collapsestyle]) + '\n</style>\n'
+stylehtml = '<style>\n' + \
+    "\n\n".join([tabstyle, collapsestyle]) + '\n</style>\n'
 
 collapseablescript = '''
 var coll = document.getElementsByClassName("collapsible");
@@ -121,7 +122,8 @@ function openTab(evt, tabName) {
 }
 '''
 
-script = '\n<script>\n' + '\n\n'.join([tabscript, collapseablescript]) + '\n</script>\n'
+script = '\n<script>\n' + \
+    '\n\n'.join([tabscript, collapseablescript]) + '\n</script>\n'
 
 tabdiv = '''
 
@@ -153,7 +155,8 @@ bodyhtml = '''
 
 
 def mkcollapsable(sectiontitle, sectioncontent):
-    result = collapsable.format(sectiontitle=sectiontitle, sectioncontent=sectioncontent)
+    result = collapsable.format(
+        sectiontitle=sectiontitle, sectioncontent=sectioncontent)
     return result
 
 
@@ -178,7 +181,8 @@ def mkrelcatshtml(complemma, modstats):
                 relcatcollapsable = ''
                 relcatcount = len(modstats[complemma][rel][cat])
                 relcatstr = f'<p>{showrelcat((rel, cat))}: {relcatcount}:</p>'
-                hdlemmaliststr = mklemmashtml(complemma, modstats[complemma][rel][cat])
+                hdlemmaliststr = mklemmashtml(
+                    complemma, modstats[complemma][rel][cat])
                 relcatcollapsable += mkcollapsable(relcatstr, hdlemmaliststr)
                 relcatcollapsables += relcatcollapsable
         result = relcatcollapsables
@@ -237,7 +241,8 @@ def mktabbedhtmlpage(tabtabdivlist, style):
     for key, label in tablist:
         tabbuttontext = mktabbuttontext(key, label)
         tabhtmllist.append(tabbuttontext)
-    tabhtmlstr = '<div class="tabs">\n' + '\n\t'.join(tabhtmllist) + '\n</div>\n\n'
+    tabhtmlstr = '<div class="tabs">\n' + \
+        '\n\t'.join(tabhtmllist) + '\n</div>\n\n'
     tabdivhtmllist = []
     for key, header, contents in tabdivlist:
         tabdivhtml = mktabdiv(key, header, contents)
@@ -290,10 +295,12 @@ def getfullstatshtml(fullstats) -> str:
     # mlqhtml = mkhtmlgramconfigstats((fullstats.mlqstats)
 
     mwetabtabdivlist = [(('MWE', 'MWE'), ('MWE', 'MWE Statistics', mwestatshtml)),
-                        (('NM', 'Near-Miss'), ('NM', 'Near-Miss Statistics', nearmissstatshtml)),
+                        (('NM', 'Near-Miss'),
+                         ('NM', 'Near-Miss Statistics', nearmissstatshtml)),
                         (('NM-MWE', 'Near-Miss - MWE'),
                          ('NM-MWE', 'Near-Miss - MWE Statistics', diffstatshtml)),
-                        (('MLQ', 'Major Lemma'), ('MLQ', 'Major Lemma Statistics', '<p>Major Lemma Statistics</p>')),
+                        (('MLQ', 'Major Lemma'), ('MLQ', 'Major Lemma Statistics',
+                         '<p>Major Lemma Statistics</p>')),
                         (('MLQ-NM', 'Major Lemma - Near-Miss'),
                          ('MLQ-NM', 'Major Lemma - Near-Miss Statistics', '<p>Major Lemma - near-Miss Statistics</p>')),
                         (('MLQ-MWE', 'Major Lemma - MWE'),
@@ -301,7 +308,6 @@ def getfullstatshtml(fullstats) -> str:
                         ]
     result = mktabbedhtmlpage(mwetabtabdivlist, stylehtml)
     return result
-
 
 
 def getstatshtml(stats) -> str:
@@ -342,14 +348,14 @@ def getstatshtml(stats) -> str:
     argcollaps = mkcollapsable('<p>Arguments:</p>', argliststr)
     fullcollaps += argcollaps
 
-
     argrelcatstats = stats.argrelcatstats
     argrelcatstr = ''
     # print('\nArguments by relation and category:')
     for (rel, cat) in argrelcatstats:
         argrelcatstr += f'<p>{rel}/{cat}: {argrelcatstats[(rel, cat)]}</p>'
 
-    argrelcatcollaps = mkcollapsable('<p>Arguments by relation and category:</p>', argrelcatstr)
+    argrelcatcollaps = mkcollapsable(
+        '<p>Arguments by relation and category:</p>', argrelcatstr)
     fullcollaps += argrelcatcollaps
 
     argframestats = stats.argframestats
@@ -398,15 +404,16 @@ def sumdictelems(dct) -> List[Tuple[str, int, List[str]]]:
         newlistitem = (key, count, [el for el in dct[key]])
         newlist.append(newlistitem)
 
-    sortednewlist = sorted(newlist, key=lambda x: (x[1], -len(x[0])), reverse=True)
+    sortednewlist = sorted(newlist, key=lambda x: (
+        x[1], -len(x[0])), reverse=True)
     return sortednewlist
 
 
 def test():
     dotbfolder = r'./mwe_query/tests/data/mwetreebanks/dansontspringena'
-    #dotbfolder = r'./mwe_query/tests/data/mwetreebanks/hartbreken/data'
+    # dotbfolder = r'./mwe_query/tests/data/mwetreebanks/hartbreken/data'
     rawtreebankfilenames = os.listdir(dotbfolder)
-    selcond = lambda _: True
+    def selcond(_): return True
     # selcond = lambda x: x == 'WR-P-P-G__part00357_3A_3AWR-P-P-G-0000167597.p.8.s.2.xml'
     # selcond = lambda x: x == 'WR-P-P-G__part00788_3A_3AWR-P-P-G-0000361564.p.1.s.4.xml'
     # selcond = lambda x: x == 'WR-P-P-G__part00012_3A_3AWR-P-P-G-0000006175.p.6.s.3.xml'
@@ -421,8 +428,10 @@ def test():
         # flake8: noqa
         for mweparse in mwestructures:
             # xpathexprs = getcompsxpaths(mweparse)
-            mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(mwe)
-            queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
+            mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(
+                mwe)
+            queryresults = applyqueries(
+                treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
             fullmwestats = getstats(mwe, queryresults, treebank)
 

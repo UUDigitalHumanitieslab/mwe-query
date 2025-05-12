@@ -84,7 +84,8 @@ def containsillegalsymbols(canform: str) -> Tuple[bool, str]:
             result = True
     return result, illegalchars
 
-def containsillegalwords(canform:str) -> Tuple[bool, List[str]]:
+
+def containsillegalwords(canform: str) -> Tuple[bool, List[str]]:
     illegalwords = []
     result = False
     tokens = canform.split()
@@ -93,6 +94,7 @@ def containsillegalwords(canform:str) -> Tuple[bool, List[str]]:
             illegalwords.append(token)
             result = True
     return result, illegalwords
+
 
 def analyseentries(ducamedata):
     vblcountdict = {}
@@ -112,7 +114,6 @@ def analyseentries(ducamedata):
         wrong, wronglist = containsillegalwords(newcan)
         if wrong:
             print(f'Error: Illegal word(s) ({wronglist}) in {newcan}')
-
 
         vblcount = countvbls(newcan)
         vblcountdict[mweid] = vblcount
@@ -136,7 +137,8 @@ def analyseentries(ducamedata):
         print(f"{code}: {canform}")
     print("<<<END LVC annotation errors>>>\n")
 
-    result = (vblcountdict, bracketvbldict, componentdict, compvalencydict, lvcverbdict)
+    result = (vblcountdict, bracketvbldict,
+              componentdict, compvalencydict, lvcverbdict)
     return result
 
 
@@ -178,11 +180,14 @@ def run():
         for compstr in compvalencydict:
             if len(compvalencydict[compstr]) > 1:
                 print(f"\n{compstr}:", file=reportfile)
-                sortedexamples = sorted(compvalencydict[compstr], key=lambda x: x[0])
+                sortedexamples = sorted(
+                    compvalencydict[compstr], key=lambda x: x[0])
                 for vblcnt, canform in sortedexamples:
                     print(f"{vblcnt}/{canform}", file=reportfile)
 
         print('\n*****Number of exact duplicates*****')
         print(exactduplicatescount)
+
+
 if __name__ == "__main__":
     run()

@@ -23,7 +23,7 @@ It also contains several subfolder
 - tryalpinomwes
 - trymwes
 - tryquery4
-- 
+-
 
 ### Analysis of query results
 
@@ -52,7 +52,7 @@ See MWE-statistics.md
 
 - analyseducame
 - releaseDUCAME
-- 
+-
 ## General
 
 ### Regressiontests

@@ -5,7 +5,7 @@ These functions have been updated there, but no new package has been released ye
 """
 from .constants import nospaceafter
 from typing import List, Tuple
-from sastadev.treebankfunctions import getattval, getattval_fallback, getbeginend, find1
+from sastadev.treebankfunctions import getattval, find1
 from sastadev.sastatypes import SynTree
 import copy
 from lxml import etree
@@ -33,6 +33,7 @@ def iswordnode(stree: SynTree) -> bool:
     result = 'word' in stree.attrib or 'lemma' in stree.attrib or 'pt' in stree.attrib or 'pos' in stree.attrib
     return result
 
+
 def getnodeyield(syntree: SynTree) -> List[SynTree]:
     resultlist = []
     if syntree is None:
@@ -45,7 +46,8 @@ def getnodeyield(syntree: SynTree) -> List[SynTree]:
         cleanresultlist = removeduplicates(resultlist)
         # sortedresultlist = sorted(
         #    cleanresultlist, key=lambda x: int(getattval_fallback(x, "end", "9999"))
-        sortedresultlist = sorted(cleanresultlist, key=lambda x: getnodeposition(x))
+        sortedresultlist = sorted(
+            cleanresultlist, key=lambda x: getnodeposition(x))
         return sortedresultlist
 
 
@@ -60,6 +62,7 @@ def getyieldstr(stree: SynTree) -> str:
     theyieldstr = space.join(theyield)
     return theyieldstr
 
+
 def getnodeposition(node: SynTree) -> Tuple[int, int]:
     nodeend = getattval(node, 'end')
     if nodeend == '':
@@ -72,7 +75,9 @@ def getnodeposition(node: SynTree) -> Tuple[int, int]:
     result = (nodeendint, nodesubbeginint)
     return result
 
-def newgetyieldstr(stree: SynTree, marking=[]) -> str:  # tghibnk more about it , positions are tuples
+
+# tghibnk more about it , positions are tuples
+def newgetyieldstr(stree: SynTree, marking=[]) -> str:
     nodes = getnodeyield(stree)
     lnodes = len(nodes)
     result = ''
@@ -87,8 +92,9 @@ def newgetyieldstr(stree: SynTree, marking=[]) -> str:  # tghibnk more about it 
         elif i != lnodes - 1:   # no space after the last word
             result += word
         else:
-            result += f'{word} ' # normally, a word is followed by a space
+            result += f'{word} '  # normally, a word is followed by a space
     return result
+
 
 def mark(wrd: str) -> str:
     result = f'*{wrd}*'
@@ -105,6 +111,7 @@ def removeud(stree: SynTree) -> SynTree:
             udnodeparent.remove(udnode)
     return newstree
 
+
 def writetb(mwetreebank, mwetreebankfullname):
     tb = etree.Element("treebank")
     for el in mwetreebank:
@@ -114,10 +121,12 @@ def writetb(mwetreebank, mwetreebankfullname):
         mwetreebankfullname, encoding="UTF8", xml_declaration=False, pretty_print=True
     )
 
+
 def renumber(stree: SynTree, begin: str) -> SynTree:
     newstree = copy.deepcopy(stree)
     wordnodes = newstree.xpath('.//node[@word]')
-    sortedwordnodes = sorted(wordnodes, key= lambda n: int(getattval(n, 'begin')))
+    sortedwordnodes = sorted(
+        wordnodes, key=lambda n: int(getattval(n, 'begin')))
     intbegin = int(begin)
     curintbegin = intbegin
     for wordnode in sortedwordnodes:
@@ -130,6 +139,7 @@ def renumber(stree: SynTree, begin: str) -> SynTree:
     # deal with the empty nodes
     updatebareindexnodes(newstree)
     return newstree
+
 
 def updatecatnodes(stree: SynTree) -> None:
     """
@@ -144,7 +154,7 @@ def updatecatnodes(stree: SynTree) -> None:
         if 'cat' in child.attrib:
             updatecatnodes(child)
     children = [child for child in stree]
-    sortedchildren = sorted(children, key= lambda n: int(getattval(n, 'begin')))
+    sortedchildren = sorted(children, key=lambda n: int(getattval(n, 'begin')))
     firstchild = sortedchildren[0]
     lastchild = sortedchildren[-1]
     newbegin = getattval(firstchild, 'begin')
@@ -152,11 +162,14 @@ def updatecatnodes(stree: SynTree) -> None:
     stree.set('begin', newbegin)
     stree.set('end', newend)
 
+
 def updatebareindexnodes(syntree: SynTree) -> None:
-    bareindexnodes = syntree.xpath('.//node[@index and not(@cat) and not(@word)]')
+    bareindexnodes = syntree.xpath(
+        './/node[@index and not(@cat) and not(@word)]')
     for bareindexnode in bareindexnodes:
         theindex = getattval(bareindexnode, 'index')
-        theantecedent = find1(syntree, f'.//node[(@cat or @word) and @index="{theindex}" ]')
+        theantecedent = find1(
+            syntree, f'.//node[(@cat or @word) and @index="{theindex}" ]')
         if theantecedent is not None:
             newbegin = getattval(theantecedent, 'begin')
             newend = getattval(theantecedent, 'end')

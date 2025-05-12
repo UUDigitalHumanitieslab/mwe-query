@@ -4,7 +4,8 @@ from mwe_query.mkpivothtmls import createstatshtmlpages
 
 
 def test():
-    mwes,  dotbfolder, treebankname = ['iemand zal de dans ontspringen'], r'../tests/data/mwetreebanks/dansontspringena', 'Lassy-Groot/Kranten'
+    mwes,  dotbfolder, treebankname = [
+        'iemand zal de dans ontspringen'], r'../tests/data/mwetreebanks/dansontspringena', 'Lassy-Groot/Kranten'
     # mwes,  dotbfolder, treebankname = ['iemand zal 0de *dans ontspringen'], r'../tests/data/mwetreebanks/dansontspringena', 'Lassy-Groot/Kranten'
     # mwes, dotbfolder, treebankname =  ['iemand zal iemands hart breken'], r'../tests/data/mwetreebanks/hartbreken/data','Lassy-Groot/Kranten'
     # mwes, dotbfolder, treebankname = (

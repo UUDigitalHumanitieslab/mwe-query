@@ -16,7 +16,7 @@ from .canonicalform import (
 from .mwetyping import NodeSet
 import copy
 from lxml import etree
-from .getmwecomponents import  getcompsxpaths
+from .getmwecomponents import getcompsxpaths
 
 noneval = "@@NA@@"
 
@@ -111,16 +111,15 @@ def getnodeyield(syntree: SynTree) -> List[SynTree]:
             if "pt" in node.attrib or "pos" in node.attrib:
                 resultlist.append(node)
         sortedresultlist = sorted(
-            resultlist, key=lambda x: int(getatt_or_from_parents(x, "end", "9999"))
+            resultlist, key=lambda x: int(
+                getatt_or_from_parents(x, "end", "9999"))
         )
         return sortedresultlist
+
 
 def mkparticlenode(lemma: str) -> SynTree:
     result = etree.Element('node', {'lemma': lemma, 'rel': 'svp'})
     return result
-
-
-
 
 
 def getatt_or_from_parents(node: SynTree, att: str, fallback: str = "") -> str:
@@ -155,6 +154,7 @@ def removeud(stree):
         parent = udnode.getparent()
         parent.remove(udnode)
     return newstree
+
 
 def shownode(stree):
     poscat = gav(stree, "cat") if "cat" in stree.attrib else gav(stree, "pt")
@@ -200,14 +200,6 @@ def expandalternatives(stree: SynTree) -> List[SynTree]:
     return results
 
 
-
-
-
-
-
-
-
-
 def getargnodes(
     mwenode: SynTree, compnodes: List[SynTree], rellist=[]
 ) -> List[Tuple[List[Relation], SynTree]]:
@@ -238,7 +230,8 @@ def isdetarg(node) -> bool:
 
 def isarg(node: SynTree) -> bool:
     rel = gav(node, "rel")
-    result = rel in argrels or (rel == "svp" and "cat" in node.attrib) or isdetarg(node)
+    result = rel in argrels or (
+        rel == "svp" and "cat" in node.attrib) or isdetarg(node)
     return result
 
 
@@ -393,7 +386,8 @@ class MweHitArgumentFrame(MweHitInfoDetails):
     def __init__(self, frame: Frame, tree: SynTree):
         self.frame = frame
         sortedargframe = sortframe(frame)
-        sortedargframe2 = [f"{rel}/{poscat}" for (rel, poscat) in sortedargframe]
+        sortedargframe2 = [
+            f"{rel}/{poscat}" for (rel, poscat) in sortedargframe]
         argframetuple = tuple(sortedargframe2)
         self.frame_str = "+".join(argframetuple)
         marked_utt = getmarkedutt(tree, [])
@@ -562,12 +556,14 @@ def getstats(
     for mweparse in mwestructures:
         mwecompsxpathexprs = [getcompsxpaths(mweparse)]
         nearmissstructs = mknearmissstructs([mweparse])
-        nearmisscompsxpathexprs = [getcompsxpaths(stree) for stree in nearmissstructs]
+        nearmisscompsxpathexprs = [getcompsxpaths(
+            stree) for stree in nearmissstructs]
         for id, resultlist in queryresults.items():
             resultcount = 0
             for mwenodes, nearmissnodes, supersetnodes in resultlist:
                 resultcount += 1
-                missednodes = [node for node in nearmissnodes if node not in mwenodes]
+                missednodes = [
+                    node for node in nearmissnodes if node not in mwenodes]
                 todo: List[Tuple[NodeSet, List[List[Xpath]], int]] = [
                     (mwenodes, mwecompsxpathexprs, cmwe),
                     (nearmissnodes, nearmisscompsxpathexprs, cnearmiss),
@@ -579,7 +575,8 @@ def getstats(
 
                     for xpathexprs in xpathexprslist:
                         for mwenode in todonodes:
-                            info = MweHitInfo(mwenode, xpathexprs, treebank[id])
+                            info = MweHitInfo(
+                                mwenode, xpathexprs, treebank[id])
 
                             # MWE Components
                             allcompnodes[qrt] = info.components.nodes
@@ -664,10 +661,9 @@ def getstats(
             allcompnodes[qrt],
         )
 
-    result = FullMWEstats(newstats[cmwe], newstats[cnearmiss], newstats[cmissed])
+    result = FullMWEstats(
+        newstats[cmwe], newstats[cnearmiss], newstats[cmissed])
     return result
-
-
 
 
 def displayfullstats(stats: MWEstats, outfile, header=""):
@@ -732,7 +728,8 @@ def updatedetstats(
         if comprel == "hd":
             compparent = compnode.getparent()
             detnodes = (
-                [child for child in compparent if isdetnode(child, allcompnodes)]
+                [child for child in compparent if isdetnode(
+                    child, allcompnodes)]
                 if compparent is not None
                 else []
             )
@@ -778,7 +775,8 @@ def updatemodstats(
         if comprel == "hd":
             compparent = compnode.getparent()
             modnodes = (
-                [child for child in compparent if ismodnode(child, allcompnodes)]
+                [child for child in compparent if ismodnode(
+                    child, allcompnodes)]
                 if compparent is not None
                 else []
             )
@@ -920,6 +918,8 @@ def getheadcomponent(match: SynTree, components: List[SynTree]) -> SynTree:
             etree.dump(match)
             exit(-1)
 
-    sortedheadcomponents = sorted(headcomponents, key=lambda c: int(gav(c, "end")))
-    headcomponent = sortedheadcomponents[0] if sortedheadcomponents != [] else None
+    sortedheadcomponents = sorted(
+        headcomponents, key=lambda c: int(gav(c, "end")))
+    headcomponent = sortedheadcomponents[0] if sortedheadcomponents != [
+    ] else None
     return headcomponent

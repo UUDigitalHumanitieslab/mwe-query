@@ -179,7 +179,8 @@ locative_prepositions = informal_locative_prepositions.union(
 temporal_prepositions = informal_temporal_prepositions.union(
     formal_temporal_prepositions
 )
-other_prepositions = informal_other_prepositions.union(formal_other_prepositions)
+other_prepositions = informal_other_prepositions.union(
+    formal_other_prepositions)
 
 portmanteauprepositions = {"ter", "ten"}
 

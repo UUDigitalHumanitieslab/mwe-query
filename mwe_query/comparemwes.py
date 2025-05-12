@@ -1,15 +1,13 @@
 """
 Functions to compare mwes of type mycuptlib.MWE (Parseme MWE) with mwes of type MWEMeta (from module mwemeta)
 """
-from collections import defaultdict
-from typing import Dict, List, Optional, Set
+from typing import List, Optional, Set
 import os
-import conllu
 from mycuptlib import MWE, retrieve_mwes
-from mwemeta import getannotationfiles, MWEMeta, fromrow
-from permcomments import allcomparisonheader, corekeycolumns, getallcomments, getfullcomparison, \
-    labelkeycolumns, showspan, showspan0, storepermdata
-from sastadev.xlsx import getxlsxdata, mkworkbook,add_worksheet
+from mwemeta import getannotationfiles, MWEMeta
+from permcomments import allcomparisonheader, getallcomments, getfullcomparison, \
+    showspan, showspan0, storepermdata
+from sastadev.xlsx import mkworkbook, add_worksheet
 from mwetypes import isverbal
 from getscores import MWEDict, getscores, is_samemwe, is_samemwe_samelabel
 from tocupt import readcuptfile
@@ -34,9 +32,11 @@ notsamemwe = 'notsamemwe'
 #                                            'sourcemwe', 'reftext', 'restext']
 
 rpf1header = ['Recall', 'Precision', 'F1']
-sentscoreheader = ['SentID'] + rpf1header + ['RES MWES', 'REF MWES', 'Intersection']
+sentscoreheader = ['SentID'] + rpf1header + \
+    ['RES MWES', 'REF MWES', 'Intersection']
 
 bestsofarfolder = 'bestsofar'
+
 
 def marktext(sentence, span: Set[int]) -> str:
     resultlist = []
@@ -51,7 +51,9 @@ def marktext(sentence, span: Set[int]) -> str:
     result = space.join(resultlist)
     return result
 
+
 contentpts = ['ww', 'n', 'adj', 'adv']
+
 
 def getpt(token):
     tokenxpos = token["xpos"] if 'xpos' in token else ''
@@ -61,10 +63,13 @@ def getpt(token):
 
 def getheadposition(parsememwe, sentence):
     positions = sorted(list(parsememwe.span))
-    rawheadpositions = [position  for position in positions if sentence[position - 1]["head"] not in positions]
+    rawheadpositions = [
+        position for position in positions if sentence[position - 1]["head"] not in positions]
     if len(rawheadpositions) > 1:
-        headpositions = [position for position in rawheadpositions if getpt(sentence[position - 1]) in contentpts]
-    else: headpositions = rawheadpositions
+        headpositions = [position for position in rawheadpositions if getpt(
+            sentence[position - 1]) in contentpts]
+    else:
+        headpositions = rawheadpositions
     if len(headpositions) > 0:
         headposition = headpositions[0]
     elif len(rawheadpositions) > 0:
@@ -84,7 +89,8 @@ def parsememwe2odijkmwe(parsememwe: MWE, sentence) -> MWEMeta:
     mweid = ''
     positions = sorted(list(parsememwe.span))
     headposition = getheadposition(parsememwe, sentence)
-    head = sentence[headposition - 1] if len(sentence) > headposition -1  else None
+    head = sentence[headposition -
+                    1] if len(sentence) > headposition - 1 else None
     if head is not None:
         headpos = getpt(head)
         headlemma = head["lemma"] if 'lemma' in head else ''
@@ -154,11 +160,11 @@ def comparemwe(refmwe: MWE, resultmwe: MWEMeta, sentence, pmd, fn, sentid, basic
 
     if result == notsamemwe:
         basecomparison = [fn, sentid, showspan(refmwe.span), showspan0, missed, showspan0, showspan(refmwe.span), '', refmwe.cat, '', '', '', '',
-                      reftext, restext]
+                          reftext, restext]
         comparison = getfullcomparison(basecomparison, pmd)
     else:
         basecomparison = [fn, sentid, showspan(refmwe.span), showspan(resultmwespan), result, showspan(superpositions), showspan(subpositions),
-                  label, refmwe.cat, resultmwe.mwetype, source, sourceid, sourcemwe, reftext, restext]
+                          label, refmwe.cat, resultmwe.mwetype, source, sourceid, sourcemwe, reftext, restext]
         comparison = getfullcomparison(basecomparison, pmd)
     return comparison
 
@@ -179,7 +185,8 @@ def comparemwes(refmwesdict, resultmwes, sentence, pmd, fn, sentid, basic=True) 
         sourceid = resultmwe.mweid
         sourcemwe = resultmwe.mwe
         for refmwe in refmwes:
-            comparison = comparemwe(refmwe, resultmwe, sentence, pmd, fn, sentid, basic=basic)
+            comparison = comparemwe(
+                refmwe, resultmwe, sentence, pmd, fn, sentid, basic=basic)
             if comparison is not None:
                 if comparison[4] == 'samemwe':
                     refmwesdone.append(refmwe)
@@ -193,7 +200,7 @@ def comparemwes(refmwesdict, resultmwes, sentence, pmd, fn, sentid, basic=True) 
             sourceid = resultmwe.mweid
             sourcemwe = resultmwe.mwe
             basecomparison = [fn, sentid, showspan0, showspan(resultmwespan), more, showspan(resultmwespan), showspan0, '', '', resultmwe.mwetype,
-                          source, sourceid, sourcemwe,  reftext, senttext]
+                              source, sourceid, sourcemwe,  reftext, senttext]
             comparison = getfullcomparison(basecomparison, pmd)
             refmweresultlist.append(comparison)
 
@@ -201,13 +208,15 @@ def comparemwes(refmwesdict, resultmwes, sentence, pmd, fn, sentid, basic=True) 
 
     # refmwespans = [refmwe.span for refmwe in refmwes]
     donemwespans = [refmwe.span for refmwe in refmwesdone]
-    todorefmwes = [refmwe for refmwe in refmwes if refmwe.span not in donemwespans]  # to avoid duplicates
+    # to avoid duplicates
+    todorefmwes = [
+        refmwe for refmwe in refmwes if refmwe.span not in donemwespans]
     for refmwe in todorefmwes:
         refmweresultlist = []
         reftext = marktext(sentence, refmwe.span)
         senttext = marktext(sentence, set())
         basecomparison = [fn, sentid, showspan(refmwe.span), showspan0, missed, showspan0, showspan(refmwe.span), '', refmwe.cat, '', '', '', '',
-          reftext, senttext]
+                          reftext, senttext]
         comparison = getfullcomparison(basecomparison, pmd)
         refmweresultlist.append(comparison)
         resultlist += refmweresultlist
@@ -215,12 +224,13 @@ def comparemwes(refmwesdict, resultmwes, sentence, pmd, fn, sentid, basic=True) 
     extended = False
     if extended:
         refmweresultlist = []
-        restrefmwes = [refmwe for refmwe in refmwes if refmwe not in refmwesdone]
+        restrefmwes = [
+            refmwe for refmwe in refmwes if refmwe not in refmwesdone]
         for refmwe in restrefmwes:
             reftext = marktext(sentence, refmwe.span)
             senttext = marktext(sentence, set())
             basecomparison = [fn, sentid, showspan(refmwe.span), showspan0, missed, showspan0, showspan(refmwe.span), '', refmwe.cat, '', '', '', '',
-                          reftext, senttext]
+                              reftext, senttext]
             comparison = getfullcomparison(basecomparison, pmd)
             resultlist.append(comparison)
 
@@ -238,6 +248,7 @@ def comparemwes(refmwesdict, resultmwes, sentence, pmd, fn, sentid, basic=True) 
             resultlist += refmweresultlist
 
     return resultlist
+
 
 def getrefmwedict(sentences) -> MWEDict:
     resultdict = {}
@@ -276,7 +287,6 @@ def main():
     pmd = getallcomments(cuptfolder)
     storepermdata(pmd)
 
-
     # read the cupt file(s)
     cuptfilename = 'NL_alpino-ud_1a.conllu'
     cuptfilename = 'NL_alpino-ud_1-10a.cupt'
@@ -284,21 +294,19 @@ def main():
 
     cuptfullname = os.path.join(cuptfolder, cuptfilename)
     sentences = readcuptfile(cuptfullname)
-    junk = 0
-
 
     # reduce allmweresults to those sentences for which theree is a sentenceid in the reference data
 
     mwerefsentids = [getsentenceid(sentence) for sentence in sentences]
 
-    mweresults = {sentid: mwemetas for sentid, mwemetas in allmweresults.items() if sentid in mwerefsentids}
-
+    mweresults = {sentid: mwemetas for sentid,
+                  mwemetas in allmweresults.items() if sentid in mwerefsentids}
 
     allcomparisons = []
     for sentence in sentences:
         sentcomparisons = []
         sentenceid = sentence.metadata["sent_id"]
-        senttext = sentence.metadata['text']
+        # senttext = sentence.metadata['text']
         refmwes = retrieve_mwes(sentence)
         if sentenceid not in mweresults:
             # print(sentenceid)
@@ -307,13 +315,15 @@ def main():
                 reftext = marktext(sentence, refmwe.span)
                 restext = ''
                 basecomparison = [cuptfilename, sentenceid, showspan(refmwe.span), showspan0, missed, showspan0,
-                              showspan(refmwe.span), '', refmwe.cat, '', '', '', '', reftext, restext]
+                                  showspan(refmwe.span), '', refmwe.cat, '', '', '', '', reftext, restext]
                 comparison = getfullcomparison(basecomparison, pmd)
                 sentcomparisons.append(comparison)
         else:
-            resultmwes = [mwe for mwe in mweresults[sentenceid] if mwe.mwequerytype == 'MEQ' and isverbal(mwe.mweclasses)]
+            resultmwes = [mwe for mwe in mweresults[sentenceid]
+                          if mwe.mwequerytype == 'MEQ' and isverbal(mwe.mweclasses)]
 
-            sentcomparisons = comparemwes(refmwes, resultmwes, sentence, pmd, cuptfilename, sentenceid)
+            sentcomparisons = comparemwes(
+                refmwes, resultmwes, sentence, pmd, cuptfilename, sentenceid)
             # fullsentcomparisons = [[cuptfilename, sentenceid] + comparison
             #                       for comparison in sentcomparisons
             #                       ]
@@ -323,21 +333,29 @@ def main():
     filteredresultmwedict = {sentid: filter(mwemetalist) for sentid, mwemetalist in mweresults.items()
                              if filter(mwemetalist) != []}
 
-    sentscores, overallscore = getscores(filteredresultmwedict, refmwedict, idfunc=is_samemwe)
+    sentscores, overallscore = getscores(
+        filteredresultmwedict, refmwedict, idfunc=is_samemwe)
     # print(overallscore)
-    strictsentscores, strictoverallscore = getscores(filteredresultmwedict, refmwedict, idfunc=is_samemwe_samelabel)
+    strictsentscores, strictoverallscore = getscores(
+        filteredresultmwedict, refmwedict, idfunc=is_samemwe_samelabel)
 
     comparisonfilename = f'{cuptfilenamebase}_comparison.xlsx'
     comparisonfullname = os.path.join(cuptfolder, comparisonfilename)
 
-    sentscorerows = [[sentid] + list(sentscore) + [resc, refc, intc] for sentid, sentscore, resc, refc, intc in sentscores]
+    sentscorerows = [[sentid] + list(sentscore) + [resc, refc, intc]
+                     for sentid, sentscore, resc, refc, intc in sentscores]
     strictsentscorerows = [[sentid] + list(sentscore) + [resc, refc, intc]
                            for sentid, sentscore, resc, refc, intc in strictsentscores]
-    wb = mkworkbook(comparisonfullname, [allcomparisonheader], allcomparisons, freeze_panes=(1, 0))
-    overallscorerows = [['no'] + list(overallscore), ['yes'] + list(strictoverallscore)]
-    add_worksheet(wb, [['Strict'] + rpf1header], overallscorerows, sheetname='Overall Score')
-    add_worksheet(wb, [sentscoreheader], sentscorerows, sheetname='Sentence Scores')
-    add_worksheet(wb, [sentscoreheader], strictsentscorerows, sheetname='Strict Sentence Scores')
+    wb = mkworkbook(comparisonfullname, [
+                    allcomparisonheader], allcomparisons, freeze_panes=(1, 0))
+    overallscorerows = [
+        ['no'] + list(overallscore), ['yes'] + list(strictoverallscore)]
+    add_worksheet(wb, [['Strict'] + rpf1header],
+                  overallscorerows, sheetname='Overall Score')
+    add_worksheet(wb, [sentscoreheader], sentscorerows,
+                  sheetname='Sentence Scores')
+    add_worksheet(wb, [sentscoreheader], strictsentscorerows,
+                  sheetname='Strict Sentence Scores')
     wb.close()
 
 # def updatebestsofar(overallscore, strictoverallscore, cuptfolder, bestsofarfolder=bestsofarfolder):
@@ -345,9 +363,9 @@ def main():
 
 
 def filter(mwemetalist: List[MWEMeta]) -> List[MWEMeta]:
-    resultlist = [mwemeta for mwemeta in mwemetalist if mwemeta.mwequerytype == 'MEQ' and isverbal(mwemeta.mweclasses)]
+    resultlist = [mwemeta for mwemeta in mwemetalist if mwemeta.mwequerytype ==
+                  'MEQ' and isverbal(mwemeta.mweclasses)]
     return resultlist
-
 
 
 if __name__ == '__main__':

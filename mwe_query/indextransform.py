@@ -4,10 +4,10 @@ from copy import copy
 
 indexdict = {}
 
+
 def makeindexdict(stree):
-   if hasindex and catorword:
-       indexdict[index] = stree
+    if hasindex and catorword:
+        indexdict[index] = stree
 
-   for i , node in indexdict.items():
-        pass # TODO
-
+    for i, node in indexdict.items():
+        pass  # TODO

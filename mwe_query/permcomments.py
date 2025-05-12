@@ -4,16 +4,15 @@ import os
 from sastadev.xlsx import getxlsxdata, mkworkbook
 from typing import Any, Dict, List
 
-spansep ='+'
+spansep = '+'
 commentdelsym = '!'
 commentsep = ';'
-
 
 
 comparisonsuffix = '_comparison'
 comparisonextension = '.xlsx'
 
-moreorlesscommentsheader = ['c-ref', 'c-res', 'comment1', 'comment2' ]
+moreorlesscommentsheader = ['c-ref', 'c-res', 'comment1', 'comment2']
 labelcommentsheader = ['c-refcat', 'c-rescat', 'lcomment1', 'lcomment2']
 
 allcomparisonheader = ['File', 'sentId'] + ['ref.span', 'res.span', 'moreorless', 'super', 'sub',
@@ -23,7 +22,7 @@ allcomparisonheader = ['File', 'sentId'] + ['ref.span', 'res.span', 'moreorless'
 defaultcorecomments = [''] * 4
 defaultlabelcomments = [''] * 4
 
-corekeycolumns = [0,1,2,3,4]
+corekeycolumns = [0, 1, 2, 3, 4]
 labelkeycolumns = corekeycolumns + [8, 9]
 
 corecommentscols = [15, 16, 17, 18]
@@ -55,13 +54,15 @@ def getfullcomparison(basecomparison, permdatadict) -> List[str]:
     fullcomparison += labelcomments
     return fullcomparison
 
-def gettuplekey(dct: Dict[tuple, Any], tpl:tuple) -> tuple:
+
+def gettuplekey(dct: Dict[tuple, Any], tpl: tuple) -> tuple:
     for dcttpl in dct:
         if isequal(dcttpl, tpl):
             return dcttpl
     return None
 
-def isequal(tpl1:tuple, tpl2:tuple) -> bool:
+
+def isequal(tpl1: tuple, tpl2: tuple) -> bool:
     if len(tpl1) != len(tpl2):
         return False
     for el1, el2 in zip(tpl1, tpl2):
@@ -84,7 +85,8 @@ def getallcomments(datasetpath):
                         not fn.startswith("~$")]
     for comparefilename in comparefilenames:
         comparefullname = os.path.join(datasetpath, comparefilename)
-        compareheader, comparedata = getxlsxdata(comparefullname, sheetname="Sheet1")
+        compareheader, comparedata = getxlsxdata(
+            comparefullname, sheetname="Sheet1")
         permdatadict = updatepermdict(permdatadict, comparedata)
     return permdatadict
 
@@ -95,7 +97,8 @@ def storepermdata(permdatadict):
         savecopy(permcommentsfullname, prevsuffix='', prevprefix='previous_')
 
     permdatarows = [permdatadict[el] for el in permdatadict]
-    wb = mkworkbook(permcommentsfullname, [allcomparisonheader], permdatarows, freeze_panes=(1,0))
+    wb = mkworkbook(permcommentsfullname, [
+                    allcomparisonheader], permdatarows, freeze_panes=(1, 0))
     wb.close()
 
 
@@ -106,14 +109,17 @@ def showspan(span: set) -> str:
     result = spansep.join(sortedspanstrlist)
     return result
 
+
 def readspan(spanstr: str) -> set:
     rawmembers = spanstr.split(spansep)
     members = [m.strip() for m in rawmembers]
     if members == ['']:
         members = []
-    intmembers = [int(m) for m in members]    # it is presupposed that only integer strings can occur
+    # it is presupposed that only integer strings can occur
+    intmembers = [int(m) for m in members]
     result = set(intmembers)
     return result
+
 
 def updatepermdict(permdict, newdata) -> dict:
     # Voeg newdata  toe aan permdict
@@ -130,7 +136,8 @@ def updatepermdict(permdict, newdata) -> dict:
             permdict[key] = newrow[:begin] + newval + newrow[end:]
     return permdict
 
-def data2dict(data:List[List[str]]) -> dict:
+
+def data2dict(data: List[List[str]]) -> dict:
     nocomments = 4 * ['']
     resultdict = {}
     for row in data:
@@ -143,6 +150,7 @@ def data2dict(data:List[List[str]]) -> dict:
             key2 = tuple([str(row[i]) for i in labelkeycolumns])
             resultdict[key2] = row
     return resultdict
+
 
 def removeduplicates(rawel: str) -> str:
     rawels = rawel.split(commentsep)
@@ -163,7 +171,9 @@ def removedelsym(coms: List[str]) -> List[str]:
         else:
             newcoms.append(com)
     return newcoms
-def smartmerge(com1:str, com2:str) -> str:
+
+
+def smartmerge(com1: str, com2: str) -> str:
     rawcom1s = com1.split(commentsep)
     com1s = [rawcom1.strip() for rawcom1 in rawcom1s]
     rawcom2s = com2.split(commentsep)
@@ -178,7 +188,6 @@ def smartmerge(com1:str, com2:str) -> str:
             newcoms.append(com)
     result = commentsep.join(newcoms)
     return result
-
 
 
 def mergerows(row1, row2):

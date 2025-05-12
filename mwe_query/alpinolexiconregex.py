@@ -1,12 +1,9 @@
-from alpinolexiconparser import handelstr, v09str, SynSel, Entry
+from alpinolexiconparser import SynSel, Entry
 import re
 from collections import defaultdict
 from filefunctions import gettextfromfile
-from typing import Dict, List, Tuple
-from alplexteststrings import (aaienstr, achtenstr, acclimatiseerstr, acclimatiseerstr2,
-                               adresserenstr, applaudiserenstr, bakkenstr, begaanstr,
-                               beginnenstr, behalenstr, beschadigenstr, bestaanstr, betaalstr,
-                               passerenstr)
+from typing import List, Tuple
+from alplexteststrings import (betaalstr)
 
 reportevery = 1
 comma = ','
@@ -36,10 +33,10 @@ pastpl = rf'(?P<pastpl>{wordsorword})'   # rf'(?P<pastpl>{word})'
 
 wordcommalist6 = rf'{firstsg}{scomma}{thirdsg}{scomma}{inf}{scomma}{psp}{scomma}{pastsg}{scomma}{pastpl}'
 
-aux = rf'(h|z|b|unacc)'  # rf'(?P<aux>[hzb])'
+aux = r'(h|z|b|unacc)'  # rf'(?P<aux>[hzb])'
 
-basicarg = rf'[a-z][a-z0-9]*'
-param = rf'[A-z_]+'
+basicarg = r'[a-z][a-z0-9]*'
+param = r'[A-z_]+'
 paramarg = rf'{basicarg}\(\s*{param}(\s*{comma}\s*{param})*\s*\)'
 
 arg = rf'({paramarg}|{basicarg})'
@@ -49,9 +46,9 @@ parameter = rf'{basicarg}({underscore}{basicarg})*'
 
 synselwithcomment = rf'{synsel}\s*%(?P<example>[^\n]*)\n'
 
-example = rf'(%([^\n]*)\n)'
+example = r'(%([^\n]*)\n)'
 
-commenttext = rf'(%[^\n]*\n)'
+commenttext = r'(%[^\n]*\n)'
 synsel1plus = rf'\s*{synsel}\s*{example}*\s*'
 synsel2plus = rf'(\s*{synsel}{scomma}{example}*\s*)'
 simpleargs = rf'{synsel}({scomma}{synsel})*'
@@ -88,23 +85,23 @@ auxsynselre = re.compile(auxsynsel)
 oldauxsynsels = rf'\s*(?P<auxsynsels>\[\s*{bareauxsynsel}(\s*{comma}\s*{bareauxsynsel})*\s*\])'
 auxsynsels = rf'\s*(?P<auxsynsels>\[\s*{bareauxsynsel}(\s*{comma}\s*{commenttext}*\s*{bareauxsynsel}\s*{commenttext}*)*\s*\])'
 
-entrycomment = rf'(%(?P<entrymeta>[^\n]*)\n)'
+entrycomment = r'(%(?P<entrymeta>[^\n]*)\n)'
 
 ventry = fr'v\({wordcommalist6}\s*{comma}\s*{entrycomment}?\s*{auxsynsels}\s*\)\s*\.'
 
-#ventries = fr'{ventry}(\s*{ventry})*'
+# ventries = fr'{ventry}(\s*{ventry})*'
 
 ventryre = re.compile(ventry)
 
-entrytext = rf'([^\.%]*)'
+entrytext = r'([^\.%]*)'
 
-rawentrypattern  = rf'v\(({entrytext}|{commenttext})+s*\.'
+rawentrypattern = rf'v\(({entrytext}|{commenttext})+s*\.'
 
-oldrawentrypattern  = r'v\([^\.]*\)\s*\.'
+oldrawentrypattern = r'v\([^\.]*\)\s*\.'
 rawentryre = re.compile(rawentrypattern)
 
 
-def splitcommentedsubcats(subcats) -> List[Tuple[str,str]]:
+def splitcommentedsubcats(subcats) -> List[Tuple[str, str]]:
     results = []
     for subcat in subcats:
         commentsep = subcat.find(commentsym)
@@ -119,6 +116,7 @@ def splitcommentedsubcats(subcats) -> List[Tuple[str,str]]:
         if result[0] != '':
             results.append(result)
     return results
+
 
 def rawsubcatadapt(subcatliststr) -> list:
     subcatcommentpattern = r'([^%]*\s*)(,)\s*(%[^\n]*\n)'
@@ -152,7 +150,7 @@ def trystr(vstr):
             entrymeta = result.group('entrymeta')
             if entrymeta is None:
                 entrymeta = ''
-            all = result.groups()
+            # all = result.groups()
             hsubcatliststr = result.group('auxsynsels')
             hsubcatlists = auxsynselre.finditer(hsubcatliststr)
             newsynsellist = []
@@ -162,7 +160,8 @@ def trystr(vstr):
                 aux = hsubcatlist.group('aux')
                 rawsubcatliststr = hsubcatlist.group('synsels')
                 rawsubcats = synselitemsre.finditer(rawsubcatliststr)
-                subcats = [rawsubcat.group().strip() for rawsubcat in rawsubcats]
+                subcats = [rawsubcat.group().strip()
+                           for rawsubcat in rawsubcats]
                 commentedsubcats = splitcommentedsubcats(subcats)
                 for commentedsubcat in commentedsubcats:
                     synseldict[commentedsubcat[0]] += 1
@@ -173,13 +172,12 @@ def trystr(vstr):
                 exit(-1)
 
         if resultfound:
-            newentry = Entry(entrymeta=entrymeta, firstsg=firstsg,thirdsg=thirdsg,inf=inf, psp=psp, pastsg=pastsg, pastpl=pastpl,
+            newentry = Entry(entrymeta=entrymeta, firstsg=firstsg, thirdsg=thirdsg, inf=inf, psp=psp, pastsg=pastsg, pastpl=pastpl,
                              synsels=newsynsellist)
             newentries.append(newentry)
         else:
             print(f'No result found for:\n{entrystr}')
             exit(-1)
-        junk = 0
 
     for ss, frq in synseldict.items():
         print(ss, frq)

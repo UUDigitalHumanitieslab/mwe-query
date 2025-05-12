@@ -133,7 +133,8 @@ def getgramconfigstats(
                 componentsnodes: List[List[SynTree]] = []
                 for component in sortedcomponents:
                     componentnodes = cast(
-                        List[SynTree], hit.xpath(f'//node[@lemma="{component}"]')
+                        List[SynTree], hit.xpath(
+                            f'//node[@lemma="{component}"]')
                     )
                     componentsnodes.append(componentnodes)
 

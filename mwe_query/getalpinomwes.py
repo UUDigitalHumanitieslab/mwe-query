@@ -6,7 +6,7 @@ See https://github.com/gossebouma/Parseme-NL/blob/main/Parseme-NL.ipynb
 """
 from lexicons import cranberryparticleslexicon, irvindeplexicon, notSCVslexicon, prenomadjdeelwoordenlexicon, vpcsemilexicon
 from mwemeta import MWEMeta
-from mwetypes import getmwetype, IAV, IRV, IRVd, IRVi, MVC, PID, VID, VPCfull, VPCVID, VPClight, VPCmaybelight,\
+from mwetypes import getmwetype, IAV, IRV, IRVd, IRVi, MVC, PID, VID, VPCfull, VPCVID, VPClight, VPCmaybelight, \
     vpcmap, vpcclass2type
 from sastadev.treebankfunctions import (
     getattval as gav,
@@ -75,12 +75,14 @@ def additionalconditionsprtverb(node: SynTree) -> bool:
     result = lemma not in notSCVslexicon and pos != "adv"
     return result
 
+
 def isparticleverb(node: SynTree) -> bool:
     lemma = gav(node, "lemma")
     pt = gav(node, "pt")
-    pos = gav(node, "pos")
+    # pos = gav(node, "pos")
     lemmaparts = lemma.split(compoundsym)
-    result = pt == "ww" and len(lemmaparts) == 2 and lemmaparts[0] != "on" and additionalconditionsprtverb(node)
+    result = pt == "ww" and len(
+        lemmaparts) == 2 and lemmaparts[0] != "on" and additionalconditionsprtverb(node)
     return result
 
 
@@ -173,7 +175,8 @@ def getintpositions(mwenodes: List[SynTree]) -> List[int]:
 
     for mwenode in mwenodes:
         if mwenode is None:
-            print(f"getalpinomwes:getintpositions: None node encountered in {nodeliststr} ", file=sys.stderr)
+            print(
+                f"getalpinomwes:getintpositions: None node encountered in {nodeliststr} ", file=sys.stderr)
         else:
             position = gav(mwenode, "end")
             intposition = int(position)
@@ -181,6 +184,7 @@ def getintpositions(mwenodes: List[SynTree]) -> List[int]:
 
     sortedintpositions = sorted(intpositions)
     return sortedintpositions
+
 
 def getrealparentrel(node: SynTree) -> Relation:
     parent = node.getparent()
@@ -195,23 +199,24 @@ def getrealparentrel(node: SynTree) -> Relation:
     return result
 
 
-
 def truelyverbal(verb: SynTree) -> bool:
     verblemma = gav(verb, 'lemma')
     verbwvorm = gav(verb, 'wvorm')
     verbpositie = gav(verb, 'positie')
     isprenominaladjective = verbpositie == 'prenom' and \
-                            verblemma in prenomadjdeelwoordenlexicon and \
-                            prenomadjdeelwoordenlexicon[verblemma] == verbwvorm
-    isnominalisedparticiple = verbpositie == 'nom' and verbwvorm in ['vd', 'od']
+        verblemma in prenomadjdeelwoordenlexicon and \
+        prenomadjdeelwoordenlexicon[verblemma] == verbwvorm
+    isnominalisedparticiple = verbpositie == 'nom' and verbwvorm in [
+        'vd', 'od']
     realparentrel = getrealparentrel(verb)
     afgezien = verblemma in ['af_zien', 'om_keren'] and verbwvorm == 'vd' and \
-               verbpositie == "vrij" and realparentrel != "vc"
+        verbpositie == "vrij" and realparentrel != "vc"
     result = not isprenominaladjective and not isnominalisedparticiple and not afgezien
     return result
 
+
 def getvpcclass(verb: SynTree) -> str:
-    prt= getprtfromlemma(verb)
+    prt = getprtfromlemma(verb)
     if iscranberryprt(prt):
         result = VPCVID
     else:
@@ -222,6 +227,7 @@ def getvpcclass(verb: SynTree) -> str:
 def iscranberryprt(prt: str) -> bool:
     result = prt in cranberryparticleslexicon
     return result
+
 
 def getsemi(node: SynTree) -> str:
     lemma = gav(node, 'lemma')
@@ -234,7 +240,6 @@ def getsemi(node: SynTree) -> str:
     else:
         result = VPCfull
     return result
-
 
 
 def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: C901
@@ -304,7 +309,7 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
                                 classes += [MVC]
                             elif wwprt == siblinglemma:
                                 thevpc = VPClight if verblemma in vpcsemilexicon else VPCfull
-                                classes += [vpcmap(thevpc,siblingpt)]
+                                classes += [vpcmap(thevpc, siblingpt)]
                                 # partnode = sibling
                                 mwenodes.append(sibling)
                             else:
@@ -369,7 +374,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
             parsemetype = getmwetype(verb, headpos, classes)
             if sentenceid is None:
                 sentenceid = ""
-            mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+            mweid = getmweid(zichnode, svpnodes, partnode,
+                             verb, wwsvpnode, iavnode)
             mwemeta = MWEMeta(
                 sentence,
                 sentenceid,
@@ -390,7 +396,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
     )  # no condition on vztype because of 'ergens op af'
     for vz in vzs:
         vzposition = int(gav(vz, "end"))
-        vzazsiblings = vz.xpath('../node[@pt="vz" and @vztype="fin" and @rel="hdf"]')
+        vzazsiblings = vz.xpath(
+            '../node[@pt="vz" and @vztype="fin" and @rel="hdf"]')
         for az in vzazsiblings:
             vzlemma = gav(vz, "lemma")
             azlemma = gav(az, "lemma")
@@ -419,7 +426,8 @@ def oldalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: 
             mwemetas.append(mwemeta)
     return mwemetas
 
-def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
+
+def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:  # noqa: C901
     mwemetas = []
     mwelexicon = "Alpino"
     sentence = getsentence(syntree)
@@ -447,7 +455,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
             mwenodes.append(verb)
             intpositions = getintpositions(mwenodes)
             # @@ get the svp and its pt
-            mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+            mweid = getmweid(zichnode, svpnodes, partnode,
+                             verb, wwsvpnode, iavnode)
             theclass = getvpcclass(verb)
             classes = [theclass]
             parsemetype = vpcclass2type(theclass)
@@ -470,7 +479,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
         if verbrel == 'hd':
             if isparticleverb(verb):
                 mwenodes.append(verb)
-                svpsiblings = [sibling for sibling in siblings if gav(sibling, "rel") == 'svp']
+                svpsiblings = [sibling for sibling in siblings if gav(
+                    sibling, "rel") == 'svp']
                 if len(svpsiblings) == 1:
                     thesvpsibling = svpsiblings[0]
                     if terminal(thesvpsibling):
@@ -479,7 +489,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                             if verbrel == "hd":
                                 mwenodes.append(thesvpsibling)
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 classes += [MVC]
                                 parsemetype = MVC
                                 if parsemetype is not None:
@@ -498,7 +509,7 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                         parsemetype,
                                     )
                                     mwemetas.append(mwemeta)
-                        else: # svp sibling is not a verb
+                        else:  # svp sibling is not a verb
                             wwprt = getprtfromlemma(verb)
                             thesvpsiblinglemma = gav(thesvpsibling, "lemma")
                             thesvpsiblingpt = gav(thesvpsibling, "pt")
@@ -508,7 +519,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 classes += [vpcclass]
                                 mwenodes.append(thesvpsibling)
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 parsemetype = vpcclass2type(vpcclass)
                                 if parsemetype is not None:
                                     mwemeta = MWEMeta(
@@ -539,7 +551,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 parsemetype = MVC
                                 mwenodes.append(siblinghead)
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 mwemeta = MWEMeta(
                                     sentence,
                                     sentenceid,
@@ -562,7 +575,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 parsemetype = vpcclass2type(vpcclass)
                                 mwenodes.append(siblinghead)
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 if parsemetype is not None:
                                     mwemeta = MWEMeta(
                                         sentence,
@@ -584,7 +598,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 parsemetype = VID
                                 mwenodes.append(siblinghead)
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 mwemeta = MWEMeta(
                                     sentence,
                                     sentenceid,
@@ -609,7 +624,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                                 parsemetype = MVC
                                 mwenodes += siblingleaves
                                 intpositions = getintpositions(mwenodes)
-                                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                                mweid = getmweid(
+                                    zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                                 mwemeta = MWEMeta(
                                     sentence,
                                     sentenceid,
@@ -631,7 +647,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                 elif len(svpsiblings) == 0:  # wil this still occur?
                     mwenodes.append(verb)
                     intpositions = getintpositions(mwenodes)
-                    mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                    mweid = getmweid(zichnode, svpnodes,
+                                     partnode, verb, wwsvpnode, iavnode)
                     theclass = getvpcclass(verb)
                     classes = [theclass]
                     parsemetype = vpcclass2type(theclass)
@@ -652,9 +669,10 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                     mwemetas.append(mwemeta)
 
                 else:
-                    pass # we leave these to DUCAME
+                    pass  # we leave these to DUCAME
             if not isparticleverb(verb) and additionalconditionsprtverb(verb):
-                svpsiblings = [sibling for sibling in siblings if gav(sibling, 'rel') == 'svp']
+                svpsiblings = [sibling for sibling in siblings if gav(
+                    sibling, 'rel') == 'svp']
                 if len(svpsiblings) == 1:
                     thesvpsibling = svpsiblings[0]
                     mwenodes.append(verb)
@@ -669,7 +687,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                             parsemetype = VID
                         wwsvpnode = thesvpsibling
                         intpositions = getintpositions(mwenodes)
-                        mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                        mweid = getmweid(zichnode, svpnodes,
+                                         partnode, verb, wwsvpnode, iavnode)
                         mwemeta = MWEMeta(
                             sentence,
                             sentenceid,
@@ -697,7 +716,7 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                             siblingleaves = getnodeyield(thesvpsibling)
                             svpnodes = getsvpnodes(siblingleaves)
                             wwsvpnodecands = [
-                                svpnode for svpnode in svpnodes if gav(svpnode, "pt") == "ww"  ]
+                                svpnode for svpnode in svpnodes if gav(svpnode, "pt") == "ww"]
                             if wwsvpnodecands != []:
                                 wwsvpnode = wwsvpnodecands[0]
                                 svpnodes = [
@@ -710,12 +729,13 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                             mwenodes += siblingleaves
                             if siblingcat in ["ti", "inf"]:
                                 classes.append(MVC)
-                                parsemetype  = MVC
+                                parsemetype = MVC
                             else:
                                 classes += [VID]
                                 parsemetype = VID
                             intpositions = getintpositions(mwenodes)
-                            mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                            mweid = getmweid(
+                                zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
                             mwemeta = MWEMeta(
                                 sentence,
                                 sentenceid,
@@ -732,7 +752,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                             )
                             mwemetas.append(mwemeta)
 
-            sesiblings = [sibling for sibling in siblings if gav(sibling, 'rel') == 'se']
+            sesiblings = [sibling for sibling in siblings if gav(
+                sibling, 'rel') == 'se']
             if len(sesiblings) == 1:
                 thesesibling = sesiblings[0]
                 zichnode = thesesibling
@@ -745,7 +766,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                     classes += [IRVi]
                     parsemetype = IRV
                     intpositions = getintpositions(mwenodes)
-                    mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                    mweid = getmweid(zichnode, svpnodes,
+                                     partnode, verb, wwsvpnode, iavnode)
                     mwemeta = MWEMeta(
                         sentence,
                         sentenceid,
@@ -764,7 +786,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
             elif len(sesiblings) > 1:   # should not occur
                 print(f'Multiple se  encountered in {sentenceid}:{sentence}')
 
-            pcsiblings = [sibling for sibling in siblings if gav(sibling, 'rel') == 'pc']
+            pcsiblings = [sibling for sibling in siblings if gav(
+                sibling, 'rel') == 'pc']
             if len(pcsiblings) == 1:
                 thepcsibling = pcsiblings[0]
                 classes += [IAV]
@@ -779,7 +802,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
                     mwenodes.append(siblinghead)
                     iavnode = siblinghead
                 intpositions = getintpositions(mwenodes)
-                mweid = getmweid(zichnode, svpnodes, partnode, verb, wwsvpnode, iavnode)
+                mweid = getmweid(zichnode, svpnodes, partnode,
+                                 verb, wwsvpnode, iavnode)
                 mwemeta = MWEMeta(
                     sentence,
                     sentenceid,
@@ -802,7 +826,8 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
     )  # no condition on vztype because of 'ergens op af'
     for vz in vzs:
         vzposition = int(gav(vz, "end"))
-        vzazsiblings = vz.xpath('../node[@pt="vz" and @vztype="fin" and @rel="hdf"]')
+        vzazsiblings = vz.xpath(
+            '../node[@pt="vz" and @vztype="fin" and @rel="hdf"]')
         for az in vzazsiblings:
             vzlemma = gav(vz, "lemma")
             azlemma = gav(az, "lemma")
@@ -831,6 +856,7 @@ def getalpinomwes(syntree: SynTree, sentenceid=None) -> List[MWEMeta]:
             mwemetas.append(mwemeta)
 
     return mwemetas
+
 
 def ismwupp(node: SynTree) -> Tuple[bool, SynTree, List[SynTree]]:
     mwunode = None

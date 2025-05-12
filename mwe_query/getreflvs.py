@@ -8,6 +8,7 @@ reflvre = re.compile(reflvpattern)
 
 resultheader = ['ww', 'independent', 'vz']
 
+
 def main():
     infilename = r"D:\Dropbox\jodijk\myprograms\Alpino\verbs-2024-08-21.pl"
     with open(infilename, 'r', encoding='utf8') as infile:
@@ -20,13 +21,10 @@ def main():
             matchresults = analyseresult(frame)
             allresults.extend(matchresults)
 
-    junk = 0
     outfullname = r'D:\Dropbox\jodijk\myprograms\Alpino\alpinoreflpcverbs.xlsx'
-    wb = mkworkbook(outfullname, [resultheader], allresults, freeze_panes=(1,0))
+    wb = mkworkbook(outfullname, [resultheader],
+                    allresults, freeze_panes=(1, 0))
     wb.close()
-
-
-
 
     # with open(r'D:\Dropbox\jodijk\myprograms\Alpino\alpinoreflpvverbs.txt', 'w', encoding='utf8') as outfile:
     #    for result in results:
@@ -59,7 +57,7 @@ def analyseresult(frame) -> list:
     # get refl_pc_pp(vz)
 
     refl_pc_pp_pattern = r'[^_]refl_pc_pp\(([^\)]*)\)'
-    refl_pc_pp_re =  re.compile(refl_pc_pp_pattern)
+    refl_pc_pp_re = re.compile(refl_pc_pp_pattern)
     matches = refl_pc_pp_re.finditer(frame)
     for match in matches:
         vz = match.group(1)

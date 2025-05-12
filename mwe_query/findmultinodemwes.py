@@ -3,6 +3,7 @@ from sastadev.treebankfunctions import getsentence
 
 treebankfullname = './indexes/mwelexicon_treebank.xml'
 
+
 def core():
     fulltreebank = etree.parse(treebankfullname)
     treebank = fulltreebank.getroot()
@@ -17,7 +18,6 @@ def core():
             topnode = topnodes[0]
             if len(topnode) > 1:
                 print(f'Multinodes for {sentence}')
-
 
 
 if __name__ == '__main__':

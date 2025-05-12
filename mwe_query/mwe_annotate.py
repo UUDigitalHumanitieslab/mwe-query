@@ -15,8 +15,6 @@ from canonicalform import (
     mknearmissstructs,
     preprocess_MWE,
 )
-from getmwecomponents import getmwecomponents
-from mwestats import getheadcomponent
 from mwus import get_mwuprops
 from pronadvs import allpronadvlemmas, pronadv2vz
 from sastadev.sastatypes import SynTree
@@ -36,6 +34,7 @@ compoundsep = "_"
 mwecomponentsxpath = ".//node[@lemma]"
 
 alpinolexicon = 'Alpino'
+
 
 def getmweheadnode(syntree: SynTree) -> Optional[Tuple[SynTree, str]]:
     topnode = find1(syntree, './/node[@cat="top"]')
@@ -102,7 +101,8 @@ def getheadnode(syntree: SynTree) -> Optional[SynTree]:
     # etree.dump(syntree)
     # xpexpr = './/node[@cat="top"]/node/node[@rel="hd" and @pt]'
     xpexpr = (
-        './node[(@rel="hd" or @rel="cmp") and @pt]'  # this applies to MWE structures
+        # this applies to MWE structures
+        './node[(@rel="hd" or @rel="cmp") and @pt]'
     )
     hdnodes = syntree.xpath(xpexpr)
     if len(hdnodes) >= 1:
@@ -162,7 +162,8 @@ def getcompoundlemmas(stree: SynTree) -> List[str]:
 
     """
     newlemmas = []
-    lemmapts = [(getattval(node, 'lemma'), getattval(node, 'pt')) for node in stree.iter() if 'lemma' in node.attrib]
+    lemmapts = [(getattval(node, 'lemma'), getattval(node, 'pt'))
+                for node in stree.iter() if 'lemma' in node.attrib]
     for lemma, pt in lemmapts:
         if pt == 'n':
             # first find the last occurrence of the compoundsep
@@ -175,7 +176,6 @@ def getcompoundlemmas(stree: SynTree) -> List[str]:
             newlemma = lemma
         newlemmas.append(newlemma)
     return newlemmas
-
 
 
 def is_subset(list1, list2):
@@ -204,7 +204,7 @@ def results2metadata(
     headlemma
 ):
     # get the components
-    componentslist = getmwecomponents([queryresult], mwestructures)
+    # componentslist = getmwecomponents([queryresult], mwestructures)
     # components = componentslist[0] if componentslist != [] else []
     mwemetas = []
     sortedpositions = sorted(positions)
@@ -313,10 +313,12 @@ def containsalllemmas(lemmaslist1: List[List[str]], lemmaslist2: List[List[str]]
 
 
 def getmatch_hd(match) -> Optional[SynTree]:
-    headmatchcomponents = match.xpath('./node[@pt and (@rel="hd" or @rel="crd")]')
+    headmatchcomponents = match.xpath(
+        './node[@pt and (@rel="hd" or @rel="crd")]')
     if headmatchcomponents == []:
         components = match.xpath('.//node[@pt]')
-        sortedcomponents = sorted(components, key=lambda x: int(x.attrib['end']))
+        sortedcomponents = sorted(
+            components, key=lambda x: int(x.attrib['end']))
         result = sortedcomponents[0]
         return result
     headmatchcomponent = headmatchcomponents[0]
@@ -381,11 +383,13 @@ def annotate(  # noqa: C901
 
     # for testing purposes
     # validmweids = [102229]
-    dcmmweids = [indexes.id2mweid[str(validmweid)] if str(validmweid) in indexes.id2mweid else 'unknown' for validmweid in validmweids]
+    # dcmmweids = [indexes.id2mweid[str(validmweid)] if str(
+    #     validmweid) in indexes.id2mweid else 'unknown' for validmweid in validmweids]
 
     for validmweid in validmweids:
 
-        thedcmmweid = indexes.id2mweid[str(validmweid)] if str(validmweid) in indexes.id2mweid else 'unknown'
+        # thedcmmweid = indexes.id2mweid[str(validmweid)] if str(
+        #     validmweid) in indexes.id2mweid else 'unknown'
 
         # find the mwe structure
         if (
@@ -409,7 +413,6 @@ def annotate(  # noqa: C901
         if showmwestructures:
             for mwestructure in mwestructures:
                 etree.dump(mwestructure)
-
 
         # derive the queries
         queries = generatequeries(origutt, mwetree=mwetree)
@@ -504,7 +507,8 @@ def annotate(  # noqa: C901
             nearmissmwestructures = mknearmissstructs(mwestructures)
             for nearmissqueryresult in nearmissqueryresults:
                 # next must be improved
-                mwecomponentnodes = getmwecomponentnodes(nearmissmwestructures[0])
+                mwecomponentnodes = getmwecomponentnodes(
+                    nearmissmwestructures[0])
                 matchhd = getmatch_hd(nearmissqueryresult)
                 match_hd_position = getposition(matchhd)
 
@@ -513,7 +517,8 @@ def annotate(  # noqa: C901
                     nearmissqueryresult, nearmissmwestructures[0]
                 )
                 for mweclasses, mwepositions in classpositiontuples:
-                    mwetype = getmwetype(nearmissqueryresult, headpos, mweclasses)
+                    mwetype = getmwetype(
+                        nearmissqueryresult, headpos, mweclasses)
 
                     mwemeta = results2metadata(
                         nearmissqueryresult,
@@ -559,7 +564,7 @@ def annotate(  # noqa: C901
                     majorlemmas = getmajorlemmas(mwetree)
                     majorlemmaqueries = getmajorlemmaqueries(majorlemmas)
                     for majorlemmaqueryresult in majorlemmaqueryresults:
-                        mwetype = VID # this must be improved
+                        mwetype = VID  # this must be improved
                         mweclasses = [mwetype]
                         # getmwetype(None, headpos, mweclasses)
                         majorlemmanodeslist = []
@@ -587,7 +592,8 @@ def annotate(  # noqa: C901
                                 positions = rawpositions
                                 donepositions.append(rawpositions)
 
-                                headposition = getmlqheadposition(tpl, mweheadlemma)
+                                headposition = getmlqheadposition(
+                                    tpl, mweheadlemma)
 
                                 yieldnodes = getnodeyield(syntree)
                                 if headpos != 'ww' and alladjacent(positions) and \
@@ -616,9 +622,12 @@ def annotate(  # noqa: C901
     #    mwemeta = MWEMeta(sentence, sentenceid, '', mwelexicon, '', '', [], -1, '', '', [], '')
     #    cleanmetalist.append(mwemeta)
 
-    finalcleanmetalist = [finaladaptation(mwemeta) for mwemeta in cleanmetalist]
-    finaldiscardedmwemetalist = [finaladaptation(mwemeta) for mwemeta in discardedmwemetalist]
-    finalduplicatemwemetalist = [finaladaptation(mwemeta) for mwemeta in duplicatemwemetalist]
+    finalcleanmetalist = [finaladaptation(
+        mwemeta) for mwemeta in cleanmetalist]
+    finaldiscardedmwemetalist = [finaladaptation(
+        mwemeta) for mwemeta in discardedmwemetalist]
+    finalduplicatemwemetalist = [finaladaptation(
+        mwemeta) for mwemeta in duplicatemwemetalist]
 
     return finalcleanmetalist, finaldiscardedmwemetalist, finalduplicatemwemetalist
 
@@ -631,20 +640,24 @@ def finaladaptation(mwemeta: MWEMeta) -> MWEMeta:
         newmwemeta = mwemeta
     return newmwemeta
 
+
 def sameorder(majorlemmanodestuple, yieldnodes, positions):
-    targetnodes = [node for node in yieldnodes if int(getattval(node, 'end')) in positions]
+    targetnodes = [node for node in yieldnodes if int(
+        getattval(node, 'end')) in positions]
     targetlemmas = [getattval(node, 'lemma') for node in targetnodes]
     majorlemmas = [getattval(node, 'lemma') for node in majorlemmanodestuple]
     result = targetlemmas == majorlemmas
     return result
 
-def alladjacent(positions:List[int]):
+
+def alladjacent(positions: List[int]):
     sortedpositions = sorted(positions)
     for i in range(len(sortedpositions)):
         if i + 1 < len(sortedpositions):
             if sortedpositions[i+1] - sortedpositions[i] != 1:
                 return False
     return True
+
 
 def getmlqheadposition(nodes: Tuple[SynTree], lemma: str) -> int:
     if len(nodes) > 0:
@@ -676,8 +689,10 @@ def removesubsetmwes(
     :return: (keptmwemetas, discardedmwemetas)
     """
 
-    keptmwemetas = [mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype != meq]
-    mwemetalist = [mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype == meq]
+    keptmwemetas = [
+        mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype != meq]
+    mwemetalist = [
+        mwemeta for mwemeta in rawmwemetalist if mwemeta.mwequerytype == meq]
     discardedmwemetas = []
     duplicatemwemetas = []
     if len(mwemetalist) < 2:
@@ -835,7 +850,8 @@ def getmwemetacounts(
     queryscore = querycount / totalcount * 100 if totalcount != 0 else "NA"
     queryselfcount = meqselfcount + nmqselfcount + mlqselfcount
     queryselfscore = (
-        queryselfcount / len(sentenceids) * 100 if len(sentenceids) != 0 else "NA"
+        queryselfcount / len(sentenceids) *
+        100 if len(sentenceids) != 0 else "NA"
     )
     sentcountstr = str(sentcount if sentcount is not None else "no count")
 

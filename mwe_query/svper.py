@@ -1,6 +1,7 @@
 import copy
 from sastadev.sastatypes import SynTree
 
+
 def transformsvper(syntree: SynTree) -> SynTree:
     '''
     transformation for er uit zien en er in zitten
@@ -19,4 +20,4 @@ def transformsvper(syntree: SynTree) -> SynTree:
     if len(svpvzs) != 1:
         # message
         return syntree
-    if
+    # if # TODO: ?

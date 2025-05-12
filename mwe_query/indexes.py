@@ -1,7 +1,7 @@
 from lxml import etree
 from dataclasses import dataclass
 from sastadev.treebankfunctions import find1, getattval
-from canonicalform import preprocess_MWE, transformtree, gettopnode, mwenormalise,tokenize, vblwords,\
+from canonicalform import preprocess_MWE, transformtree, gettopnode, mwenormalise, tokenize, vblwords, \
     transformalsvz, transformadvprons, expandnonheadwords, transformmwu
 from wordtransform import correctlemmas
 from lexicons import lemmacorrectionlexicon
@@ -13,7 +13,6 @@ from tbfstandin import writetb
 # from dcm2pep import dcm_clean
 # from alpino_query import parse_sentence
 import sastadev.alpinoparsing
-from tbfstandin import  removeud
 from typing import List, Tuple
 import os
 import json
@@ -85,8 +84,6 @@ def getatt(mwetree, att):
     return result
 
 
-
-
 def putlastmodtime(time):
     with open(modtimefilename, "w", encoding="utf8") as outfile:
         json.dump(time, outfile)
@@ -98,7 +95,8 @@ def getlastmodtime():
             time = json.load(outfile)
             return time
     else:
-        olddate = datetime.datetime(1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc)
+        olddate = datetime.datetime(
+            1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc)
         olddatefloat = olddate.timestamp()
         return olddatefloat
 
@@ -199,7 +197,8 @@ def updateindexes(indexes, mwefilename, forced=False):
                     metadata = etree.Element("metadata")
                     meta1 = etree.Element(
                         "meta",
-                        attrib={"type": "text", "name": "origutt", "value": mwestr},
+                        attrib={"type": "text",
+                                "name": "origutt", "value": mwestr},
                     )
                     meta2 = etree.Element(
                         "meta", attrib={"type": "text", "name": "id", "value": mweid}
@@ -261,7 +260,8 @@ def updateindexes(indexes, mwefilename, forced=False):
     else:
         print("Indexes up to date")
 
-    indexes = Indexes(mweid2id, id2mweid, lemma2iddict, lemmasofmwedict, mwetreesdict)
+    indexes = Indexes(mweid2id, id2mweid, lemma2iddict,
+                      lemmasofmwedict, mwetreesdict)
     return indexes
 
 
@@ -280,6 +280,7 @@ def expandimwes(imwes: List[Tuple[int, List[str]]]) -> List[Tuple[int, List[str]
         baseresults += expandmwe(mwe)
     results = list(enumerate(baseresults))
     return results
+
 
 def expandmwe(rawmwe: Tuple[str]) -> List[Tuple[str]]:
     """
@@ -315,7 +316,6 @@ def expandmwe(rawmwe: Tuple[str]) -> List[Tuple[str]]:
     return results
 
 
-
 def getextralemmas(lemmas: List[str]) -> List[str]:
     """
     words in mwus often do not get their proper lemma; in some treebanks they have; here we correct this
@@ -326,7 +326,7 @@ def getextralemmas(lemmas: List[str]) -> List[str]:
     for lemma in lemmas:
         # if lemma in mwuwordlemmadict:
         if lemma in lemmacorrectionlexicon:
-                newlemma =  lemmacorrectionlexicon[lemma]
+            newlemma = lemmacorrectionlexicon[lemma]
         else:
             newlemma = lemma
         newlemmas.append(newlemma)

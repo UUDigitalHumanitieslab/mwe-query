@@ -138,6 +138,7 @@ def select(sents: List[Tuple[int, str]], uttids=None):
         results = sents
     return results
 
+
 def getparsefromfile(id):
     if id in parsefiles:
         infullname = os.path.join(parsefilefolder, parsefiles[id])
@@ -148,6 +149,7 @@ def getparsefromfile(id):
         print(f'id {id} not in parsefiles')
         return None
 
+
 def getcomparisondata(comparisonfullname: FileName) -> dict:
     comparisondict = {}
     header, data = getxlsxdata(comparisonfullname)
@@ -155,10 +157,12 @@ def getcomparisondata(comparisonfullname: FileName) -> dict:
         comparisondict[i+2] = row
     return comparisondict
 
+
 def gettree(infullname):
     fulltree = etree.parse(infullname)
     tree = fulltree.getroot()
     return tree
+
 
 def selectcomparisonresults(comparisondict, rowids=[]):
     results = []
@@ -174,12 +178,15 @@ def removemarking(sent: str) -> str:
         if ch != '*':
             result += ch
     return result
+
+
 def getsentence(comparisonrow) -> str:
     rawresult = comparisonrow[res_sentcol]
     if rawresult == "":
         rawresult = comparisonrow[ref_sentcol]
     result = removemarking(rawresult)
     return result
+
 
 def tryannotate():
     comparisonfullname = r'D:\Dropbox\various\Resources\nl-parseme-cupt\NL_alpino-ud_1-10a_comparison.xlsx'
@@ -283,8 +290,8 @@ def tryannotate():
     sentences += [(80, """AVRO's Televizier had een exclusief interview gekocht met " de gevangene van Peking " de Engelse Reutercorrespondent Anthony Gray die 2 jaar lang huisarrest heeft gehad .""")]
     sentences += [(81, """Voor de heer Schravenmade lijdt het geen twijfel , dat de Rijn-Schelde , waarin Wilton-Feijenoord is opgenomen , alle haast maakt om zich op de Maasvlakte met een reparatie- en werfbedrijf ( voor nieuwbouw ) te vestigen .""")]
     sentences += [(82, """Zij krijgt hiervoor in het kader van de manifestatie C'70 de beschikking over een nieuw paviljoen op het Stadhuisplein .""")]
-    sentences += [(83, """Het Haags muziektheater , dat onlangs werd opgericht met de bedoeling niet alleen een Haagse maar vooral bij de keuze van de medewerkers ook een echt Nederlandse bijdrage te leveren aan de operacultuur in ons land , zal zaterdag 27 september in het Scheveningse Circustheater debuteren met een voorstelling van twee korte opera's :""")]
-    sentences += [(84, """Er waren enige honderden mensen in de Rivierahal en die hadden veel plezier in al dat beweeg en het hyper-theatrale spel van deze Italianen , dat vaak in verschillende hoeken van de zaal geboden werd en dan moest men zelf maar uitzoeken wat men wilde zien .""")]
+    sentences += [(83, """Het Haags muziektheater , dat onlangs werd opgericht met de bedoeling niet alleen een Haagse maar vooral bij de keuze van de medewerkers ook een echt Nederlandse bijdrage te leveren aan de operacultuur in ons land , zal zaterdag 27 september in het Scheveningse Circustheater debuteren met een voorstelling van twee korte opera's :""")]  # noqa: E501
+    sentences += [(84, """Er waren enige honderden mensen in de Rivierahal en die hadden veel plezier in al dat beweeg en het hyper-theatrale spel van deze Italianen , dat vaak in verschillende hoeken van de zaal geboden werd en dan moest men zelf maar uitzoeken wat men wilde zien .""")]  # noqa: E501
     sentences += [(85, """Voor een ogenblik had ik spijt van deze uitspraak en dacht ik dat het beter zou zijn geweest toch maar de handen op elkaar te brengen .""")]
     sentences += [(86, """Vooralsnog moet dus gebruik worden gemaakt van het Van Wiechenonderzoek , waarvan het registratieformulier is opgenomen in het Integraal Dossier JGZ .""")]
     sentences += [(87, """Koeperman ging kansloos ten onder .""")]
@@ -295,7 +302,7 @@ def tryannotate():
     sentences += [(92, """De minister stond er niet afwijzend tegenover om die voorzieningen los te maken van de universiteit en onder te brengen in de algemene voorzieningen .""")]
     sentences += [(93, """Uit de discussie in de synode bleek dat de leden wel begrip hadden voor de gewetensbezwaren van de lectoren , maar zij hadden een andere weg moeten kiezen , namelijk die van het appel .""")]
     sentences += [(94, """Althans dit is de strekking van hetgeen nu al naar buiten is gekomen van het rapport der staatscommissie dat binnenkort zal worden gepubliceerd .""")]
-    sentences += [(95, """De goal van Ruud Witgen voor Nijmegen zou men een " verlossende " kunnen noemen , want na liefst 185 minuten beslissingshockey konden de Nijmegenaren juichend het veld van stadgenoot Union verlaten omdat Upward - dit seizoen gepromoveerd - dan toch het hoofd gebogen had en daarmee het recht verworven was om als " tweede " in oost alsnog in de landencompetitie te mogen spelen .""")]
+    sentences += [(95, """De goal van Ruud Witgen voor Nijmegen zou men een " verlossende " kunnen noemen , want na liefst 185 minuten beslissingshockey konden de Nijmegenaren juichend het veld van stadgenoot Union verlaten omdat Upward - dit seizoen gepromoveerd - dan toch het hoofd gebogen had en daarmee het recht verworven was om als " tweede " in oost alsnog in de landencompetitie te mogen spelen .""")]  # noqa: E501
     sentences += [(96, """De beste toestand is die waarin allen *zich* *toeleggen* *op* de produktie van wat zij het beste kunnen maken . " """)]
     sentences += [(97, """Vele omroepmedewerkers zijn de pioniersdagen van de Nederlandse televisie nog niet vergeten , toen Carel Enkelaar op de stoel van de heer Simons een journaal maakte dat vaktechnisch gesproken , klonk als een klok .""")]
     sentences += [(98, """De overkoepelende studentenorganisatie wil hiermee de aandacht vestigen op de plannen van minister Veringa om het universitaire bestel in Nederland vergaand te centraliseren .""")]
@@ -324,13 +331,12 @@ def tryannotate():
         print(f"annotating {rowid}: {sentence}...")
         if tree is not None:
             expandedtree = expandfull(tree)
-            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(expandedtree, rowid)
+            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(
+                expandedtree, rowid)
 
             fullmwemetalist += mwemetalist
             fulldiscardedmwemetalist += discardedmwemetalist
             fullduplicatemwemetalist += duplicatemwemetalist
-
-
 
     selectedsentences = select(sentences, uttids=[])
     for id, sentence in selectedsentences:
@@ -346,7 +352,8 @@ def tryannotate():
             tree = parse(sentence)
         if tree is not None:
             expandedtree = expandfull(tree)
-            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(expandedtree, id)
+            mwemetalist, discardedmwemetalist, duplicatemwemetalist = annotate(
+                expandedtree, id)
 
             fullmwemetalist += mwemetalist
             fulldiscardedmwemetalist += discardedmwemetalist
@@ -372,8 +379,8 @@ def tryannotate():
     )
     discardedrows = [mwemeta.torow() for mwemeta in fulldiscardedmwemetalist]
     duplicaterows = [mwemeta.torow() for mwemeta in fullduplicatemwemetalist]
-    add_worksheet(wb,[mwemetaheader], discardedrows, sheetname='Discarded')
-    add_worksheet(wb,[mwemetaheader], duplicaterows, sheetname='Duplicates')
+    add_worksheet(wb, [mwemetaheader], discardedrows, sheetname='Discarded')
+    add_worksheet(wb, [mwemetaheader], duplicaterows, sheetname='Duplicates')
     wb.close()
 
 

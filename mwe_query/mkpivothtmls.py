@@ -23,7 +23,8 @@ with open(htmltemplatefullname, 'r', encoding='utf8') as htmltemplatefile:
 
 overviewtemplatefilename = 'overviewtemplate.html'
 overviewtemplatepath = 'htmltemplates'
-overviewtemplatefullname = os.path.join(overviewtemplatepath, overviewtemplatefilename)
+overviewtemplatefullname = os.path.join(
+    overviewtemplatepath, overviewtemplatefilename)
 with open(overviewtemplatefullname, 'r', encoding='utf8') as overviewtemplatefile:
     overviewtemplatestr = overviewtemplatefile.read()
     overviewtemplate = Template(overviewtemplatestr)
@@ -42,7 +43,8 @@ def dquote_escape(instr: str) -> str:
 def mkdataobjectstr(header, data) -> str:
     newrows = []
     for row in data:
-        newelements = [f'{header[i]}: "{dquote_escape(row[i])}"' for i in range(len(row))]
+        newelements = [
+            f'{header[i]}: "{dquote_escape(row[i])}"' for i in range(len(row))]
         newrow = f'{{ {comma.join(newelements)} }}'
         newrows.append(newrow)
     datastr = f'[ {commanl.join(newrows)} ]'
@@ -59,9 +61,11 @@ def mkpivothtmls(analysisname, header, data, overviewfilename, mwe, treebankname
     neatanalysisname = analysisname.replace(space, underscore)
     basename = f'{neatanalysisname}_pivot'
     fullbasename = f'{urlpath}{foldersep}{basename}'
-    headerurls = [f'<a href="{neatanalysisname}_pivot_{i}.html">{header[i]}</a>' for i in range(len(header))]
+    headerurls = [
+        f'<a href="{neatanalysisname}_pivot_{i}.html">{header[i]}</a>' for i in range(len(header))]
     for i, colheader in enumerate(header):
-        selectionsequencelist = headerurls[:i] + [f'<b>{colheader}</b>'] + headerurls[i + 1:]
+        selectionsequencelist = headerurls[:i] + \
+            [f'<b>{colheader}</b>'] + headerurls[i + 1:]
         selectionsequence = " > ".join(selectionsequencelist)
         rows = [f"{colheaderstr}" for colheaderstr in colheaderstrs[:i + 1]]
         rows_str = f'[ {comma.join(rows)} ]'
@@ -94,7 +98,8 @@ def mkoverviewhtml(mwe: str, treebankname: str, overviewlist: List[Tuple[str, st
     for section, statslabel, statsfn in overviewlist:
         if section != previoussection:
             if statsitems != []:
-                statsitemshtml = '\n'.join([f'<li>{itemhtml}</li>' for itemhtml in statsitems])
+                statsitemshtml = '\n'.join(
+                    [f'<li>{itemhtml}</li>' for itemhtml in statsitems])
                 statsitemshtml = f'<ol>{statsitemshtml}</ol>\n'
                 bodysections += statsitemshtml
             bodysections += f'<h2>{section}<h2>\n'
@@ -105,11 +110,13 @@ def mkoverviewhtml(mwe: str, treebankname: str, overviewlist: List[Tuple[str, st
         statsitems.append(itemhtml)
 
     if statsitems != []:
-        statsitemshtml = '\n'.join([f'<li>{itemhtml}</li>' for itemhtml in statsitems])
+        statsitemshtml = '\n'.join(
+            [f'<li>{itemhtml}</li>' for itemhtml in statsitems])
         statsitemshtml = f'<ol>{statsitemshtml}</ol>\n'
         bodysections += statsitemshtml
 
-    mapping = {"bodysections": bodysections, "MWE": mwe, "treebankname": treebankname}
+    mapping = {"bodysections": bodysections,
+               "MWE": mwe, "treebankname": treebankname}
 
     resultstr = overviewtemplate.substitute(mapping)
 
@@ -124,9 +131,12 @@ def createstatshtmlpages(mwe: str, treebank: Dict[str, SynTree], fulltreebanknam
     for mweparse in mwestructures:
         # xpathexprs = getcompsxpaths(mweparse)
         mwequery, nearmissquery, supersetquery, rwq = generatequeries(mwe)
-        queryresults = applyqueries(treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
+        queryresults = applyqueries(
+            treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False)
 
-        queryresults2statshtml(mwe, mweparse, treebank, fulltreebankname, queryresults)
+        queryresults2statshtml(mwe, mweparse, treebank,
+                               fulltreebankname, queryresults)
+
 
 def adaptcomponentstlist(componentslist: List[List[str]]) -> List[List[str]]:
     newcomponentslist = []
@@ -135,20 +145,20 @@ def adaptcomponentstlist(componentslist: List[List[str]]) -> List[List[str]]:
         newcomponentslist += results
     return newcomponentslist
 
+
 def expandcomponents(components: List[str]) -> List[List[str]]:
-        allresults = []
-        if components == []:
-            return [[]]
-        componentshead = components[0]
-        componentstail = components[1:]
-        componentstailexpansions = expandcomponents(componentstail)
-        componentsheadalternatives = componentshead.split('|')
-        for componentsheadalternative in componentsheadalternatives:
-            newresults = [[componentsheadalternative] + componentstailexpansion for componentstailexpansion in componentstailexpansions]
-            allresults += newresults
-        return allresults
-
-
+    allresults = []
+    if components == []:
+        return [[]]
+    componentshead = components[0]
+    componentstail = components[1:]
+    componentstailexpansions = expandcomponents(componentstail)
+    componentsheadalternatives = componentshead.split('|')
+    for componentsheadalternative in componentsheadalternatives:
+        newresults = [[componentsheadalternative] +
+                      componentstailexpansion for componentstailexpansion in componentstailexpansions]
+        allresults += newresults
+    return allresults
 
 
 def queryresults2statshtml(mwe: str, mweparse: SynTree, treebank: Dict[str, SynTree],
@@ -161,7 +171,8 @@ def queryresults2statshtml(mwe: str, mweparse: SynTree, treebank: Dict[str, SynT
                      ('NMQ-MEQ', fullmwestats.diffstats)]
     for sectionlabel, section in sectiontuples:
         statstuples = [('Arguments', section.argstats), ('Modifiers', section.modstats),
-                       ('Determiners', section.detstats), ('Argument Frames', section.argframestats),
+                       ('Determiners', section.detstats), ('Argument Frames',
+                                                           section.argframestats),
                        ('Arguments+Relations+Categories', section.argrelcatstats),
                        ('Component Sequences', section.compliststats)]
         for statslabel, statscsv in statstuples:
@@ -173,7 +184,8 @@ def queryresults2statshtml(mwe: str, mweparse: SynTree, treebank: Dict[str, SynT
 
     # componentslist = [['dans', 'ontspringen']]
     majorlemmanodes = getmajorlemmas(mweparse)
-    components = [gav(majorlemmanode, 'lemma') for majorlemmanode in majorlemmanodes]
+    components = [gav(majorlemmanode, 'lemma')
+                  for majorlemmanode in majorlemmanodes]
     componentslist = expandcomponents(components)
 
     mlqresults = selectqueryresults(queryresults, 2, 1)

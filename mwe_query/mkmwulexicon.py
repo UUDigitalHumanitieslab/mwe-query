@@ -27,9 +27,8 @@ def mkmwulexicon():
                     print(f'no parse found for {mwustr}')
                 mwutreebankdict[mwustr] = copy.deepcopy(newtree)
 
-    writetb(mwutreebankdict,mwutreebankfullname)
+    writetb(mwutreebankdict, mwutreebankfullname)
 
 
 if __name__ == '__main__':
     mkmwulexicon()
-

@@ -3,7 +3,6 @@ from filefunctions import gettextfromfile
 from dataclasses import dataclass
 from typing import List
 from collections import defaultdict
-import sys
 
 # sys.setrecursionlimit(1500)
 
@@ -11,7 +10,7 @@ import sys
 alplexparser = Lark("""
    lexicon : mainclause+
    mainclause : clause "."
-   clause: simpleclause 
+   clause: simpleclause
          | complexclause
    simpleclause: pred [ "/" digit+]
                | pred "("  argcommentlist ")"
@@ -24,30 +23,30 @@ alplexparser = Lark("""
    pred : /[a-z_]+/
    vbl: /[A-Z_]+/
    digit: /[0-9]/
-   
+
    comment : /%[^\n]*/x
-   
+
    %import common.VARIABLE
    %import common.WS
-   %ignore WS  
+   %ignore WS
      """, start='lexicon'
-    )
+                    )
 
 prologparser = Lark("""
-    program : clause_list [query] 
+    program : clause_list [query]
             | query
-    clause_list : clause 
+    clause_list : clause
                  | clause_list clause
                  | comment
                  | clause_list comment
                  | longcomment
                  | clause_list longcomment
     comment_list : comment_list comment
-    clause : predicate PERIOD 
+    clause : predicate PERIOD
            | [predicate] IMPLIES predicate_list PERIOD
-    predicate_list : predicate 
+    predicate_list : predicate
                    | predicate_list COMMA predicate
-    predicate : atom 
+    predicate : atom
               | atom OPEN_BRACE term_list CLOSE_BRACE
               | ifthenelse
               | expression
@@ -56,57 +55,57 @@ prologparser = Lark("""
     ifpart : predicate_list THEN predicate
     elifpart : SEMICOLON predicate_list "->" predicate
     elsepart : SEMICOLON predicate_list
-    
+
     expression : term OPERATOR term
     OPERATOR : /=/
-    term_list : term 
+    term_list : term
               | term comment*
               | term_list COMMA comment* term comment*
               | comment* term
               | comment* term comment*
-    term : NUMERAL 
-         | atom 
-         | variable 
+    term : NUMERAL
+         | atom
+         | variable
          | structure
          | list
          | listpattern
          | curlylist
-         
-    curlylist : OPEN_CURLY list CLOSE_CURLY     
+
+    curlylist : OPEN_CURLY list CLOSE_CURLY
     list  : OPEN_BRACKET term_list CLOSE_BRACKET
     listpattern : OPEN_BRACKET term PIPE term CLOSE_BRACKET
     structure :  atom OPEN_BRACE term_list CLOSE_BRACE
     query : QUERY_SYMBOL predicate_list PERIOD
-    atom : SMALL_ATOM 
+    atom : SMALL_ATOM
          |  STRING1
          | STRING2
     SMALL_ATOM : /[a-zéàëïöüÿè][_A-z0-9ÉÀËÏÖÜÿÈéàëïöüÿè]*/
     variable : UNDERSCORE
              | /[A-ZÉÀËÏÖÜÿÈ][A-z0-9ÉÀËÏÖÜÿÈéàëïöüÿè]*/
-    LOWERCASE_LETTER : /[a-zéàëïöüÿè]/ 
-    UPPERCASE_LETTER : /[A-ZÉÀËÏÖÜÿÈ]/ 
-    NUMERAL : /[0-9]+/ 
-    character  : LOWERCASE_LETTER 
-               | UPPERCASE_LETTER 
-               | DIGIT 
+    LOWERCASE_LETTER : /[a-zéàëïöüÿè]/
+    UPPERCASE_LETTER : /[A-ZÉÀËÏÖÜÿÈ]/
+    NUMERAL : /[0-9]+/
+    character  : LOWERCASE_LETTER
+               | UPPERCASE_LETTER
+               | DIGIT
                | SPECIAL
                | UNDERSCORE
                | ESCAPE
-    SPECIAL : /[+\-\*\/\\^~:.\?#\$&]/
+    SPECIAL : /[+\\-\\*\\/\\^~:.\\?#\\$&]/
     DIGIT : /[0-9]/
     UNDERSCORE : /_/
-    STRING1 : /'([A-zéàëïöüÿèÉÀËÏÖÜÿÈ0-9\-\*\/\\^~:.\?#\$&_\\\\ "]|(\\\\'))+'/
-    STRING2 : /"([A-zéàëïöüÿèÉÀËÏÖÜÿÈ0-9\-\*\/\\^~:.\?#\$&_\\\\ ']|(\\\\"))+'/
+    STRING1 : /'([A-zéàëïöüÿèÉÀËÏÖÜÿÈ0-9\\-\\*\\/\\^~:.\\?#\\$&_\\\\ "]|(\\\\'))+'/
+    STRING2 : /"([A-zéàëïöüÿèÉÀËÏÖÜÿÈ0-9\\-\\*\\/\\^~:.\\?#\\$&_\\\\ ']|(\\\\"))+'/
 
-    longcomment : shortlongcomment 
+    longcomment : shortlongcomment
                 | beginlongcomment midlongcomment* endlongcomment
-    shortlongcomment : /\/\*.*?\*\//
+    shortlongcomment : /\\/\\*.*?\\*\\//
     beginlongcomment : OPEN_LONGCOMMENT comment_text
     midlongcomment : comment_text
-    endlongcomment : /.*?\*\//
+    endlongcomment : /.*?\\*\\//
     comment_text : /.+?\n/x
-    
-    
+
+
 
     NOTPROVABLE : "\\+"
     ESCAPE : "\\\\'"
@@ -118,7 +117,7 @@ prologparser = Lark("""
     OPEN_BRACE : "("
     CLOSE_BRACE : ")"
     OPEN_CURLY : "{"
-    CLOSE_CURLY : "}"   
+    CLOSE_CURLY : "}"
     PERIOD : "."
     COMMA : ","
     QUERY_SYMBOL : "?-"
@@ -128,9 +127,9 @@ prologparser = Lark("""
     SEMICOLON : ";"
     OPEN_LONGCOMMENT : "/*"
     CLOSE_LONGCOMMENT : "*/"
-           
+
     %import common.WS
-    %ignore WS 
+    %ignore WS
 """, start='program', parser='lalr')
 
 # <program> ::= <clause list> <query> | <query>
@@ -159,18 +158,18 @@ prologparser = Lark("""
 
 
 longcommentparser = Lark("""
-    longcomment : shortlongcomment 
+    longcomment : shortlongcomment
                 | beginlongcomment midlongcomment* endlongcomment
-    shortlongcomment : /\/\*.*?\*\//
+    shortlongcomment : /\\/\\*.*?\\*\\//
     beginlongcomment : OPEN_LONGCOMMENT comment_text
     midlongcomment : comment_text
-    endlongcomment : /.*?\*\//
+    endlongcomment : /.*?\\*\\//
     comment_text : /.+\n/x
     OPEN_LONGCOMMENT : "/*"
     CLOSE_LONGCOMMENT : "*/"
 
     %import common.WS
-    %ignore WS 
+    %ignore WS
 
 
 """, start='longcomment')
@@ -180,11 +179,11 @@ handelstr = """
 
 v(handel,handelt,handelen,gehandeld,handelde,handelden,
     [h([intransitive,
-	part_transitive(af),
-	pc_pp(in),
-	pc_pp(met),
-	pc_pp(op),
-	pc_pp(over)])]).
+    part_transitive(af),
+    pc_pp(in),
+    pc_pp(met),
+    pc_pp(op),
+    pc_pp(over)])]).
 
 """
 
@@ -205,14 +204,14 @@ add_dt(A,B0,B) :-
 
 """
 
-v09str ="""
+v09str = """
 v(aai,aait,aaien,geaaid,aaide,aaiden,
     [h([intransitive,
-	transitive,
-	ld_pp,
-	ld_adv,
-	np_ld_pp,
-	np_ld_adv])]).
+    transitive,
+    ld_pp,
+    ld_adv,
+    np_ld_pp,
+    np_ld_adv])]).
 
 v(aanbid,aanbidt,aanbidden,aanbeden,aanbad,aanbaden,
     [h([transitive,
@@ -223,31 +222,31 @@ v(aanhoor,aanhoort,aanhoren,aanhoord,aanhoorde,aanhoorden,
 
 v(aanschouw,aanschouwt,aanschouwen,aanschouwd,aanschouwde,aanschouwden,
     [h([transitive,
-	sbar])]).
+    sbar])]).
 
 v(aanvaard,aanvaardt,aanvaarden,aanvaard,aanvaardde,aanvaardden,
     [h([als_pred_np,
-	sbar,
-	transitive])]).
+    sbar,
+    transitive])]).
 
 v(aanzie,aanziet,aanzien,aanzien,aanzag,aanzagen,  % VL
     [h([transitive])]).
 
 v(aap,aapt,apen,geaapt,aapte,aapten,
-    [h([part_transitive(na)])]).  
+    [h([part_transitive(na)])]).
 
 v(aard,aardt,aarden,geaard,aardde,aardden,
     [h([intransitive,
-	transitive,
-	ld_pp,
-	ld_adv,
-	pc_pp(naar)])]).
+    transitive,
+    ld_pp,
+    ld_adv,
+    pc_pp(naar)])]).
 
 v(aarzel,aarzelt,aarzelen,geaarzeld,aarzelde,aarzelden,
     [h([intransitive,
-	sbar,
+    sbar,
         mod_pp(over),
-	vp])]).
+    vp])]).
 
 
 """
@@ -258,16 +257,18 @@ class SynSel():
     aux: str
     synsellist: list
 
+
 @dataclass
 class Entry():
-    entrymeta : str
+    entrymeta: str
     firstsg: List[str]
     thirdsg: List[str]
-    inf : List[str]
-    psp : List[str]
-    pastsg :  List[str]
+    inf: List[str]
+    psp: List[str]
+    pastsg:  List[str]
     pastpl: List[str]
     synsels: List[SynSel]
+
 
 def transformtree(tree) -> list:
     results = []
@@ -278,6 +279,7 @@ def transformtree(tree) -> list:
                 result = getclause(clause)
                 results.append(result)
     return results
+
 
 def getclauses(tree):
     results = []
@@ -291,31 +293,33 @@ def getclauses(tree):
     return results
 
 
-
 def getclause(tree):
     child0 = tree.children[0]
     child1 = tree.children[1]
-    if child0.data == 'predicate' and isinstance(child1, Token) and child1.value == '.':    # we only want it for simple precicates tha represent lexicon entries
+    # we only want it for simple precicates tha represent lexicon entries
+    if child0.data == 'predicate' and isinstance(child1, Token) and child1.value == '.':
         result = getpredicate(child0)
     return result
+
 
 def getpredicate(tree):
     ptnode = tree.children[0]
     yield0 = getyield(ptnode)
-    if  yield0  == 'v' \
-        and tree.children[2].data == 'term_list':
+    if yield0 == 'v' \
+            and tree.children[2].data == 'term_list':
         termlist = tree.children[2]
         terms = get_terms(termlist)
         firstsg = getyield(terms[0])
-        thirdsg  = getyield(terms[1])
+        thirdsg = getyield(terms[1])
         inf = getyield(terms[2])
         psp = getyield(terms[3])
         pastsg = getyield(terms[4])
-        pastpl  = getyield(terms[5])
+        pastpl = getyield(terms[5])
 
         synsels = getsynsels(terms[6])
 
-        result = Entry(firstsg=firstsg, thirdsg=thirdsg, inf=inf, psp=psp, pastsg=pastsg, pastpl=pastpl, synsels=synsels)
+        result = Entry(firstsg=firstsg, thirdsg=thirdsg, inf=inf,
+                       psp=psp, pastsg=pastsg, pastpl=pastpl, synsels=synsels)
     else:
         result = None
     return result
@@ -328,6 +332,7 @@ def getyield(tree) -> str:
     result = ''.join(resultlist)
     return result
 
+
 def get_terms(tree) -> list:
     if isinstance(tree, Token):
         resultlist = []
@@ -339,6 +344,7 @@ def get_terms(tree) -> list:
             resultlist += get_terms(child)
     return resultlist
 
+
 def getsynsels(tree) -> list:
     results = []
     child0 = tree.children[0]
@@ -349,6 +355,7 @@ def getsynsels(tree) -> list:
                 result = getsynsel(listchild)
                 results.append(result)
     return results
+
 
 def getsynsel(tree):
     term = tree.children[0]
@@ -364,33 +371,29 @@ def getsynsel(tree):
     return result
 
 
-
-
-
-
-
 examples = []
 examples += [(1, """v.""")]
-examples += [(2, """ 
+examples += [(2, """
 v(scheid,scheidt,scheiden,gescheiden,scheidde,scheidden,
     [z([intransitive,
-	pc_pp(van)])]).
+    pc_pp(van)])]).
 """)]
 examples += [(3, """
 v(scheid,scheidt,scheiden,gescheiden,scheidde,scheidden,
     [z([intransitive,
-	pc_pp(van)]),
+    pc_pp(van)]),
      h([transitive,
-	np_pc_pp(van),
-	part_refl(af),
-	refl,  % hier scheiden zich de wegen
-	part_transitive(af),
-	part_transitive(uit),
-	refl_pc_pp(van),
-	part_np_pc_pp(af,met),
-	part_np_pc_pp(af,van),
-	part_refl_pc_pp(af,van)])]).
+    np_pc_pp(van),
+    part_refl(af),
+    refl,  % hier scheiden zich de wegen
+    part_transitive(af),
+    part_transitive(uit),
+    refl_pc_pp(van),
+    part_np_pc_pp(af,met),
+    part_np_pc_pp(af,van),
+    part_refl_pc_pp(af,van)])]).
 """)]
+
 
 def select(lst, ids=None):
     if ids is None:
@@ -400,25 +403,21 @@ def select(lst, ids=None):
         return result
 
 
-
-def tryto():
-    selectedexamples = select(examples, ids=None)
-    for id, stmt in selectedexamples:
-        result = alplexparser.parse(stmt)
-        junk = 0
+# def tryto():
+#     selectedexamples = select(examples, ids=None)
+#     for id, stmt in selectedexamples:
+#         result = alplexparser.parse(stmt)
+#         junk = 0
 
 
 def getpatternfrqs(entries: List[Entry]) -> dict:
     frqdict = defaultdict(int)
-    a : SynSel = None
+    # a: SynSel = None
     for entry in entries:
         for hsynsel in entry.synsels:
             for synsel in hsynsel.synsellist:
                 frqdict[synsel] += 1
     return frqdict
-
-
-
 
 
 def parsev():
@@ -430,11 +429,12 @@ def parsev():
     patternfrqs = getpatternfrqs(results)
     for el, frq in patternfrqs.items():
         print(el, frq)
-    junk = 0
 
-def parselongcomment():
-    result = longcommentparser.parse(longcommentstr)
-    junk = 0
+
+# def parselongcomment():
+#     result = longcommentparser.parse(longcommentstr)
+#     junk = 0
+
 
 def parsestr(lexiconstr):
     tree = prologparser.parse(lexiconstr)
@@ -443,8 +443,6 @@ def parsestr(lexiconstr):
     patternfrqs = getpatternfrqs(entries)
     for el, frq in patternfrqs.items():
         print(el, frq)
-
-    junk = 0
 
 
 if __name__ == '__main__':

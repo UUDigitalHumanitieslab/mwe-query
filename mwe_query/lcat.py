@@ -6,9 +6,7 @@ phrasal node is generated for each (relevant) non-head single word.
 from typing import Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import (
-    bareindexnode,
     getattval as gav,
-    terminal,
     allcats as validcats,
     find1,
 )
@@ -73,7 +71,7 @@ def mkphrase(child: SynTree) -> SynTree:
         if computedlcat is None:
             pass
             # newnode = copy.copy(child)   # put off to check expansion of prt in mwestructures
-            #return newnode
+            # return newnode
         else:
             newnode.attrib["cat"] = computedlcat
     for att in ["begin", "end", "index", "rel"]:
@@ -143,7 +141,7 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         result = "detp"
     elif pt == "vz":
         if "particle" in frame:
-            result = "pp"   #  used to be "part"
+            result = "pp"  # used to be "part"
         elif "adjective" in frame:
             result = "ap"
         elif "adverb" in frame:
@@ -212,9 +210,11 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     elif pt == dummy:
         result = None
     else:
-        log.warning('Unknown att value (pt) encountered in: %s', ET.tostring(node))
+        log.warning('Unknown att value (pt) encountered in: %s',
+                    ET.tostring(node))
         result = None
     if result == 'xp':
-        log.warning('Unexpected att value encountered in: %s', ET.tostring(node))
+        log.warning('Unexpected att value encountered in: %s',
+                    ET.tostring(node))
 
     return result

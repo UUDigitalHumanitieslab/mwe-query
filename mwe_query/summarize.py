@@ -14,4 +14,4 @@ def mksummary(wlist, marklist, windowsize=2):
         elif ind + windowsize <= len(wlist):
             pass
         leftcontext = wlist[lb:]
-        #unfinished code#
+        # unfinished code#
