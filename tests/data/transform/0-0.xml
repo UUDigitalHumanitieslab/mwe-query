@@ -1,4 +1,4 @@
-<node id="4">
+<node id="4" complrelcond="not(node[@rel = &quot;ld&quot; or @rel = &quot;obj2&quot; or @rel = &quot;pc&quot; or @rel = &quot;pobj1&quot; or @rel = &quot;predc&quot; or @rel = &quot;se&quot; or @rel = &quot;svp&quot; or @rel = &quot;vc&quot;])">
   <node rel="su" id="2" index="1"/>
   <node rel="obj1" cat="np" id="6" nodecount="2">
     <node lemma="de" rel="det" pt="lid" lwtype="bep" id="7"/>
