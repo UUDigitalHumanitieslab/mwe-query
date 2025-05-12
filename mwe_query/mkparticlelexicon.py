@@ -5,7 +5,7 @@ from sastadev.readcsv import writecsv
 
 compoundsym = '_'
 
-svpfolder = './svplexicon'
+svpfolder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'svplexicon')
 
 
 def createsvplexicon():

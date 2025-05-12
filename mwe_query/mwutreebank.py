@@ -1,6 +1,6 @@
 import os
 from lxml import etree
-from tbfstandin import getyieldstr
+from .tbfstandin import getyieldstr
 
 mwutreebankfullname = './indexes/mwutreebank.xml'
 mwutreebankdict = {}

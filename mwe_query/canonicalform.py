@@ -5,13 +5,14 @@ to generate queries from them and to search using these queries.
 
 from typing import cast, Dict, Iterable, List, Sequence, Optional, Set, Tuple, TypeVar
 from sastadev.sastatypes import SynTree
+import logging
 import re
 import sys
-from tbfstandin import getnodeyield, getyieldstr, renumber
-from mwetyping import Annotation, Axis, NodeCondition, Polarity, Xpathexpression
-from mwutreebank import mwutreebankdict
-from mwuwordlemmas import reversemwuwordlemmadict, mwuwordlemmadict
-from pronadvs import pronadvlemmas, Radpositions, pronadv2vz
+from .tbfstandin import getnodeyield, getyieldstr, renumber
+from .mwetyping import Annotation, Axis, NodeCondition, Polarity, Xpathexpression
+from .mwutreebank import mwutreebankdict
+from .mwuwordlemmas import reversemwuwordlemmadict, mwuwordlemmadict
+from .pronadvs import pronadvlemmas, Radpositions, pronadv2vz
 
 from sastadev.treebankfunctions import (
     clausecats,
@@ -29,15 +30,15 @@ from sastadev.treebankfunctions import (
 
 import lxml.etree as ET
 import copy
-from adpositions import vzazindex
-from alternatives import expandalternatives
+from .adpositions import vzazindex
+from .alternatives import expandalternatives
 from sastadev.alpinoparsing import parse
-from annotations import (
+from .annotations import (
     lvcannotationstrings,
     lvcannotationcode2annotationdict,
-    lvcannotation2annotationcodedict, oia, cia
-)
-from annotations import (
+    lvcannotation2annotationcodedict,
+    oia,
+    cia,
     noann,
     modifiable,
     inflectable,
@@ -61,10 +62,12 @@ from annotations import (
     inmsem,
     coll,
 )
-from lcat import expandnonheadwords
-from rwq import getrwqnode
-from wordtransform import transformsvpverb, transformalsvz, correctlemmas
-from pronadvs import pronadv2pronvz, ispronadvp
+from .lcat import expandnonheadwords
+from .rwq import getrwqnode
+from .wordtransform import transformsvpverb, transformalsvz, correctlemmas
+from .pronadvs import pronadv2pronvz, ispronadvp
+
+log = logging.getLogger()
 
 space = " "
 underscore = "_"
@@ -432,9 +435,8 @@ def preprocess_MWE(rawmwe: str) -> List[Tuple[str, int]]:  # noqa: C901
                 newann = noann
                 newword = word
         else:
-            print(f"illegal state: {state} for {rawmwe}", file=sys.stderr)
-            print(f"mwe={mwe}", file=sys.stderr)
-            exit(-1)
+            log.debug('illegal state: %s for %s: mwe=%s', state, rawmwe, mwe)
+            raise RuntimeError(f'illegal state: {state} for {rawmwe}')
         ann_list.append((newword, newann))
 
     return ann_list
@@ -525,10 +527,10 @@ def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
             elif mwetop in {itop, parenttop}:
                 result = annotations[beginint] not in nomodanns
             else:
-                print(f"Illegal value for mwetop={mwetop}", file=sys.stderr)
+                log.warning('Illegal value for mwetop=%s', mwetop)
                 result = False
         else:
-            print(f"Index out of range: {beginint} in {annotations}", file=sys.stderr)
+            log.warning(f'Index out of range: {beginint} in {annotations}')
             result = False
     else:  # can now only be node with cat=mwu
         mwps = getnodeyield(head)
@@ -541,7 +543,7 @@ def headmodifiable(stree: SynTree, mwetop: int, annotations: List[int]):
                 [annotations[int(gav(mwp, "begin"))] not in nomodanns for mwp in mwps]
             )
         else:
-            print(f"Illegal value for mwetop={mwetop}", file=sys.stderr)
+            log.warning('Illegal value for mwetop=%s', mwetop)
             result = False
     return result
 
@@ -568,9 +570,7 @@ def zerochildrencount(stree, annotations):
                 if annotations[intbegin] == zero:
                     result += 1
             else:
-                print(
-                    f"Index out of range: {intbegin} in {annotations}", file=sys.stderr
-                )
+                log.warning('Index out of range: %d in %s', intbegin, annotations)
     return result
 
 
@@ -799,13 +799,13 @@ def transformtree(  # noqa: C901
                         for newchild in newchildlist:
                             if newchild is not None:
                                 if DEBUG:
-                                    print("\nnewchild:")
+                                    log.debug('\nnewchild:')
                                     ET.dump(newchild)
                                 # we must make a copy of the child because each Element has only one parent
                                 newchildcopy = copy.copy(newchild)
                                 newnodecopy.append(newchildcopy)
                                 if DEBUG:
-                                    print("\n\nnewnodecopy:")
+                                    log.debug('\n\nnewnodecopy:')
                                     ET.dump(newnodecopy)
                         results.append(newnodecopy)
                 else:
@@ -821,9 +821,7 @@ def transformtree(  # noqa: C901
             pt = gav(stree, "pt")
             rel = gav(stree, "rel")
             if not (0 <= beginint < len(annotations)):
-                print(
-                    f"Index out of range: {beginint} in {annotations}", file=sys.stderr
-                )
+                log.warning('Index out of range: %d in %s', beginint, annotations)
                 # we simply skip this node
                 # newnode = None
             else:
@@ -971,12 +969,12 @@ def transformtree(  # noqa: C901
                     results.append(newnode)
 
         if DEBUG:
-            print("results:")
+            log.debug('results:')
             for result in results:
                 if result is None:
-                    print("None")
+                    log.debug('None')
                 else:
-                    ET.dump(result)
+                    log.debug(ET.tostring(result))
         return results
 
 
@@ -1392,15 +1390,12 @@ def newgenvariants(  # noqa: C901
             if vz is not None:
                 newppnode2 = copy.copy(ppnode)
                 newvz2 = copy.copy(vz)
-                newvz2.attrib["vztype"] = "fin"
+                newvz2.attrib['vztype'] = 'fin'
                 obj1node = find1(ppnode, './node[@rel="obj1"]')
                 Rpronounobj1node = copy.copy(obj1node)
-                # Rpronounobj1node.attrib['lemma'] = 'er|hier|daar|waar|ergens|nergens|overal' # not needed, actually wrong
-                # Rpronounobj1node.attrib['pt'] = 'vnw' # not needed, actually wrong
-                newphrase = expandnonheadwordnode(Rpronounobj1node, {})
                 for child in newppnode2:
                     newppnode2.remove(child)
-                newppnode2.append(newphrase)
+                newppnode2.append(Rpronounobj1node)
                 newppnode2.append(newvz2)
             else:
                 newppnode2 = None
@@ -1441,6 +1436,8 @@ def newgenvariants(  # noqa: C901
                 pronadvppnode = expandnonheadwordnode(
                     pronadvnode, {"cat": "pp", "rel": pprel}
                 )
+                pronadvnode.attrib['rel'] = 'hd'
+                pronadvppnode.append(pronadvnode)
                 if ppshow:
                     showtree(pronadvppnode, "pronadvppnode1")
                 # pronadvnode.attrib['rel'] = 'hd'   # this is superflous

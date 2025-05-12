@@ -5,7 +5,7 @@ and provides a function to create pronominal adverb lemmas (strings)
 
 from typing import List, Optional, Tuple
 from sastadev.sastatypes import SynTree
-from stringfstandin import strip_accents
+from .stringfstandin import strip_accents
 
 Rpronouns = ["er", "hier", "daar", "waar"]
 fixedrpronouns = Rpronouns

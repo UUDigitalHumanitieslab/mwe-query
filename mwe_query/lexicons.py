@@ -3,7 +3,8 @@ from sastadev.readcsv import readcsv
 from sastadev.xlsx import getxlsxdata
 import os
 
-svpfolder = './svplexicon'
+basedir = os.path.dirname(os.path.abspath(__file__))
+svpfolder = os.path.join(basedir, 'svplexicon')
 
 infilename = 'svplexicon.txt'
 infullname = os.path.join(svpfolder, infilename)
@@ -18,7 +19,7 @@ for _, row in data:
     svpdict[wrd] = pt
 
 irvindeplexicon = defaultdict(list)
-irvlexiconfullname = './lexicons/irv_lexicon.xlsx'
+irvlexiconfullname = os.path.join(basedir,'lexicons', 'irv_lexicon.xlsx')
 irvheader, irvdata = getxlsxdata(irvlexiconfullname, sheetname='Data')
 for row in irvdata:
     lemma = row[1]
@@ -30,7 +31,7 @@ for row in irvdata:
 
 
 vpcsemilexicon = {}
-vpcsemilexiconfullname ='./lexicons/VPCsemi.txt'
+vpcsemilexiconfullname = os.path.join(basedir,'lexicons', 'VPCsemi.txt')
 data = readcsv(vpcsemilexiconfullname)
 for _, row in data:
     if len(row) >= 2:
@@ -40,20 +41,20 @@ for _, row in data:
 
 
 cranberryparticleslexicon = set()
-cranberrysparticleslexiconfullname = './lexicons/cranberryparticles.txt'
+cranberrysparticleslexiconfullname = os.path.join(basedir,'lexicons', 'cranberryparticles.txt')
 data = readcsv(cranberrysparticleslexiconfullname)
 for _, row in data:
     cranberryparticleslexicon.add(row[0])
 
 
 notSCVslexicon = set()
-notSVCslexiconfullname = './lexicons/notSCVs.txt'
+notSVCslexiconfullname = os.path.join(basedir,'lexicons', 'notSCVs.txt')
 data = readcsv(notSVCslexiconfullname)
 for _, row in data:
     notSCVslexicon.add(row[0])
 
 prenomadjdeelwoordenlexicon = {}
-prenomadjdeelwoordenlexiconfullname = './lexicons/prenomadjdeelwoorden.txt'
+prenomadjdeelwoordenlexiconfullname = os.path.join(basedir,'lexicons', 'prenomadjdeelwoorden.txt')
 data = readcsv(prenomadjdeelwoordenlexiconfullname)
 for _, row in data:
     if len(row) == 2:
@@ -63,7 +64,7 @@ for _, row in data:
 
 
 lemmacorrectionlexicon = {}
-lemmacorrectionlexiconfullname = './lexicons/lemmacorrections.txt'
+lemmacorrectionlexiconfullname = os.path.join(basedir,'lexicons', 'lemmacorrections.txt')
 data = readcsv(lemmacorrectionlexiconfullname)
 for _, row in data:
     if len(row) == 2:

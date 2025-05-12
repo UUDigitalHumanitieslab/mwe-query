@@ -3,9 +3,8 @@ from sastadev.alpinoparsing import parse, previewurl
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
 import copy
-from lexicons import svpdict,lemmacorrectionlexicon
+from .lexicons import svpdict,lemmacorrectionlexicon
 from typing import Tuple
-from pronadvs import pronadv2pronvz, ispronadvp
 
 underscore = '_'
 compoundsep = underscore

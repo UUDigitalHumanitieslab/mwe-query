@@ -1,6 +1,6 @@
 import os
 from typing import cast, Dict, IO, Iterable, List, Tuple
-from tbfstandin import getyieldstr
+from .tbfstandin import getyieldstr
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import (
     getattval as gav,
@@ -8,18 +8,15 @@ from sastadev.treebankfunctions import (
     getheadof,
     getsentence,
 )
-from canonicalform import (
-    expandaltvals,
+from .canonicalform import (
     generatemwestructures,
-    tree2xpath,
     mknearmissstructs,
     listofsets2setoflists,
 )
-from mwetyping import NodeSet
+from .mwetyping import NodeSet
 import copy
 from lxml import etree
-from getalpinomwes import isparticleverb
-from getmwecomponents import  getcompsxpaths
+from .getmwecomponents import  getcompsxpaths
 
 noneval = "@@NA@@"
 

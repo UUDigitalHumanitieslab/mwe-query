@@ -3,7 +3,7 @@ This module is a temporary stand-in for functions that should be updated in sast
 These functions have been updated there, but no new package has been released yet
 
 """
-from constants import nospaceafter
+from .constants import nospaceafter
 from typing import List, Tuple
 from sastadev.treebankfunctions import getattval, getattval_fallback, getbeginend, find1
 from sastadev.sastatypes import SynTree

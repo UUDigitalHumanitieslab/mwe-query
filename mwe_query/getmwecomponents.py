@@ -1,9 +1,8 @@
-from canonicalform import expandaltvals, tree2xpath
+from .canonicalform import expandaltvals, tree2xpath
 from sastadev.sastatypes import SynTree, Tuple
 from sastadev.treebankfunctions import getattval as gav
 from typing import List
 from lxml import etree
-import copy
 
 Relation = str
 Xpath = str
