@@ -1317,15 +1317,12 @@ def newgenvariants(  # noqa: C901
             if vz is not None:
                 newppnode2 = copy.copy(ppnode)
                 newvz2 = copy.copy(vz)
-                newvz2.attrib["vztype"] = "fin"
+                newvz2.attrib['vztype'] = 'fin'
                 obj1node = find1(ppnode, './node[@rel="obj1"]')
                 Rpronounobj1node = copy.copy(obj1node)
-                # Rpronounobj1node.attrib['lemma'] = 'er|hier|daar|waar|ergens|nergens|overal' # not needed, actually wrong
-                # Rpronounobj1node.attrib['pt'] = 'vnw' # not needed, actually wrong
-                newphrase = expandnonheadwordnode(Rpronounobj1node, {})
                 for child in newppnode2:
                     newppnode2.remove(child)
-                newppnode2.append(newphrase)
+                newppnode2.append(Rpronounobj1node)
                 newppnode2.append(newvz2)
             else:
                 newppnode2 = None
@@ -1366,6 +1363,8 @@ def newgenvariants(  # noqa: C901
                 pronadvppnode = expandnonheadwordnode(
                     pronadvnode, {"cat": "pp", "rel": pprel}
                 )
+                pronadvnode.attrib['rel'] = 'hd'
+                pronadvppnode.append(pronadvnode)
                 if ppshow:
                     showtree(pronadvppnode, "pronadvppnode1")
                 # pronadvnode.attrib['rel'] = 'hd'   # this is superflous
