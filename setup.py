@@ -6,11 +6,11 @@ with open('README.md') as file:
 setup(
     name='mwe-query',
     python_requires='>=3.9, <4',
-    version='0.1.0',
+    version='0.2.0a1',
     description='',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='Martin Kroon / Digital Humanities Lab, Utrecht University',
+    author='Martin Kroon / Jan Odijk / Research Software Lab, Centre for Digital Humanities, Utrecht University',
     author_email='digitalhumanities@uu.nl',
     url='https://github.com/CentreForDigitalHumanities/mwe-query',
     license='CC BY-NC-SA 4.0',
