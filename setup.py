@@ -6,7 +6,7 @@ with open('README.md') as file:
 setup(
     name='mwe-query',
     python_requires='>=3.9, <4',
-    version='0.2.0a1',
+    version='0.2.0a2',
     description='',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -14,6 +14,7 @@ setup(
     author_email='digitalhumanities@uu.nl',
     url='https://github.com/CentreForDigitalHumanities/mwe-query',
     license='CC BY-NC-SA 4.0',
+    include_package_data=True,
     packages=['mwe_query'],
     package_data={"mwe_query": ["py.typed"]},
     zip_safe=True,

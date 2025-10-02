@@ -1,0 +1,3 @@
+recursive-include mwe_query *.txt
+recursive-include mwe_query *.xlsx
+recursive-include mwe_query *.json
