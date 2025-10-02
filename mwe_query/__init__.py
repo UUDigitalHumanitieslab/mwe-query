@@ -200,7 +200,8 @@ class Mwe:
                     node.attrib.pop(feat, None)
         xpath_3_elements = [node for node in mwe.iter() if set(
             node.attrib.keys()) != set()]
-        xpath_3_parts = ['..//' + self.__xml_to_xpath(node) for node in xpath_3_elements]
+        xpath_3_parts = [
+            '..//' + self.__xml_to_xpath(node) for node in xpath_3_elements]
         # this assumes a single top node
         xpath_3 = '/node[' + ' and '.join(xpath_3_parts) + ']'
         generated.append(
@@ -349,7 +350,8 @@ def analyze_mwe_hit(hit: SynTree, queries: Union[Iterable[str], Iterable[MweQuer
     Returns:
         MweHitInfo: information describing the properties of the found expression
     """
-    xpaths = (query.xpath if isinstance(query, MweQuery) else query for query in queries)
+    xpaths = (query.xpath if isinstance(query, MweQuery)
+              else query for query in queries)
     return MweHitInfo(hit, xpaths, tree)
 
 

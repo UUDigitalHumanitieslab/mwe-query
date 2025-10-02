@@ -1,7 +1,7 @@
 from typing import List, Tuple
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import getattval as gav
-from .adpositions import allprepositions
+from adpositions import allprepositions
 
 PosTag = str
 
@@ -28,7 +28,7 @@ mwu_exceptiondict = {
     "dernier cri": ("n", 2),
     "Jan en alleman": ("n", 1),
     "alles kits": ("ww", 2),
-    "wee je geneente": ("ww", 1),
+    "wee je gebeente": ("ww", 1),
     "wat voor één": ("vnw", 1),
 }
 
@@ -84,6 +84,8 @@ def get_mwuprops(stree: SynTree) -> Tuple[SynTree, PosTag, int]:
         result = stree[0], "vz", intpos(stree[0])
     elif sonpts[0] == "vz":
         result = stree[0], "vz", intpos(stree[0])
+    elif sonpts[0] == "bw":                                   # al met al
+        result = stree[0], "bw", intpos(stree[0])
     elif gav(stree[0], "lemma") in allprepositions:
         result = stree[0], "vz", intpos(stree[0])
     elif all([sonpt == "n" for sonpt in sonpts]):

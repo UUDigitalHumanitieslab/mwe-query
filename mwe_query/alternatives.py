@@ -10,7 +10,8 @@ debug = False
 def expandalternatives(stree: SynTree) -> List[SynTree]:
     results = []
     if stree.tag == "node":
-        poscat = gav(stree, "pt") if "pt" in stree.attrib else gav(stree, "cat")
+        poscat = gav(stree, "pt") if "pt" in stree.attrib else gav(
+            stree, "cat")
         lemma = gav(stree, "lemma")
     else:
         poscat, lemma = "", ""

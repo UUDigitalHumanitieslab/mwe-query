@@ -1,0 +1,15 @@
+Ambiguous: gemeen; not only adj but also bw: adj
+Ambiguous: neer; not only adj but also bw: bw
+Ambiguous: verder; not only adj but also bw: adj
+Ambiguous: dood; not only adj but also n: adj
+Ambiguous: gelijk; not only adj but also n: adj
+Ambiguous: recht; not only adj but also n: adj
+Ambiguous: schuil; not only bw but also n: bw
+Ambiguous: weg; not only bw but also n: bw
+Ambiguous: waar; not only adj but also vnw: adj
+Ambiguous: bij; not only adj but also vz: vz
+Ambiguous: mede; not only bw but also vz: bw
+Ambiguous: neer; not only adj but also vz: vz
+Ambiguous: rond; not only adj but also vz: vz
+Ambiguous: toe; not only bw but also vz: vz
+Ambiguous: voort; not only bw but also vz: bw

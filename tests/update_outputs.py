@@ -14,8 +14,8 @@ datadir = path.join(testdir, "data")
 
 # import this implementation
 sys.path.insert(0, path.join(testdir, ".."))
-from mwe_query import Mwe
-from mwe_query.canonicalform import (
+from mwe_query import Mwe  # noqa: E402
+from mwe_query.canonicalform import (  # noqa: E402
     preprocess_MWE,
     transformtree,
     generatemwestructures,
@@ -23,7 +23,7 @@ from mwe_query.canonicalform import (
     applyqueries,
 )
 
-from mwe_query.mwestats import (
+from mwe_query.mwestats import (  # noqa: E402
     displayfullstats,
     getstats,
     gettreebank,
@@ -77,7 +77,7 @@ def gettopnode(stree):
 def update_full_mwe_stats(treebank_name: str, mwe: str):
     dotbfolder = datapath("mwetreebanks", treebank_name)
     rawtreebankfilenames = listdir(dotbfolder)
-    selcond = lambda _: True
+    def selcond(_): return True
     treebankfilenames = [
         path.join(dotbfolder, fn)
         for fn in rawtreebankfilenames
@@ -87,7 +87,8 @@ def update_full_mwe_stats(treebank_name: str, mwe: str):
 
     mwestructures = generatemwestructures(mwe)
     for i, mweparse in enumerate(mwestructures):
-        mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(mwe)
+        mwequery, nearmissquery, supersetquery, relatedwordquery = generatequeries(
+            mwe)
         queryresults = applyqueries(
             treebank, mwe, mwequery, nearmissquery, supersetquery, verbose=False
         )
@@ -95,7 +96,8 @@ def update_full_mwe_stats(treebank_name: str, mwe: str):
         fullmwestats = getstats(mwe, queryresults, treebank)
 
         filename = f"full_mwe_stats_{treebank_name}_{i}.txt"
-        outputfilename = datapath(path.join("mwetreebanks", "expected"), filename)
+        outputfilename = datapath(
+            path.join("mwetreebanks", "expected"), filename)
 
         with open(outputfilename, "w", encoding="utf8") as outfile:
 
@@ -128,7 +130,8 @@ def update_transform():
         j = 0
         for newtree in newtrees:
             ET.indent(newtree)
-            write("transform", f"{i}-{j}.xml", ET.tostring(newtree, encoding="unicode"))
+            write("transform", f"{i}-{j}.xml",
+                  ET.tostring(newtree, encoding="unicode"))
             j += 1
 
         i += 1

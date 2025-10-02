@@ -4,7 +4,7 @@ import os
 
 tab = "\t"
 
-defaultoutputpath = r"D:\Dropbox\jodijk\myprograms\python\mweannotatie\mwelexicon"
+defaultoutputpath = r"D:\Dropbox\jodijk\myprograms\python\mwe-query\mwe_query\mwelexicon"
 
 
 def releasedcm():
@@ -14,13 +14,13 @@ def releasedcm():
         "-i",
         "--infile",
         dest="inputfullname",
-        help="Path to the folder containing Alpino treebank to be annotated",
+        help="Path to the ffile containing the lexicon",
     )
     parser.add_option(
         "-o",
         "--outpath",
         dest="outputpath",
-        help="path to the folder to put the annotated data",
+        help="path to the folder to put the released lexicon",
     )
 
     (options, args) = parser.parse_args()
@@ -38,6 +38,13 @@ def releasedcm():
     excludecol = 12
 
     outrows = []
+    if len(data) == 0:
+        print(
+            f'No data found in {options.inputfullname}. Specify the full path. Aborting')
+        exit(-1)
+    else:
+        print(f'{len(data)} rows found in {options.inputfullname}')
+
     for row in data:
         excludeval = row[excludecol].lower()
         if excludeval == "no":

@@ -56,7 +56,7 @@ from sastadev.xlsx import getxlsxdata
 from sastadev.treebankfunctions import getsentence
 
 from lxml import etree
-from .canonicalform import generatequeries, expandfull, preprocess_MWE
+from mwe_query.canonicalform import generatequeries, expandfull, preprocess_MWE
 from sastadev.sastatypes import SynTree
 from typing import Dict, List, Tuple
 import sys
@@ -229,7 +229,8 @@ def regressiontest():  # noqa: C901
     if os.path.exists(testfilename):
         header, mwedata = getxlsxdata(testfilename)
     else:
-        print(f"input file {testfilename} not found. Aborting", file=sys.stderr)
+        print(
+            f"input file {testfilename} not found. Aborting", file=sys.stderr)
         exit(-1)
 
     curmwe = ""
@@ -273,7 +274,7 @@ def regressiontest():  # noqa: C901
         debug = False
         if debug:
             print(f"Processing mwe {mwe}...")
-        print(f"Processing mwe {mwe}...", file=sys.stderr)
+        print(f"Processing mwe {mwe}...")
         cleanmwe = getcleanmwe(mwe)
         if cleanmwe in treebankdict:
             mwetree = treebankdict[cleanmwe]
@@ -307,8 +308,12 @@ def regressiontest():  # noqa: C901
             expandeduttparse = expandfull(uttparse)
             resultlist = []
             for label, mwequery in labeledmwequeries:
-                results = expandeduttparse.xpath(mwequery)
-                resultlist.append(len(results))
+                if mwequery is not None:
+                    results = expandeduttparse.xpath(mwequery)
+                    resultlist.append(len(results))
+                else:
+                    print(f'None value for {label}')
+                    resultlist.append(0)
 
             newdata[mwe][utterance] = tuple(resultlist)
 
@@ -325,7 +330,8 @@ def regressiontest():  # noqa: C901
                 reportlabel = "DN"
                 differencecount += 1
             if status == improvement or status == different:
-                message = mkreport(reportlabel, mwe, utterance, resultlist, reflist)
+                message = mkreport(
+                    reportlabel, mwe, utterance, resultlist, reflist)
                 report.append(message)
                 if status == different:
                     errorfound = True

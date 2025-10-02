@@ -79,14 +79,16 @@ def getrwqnode(
         origsubnode = ET.Element("subnode", origavdict)
         otherlemmasubnodes = getotherlemmasubnodes(node)
         prepprtsubnodes = (
-            getprepprtsubnodes(node, alllemmanodes) if gav(node, "pt") == "ww" else []
+            getprepprtsubnodes(node, alllemmanodes) if gav(
+                node, "pt") == "ww" else []
         )
         subnodes = [origsubnode] + otherlemmasubnodes + prepprtsubnodes
         if subnodes == []:
             result = node
         else:
             localtatts = ["polarity", "axis"]
-            avdict = {att: node.attrib[att] for att in localtatts if att in node.attrib}
+            avdict = {att: node.attrib[att]
+                      for att in localtatts if att in node.attrib}
             localtnode = ET.Element("localt", avdict)
             localtnode.extend(subnodes)
             result = localtnode

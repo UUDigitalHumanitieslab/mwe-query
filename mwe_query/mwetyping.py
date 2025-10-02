@@ -16,5 +16,6 @@ State = int
 QueryResult = List[SynTree]
 Xpathexpression = str
 
-AllQueriesResult = Dict[str, List[Tuple[QueryResult, QueryResult, QueryResult]]]
+AllQueriesResult = Dict[str,
+                        List[Tuple[QueryResult, QueryResult, QueryResult]]]
 QueryResults = List[QueryResult]

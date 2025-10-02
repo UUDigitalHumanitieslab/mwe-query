@@ -1,10 +1,10 @@
-from .mwe_annotate import annotate, getmwemetacounts
-from .mwemeta import mwemetaheader
+from mwe_query.mwe_annotate import annotate, getmwemetacounts
+from mwe_query.mwemeta import mwemetaheader
 from sastadev.alpinoparsing import parse
 from sastadev.xlsx import add_worksheet, mkworkbook
 from sastadev.readcsv import readcsv
-from .canonicalform import removeannotations
-from .indexes import mwetreebank, mwelexiconfullname
+from mwe_query.canonicalform import removeannotations
+from mwe_query.indexes import mwetreebank, mwelexiconfullname
 from typing import List, Tuple
 from collections import defaultdict
 
@@ -78,7 +78,8 @@ def selftest():
         else:
             print(f"No parse for {rawsentence}")
 
-    (statsheader, statsrows) = getmwemetacounts(fullmwemetalist, sentcount=counter)
+    (statsheader, statsrows) = getmwemetacounts(
+        fullmwemetalist, sentcount=counter)
     fullrowlist = [
         mwemeta.torow() for mwemeta in fullmwemetalist if mwemeta is not None
     ]
@@ -93,8 +94,10 @@ def selftest():
         freeze_panes=(1, 0),
     )
     add_worksheet(wb, [statsheader], statsrows, sheetname="Stats")
-    fullduplicaterows = [mwemeta.torow() for mwemeta in fullduplicatemwemetalist]
-    add_worksheet(wb, [mwemetaheader], fullduplicaterows, sheetname="Duplicates")
+    fullduplicaterows = [mwemeta.torow()
+                         for mwemeta in fullduplicatemwemetalist]
+    add_worksheet(wb, [mwemetaheader], fullduplicaterows,
+                  sheetname="Duplicates")
 
     wb.close()
 

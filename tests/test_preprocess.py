@@ -67,7 +67,7 @@ class TextIndexExpansion(unittest.TestCase):
                     if linenr == 1:
                         continue
                     idmwelist = idmwe.split(tab)
-                    id = idmwelist[0]
+                    # id = idmwelist[0]
                     mwe = idmwelist[1][:-1]
                     annotatedlist = preprocess_MWE(mwe)
                     wlist = [el[0] for el in annotatedlist]
@@ -77,7 +77,8 @@ class TextIndexExpansion(unittest.TestCase):
                     print(f"{mwe};{wliststr};{annliststr}", file=outfile)
                     b, sym = self.containsillegalsymbols(wliststr)
                     if b:
-                        print(f"Illegal symbol {sym} in {wliststr}", file=sys.stderr)
+                        print(
+                            f"Illegal symbol {sym} in {wliststr}", file=sys.stderr)
 
     def mktreebank(self, dict, outfilename):
         treebank = ET.Element("treebank")
@@ -113,14 +114,14 @@ class TextIndexExpansion(unittest.TestCase):
 
             annotatedlist = preprocess_MWE(mwe)
             annotations = [el[1] for el in annotatedlist]
-            cleanmwe = space.join([el[0] for el in annotatedlist])
             fullmweparse = self.strees[1]
             mweparse = gettopnode(fullmweparse)
             newtrees = transformtree(mweparse, annotations)
             j = 0
             for newtree in newtrees:
                 ET.indent(newtree)
-                actual = ET.tostring(newtree, encoding="unicode").splitlines(True)
+                actual = ET.tostring(
+                    newtree, encoding="unicode").splitlines(True)
                 with open(
                     self.data_path("transform", f"{i}-{j}.xml"),
                     encoding="utf-8",
@@ -130,7 +131,7 @@ class TextIndexExpansion(unittest.TestCase):
                     diff = "".join(context_diff(expected, actual))
                     try:
                         assert not diff
-                    except:
+                    except:  # noqa: E722
                         print(diff)
                         raise
                 j += 1
@@ -199,7 +200,7 @@ class TextIndexExpansion(unittest.TestCase):
   </metadata>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 
     streestrings[
         2
@@ -275,7 +276,7 @@ class TextIndexExpansion(unittest.TestCase):
   </metadata>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 
     streestrings[
         3
@@ -335,7 +336,7 @@ class TextIndexExpansion(unittest.TestCase):
     <meta type="date" name="alpino_version_date" value="2019-03-07"/>
   </metadata>
 </alpino_ds>
-"""
+"""  # noqa: E501
 
     streestrings[
         4
@@ -372,7 +373,7 @@ class TextIndexExpansion(unittest.TestCase):
   </comments>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 
     streestrings[
         5
@@ -406,7 +407,7 @@ class TextIndexExpansion(unittest.TestCase):
   </comments>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 
     streestrings[
         6
@@ -437,7 +438,7 @@ class TextIndexExpansion(unittest.TestCase):
   </comments>
 </alpino_ds>
 
-"""
+"""  # noqa: E501
 
     @property
     def strees(self):
@@ -489,7 +490,8 @@ class TextIndexExpansion(unittest.TestCase):
             "iemand zal de +dans ontspringen",
         ]
         mwes += ["iemand zal 0de dans ontspringen"]
-        mwes += ["iemand zal de +*dans ontspringen", "iemand zal de *+dans ontspringen"]
+        mwes += ["iemand zal de +*dans ontspringen",
+                 "iemand zal de *+dans ontspringen"]
         mwes += ["iemand zal de =dans ontspringen"]
         mwes += ["dat mes zal aan twee kanten snijden"]
         mwes += ["0nu zal de aap uit de mouw komen"]
@@ -549,8 +551,8 @@ class TextIndexExpansion(unittest.TestCase):
         for mwe in mwedict:
             origmwetree = mwedict[mwe]
             mwetree = lowerpredm(origmwetree)
-            mweyield = getyield(mwetree)
-            mwestr = space.join(mweyield)
+            # mweyield = getyield(mwetree)
+            # mwestr = space.join(mweyield)
             # ET.dump(mwetree)
             # print(f'mwe={mwe}')
             # print(f'xpath:\n{localxpath}\n')
@@ -604,7 +606,8 @@ class TextIndexExpansion(unittest.TestCase):
         inds += ["zo doof als een kwartel"]
         inds = ["iemand zal veel ellende over iemand uitstorten"]
         # mwedict = {ind: mwedict[ind] for ind in inds}
-        expandedmwedict = {mwe: indextransform(tree) for mwe, tree in mwedict.items()}
+        expandedmwedict = {mwe: indextransform(
+            tree) for mwe, tree in mwedict.items()}
         counter = 0
         for mwe in mwedict:
             counter += 1
@@ -632,7 +635,8 @@ class TextIndexExpansion(unittest.TestCase):
                 newtrees += newgenvariants(newtreea)
             # newtrees.extend(newtreesa)
             # print(f'\n\n{mwe}:', file=outfile)
-            cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
+            cleantrees = [removesuperfluousindexes(
+                newtree) for newtree in newtrees]
             # cleantrees = newtrees
             # print('cleantrees:')
             # for cleantree in cleantrees:
@@ -682,7 +686,8 @@ class TextIndexExpansion(unittest.TestCase):
         mwetreebank = self.data_path("mwesvoorvariatie-noann_treebank.xml")
         mwedict = self.getmwedict(mwetreebank)
         # expandedmwedict = {mwe:indextransform(tree) for mwe, tree in mwedict.items()}
-        testtreebankfilename = self.data_path("testzinnen mwevarianten_treebank.xml")
+        testtreebankfilename = self.data_path(
+            "testzinnen mwevarianten_treebank.xml")
         fullvariationtreebank = getstree(testtreebankfilename)
         variationtreebank = fullvariationtreebank.getroot()
         variationtreebankdict = {
@@ -726,7 +731,8 @@ class TextIndexExpansion(unittest.TestCase):
                 newtrees += newgenvariants(newtreea)
             # newtrees.extend(newtreesa)
             # print(f'\n\n{mwe}:', file=outfile)
-            cleantrees = [removesuperfluousindexes(newtree) for newtree in newtrees]
+            cleantrees = [removesuperfluousindexes(
+                newtree) for newtree in newtrees]
             # cleantrees = newtrees
             # print('cleantrees:')
             # for cleantree in cleantrees:
@@ -830,7 +836,8 @@ class TextIndexExpansion(unittest.TestCase):
                             f"mwe:{len(mwenodes)}; nearmiss: {len(nearmissnodes)}; superset:{len(supersetnodes)}"
                         )
                 else:
-                    results = applyqueries(mwedict, mwe, mweq, nearmissq, supersetq)
+                    applyqueries(
+                        mwedict, mwe, mweq, nearmissq, supersetq)
 
 
 # if __name__ == '__main__':

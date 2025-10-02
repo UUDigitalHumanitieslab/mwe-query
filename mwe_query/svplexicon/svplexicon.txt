@@ -1,0 +1,150 @@
+wrd	pt	prtfrq	prtinwwfrq
+op	vz	1907	1743
+mee	vz	631	644
+weg	bw	524	611
+neer	bw	181	288
+aan	vz	1313	790
+voor	vz	289	219
+vast	adj	220	239
+uit	vz	1311	771
+om	vz	183	283
+schoon	adj	23	85
+dicht	adj	94	115
+in	vz	766	354
+af	vz	656	456
+open	adj	118	142
+gelijk	adj	52	44
+terug	bw	495	186
+kapot	adj	39	38
+klaar	adj	16	53
+binnen	vz	126	37
+los	adj	67	44
+door	vz	258	131
+na	vz	105	75
+eruit	bw	29	21
+over	vz	257	70
+tegen	vz	78	18
+thuis	bw	46	27
+dood	adj	18	22
+toe	vz	383	30
+verder	adj	16	11
+hard	adj	11	0
+droog	adj	8	0
+kwijt	adj	32	10
+samen	bw	143	20
+mis	adj	20	8
+terecht	adj	115	7
+auto	n		7
+langs	vz	16	8
+heen	vz	30	20
+goed	adj	54	8
+voorbij	adj	22	12
+rond	vz	26	16
+bij	vz	141	25
+vinger	n	5	0
+recht	adj	3	5
+leeg	adj	9	9
+onder	vz	17	5
+paard	n	0	3
+stil	adj	13	4
+achterna	bw	6	3
+fout	vz	2	2
+stop	n	7	2
+beet	n	3	3
+les	n	9	2
+plat	adj	2	4
+nat	vz	2	4
+vol	adj	19	5
+stuk	n	3	3
+punt	n	0	2
+voorop	bw	15	2
+stoel	n	0	2
+achter	vz	42	2
+uil		n	2	0
+aal		n	2	0
+zwemmen	ww	0	2
+bel		n	1	0
+volume	n		1
+plak	n		1
+cross	n		1
+ruimte	n	1	1
+feest	n	3	1
+sinaasappel	n		2
+mandarijn	n			1
+ziek	adj		1
+vrij	adj	51	1
+krul	n		1
+schets	n		1
+val		n	1
+dwars	adj	5	1
+gras	n		1
+para	n		1
+donder	n		1
+krom	adj		1
+klem	n	2	1
+verkeer	n		1
+dier	n		1
+thee	n	2	1
+kip		n	1
+overeen	bw	19	1
+plaat	n		1
+kleur	n		1
+frank	adj		1
+vet		adj	1
+zeep	n		1
+sikkel	n		1
+dubbel	bw		1
+kaart	n		1
+lieveling	n		1
+waar	adj	15	0
+mede	bw	1	0
+schuil	bw	3	0
+voort	bw	23	0
+bezig	adj	0	0
+plaats	n	0	0
+vooraf	bw	0	0
+bloot	adj	0	0
+tentoon	bw	0	0
+bijeen	bw	0	0
+bekend	adj	0	0
+uiteen	bw	0	0
+mak	adj	0	0
+weer	bw		0	0
+vaneen	bw	0	0
+deel	n	0	0
+zorg	n	0	0
+gade	vz	0	0
+vliegtuig	n	0	0
+achterover	bw	0	0
+teleur	bw	0	0
+trap	n	0	0
+apart	adj	0	0
+buit	n	0	0
+tekort	n	0	0
+huis	n	0	0
+proef	n	0	0
+aaneen	bw	0	0
+prijs	n	0	0
+flauw	adj	0	0
+teweeg	bw	0	0
+gevangen	ww	0	0
+band	n	0	0
+hoog	adj	0	0
+raak	adj	0	0
+school	n	0	0
+daar	bw	0	0
+ineen	bw	0	0
+tijd	n	0	0
+gebruik	n	0	0
+vooruit	bw	0	0
+omhoog	bw	0	0
+tegemoet	bw	0	0
+ten_onder	bw	0	0
+tenonder	bw	0	0
+gerust	adj	0	0
+fijn	adj	0	0
+tussen	vz	0	0
+omver	bw	0	0
+fel	adj	0	0
+klein	adj	0	0
+achteruit	bw	0	0

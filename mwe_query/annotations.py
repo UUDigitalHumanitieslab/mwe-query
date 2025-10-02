@@ -14,6 +14,8 @@ basicannotationstrings = {
     "dr:[",
     "id:[",
     "c:",
+    "CIA:",
+    "OIA"
 }
 
 lvcannotationstringlist = [
@@ -74,6 +76,8 @@ annotationstrings = (
     inlsem,
     inmsem,
     coll,
+    oia,
+    cia
 ) = (
     0,
     1,
@@ -106,6 +110,8 @@ annotationstrings = (
     28,
     29,
     30,
+    31,
+    32
 )
 
 dropanns = [variable, zero, negpol]
@@ -125,3 +131,7 @@ lvcannotationcode2annotationdict["LBT:"] = lvc_lbt
 lvcannotation2annotationcodedict = {}
 for anncode, ann in lvcannotationcode2annotationdict.items():
     lvcannotation2annotationcodedict[ann] = anncode
+
+iavannotationcode2annotationdict = {oia: "OIA:", cia: "CIA:"}
+iavannotation2annotatiincodedict = {
+    ann: code for code, ann in iavannotationcode2annotationdict.items()}

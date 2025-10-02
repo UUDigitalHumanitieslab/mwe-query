@@ -40,6 +40,8 @@ def getwords(lemma: str, pt) -> Set[str]:
             lemmakeys = dsllemmaposindex[(lemma, numClass)]
             for lemmakey in lemmakeys:
                 words += dmwlemmakey2wordsindex[lemmakey]
+    elif pt in ['let', 'spec']:
+        pass
     else:
         if verbose:
             print(f"pt {pt} not found in pos2posnum", file=sys.stderr)

@@ -21,7 +21,8 @@ inodestrings = [
     )
 ]
 
-inodetrees = [(i, etree.fromstring(nodestring)) for (i, nodestring) in inodestrings]
+inodetrees = [(i, etree.fromstring(nodestring))
+              for (i, nodestring) in inodestrings]
 
 for i, node in inodetrees:
     result = getlcat(node)

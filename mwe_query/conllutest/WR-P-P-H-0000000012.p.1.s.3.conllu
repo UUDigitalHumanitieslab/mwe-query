@@ -1,0 +1,26 @@
+
+# source_sent_id = . NL_alpino-ud_1a.folia.xml WR-P-P-H-0000000012\WR-P-P-H-0000000012.p.1.s.3
+# archive = nl_alpinodev-ud-dev.collection
+# source = LassyDevelop/WR-P-P-H-0000000012/WR-P-P-H-0000000012.p.1.s.3.xml
+# sent_id = WR-P-P-H-0000000012\WR-P-P-H-0000000012.p.1.s.3
+# text = De Oranje-beloften legden het gisteravond zowel in fysiek als in technisch opzicht af tegen Egypte.
+# auto = ALUD2.12.3
+# metadata = {"kind": "mweinfo", "mweid": "1", "annotator": "carole.tiberius", "annotatortype": "manual", "datetime": "2024-05-22T12:27:45"}
+# metadata = {"kind": "mweinfo", "mweid": "2", "annotator": "carole.tiberius", "annotatortype": "manual", "datetime": "2024-05-22T12:28:14"}
+1	De	de	DET	LID|bep|stan|rest	Definite=Def	2	det	2:det	_	*
+2	Oranje-beloften	Oranje_belofte	NOUN	N|soort|mv|basis	Number=Plur	3	nsubj	3:nsubj	_	*
+3	legden	af_leggen	VERB	WW|pv|verl|mv	Number=Plur|Tense=Past|VerbForm=Fin	0	root	0:root	_	1:VPC.full;2:IAV
+4	het	het	PRON	VNW|pers|pron|stan|red|3|ev|onz	Person=3|PronType=Prs	3	obj	3:obj	_	*
+5	gisteravond	gisteravond	ADV	BW	_	3	advmod	3:advmod	_	*
+6	zowel	zowel	CCONJ	BW	_	8	cc:preconj	8.1:cc:preconj	_	*
+7	in	in	ADP	VZ|init	_	8	case	8.1:case	_	*
+8	fysiek	fysiek	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	3	obl	8.1:amod	_	*
+8.1	opzicht	opzicht	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	_	_	3:obl:in	CopiedFrom=12	*
+9	als	als	SCONJ	VG|onder	_	12	cc	12:cc	_	*
+10	in	in	ADP	VZ|init	_	12	case	12:case	_	*
+11	technisch	technisch	ADJ	ADJ|prenom|basis|zonder	Degree=Pos	12	amod	12:amod	_	*
+12	opzicht	opzicht	NOUN	N|soort|ev|basis|onz|stan	Gender=Neut|Number=Sing	8	conj	3:amod|8.1:conj:als	_	*
+13	af	af	ADP	VZ|fin	_	3	compound:prt	3:compound:prt	_	1;2
+14	tegen	tegen	ADP	VZ|init	_	15	case	15:case	_	2
+15	Egypte	Egypte	PROPN	N|eigen|ev|basis|onz|stan	Gender=Neut|Number=Sing	3	obl:arg	3:obl:arg:tegen	SpaceAfter=No	*
+16	.	.	PUNCT	LET	_	3	punct	3:punct	_	*

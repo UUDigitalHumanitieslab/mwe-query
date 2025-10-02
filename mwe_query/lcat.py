@@ -7,7 +7,6 @@ from typing import Optional
 from sastadev.sastatypes import SynTree
 from sastadev.treebankfunctions import (
     getattval as gav,
-    terminal,
     allcats as validcats,
     find1,
 )
@@ -27,13 +26,13 @@ def expandnonheadwords(stree: SynTree) -> SynTree:
         newnode.remove(child)
     if stree.tag == "node":
         for child in stree:
-            if terminal(child):
+            if 'word' in child.attrib:
                 rel = gav(child, "rel")
                 if rel not in ["hd", "mwp", "hdf", "cmp"]:  # leave svp out here
                     newchild = mkphrase(child)
                 else:
                     newchild = copy.copy(child)
-            elif not terminal(child):
+            else:
                 newchild = expandnonheadwords(child)
             newnode.append(newchild)
     else:
@@ -50,7 +49,11 @@ def getlcatatt(node: SynTree) -> str:
         firstchildlcat = find1(node, './node[@rel="mwp"]/@lcat')
         result = str(firstchildlcat)
     elif pt != "":
-        result = gav(node, "lcat")
+        lcat = gav(node, "lcat")
+        if lcat == "part":
+            result = "pp"
+        else:
+            result = lcat
     else:
         result = ""
     return result
@@ -66,8 +69,9 @@ def mkphrase(child: SynTree) -> SynTree:
     else:
         computedlcat = getlcat(child)
         if computedlcat is None:
-            newnode = copy.copy(child)
-            return newnode
+            pass
+            # newnode = copy.copy(child)   # put off to check expansion of prt in mwestructures
+            # return newnode
         else:
             newnode.attrib["cat"] = computedlcat
     for att in ["begin", "end", "index", "rel"]:
@@ -89,6 +93,7 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     frame = gav(node, "frame")
     numtype = gav(node, "numtype")
     vwtype = gav(node, "vwtype")
+    pdtype = gav(node, "pdtype")
     result: Optional[str] = "xp0"
     if (
         "word" not in node.attrib
@@ -136,13 +141,15 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
         result = "detp"
     elif pt == "vz":
         if "particle" in frame:
-            result = None
+            result = "pp"  # used to be "part"
         elif "adjective" in frame:
             result = "ap"
         elif "adverb" in frame:
             result = "advp"
         elif "post_p" in frame or "preposition" in frame:
             result = "pp"
+        elif rel == 'obj1':      # for intransitive prepositions
+            result = "advp"
         else:
             result = "pp"
     elif pt == "ww":
@@ -184,11 +191,15 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
             result = "detp"
         elif positie == "prenom" and vwtype == "bez":
             result = "detp"
+        elif positie == "prenom" and vwtype == "onbep":
+            result = "detp"
+        elif pdtype == "adv-pron":
+            result = "advp"
         elif "positie" not in node.attrib and vwtype == "aanw":
             result = "detp"
         elif rel == "det" and vwtype == "aanw":
             result = "detp"
-        elif vwtype in {"aanw", "betr", "pers", "pr", "recip", "vb", "onbep", "refl"}:
+        elif vwtype in {"aanw", "betr", "pers", "pr", "recip", "vb", "onbep", "refl", "excl"}:
             result = "np"
         else:
             result = "xp5"
@@ -199,9 +210,11 @@ def getlcat(node: SynTree, prel=None) -> Optional[str]:  # noqa: C901
     elif pt == dummy:
         result = None
     else:
-        log.warning('Unknown att value (pt) encountered in: %s', ET.tostring(node))
+        log.warning('Unknown att value (pt) encountered in: %s',
+                    ET.tostring(node))
         result = None
     if result == 'xp':
-        log.warning('Unexpected att value encountered in: %s', ET.tostring(node))
+        log.warning('Unexpected att value encountered in: %s',
+                    ET.tostring(node))
 
     return result

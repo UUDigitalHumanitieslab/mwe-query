@@ -1,4 +1,4 @@
-from .canonicalform import expandsvp, generatemwestructures
+from mwe_query.canonicalform import expandsvp, generatemwestructures
 from sastadev.treebankfunctions import showtree
 
 examples = [(1, "iemand zal de clown uithangen")]

@@ -1,0 +1,840 @@
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: maar daar kraait geen haan naar maar als het er drieduizend zijn of meer staat belgie op zen kop kweet niet of da verschil even groot is hoor
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: Daar kraait geen haan naar
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: Hier heeft geen haan naar gekraaid
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan kraaide daarnaar
+result: [1, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan kraaide ernaar dat hij niet kwam
+result: [1, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan kraaide er naar dat hij niet kwam
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: er is geen haan die daar naar kraait
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: Weinig hanen die daarnaar kraaien .
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: Weinig hanen die ernaar kraaiden .
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: Oost-Europese au pairs komen als toerist naar Nederland en volgens Ales kraait er geen haan naar dat ze stiekem werken .
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die er naar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die ernaar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die daarnaar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die er naar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die ernaar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0geen *haan zal naar iets kraaien
+utt: geen haan evenwel die daarnaar kraait
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal in voor iets zijn
+utt: iemand zal in voor iets zijn
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal in voor iets zijn
+utt: hij zal daar voor in zijn
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal voor iets in zijn
+utt: iemand zal voor iets in zijn
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal voor iets in zijn
+utt: hij zal daar voor in zijn
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal voor iets in zijn
+utt: hij zal daarvoor in zijn
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal voor iets in zijn
+utt: hij zal in voor een feest zijn
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal voor iets in zijn
+utt: hij zal in zijn voor een feest
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: als puntje bij paaltje +komt
+utt: als puntje bij paaltje komt
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: als puntje bij paaltje +komt
+utt: als puntje bij paaltje kwam
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dd:[dat] +zal wel
+utt: het zal wel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dd:[dat] +zal wel
+utt: dat zal wel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0dit +*varkentje wassen
+utt: Een varkentje dat even vlug gewassen moest worden door PSV Eindhoven .
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: in geval van iets
+utt: in geval van ongelkken
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: in geval van iets
+utt: in geval hiervan
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: in geval van iets
+utt: in geval hier van
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand|iets houden
+utt: hij houdt van voetbal
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand|iets houden
+utt: Hij houdt er niet van
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand|iets houden
+utt: Hij houdt ervan
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: ik schaam me
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: jij schaamt je
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: hij schaamt zich
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: zij schaamt zich
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: wij schamen ons
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: jullie schamen je
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zich schamen
+utt: zij schamen zich
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: ik ben mijzelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: jij bent jezelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: hij is zichzelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: zij is zichzelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: wij zijn onszelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: jullie zijn jezelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zichzelf zijn
+utt: zij zijn zichzelf
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab heeft gisteren de boeken neergelegd
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Ik dacht dat Saab gisteren de boeken wilde neerleggen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab legde de boeken neer
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab legde gisteren de boeken neer
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: De boeken worden door Saab neergelegd
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab heeft gisteren de boeken neergelegd
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Ik dacht dat Saab gisteren de boeken wilde neerleggen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab legde de boeken neer
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: Saab legde gisteren de boeken neer
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de boeken neerleggen
+utt: De boeken worden door Saab neergelegd
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: ik verloor mijn geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Jij verloor jouw geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: jij verloor je geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: hij verloor zijn geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Zij verloor haar geduld
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Wij verloren ons geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Jullie verloren jullie geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Zij verloren hun geduld
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: ik verloor mijn geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Jij verloor jouw geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: jij verloor je geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: hij verloor zijn geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Zij verloor haar geduld
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Wij verloren ons geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Jullie verloren jullie geduld
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal zijn geduld verliezen
+utt: Zij verloren hun geduld
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: De appel valt niet ver van de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: hij zegt dat de appel niet ver van de boom valt
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: De appel valt immers niet ver van de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: De appel valt niet ver van de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: hij zegt dat de appel niet ver van de boom valt
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De appel zal niet ver van de boom vallen
+utt: De appel valt immers niet ver van de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal zich aan iemand optrekken
+utt: hij heeft zich altijd aan zijn vriend op kunnen trekken
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal zich aan iemand optrekken
+utt: hij heeft zich altijd aan zijn vriend op kunnen trekken
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De laatste loodjes zullen het zwaarst wegen
+utt: De laatste loodje wegen het zwaarst
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De laatste loodjes zullen het zwaarst wegen
+utt: De laatste loodje wegen het zwaarst
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De schellen zullen iemand van de ogen vallen
+utt: De schellen vielen hem van de ogen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: De schellen zullen iemand van de ogen vallen
+utt: De schellen vielen hem van de ogen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iets zal iemand de keel uithangen
+utt: Dat hing hem de keel uit
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iets zal iemand de keel uithangen
+utt: Dat hing hem de keel uit
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal <makkelijk> in de omgang zijn
+utt: Hij is nogal moeilijk in de omgang
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal <makkelijk> in de omgang zijn
+utt: Hij is nogal moeilijk in de omgang
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0Er zal iets op het spel staan
+utt: Er staat veel op het spel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0Er zal iets op het spel staan
+utt: Er staat veel op het spel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dd:[die] vlieger zal niet opgaan
+utt: deze vlieger gaat niet op
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dd:[die] vlieger zal niet opgaan
+utt: deze vlieger gaat niet op
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal de kat uit de boom kijken
+utt: hij keek gisteren lang de kat uit de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal de kat uit de boom kijken
+utt: hij keek gisteren lang de kat uit de boom
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak Piets hart
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak zijn hart
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Jan brak tantes hart
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak het hart van haar buurman
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Wiens hart brak Marie
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: De jongen wiens hart Marie brak was ontroostbaar
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak Piets hart
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak zijn hart
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Jan brak tantes hart
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Marie brak het hart van haar buurman
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: Wiens hart brak Marie
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemands hart breken
+utt: De jongen wiens hart Marie brak was ontroostbaar
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: hij ontsprong de dans
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Hij ontsprong de politiek dans
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Hij ontsprong de dans van de sociale verkiezingen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Wie gaat de politieke dans leiden of ontspringen ?
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: hij ontsprong de dans
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Hij ontsprong de politiek dans
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Hij ontsprong de dans van de sociale verkiezingen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0de *dans ontspringen
+utt: Wie gaat de politieke dans leiden of ontspringen ?
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal aan 0de *dans ontspringen
+utt: hij wist aan de dans te ontspringen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal aan 0de *dans ontspringen
+utt: hij wist aan de dans te ontspringen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0een vrolijk Fransje
+utt: een vrolijk Fransje
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0een vrolijk Fransje
+utt: dit vrolijke Fransje
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0een vrolijk Fransje
+utt: een vrolijk Fransje
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: 0een vrolijk Fransje
+utt: dit vrolijke Fransje
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal met de pet naar iets gooien
+utt: Er werd met de pet naar gegooid
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal met de pet naar iets gooien
+utt: Gooi er niet met de pet naar !
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal met de pet naar iets gooien
+utt: Er werd met de pet naar gegooid
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal met de pet naar iets gooien
+utt: Gooi er niet met de pet naar !
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0een *+poging wagen
+utt: de poging die hij gewaagd had was hopeloos
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 0een *+poging wagen
+utt: de poging die hij gewaagd had was hopeloos
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de plaat poetsen
+utt: Er was geen plaat die hij gepoetst had
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de plaat poetsen
+utt: De plaat heeft hij niet gepoetst
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de plaat poetsen
+utt: Er was geen plaat die hij gepoetst had
+result: [0, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal de plaat poetsen
+utt: De plaat heeft hij niet gepoetst
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand de schuld van iets geven
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand daar de schuld van geven
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand daar van de schuld geven
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand van iets de schuld geven
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand de schuld van iets geven
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand daar de schuld van geven
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand daar van de schuld geven
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal iemand de schuld van iets geven
+utt: iemand zal iemand van iets de schuld geven
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal roken als een ketter
+utt: hij rookt als een ketter
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal roken als een ketter
+utt: hij heeft altijd gerookt als een ketter
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal roken als een ketter
+utt: hij rookt als een ketter
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: Iemand zal roken als een ketter
+utt: hij heeft altijd gerookt als een ketter
+result: [0, 0, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iets zal op de klippen lopen
+utt: Hun huwelijk is op de klippen gelopen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iets zal op de klippen lopen
+utt: Hun huwelijk is op de klippen gelopen
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dag en nacht
+utt: dag en nacht
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dag en nacht
+utt: nacht en dag
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dag en nacht
+utt: dag en nacht
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dag en nacht
+utt: nacht en dag
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dames en heren
+utt: dames en heren
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dames en heren
+utt: heren en dames
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dames en heren
+utt: dames en heren
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: dames en heren
+utt: heren en dames
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 'm smeren
+utt: hij smeerde 'm
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal 'm smeren
+utt: hij smeerde 'm
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: hij houdt van voetbal
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: Hij houdt er niet van
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: Hij houdt ervan
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: Hij houdt daarvan
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: Hij houdt ervan om te schaken
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: hij houdt er van om te schaken,
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal van iemand houden
+utt: hij houdt er niet van om te schaken
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal iemand in het gareel houden
+utt: hij hield zijn zoon in het gareel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal iemand in het gareel houden
+utt: hij heeft zijn zoon in het gareel  gehouden
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal iemand in het gareel houden
+utt: hij hield mij in het gareel
+result: [1, 1, 1]
+ref: [0, 0, 0]
+UP:
+mwe: iemand zal iemand in het gareel houden
+utt: hij heeft mij in het gareel gehouden
+result: [1, 1, 1]
+ref: [0, 0, 0]
+41 MWEs dealt with:
+716 utterances dealt with:
+167 improvements:
+0 differences found:
+Comparison with Golddata: mwq: 64.80446927374301;	nmq: 67.59776536312849;	mlq: 88.8268156424581:

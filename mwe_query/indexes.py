@@ -1,15 +1,19 @@
 from lxml import etree
 from dataclasses import dataclass
 from sastadev.treebankfunctions import find1, getattval
-from .canonicalform import preprocess_MWE, transformtree, gettopnode
-from .mwuwordlemmas import mwuwordlemmadict
+from canonicalform import preprocess_MWE, transformtree, gettopnode, mwenormalise, tokenize, vblwords, \
+    transformalsvz, transformadvprons, expandnonheadwords, transformmwu
+from wordtransform import correctlemmas
+from lexicons import lemmacorrectionlexicon
+# from mwuwordlemmas import mwuwordlemmadict
 from sastadev.sastatypes import SynTree
 from sastadev import readcsv
+from tbfstandin import writetb
 
 # from dcm2pep import dcm_clean
 # from alpino_query import parse_sentence
 import sastadev.alpinoparsing
-from typing import List
+from typing import List, Tuple
 import os
 import json
 import pathlib
@@ -17,11 +21,18 @@ import datetime
 
 space = " "
 
+ambigconstant = 100000
+
 modtimefilename = f"{__file__}_previousmodtime.json"
 mwelexiconpath = "./mwelexicon"
 # mwelexiconfilename = 'DUCAME_3.0.txt'
 # mwelexiconfilename = 'DUCAME_4.0.txt'
-mwelexiconfilename = "DUCAME_4.01.txt"
+# mwelexiconfilename = "DUCAME_4.01.txt"
+# mwelexiconfilename = "DUCAME_4.02.txt"
+mwelexiconfilename = "DUCAME_4.03.txt"
+mwelexiconfilename = "DUCAME_4.04.txt"
+mwelexiconfilename = "DUCAME_4.05.txt"
+# mwelexiconfilename = "testlexicon.txt"  # for testing purposes
 mwelexiconfullname = os.path.join(mwelexiconpath, mwelexiconfilename)
 
 
@@ -38,7 +49,15 @@ def iscontentpt(pt: str) -> bool:
     return pt in ["n", "ww", "adj", "bw", "spec"]
 
 
-def getlemmas(mwetree, origutt):
+def getlemmas(rawmwetree, origutt):
+
+    # transform alsvz, pronadvs, etc
+    mwetree1 = expandnonheadwords(rawmwetree)
+    mwetree2 = transformalsvz(mwetree1)
+    mwetree3 = transformadvprons(mwetree2)
+    mwetree4 = correctlemmas(mwetree3)
+    mwetree = transformmwu(mwetree4)
+
     # reduce the tree as is currently don in mwe-finder
     # list all remaining lemma's
     reducedmwetree = reducemwestructure(mwetree)
@@ -65,16 +84,6 @@ def getatt(mwetree, att):
     return result
 
 
-def writetb(mwetreebank):
-    tb = etree.Element("treebank")
-    for el in mwetreebank:
-        tb.append(mwetreebank[el])
-    fulltb = etree.ElementTree(tb)
-    fulltb.write(
-        mwetreebankfullname, encoding="UTF8", xml_declaration=False, pretty_print=True
-    )
-
-
 def putlastmodtime(time):
     with open(modtimefilename, "w", encoding="utf8") as outfile:
         json.dump(time, outfile)
@@ -86,7 +95,8 @@ def getlastmodtime():
             time = json.load(outfile)
             return time
     else:
-        olddate = datetime.datetime(1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc)
+        olddate = datetime.datetime(
+            1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc)
         olddatefloat = olddate.timestamp()
         return olddatefloat
 
@@ -96,6 +106,40 @@ def dcm_clean(mwestr: str) -> str:
     words = [aw[0] for aw in aws]
     result = space.join(words)
     return result
+
+
+def extendindexesforextralemmas(i: int, mweid: str, lemmas: List[str],
+                                mweid2id, id2mweid, lemmasofmwedict, lemma2iddict, mwetreesdict):
+    """
+
+    Args:
+        i: internal identifier of the mwe (int)
+        mweid: external mwe identifier (str)
+        lemmas: list of lemmas that are new
+        mweid2id: dictionary to be updated
+        id2mweid: dictionary to be updated
+        lemmasofmwedict: dictionary to be updated
+        lemma2iddict: dictionary to be updated
+        mwetreesdict: dictionary to be updated
+
+    Returns: None
+
+    """
+    # extra lemmas for words in mwus
+    # this is not needed anymore
+    # extralemmas = getextralemmas(lemmas)
+    # k = ambigconstant + i
+    # extramweid = f"{mweid}X"
+    # if extralemmas != []:
+    #     mweid2id[extramweid] = k
+    #     id2mweid[k] = extramweid
+    #     lemmasofmwedict[k] = extralemmas
+    #     for lemma in extralemmas:
+    #         if lemma in lemma2iddict:
+    #             lemma2iddict[lemma].append(k)
+    #         else:
+    #             lemma2iddict[lemma] = [k]
+    #     mwetreesdict[k] = mwetree
 
 
 def updateindexes(indexes, mwefilename, forced=False):
@@ -130,7 +174,8 @@ def updateindexes(indexes, mwefilename, forced=False):
     if updateneeded:
         # now we have to update the indexes
 
-        imwes = readcsv.readcsv(mwefilename)
+        baseimwes = readcsv.readcsv(mwefilename)
+        imwes = expandimwes(baseimwes)
         # if forced:
         #    print('Forced index update')
         # else:
@@ -152,7 +197,8 @@ def updateindexes(indexes, mwefilename, forced=False):
                     metadata = etree.Element("metadata")
                     meta1 = etree.Element(
                         "meta",
-                        attrib={"type": "text", "name": "origutt", "value": mwestr},
+                        attrib={"type": "text",
+                                "name": "origutt", "value": mwestr},
                     )
                     meta2 = etree.Element(
                         "meta", attrib={"type": "text", "name": "id", "value": mweid}
@@ -181,19 +227,20 @@ def updateindexes(indexes, mwefilename, forced=False):
                     mwetreesdict[i] = mwetree
 
                     # extra lemmas for words in mwus
-                    extralemmas = getextralemmas(lemmas)
-                    k = 100000 + i
-                    extramweid = f"{mweid}X"
-                    if extralemmas != []:
-                        mweid2id[extramweid] = k
-                        id2mweid[k] = extramweid
-                        lemmasofmwedict[k] = extralemmas
-                        for lemma in extralemmas:
-                            if lemma in lemma2iddict:
-                                lemma2iddict[lemma].append(k)
-                            else:
-                                lemma2iddict[lemma] = [k]
-                        mwetreesdict[k] = mwetree
+                    # not needed anymore
+                    # extralemmas = getextralemmas(lemmas)
+                    # k = ambigconstant + i
+                    # extramweid = f"{mweid}X"
+                    # if extralemmas != []:
+                    #     mweid2id[extramweid] = k
+                    #     id2mweid[k] = extramweid
+                    #     lemmasofmwedict[k] = extralemmas
+                    #     for lemma in extralemmas:
+                    #         if lemma in lemma2iddict:
+                    #             lemma2iddict[lemma].append(k)
+                    #         else:
+                    #             lemma2iddict[lemma] = [k]
+                    #     mwetreesdict[k] = mwetree
 
         # schrijf de nieuwe mwetreebank naar file  meerdere keren voor  het geval dat het afgebroken wordt@@
         # niet nodig hier
@@ -209,12 +256,64 @@ def updateindexes(indexes, mwefilename, forced=False):
                 print(f"Removing tree for {mwestr}")
                 del mwetreesdict[mwekey]
 
-        writetb(mwetreebank)
+        writetb(mwetreebank, mwetreebankfullname)
     else:
         print("Indexes up to date")
 
-    indexes = Indexes(mweid2id, id2mweid, lemma2iddict, lemmasofmwedict, mwetreesdict)
+    indexes = Indexes(mweid2id, id2mweid, lemma2iddict,
+                      lemmasofmwedict, mwetreesdict)
     return indexes
+
+
+def expandimwes(imwes: List[Tuple[int, List[str]]]) -> List[Tuple[int, List[str]]]:
+    """
+
+    Args:
+        imwes: list of Tuples(counter, mwe
+
+    Returns:
+        list of Tuples (counter, mwe) by applying expandmwe to each mwe in the input
+
+    """
+    baseresults = []
+    for _, mwe in imwes:
+        baseresults += expandmwe(mwe)
+    results = list(enumerate(baseresults))
+    return results
+
+
+def expandmwe(rawmwe: Tuple[str]) -> List[Tuple[str]]:
+    """
+
+    Args:
+        rawmwe: a list of 2 elements: mweid, mwestr
+
+    Returns: a list of 2 elements: mweid, mwestr, with the input and where an OIA annotation occurs, a variant with
+    the OIA argument left out
+
+    """
+    results = [rawmwe]
+    mweid = rawmwe[0]
+    rawmwestr = rawmwe[1]
+    mwestr = mwenormalise(rawmwestr)
+    can_form = tokenize(mwestr)
+    newresultlist = []
+    oiaindex = -2
+    oiafound = False
+    for i, word in enumerate(can_form):
+        if oiaindex == -2 and word.lower().startswith('oia:'):
+            oiaindex = i
+            oiafound = True
+        elif oiaindex == i - 1 and word.lower() in vblwords:
+            oiaindex = -1
+        else:
+            newresultlist.append(word)
+    if oiafound:
+        newmwestr = space.join(newresultlist)
+        newmweid = f'{mweid}a'
+        newresult = (newmweid, newmwestr)
+        results.append(newresult)
+    return results
 
 
 def getextralemmas(lemmas: List[str]) -> List[str]:
@@ -225,8 +324,9 @@ def getextralemmas(lemmas: List[str]) -> List[str]:
     """
     newlemmas = []
     for lemma in lemmas:
-        if lemma in mwuwordlemmadict:
-            newlemma = mwuwordlemmadict[lemma]
+        # if lemma in mwuwordlemmadict:
+        if lemma in lemmacorrectionlexicon:
+            newlemma = lemmacorrectionlexicon[lemma]
         else:
             newlemma = lemma
         newlemmas.append(newlemma)
@@ -290,6 +390,10 @@ if os.path.exists(indexfullname):  # and older than the source file
         if dcmid in indexlist[0]:
             i = indexlist[0][dcmid]
             mwetreesdict[i] = mwetree
+            # dcmidx = f'{dcmid}X'                   # for adding cases with extra lemmas because of MWUs
+            # if dcmidx in indexlist[0]:
+            #     k = indexlist[0][dcmid] + ambigconstant
+            #     mwetreesdict[k] = mwetree
         else:
             print(f"No index entry for {dcmid}: {mwestr} ")
     if len(indexlist) == 4:
@@ -328,7 +432,8 @@ def forcedupdate(infullname):
 
 if __name__ == "__main__":
     # infullname = 'ducame v300.txt'
-    infullname = "./mwelexicon/ducame_4.01.txt"
+    # infullname = "./mwelexicon/ducame_4.01.txt"
+    infullname = mwelexiconfullname
     indexes = Indexes({}, {}, {}, {}, {})
     forcedupdate(infullname)
 
